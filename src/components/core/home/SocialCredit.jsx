@@ -6,7 +6,7 @@ const SocialCredit = () => {
       <div className="container max-w-8xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8">
           <div className="relative">
-            <h2 className="md:pt-[100px] text-4xl md:text-6xl font-medium tracking-tight text-gray-900">
+            <h2 className="md:pt-[150px] text-4xl md:text-6xl font-medium tracking-tight text-gray-900">
               Social credit Lorem ipsum dolor sit amet.
             </h2>
             <p className="mt-4 text-base md:text-lg text-gray-600 md:py-8">
@@ -25,7 +25,7 @@ const SocialCredit = () => {
             <div className="absolute h-[300px] w-[300px] bg-[#EE6C4C] rounded-full right-[3rem] top-[10rem]">
               <div className='relative h-[300px] w-[300px] rounded-full after:content-[""] after:absolute after:h-[30px] after:w-[30px] after:rounded-full after:bg-[#F4BD68] after:top-[4rem] after:border-2 after:border-white rotate animation-duration-8'></div>
             </div>
-            <div className="absolute h-[150px] w-[150px] bg-[#88B6B9] rounded-full bottom-[-4rem] left-[9rem]">
+            <div className="absolute h-[150px] w-[150px] bg-[#88B6B9] rounded-full bottom-[-7rem] left-[9rem]">
               <div className='relative h-[150px] w-[150px] rounded-full after:content-[""] after:absolute after:h-[25px] after:w-[25px] after:rounded-full after:bg-[#ED6B49] after:top-[6rem] after:border-2 after:border-white rotate animation-delay-3'></div>
             </div>
             <div className="z-[99] relative">
