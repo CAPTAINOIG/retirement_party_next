@@ -6,6 +6,10 @@ import ClientOnly from "@/components/global/ClientOnly.jsx";
 import TopInsights from "@/components/core/home/TopInsights.jsx";
 import Services from "@/components/core/home/Services.jsx";
 import Footer from "@/components/core/home/Footer.jsx";
+import BankStatement from "@/components/core/home/BankStatement";
+import SocialCredit from "@/components/core/home/SocialCredit";
+import Curves from "@/components/core/home/Curves";
+import Credible from "@/components/core/home/Credible";
 
 const Home = () => {
   return (
@@ -16,10 +20,14 @@ const Home = () => {
         <ClientOnly>
           <Categories/>
         </ClientOnly>
+        <BankStatement/>
         <TopInsights/>
         <Services/>
+        <SocialCredit/>
         <Testimonials/>
+        <Credible/>
         <Footer/>
+        <Curves/>
       </div>
     </main>
   );
