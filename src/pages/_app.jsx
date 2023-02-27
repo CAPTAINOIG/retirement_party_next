@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <div className="bg-slate-100">
+    <div>
       {
         Component.Layout ? (
           <Component.Layout>

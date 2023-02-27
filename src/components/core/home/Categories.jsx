@@ -1,20 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { register } from "swiper/element/bundle";
 import CategoryCard from "@/components/core/shared/CategoryCard.jsx";
+import categories from "@/lib/categories.js";
 
 register();
 
-const categories = [
-  { name: 'Budgets', image: 'https://picsum.photos/600/701' },
-  { name: 'Consumption', image: 'https://picsum.photos/600/702' },
-  { name: 'Education', image: 'https://picsum.photos/600/703' },
-  { name: 'Entertainment', image: 'https://picsum.photos/600/704' },
-  { name: 'GDP', image: 'https://picsum.photos/600/705' },
-  { name: 'Oil and Gas', image: 'https://picsum.photos/600/706' },
-];
-
 const Categories = () => {
   const swiperElRef = useRef(null);
+  const swiperElRef2 = useRef(null);
 
   useEffect(() => {
     const swiperParams = {
@@ -22,7 +15,7 @@ const Categories = () => {
       spaceBetween: 0,
       autoplay: {
         delay: 0,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
       breakpoints: {
         0: { slidesPerView: 1.2 },
@@ -31,7 +24,9 @@ const Categories = () => {
       }
     };
     Object.assign(swiperElRef.current, swiperParams);
+    Object.assign(swiperElRef2.current, { ...swiperParams, speed: 8000 });
     swiperElRef.current.initialize();
+    swiperElRef2.current.initialize();
   }, []);
 
   return (
@@ -46,17 +41,30 @@ const Categories = () => {
           </p>
         </div>
       </div>
-      <swiper-container ref={ swiperElRef } init={ false }>
-        {
-          categories.map((category) => (
-            <swiper-slide key={ category.name }>
-              <div className="px-4">
-                <CategoryCard category={ category }/>
-              </div>
-            </swiper-slide>
-          ))
-        }
-      </swiper-container>
+      <div className="space-y-6">
+        <swiper-container ref={ swiperElRef } init={ false }>
+          {
+            categories.slice(0, categories.length / 2).map((category) => (
+              <swiper-slide key={ category.name }>
+                <div className="px-4">
+                  <CategoryCard category={ category }/>
+                </div>
+              </swiper-slide>
+            ))
+          }
+        </swiper-container>
+        <swiper-container ref={ swiperElRef2 } init={ false }>
+          {
+            categories.slice(categories.length / 2, categories.length).map((category) => (
+              <swiper-slide key={ category.name }>
+                <div className="px-4">
+                  <CategoryCard category={ category }/>
+                </div>
+              </swiper-slide>
+            ))
+          }
+        </swiper-container>
+      </div>
     </div>
   );
 };

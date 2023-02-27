@@ -22,10 +22,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div
-      className="pt-44 pb-32 md:pb-44 text-center md:pt-60 bg-gray-900 pattern-2"
-      style={ { borderRadius: '0 0 1000px 1000px / 10%' } }
-    >
+    <div className="pt-44 pb-32 md:pb-44 text-center md:pt-60 bg-zinc-900 pattern-2 rounded-[0_0_1000px_1000px/10%]">
       <div className="container max-w-7xl mx-auto">
         <h1
           className="mx-auto max-w-4xl font-display text-6xl font-bold tracking-tight text-slate-300 sm:text-7xl md:text-8xl"

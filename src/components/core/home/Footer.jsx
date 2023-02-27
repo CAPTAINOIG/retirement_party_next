@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="py-10">
+    <div className="pt-32 pb-10">
       <div className="container">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, quae!
       </div>
