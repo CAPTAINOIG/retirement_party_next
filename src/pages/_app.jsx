@@ -26,6 +26,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div>
+      <title>Statisense</title>
       {
         Component.Layout ? (
           <Component.Layout>
