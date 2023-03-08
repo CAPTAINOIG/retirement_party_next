@@ -3,7 +3,7 @@ import Tilt from 'react-parallax-tilt';
 
 const Credible = () => {
   return (
-    <div className='bg-dotted curved-header pt-[160px]'>
+    <div>
     <div className="container max-w-8xl mx-auto">
       <div className="grid md:grid-cols-2 gap-8">
         <div className="relative text-right">
