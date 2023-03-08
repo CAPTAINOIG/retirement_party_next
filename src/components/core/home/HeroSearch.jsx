@@ -30,7 +30,7 @@ const HeroSearch = ({ className }) => {
           value={ query } onChange={ handleChange }
           onKeyUp={ e => e.key.toLowerCase() === 'enter' && handleSearch() }
           type="text" name="query" id="query" placeholder="Find infographics.."
-          className="rounded-full w-full h-16 bg-transparent py-0 pl-8 pr-16 outline-none bg-slate-200/10 shadow-md hover:outline-none focus:ring-blue-200 focus:border-blue-200"
+          className="rounded-full w-full h-16 py-0 pl-8 pr-16 outline-none bg-slate-200/10 shadow-md hover:outline-none focus:ring-blue-200 focus:border-blue-200"
         />
         <IconButton
           icon={ <IconSearch size="20"/> } rounded onClick={ handleSearch } disabled={ query.length < 2 }

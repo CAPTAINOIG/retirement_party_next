@@ -23,18 +23,22 @@ const Categories = () => {
       {
         isCategoriesLoading ? (
           <div className="space-y-6">
-            <div className="grid grid-cols-4 gap-8 px-10">
-              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-            </div>
-            <div className="grid grid-cols-4 gap-10 px-10">
-              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-            </div>
+            {
+              Array(2).fill(null).map((_, i) => (
+                <div key={ i }>
+                  <div className="hidden md:grid grid-cols-4 gap-8 px-4">
+                    <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+                    <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+                    <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+                    <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+                  </div>
+                  <div className="grid md:hidden grid-cols-5 gap-5 px-4">
+                    <div className="bg-zinc-200 w-full h-32 col-span-3 rounded-xl"/>
+                    <div className="bg-zinc-200 w-full h-32 col-span-2 rounded-xl"/>
+                  </div>
+                </div>
+              ))
+            }
           </div>
         ) : (
           <>

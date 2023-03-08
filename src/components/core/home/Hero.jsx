@@ -31,7 +31,7 @@ const Hero = () => {
         <h1
           className="mx-auto max-w-4xl font-display text-6xl font-bold tracking-tight text-slate-300 sm:text-7xl md:text-8xl"
         >
-          We convert raw data to { ' ' }
+          We convert raw data to { ' ' }<br className="sm:hidden"/>
           <span ref={ el } className="relative whitespace-nowrap text-blue-600"></span>.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-400">

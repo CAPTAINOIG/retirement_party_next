@@ -25,8 +25,8 @@ const TopInsights = () => {
                 Array(3).fill(null).map((_, i) =>
                   <div key={ i }>
                     <div className="bg-zinc-200 w-full h-44 rounded-xl"/>
-                    <div className="bg-zinc-200 w-3/12 h-5 rounded-full mt-4"/>
-                    <div className="bg-zinc-200 w-5/12 h-5 rounded-full mt-3"/>
+                    <div className="bg-zinc-200 w-6/12 h-5 rounded-full mt-4"/>
+                    <div className="bg-zinc-200 w-4/12 h-5 rounded-full mt-3"/>
                   </div>
                 )
               }

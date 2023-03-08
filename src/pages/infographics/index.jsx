@@ -3,7 +3,6 @@ import DefaultLayout from "@/components/core/shared/DefaultLayout.jsx";
 import CategoryCard from "@/components/core/shared/CategoryCard.jsx";
 import PageHeader from "@/components/core/shared/PageHeader.jsx";
 import { useGetCategoriesQuery } from "@/lib/api/infographics.js";
-import NoData from "@/components/global/NoData.jsx";
 import HeroSearch from "@/components/core/home/HeroSearch.jsx";
 import { useRouter } from "next/router";
 import SearchResults from "@/components/core/infographics/SearchResults.jsx";
@@ -62,7 +61,9 @@ const Infographics = () => {
                       }
                     </>
                   ) : (
-                    <NoData text="No categories added yet"/>
+                    <div className="px-10 py-10 text-center opacity-50">
+                      <p className="text-lg italic">No categories added yet</p>
+                    </div>
                   )
                 }
               </>
