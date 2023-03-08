@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import HeroSearch from "@/components/core/home/HeroSearch.jsx";
 import Typed from "typed.js";
 
 const Hero = () => {
-  const el = React.useRef(null);
-  const typed = React.useRef(null);
+  const el = useRef(null);
+  const typed = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const options = {
       strings: [
         'insights',
@@ -14,6 +14,9 @@ const Hero = () => {
       ],
       typeSpeed: 50,
       backSpeed: 50,
+      backDelay: 3000,
+      loop: true,
+      smartBackspace: true,
     };
     typed.current = new Typed(el.current, options);
     return () => {
@@ -22,7 +25,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="pt-44 pb-32 md:pb-44 text-center md:pt-60 bg-zinc-900 pattern-2 rounded-[0_0_1000px_1000px/10%]">
+    <div
+      className="pt-44 pb-32 md:pb-44 text-center md:pt-60 bg-zinc-900 pattern-2 rounded-[0_0_1000px_1000px/10%] relative">
       <div className="container max-w-7xl mx-auto">
         <h1
           className="mx-auto max-w-4xl font-display text-6xl font-bold tracking-tight text-slate-300 sm:text-7xl md:text-8xl"
@@ -34,7 +38,7 @@ const Hero = () => {
           Our data services deliver insights for better business intelligence
         </p>
       </div>
-      <HeroSearch/>
+      <HeroSearch className="mt-16"/>
     </div>
   );
 };

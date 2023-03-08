@@ -6,6 +6,7 @@ import TopInsights from "@/components/core/home/TopInsights.jsx";
 import Services from "@/components/core/home/Services.jsx";
 import DefaultLayout from "@/components/core/shared/DefaultLayout.jsx";
 import BankStatement from "@/components/core/home/BankStatement.jsx";
+import SocialCredit from "@/components/core/home/SocialCredit.jsx";
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
       <TopInsights/>
       <BankStatement/>
       <Services/>
-      {/*<SocialCredit/>*/ }
+      <SocialCredit/>
       <Testimonials/>
     </div>
   );

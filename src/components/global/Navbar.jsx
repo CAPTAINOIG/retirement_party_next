@@ -13,7 +13,7 @@ const Navbar = () => {
   useIsomorphicLayoutEffect(() => {
     if (isMobileNavVisible) document.scrollingElement.style.overflowY = 'hidden';
     else document.scrollingElement.style.overflowY = 'initial';
-  }, [[isMobileNavVisible]])
+  }, [isMobileNavVisible]);
 
   useIsomorphicLayoutEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -31,13 +31,13 @@ const Navbar = () => {
     <>
       <header className={ classNames(
         'py-10 fixed top-0 inset-x-0 z-50 transition-all',
-        { 'bg-white/90 backdrop-blur-lg text-neutral-900 shadow-sm py-8': scrolled },
+        { 'bg-white/90 backdrop-blur-lg text-neutral-900 shadow py-8': scrolled },
         { 'text-neutral-100': !scrolled },
       ) }>
         <div className="container mx-auto">
           <nav className="relative z-50 flex justify-between">
             <div className="flex items-center md:gap-x-12 flex-1">
-              <Link href="/" className="text-xl uppercase">
+              <Link href="/" className="text-xl uppercase w-48">
                 Logo
               </Link>
               <div className="hidden md:flex md:space-x-3 mx-auto">
@@ -120,7 +120,9 @@ const Navbar = () => {
                 >
                   Infographics
                 </Link>
-                <hr className="m-2 border-zinc-300/40"/>
+                <div>
+                  <hr className="mx-2 my-2 border-zinc-300/40"/>
+                </div>
                 <Link
                   onClick={ () => setIsMobileNavVisible(false) } href="/login"
                   className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"

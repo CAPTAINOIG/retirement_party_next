@@ -29,7 +29,7 @@ const SocialCredit = () => {
               <div className='relative h-[150px] w-[150px] rounded-full after:content-[""] after:absolute after:h-[25px] after:w-[25px] after:rounded-full after:bg-[#ED6B49] after:top-[6rem] after:border-2 after:border-white rotate animation-delay-3'></div>
             </div>
             <div className="z-[99] relative">
-              <div className="absolute bg-gray-100 h-[470px] w-[250px] rounded-lg top-[3rem] right-[7rem] shadow-md p-4 bounce">
+              <div className="absolute bg-gray-100 w-[250px] rounded-lg top-[3rem] right-[7rem] shadow-md p-4 bounce">
                 <svg
                   className="w-[7px]"
                   fill="#333"
@@ -112,9 +112,6 @@ const SocialCredit = () => {
                     </svg>
                   </div>
                 </div>
-                <button className="mt-6 w-full bg-black text-sm text-white px-4 py-2 rounded-[12px] font-dmSans">
-                  Get started
-                </button>
               </div>
             </div>
           </div>

@@ -5,12 +5,15 @@ import NProgress from "nprogress";
 import "../assets/styles/global.scss";
 import '../assets/styles/nprogress.scss';
 import 'swiper/css/bundle';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 NProgress.configure({ showSpinner: false });
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 
 Router.events.on("routeChangeComplete", () => NProgress.done());
+
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }) {
   const handleResize = useCallback(() => {
@@ -25,18 +28,20 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <div>
-      <title>Statisense</title>
-      {
-        Component.Layout ? (
-          <Component.Layout>
+    <>
+      <QueryClientProvider client={ queryClient }>
+        <title>Statisense</title>
+        {
+          Component.Layout ? (
+            <Component.Layout>
+              <Component { ...pageProps } />
+            </Component.Layout>
+          ) : (
             <Component { ...pageProps } />
-          </Component.Layout>
-        ) : (
-          <Component { ...pageProps } />
-        )
-      }
-    </div>
+          )
+        }
+      </QueryClientProvider>
+    </>
   );
 }
 

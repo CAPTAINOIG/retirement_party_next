@@ -1,33 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { register } from "swiper/element/bundle";
-import CategoryCard from "@/components/core/shared/CategoryCard.jsx";
-import categories from "@/lib/categories.js";
+import { useGetCategoriesQuery } from "@/lib/api/infographics.js";
+import CategoriesSlides from "@/components/core/home/CategoriesSlides.jsx";
 
 register();
 
 const Categories = () => {
-  const swiperElRef = useRef(null);
-  const swiperElRef2 = useRef(null);
-
-  useEffect(() => {
-    const swiperParams = {
-      speed: 10000,
-      spaceBetween: 0,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: true,
-      },
-      breakpoints: {
-        0: { slidesPerView: 1.2 },
-        640: { slidesPerView: 2.8 },
-        1024: { slidesPerView: 3.8 }
-      }
-    };
-    Object.assign(swiperElRef.current, swiperParams);
-    Object.assign(swiperElRef2.current, { ...swiperParams, speed: 8000 });
-    swiperElRef.current.initialize();
-    swiperElRef2.current.initialize();
-  }, []);
+  const { data: { categories = [] } = {}, isLoading: isCategoriesLoading } = useGetCategoriesQuery();
 
   return (
     <div>
@@ -41,30 +20,36 @@ const Categories = () => {
           </p>
         </div>
       </div>
-      <div className="space-y-6">
-        <swiper-container ref={ swiperElRef } init={ false }>
-          {
-            categories.slice(0, categories.length / 2).map((category) => (
-              <swiper-slide key={ category.name }>
-                <div className="px-4">
-                  <CategoryCard category={ category }/>
+      {
+        isCategoriesLoading ? (
+          <div className="space-y-6">
+            <div className="grid grid-cols-4 gap-8 px-10">
+              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+            </div>
+            <div className="grid grid-cols-4 gap-10 px-10">
+              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+              <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+            </div>
+          </div>
+        ) : (
+          <>
+            {
+              !!categories.length ? (
+                <CategoriesSlides categories={ categories }/>
+              ) : (
+                <div className="px-10 py-10 text-center opacity-50">
+                  <p className="text-lg italic">No categories added yet</p>
                 </div>
-              </swiper-slide>
-            ))
-          }
-        </swiper-container>
-        <swiper-container ref={ swiperElRef2 } init={ false }>
-          {
-            categories.slice(categories.length / 2, categories.length).map((category) => (
-              <swiper-slide key={ category.name }>
-                <div className="px-4">
-                  <CategoryCard category={ category }/>
-                </div>
-              </swiper-slide>
-            ))
-          }
-        </swiper-container>
-      </div>
+              )
+            }
+          </>
+        )
+      }
     </div>
   );
 };
