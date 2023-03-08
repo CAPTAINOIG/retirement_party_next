@@ -1,20 +1,22 @@
 import React from 'react';
-import { IconArrowRight } from "@tabler/icons-react";
+import Link from "next/link";
+import Image from "@/components/core/shared/Image.jsx";
 
 const CategoryCard = ({ category }) => {
   return (
-    <div
-      className={ `h-[400px] text-white p-10 rounded-xl hover:brightness-125 transition-all cursor-pointer` }
-      style={ { background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${ category.image })` } }
-    >
-      <h3 className="text-3xl font-medium">{ category.name }</h3>
-      <p className="mt-1 text-lg opacity-80">
-        200+ insights
-      </p>
-      <button className="flex items-center mt-8 py-1 px-6 rounded-full border">
-        Browse <IconArrowRight className="ml-3" size="18"/>
-      </button>
-    </div>
+    <Link href={ `/infographics/${ category.id }` }>
+      <div
+        className="text-white rounded-xl overflow-hidden hover:brightness-125 transition-all cursor-pointer relative isolate"
+      >
+        <Image src={ category.image } alt={ category.name } className="absolute inset-0 z-[-1] bg-cover w-full"/>
+        <div className="relative bg-black bg-opacity-50 px-12 py-14">
+          <h3 className="text-[1.6rem] font-medium leading-tight">{ category.name }</h3>
+          <p className="text-[1.1rem] opacity-70">
+            1000+ insights
+          </p>
+        </div>
+      </div>
+    </Link>
   );
 };
 

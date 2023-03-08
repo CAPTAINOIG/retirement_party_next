@@ -1,81 +1,80 @@
-import React from 'react';
-import Navbar from "@/components/global/Navbar.jsx";
-import InsightCard from "@/components/core/shared/InsightCard.jsx";
-
-const data = [
-  {
-    title: 'Can India become a Lithium Superpower?',
-    subtitle: 'If the world wants to achieve net-zero carbon emissions, what’s the most important thing we need?',
-    image: 'https://picsum.photos/400/400'
-  },
-  {
-    title: 'Can India become a Lithium Superpower?',
-    subtitle: 'If the world wants to achieve net-zero carbon emissions, what’s the most important thing we need?',
-    image: 'https://picsum.photos/400/401'
-  },
-  {
-    title: 'Can India become a Lithium Superpower?',
-    subtitle: 'If the world wants to achieve net-zero carbon emissions, what’s the most important thing we need?',
-    image: 'https://picsum.photos/400/402'
-  },
-  {
-    title: 'Can India become a Lithium Superpower?',
-    subtitle: 'If the world wants to achieve net-zero carbon emissions, what’s the most important thing we need?',
-    image: 'https://picsum.photos/400/400'
-  },
-  {
-    title: 'Can India become a Lithium Superpower?',
-    subtitle: 'If the world wants to achieve net-zero carbon emissions, what’s the most important thing we need?',
-    image: 'https://picsum.photos/400/401'
-  },
-  {
-    title: 'Can India become a Lithium Superpower?',
-    subtitle: 'If the world wants to achieve net-zero carbon emissions, what’s the most important thing we need?',
-    image: 'https://picsum.photos/400/402'
-  },
-  {
-    title: 'Can India become a Lithium Superpower?',
-    subtitle: 'If the world wants to achieve net-zero carbon emissions, what’s the most important thing we need?',
-    image: 'https://picsum.photos/400/400'
-  },
-  {
-    title: 'Can India become a Lithium Superpower?',
-    subtitle: 'If the world wants to achieve net-zero carbon emissions, what’s the most important thing we need?',
-    image: 'https://picsum.photos/400/401'
-  },
-  {
-    title: 'Can India become a Lithium Superpower?',
-    subtitle: 'If the world wants to achieve net-zero carbon emissions, what’s the most important thing we need?',
-    image: 'https://picsum.photos/400/402'
-  },
-];
+import React, { useEffect, useState } from 'react';
+import DefaultLayout from "@/components/core/shared/DefaultLayout.jsx";
+import CategoryCard from "@/components/core/shared/CategoryCard.jsx";
+import PageHeader from "@/components/core/shared/PageHeader.jsx";
+import { useGetCategoriesQuery } from "@/lib/api/infographics.js";
+import HeroSearch from "@/components/core/home/HeroSearch.jsx";
+import { useRouter } from "next/router";
+import SearchResults from "@/components/core/infographics/SearchResults.jsx";
 
 const Infographics = () => {
+  const router = useRouter();
+  const [query, setQuery] = useState('');
+  const { data: { categories = [] } = {}, isLoading: isCategoriesLoading } = useGetCategoriesQuery();
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const q = urlParams.get('q');
+    setQuery(q || '');
+  }, [router.query, router.isReady]);
+
   return (
     <>
-      <Navbar/>
-      <div
-        className="pt-44 pb-32 md:pb-24 md:pt-48 text-center bg-gray-900 pattern-2"
-        style={ { borderRadius: '0 0 1000px 1000px / 10%' } }
-      >
-        <div className="container">
-          <h1 className="text-5xl text-slate-200">Browse our archives</h1>
-        </div>
-      </div>
+      <PageHeader
+        title="Search for infographics"
+        append={ <HeroSearch className="mt-12 mb-4 w-full"/> }
+      />
 
       <div className="mt-24">
         <div className="container">
-          <div className="grid md:grid-cols-3 gap-8">
-            {
-              data.map((insight, i) => (
-                <InsightCard insight={ insight } key={ i }/>
-              ))
-            }
-          </div>
+          {
+            isCategoriesLoading ? (
+              <>
+                <div className="grid grid-cols-3 gap-8">
+                  <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+                  <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+                  <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+                  <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+                  <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+                  <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+                </div>
+              </>
+            ) : (
+              <>
+                {
+                  !!categories.length ? (
+                    <>
+                      {
+                        !query ? (
+                          <div className="grid md:grid-cols-3 gap-8">
+                            {
+                              categories.map((category) => (
+                                <CategoryCard category={ category } key={ category.name }/>
+                              ))
+                            }
+                          </div>
+                        ) : (
+                          <SearchResults query={ query }/>
+                        )
+                      }
+                    </>
+                  ) : (
+                    <div className="px-10 py-10 text-center opacity-50">
+                      <p className="text-lg italic">No categories added yet</p>
+                    </div>
+                  )
+                }
+              </>
+            )
+          }
         </div>
       </div>
     </>
   );
 };
+
+Infographics.Layout = DefaultLayout;
 
 export default Infographics;

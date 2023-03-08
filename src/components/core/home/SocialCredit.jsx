@@ -2,7 +2,7 @@ import React from "react";
 
 const SocialCredit = () => {
   return (
-    <div>
+    <>
       <div className="container max-w-8xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8">
           <div className="relative">
@@ -19,17 +19,17 @@ const SocialCredit = () => {
             </button>
           </div>
           <div className="relative">
-            <div className="absolute h-[300px] w-[300px] bg-[#F4BD68] rounded-full left-[7rem]">
+            <div className="absolute h-[300px] w-[300px] bg-orange-300 rounded-full left-[7rem]">
               <div className='relative h-[300px] w-[300px] rounded-full after:content-[""] after:absolute after:h-[30px] after:w-[30px] after:rounded-full after:bg-[#86B5B8] after:top-[4rem] after:border-2 after:border-white rotate'></div>
             </div>
-            <div className="absolute h-[300px] w-[300px] bg-[#EE6C4C] rounded-full right-[3rem] top-[10rem]">
+            <div className="absolute h-[300px] w-[300px] bg-red-300 rounded-full right-[3rem] top-[10rem]">
               <div className='relative h-[300px] w-[300px] rounded-full after:content-[""] after:absolute after:h-[30px] after:w-[30px] after:rounded-full after:bg-[#F4BD68] after:top-[4rem] after:border-2 after:border-white rotate animation-duration-8'></div>
             </div>
-            <div className="absolute h-[150px] w-[150px] bg-[#88B6B9] rounded-full bottom-[-7rem] left-[9rem]">
+            <div className="absolute h-[150px] w-[150px] bg-teal-300 rounded-full bottom-[-7rem] left-[9rem]">
               <div className='relative h-[150px] w-[150px] rounded-full after:content-[""] after:absolute after:h-[25px] after:w-[25px] after:rounded-full after:bg-[#ED6B49] after:top-[6rem] after:border-2 after:border-white rotate animation-delay-3'></div>
             </div>
             <div className="z-[99] relative">
-              <div className="absolute bg-gray-100 h-[470px] w-[250px] rounded-lg top-[3rem] right-[7rem] shadow-md p-4 bounce">
+              <div className="absolute bg-gray-100 w-[250px] rounded-lg top-[3rem] right-[7rem] shadow-md p-4 bounce">
                 <svg
                   className="w-[7px]"
                   fill="#333"
@@ -112,15 +112,219 @@ const SocialCredit = () => {
                     </svg>
                   </div>
                 </div>
-                <button className="mt-6 w-full bg-black text-sm text-white px-4 py-2 rounded-[12px] font-dmSans">
-                  Get started
-                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
+      <style jsx>{`
+        .rotate {
+          animation: rotate 7s linear infinite;
+        }
+
+        .animation-delay-3 {
+          animation-delay: 3s;
+        }
+
+        .animation-duration-8 {
+          animation-duration: 8s;
+        }
+
+        @-webkit-keyframes rotate {
+          from {
+            transform: rotate(0deg);
+          }
+
+          to {
+            transform: rotate(359deg);
+          }
+        }
+
+        @keyframes rotate {
+          from {
+            transform: rotate(0deg);
+          }
+
+          to {
+            transform: rotate(359deg);
+          }
+        }
+
+        .bounce {
+          animation: bounce 2s ease infinite alternate;;
+        }
+
+        @keyframes bounce {
+          0% {
+            transform: translateY(0px);
+          }
+
+          100% {
+            transform: translateY(-20px);
+          }
+        }
+
+        .slant-card {
+          transform: translate(-34px, -10px) rotate(-10deg);
+          animation: flip 5s cubic-bezier(0.8, 0, 0, 0.8) infinite;
+        }
+
+        .slant-card-two {
+          position: absolute;
+          inset: 0;
+          transform: translate(-34px, -10px) rotate(-10deg);
+          animation: fliptwo 5s cubic-bezier(0.8, 0, 0, 0.8) infinite;
+          transform-style: preserve-3d;
+          transform: rotate3d(0, 1, 0, 180deg);
+          opacity: 0;
+        }
+
+        .slant-card-three {
+          position: absolute;
+          inset: 0;
+          transform: translate(-34px, -10px) rotate(-10deg);
+          animation: flipthree 5s cubic-bezier(0.8, 0, 0, 0.8) infinite;
+          transform-style: preserve-3d;
+          transform: rotate3d(0, 1, 0, 180deg);
+          opacity: 0;
+        }
+
+        .slant-card-four {
+          position: absolute;
+          inset: 0;
+          transform: translate(-34px, -10px) rotate(-10deg);
+          animation: flipfour 5s cubic-bezier(0.8, 0, 0, 0.8) infinite;
+          transform-style: preserve-3d;
+          transform: rotate3d(0, 1, 0, 180deg);
+          opacity: 0;
+        }
+
+        @keyframes flip {
+          0% {
+            transform: rotate3d(0, 1, 0, 0deg);
+            opacity: 1;
+          }
+
+          20% {
+            opacity: 0;
+          }
+
+          25% {
+            transform: rotate3d(0, 1, 0, 180deg);
+            opacity: 0;
+          }
+
+          50% {
+            transform: rotate3d(0, 1, 0, 360deg);
+            opacity: 0;
+          }
+
+          75% {
+            transform: rotate3d(0, 1, 0, 180deg);
+            opacity: 0;
+          }
+
+          100% {
+            transform: rotate3d(0, 1, 0, 0deg);
+            opacity: 1;
+          }
+        }
+
+        @keyframes fliptwo {
+          0% {
+            transform: rotate3d(0, 1, 0, 180deg);
+            opacity: 0;
+          }
+
+          25% {
+            transform: rotate3d(0, 1, 0, 0deg);
+            opacity: 1;
+          }
+
+          40% {
+            opacity: 0;
+          }
+
+          50% {
+            transform: rotate3d(0, 1, 0, 360deg);
+            opacity: 0;
+          }
+
+          75% {
+            transform: rotate3d(0, 1, 0, 180deg);
+            opacity: 0;
+          }
+
+          100% {
+            transform: rotate3d(0, 0, 0, 0deg);
+            opacity: 0;
+          }
+        }
+
+        @keyframes flipthree {
+          0% {
+            transform: rotate3d(0, 0, 0, 0deg);
+            opacity: 0;
+          }
+
+          25% {
+            transform: rotate3d(0, 1, 0, 180deg);
+            opacity: 0;
+          }
+
+          50% {
+            transform: rotate3d(0, 1, 0, 360deg);
+            opacity: 1;
+          }
+
+          70% {
+            opacity: 0;
+          }
+
+          75% {
+            transform: rotate3d(0, 1, 0, 180deg);
+            opacity: 0;
+          }
+
+          100% {
+            transform: rotate3d(0, 0, 0, 0deg);
+            opacity: 0;
+          }
+        }
+
+        @keyframes flipfour {
+          0% {
+            transform: rotate3d(0, 0, 0, 180deg);
+            opacity: 0;
+          }
+
+          25% {
+            transform: rotate3d(0, 1, 0, 180deg);
+            opacity: 0;
+          }
+
+          50% {
+            transform: rotate3d(0, 1, 0, 180deg);
+            opacity: 0;
+          }
+
+          75% {
+            transform: rotate3d(0, 1, 0, 0deg);
+            opacity: 1;
+          }
+
+          85% {
+            opacity: 0;
+          }
+
+          100% {
+            transform: rotate3d(0, 0, 0, 0deg);
+            opacity: 0;
+          }
+        }
+      `}</style>
+    </>
   );
 };
 

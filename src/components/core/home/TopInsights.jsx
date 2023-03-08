@@ -1,25 +1,12 @@
 import React from 'react';
-import InsightCard from "@/components/core/shared/InsightCard.jsx";
-
-const data = [
-  {
-    title: 'Can India become a Lithium Superpower?',
-    subtitle: 'If the world wants to achieve net-zero carbon emissions, what’s the most important thing we need?',
-    image: 'https://picsum.photos/400/400'
-  },
-  {
-    title: 'Can India become a Lithium Superpower?',
-    subtitle: 'If the world wants to achieve net-zero carbon emissions, what’s the most important thing we need?',
-    image: 'https://picsum.photos/400/401'
-  },
-  {
-    title: 'Can India become a Lithium Superpower?',
-    subtitle: 'If the world wants to achieve net-zero carbon emissions, what’s the most important thing we need?',
-    image: 'https://picsum.photos/400/402'
-  },
-];
+import { useGetInfographicsQuery } from "@/lib/api/infographics.js";
+import InfographicCard from "@/components/core/shared/InfographicCard.jsx";
 
 const TopInsights = () => {
+  const { data = {}, isLoading: isInfographicsLoading } = useGetInfographicsQuery();
+
+  const { infographics = [] } = data;
+
   return (
     <div>
       <div className="container max-w-8xl mx-auto">
@@ -31,13 +18,39 @@ const TopInsights = () => {
             Browse through exclusive reporting that makes you smarter
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {
-            data.map((insight, i) => (
-              <InsightCard insight={ insight } key={ i }/>
-            ))
-          }
-        </div>
+        {
+          isInfographicsLoading ? (
+            <div className="grid md:grid-cols-3 gap-8">
+              {
+                Array(3).fill(null).map((_, i) =>
+                  <div key={ i }>
+                    <div className="bg-zinc-200 w-full h-44 rounded-xl"/>
+                    <div className="bg-zinc-200 w-6/12 h-5 rounded-full mt-4"/>
+                    <div className="bg-zinc-200 w-4/12 h-5 rounded-full mt-3"/>
+                  </div>
+                )
+              }
+            </div>
+          ) : (
+            <>
+              {
+                !!infographics.length ? (
+                  <div className="grid md:grid-cols-3 gap-8">
+                    {
+                      infographics.slice(0, 3).map((infographic) => (
+                        <InfographicCard key={ infographic.id } infographic={ infographic }/>
+                      ))
+                    }
+                  </div>
+                ) : (
+                  <div className="px-10 py-10 text-center opacity-50">
+                    <p className="text-lg italic">Nothing to see here</p>
+                  </div>
+                )
+              }
+            </>
+          )
+        }
       </div>
     </div>
   );
