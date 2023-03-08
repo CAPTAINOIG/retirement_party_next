@@ -33,7 +33,7 @@ const Hero = () => {
           className="mx-auto max-w-4xl font-display text-6xl font-bold tracking-tight text-slate-300 sm:text-7xl md:text-8xl"
         >
           We convert raw data to { ' ' }<br className="sm:hidden"/>
-          <span ref={ el } className="relative font-bold text-blue-600"></span>.
+          <span ref={ el } className="relative font-bold text-blue-500"></span>.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-400">
           Our data services deliver insights for better business intelligence

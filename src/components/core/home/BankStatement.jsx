@@ -10,7 +10,7 @@ const BankStatement = () => {
             <h2 className="text-4xl md:text-5xl font-medium leading-tight md:leading-[1.2]">
               Analyse your bank statements
             </h2>
-            <p className="mt-6 text-base md:text-lg text-gray-600">
+            <p className="mt-6 text-base md:text-lg opacity-80">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eveniet harum omnis possimus sit
               tempora unde!
             </p>

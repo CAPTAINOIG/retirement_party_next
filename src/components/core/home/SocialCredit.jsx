@@ -11,91 +11,90 @@ const SocialCredit = () => {
             <h2 className="text-4xl md:text-5xl font-medium leading-tight md:leading-[1.2]">
               Social credit Lorem ipsum dolor sit amet.
             </h2>
-            <p className="mt-6 text-base md:text-lg text-gray-600">
+            <p className="mt-6 text-base md:text-lg opacity-80">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio
               ullam beatae rem, error eius culpa pariatur excepturi nostrum
               animi repellat?
             </p>
             <Button color="black" className="mt-12" size="lg" rightIcon={ <IconArrowRight/> }>Get started</Button>
           </div>
-          <div className="relative -order-1 md:order-1">
-            <div
-              className="absolute -top-10 blur-lg opacity-20 h-[300px] w-[300px] bg-orange-300 rounded-full left-[7rem]"
-            >
-            </div>
-            <div
-              className="absolute blur-lg opacity-20 h-[300px] w-[300px] bg-red-300 rounded-full right-[3rem] top-[5rem]"
-            >
-            </div>
-            <div
-              className="absolute blur-lg opacity-20 h-[250px] w-[250px] bg-teal-300 rounded-full bottom-[-1rem] left-[5rem]"
-            >
-            </div>
-            <div className="z-20 relative flex md:justify-center">
-              <div className="bg-slate-200/60 backdrop-blur-lg w-[350px] rounded-2xl px-10 py-12 bounce">
-                <div className="pb-6">
-                  <p className="text-base md:text-xl text-gray-600 font-semibold">
-                    Credibility analysis
-                  </p>
-                  <p className="md:text-sm text-gray-600 mt-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  </p>
-                </div>
-                <div className="relative mt-3">
-                  <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card ">
-                    <img className="mx-auto" src="/images/face-one.png" alt=""/>
-                    <p className="text-base md:text-lg text-gray-600 font-bold pt-4">
-                      Bukunmi Dimeji.
+          <div className="relative -order-1 md:order-1 flex md:justify-center">
+            <div className="relative w-[350px]">
+              <div
+                className="absolute blur-lg opacity-20 h-[300px] w-[300px] bg-orange-300 rounded-full -top-5 -left-5"
+              />
+              <div
+                className="absolute blur-lg opacity-20 h-[300px] w-[300px] bg-red-300 rounded-full -right-10 top-10"
+              />
+              <div
+                className="absolute blur-lg opacity-20 h-[250px] w-[250px] bg-teal-300 rounded-full -bottom-5 -left-5"
+              />
+              <div className="z-20">
+                <div className="bg-slate-200/70 backdrop-blur-lg rounded-2xl px-10 py-12 bounce">
+                  <div className="pb-6">
+                    <p className="text-xl font-medium">
+                      Credibility analysis
                     </p>
-                    <p className="md:text-sm text-gray-600 pb-2">
-                      Head writer at the cable
+                    <p className="mt-2 opacity-80 leading-tight">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     </p>
-                    <div className="flex justify-center items-center space-x-4 mt-3">
-                      <IconBrandLinkedin size="24" className="text-blue-600"/>
-                      <IconBrandFacebook size="24" className="text-blue-500"/>
-                      <IconBrandTwitter size="24" className="text-cyan-600"/>
-                    </div>
                   </div>
-                  <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card-two">
-                    <img className="mx-auto" src="/images/face-two.png" alt=""/>
-                    <p className="text-base md:text-lg text-gray-600 font-bold pt-4">
-                      Bukunmi Dimeji.
-                    </p>
-                    <p className="md:text-sm text-gray-600 pb-2">
-                      Head writer at the cable
-                    </p>
-                    <div className="flex justify-center items-center space-x-4 mt-3">
-                      <IconBrandLinkedin size="24" className="text-blue-600"/>
-                      <IconBrandFacebook size="24" className="text-blue-500"/>
-                      <IconBrandTwitter size="24" className="text-cyan-600"/>
+                  <div className="relative mt-3">
+                    <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card ">
+                      <img className="mx-auto" src="/images/face-one.png" alt=""/>
+                      <p className="text-base md:text-lg opacity-80 font-bold pt-4">
+                        Bukunmi Dimeji.
+                      </p>
+                      <p className="md:text-sm opacity-80 pb-2">
+                        Head writer at the cable
+                      </p>
+                      <div className="flex justify-center items-center space-x-4 mt-3">
+                        <IconBrandLinkedin size="24" className="text-blue-600"/>
+                        <IconBrandFacebook size="24" className="text-blue-500"/>
+                        <IconBrandTwitter size="24" className="text-cyan-600"/>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card-three">
-                    <img className="mx-auto" src="/images/face-three.png" alt=""/>
-                    <p className="text-base md:text-lg text-gray-600 font-bold pt-4">
-                      Bukunmi Dimeji.
-                    </p>
-                    <p className="md:text-sm text-gray-600 pb-2">
-                      Head writer at the cable
-                    </p>
-                    <div className="flex justify-center items-center space-x-4 mt-3">
-                      <IconBrandLinkedin size="24" className="text-blue-600"/>
-                      <IconBrandFacebook size="24" className="text-blue-500"/>
-                      <IconBrandTwitter size="24" className="text-cyan-600"/>
+                    <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card-two">
+                      <img className="mx-auto" src="/images/face-two.png" alt=""/>
+                      <p className="text-base md:text-lg opacity-80 font-bold pt-4">
+                        Bukunmi Dimeji.
+                      </p>
+                      <p className="md:text-sm opacity-80 pb-2">
+                        Head writer at the cable
+                      </p>
+                      <div className="flex justify-center items-center space-x-4 mt-3">
+                        <IconBrandLinkedin size="24" className="text-blue-600"/>
+                        <IconBrandFacebook size="24" className="text-blue-500"/>
+                        <IconBrandTwitter size="24" className="text-cyan-600"/>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card-four">
-                    <img className="mx-auto" src="/images/face-four.png" alt=""/>
-                    <p className="text-base md:text-lg text-gray-600 font-bold pt-4">
-                      Bukunmi Dimeji.
-                    </p>
-                    <p className="md:text-sm text-gray-600 pb-2">
-                      Head writer at the cable
-                    </p>
-                    <div className="flex justify-center items-center space-x-4 mt-3">
-                      <IconBrandLinkedin size="24" className="text-blue-600"/>
-                      <IconBrandFacebook size="24" className="text-blue-500"/>
-                      <IconBrandTwitter size="24" className="text-cyan-600"/>
+                    <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card-three">
+                      <img className="mx-auto" src="/images/face-three.png" alt=""/>
+                      <p className="text-base md:text-lg opacity-80 font-bold pt-4">
+                        Bukunmi Dimeji.
+                      </p>
+                      <p className="md:text-sm opacity-80 pb-2">
+                        Head writer at the cable
+                      </p>
+                      <div className="flex justify-center items-center space-x-4 mt-3">
+                        <IconBrandLinkedin size="24" className="text-blue-600"/>
+                        <IconBrandFacebook size="24" className="text-blue-500"/>
+                        <IconBrandTwitter size="24" className="text-cyan-600"/>
+                      </div>
+                    </div>
+                    <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card-four">
+                      <img className="mx-auto" src="/images/face-four.png" alt=""/>
+                      <p className="text-base md:text-lg opacity-80 font-bold pt-4">
+                        Bukunmi Dimeji.
+                      </p>
+                      <p className="md:text-sm opacity-80 pb-2">
+                        Head writer at the cable
+                      </p>
+                      <div className="flex justify-center items-center space-x-4 mt-3">
+                        <IconBrandLinkedin size="24" className="text-blue-600"/>
+                        <IconBrandFacebook size="24" className="text-blue-500"/>
+                        <IconBrandTwitter size="24" className="text-cyan-600"/>
+                      </div>
                     </div>
                   </div>
                 </div>

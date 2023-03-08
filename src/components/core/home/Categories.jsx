@@ -15,7 +15,7 @@ const Categories = () => {
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-gray-900">
             Discover the future of your market
           </h2>
-          <p className="mt-4 text-base md:text-lg text-gray-600">
+          <p className="mt-4 text-base md:text-lg opacity-80">
             Browse through exclusive reporting that makes you smarter
           </p>
         </div>
