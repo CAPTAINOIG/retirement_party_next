@@ -7,10 +7,12 @@ import Services from "@/components/core/home/Services.jsx";
 import DefaultLayout from "@/components/core/shared/DefaultLayout.jsx";
 import BankStatement from "@/components/core/home/BankStatement.jsx";
 import SocialCredit from "@/components/core/home/SocialCredit.jsx";
+import React from "react";
+import Newsletter from "@/components/core/home/Newsletter.jsx";
 
 const Home = () => {
   return (
-    <div className="space-y-24 md:space-y-44">
+    <div className="space-y-28 md:space-y-44">
       <Hero/>
       <ClientOnly>
         <Categories/>
@@ -19,6 +21,7 @@ const Home = () => {
       <BankStatement/>
       <Services/>
       <SocialCredit/>
+      <Newsletter/>
       <Testimonials/>
     </div>
   );

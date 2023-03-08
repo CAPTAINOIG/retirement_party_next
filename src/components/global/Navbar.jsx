@@ -67,7 +67,7 @@ const Navbar = () => {
                   <Button variant="text" color={ scrolled ? "black" : "white" }>Sign in</Button>
                 </Link>
                 <Link href="/register">
-                  <Button>Get started</Button>
+                  <Button size="lg">Get started</Button>
                 </Link>
               </div>
               <div className="-mr-1 md:hidden">

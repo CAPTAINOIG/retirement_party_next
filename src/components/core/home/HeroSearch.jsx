@@ -19,7 +19,9 @@ const HeroSearch = ({ className }) => {
   };
 
   const handleChange = e => {
-    if (!e.target.value.length) router.push('/infographics');
+    if (!e.target.value.length && router.asPath.includes('infographic')) {
+      router.push('/infographics');
+    }
     setQuery(e.target.value);
   };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from "@/components/global/Navbar.jsx";
-import Footer from "@/components/core/home/Footer.jsx";
+import Footer from "@/components/global/Footer.jsx";
 
 const DefaultLayout = ({ children }) => {
   return (
@@ -9,7 +9,9 @@ const DefaultLayout = ({ children }) => {
       <main>
         { children }
       </main>
-      <Footer/>
+      <div className="mt-36">
+        <Footer/>
+      </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { IconChartInfographic, IconDatabase, IconMap, IconPhoneCall, IconSchool 
 
 const Services = () => {
   return (
-    <div id="services" className="bg-zinc-900 text-zinc-100 py-28 sm:py-40 rounded-[1200px/1%]">
+    <div id="services" className="bg-[#11100f] text-zinc-100 py-28 sm:py-40 rounded-[1200px/.5%]">
       <section aria-label="Our services" className="container">
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight">
