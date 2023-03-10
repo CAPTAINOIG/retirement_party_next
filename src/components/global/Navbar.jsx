@@ -31,7 +31,7 @@ const Navbar = () => {
     <>
       <header className={ classNames(
         'py-10 fixed top-0 inset-x-0 z-50 transition-all',
-        { 'bg-white/90 backdrop-blur-lg text-neutral-900 shadow py-8': scrolled },
+        { 'bg-white/90 backdrop-blur-lg text-neutral-900 shadow py-6': scrolled },
         { 'text-neutral-100': !scrolled },
       ) }>
         <div className="container mx-auto">
