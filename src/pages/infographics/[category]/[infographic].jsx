@@ -6,6 +6,7 @@ import { IconClock } from "@tabler/icons-react";
 import { useGetInfographicQuery } from "@/lib/api/infographics.js";
 import { format } from "date-fns";
 import Image from "@/components/core/shared/Image.jsx";
+import Link from "next/link";
 
 const InfographicDetails = () => {
   const router = useRouter();
@@ -18,10 +19,9 @@ const InfographicDetails = () => {
         title={ infographic?.title }
         onBack={ () => router.push(`/infographics/${ infographic.category.id }`) }
         backText={ infographic?.category?.name || 'Back' }
-        append={ <div className="h-40"></div> }
         isLoading={ isInfographicLoading }
       />
-      <div className="container -mt-56 md:-mt-44">
+      <div className="container mt-16">
         {
           isInfographicLoading ? (
             <div className="max-w-xl mx-auto">
@@ -45,7 +45,13 @@ const InfographicDetails = () => {
                   <div className="mt-10 flex flex-row flex-wrap">
                     {
                       infographic.tags.split(',').map((tag, i) => (
-                        <div key={ i } className="bg-zinc-200 px-3 py-[2px] rounded-xl mr-3 mb-4">{ tag }</div>
+                        <Link key={ i } href={ `/infographics?q=${ tag }` }>
+                          <div
+                            className="bg-zinc-200 hover:bg-zinc-300 px-3 py-[2px] rounded-xl mr-3 mb-4 cursor-pointer"
+                          >
+                            { tag }
+                          </div>
+                        </Link>
                       ))
                     }
                   </div>

@@ -22,7 +22,6 @@ const Category = () => {
         backText="Categories"
         isLoading={ isCategoryLoading }
       />
-
       <div className="mt-20">
         <div className="container">
           {

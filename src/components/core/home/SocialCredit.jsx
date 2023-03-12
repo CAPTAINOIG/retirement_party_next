@@ -19,18 +19,18 @@ const SocialCredit = () => {
             <Button color="black" className="mt-12" size="lg" rightIcon={ <IconArrowRight/> }>Get started</Button>
           </div>
           <div className="relative -order-1 md:order-1 flex md:justify-center">
-            <div className="relative w-[350px]">
+            <div className="relative w-full sm:w-[350px]">
               <div
-                className="absolute blur-lg opacity-20 h-[300px] w-[300px] bg-orange-300 rounded-full -top-5 -left-5"
+                className="absolute blur-lg opacity-10 h-[300px] w-[300px] bg-orange-300 rounded-full -top-5 -left-5"
               />
               <div
-                className="absolute blur-lg opacity-20 h-[300px] w-[300px] bg-red-300 rounded-full -right-10 top-10"
+                className="absolute blur-lg opacity-10 h-[300px] w-[300px] bg-red-300 rounded-full -right-10 top-10"
               />
               <div
-                className="absolute blur-lg opacity-20 h-[250px] w-[250px] bg-teal-300 rounded-full -bottom-5 -left-5"
+                className="absolute blur-lg opacity-10 h-[250px] w-[250px] bg-teal-300 rounded-full -bottom-5 -left-5"
               />
               <div className="z-20">
-                <div className="bg-slate-200/70 backdrop-blur-lg rounded-2xl px-10 py-12 bounce">
+                <div className="bg-slate-300/40 backdrop-blur-lg rounded-2xl px-10 py-12 bounce">
                   <div className="pb-6">
                     <p className="text-xl font-medium">
                       Credibility analysis

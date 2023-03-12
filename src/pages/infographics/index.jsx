@@ -26,7 +26,6 @@ const Infographics = () => {
         title="Search for infographics"
         append={ <HeroSearch className="mt-12 mb-4 w-full"/> }
       />
-
       <div className="mt-24">
         <div className="container">
           {
