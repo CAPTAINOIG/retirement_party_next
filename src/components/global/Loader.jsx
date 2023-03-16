@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-const Loader = ({ text, size = 'md', className = 'bg-purple-800' }) => {
+const Loader = ({ text, size = 'md', className = 'bg-blue-800' }) => {
   return (
     <>
       <div
@@ -26,7 +26,6 @@ const Loader = ({ text, size = 'md', className = 'bg-purple-800' }) => {
 
         .sp-3balls {
           position: relative;
-          //background-color: black;
           opacity: 1;
           -webkit-animation: spScaleAlpha 1s infinite linear;
           animation: spScaleAlpha 1s infinite linear;

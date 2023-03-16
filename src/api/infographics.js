@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import http from "../http.js";
+import http from "../lib/http.js";
 
 export const useGetInfographicsQuery = ({ category, search, enabled = true } = {}) => {
   return useQuery(['infographics', category, search], async () => {

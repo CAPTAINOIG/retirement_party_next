@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import Link from "next/link";
-import { IconMenu } from "@tabler/icons-react";
+import { IconApps, IconLogout, IconMenu } from "@tabler/icons-react";
 import { useIsomorphicLayoutEffect } from "react-use";
 import classNames from "classnames";
 import Button from "@/components/global/Button.jsx";
 import { AnimatePresence, motion } from "framer-motion";
+import { useAuth } from "@/hooks/use-auth.js";
+import SimpleDropdown from "@/components/global/SimpleDropdown.jsx";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
+  const router = useRouter();
+  const { user, logout } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
 
@@ -17,14 +22,16 @@ const Navbar = () => {
 
   useIsomorphicLayoutEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleScroll = (e) => {
     const scrollTop = e.target.scrollingElement.scrollTop;
     setScrolled(scrollTop > 50);
+  };
+
+  const handleLogout = () => {
+    logout();
   };
 
   return (
@@ -37,40 +44,56 @@ const Navbar = () => {
         <div className="container mx-auto">
           <nav className="relative z-50 flex justify-between">
             <div className="flex items-center md:gap-x-12 flex-1">
-              <Link href="/" className="text-xl uppercase w-48">
+              <Link href="/" className="text-xl w-48">
                 Logo
               </Link>
-              <div className="hidden md:flex md:space-x-3 mx-auto">
-                <Link
-                  href="/about"
-                  className="inline-block rounded-full py-1 px-4"
-                >
+              <div className="hidden lg:flex md:space-x-3 mx-auto">
+                <Link href="/about" className="inline-block rounded-full py-1 px-4">
                   About us
                 </Link>
-                <Link
-                  href="/#services"
-                  className="inline-block rounded-full py-1 px-4"
-                >
+                <Link href="/#services" className="inline-block rounded-full py-1 px-4">
                   Our services
                 </Link>
-                <Link
-                  className="inline-block rounded-full py-1 px-4"
-                  href="/infographics"
-                >
+                <Link className="inline-block rounded-full py-1 px-4" href="/infographics">
                   Infographics
                 </Link>
               </div>
             </div>
             <div className="flex items-center gap-x-5 md:gap-x-4">
-              <div className="hidden md:block space-x-3">
-                <Link href="/login">
-                  <Button variant="text" color={ scrolled ? "black" : "white" }>Sign in</Button>
-                </Link>
-                <Link href="/register">
-                  <Button size="lg">Get started</Button>
-                </Link>
+              <div className="hidden lg:block space-x-3">
+                {
+                  !user ? (
+                    <>
+                      <Link href="/login">
+                        <Button variant="text" color={ scrolled ? "black" : "white" }>Sign in</Button>
+                      </Link>
+                      <Link href="/register">
+                        <Button>Get started</Button>
+                      </Link>
+                    </>
+                  ) : (
+                    <div className="flex items-center space-x-4">
+                      <SimpleDropdown
+                        trigger={
+                          <div
+                            className="flex items-center space-x-4 hover:bg-zinc-300/10 rounded-full pl-3 pr-4 py-2 transition-all">
+                            <img
+                              src={ `https://ui-avatars.com/api/?name=${ user.first_name } ${ user.last_name }` }
+                              className="w-9 h-9 rounded-full" alt={ `${ user.first_name } ${ user.last_name }` }
+                            />
+                            <div>{ user.first_name } { user.last_name }</div>
+                          </div>
+                        }
+                        items={ [
+                          { text: 'Dashboard', icon: <IconApps size="18"/>, onClick: () => router.push('/dashboard') },
+                          { text: 'Logout', icon: <IconLogout size="18"/>, onClick: handleLogout }
+                        ] }
+                      />
+                    </div>
+                  )
+                }
               </div>
-              <div className="-mr-1 md:hidden">
+              <div className="-mr-1 lg:hidden">
                 <button
                   onClick={ () => setIsMobileNavVisible(true) }
                   className="relative z-10 flex h-8 w-8 items-center justify-center [&amp;:not(:focus-visible)]:focus:outline-none"

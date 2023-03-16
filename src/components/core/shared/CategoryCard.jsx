@@ -8,7 +8,10 @@ const CategoryCard = ({ category }) => {
       <div
         className="text-white rounded-xl overflow-hidden hover:brightness-125 transition-all cursor-pointer relative isolate"
       >
-        <Image src={ category.image } alt={ category.name } className="absolute inset-0 z-[-1] bg-cover w-full"/>
+        <Image
+          src={ category.image } alt={ category.name }
+          className="absolute inset-0 z-[-1] object-cover w-full h-full"
+        />
         <div className="relative bg-black bg-opacity-50 px-12 py-10">
           <h3 className="text-[1.6rem] font-medium leading-tight">{ category.name }</h3>
           <p className="text-[1.1rem] opacity-70">

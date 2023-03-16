@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGetInfographicsQuery } from "@/lib/api/infographics.js";
+import { useGetInfographicsQuery } from "@/api/infographics.js";
 import InfographicCard from "@/components/core/shared/InfographicCard.jsx";
 
 const SearchResults = ({ query }) => {

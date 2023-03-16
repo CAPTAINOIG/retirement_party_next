@@ -6,6 +6,8 @@ import "../assets/styles/global.scss";
 import '../assets/styles/nprogress.scss';
 import 'swiper/css/bundle';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ToastProvider } from "@/hooks/use-toast.jsx";
+import { AuthProvider } from "@/hooks/use-auth.js";
 
 NProgress.configure({ showSpinner: false });
 
@@ -30,16 +32,20 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <QueryClientProvider client={ queryClient }>
-        <title>Statisense</title>
-        {
-          Component.Layout ? (
-            <Component.Layout>
-              <Component { ...pageProps } />
-            </Component.Layout>
-          ) : (
-            <Component { ...pageProps } />
-          )
-        }
+        <AuthProvider>
+          <ToastProvider>
+            <title>Statisense</title>
+            {
+              Component.Layout ? (
+                <Component.Layout>
+                  <Component { ...pageProps } />
+                </Component.Layout>
+              ) : (
+                <Component { ...pageProps } />
+              )
+            }
+          </ToastProvider>
+        </AuthProvider>
       </QueryClientProvider>
     </>
   );

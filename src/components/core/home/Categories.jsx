@@ -1,6 +1,6 @@
 import React from 'react';
 import { register } from "swiper/element/bundle";
-import { useGetCategoriesQuery } from "@/lib/api/infographics.js";
+import { useGetCategoriesQuery } from "@/api/infographics.js";
 import CategoriesSlides from "@/components/core/home/CategoriesSlides.jsx";
 
 register();

@@ -126,15 +126,13 @@ const Button = forwardRef((
                 !!leftIcon && (
                   <>
                     <span className="mr-4">{ leftIcon }</span>
-                    <span className="flex-1"/>
                   </>
                 )
               }
-              <span>{ children }</span>
+              <span className="flex-1">{ children }</span>
               {
                 !!rightIcon && (
                   <>
-                    <span className="flex-1"/>
                     <span className="ml-4">{ rightIcon }</span>
                   </>
                 )

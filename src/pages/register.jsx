@@ -1,0 +1,91 @@
+import React, { useState } from 'react';
+import DefaultLayout from "@/components/core/shared/DefaultLayout.jsx";
+import PageHeader from "@/components/core/shared/PageHeader.jsx";
+import Input from "@/components/global/Input.jsx";
+import Button from "@/components/global/Button.jsx";
+import PasswordInput from "@/components/global/PasswordInput.jsx";
+import Checkbox from "@/components/global/Checkbox.jsx";
+import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { useToast } from "@/hooks/use-toast.jsx";
+import { useSignupMutation } from "@/api/auth.js";
+import { useAuth } from "@/hooks/use-auth.js";
+import requireNoAuth from "@/guards/require-no-auth.js";
+
+const Login = () => {
+  const toast = useToast();
+  const { authenticate } = useAuth();
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const [agreed, setAgreed] = useState(false);
+  const { mutateAsync: signup, isLoading: isSignupLoading } = useSignupMutation();
+
+  const submit = async (values) => {
+    try {
+      if (!agreed) return toast.error('Please accept the terms and conditions before proceeding');
+      const res = await signup(values);
+      const { user, token } = res.data;
+      authenticate({ user, token });
+    } catch (e) {
+      toast.error(e?.response?.data?.message ?? e?.message ?? 'Something went wrong, please try again');
+    }
+  };
+
+  return (
+    <>
+      <PageHeader
+        title="Create your account"
+        subtitle="Kindly fill in all fields below correctly"
+      />
+      <div className="container">
+        <div className="mt-16 w-full max-w-md mx-auto rounded-xl">
+          <form onSubmit={ handleSubmit(submit) }>
+            <div className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-4">
+                <Input
+                  label="First name" bordered
+                  { ...register('first_name', { required: 'First name is required' }) }
+                  error={ errors?.first_name?.message } disabled={ isSignupLoading }
+                />
+                <Input
+                  label="Last name" bordered
+                  { ...register('last_name', { required: 'Last name is required' }) }
+                  error={ errors?.last_name?.message } disabled={ isSignupLoading }
+                />
+              </div>
+              <Input
+                label="Email address" bordered
+                { ...register('email', { required: 'Email address is required' }) }
+                error={ errors?.email?.message } disabled={ isSignupLoading }
+              />
+              <Input
+                label="Phone number" bordered
+                { ...register('phone', { required: 'Phone number is required' }) }
+                error={ errors?.phone?.message } disabled={ isSignupLoading }
+              />
+              <PasswordInput
+                label="Password" bordered
+                { ...register('password', { required: 'Password is required' }) }
+                error={ errors?.password?.message } disabled={ isSignupLoading }
+              />
+            </div>
+            <Checkbox
+              value={ agreed } onChange={ e => setAgreed(e.target.checked) } className="mt-6"
+              disabled={ isSignupLoading }
+            >
+              I agree to Statisense&apos;s
+              <Link href="/" className="text-blue-600"> terms and conditions</Link> and
+              <Link href="/" className="text-blue-600"> privacy policy</Link>
+            </Checkbox>
+            <Button type="submit" className="mt-10" size="lg" loading={ isSignupLoading }>
+              Register
+            </Button>
+          </form>
+        </div>
+      </div>
+    </>
+  );
+};
+
+Login.Layout = DefaultLayout;
+
+export default requireNoAuth(Login);

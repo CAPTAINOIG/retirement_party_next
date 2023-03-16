@@ -4,7 +4,7 @@ import Button from "@/components/global/Button.jsx";
 
 const PageHeader = ({ title, subtitle, onBack, backText, isLoading = false, append }) => {
   return (
-    <div className="pt-44 pb-32 md:pb-16 md:pt-44 text-center bg-[#11100f] pattern-2 rounded-[0_0_1000px_1000px/10%]">
+    <div className="pt-36 pb-12 md:pb-16 md:pt-44 text-center bg-[#11100f] pattern-2 rounded-[0_0_1000px_1000px/10%]">
       <div className="container flex flex-col items-center">
         {
           !!onBack && (

@@ -3,7 +3,7 @@ import DefaultLayout from "@/components/core/shared/DefaultLayout.jsx";
 import PageHeader from "@/components/core/shared/PageHeader.jsx";
 import { useRouter } from "next/router";
 import { IconClock } from "@tabler/icons-react";
-import { useGetInfographicQuery } from "@/lib/api/infographics.js";
+import { useGetInfographicQuery } from "@/api/infographics.js";
 import { format } from "date-fns";
 import Image from "@/components/core/shared/Image.jsx";
 import Link from "next/link";

@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from "@/components/core/shared/PageHeader.jsx";
 import DefaultLayout from "@/components/core/shared/DefaultLayout.jsx";
 import { useRouter } from "next/router";
-import { useGetCategoryQuery, useGetInfographicsQuery } from "@/lib/api/infographics.js";
+import { useGetCategoryQuery, useGetInfographicsQuery } from "@/api/infographics.js";
 import InfographicCard from "@/components/core/shared/InfographicCard.jsx";
 
 const Category = () => {
