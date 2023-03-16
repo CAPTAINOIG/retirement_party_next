@@ -4,10 +4,11 @@ import Categories from "@/components/core/home/Categories.jsx";
 import ClientOnly from "@/components/global/ClientOnly.jsx";
 import Services from "@/components/core/home/Services.jsx";
 import DefaultLayout from "@/components/core/shared/DefaultLayout.jsx";
-import BankStatement from "@/components/core/home/BankStatement.jsx";
 import SocialCredit from "@/components/core/home/SocialCredit.jsx";
 import React from "react";
 import Newsletter from "@/components/core/home/Newsletter.jsx";
+import SwiperSection from "@/components/core/home/SwiperSection";
+import InfographicsSection from "@/components/core/home/InfographicsSection";
 
 const Home = () => {
   return (
@@ -18,7 +19,8 @@ const Home = () => {
       </ClientOnly>
       <SocialCredit/>
       <Services/>
-      <BankStatement/>
+      <InfographicsSection/>
+      {/* <SwiperSection/> */}
       <Newsletter/>
       <Testimonials/>
     </div>
