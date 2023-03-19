@@ -23,13 +23,12 @@ const requireNoAuth = (Component, props) => () => {
         </Component.Layout>
       ) : <Component/>
     );
-  } else {
-    return (
-      <div className="h-screen w-full flex justify-center items-center">
-        <Loader size="sm"/>
-      </div>
-    )
   }
+  return (
+    <div className="h-screen w-full flex justify-center items-center">
+      <Loader/>
+    </div>
+  )
 };
 
 export default requireNoAuth;

@@ -17,21 +17,18 @@ const requireAuth = (Component, props) => () => {
     }
   }, [resolved, authenticated, user, router]);
 
-  if (resolved && authenticated) {
-    return (
-      Component.Layout ? (
-        <Component.Layout>
-          <Component { ...props }/>
-        </Component.Layout>
-      ) : <Component/>
-    )
-  } else {
-    return (
-      <div className="h-screen w-full flex justify-center items-center">
-        <Loader size="sm"/>
-      </div>
-    )
-  }
+  if (resolved && authenticated && user?.email_verified) return (
+    Component.Layout ? (
+      <Component.Layout>
+        <Component { ...props }/>
+      </Component.Layout>
+    ) : <Component/>
+  )
+  return (
+    <div className="h-screen w-full flex justify-center items-center">
+      <Loader/>
+    </div>
+  )
 };
 
 export default requireAuth;
