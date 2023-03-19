@@ -1,13 +1,19 @@
 import React from 'react';
 import requireAuth from "@/guards/require-auth.js";
+import DashboardLayout from "@/components/core/dashboard/shared/DashboardLayout.jsx";
+import { useAuth } from "@/hooks/use-auth.js";
+import DashboardTitle from "@/components/core/dashboard/shared/DashboardTitle.jsx";
 
-const Dashboard = () => {
+const Overview = () => {
+  const { user } = useAuth();
+
   return (
-    <div className="bg-slate-50 h-screen w-full p-10">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, aperiam cupiditate delectus, dignissimos ea,
-      eum excepturi expedita harum illum ipsam maiores mollitia nihil quis quisquam sapiente sit tempore ut voluptates.
-    </div>
+    <>
+      <DashboardTitle text={ `Hi ${ user.first_name }` }></DashboardTitle>
+    </>
   );
 };
 
-export default requireAuth(Dashboard);
+Overview.Layout = DashboardLayout;
+
+export default requireAuth(Overview);
