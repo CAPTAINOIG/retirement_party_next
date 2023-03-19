@@ -48,7 +48,12 @@ const Login = () => {
                 error={ errors?.password?.message } disabled={ isLoginLoading }
               />
             </div>
-            <Checkbox className="mt-6" disabled={ isLoginLoading }>Keep me logged in</Checkbox>
+            <Checkbox
+              className="mt-6" disabled={ isLoginLoading }
+              { ...register('remember') }
+            >
+              Remember me
+            </Checkbox>
             <Button type="submit" className="mt-10" size="lg" loading={ isLoginLoading }>
               Login
             </Button>
