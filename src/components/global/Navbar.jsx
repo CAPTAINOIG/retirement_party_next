@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from "next/link";
-import { IconApps, IconLogout, IconMenu } from "@tabler/icons-react";
+import { IconApps, IconChartArcs3, IconFileText, IconLogout, IconMenu } from "@tabler/icons-react";
 import { useIsomorphicLayoutEffect } from "react-use";
 import classNames from "classnames";
 import Button from "@/components/global/Button.jsx";
@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useAuth } from "@/hooks/use-auth.js";
 import SimpleDropdown from "@/components/global/SimpleDropdown.jsx";
 import { useRouter } from "next/router";
+import Hover from "@/components/global/Hover.jsx";
 
 const Navbar = () => {
   const router = useRouter();
@@ -37,29 +38,84 @@ const Navbar = () => {
   return (
     <>
       <header className={ classNames(
-        'py-10 fixed top-0 inset-x-0 z-50 transition-all',
-        { 'bg-white/90 backdrop-blur-lg text-neutral-900 shadow py-6': scrolled },
+        'fixed top-0 inset-x-0 z-50 h-28 transition-all',
+        { 'bg-white/90 backdrop-blur-lg text-neutral-900 shadow !h-24': scrolled },
         { 'text-neutral-100': !scrolled },
       ) }>
-        <div className="container mx-auto">
-          <nav className="relative z-50 flex justify-between">
-            <div className="flex items-center md:gap-x-12 flex-1">
-              <Link href="/" className="text-xl w-48">
+        <div className="container mx-auto h-full">
+          <nav className="relative z-50 flex justify-between h-full">
+            <div className="flex items-center md:gap-x-12 flex-1 h-full">
+              <Link href="/" className="text-xl w-[220px]">
                 Logo
               </Link>
-              <div className="hidden lg:flex md:space-x-3 mx-auto">
-                <Link href="/about" className="inline-block rounded-full py-1 px-4">
+              <div className="hidden lg:flex md:space-x-3 mx-auto h-full">
+                <Link href="/about" className="inline-flex items-center rounded-full py-1 px-4">
                   About us
                 </Link>
-                <Link href="/#services" className="inline-block rounded-full py-1 px-4">
-                  Our services
-                </Link>
-                <Link className="inline-block rounded-full py-1 px-4" href="/infographics">
+                <Hover className="h-full inline-flex items-center">
+                  {
+                    hovered => (
+                      <>
+                        <div className="inline-flex items-center rounded-full py-1 px-4">
+                          Insights
+                        </div>
+                        <AnimatePresence mode="wait">
+                          {
+                            hovered && (
+                              <motion.div
+                                initial={ { opacity: 0, y: 20, x: '-50%', } }
+                                animate={ { opacity: 1, y: 0 } }
+                                exit={ { opacity: 0, y: 20 } }
+                                className={ classNames(
+                                  'p-4 rounded-2xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-1/2 -translate-x-1/2 right-0 w-[350px] space-y-2',
+                                ) }
+                              >
+                                <div
+                                  className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
+                                >
+                                  <div className="mr-4">
+                                    <div
+                                      className="w-10 h-10 rounded-full flex items-center justify-center bg-orange-500 text-white">
+                                      <IconFileText size="20"/>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <h4 className="font-medium">Bank statement</h4>
+                                    <p className="text-sm opacity-80 leading-tight">
+                                      Lorem ipsum dolor sit amet
+                                    </p>
+                                  </div>
+                                </div>
+                                <div
+                                  className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
+                                >
+                                  <div className="mr-4">
+                                    <div
+                                      className="w-10 h-10 rounded-full flex items-center justify-center bg-blue-500 text-white">
+                                      <IconChartArcs3 size="20"/>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <h4 className="font-medium">Credible</h4>
+                                    <p className="text-sm opacity-80 leading-tight">
+                                      Lorem ipsum dolor sit amet
+                                    </p>
+                                  </div>
+                                </div>
+                              </motion.div>
+                            )
+                          }
+                        </AnimatePresence>
+                      </>
+                    )
+                  }
+                </Hover>
+                <Link className="inline-flex items-center rounded-full py-1 px-4" href="/infographics">
                   Infographics
                 </Link>
               </div>
             </div>
-            <div className="flex items-center gap-x-5 md:gap-x-4">
+            <div className="flex items-center justify-end gap-x-5 md:gap-x-4 w-full md:max-w-[250px]">
               <div className="hidden lg:block space-x-3">
                 {
                   !user ? (
@@ -76,10 +132,14 @@ const Navbar = () => {
                       <SimpleDropdown
                         trigger={
                           <div
-                            className="flex items-center space-x-4 hover:bg-zinc-300/10 rounded-full pl-3 pr-4 py-2 transition-all">
+                            className={ classNames(
+                              'flex items-center space-x-4 hover:bg-gray-200/5 rounded-full pl-3 pr-4 py-2 transition-all',
+                              { 'hover:!bg-gray-200/50': scrolled }
+                            ) }
+                          >
                             <img
                               src={ `https://ui-avatars.com/api/?name=${ user.first_name } ${ user.last_name }` }
-                              className="w-9 h-9 rounded-full" alt={ `${ user.first_name } ${ user.last_name }` }
+                              className="w-8 h-8 rounded-full" alt={ `${ user.first_name } ${ user.last_name }` }
                             />
                             <div>{ user.first_name } { user.last_name }</div>
                           </div>

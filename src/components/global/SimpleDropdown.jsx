@@ -52,7 +52,7 @@ const SimpleDropdown = ({ trigger, items }) => {
                         <Menu.Item key={ i }>
                           { ({ active }) => (
                             <button
-                              className={ classNames(`whitespace-nowrap flex items-center px-3 py-2 rounded-lg space-x-4`, { 'bg-slate-200': active }) }
+                              className={ classNames(`whitespace-nowrap flex items-center px-3 py-2 rounded-lg space-x-4 transition-all`, { 'bg-zinc-900/5': active }) }
                               onClick={ item?.onClick ?? null }
                             >
                               { !!item.icon && <span>{ item.icon }</span> }

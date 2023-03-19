@@ -7,7 +7,6 @@ import DefaultLayout from "@/components/core/shared/DefaultLayout.jsx";
 import SocialCredit from "@/components/core/home/SocialCredit.jsx";
 import React from "react";
 import Newsletter from "@/components/core/home/Newsletter.jsx";
-import SwiperSection from "@/components/core/home/SwiperSection";
 import InfographicsSection from "@/components/core/home/InfographicsSection";
 
 const Home = () => {
@@ -20,7 +19,7 @@ const Home = () => {
       <SocialCredit/>
       <Services/>
       <InfographicsSection/>
-      {/* <SwiperSection/> */}
+      {/*<SwiperSection/>*/ }
       <Newsletter/>
       <Testimonials/>
     </div>

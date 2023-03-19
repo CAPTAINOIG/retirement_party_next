@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-const Loader = ({ text, size = 'md', className = 'bg-blue-800' }) => {
+const Loader = ({ text, size = 'md', className = 'bg-blue-600' }) => {
   return (
     <>
       <div
@@ -18,8 +18,8 @@ const Loader = ({ text, size = 'md', className = 'bg-blue-800' }) => {
 
         .sp-3balls, .sp-3balls:before, .sp-3balls:after {
           border-radius: 50%;
-          width: 16px;
-          height: 16px;
+          width: 8px;
+          height: 8px;
           transform-origin: center center;
           display: inline-block;
         }
@@ -39,14 +39,14 @@ const Loader = ({ text, size = 'md', className = 'bg-blue-800' }) => {
         }
 
         .sp-3balls:before {
-          left: 30px;
+          left: 15px;
           top: 0;
           -webkit-animation: spScaleAlphaBefore 1s infinite linear;
           animation: spScaleAlphaBefore 1s infinite linear;
         }
 
         .sp-3balls:after {
-          left: -30px;
+          left: -15px;
           top: 0;
           -webkit-animation: spScaleAlphaAfter 1s infinite linear;
           animation: spScaleAlphaAfter 1s infinite linear;

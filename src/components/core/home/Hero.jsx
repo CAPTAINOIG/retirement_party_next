@@ -26,7 +26,7 @@ const Hero = () => {
 
   return (
     <div
-      className="pt-44 pb-32 md:pb-40 text-center md:pt-60 bg-[#11100f] pattern-2 rounded-[0_0_1000px_1000px/5%] relative"
+      className="pt-44 pb-32 md:pt-60 md:pb-40 text-center bg-[#11100f] pattern-2 rounded-[0_0_1000px_1000px/5%] relative"
     >
       <div className="container max-w-7xl mx-auto">
         <h1
