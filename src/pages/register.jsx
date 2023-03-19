@@ -8,7 +8,7 @@ import Checkbox from "@/components/global/Checkbox.jsx";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast.jsx";
-import { useSignupMutation } from "@/api/auth.js";
+import { useSendEmailVerificationOtp, useSignupMutation } from "@/api/auth.js";
 import { useAuth } from "@/hooks/use-auth.js";
 import requireNoAuth from "@/guards/require-no-auth.js";
 
@@ -18,6 +18,7 @@ const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [agreed, setAgreed] = useState(false);
   const { mutateAsync: signup, isLoading: isSignupLoading } = useSignupMutation();
+  const { mutateAsync: send } = useSendEmailVerificationOtp();
 
   const submit = async (values) => {
     try {
@@ -25,6 +26,7 @@ const Login = () => {
       const res = await signup(values);
       const { user, token } = res.data;
       authenticate({ user, token });
+      await send(null);
     } catch (e) {
       toast.error(e?.response?.data?.message ?? e?.message ?? 'Something went wrong, please try again');
     }
