@@ -8,6 +8,7 @@ import SocialCredit from "@/components/core/home/SocialCredit.jsx";
 import React from "react";
 import Newsletter from "@/components/core/home/Newsletter.jsx";
 import InfographicsSection from "@/components/core/home/InfographicsSection";
+import SwiperSection from "@/components/core/home/SwiperSection";
 
 const Home = () => {
   return (
@@ -18,8 +19,8 @@ const Home = () => {
       </ClientOnly>
       <SocialCredit/>
       <Services/>
+      <SwiperSection/>
       <InfographicsSection/>
-      {/*<SwiperSection/>*/ }
       <Newsletter/>
       <Testimonials/>
     </div>
