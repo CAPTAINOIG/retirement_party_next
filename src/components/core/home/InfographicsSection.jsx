@@ -28,7 +28,7 @@ const InfographicsSection = () => {
                   size="20"
                 />
               </div>
-              <div className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl mt-[4rem] swerve-card-two bounceTwo">
+              <div className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl  mt-[4rem] swerve-card-two bounceTwo">
                 <div className="col-span-1">
                   <img
                     className="rounded-lg"
@@ -78,20 +78,20 @@ const InfographicsSection = () => {
 
         @keyframes bounceOne {
           0% {
-            transform: translateY(0px) rotate(4deg);
-          }
-
-          100% {
-            transform: translateY(-20px) rotate(4deg);
-          }
-        }
-        @keyframes bounceTwo {
-          0% {
             transform: translateY(0px) rotate(-3deg);
           }
 
           100% {
             transform: translateY(-20px) rotate(-3deg);
+          }
+        }
+        @keyframes bounceTwo {
+          0% {
+            transform: translateY(0px) rotate(4deg);
+          }
+
+          100% {
+            transform: translateY(-20px) rotate(4deg);
           }
         }
        .blocked-text{

@@ -22,7 +22,7 @@ const SwiperSection = () => {
     {
       id: 3,
       imgSrc: "https://i.ibb.co/sH50HRh/stock-market.png",
-      category: "Stock market",
+      category: "Stocks",
     },
     { id: 4, imgSrc: "https://i.ibb.co/6mRxrjs/igr.jpg", category: "IGR" },
   ];
@@ -34,7 +34,7 @@ const SwiperSection = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <h2 className="text-4xl md:text-5xl font-medium leading-tight md:leading-[1.2]">
-                Analyse your bank statements
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               </h2>
               <p className="mt-6 text-base md:text-lg opacity-80">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
