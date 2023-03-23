@@ -8,16 +8,17 @@ const Select = forwardRef((
 ) => {
   return (
     <div className="flex flex-col">
-      { !!label && <label htmlFor={ id } className="text-sm mb-2">{ label }</label> }
-      <div className="relative">
+      <label
+        className={ classNames(
+          "pt-5 px-5 rounded-xl w-full transition duration-300 focus-within:ring-2 ring-offset-[3px] ring-blue-800 ring-opacity-60 relative",
+          { 'opacity-60 pointer-events-none': disabled },
+          { 'bg-transparent border border-zinc-300': bordered },
+          { 'bg-slate-200': !bordered }
+        ) }
+
+      >
         <select
-          className={ classNames(
-            "px-4 py-3 rounded-md w-full appearance-none pr-12 transition duration-300 focus:ring-2 ring-offset-2 ring-blue-800 ring-opacity-30",
-            { 'opacity-60 pointer-events-none': disabled },
-            { 'bg-transparent border border-gray-400': bordered },
-            { 'bg-slate-200': !bordered },
-          ) }
-          id={ id } { ...props } ref={ ref }
+          id={ id } { ...props } ref={ ref } className="mt-2 pb-2 w-full bg-transparent appearance-none peer" placeholder=" "
         >
           {
             loading
@@ -41,7 +42,18 @@ const Select = forwardRef((
         >
           <IconChevronDown/>
         </div>
-      </div>
+        {
+          !!label && (
+            <span
+              className={ classNames(
+                'text-sm inline-flex opacity-80 transition-all absolute px-5 left-0 top-1/2 -translate-y-1/2 peer-focus:top-4 peer-[:not(:placeholder-shown)]:top-4',
+              ) }
+            >
+              { label } { props.value }
+            </span>
+          )
+        }
+      </label>
       {
         !!error && <div className="text-sm text-red-500 mt-1">{ error }</div>
       }

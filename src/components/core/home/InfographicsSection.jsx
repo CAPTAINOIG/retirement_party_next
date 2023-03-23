@@ -1,5 +1,5 @@
 import React from "react";
-import { IconHeart, IconArrowRight } from "@tabler/icons-react";
+import { IconArrowRight, IconHeart } from "@tabler/icons-react";
 import Button from "@/components/global/Button.jsx";
 
 const InfographicsSection = () => {
@@ -9,12 +9,12 @@ const InfographicsSection = () => {
         <div className="container max-w-8xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative">
-              <div className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl bounceOne">
+              <div
+                className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl bounceOne"
+              >
                 <div className="col-span-1">
                   <img
-                    className="rounded-lg"
-                    src="https://i.ibb.co/j3TJWdh/NIGERIAN-WOMEN-WITH-ONE-OR-MORE-100.jpg"
-                    alt=""
+                    className="rounded-lg" alt="" src="https://i.ibb.co/j3TJWdh/NIGERIAN-WOMEN-WITH-ONE-OR-MORE-100.jpg"
                   />
                 </div>
                 <div className="col-span-3 flex flex-col justify-center">
@@ -23,17 +23,14 @@ const InfographicsSection = () => {
                   </p>
                   <span className="pt-2 text-[10px]">MAY 25, 2022</span>
                 </div>
-                <IconHeart
-                  className="mb-8 text-red-300 cursor-pointer absolute top-4 right-4"
-                  size="20"
-                />
+                <IconHeart className="mb-8 text-red-300 cursor-pointer absolute top-4 right-4" size="20"/>
               </div>
-              <div className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl  mt-[4rem] swerve-card-two bounceTwo">
+              <div
+                className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl mt-[3.5rem] swerve-card-two bounceTwo"
+              >
                 <div className="col-span-1">
                   <img
-                    className="rounded-lg"
-                    src="https://i.ibb.co/j3TJWdh/NIGERIAN-WOMEN-WITH-ONE-OR-MORE-100.jpg"
-                    alt=""
+                    className="rounded-lg" alt="" src="https://i.ibb.co/j3TJWdh/NIGERIAN-WOMEN-WITH-ONE-OR-MORE-100.jpg"
                   />
                 </div>
                 <div className="col-span-3 flex flex-col justify-center">
@@ -42,10 +39,7 @@ const InfographicsSection = () => {
                   </p>
                   <span className="pt-2 text-[10px]">MAY 25, 2022</span>
                 </div>
-                <IconHeart
-                  className="mb-8 text-red-300 cursor-pointer absolute top-4 right-4"
-                  size="20"
-                />
+                <IconHeart className="mb-8 text-red-300 cursor-pointer absolute top-4 right-4" size="20"/>
               </div>
             </div>
             <div className="relative -order-1 md:order-1">
@@ -68,44 +62,47 @@ const InfographicsSection = () => {
           </div>
         </div>
       </div>
-      <style jsx>{`
+      <style jsx>{ `
         .bounceOne {
           animation: bounceOne 2s ease infinite alternate;
         }
+
         .bounceTwo {
           animation: bounceTwo 2s ease infinite alternate;
         }
 
         @keyframes bounceOne {
           0% {
-            transform: translateY(0px) rotate(-3deg);
+            transform: translateY(0px) rotate(-2deg);
           }
 
           100% {
-            transform: translateY(-20px) rotate(-3deg);
+            transform: translateY(-20px) rotate(-2deg);
           }
         }
+
         @keyframes bounceTwo {
           0% {
-            transform: translateY(0px) rotate(4deg);
+            transform: translateY(0px) rotate(3deg);
           }
 
           100% {
-            transform: translateY(-20px) rotate(4deg);
+            transform: translateY(-20px) rotate(3deg);
           }
         }
-       .blocked-text{
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #1F2937;
-        -webkit-background-clip: text;
-        font-family: Khand, sans-serif;
-        font-weight: 700;
-        line-height: 1;
-        margin: auto;
-        text-align: center;
-       }
-      `}</style>
+
+        .blocked-text {
+          -webkit-text-fill-color: transparent;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: #1F2937;
+          -webkit-background-clip: text;
+          font-family: Khand, sans-serif;
+          font-weight: 700;
+          line-height: 1;
+          margin: auto;
+          text-align: center;
+        }
+      ` }</style>
     </>
   );
 };
