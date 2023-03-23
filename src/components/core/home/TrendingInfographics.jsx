@@ -2,7 +2,7 @@ import React from 'react';
 import { useGetInfographicsQuery } from "@/api/infographics.js";
 import InfographicCard from "@/components/core/shared/InfographicCard.jsx";
 
-const TopInsights = () => {
+const TrendingInfographics = () => {
   const { data = {}, isLoading: isInfographicsLoading } = useGetInfographicsQuery();
 
   const { infographics = [] } = data;
@@ -12,7 +12,7 @@ const TopInsights = () => {
       <div className="container max-w-8xl mx-auto">
         <div className="mx-auto max-w-4xl sm:text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-gray-900">
-            Trending insights
+            Trending infographics
           </h2>
           <p className="mt-4 text-base md:text-lg opacity-80">
             Browse through exclusive reporting that makes you smarter
@@ -56,4 +56,4 @@ const TopInsights = () => {
   );
 };
 
-export default TopInsights;
+export default TrendingInfographics;

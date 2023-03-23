@@ -9,16 +9,16 @@ import React from "react";
 import Newsletter from "@/components/core/home/Newsletter.jsx";
 import InfographicsSection from "@/components/core/home/InfographicsSection";
 import SwiperSection from "@/components/core/home/SwiperSection";
-import TopInsights from "@/components/core/home/TopInsights.jsx";
+import TrendingInfographics from "@/components/core/home/TrendingInfographics.jsx";
 
 const Home = () => {
   return (
     <div className="space-y-28 md:space-y-44">
       <Hero/>
+      <TrendingInfographics/>
       <ClientOnly>
         <Categories/>
       </ClientOnly>
-      <TopInsights/>
       <SocialCredit/>
       <Services/>
       <SwiperSection/>
