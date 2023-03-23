@@ -9,6 +9,7 @@ import React from "react";
 import Newsletter from "@/components/core/home/Newsletter.jsx";
 import InfographicsSection from "@/components/core/home/InfographicsSection";
 import SwiperSection from "@/components/core/home/SwiperSection";
+import TopInsights from "@/components/core/home/TopInsights.jsx";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <ClientOnly>
         <Categories/>
       </ClientOnly>
+      <TopInsights/>
       <SocialCredit/>
       <Services/>
       <SwiperSection/>
