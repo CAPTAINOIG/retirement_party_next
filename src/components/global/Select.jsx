@@ -38,9 +38,9 @@ const Select = forwardRef((
           }
         </select>
         <div
-          className="absolute top-1/2 -translate-y-1/2 right-2 w-8 h-8 rounded-md flex items-center justify-center pointer-events-none"
+          className="absolute bottom-1.5 right-2 w-8 h-8 rounded-md flex items-center justify-center pointer-events-none"
         >
-          <IconChevronDown/>
+          <IconChevronDown size="18"/>
         </div>
         {
           !!label && (

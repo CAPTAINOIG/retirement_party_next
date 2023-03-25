@@ -3,9 +3,6 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 
 const Input = forwardRef(({ label, rightIcon, id, error, disabled, bordered = false, ...props }, ref) => {
-
-  console.log({ props });
-
   return (
     <div className="flex flex-col">
       <label
