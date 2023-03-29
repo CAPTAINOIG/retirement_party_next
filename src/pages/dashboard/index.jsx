@@ -5,7 +5,6 @@ import DashboardTitle from "@/components/core/dashboard/shared/DashboardTitle.js
 import CreateBusiness from "@/components/core/dashboard/overview/CreateBusiness.jsx";
 import { IconBriefcase, IconCheck } from "@tabler/icons-react";
 import { useAuth } from "@/hooks/use-auth.js";
-import DashboardTitle from "@/components/core/dashboard/shared/DashboardTitle.jsx";
 
 const Overview = () => {
   const { user } = useAuth();
