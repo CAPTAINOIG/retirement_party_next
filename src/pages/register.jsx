@@ -5,6 +5,7 @@ import Input from "@/components/global/Input.jsx";
 import Button from "@/components/global/Button.jsx";
 import PasswordInput from "@/components/global/PasswordInput.jsx";
 import Checkbox from "@/components/global/Checkbox.jsx";
+import Select from "@/components/global/Select.jsx";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast.jsx";
@@ -63,6 +64,11 @@ const Login = () => {
                 label="Phone number" bordered
                 { ...register('phone', { required: 'Phone number is required' }) }
                 error={ errors?.phone?.message } disabled={ isSignupLoading }
+              />
+              <Select
+                label="Country" bordered options={ [{ text: 'Nigeria', value: 'NG' }] }
+                { ...register('country', { required: 'This field is required' }) }
+                error={ errors?.country?.message }
               />
               <PasswordInput
                 label="Password" bordered
