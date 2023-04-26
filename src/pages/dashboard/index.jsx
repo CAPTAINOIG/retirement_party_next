@@ -3,11 +3,15 @@ import requireAuth from "@/guards/require-auth.js";
 import DashboardLayout from "@/components/core/dashboard/shared/DashboardLayout.jsx";
 import DashboardTitle from "@/components/core/dashboard/shared/DashboardTitle.jsx";
 import CreateBusiness from "@/components/core/dashboard/overview/CreateBusiness.jsx";
-import { IconBriefcase, IconCheck } from "@tabler/icons-react";
+import { IconBriefcase, IconCheck, IconCircleCheckFilled, IconHourglass } from "@tabler/icons-react";
 import { useAuth } from "@/hooks/use-auth.js";
+import { useGetUserBusinesses } from "@/api/business.js";
 
 const Overview = () => {
   const { user } = useAuth();
+  const { data, isLoading } = useGetUserBusinesses();
+
+  const business = data?.businesses?.[0];
 
   return (
     <>
@@ -34,28 +38,52 @@ const Overview = () => {
               <h3 className="font-medium leading-tight">Setup your business</h3>
               <p className="text-sm mt-1">Provide details about your business</p>
             </li>
-            <li className="ml-8">
-              <div
-                className="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -left-4 ring-4 ring-white"
-              >
-                <svg aria-hidden="true" className="w-5 h-5 text-gray-500" fill="currentColor"
-                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
-                  <path
-                    fillRule="evenodd"
-                    d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd">
-                  </path>
-                </svg>
-              </div>
-              <h3 className="font-medium leading-tight">Confirmation</h3>
-              <p className="text-sm">Step details here</p>
-            </li>
           </ol>
         </div>
         <div className="md:col-span-8">
-          <CreateBusiness/>
+          {
+            isLoading ? (
+              <div className="bg-gray-100 rounded-xl w-full h-[300px]"></div>
+            ) : (
+              <>
+                {
+                  business ? (
+                    <>
+                      {
+                        business.status === 'pending' && (
+                          <div
+                            className="border border-gray-300 rounded-xl px-10 py-24 flex flex-col items-center justify-center text-center"
+                          >
+                            <IconHourglass size="72" className="text-orange-600"/>
+                            <h6 className="text-lg mt-8 font-semibold max-w-sl">Business verification pending</h6>
+                            <p className="max-w-sm mt-2">
+                              We are currently verifying your business information, you'll be notified via email when
+                              review is completed
+                            </p>
+                          </div>
+                        )
+                      }
+                      {
+                        business.status === 'verified' && (
+                          <div
+                            className="border border-gray-300 rounded-xl px-10 py-24 flex flex-col items-center justify-center text-center"
+                          >
+                            <IconCircleCheckFilled size="72" className="text-green-600"/>
+                            <h6 className="text-lg mt-8 font-semibold max-w-sl">Business verification successful</h6>
+                            <p className="max-w-sm mt-2">
+                              You business information has been successfully verified
+                            </p>
+                          </div>
+                        )
+                      }
+                    </>
+                  ) : (
+                    <CreateBusiness/>
+                  )
+                }
+              </>
+            )
+          }
         </div>
       </div>
     </>
