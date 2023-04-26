@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-const SimpleDropdown = ({ trigger, items }) => {
+const SimpleDropdown = ({ trigger, items, direction = 'bottom-right' }) => {
   const variants = {
     hidden: { y: '-10px', opacity: 0, },
     visible: {
@@ -30,12 +30,9 @@ const SimpleDropdown = ({ trigger, items }) => {
     <Menu>
       {
         ({ open }) => (
-          <div className={ classNames("relative inline-block z-10", { 'z-20': open }) }>
-            <Menu.Button>{ trigger }</Menu.Button>
-            <AnimatePresence
-              initial={ false }
-              mode="wait"
-            >
+          <div className={ classNames("relative block z-10", { 'z-20': open }) }>
+            <Menu.Button className="w-full">{ trigger }</Menu.Button>
+            <AnimatePresence initial={ false } mode="wait">
               {
                 open && (
                   <Menu.Items
@@ -45,7 +42,12 @@ const SimpleDropdown = ({ trigger, items }) => {
                     animate="visible"
                     exit="exit"
                     static
-                    className="absolute right-0 top-full mt-2 bg-white text-gray-900 shadow border p-2 rounded-xl flex flex-col z-50 min-w-[200px]"
+                    className={ classNames(
+                      'absolute bg-white text-gray-900 shadow border p-2 rounded-xl flex flex-col z-50 min-w-[200px]',
+                      { 'top-full right-0 mt-2': direction === 'bottom-right' },
+                      { 'bottom-full right-0 mb-2': direction === 'top-right' },
+                      { 'left-full bottom-0 ml-2': direction === 'right-bottom' },
+                    ) }
                   >
                     {
                       items.map((item, i) => (
