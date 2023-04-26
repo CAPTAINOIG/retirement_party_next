@@ -13,7 +13,7 @@ const TextArea = forwardRef(({ label, id, error, disabled, bordered = false, ...
       ) }
       >
         <textarea
-          id={ id } { ...props } ref={ ref } className="mt-2 pb-2 w-full bg-transparent peer leading-tight"
+          id={ id } { ...props } ref={ ref } className="mt-2 pb-2 w-full bg-transparent peer leading-tight resize-none"
           placeholder=" " rows="2"
         />
         {
