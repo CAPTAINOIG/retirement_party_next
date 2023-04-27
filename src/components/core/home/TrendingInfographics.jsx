@@ -9,7 +9,7 @@ const TrendingInfographics = () => {
 
   return (
     <div>
-      <div className="container max-w-8xl mx-auto">
+      <div className="container">
         <div className="mx-auto max-w-4xl sm:text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-gray-900">
             Trending infographics

@@ -30,7 +30,7 @@ const SwiperSection = () => {
   return (
     <>
       <div className="relative">
-        <div className="container max-w-8xl mx-auto">
+        <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <h2 className="text-4xl md:text-5xl font-medium leading-tight md:leading-[1.2]">

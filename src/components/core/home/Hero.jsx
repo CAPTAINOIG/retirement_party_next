@@ -28,7 +28,7 @@ const Hero = () => {
     <div
       className="pt-44 pb-32 md:pt-60 md:pb-40 text-center bg-[#11100f] pattern-2 rounded-[0_0_1000px_1000px/5%] relative"
     >
-      <div className="container max-w-7xl mx-auto">
+      <div className="container">
         <h1
           className="mx-auto max-w-4xl font-display text-6xl font-bold tracking-tight text-slate-300 sm:text-7xl md:text-8xl"
         >

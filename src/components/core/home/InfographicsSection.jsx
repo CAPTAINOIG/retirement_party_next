@@ -1,12 +1,12 @@
 import React from "react";
-import { IconHeart, IconArrowRight } from "@tabler/icons-react";
+import { IconArrowRight, IconHeart } from "@tabler/icons-react";
 import Button from "@/components/global/Button.jsx";
 
 const InfographicsSection = () => {
   return (
     <>
       <div className="relative">
-        <div className="container max-w-8xl mx-auto">
+        <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <h2 className="text-4xl md:text-5xl font-medium leading-tight md:leading-[1.2]">
@@ -20,13 +20,14 @@ const InfographicsSection = () => {
                 color="black"
                 className="mt-12"
                 size="lg"
-                rightIcon={<IconArrowRight />}
+                rightIcon={ <IconArrowRight/> }
               >
                 Get started
               </Button>
             </div>
             <div className="relative -order-1 md:-order-1">
-              <div className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl rotate-[357deg] bounceOne">
+              <div
+                className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl rotate-[357deg] bounceOne">
                 <div className="col-span-1">
                   <img
                     className="rounded-lg"
@@ -45,7 +46,8 @@ const InfographicsSection = () => {
                   size="20"
                 />
               </div>
-              <div className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl rotate-[4deg] mt-[4rem] swerve-card-two bounceTwo">
+              <div
+                className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl rotate-[4deg] mt-[4rem] swerve-card-two bounceTwo">
                 <div className="col-span-1">
                   <img
                     className="rounded-lg"
@@ -68,10 +70,11 @@ const InfographicsSection = () => {
           </div>
         </div>
       </div>
-      <style jsx>{`
+      <style jsx>{ `
         .bounceOne {
           animation: bounceOne 2s ease infinite alternate;
         }
+
         .bounceTwo {
           animation: bounceTwo 2s ease infinite alternate;
         }
@@ -85,6 +88,7 @@ const InfographicsSection = () => {
             transform: translateY(-20px) rotate(2deg);
           }
         }
+
         @keyframes bounceTwo {
           0% {
             transform: translateY(0px) rotate(-2deg);
@@ -94,18 +98,19 @@ const InfographicsSection = () => {
             transform: translateY(-20px) rotate(-2deg);
           }
         }
-       .blocked-text{
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #1F2937;
-        -webkit-background-clip: text;
-        font-family: Khand, sans-serif;
-        font-weight: 700;
-        line-height: 1;
-        margin: auto;
-        text-align: center;
-       }
-      `}</style>
+
+        .blocked-text {
+          -webkit-text-fill-color: transparent;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: #1F2937;
+          -webkit-background-clip: text;
+          font-family: Khand, sans-serif;
+          font-weight: 700;
+          line-height: 1;
+          margin: auto;
+          text-align: center;
+        }
+      ` }</style>
     </>
   );
 };

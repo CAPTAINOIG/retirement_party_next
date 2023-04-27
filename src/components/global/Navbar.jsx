@@ -42,7 +42,7 @@ const Navbar = () => {
         { 'bg-white/90 backdrop-blur-lg text-neutral-900 shadow !h-24': scrolled },
         { 'text-neutral-100': !scrolled },
       ) }>
-        <div className="container mx-auto h-full">
+        <div className="container h-full">
           <nav className="relative z-50 flex justify-between h-full">
             <div className="flex items-center md:gap-x-12 flex-1 h-full">
               <Link href="/" className="text-xl w-[220px]">

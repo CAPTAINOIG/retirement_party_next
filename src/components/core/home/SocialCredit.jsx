@@ -5,7 +5,7 @@ import { IconArrowRight, IconBrandFacebook, IconBrandLinkedin, IconBrandTwitter 
 const SocialCredit = () => {
   return (
     <>
-      <div className="container max-w-8xl mx-auto">
+      <div className="container">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="relative">
             <h2 className="text-4xl md:text-5xl font-medium leading-tight md:leading-[1.2]">
