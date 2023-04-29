@@ -38,6 +38,7 @@ const Verification = () => {
 
   const handleLogout = () => {
     logout();
+    window.location.reload();
   };
 
   return (

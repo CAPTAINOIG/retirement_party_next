@@ -47,7 +47,6 @@ export function useProvideAuth() {
   const logout = () => {
     localStorage.clear();
     sessionStorage.clear();
-    window.location.reload();
   };
 
   const updateUser = (user) => {
