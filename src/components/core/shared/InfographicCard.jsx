@@ -7,12 +7,12 @@ const InfographicCard = ({ infographic }) => {
   return (
     <div className="w-full overflow-hidden">
       <Link href={ `/infographics/${ infographic.category._id }/${ infographic._id }` } className="flex w-full">
-        <Image src={ infographic.image } alt={ infographic.title } className="rounded-xl h-60 w-full object-cover"/>
+        <Image src={ infographic.image } alt={ infographic.title } className="rounded-xl h-60 w-full object-cover border"/>
       </Link>
       <div className="mt-4 overflow-hidden">
-        <p className="opacity-90">{ formatDistance(new Date(), new Date(infographic.createdAt)) }</p>
+        <p className="opacity-70 mb-1 text-sm">{ formatDistance(new Date(), new Date(infographic.createdAt)) }</p>
         <Link href={ `/infographics/${ infographic.category._id }/${ infographic._id }` }>
-          <h5 className="font-medium text-xl mt-2">{ infographic.title }</h5>
+          <h5 className="font-medium text-xl">{ infographic.title }</h5>
         </Link>
         <p className="mt-2 text-ellipsis whitespace-nowrap overflow-hidden">
           { infographic.description }
