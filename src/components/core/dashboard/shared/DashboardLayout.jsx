@@ -12,6 +12,7 @@ const DashboardLayout = ({ children }) => {
 
   const handleLogout = () => {
     logout();
+    window.location.reload();
   };
 
   return (

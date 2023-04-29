@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import { useAuth } from "../hooks/use-auth.js";
-import Loader from "../components/global/Loader.jsx";
+import { useAuth } from "@/hooks/use-auth";
+import Loader from "@/components/global/Loader.jsx";
 
 // eslint-disable-next-line react/display-name
 const requireAuth = (Component, props) => () => {
