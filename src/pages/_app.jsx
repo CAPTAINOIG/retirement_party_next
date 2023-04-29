@@ -15,7 +15,13 @@ Router.events.on("routeChangeStart", () => NProgress.start());
 
 Router.events.on("routeChangeComplete", () => NProgress.done());
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 2
+    }
+  }
+});
 
 function MyApp({ Component, pageProps }) {
   const handleResize = useCallback(() => {
