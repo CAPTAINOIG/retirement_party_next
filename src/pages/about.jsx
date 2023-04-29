@@ -19,8 +19,7 @@ const About = () => {
             </p>
             <p>
               We are a trusted analytics company with a brilliant team of analysts. We seek to inspire through
-              knowledge
-              that empowers our clients to create actionable strategies that drive positive results.
+              knowledge that empowers our clients to create actionable strategies that drive positive results.
             </p>
           </div>
         </div>
