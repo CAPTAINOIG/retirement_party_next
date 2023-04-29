@@ -37,7 +37,7 @@ const SearchResults = ({ query }) => {
                     <div className="grid md:grid-cols-3 gap-8">
                       {
                         infographics?.map?.((infographic) => (
-                          <InfographicCard key={ infographic.id } infographic={ infographic }/>
+                          <InfographicCard key={ infographic._id } infographic={ infographic }/>
                         ))
                       }
                     </div>

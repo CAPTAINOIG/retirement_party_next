@@ -90,8 +90,8 @@ const CreateBusiness = () => {
                     { value: "NG-COOP", text: 'Cooperative Society' },
                   ]
                 }
-                { ...register('registration_type', { required: 'This field is required' }) }
-                error={ errors?.registration_type?.message } disabled={ isCreateLoading }
+                { ...register('registrationType', { required: 'This field is required' }) }
+                error={ errors?.registrationType?.message } disabled={ isCreateLoading }
               />
               <Select
                 label="Registration year" bordered
@@ -100,14 +100,14 @@ const CreateBusiness = () => {
                     { value: "2000", text: '2000' },
                   ]
                 }
-                { ...register('registration_year', { required: 'This field is required' }) }
-                error={ errors?.registration_year?.message } disabled={ isCreateLoading }
+                { ...register('registrationYear', { required: 'This field is required' }) }
+                error={ errors?.registrationYear?.message } disabled={ isCreateLoading }
               />
             </div>
             <Input
               label="RC number" bordered
-              { ...register('rc_number', { required: 'This field is required' }) }
-              error={ errors?.rc_number?.message } disabled={ isCreateLoading }
+              { ...register('rcNumber', { required: 'This field is required' }) }
+              error={ errors?.rcNumber?.message } disabled={ isCreateLoading }
             />
           </div>
           <Button type="submit" className="mt-10" loading={ isCreateLoading }>Create business</Button>

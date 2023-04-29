@@ -17,7 +17,7 @@ const InfographicDetails = () => {
     <>
       <PageHeader
         title={ infographic?.title }
-        onBack={ () => router.push(`/infographics/${ infographic.category.id }`) }
+        onBack={ () => router.push(`/infographics/${ infographic.category._id }`) }
         backText={ infographic?.category?.name || 'Back' }
         isLoading={ isInfographicLoading }
       />
@@ -37,7 +37,7 @@ const InfographicDetails = () => {
                 <div className="mt-10">
                   <div className="flex items-center opacity-70 mb-6">
                     <IconClock className="mr-2" size="18"/>
-                    <p>Date posted: { format(new Date(infographic.created_at), 'MMM dd, yyyy') }</p>
+                    <p>Date posted: { format(new Date(infographic.createdAt), 'MMM dd, yyyy') }</p>
                   </div>
                   <p>
                     { infographic.description }

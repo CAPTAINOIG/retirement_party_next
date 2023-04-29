@@ -54,11 +54,11 @@ const DashboardLayout = ({ children }) => {
                 ) }
               >
                 <img
-                  src={ `https://ui-avatars.com/api/?name=${ user.first_name } ${ user.last_name }` }
-                  className="w-8 h-8 rounded-full" alt={ `${ user.first_name } ${ user.last_name }` }
+                  src={ `https://ui-avatars.com/api/?name=${ user.firstName } ${ user.lastName }` }
+                  className="w-8 h-8 rounded-full" alt={ `${ user.firstName } ${ user.lastName }` }
                 />
                 <div className="text-left">
-                  <div className="leading-none">{ user.first_name } { user.last_name }</div>
+                  <div className="leading-none">{ user.firstName } { user.lastName }</div>
                   <div className="text-sm opacity-75 leading-none mt-1">{ user.email }</div>
                 </div>
               </div>

@@ -138,10 +138,10 @@ const Navbar = () => {
                             ) }
                           >
                             <img
-                              src={ `https://ui-avatars.com/api/?name=${ user.first_name } ${ user.last_name }` }
-                              className="w-8 h-8 rounded-full" alt={ `${ user.first_name } ${ user.last_name }` }
+                              src={ `https://ui-avatars.com/api/?name=${ user.firstName } ${ user.lastName }` }
+                              className="w-8 h-8 rounded-full" alt={ `${ user.firstName } ${ user.lastName }` }
                             />
-                            <div>{ user.first_name } { user.last_name }</div>
+                            <div>{ user.firstName } { user.lastName }</div>
                           </div>
                         }
                         items={ [

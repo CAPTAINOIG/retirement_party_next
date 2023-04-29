@@ -8,7 +8,7 @@ import InfographicCard from "@/components/core/shared/InfographicCard.jsx";
 const Category = () => {
   const router = useRouter();
   const { category: id } = router.query;
-  const { data: { category = null, total_infographics } = {}, isLoading: isCategoryLoading } = useGetCategoryQuery(id);
+  const { data: { category = null } = {}, isLoading: isCategoryLoading } = useGetCategoryQuery(id);
   const { data = {}, isLoading: isInfographicsLoading } = useGetInfographicsQuery({ category: id });
 
   const { infographics = [] } = data;
@@ -17,7 +17,7 @@ const Category = () => {
     <>
       <PageHeader
         title={ `${ category?.name }` }
-        subtitle={ `${ total_infographics } infographic(s)` }
+        subtitle={ `${ category?.totalInfographics } infographic(s)` }
         onBack={ () => router.push('/infographics') }
         backText="Categories"
         isLoading={ isCategoryLoading }
@@ -44,7 +44,7 @@ const Category = () => {
                     <div className="grid md:grid-cols-3 gap-8">
                       {
                         infographics?.map?.((infographic) => (
-                          <InfographicCard key={ infographic.id } infographic={ infographic }/>
+                          <InfographicCard key={ infographic._id } infographic={ infographic }/>
                         ))
                       }
                     </div>

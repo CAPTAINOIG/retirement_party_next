@@ -13,7 +13,7 @@ import { useSendEmailVerificationOtp, useSignupMutation } from "@/api/auth.js";
 import { useAuth } from "@/hooks/use-auth.js";
 import requireNoAuth from "@/guards/require-no-auth.js";
 
-const Login = () => {
+const Register = () => {
   const toast = useToast();
   const { authenticate } = useAuth();
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -46,13 +46,13 @@ const Login = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <Input
                   label="First name" bordered
-                  { ...register('first_name', { required: 'First name is required' }) }
-                  error={ errors?.first_name?.message } disabled={ isSignupLoading }
+                  { ...register('firstName', { required: 'First name is required' }) }
+                  error={ errors?.firstName?.message } disabled={ isSignupLoading }
                 />
                 <Input
                   label="Last name" bordered
-                  { ...register('last_name', { required: 'Last name is required' }) }
-                  error={ errors?.last_name?.message } disabled={ isSignupLoading }
+                  { ...register('lastName', { required: 'Last name is required' }) }
+                  error={ errors?.lastName?.message } disabled={ isSignupLoading }
                 />
               </div>
               <Input
@@ -94,6 +94,6 @@ const Login = () => {
   );
 };
 
-Login.Layout = DefaultLayout;
+Register.Layout = DefaultLayout;
 
-export default requireNoAuth(Login);
+export default requireNoAuth(Register);

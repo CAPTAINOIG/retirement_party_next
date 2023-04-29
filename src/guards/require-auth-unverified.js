@@ -9,12 +9,12 @@ export const requireAuthUnverified = (Component, props) => () => {
 
   useEffect(() => {
     if (resolved && !authenticated) router.replace(`/login`);
-    if (resolved && authenticated && user && user.email_verified) {
+    if (resolved && authenticated && user && user.emailVerified) {
       router.replace(router.query?.from ?? '/dashboard');
     }
   }, [resolved, authenticated, user, router]);
 
-  if (resolved && authenticated && !user.email_verified) {
+  if (resolved && authenticated && !user.emailVerified) {
     return (
       Component.Layout ? (
         <Component.Layout>

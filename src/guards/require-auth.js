@@ -12,12 +12,12 @@ const requireAuth = (Component, props) => () => {
     if (resolved && !authenticated) {
       router.replace(`/login?from=${ router.asPath }`);
     }
-    if (resolved && authenticated && user && !user.email_verified) {
+    if (resolved && authenticated && user && !user.emailVerified) {
       router.push(`/verification?from=${ router.asPath }`);
     }
   }, [resolved, authenticated, user, router]);
 
-  if (resolved && authenticated && user?.email_verified) return (
+  if (resolved && authenticated && user?.emailVerified) return (
     Component.Layout ? (
       <Component.Layout>
         <Component { ...props }/>

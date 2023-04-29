@@ -4,7 +4,7 @@ import Image from "@/components/core/shared/Image.jsx";
 
 const CategoryCard = ({ category }) => {
   return (
-    <Link href={ `/infographics/${ category.id }` }>
+    <Link href={ `/infographics/${ category._id }` }>
       <div
         className="text-white rounded-xl overflow-hidden hover:brightness-125 transition-all cursor-pointer relative isolate"
       >
@@ -15,7 +15,7 @@ const CategoryCard = ({ category }) => {
         <div className="relative bg-black bg-opacity-50 px-12 py-10">
           <h3 className="text-[1.6rem] font-medium leading-tight">{ category.name }</h3>
           <p className="text-[1.1rem] opacity-70">
-            1000+ insights
+            { category.totalInfographics } infographics
           </p>
         </div>
       </div>

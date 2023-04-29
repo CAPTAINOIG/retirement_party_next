@@ -15,7 +15,7 @@ const Overview = () => {
 
   return (
     <>
-      <DashboardTitle text={ `Hi ${ user.first_name }` }></DashboardTitle>
+      <DashboardTitle text={ `Hi ${ user.firstName }` }></DashboardTitle>
 
       <div className="grid md:grid-cols-12 gap-16 md:gap-10">
         <div className="md:col-span-4">
