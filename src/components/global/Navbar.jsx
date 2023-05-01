@@ -46,8 +46,8 @@ const Navbar = () => {
         <div className="container h-full">
           <nav className="relative z-50 flex justify-between h-full">
             <div className="flex items-center md:gap-x-12 flex-1 h-full">
-              <Link href="/" className="text-xl w-[220px]">
-                Logo
+              <Link href="/" className="text-xl w-[170px]">
+                <img src={ scrolled ? '/images/light.svg' : '/images/dark.svg' } alt="logo"/>
               </Link>
               <div className="hidden lg:flex md:space-x-3 mx-auto h-full">
                 <Link href="/about" className="inline-flex items-center rounded-full py-1 px-4">
