@@ -16,7 +16,7 @@ const Services = () => {
         <div className="space-y-8">
           <ul role="list" className="mt-16 grid md:grid-cols-3 gap-8">
             <li className="rounded-xl bg-slate-700/30 px-10 py-14">
-              <IconSchool className="mb-8 text-blue-300/60" size="40"/>
+              <IconSchool className="mb-8 text-primary-300/60" size="40"/>
               <h3 className="font-semibold text-xl">
                 Training
               </h3>
@@ -26,7 +26,7 @@ const Services = () => {
               </p>
             </li>
             <li className="rounded-xl bg-slate-700/30 px-10 py-14">
-              <IconMap className="mb-8 text-blue-300/60" size="40"/>
+              <IconMap className="mb-8 text-primary-300/60" size="40"/>
               <h3 className="font-semibold text-xl">
                 Survey research
               </h3>
@@ -37,7 +37,7 @@ const Services = () => {
               </p>
             </li>
             <li className="rounded-xl bg-slate-700/30 px-10 py-14">
-              <IconDatabase className="mb-8 text-blue-300/60" size="40"/>
+              <IconDatabase className="mb-8 text-primary-300/60" size="40"/>
               <h3 className="font-semibold text-xl">
                 Evidence Based Advocacy
               </h3>
@@ -49,7 +49,7 @@ const Services = () => {
           </ul>
           <ul role="list" className="grid md:grid-cols-2 gap-8">
             <li className="rounded-xl bg-slate-700/30 px-10 py-14">
-              <IconPhoneCall className="mb-8 text-blue-300/60" size="40"/>
+              <IconPhoneCall className="mb-8 text-primary-300/60" size="40"/>
               <h3 className="font-semibold text-xl">
                 Consultancy Services
               </h3>
@@ -59,7 +59,7 @@ const Services = () => {
               </p>
             </li>
             <li className="rounded-xl bg-slate-700/30 px-10 py-14">
-              <IconChartInfographic className="mb-8 text-blue-300/60" size="40"/>
+              <IconChartInfographic className="mb-8 text-primary-300/60" size="40"/>
               <h3 className="font-semibold text-xl">
                 Infographics and Visualization
               </h3>

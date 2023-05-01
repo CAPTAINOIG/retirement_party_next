@@ -17,7 +17,7 @@ const FileInput = forwardRef((
       <div className="relative flex">
         <label
           className={ classNames(
-            "cursor-pointer px-4 py-2 rounded-md w-full transition duration-300 pr-12 focus-within:ring-2 ring-offset-2 ring-blue-800 ring-opacity-30",
+            "cursor-pointer px-4 py-2 rounded-md w-full transition duration-300 pr-12 focus-within:ring-2 ring-offset-2 ring-primary-800 ring-opacity-30",
             { 'opacity-60 pointer-events-none': disabled },
             { 'bg-transparent border border-gray-400': bordered },
             { 'bg-slate-200': !bordered }

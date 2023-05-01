@@ -10,13 +10,13 @@ const Footer = () => {
             <div>
               <p className="text-base font-medium">Products</p>
               <div className="flex flex-col mt-6 space-y-4">
-                <Link href="/infographics" className="opacity-70 hover:text-blue-300">
+                <Link href="/infographics" className="opacity-70 hover:text-primary-300">
                   Infographics
                 </Link>
-                <Link href="/credibility" className="opacity-70 hover:text-blue-300">
+                <Link href="/credibility" className="opacity-70 hover:text-primary-300">
                   Credibility
                 </Link>
-                <Link href="/analysis" className="opacity-70 hover:text-blue-300">
+                <Link href="/analysis" className="opacity-70 hover:text-primary-300">
                   Analysis
                 </Link>
               </div>
@@ -24,10 +24,10 @@ const Footer = () => {
             <div>
               <p className="text-base font-medium">The Company</p>
               <div className="flex flex-col mt-6 space-y-4">
-                <Link href="/about" className="opacity-70 hover:text-blue-300">
+                <Link href="/about" className="opacity-70 hover:text-primary-300">
                   About us
                 </Link>
-                <Link href="/careers" className="opacity-70 hover:text-blue-300">
+                <Link href="/careers" className="opacity-70 hover:text-primary-300">
                   Careers
                 </Link>
               </div>
@@ -35,10 +35,10 @@ const Footer = () => {
             <div>
               <p className="text-base font-medium">Help</p>
               <div className="flex flex-col mt-6 space-y-4">
-                <Link href="/faq" className="opacity-70 hover:text-blue-300">
+                <Link href="/faq" className="opacity-70 hover:text-primary-300">
                   FAQs
                 </Link>
-                <Link href="/help" className="opacity-70 hover:text-blue-300">
+                <Link href="/help" className="opacity-70 hover:text-primary-300">
                   Contact Us
                 </Link>
               </div>
@@ -48,8 +48,8 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 items-start sm:items-center sm:space-x-8">
               <div>&copy; Statisense, 2023 All rights reserved</div>
-              <Link href="/terms" className="hover:text-blue-400">Terms & Conditions</Link>
-              <Link href="/policy" className="hover:text-blue-400">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-primary-400">Terms & Conditions</Link>
+              <Link href="/policy" className="hover:text-primary-400">Privacy Policy</Link>
             </div>
             <div className="flex items-center space-x-6 mt-8 md:mt-0">
               <a

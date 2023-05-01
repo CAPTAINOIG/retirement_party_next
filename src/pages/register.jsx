@@ -81,8 +81,8 @@ const Register = () => {
               disabled={ isSignupLoading }
             >
               I agree to Statisense&apos;s
-              <Link href="/" className="text-blue-600"> terms and conditions</Link> and
-              <Link href="/" className="text-blue-600"> privacy policy</Link>
+              <Link href="/" className="text-primary-600"> terms and conditions</Link> and
+              <Link href="/" className="text-primary-600"> privacy policy</Link>
             </Checkbox>
             <Button type="submit" className="mt-10" size="lg" loading={ isSignupLoading }>
               Register

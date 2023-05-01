@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-const Loader = ({ text, size = 'md', className = 'bg-blue-600' }) => {
+const Loader = ({ text, size = 'md', className = 'bg-primary-600' }) => {
   return (
     <>
       <div

@@ -92,7 +92,8 @@ const Navbar = () => {
                                 >
                                   <div className="mr-4">
                                     <div
-                                      className="w-10 h-10 rounded-full flex items-center justify-center bg-blue-500 text-white">
+                                      className="w-10 h-10 rounded-full flex items-center justify-center bg-primary-500 text-white"
+                                    >
                                       <IconChartArcs3 size="20"/>
                                     </div>
                                   </div>

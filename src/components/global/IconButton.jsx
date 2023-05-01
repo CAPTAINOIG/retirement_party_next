@@ -5,14 +5,14 @@ import Loader from "./Loader.jsx";
 
 const classes = {
   primary: {
-    filled: 'bg-blue-800 hover:bg-blue-900 text-white focus:ring-4 focus:ring-blue-600 focus:ring-opacity-20',
-    outlined: 'border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-4 focus:ring-blue-600 focus:ring-opacity-20',
-    subtle: 'bg-blue-600 bg-opacity-10 text-blue-600 hover:bg-opacity-20',
-    text: 'bg-blue-600 bg-opacity-0 text-blue-600 hover:bg-opacity-10',
+    filled: 'bg-primary-600 hover:bg-primary-700 text-white focus:ring-4 focus:ring-primary-600 focus:ring-opacity-20',
+    outlined: 'border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-4 focus:ring-primary-600 focus:ring-opacity-20',
+    subtle: 'bg-primary-600 bg-opacity-10 text-primary-600 hover:bg-opacity-20',
+    text: 'bg-primary-600 bg-opacity-0 text-primary-600 hover:bg-opacity-10',
     loader: {
       filled: 'bg-white',
-      outlined: 'bg-blue-600',
-      text: 'bg-blue-600',
+      outlined: 'bg-primary-600',
+      text: 'bg-primary-600',
     }
   },
   accent: {

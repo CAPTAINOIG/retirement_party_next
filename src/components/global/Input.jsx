@@ -7,7 +7,7 @@ const Input = forwardRef(({ label, rightIcon, id, error, disabled, bordered = fa
     <div className="flex flex-col">
       <label
         className={ classNames(
-          "pt-5 px-5 rounded-xl w-full transition duration-300 focus-within:ring-2 ring-offset-[3px] ring-blue-800 ring-opacity-60 relative",
+          "pt-5 px-5 rounded-xl w-full transition duration-300 focus-within:ring-2 ring-offset-[3px] ring-primary-800 ring-opacity-60 relative",
           { 'opacity-60 pointer-events-none': disabled },
           { 'bg-transparent border border-zinc-300': bordered },
           { 'bg-slate-200': !bordered }

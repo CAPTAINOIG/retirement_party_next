@@ -22,7 +22,7 @@ const Collapsible = ({ header, content }) => {
         <div
           className={ classNames(
             "w-8 h-8 rounded-full border flex items-center justify-center",
-            { 'bg-blue-700 text-white border-0': expanded }
+            { 'bg-primary-700 text-white border-0': expanded }
           ) }>
           <IconChevronRight
             size="20"
