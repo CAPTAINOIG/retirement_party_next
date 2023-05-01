@@ -14,7 +14,7 @@ export const useGetInfographicQuery = (id) => {
   return useQuery(['infographics', id], async () => {
     const res = await http.get(`/infographic/${ id }`);
     return res.data
-  });
+  }, { enabled: !!id });
 };
 
 export const useGetCategoriesQuery = () => {
@@ -28,5 +28,5 @@ export const useGetCategoryQuery = (id) => {
   return useQuery(['categories', id], async () => {
     const res = await http.get(`/category/${ id }`);
     return res.data
-  });
+  }, { enabled: !!id });
 };
