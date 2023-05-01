@@ -31,7 +31,7 @@ const Infographics = () => {
           {
             isCategoriesLoading ? (
               <>
-                <div className="grid grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-3 gap-8">
                   <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
                   <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
                   <div className="bg-zinc-200 w-full h-32 rounded-xl"/>

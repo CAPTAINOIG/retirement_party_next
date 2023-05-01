@@ -39,7 +39,7 @@ const Hero = () => {
           Our data services deliver insights for better business intelligence
         </p>
       </div>
-      <HeroSearch className="mt-16"/>
+      <HeroSearch className="mt-10 md:mt-16"/>
     </div>
   );
 };

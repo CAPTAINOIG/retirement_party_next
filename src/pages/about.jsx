@@ -9,9 +9,9 @@ const About = () => {
   return (
     <>
       <PageHeader title="About us" append={ <div className="h-4"></div> }/>
-      <div className="space-y-28 md:space-y-44 mt-24 lg:mt-28">
+      <div className="space-y-28 md:space-y-44 mt-16 md:mt-24 lg:mt-28">
         <div className="container">
-          <div className="max-w-xl mx-auto text-center text-xl leading-relaxed">
+          <div className="max-w-xl mx-auto text-center text-lg md:text-xl leading-relaxed">
             <p>
               StatiSense is a data consulting firm with expertise in providing data services such as Analytics,
               Research, Reporting, Measurement & Evaluation, and Training to individuals, private organizations, and

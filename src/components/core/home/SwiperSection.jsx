@@ -6,6 +6,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { IconBookmark } from "@tabler/icons-react";
 
+SwiperCore.use([Autoplay]);
+
 const SwiperSection = () => {
   const infographics = [
     {
@@ -29,10 +31,10 @@ const SwiperSection = () => {
       category: "IGR"
     },
   ];
-  SwiperCore.use([Autoplay]);
+
   return (
     <>
-      <div className="relative">
+      <div className="relative hidden md:block">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative">

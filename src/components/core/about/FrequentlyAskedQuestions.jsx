@@ -15,15 +15,15 @@ const FAQ = () => {
           <div className="space-y-4 lg:col-span-7">
             {
               faqs.map(faq => (
-                <div key={ faq.q } className="border border-slate-200 rounded-xl px-6">
+                <div key={ faq.q } className="border border-slate-200 rounded-xl">
                   <Collapsible
                     header={ (
-                      <h5 className="text-lg py-5 font-medium">
+                      <h5 className="md:text-lg py-5 px-6 font-medium">
                         { faq.q }
                       </h5>
                     ) }
                     content={ (
-                      <div className="opacity-80 pb-6">
+                      <div className="opacity-80 pb-6 px-6">
                         { faq.a }
                       </div>
                     ) }

@@ -14,7 +14,7 @@ const InfographicCard = ({ infographic }) => {
         <Link href={ `/infographics/${ infographic.category._id }/${ infographic._id }` }>
           <h5 className="font-medium text-xl">{ infographic.title }</h5>
         </Link>
-        <p className="mt-2 text-ellipsis whitespace-nowrap overflow-hidden">
+        <p className="mt-1 text-ellipsis whitespace-nowrap overflow-hidden">
           { infographic.description }
         </p>
       </div>

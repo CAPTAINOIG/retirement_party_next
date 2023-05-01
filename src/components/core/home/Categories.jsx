@@ -10,19 +10,19 @@ const Categories = () => {
 
   return (
     <div>
-      <div className="mx-auto max-w-4xl sm:text-center mb-16">
+      <div className="mx-auto max-w-4xl sm:text-center mb-12 md:mb-16">
         <div className="container">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-gray-900">
-            Discover the future of your market
+            Browse popular topics
           </h2>
           <p className="mt-4 text-base md:text-lg opacity-80">
-            Browse through exclusive reporting that makes you smarter
+            Starting point of your research
           </p>
         </div>
       </div>
       {
         isCategoriesLoading ? (
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {
               Array(2).fill(null).map((_, i) => (
                 <div key={ i }>

@@ -16,101 +16,55 @@ const InfographicsSection = () => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Deleniti eveniet harum omnis possimus sit tempora unde!
               </p>
-              <Button
-                color="black"
-                className="mt-12"
-                size="lg"
-                rightIcon={ <IconArrowRight/> }
-              >
+              <Button color="black" className="mt-12" size="lg" rightIcon={ <IconArrowRight/> }>
                 Get started
               </Button>
             </div>
             <div className="relative -order-1 md:-order-1">
-              <div
-                className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl rotate-[357deg] bounceOne">
-                <div className="col-span-1">
-                  <img
-                    className="rounded-lg"
-                    src="https://i.ibb.co/j3TJWdh/NIGERIAN-WOMEN-WITH-ONE-OR-MORE-100.jpg"
-                    alt=""
+              <div className="md:rotate-[-1deg]">
+                <div
+                  className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl animate-[bounce_2s_ease-in-out_alternate_infinite]"
+                >
+                  <div className="col-span-1">
+                    <img
+                      src="https://i.ibb.co/j3TJWdh/NIGERIAN-WOMEN-WITH-ONE-OR-MORE-100.jpg"
+                      className="rounded-lg" alt="infographic"
+                    />
+                  </div>
+                  <div className="col-span-3 flex flex-col justify-center">
+                    <p>Nigerian economy is growing, Nigerian people are groaning...</p>
+                    <span className="pt-2 text-[10px]">MAY 25, 2022</span>
+                  </div>
+                  <IconHeart
+                    className="mb-8 text-red-300 cursor-pointer absolute top-4 right-4"
+                    size="20"
                   />
                 </div>
-                <div className="col-span-3 flex flex-col justify-center">
-                  <p>
-                    Nigerian economy is growing, Nigerian people are groaning...
-                  </p>
-                  <span className="pt-2 text-[10px]">MAY 25, 2022</span>
-                </div>
-                <IconHeart
-                  className="mb-8 text-red-300 cursor-pointer absolute top-4 right-4"
-                  size="20"
-                />
               </div>
-              <div
-                className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl rotate-[4deg] mt-[4rem] swerve-card-two bounceTwo">
-                <div className="col-span-1">
-                  <img
-                    className="rounded-lg"
-                    src="https://i.ibb.co/j3TJWdh/NIGERIAN-WOMEN-WITH-ONE-OR-MORE-100.jpg"
-                    alt=""
+              <div className="md:rotate-[2deg] mt-10 md:mt-12">
+                <div
+                  className="relative grid grid-cols-5 gap-4 border border-gray-100 shadow-md p-4 bg-transparent rounded-2xl animate-[bounce_2.5s_ease-in-out_alternate_infinite]"
+                >
+                  <div className="col-span-1">
+                    <img
+                      src="https://i.ibb.co/j3TJWdh/NIGERIAN-WOMEN-WITH-ONE-OR-MORE-100.jpg"
+                      className="rounded-lg" alt="infographic"
+                    />
+                  </div>
+                  <div className="col-span-3 flex flex-col justify-center">
+                    <p>Nigerian economy is growing, Nigerian people are groaning...</p>
+                    <span className="pt-2 text-[10px]">MAY 25, 2022</span>
+                  </div>
+                  <IconHeart
+                    className="mb-8 text-red-300 cursor-pointer absolute top-4 right-4"
+                    size="20"
                   />
                 </div>
-                <div className="col-span-3 flex flex-col justify-center">
-                  <p>
-                    Nigerian economy is growing, Nigerian people are groaning...
-                  </p>
-                  <span className="pt-2 text-[10px]">MAY 25, 2022</span>
-                </div>
-                <IconHeart
-                  className="mb-8 text-red-300 cursor-pointer absolute top-4 right-4"
-                  size="20"
-                />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <style jsx>{ `
-        .bounceOne {
-          animation: bounceOne 2s ease infinite alternate;
-        }
-
-        .bounceTwo {
-          animation: bounceTwo 2s ease infinite alternate;
-        }
-
-        @keyframes bounceOne {
-          0% {
-            transform: translateY(0px) rotate(2deg);
-          }
-
-          100% {
-            transform: translateY(-20px) rotate(2deg);
-          }
-        }
-
-        @keyframes bounceTwo {
-          0% {
-            transform: translateY(0px) rotate(-2deg);
-          }
-
-          100% {
-            transform: translateY(-20px) rotate(-2deg);
-          }
-        }
-
-        .blocked-text {
-          -webkit-text-fill-color: transparent;
-          -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: #1F2937;
-          -webkit-background-clip: text;
-          font-family: Khand, sans-serif;
-          font-weight: 700;
-          line-height: 1;
-          margin: auto;
-          text-align: center;
-        }
-      ` }</style>
     </>
   );
 };

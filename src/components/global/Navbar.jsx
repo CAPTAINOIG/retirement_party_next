@@ -214,7 +214,7 @@ const Navbar = () => {
                   Sign in
                 </Link>
                 <Link
-                  onClick={ () => setIsMobileNavVisible(false) } href="/login"
+                  onClick={ () => setIsMobileNavVisible(false) } href="/register"
                   className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
                 >
                   Sign up

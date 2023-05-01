@@ -10,17 +10,17 @@ const TrendingInfographics = () => {
   return (
     <div>
       <div className="container">
-        <div className="mx-auto max-w-4xl sm:text-center mb-16">
+        <div className="mx-auto max-w-4xl sm:text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-gray-900">
-            Trending infographics
+            Trending statistics
           </h2>
           <p className="mt-4 text-base md:text-lg opacity-80">
-            Browse through exclusive reporting that makes you smarter
+            Get facts and insights on topics that matter
           </p>
         </div>
         {
           isInfographicsLoading ? (
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-10">
               {
                 Array(3).fill(null).map((_, i) =>
                   <div key={ i }>

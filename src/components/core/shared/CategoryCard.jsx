@@ -12,8 +12,10 @@ const CategoryCard = ({ category }) => {
           src={ category.image } alt={ category.name }
           className="absolute inset-0 z-[-1] object-cover w-full h-full"
         />
-        <div className="relative bg-black bg-opacity-50 px-12 py-10">
-          <h3 className="text-[1.6rem] font-medium leading-tight">{ category.name }</h3>
+        <div className="relative bg-black bg-opacity-50 px-8 md:px-12 py-8 md:py-10">
+          <h3 className="text-[1.6rem] font-medium leading-tight text-ellipsis overflow-hidden whitespace-nowrap">
+            { category.name }
+          </h3>
           <p className="text-[1.1rem] opacity-70">
             { category.totalInfographics } infographics
           </p>
