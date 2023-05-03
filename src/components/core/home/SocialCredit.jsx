@@ -4,7 +4,7 @@ import { IconArrowRight, IconBrandFacebook, IconBrandLinkedin, IconBrandTwitter 
 
 const SocialCredit = () => {
   return (
-    <>
+    <div className="overflow-hidden">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="relative">
@@ -310,7 +310,7 @@ const SocialCredit = () => {
           }
         }
       ` }</style>
-    </>
+    </div>
   );
 };
 
