@@ -9,7 +9,7 @@
 
 html,
 body {
-  @apply bg-white overflow-x-hidden w-full
+  @apply bg-white w-full
 }
 
 :root {
@@ -50,7 +50,7 @@ body {
 }
 
 .capitalize-first:first-letter {
-  text-transform: uppercase;
+  @apply uppercase
 }
 
 .swiper-slide {

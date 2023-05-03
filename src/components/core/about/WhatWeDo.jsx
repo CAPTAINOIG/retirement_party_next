@@ -7,7 +7,7 @@ const WhatWeDo = () => {
       <section aria-label="Our services" className="container">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4 relative">
-            <div className="sticky top-10 text-center lg:text-left">
+            <div className="sticky top-36 text-center lg:text-left">
               <h2 className="text-4xl md:text-5xl font-medium tracking-tight">
                 What we do
               </h2>
