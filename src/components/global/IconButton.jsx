@@ -4,50 +4,6 @@ import classNames from "classnames";
 import Loader from "./Loader.jsx";
 
 const classes = {
-  primary: {
-    filled: 'bg-primary-600 hover:bg-primary-700 text-white focus:ring-4 focus:ring-primary-600 focus:ring-opacity-20',
-    outlined: 'border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-4 focus:ring-primary-600 focus:ring-opacity-20',
-    subtle: 'bg-primary-600 bg-opacity-10 text-primary-600 hover:bg-opacity-20',
-    text: 'bg-primary-600 bg-opacity-0 text-primary-600 hover:bg-opacity-10',
-    loader: {
-      filled: 'bg-white',
-      outlined: 'bg-primary-600',
-      text: 'bg-primary-600',
-    }
-  },
-  accent: {
-    filled: 'bg-orange-300 hover:bg-orange-400 text-black focus:ring-4 focus:ring-orange-600 focus:ring-opacity-20',
-    outlined: 'border border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white focus:ring-4 focus:ring-orange-600 focus:ring-opacity-20',
-    subtle: 'bg-orange-500 bg-opacity-10 text-orange-600 hover:bg-opacity-20',
-    text: 'bg-orange-500 bg-opacity-0 text-orange-600 hover:bg-opacity-10',
-    loader: {
-      filled: 'bg-white',
-      outlined: 'bg-orange-500',
-      text: 'bg-orange-500',
-    }
-  },
-  white: {
-    filled: 'bg-slate-100 hover:bg-slate-200 text-gray-800 focus:ring-4 focus:ring-slate-100 focus:ring-opacity-20',
-    outlined: 'border border-slate-100 text-slate-100 hover:bg-slate-200 hover:text-gray-800 focus:ring-4 focus:ring-slate-100 focus:ring-opacity-20',
-    subtle: 'bg-slate-100 bg-opacity-10 text-slate-100 hover:bg-opacity-20',
-    text: 'bg-slate-100 bg-opacity-0 text-slate-100 hover:bg-opacity-10',
-    loader: {
-      filled: 'bg-gray-800',
-      outlined: 'bg-slate-100',
-      text: 'bg-slate-100',
-    }
-  },
-  black: {
-    filled: 'bg-gray-800 hover:bg-gray-900 text-white focus:ring-4 focus:ring-gray-200',
-    outlined: 'border border-gray-300 text-gray-800 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200',
-    subtle: 'bg-gray-600 bg-opacity-10 text-gray-800 hover:bg-opacity-20',
-    text: 'bg-gray-600 bg-opacity-0 text-gray-800 hover:bg-opacity-10',
-    loader: {
-      filled: 'bg-white',
-      outlined: 'bg-gray-600',
-      text: 'bg-gray-600',
-    }
-  },
   red: {
     filled: 'bg-red-600 hover:bg-red-700 text-white focus:ring-4 focus:ring-red-600 focus:ring-opacity-20',
     outlined: 'border border-red-600 text-red-600 hover:bg-red-600 hover:text-white focus:ring-4 focus:ring-red-600 focus:ring-opacity-20',
@@ -57,6 +13,7 @@ const classes = {
       filled: 'bg-white',
       outlined: 'bg-red-600',
       text: 'bg-red-600',
+      subtle: 'bg-red-600',
     }
   },
   green: {
@@ -68,6 +25,55 @@ const classes = {
       filled: 'bg-white',
       outlined: 'bg-green-600',
       text: 'bg-green-600',
+      subtle: 'bg-green-600',
+    }
+  },
+  primary: {
+    filled: 'bg-primary-600 hover:bg-primary-700 text-white focus:ring-4 focus:ring-primary-600 focus:ring-opacity-20',
+    outlined: 'border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-4 focus:ring-primary-600 focus:ring-opacity-20',
+    subtle: 'bg-primary-600 bg-opacity-10 text-primary-600 hover:bg-opacity-20',
+    text: 'bg-primary-600 bg-opacity-0 text-primary-600 hover:bg-opacity-10',
+    loader: {
+      filled: 'bg-white',
+      outlined: 'bg-primary-600',
+      text: 'bg-primary-600',
+      subtle: 'bg-primary-600',
+    }
+  },
+  accent: {
+    filled: 'bg-orange-300 hover:bg-orange-400 text-black focus:ring-4 focus:ring-orange-600 focus:ring-opacity-20',
+    outlined: 'border border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white focus:ring-4 focus:ring-orange-600 focus:ring-opacity-20',
+    subtle: 'bg-orange-500 bg-opacity-10 text-orange-600 hover:bg-opacity-20',
+    text: 'bg-orange-500 bg-opacity-0 text-orange-600 hover:bg-opacity-10',
+    loader: {
+      filled: 'bg-white',
+      outlined: 'bg-orange-500',
+      text: 'bg-orange-500',
+      subtle: 'bg-orange-500',
+    }
+  },
+  white: {
+    filled: 'bg-slate-100 hover:bg-slate-200 text-gray-800 focus:ring-4 focus:ring-slate-100 focus:ring-opacity-20',
+    outlined: 'border border-slate-100 text-slate-100 hover:bg-slate-200 hover:text-gray-800 focus:ring-4 focus:ring-slate-100 focus:ring-opacity-20',
+    subtle: 'bg-slate-100 bg-opacity-10 text-slate-100 hover:bg-opacity-20',
+    text: 'bg-slate-100 bg-opacity-0 text-slate-100 hover:bg-opacity-10',
+    loader: {
+      filled: 'bg-gray-800',
+      outlined: 'bg-slate-100',
+      text: 'bg-slate-100',
+      subtle: 'bg-slate-100',
+    }
+  },
+  black: {
+    filled: 'bg-gray-800 hover:bg-gray-900 text-white focus:ring-4 focus:ring-gray-200',
+    outlined: 'border border-gray-300 text-gray-800 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200',
+    subtle: 'bg-gray-600 bg-opacity-10 text-gray-800 hover:bg-opacity-20',
+    text: 'bg-gray-600 bg-opacity-0 text-gray-800 hover:bg-opacity-10',
+    loader: {
+      filled: 'bg-white',
+      outlined: 'bg-gray-600',
+      text: 'bg-gray-600',
+      subtle: 'bg-gray-600',
     }
   },
 }
