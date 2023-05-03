@@ -46,8 +46,8 @@ const Navbar = () => {
         <div className="container h-full">
           <nav className="relative z-50 flex justify-between h-full">
             <div className="flex items-center md:gap-x-12 flex-1 h-full">
-              <Link href="/" className="text-xl w-[170px]">
-                <img src={ scrolled ? '/images/light.svg' : '/images/dark.svg' } alt="logo"/>
+              <Link href="/" className="text-xl w-[160px]">
+                <img src={ scrolled ? '/images/light-2.svg' : '/images/dark-2.svg' } alt="logo"/>
               </Link>
               <div className="hidden lg:flex md:space-x-3 mx-auto h-full">
                 <Link href="/about" className="inline-flex items-center rounded-full py-1 px-4">
@@ -117,8 +117,8 @@ const Navbar = () => {
                 </Link>
               </div>
             </div>
-            <div className="flex items-center justify-end gap-x-5 md:gap-x-4 w-full md:max-w-[250px]">
-              <div className="hidden lg:block space-x-3">
+            <div className="flex items-center justify-end gap-x-5 md:gap-x-4">
+              <div className="hidden lg:block space-x-2">
                 {
                   !user ? (
                     <>

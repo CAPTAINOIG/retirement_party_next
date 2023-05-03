@@ -5,9 +5,12 @@ import { formatDistance } from 'date-fns'
 
 const InfographicCard = ({ infographic }) => {
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden hover:-translate-y-3 transition-all duration-200">
       <Link href={ `/infographics/${ infographic.category._id }/${ infographic._id }` } className="flex w-full">
-        <Image src={ infographic.image } alt={ infographic.title } className="rounded-xl h-60 w-full object-cover border"/>
+        <Image
+          src={ infographic.image } alt={ infographic.title }
+          className="rounded-xl h-60 w-full object-cover border"
+        />
       </Link>
       <div className="mt-4 overflow-hidden">
         <p className="opacity-70 mb-1 text-sm">{ formatDistance(new Date(), new Date(infographic.createdAt)) }</p>
