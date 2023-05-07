@@ -10,13 +10,10 @@ const TrendingInfographics = () => {
   return (
     <div>
       <div className="container">
-        <div className="mx-auto max-w-4xl sm:text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-gray-900">
-            Trending statistics
+        <div className="mx-auto max-w-4xl text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900">
+            Trending
           </h2>
-          <p className="mt-4 text-base md:text-lg opacity-80">
-            Get facts and insights on topics that matter
-          </p>
         </div>
         {
           isInfographicsLoading ? (

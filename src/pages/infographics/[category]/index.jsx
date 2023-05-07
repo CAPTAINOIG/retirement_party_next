@@ -17,7 +17,6 @@ const Category = () => {
     <>
       <PageHeader
         title={ `${ category?.name }` }
-        subtitle={ `${ category?.totalInfographics } infographic(s)` }
         onBack={ () => router.push('/infographics') }
         backText="Categories"
         isLoading={ isCategoryLoading }

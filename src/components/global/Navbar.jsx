@@ -46,19 +46,16 @@ const Navbar = () => {
         <div className="container h-full">
           <nav className="relative z-50 flex justify-between h-full">
             <div className="flex items-center md:gap-x-12 flex-1 h-full">
-              <Link href="/" className="text-xl w-[160px]">
-                <img src={ scrolled ? '/images/light-2.svg' : '/images/dark-2.svg' } alt="logo"/>
+              <Link href="/" className="text-xl w-[170px]">
+                <img src={ scrolled ? '/images/light-3.svg' : '/images/dark-3.svg' } alt="logo"/>
               </Link>
-              <div className="hidden lg:flex md:space-x-3 mx-auto h-full">
-                <Link href="/about" className="inline-flex items-center rounded-full py-1 px-4">
-                  About us
-                </Link>
+              <div className="hidden lg:flex md:space-x-3 ml-auto h-full">
                 <Hover className="h-full inline-flex items-center">
                   {
                     hovered => (
-                      <>
+                      <div className="relative h-full flex items-center">
                         <div className="inline-flex items-center rounded-full py-1 px-4">
-                          Insights
+                          For business
                         </div>
                         <AnimatePresence mode="wait">
                           {
@@ -76,12 +73,13 @@ const Navbar = () => {
                                 >
                                   <div className="mr-4">
                                     <div
-                                      className="w-10 h-10 rounded-full flex items-center justify-center bg-orange-500 text-white">
+                                      className="w-10 h-10 rounded-full flex items-center justify-center bg-orange-500 text-white"
+                                    >
                                       <IconFileText size="20"/>
                                     </div>
                                   </div>
                                   <div>
-                                    <h4 className="font-medium">Bank statement</h4>
+                                    <h4 className="font-medium">Analyze your customers</h4>
                                     <p className="text-sm opacity-80 leading-tight">
                                       Lorem ipsum dolor sit amet
                                     </p>
@@ -108,7 +106,7 @@ const Navbar = () => {
                             )
                           }
                         </AnimatePresence>
-                      </>
+                      </div>
                     )
                   }
                 </Hover>
@@ -117,17 +115,21 @@ const Navbar = () => {
                 </Link>
               </div>
             </div>
-            <div className="flex items-center justify-end gap-x-5 md:gap-x-4">
-              <div className="hidden lg:block space-x-2">
+            <div className="flex items-center justify-end gap-x-5 md:gap-x-4 ml-6">
+              <div className="hidden lg:block space-x-4">
                 {
                   !user ? (
                     <>
                       <Link href="/login">
-                        <Button variant="text" color={ scrolled ? "black" : "white" }>Sign in</Button>
+                        <Button variant="outlined" color={ scrolled ? "black" : "white" }>Sign in</Button>
                       </Link>
-                      <Link href="/register">
-                        <Button>Get started</Button>
-                      </Link>
+                      {
+                        scrolled && (
+                          <Link href="/register">
+                            <Button>Get started</Button>
+                          </Link>
+                        )
+                      }
                     </>
                   ) : (
                     <div className="flex items-center space-x-4">

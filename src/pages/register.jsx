@@ -87,6 +87,10 @@ const Register = () => {
             <Button type="submit" className="mt-10" size="lg" loading={ isSignupLoading }>
               Register
             </Button>
+            <p className="mt-4">
+              Already have an account?
+              <Link href="/register" className="ml-2 text-primary-600 italic">Login here</Link>
+            </p>
           </form>
         </div>
       </div>

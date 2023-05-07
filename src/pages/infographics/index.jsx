@@ -6,6 +6,7 @@ import { useGetCategoriesQuery } from "@/api/infographics.js";
 import HeroSearch from "@/components/core/home/HeroSearch.jsx";
 import { useRouter } from "next/router";
 import SearchResults from "@/components/core/infographics/SearchResults.jsx";
+import TrendingInfographics from "@/components/core/home/TrendingInfographics";
 
 const Infographics = () => {
   const router = useRouter();
@@ -27,7 +28,12 @@ const Infographics = () => {
         append={ <HeroSearch className="mt-10 mb-2 w-full"/> }
       />
       <div className="mt-24">
-        <div className="container">
+        {
+          !query && (
+            <TrendingInfographics/>
+          )
+        }
+        <div className="container mt-28">
           {
             isCategoriesLoading ? (
               <>
@@ -47,13 +53,20 @@ const Infographics = () => {
                     <>
                       {
                         !query ? (
-                          <div className="grid md:grid-cols-3 gap-8">
-                            {
-                              categories.map((category) => (
-                                <CategoryCard category={ category } key={ category.name }/>
-                              ))
-                            }
-                          </div>
+                          <>
+                            <div className="mx-auto max-w-4xl text-center mb-12 md:mb-16">
+                              <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900">
+                                Browse by category
+                              </h2>
+                            </div>
+                            <div className="grid md:grid-cols-3 gap-8">
+                              {
+                                categories.map((category) => (
+                                  <CategoryCard category={ category } key={ category.name }/>
+                                ))
+                              }
+                            </div>
+                          </>
                         ) : (
                           <SearchResults query={ query }/>
                         )

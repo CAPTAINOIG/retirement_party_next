@@ -26,8 +26,10 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.9",
     "react-parallax-tilt": "^1.7.131",
+    "react-responsive": "^9.0.2",
     "react-use": "^17.4.0",
     "sass": "^1.62.1",
+    "socket.io-client": "^4.6.1",
     "swiper": "^9.2.4",
     "typed.js": "^2.0.15"
   },

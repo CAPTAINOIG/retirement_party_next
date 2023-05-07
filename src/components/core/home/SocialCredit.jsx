@@ -12,11 +12,12 @@ const SocialCredit = () => {
               Social credit Lorem ipsum dolor sit amet.
             </h2>
             <p className="mt-6 text-base md:text-lg opacity-80">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio
-              ullam beatae rem, error eius culpa pariatur excepturi nostrum
-              animi repellat?
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio ullam beatae rem, error eius culpa
+              pariatur excepturi nostrum animi repellat?
             </p>
-            <Button color="black" className="mt-12" size="lg" rightIcon={ <IconArrowRight/> }>Get started</Button>
+            <Button color="black" className="mt-12" size="lg" rightIcon={ <IconArrowRight/> }>
+              Get started
+            </Button>
           </div>
           <div className="relative -order-1 md:order-1 flex md:justify-center">
             <div className="relative w-full sm:w-[350px]">
@@ -30,7 +31,7 @@ const SocialCredit = () => {
                 className="absolute blur-lg opacity-10 h-[250px] w-[250px] bg-teal-300 rounded-full -bottom-5 -left-5"
               />
               <div className="z-20">
-                <div className="bg-slate-300/40 backdrop-blur-lg rounded-2xl px-10 py-12 bounce">
+                <div className="bg-slate-300/40 backdrop-blur-lg rounded-2xl px-10 py-12">
                   <div className="pb-6">
                     <p className="text-xl font-medium">
                       Credibility analysis
@@ -40,7 +41,7 @@ const SocialCredit = () => {
                     </p>
                   </div>
                   <div className="relative mt-3">
-                    <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card ">
+                    <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card">
                       <img className="mx-auto" src="/images/face-one.png" alt=""/>
                       <p className="text-base md:text-lg opacity-80 font-bold pt-4">
                         Bukunmi Dimeji.
@@ -137,20 +138,6 @@ const SocialCredit = () => {
           }
         }
 
-        .bounce {
-          animation: bounce 2s ease infinite alternate;;
-        }
-
-        @keyframes bounce {
-          0% {
-            transform: translateY(0px);
-          }
-
-          100% {
-            transform: translateY(-20px);
-          }
-        }
-
         .slant-card {
           transform: translate(-34px, -10px) rotate(-10deg);
           animation: flip 5s cubic-bezier(0.8, 0, 0, 0.8) infinite;
@@ -159,7 +146,6 @@ const SocialCredit = () => {
         .slant-card-two {
           position: absolute;
           inset: 0;
-          transform: translate(-34px, -10px) rotate(-10deg);
           animation: fliptwo 5s cubic-bezier(0.8, 0, 0, 0.8) infinite;
           transform-style: preserve-3d;
           transform: rotate3d(0, 1, 0, 180deg);
@@ -169,7 +155,6 @@ const SocialCredit = () => {
         .slant-card-three {
           position: absolute;
           inset: 0;
-          transform: translate(-34px, -10px) rotate(-10deg);
           animation: flipthree 5s cubic-bezier(0.8, 0, 0, 0.8) infinite;
           transform-style: preserve-3d;
           transform: rotate3d(0, 1, 0, 180deg);
@@ -179,7 +164,6 @@ const SocialCredit = () => {
         .slant-card-four {
           position: absolute;
           inset: 0;
-          transform: translate(-34px, -10px) rotate(-10deg);
           animation: flipfour 5s cubic-bezier(0.8, 0, 0, 0.8) infinite;
           transform-style: preserve-3d;
           transform: rotate3d(0, 1, 0, 180deg);

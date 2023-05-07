@@ -81,7 +81,7 @@ const classes = {
 const Button = forwardRef((
   {
     variant = 'filled',
-    color = 'primary',
+    color = 'black',
     size = 'md',
     type = 'button',
     disabled = false,
@@ -101,6 +101,7 @@ const Button = forwardRef((
       'px-4 py-1 text-[.94rem]': size === 'sm',
       'px-6 py-2': size === 'md',
       'px-7 py-3': size === 'lg',
+      'px-10 py-3.5 text-[1.05]': size === 'xl',
       'opacity-50 pointer-events-none cursor-not-allowed': disabled,
       'opacity-80 pointer-events-none cursor-default': loading,
       'flex w-full': block,
@@ -149,7 +150,7 @@ Button.displayName = 'Button';
 Button.propTypes = {
   variant: PropTypes.oneOf(['filled', 'outlined', 'subtle', 'text']),
   color: PropTypes.oneOf(['primary', 'accent', 'white', 'black', 'green', 'red']),
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
   type: PropTypes.oneOf(['button', 'submit']),
   disabled: PropTypes.bool,
   loading: PropTypes.bool,

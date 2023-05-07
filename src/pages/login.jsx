@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import requireNoAuth from "@/guards/require-no-auth.js";
 import { useLoginMutation } from "@/api/auth.js";
 import { useAuth } from "@/hooks/use-auth.js";
+import Link from "next/link";
 
 const Login = () => {
   const toast = useToast();
@@ -57,6 +58,10 @@ const Login = () => {
             <Button type="submit" className="mt-10" size="lg" loading={ isLoginLoading }>
               Login
             </Button>
+            <p className="mt-4">
+              Don't have an account?
+              <Link href="/register" className="ml-2 text-primary-600 italic">Sign up here</Link>
+            </p>
           </form>
         </div>
       </div>
