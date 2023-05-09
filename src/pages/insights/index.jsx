@@ -24,16 +24,16 @@ const Infographics = () => {
   return (
     <>
       <PageHeader
-        title="Search for infographics"
-        append={ <HeroSearch className="mt-10 mb-2 w-full"/> }
+        title="Search for insights"
+        append={ <HeroSearch className="mt-6 md:mt-10 mb-4 w-full"/> }
       />
-      <div className="mt-24">
+      <div className="py-20 md:py-32">
         {
           !query && (
             <TrendingInfographics/>
           )
         }
-        <div className="container mt-28">
+        <div className="container mt-20 md:mt-28">
           {
             isCategoriesLoading ? (
               <>

@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from "classnames";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { IconChartArcs3, IconHome2, IconLogout } from "@tabler/icons-react";
+import { IconChartArcs3, IconHome2, IconLogout, IconMessageChatbot } from "@tabler/icons-react";
 import SimpleDropdown from "@/components/global/SimpleDropdown.jsx";
 import { useAuth } from "@/hooks/use-auth.js";
 
@@ -29,6 +29,7 @@ const DashboardLayout = ({ children }) => {
               [
                 { name: 'Overview', href: '/dashboard', icon: <IconHome2 size="18"/> },
                 { name: 'Insights', href: '/dashboard/insights', icon: <IconChartArcs3 size="18"/> },
+                { name: 'AI assistant', href: '/dashboard/chat', icon: <IconMessageChatbot size="18"/> },
               ].map(item => (
                 <Link
                   key={ item.href } href={ item.href }

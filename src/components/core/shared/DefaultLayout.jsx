@@ -9,7 +9,7 @@ const DefaultLayout = ({ children }) => {
       <main>
         { children }
       </main>
-      <div className="mt-36">
+      <div>
         <Footer/>
       </div>
     </div>

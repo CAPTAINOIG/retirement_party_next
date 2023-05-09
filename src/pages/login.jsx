@@ -35,7 +35,7 @@ const Login = () => {
         subtitle="Enter your credentials below to sign in to your account"
       />
       <div className="container">
-        <div className="mt-16 w-full max-w-md mx-auto rounded-xl">
+        <div className="pb-32 pt-16 w-full max-w-md mx-auto rounded-xl">
           <form onSubmit={ handleSubmit(submit) }>
             <div className="space-y-4">
               <Input

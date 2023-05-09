@@ -6,7 +6,7 @@ const CategoryCard = ({ category }) => {
   return (
     <Link href={ `/infographics/${ category._id }` }>
       <div
-        className="text-white rounded-xl overflow-hidden hover:brightness-125 transition-all cursor-pointer relative isolate"
+        className="text-white rounded-2xl overflow-hidden hover:brightness-125 transition-all cursor-pointer relative isolate"
       >
         <Image
           src={ category.image } alt={ category.name }

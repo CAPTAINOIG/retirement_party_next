@@ -13,7 +13,7 @@ const Collapsible = ({ header, content }) => {
         onClick={ () => setExpanded(v => !v) }
         className={
           classNames(
-            "flex justify-between items-center cursor-pointer",
+            "flex justify-between items-center cursor-pointer px-6 py-4",
             { 'border-accent-400': expanded }
           )
         }
@@ -23,7 +23,8 @@ const Collapsible = ({ header, content }) => {
           className={ classNames(
             "w-8 h-8 rounded-full border flex items-center justify-center",
             { 'bg-primary-700 text-white border-0': expanded }
-          ) }>
+          ) }
+        >
           <IconChevronRight
             size="20"
             className={ classNames("transition-all duration-300", { 'rotate-90': expanded }) }

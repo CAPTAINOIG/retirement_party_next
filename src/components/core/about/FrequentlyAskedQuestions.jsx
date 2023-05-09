@@ -8,7 +8,7 @@ const FAQ = () => {
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight sticky top-36 text-center lg:text-left">
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tight sticky top-36 text-center lg:text-left">
               Frequently asked questions
             </h2>
           </div>
@@ -18,7 +18,7 @@ const FAQ = () => {
                 <div key={ faq.q } className="border border-slate-200 rounded-xl">
                   <Collapsible
                     header={ (
-                      <h5 className="md:text-lg py-5 px-6 font-medium">
+                      <h5 className="md:text-lg font-medium">
                         { faq.q }
                       </h5>
                     ) }

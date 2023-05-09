@@ -9,9 +9,9 @@ const AiAssistant = () => {
 
   return (
     <>
-      <div className="container -translate-y-4">
-        <div className="flex flex-col md:items-center justify-center">
-          <div className="w-[300px]">
+      <div className="container">
+        <div className="grid md:grid-cols-2 gap-10">
+          <div>
             <svg width="100%" viewBox="0 0 412 348" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M135.379 347.245C168.725 347.245 195.757 340.25 195.757 331.622C195.757 322.994 168.725 316 135.379 316C102.032 316 75 322.994 75 331.622C75 340.25 102.032 347.245 135.379 347.245Z"
@@ -156,18 +156,18 @@ const AiAssistant = () => {
                 fill="#B1D3F0"/>
             </svg>
           </div>
-          <div className="relative mt-12 max-w-lg mx-auto md:text-center">
-            <h2 className="text-4xl md:text-5xl font-medium leading-tight md:leading-[1.2]">
-              Our AI assistant is here to help you!
+          <div className="relative mt-12 max-w-lg mx-auto">
+            <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
+              Chat with <span className="text-cyan-600">Sensiii®</span>. Africa's leading data AI assistant.
             </h2>
-            <p className="mt-6 text-base md:text-lg opacity-80">
-              Our fine-tuned AI Writing assistant is only a click away, ready to help you with all sort of data and
-              infographics needs
+            <p className="mt-6 text-base md:text-lg">
+              We are building Africa's most robust AI platform for business and government insights.
             </p>
             <Button
               onClick={ () => setIsChatOpen(true) } color="black" className="mt-12" rightIcon={ <IconArrowRight/> }
+              size="lg"
             >
-              Chat
+              Chat sensiii
             </Button>
           </div>
         </div>

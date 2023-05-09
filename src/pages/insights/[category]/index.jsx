@@ -16,12 +16,12 @@ const Category = () => {
   return (
     <>
       <PageHeader
-        title={ `${ category?.name }` }
+        title={ `Insights on ${ category?.name }` }
         onBack={ () => router.push('/infographics') }
         backText="Categories"
         isLoading={ isCategoryLoading }
       />
-      <div className="mt-20">
+      <div className="py-24 md:py-32">
         <div className="container">
           {
             isInfographicsLoading ? (

@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import Link from "next/link";
-import { IconApps, IconChartArcs3, IconFileText, IconLogout, IconMenu } from "@tabler/icons-react";
+import {
+  IconApps,
+  IconDatabase,
+  IconFileText,
+  IconLogout,
+  IconMenu,
+  IconMessageChatbot,
+  IconUserCheck
+} from "@tabler/icons-react";
 import { useIsomorphicLayoutEffect } from "react-use";
 import classNames from "classnames";
 import Button from "@/components/global/Button.jsx";
@@ -9,6 +17,33 @@ import { useAuth } from "@/hooks/use-auth.js";
 import SimpleDropdown from "@/components/global/SimpleDropdown.jsx";
 import { useRouter } from "next/router";
 import Hover from "@/components/global/Hover.jsx";
+
+const products = [
+  {
+    name: 'Sensiii',
+    description: `An advanced embedded AI assistant`,
+    color: 'bg-blue-500',
+    icon: <IconMessageChatbot/>
+  },
+  {
+    name: 'BeTrue',
+    description: `A customer eligibility platform for businesses`,
+    color: 'bg-red-500',
+    icon: <IconUserCheck/>
+  },
+  {
+    name: 'Statement',
+    description: `Analyze any bank statement in seconds`,
+    color: 'bg-teal-500',
+    icon: <IconFileText/>
+  },
+  {
+    name: 'MineMe',
+    description: `A bespoke customer data analyzed for businesses`,
+    color: 'bg-orange-500',
+    icon: <IconDatabase/>
+  }
+]
 
 const Navbar = () => {
   const router = useRouter();
@@ -55,7 +90,7 @@ const Navbar = () => {
                     hovered => (
                       <div className="relative h-full flex items-center">
                         <div className="inline-flex items-center rounded-full py-1 px-4">
-                          For business
+                          For businesses
                         </div>
                         <AnimatePresence mode="wait">
                           {
@@ -65,43 +100,31 @@ const Navbar = () => {
                                 animate={ { opacity: 1, y: 0 } }
                                 exit={ { opacity: 0, y: 20 } }
                                 className={ classNames(
-                                  'p-4 rounded-2xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-1/2 -translate-x-1/2 right-0 w-[350px] space-y-2',
+                                  'p-4 rounded-2xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-1/2 -translate-x-1/2 right-0 w-[630px] grid grid-cols-2 gap-4',
                                 ) }
                               >
-                                <div
-                                  className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
-                                >
-                                  <div className="mr-4">
+                                {
+                                  products.map(product => (
                                     <div
-                                      className="w-10 h-10 rounded-full flex items-center justify-center bg-orange-500 text-white"
+                                      key={ product.name }
+                                      className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
                                     >
-                                      <IconFileText size="20"/>
+                                      <div className="mr-4">
+                                        <div
+                                          className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-white', product.color) }
+                                        >
+                                          { product.icon }
+                                        </div>
+                                      </div>
+                                      <div>
+                                        <h4 className="font-medium">{ product.name }</h4>
+                                        <p className="text-sm opacity-80 leading-tight mt-1">
+                                          { product.description }
+                                        </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div>
-                                    <h4 className="font-medium">Analyze your customers</h4>
-                                    <p className="text-sm opacity-80 leading-tight">
-                                      Lorem ipsum dolor sit amet
-                                    </p>
-                                  </div>
-                                </div>
-                                <div
-                                  className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
-                                >
-                                  <div className="mr-4">
-                                    <div
-                                      className="w-10 h-10 rounded-full flex items-center justify-center bg-primary-500 text-white"
-                                    >
-                                      <IconChartArcs3 size="20"/>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <h4 className="font-medium">Credible</h4>
-                                    <p className="text-sm opacity-80 leading-tight">
-                                      Lorem ipsum dolor sit amet
-                                    </p>
-                                  </div>
-                                </div>
+                                  ))
+                                }
                               </motion.div>
                             )
                           }
@@ -110,8 +133,8 @@ const Navbar = () => {
                     )
                   }
                 </Hover>
-                <Link className="inline-flex items-center rounded-full py-1 px-4" href="/infographics">
-                  Infographics
+                <Link className="inline-flex items-center rounded-full py-1 px-4" href="/insights">
+                  Insights
                 </Link>
               </div>
             </div>
@@ -202,7 +225,7 @@ const Navbar = () => {
                   Our services
                 </Link>
                 <Link
-                  onClick={ () => setIsMobileNavVisible(false) } href="/infographics"
+                  onClick={ () => setIsMobileNavVisible(false) } href="/insights"
                   className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
                 >
                   Infographics

@@ -5,7 +5,7 @@ const Testimonials = () => {
     <section id="testimonials" aria-label="What our customers are saying">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl md:text-center">
-          <h2 className="text-4xl md:text-5xl font-medium text-slate-900">
+          <h2 className="text-4xl md:text-6xl font-medium text-slate-900">
             Loved by businesses worldwide.
           </h2>
           <p className="mt-6 text-lg tracking-tight text-slate-700">

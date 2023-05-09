@@ -32,7 +32,7 @@ const InfographicDetails = () => {
         backText={ infographic?.category?.name || 'Back' }
         isLoading={ isInfographicLoading }
       />
-      <div className="space-y-24 mt-20">
+      <div className="py-24 md:py-32">
         <div className="container">
           {
             isInfographicLoading ? (
@@ -43,51 +43,51 @@ const InfographicDetails = () => {
                 <div className="bg-zinc-900/10 h-8 w-3/12 rounded-full mt-4"/>
               </div>
             ) : (
-              <>
-                <div className="max-w-[580px] mx-auto">
-                  <div className="flex items-stretch">
-                    <div>
-                      <div className="flex items-stetch">
-                        <Image src={ infographic.image } alt="" className="rounded-xl"/>
-                        <div className="hidden md:block relative px-6">
-                          <div className="sticky top-36">
-                            <ShareButtons infographic={ infographic }/>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-10">
-                        <div className="flex items-center opacity-70 mb-6">
-                          <IconClock className="mr-2" size="18"/>
-                          <p>Date posted: { format(new Date(infographic.createdAt), 'MMM dd, yyyy') }</p>
-                        </div>
-                        <p>
-                          { infographic.description }
-                        </p>
-                        <div className="mt-10 flex flex-row flex-wrap">
-                          {
-                            infographic.tags.split(',').map((tag, i) => (
-                              <Link key={ i } href={ `/infographics?q=${ tag }` }>
-                                <div
-                                  className="bg-zinc-200 hover:bg-zinc-300 px-3 py-[2px] rounded-xl mr-3 mb-4 cursor-pointer"
-                                >
-                                  { tag }
-                                </div>
-                              </Link>
-                            ))
-                          }
-                        </div>
-                        <div className="mt-6 md:hidden">
+              <div className="max-w-[580px] mx-auto">
+                <div className="flex items-stretch">
+                  <div>
+                    <div className="flex items-stetch">
+                      <Image src={ infographic.image } alt="" className="rounded-xl"/>
+                      <div className="hidden md:block relative px-6">
+                        <div className="sticky top-36">
                           <ShareButtons infographic={ infographic }/>
                         </div>
                       </div>
                     </div>
+                    <div className="mt-10">
+                      <div className="flex items-center opacity-70 mb-6">
+                        <IconClock className="mr-2" size="18"/>
+                        <p>Date posted: { format(new Date(infographic.createdAt), 'MMM dd, yyyy') }</p>
+                      </div>
+                      <p>
+                        { infographic.description }
+                      </p>
+                      <div className="mt-10 flex flex-row flex-wrap">
+                        {
+                          infographic.tags.split(',').map((tag, i) => (
+                            <Link key={ i } href={ `/infographics?q=${ tag }` }>
+                              <div
+                                className="bg-zinc-200 hover:bg-zinc-300 px-3 py-[2px] rounded-xl mr-3 mb-4 cursor-pointer"
+                              >
+                                { tag }
+                              </div>
+                            </Link>
+                          ))
+                        }
+                      </div>
+                      <div className="mt-6 md:hidden">
+                        <ShareButtons infographic={ infographic }/>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </>
+              </div>
             )
           }
         </div>
-        <Newsletter sm/>
+      </div>
+      <Newsletter sm/>
+      <div className="py-24 md:py-32">
         { !!infographic && <SimilarInfographics infographic={ infographic }/> }
       </div>
     </>

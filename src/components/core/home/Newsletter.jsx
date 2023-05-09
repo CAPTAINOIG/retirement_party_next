@@ -7,10 +7,10 @@ const Newsletter = ({ sm = false }) => {
   return (
     <div className="mx-auto">
       <div
-        className={ classNames('bg-[#11100f] text-zinc-100 px-10 md:px-20 rounded-[1200px/1%] pattern-1', sm ? 'py-24' : 'py-36') }
+        className={ classNames('bg-[#11100f] text-zinc-100 px-10 md:px-20 pattern-1', sm ? 'py-24' : 'py-40') }
       >
         <div className="container flex flex-col items-center text-center">
-          <h2 className="text-[2.5rem] md:text-5xl max-w-lg font-medium tracking-tight !leading-tight">
+          <h2 className="text-[2.5rem] md:text-6xl max-w-2xl font-medium tracking-tight !leading-tight">
             Get weekly statistics directly into your inbox
           </h2>
           <div

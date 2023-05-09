@@ -8,7 +8,7 @@ const WhatWeDo = () => {
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4 relative">
             <div className="sticky top-36 text-center lg:text-left">
-              <h2 className="text-4xl md:text-5xl font-medium tracking-tight">
+              <h2 className="text-4xl md:text-6xl font-medium tracking-tight">
                 What we do
               </h2>
               <p className="mt-2 md:mt-4 text-lg">

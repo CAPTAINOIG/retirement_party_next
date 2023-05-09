@@ -40,7 +40,7 @@ const Register = () => {
         subtitle="Kindly fill in all fields below correctly"
       />
       <div className="container">
-        <div className="mt-16 w-full max-w-md mx-auto rounded-xl">
+        <div className="pb-32 pt-16 w-full max-w-md mx-auto rounded-xl">
           <form onSubmit={ handleSubmit(submit) }>
             <div className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">

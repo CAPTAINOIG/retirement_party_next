@@ -11,8 +11,9 @@ const Hero = () => {
   useEffect(() => {
     const options = {
       strings: [
-        'insights',
-        'perception',
+        'businesses',
+        'consumers',
+        'governments',
       ],
       typeSpeed: 50,
       backSpeed: 50,
@@ -28,13 +29,13 @@ const Hero = () => {
 
   return (
     <div
-      className="pt-48 pb-32 md:pt-60 md:pb-40 md:text-center bg-[#11100f] pattern-2 rounded-[0_0_1000px_1000px/5%] relative"
+      className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] pattern-2 relative rounded-[0_0_1000px_1000px/2%]"
     >
       <div className="container">
         <h1
           className="mx-auto max-w-4xl font-display text-6xl font-bold tracking-tight text-slate-300 sm:text-7xl md:text-8xl"
         >
-          We convert raw data to { ' ' }<br className="sm:hidden"/>
+          Simplified data insights for African{ ' ' }<br/>
           <span ref={ el } className="relative font-bold text-primary-500"></span>.
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-lg tracking-tight text-slate-400">

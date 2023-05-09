@@ -12,11 +12,11 @@ const Categories = () => {
     <div>
       <div className="mx-auto max-w-4xl sm:text-center mb-12 md:mb-16">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-gray-900">
-            Browse popular topics
+          <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-gray-900">
+            Popular insights categories
           </h2>
-          <p className="mt-4 text-base md:text-lg opacity-80">
-            Starting point of your research
+          <p className="mt-4 text-base md:text-lg">
+            See trending categories across our channels
           </p>
         </div>
       </div>
