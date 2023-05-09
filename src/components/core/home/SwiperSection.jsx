@@ -42,8 +42,8 @@ const SwiperSection = () => {
       },
       breakpoints: {
         0: { slidesPerView: 1.2 },
-        640: { slidesPerView: 2.8 },
-        1024: { slidesPerView: 1.5 }
+        640: { slidesPerView: 1.2 },
+        1024: { slidesPerView: 1.3 }
       }
     };
     Object.assign(swiperElRef.current, swiperParams);
@@ -72,7 +72,7 @@ const SwiperSection = () => {
                         <div className="item rounded-2xl overflow-hidden">
                           <div
                             style={ { backgroundImage: `url(${ item.image })` } }
-                            className="min-h-[400px] relative layer-bg bg-cover rounded-lg"
+                            className="min-h-[450px] relative layer-bg bg-cover rounded-lg"
                           >
                             <div
                               className="absolute inset-0 bg-black/10 group-hover:bg-black/50 z-[1] px-12 py-14 text-white transition-all duration-300"
