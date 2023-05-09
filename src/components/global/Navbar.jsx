@@ -133,7 +133,7 @@ const Navbar = () => {
                     )
                   }
                 </Hover>
-                <Link className="inline-flex items-center rounded-full py-1 px-4" href="/insights">
+                <Link className="inline-flex items-center rounded-full py-1 px-4" href="/infographics">
                   Insights
                 </Link>
               </div>
@@ -225,7 +225,7 @@ const Navbar = () => {
                   Our services
                 </Link>
                 <Link
-                  onClick={ () => setIsMobileNavVisible(false) } href="/insights"
+                  onClick={ () => setIsMobileNavVisible(false) } href="/infographics"
                   className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
                 >
                   Infographics

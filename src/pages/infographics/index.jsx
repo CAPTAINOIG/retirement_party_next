@@ -7,6 +7,7 @@ import HeroSearch from "@/components/core/home/HeroSearch.jsx";
 import { useRouter } from "next/router";
 import SearchResults from "@/components/core/infographics/SearchResults.jsx";
 import TrendingInfographics from "@/components/core/home/TrendingInfographics";
+import classNames from "classnames";
 
 const Infographics = () => {
   const router = useRouter();
@@ -33,7 +34,7 @@ const Infographics = () => {
             <TrendingInfographics/>
           )
         }
-        <div className="container mt-20 md:mt-28">
+        <div className={ classNames('container', { 'mt-20 md:mt-28': !query }) }>
           {
             isCategoriesLoading ? (
               <>

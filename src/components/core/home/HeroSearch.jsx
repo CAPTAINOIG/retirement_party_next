@@ -36,7 +36,7 @@ const HeroSearch = ({ className }) => {
         />
         <IconButton
           icon={ <IconSearch size="20"/> } rounded onClick={ handleSearch } disabled={ query.length < 2 }
-          variant="subtle" type="submit" className="absolute inline-flex items-center right-3 top-3"
+          color="white" type="submit" className="absolute inline-flex items-center right-4 top-4"
         />
       </div>
     </div>
