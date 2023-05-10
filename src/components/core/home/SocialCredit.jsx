@@ -39,7 +39,7 @@ const SocialCredit = () => {
                     </p>
                   </div>
                   <div className="relative mt-3">
-                    <div className="flex bg-slate-50 rounded-2xl px-4 py-12 flex-col text-center slant-card">
+                    <div className="flex bg-white rounded-2xl px-4 py-12 flex-col text-center slant-card">
                       <img className="mx-auto" src="/images/face-one.png" alt=""/>
                       <p className="text-base md:text-lg font-bold pt-4">
                         Bukunmi Dimeji.
@@ -53,7 +53,7 @@ const SocialCredit = () => {
                         <IconBrandTwitter size="24" className="text-cyan-600"/>
                       </div>
                     </div>
-                    <div className="flex bg-slate-50 rounded-2xl px-4 py-12 flex-col text-center slant-card-two">
+                    <div className="flex bg-white rounded-2xl px-4 py-12 flex-col text-center slant-card-two">
                       <img className="mx-auto" src="/images/face-two.png" alt=""/>
                       <p className="text-base md:text-lg font-bold pt-4">
                         Bukunmi Dimeji.
@@ -67,7 +67,7 @@ const SocialCredit = () => {
                         <IconBrandTwitter size="24" className="text-cyan-600"/>
                       </div>
                     </div>
-                    <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card-three">
+                    <div className="flex bg-white rounded-2xl px-4 py-6 flex-col text-center slant-card-three">
                       <img className="mx-auto" src="/images/face-three.png" alt=""/>
                       <p className="text-base md:text-lg font-bold pt-4">
                         Bukunmi Dimeji.
@@ -81,7 +81,7 @@ const SocialCredit = () => {
                         <IconBrandTwitter size="24" className="text-cyan-600"/>
                       </div>
                     </div>
-                    <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card-four">
+                    <div className="flex bg-white rounded-2xl px-4 py-6 flex-col text-center slant-card-four">
                       <img className="mx-auto" src="/images/face-four.png" alt=""/>
                       <p className="text-base md:text-lg font-bold pt-4">
                         Bukunmi Dimeji.
