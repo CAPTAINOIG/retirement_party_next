@@ -1,0 +1,14 @@
+import { useMutation } from "@tanstack/react-query";
+import http from "@/lib/http";
+
+export const useNewsletterSubscribe = () => {
+  return useMutation(({ name, email }) => {
+    return http.post('/newsletter/subscribe', { name, email });
+  });
+};
+
+export const useVerifySubscriberEmail = () => {
+  return useMutation(({ token }) => {
+    return http.patch('/newsletter/subscriber/verify', { token });
+  }, { retry: 0 });
+};

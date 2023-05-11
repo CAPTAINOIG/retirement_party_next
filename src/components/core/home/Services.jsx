@@ -69,7 +69,7 @@ const Services = () => {
                 MineMe
               </h3>
               <p className="mt-4 text-base opacity-80">
-                We sit on your data and derive insights for your to make sense of your
+                We sit on your data and derive insights for you to make sense of your
                 customers, presented in a simplified easy to engage format
               </p>
             </li>
