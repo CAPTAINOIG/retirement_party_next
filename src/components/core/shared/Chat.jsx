@@ -31,7 +31,7 @@ const Chat = ({ isOpen, onClose }) => {
   }, []);
 
   const start = () => {
-    socket.current = io(process.env.NEXT_PUBLIC_BASE_URL);
+    socket.current = io(process.env.NEXT_PUBLIC_BASE_URL, { query: { type: 'public' } });
     socket.current.on('connect', handleConnected);
     socket.current.on('disconnect', handleDisconnect);
     socket.current.on('message', handleMessage);
@@ -200,8 +200,9 @@ const Chat = ({ isOpen, onClose }) => {
                   </clipPath>
                 </defs>
               </svg>
-              <h3 className="max-w-sm text-xl mt-8 font-medium">I'm data, an AI assistant that can help find all sorts
-                of data? Just ask.</h3>
+              <h3 className="max-w-sm text-xl mt-8 font-medium">
+                I'm Sensii, an AI assistant that can help find all sorts of data? Just ask.
+              </h3>
               <Button onClick={ start } className="mt-10" color="black" leftIcon={ <IconMessageChatbot/> }>
                 Start conversation
               </Button>
