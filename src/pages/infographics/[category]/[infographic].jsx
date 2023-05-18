@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import DefaultLayout from "@/components/core/shared/DefaultLayout.jsx";
 import PageHeader from "@/components/core/shared/PageHeader.jsx";
 import { useRouter } from "next/router";
@@ -10,7 +10,7 @@ import {
   IconClock,
   IconShare
 } from "@tabler/icons-react";
-import { useGetInfographicQuery } from "@/api/infographics.js";
+import { useAddViewMutation, useGetInfographicQuery } from "@/api/infographics.js";
 import { format } from "date-fns";
 import Image from "@/components/core/shared/Image.jsx";
 import Link from "next/link";
@@ -21,8 +21,17 @@ import { useToast } from "@/hooks/use-toast";
 
 const InfographicDetails = () => {
   const router = useRouter();
+  const viewed = useRef(null);
   const { infographic: id } = router.query;
+  const { mutateAsync: addView } = useAddViewMutation();
   const { data: { infographic = null } = {}, isLoading: isInfographicLoading } = useGetInfographicQuery(id);
+
+  useEffect(() => {
+    if (infographic && viewed.current !== infographic._id) {
+      addView({ id: infographic._id });
+      viewed.current = infographic._id;
+    }
+  }, [addView, infographic]);
 
   return (
     <>
