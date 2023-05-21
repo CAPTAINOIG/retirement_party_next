@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef } from 'react';
 import Typed from "typed.js";
 import Button from "@/components/global/Button";

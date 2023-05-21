@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/use-auth.js";
 import Loader from "../components/global/Loader.jsx";
 
 // eslint-disable-next-line react/display-name
-const requireNoAuth = (Component, props) => () => {
+const requireNoAuth = (Component, props) => ({ children }) => {
   const { authenticated, resolved, user } = useAuth();
   const router = useRouter();
 
@@ -17,11 +17,9 @@ const requireNoAuth = (Component, props) => () => {
 
   if (resolved && !authenticated) {
     return (
-      Component.Layout ? (
-        <Component.Layout>
-          <Component { ...props }/>
-        </Component.Layout>
-      ) : <Component/>
+      <Component { ...props }>
+        { children }
+      </Component>
     );
   }
   return (

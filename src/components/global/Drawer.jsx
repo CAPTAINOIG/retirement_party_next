@@ -48,13 +48,13 @@ const Drawer = (
               animate="visible"
               exit="exit"
               className={ classNames(
-                "fixed right-0 bottom-0 sm:top-0 w-full sm:max-w-2xl overflow-hidden",
-                "rounded-t-3xl md:rounded-tr-none md:rounded-l-3xl"
+                "fixed right-0 bottom-0 sm:top-0 w-full sm:max-w-xl overflow-hidden",
+                "rounded-t-3xl md:rounded-r-3xl md:rounded-l-3xl md:p-4"
               ) }
             >
               <div className={ classNames(
                 "relative inset-x-0 bottom-0 bg-white h-min max-h-full sm:h-full overflow-x-hidden overflow-y-auto",
-                "rounded-t-3xl md:rounded-tr-none md:rounded-l-3xl",
+                "rounded-t-3xl md:rounded-r-3xl md:rounded-l-3xl",
                 { 'p-8 md:p-10': padding }
               ) }>
                 {

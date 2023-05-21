@@ -4,7 +4,7 @@ import { IconArrowRight, IconBrandFacebook, IconBrandLinkedin, IconBrandTwitter 
 
 const SocialCredit = () => {
   return (
-    <div className="overflow-hidden">
+    <div>
       <div className="container">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
@@ -23,13 +23,16 @@ const SocialCredit = () => {
           <div className="relative -order-1 md:order-1 flex md:justify-center">
             <div className="relative w-full sm:w-[400px]">
               <div
-                className="absolute top-1/2 -translate-y-1/2 h-[90%] -left-4 w-full bg-slate-200 opacity-40 rounded-2xl z-[2]"
+                className="absolute blur-2xl opacity-30 h-[300px] w-[300px] bg-orange-300 rounded-full -top-5 -left-5"
               />
               <div
-                className="absolute top-1/2 -translate-y-1/2 h-[70%] -left-8 w-full bg-slate-200 opacity-40 rounded-2xl z-[1]"
+                className="absolute blur-2xl opacity-30 h-[300px] w-[300px] bg-red-300 rounded-full -right-6 top-20"
+              />
+              <div
+                className="absolute blur-2xl opacity-30 h-[250px] w-[250px] bg-teal-300 rounded-full -bottom-5 -left-5"
               />
               <div className="relative z-[3]">
-                <div className="bg-slate-100 rounded-3xl px-10 py-12">
+                <div className="bg-slate-200/50 backdrop-blur-lg rounded-3xl px-10 py-12">
                   <div className="pb-6">
                     <p className="text-2xl font-medium">
                       Credibility analysis
@@ -39,7 +42,7 @@ const SocialCredit = () => {
                     </p>
                   </div>
                   <div className="relative mt-3">
-                    <div className="flex bg-white rounded-2xl px-4 py-12 flex-col text-center slant-card">
+                    <div className="flex bg-slate-50 rounded-2xl px-4 py-12 flex-col text-center slant-card">
                       <img className="mx-auto" src="/images/face-one.png" alt=""/>
                       <p className="text-base md:text-lg font-bold pt-4">
                         Bukunmi Dimeji.
@@ -53,7 +56,7 @@ const SocialCredit = () => {
                         <IconBrandTwitter size="24" className="text-cyan-600"/>
                       </div>
                     </div>
-                    <div className="flex bg-white rounded-2xl px-4 py-12 flex-col text-center slant-card-two">
+                    <div className="flex bg-slate-50 rounded-2xl px-4 py-12 flex-col text-center slant-card-two">
                       <img className="mx-auto" src="/images/face-two.png" alt=""/>
                       <p className="text-base md:text-lg font-bold pt-4">
                         Bukunmi Dimeji.
@@ -67,7 +70,7 @@ const SocialCredit = () => {
                         <IconBrandTwitter size="24" className="text-cyan-600"/>
                       </div>
                     </div>
-                    <div className="flex bg-white rounded-2xl px-4 py-6 flex-col text-center slant-card-three">
+                    <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card-three">
                       <img className="mx-auto" src="/images/face-three.png" alt=""/>
                       <p className="text-base md:text-lg font-bold pt-4">
                         Bukunmi Dimeji.
@@ -81,7 +84,7 @@ const SocialCredit = () => {
                         <IconBrandTwitter size="24" className="text-cyan-600"/>
                       </div>
                     </div>
-                    <div className="flex bg-white rounded-2xl px-4 py-6 flex-col text-center slant-card-four">
+                    <div className="flex bg-slate-50 rounded-2xl px-4 py-6 flex-col text-center slant-card-four">
                       <img className="mx-auto" src="/images/face-four.png" alt=""/>
                       <p className="text-base md:text-lg font-bold pt-4">
                         Bukunmi Dimeji.

@@ -2,24 +2,26 @@ import React, { useEffect, useState } from 'react';
 import { IconSearch } from "@tabler/icons-react";
 import classNames from "classnames";
 import IconButton from "@/components/global/IconButton.jsx";
-import { useRouter } from "next/router";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const HeroSearch = ({ className }) => {
   const router = useRouter();
+  const pathname = usePathname();
+  const params = useSearchParams()
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-    if (!router.isReady) return;
-    if (router.query.q) setQuery(router.query.q);
-  }, [router.isReady, router.query]);
+    console.log(params.get('q'))
+    if (params.get('q')) setQuery(params.get('q'))
+  }, [params]);
 
   const handleSearch = async () => {
     if (query.length < 2) return;
-    await router.push('/infographics', { query: { q: query } });
+    await router.push(`/infographics?q=${ query }`);
   };
 
   const handleChange = e => {
-    if (!e.target.value.length && router.asPath.includes('infographic')) {
+    if (!e.target.value.length && pathname.includes('infographic')) {
       router.push('/infographics');
     }
     setQuery(e.target.value);

@@ -1,31 +1,31 @@
 import React, { useEffect } from "react";
-import { useRouter } from "next/router";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/use-auth";
 import Loader from "@/components/global/Loader.jsx";
 
 // eslint-disable-next-line react/display-name
-const requireAuth = (Component, props) => () => {
+const requireAuth = (Component, props) => ({ children }) => {
+  const pathname = usePathname();
   const { authenticated, resolved, user } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
     if (resolved && !authenticated) {
-      router.replace(`/login?from=${ router.asPath }`);
+      router.replace(`/login?from=${ pathname }`);
     }
-    if (resolved && authenticated && user && !user.emailVerified) {
-      router.push(`/verification?from=${ router.asPath }`);
+    else if (resolved && authenticated && user && !user.emailVerified) {
+      router.push(`/verification?from=${ pathname }`);
     }
-  }, [resolved, authenticated, user, router]);
+  }, [resolved, authenticated, user, router, pathname]);
 
   if (resolved && authenticated && user?.emailVerified) return (
-    Component.Layout ? (
-      <Component.Layout>
-        <Component { ...props }/>
-      </Component.Layout>
-    ) : <Component/>
+    <Component { ...props }>
+      { children }
+    </Component>
   )
+
   return (
-    <div className="h-screen w-full flex justify-center items-center">
+    <div className="h-full w-full flex justify-center items-center">
       <Loader/>
     </div>
   )

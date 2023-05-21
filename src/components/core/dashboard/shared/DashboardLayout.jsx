@@ -2,9 +2,10 @@ import React from 'react';
 import classNames from "classnames";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { IconChartArcs3, IconHome2, IconLogout, IconMessageChatbot } from "@tabler/icons-react";
+import { IconFileText, IconHome2, IconLogout, IconMessageChatbot } from "@tabler/icons-react";
 import SimpleDropdown from "@/components/global/SimpleDropdown.jsx";
 import { useAuth } from "@/hooks/use-auth.js";
+import ServicesSwitcher from "@/components/core/shared/ServicesSwitcher";
 
 const DashboardLayout = ({ children }) => {
   const { user, logout } = useAuth();
@@ -27,9 +28,9 @@ const DashboardLayout = ({ children }) => {
           <div className="flex flex-col space-y-2">
             {
               [
-                { name: 'Overview', href: '/dashboard', icon: <IconHome2 size="18"/> },
-                { name: 'Insights', href: '/dashboard/insights', icon: <IconChartArcs3 size="18"/> },
-                { name: 'AI assistant', href: '/dashboard/chat', icon: <IconMessageChatbot size="18"/> },
+                { name: 'Overview', href: '/dashboard', icon: <IconHome2 size="20"/> },
+                { name: 'Statement', href: '/dashboard/statement', icon: <IconFileText size="20"/> },
+                { name: 'Senseii', href: '/dashboard/chat', icon: <IconMessageChatbot size="20"/> },
               ].map(item => (
                 <Link
                   key={ item.href } href={ item.href }
@@ -47,32 +48,30 @@ const DashboardLayout = ({ children }) => {
           </div>
         </div>
         <div className="mt-auto py-4 px-6 md:px-6">
-          <SimpleDropdown
-            direction="right-bottom"
-            trigger={
-              <div
-                className={ classNames(
-                  'flex items-center space-x-4 hover:!bg-gray-200/50 rounded-2xl px-5 py-4 transition-all w-full',
-                ) }
-              >
+        </div>
+      </div>
+      <div className="h-screen overflow-y-auto flex flex-col relative">
+        <div className="sticky top-0 inset-x-0 bg-gradient-to-b from-white/90 from-60% z-50">
+          <div className="w-full max-w-5xl mx-auto pt-6 pb-10 space-x-4 flex items-center justify-end">
+            <SimpleDropdown
+              trigger={
                 <img
                   src={ `https://ui-avatars.com/api/?name=${ user.firstName } ${ user.lastName }` }
                   className="w-8 h-8 rounded-full" alt={ `${ user.firstName } ${ user.lastName }` }
                 />
-                <div className="text-left">
-                  <div className="leading-none">{ user.firstName } { user.lastName }</div>
-                  <div className="text-sm opacity-75 leading-none mt-1">{ user.email }</div>
-                </div>
-              </div>
-            }
-            items={ [
-              { text: 'Logout', icon: <IconLogout size="18"/>, onClick: handleLogout }
-            ] }
-          />
+              }
+              items={ [
+                { text: 'Logout', icon: <IconLogout size="18"/>, onClick: handleLogout }
+              ] }
+            />
+            <ServicesSwitcher/>
+          </div>
         </div>
-      </div>
-      <div className="h-screen overflow-y-auto p-10 md:py-10 md:px-20">
-        { children }
+        <div className="flex-1">
+          <div className="w-full max-w-5xl mx-auto">
+            { children }
+          </div>
+        </div>
       </div>
     </div>
   );

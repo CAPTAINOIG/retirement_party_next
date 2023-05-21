@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import Button from "@/components/global/Button.jsx";
 import { IconArrowRight, IconMailQuestion } from "@tabler/icons-react";
@@ -65,7 +66,7 @@ const Newsletter = ({ sm = false }) => {
                 <IconMailQuestion size="44"/>
               </div>
               <h2 className="text-4xl font-semibold">Almost done</h2>
-              <p className="text-lg mt-6 max-w-md">
+              <p className="mt-6 max-w-md">
                 We need to verify your email address. To complete the subscription process, please click the link in the
                 email we just sent you.
               </p>

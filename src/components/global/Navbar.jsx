@@ -1,49 +1,16 @@
-import React, { useState } from 'react';
+"use client"
+import React, { createElement, useState } from 'react';
 import Link from "next/link";
-import {
-  IconApps,
-  IconDatabase,
-  IconFileText,
-  IconLogout,
-  IconMenu,
-  IconMessageChatbot,
-  IconUserCheck
-} from "@tabler/icons-react";
+import { IconApps, IconLogout, IconMenu } from "@tabler/icons-react";
 import { useIsomorphicLayoutEffect } from "react-use";
 import classNames from "classnames";
 import Button from "@/components/global/Button.jsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { useAuth } from "@/hooks/use-auth.js";
 import SimpleDropdown from "@/components/global/SimpleDropdown.jsx";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Hover from "@/components/global/Hover.jsx";
-
-const products = [
-  {
-    name: 'Sensiii',
-    description: `An advanced embedded AI assistant`,
-    color: 'bg-blue-500',
-    icon: <IconMessageChatbot/>
-  },
-  {
-    name: 'BeTrue',
-    description: `A customer eligibility platform for businesses`,
-    color: 'bg-red-500',
-    icon: <IconUserCheck/>
-  },
-  {
-    name: 'Statement',
-    description: `Analyze any bank statement in seconds`,
-    color: 'bg-teal-500',
-    icon: <IconFileText/>
-  },
-  {
-    name: 'MineMe',
-    description: `A bespoke customer data analyzed for businesses`,
-    color: 'bg-orange-500',
-    icon: <IconDatabase/>
-  }
-]
+import products from "@/lib/products";
 
 const Navbar = () => {
   const router = useRouter();
@@ -111,9 +78,9 @@ const Navbar = () => {
                                     >
                                       <div className="mr-4">
                                         <div
-                                          className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-white', product.color) }
+                                          className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-white', product.backgroundColor) }
                                         >
-                                          { product.icon }
+                                          { createElement(product.icon) }
                                         </div>
                                       </div>
                                       <div>

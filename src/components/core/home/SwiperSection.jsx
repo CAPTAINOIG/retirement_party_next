@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef } from "react";
 import SwiperCore, { Autoplay } from "swiper";
 import "swiper/css";
@@ -43,7 +44,7 @@ const SwiperSection = () => {
       breakpoints: {
         0: { slidesPerView: 1.1 },
         640: { slidesPerView: 1.2 },
-        1024: { slidesPerView: 1.3 }
+        1024: { slidesPerView: 1.5 }
       }
     };
     Object.assign(swiperElRef.current, swiperParams);

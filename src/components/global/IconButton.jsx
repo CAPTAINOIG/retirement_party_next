@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import Loader from "./Loader.jsx";
@@ -78,7 +78,7 @@ const classes = {
   },
 }
 
-const IconButton = (
+const IconButton = forwardRef((
   {
     variant = 'filled',
     color = 'primary',
@@ -90,7 +90,7 @@ const IconButton = (
     rounded = false,
     onClick,
     className,
-  }
+  }, ref
 ) => {
   const _className = classNames(
     {
@@ -109,7 +109,7 @@ const IconButton = (
   return (
     <button
       onClick={ (!disabled && !loading) ? onClick : null } type={ type } className={ _className }
-      disabled={ disabled || loading }
+      disabled={ disabled || loading } ref={ ref }
     >
       {
         loading
@@ -127,7 +127,9 @@ const IconButton = (
       }
     </button>
   );
-};
+});
+
+IconButton.displayName = 'IconButton';
 
 IconButton.propTypes = {
   variant: PropTypes.oneOf(['filled', 'outlined', 'subtle', 'text']),
@@ -140,6 +142,6 @@ IconButton.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.element,
   onClick: PropTypes.func
-}
+};
 
 export default IconButton;

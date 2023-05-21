@@ -1,8 +1,9 @@
+"use client"
 import React, { createContext, useContext, useState } from "react";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTimeoutFn } from "react-use";
-import { IconCheck, IconExclamationCircle, IconExclamationMark, IconQuestionCircle } from "@tabler/icons-react";
+import { IconCheck, IconExclamationCircle, IconExclamationMark, IconInfoCircle } from "@tabler/icons-react";
 import Portal from "@/components/global/Portal.jsx";
 
 const ToastContext = createContext({
@@ -106,7 +107,7 @@ const Toast = ({ toast, onClose }) => {
         { toast.type === 'success' && <IconCheck size="20"/> }
         { toast.type === 'error' && <IconExclamationCircle size="20"/> }
         { toast.type === 'warning' && <IconExclamationMark size="20"/> }
-        { toast.type === 'info' && <IconQuestionCircle size="20"/> }
+        { toast.type === 'info' && <IconInfoCircle size="20"/> }
       </div>
       <p>{ toast.message }</p>
     </motion.div>

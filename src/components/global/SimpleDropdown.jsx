@@ -30,7 +30,7 @@ const SimpleDropdown = ({ trigger, items, direction = 'bottom-right' }) => {
     <Menu>
       {
         ({ open }) => (
-          <div className={ classNames("relative block z-10", { 'z-20': open }) }>
+          <div className={ classNames("relative z-10 flex", { 'z-20': open }) }>
             <Menu.Button className="w-full">{ trigger }</Menu.Button>
             <AnimatePresence initial={ false } mode="wait">
               {
@@ -85,6 +85,6 @@ SimpleDropdown.propTypes = {
       onClick: PropTypes.func
     })
   )
-}
+};
 
 export default SimpleDropdown;

@@ -1,11 +1,11 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import http from "@/lib/http.js";
 
-export const useGetUserBusinesses = () => {
+export const useGetUserBusinesses = ({ enabled = true } = {}) => {
   return useQuery(['business'], async () => {
     const res = await http.get('/business');
     return res.data;
-  });
+  }, { enabled });
 };
 
 export const useCreateBusinessMutation = () => {
