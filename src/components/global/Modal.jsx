@@ -55,7 +55,7 @@ const Modal = (
               animate="visible"
               exit="exit"
               className={ classNames(
-                "w-full overflow-hidden mx-auto relative rounded-2xl bg-white rounded-lg min-h-52",
+                "w-full overflow-hidden mx-auto relative rounded-2xl bg-white min-h-52",
                 { 'p-8': padding, 'max-w-3xl': size === 'md', 'max-w-lg': size === 'sm' }
               ) }
             >

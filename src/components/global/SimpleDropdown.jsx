@@ -31,7 +31,7 @@ const SimpleDropdown = ({ trigger, items, direction = 'bottom-right' }) => {
       {
         ({ open }) => (
           <div className={ classNames("relative z-10 flex", { 'z-20': open }) }>
-            <Menu.Button className="w-full">{ trigger }</Menu.Button>
+            <Menu.Button as="div" className="w-full cursor-pointer">{ trigger }</Menu.Button>
             <AnimatePresence initial={ false } mode="wait">
               {
                 open && (
