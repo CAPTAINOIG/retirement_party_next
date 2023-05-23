@@ -69,7 +69,9 @@ export const ToastProvider = ({ children }) => {
       { children }
       <Portal selector="body">
         <div
-          className="p-4 md:p-8 space-y-3 w-full md:w-max md:max-w-md fixed bottom-0 left-1/2 transform -translate-x-1/2 z-[999]"
+          className={ classNames('p-4 md:p-8 space-y-3 w-full md:w-max md:max-w-md fixed bottom-0 left-1/2 transform -translate-x-1/2 z-[999]', {
+            'pointer-events-none': !toasts.length
+          }) }
         >
           <AnimatePresence>
             { toasts.reverse().map(toast => (

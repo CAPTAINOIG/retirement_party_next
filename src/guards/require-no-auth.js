@@ -23,7 +23,7 @@ const requireNoAuth = (Component, props) => ({ children }) => {
     );
   }
   return (
-    <div className="h-screen w-full flex justify-center items-center">
+    <div className="my-auto w-full flex justify-center items-center">
       <Loader/>
     </div>
   )

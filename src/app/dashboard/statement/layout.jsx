@@ -18,7 +18,7 @@ const StatementLayout = ({ children }) => {
   const pathname = usePathname();
 
   return (
-    <div className="bg-slate-50 h-screen w-full grid grid-cols-[0_1fr] md:grid-cols-[300px_1fr] overflow-y-hidden">
+    <div className="h-screen w-full grid grid-cols-[0_1fr] md:grid-cols-[300px_1fr] overflow-y-hidden">
       <div className="h-screen border-r border-zinc-200 flex flex-col">
         <div className="p-8 md:p-10">
           <Link href="/">
@@ -53,7 +53,7 @@ const StatementLayout = ({ children }) => {
           </div>
         </div>
         <div className="flex-1">
-          <div className="w-full max-w-5xl mx-auto">
+          <div className="h-full w-full max-w-5xl mx-auto flex flex-col">
             { children }
           </div>
         </div>

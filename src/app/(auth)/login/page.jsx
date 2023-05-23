@@ -29,7 +29,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container py-20">
         <div className="w-full max-w-md mx-auto rounded-xl">
           <div className="mb-10">
             <h1 className="text-3xl font-semibold">Login</h1>

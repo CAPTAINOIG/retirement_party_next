@@ -15,7 +15,7 @@ const BusinessPage = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container py-20">
         <div className="w-full max-w-xl mx-auto rounded-xl">
           {
             isLoading ? (

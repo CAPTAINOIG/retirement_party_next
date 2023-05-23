@@ -42,7 +42,7 @@ const VerificationPage = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container py-20">
         <div className="w-full max-w-md mx-auto rounded-xl">
           <h1 className="text-3xl font-semibold">Verify your email address</h1>
           <p className="mt-4 mb-8">
