@@ -6,8 +6,7 @@ const nextConfig = {
       'bufferutil': 'commonjs bufferutil',
     })
     return config
-  },
-  output: 'export',
+  }
 };
 
 module.exports = nextConfig;
