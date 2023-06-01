@@ -95,9 +95,7 @@ const ChatWindow = ({ selected, onClose }) => {
                       <ConversationTitle conversation={ conversation }/>
                       <SimpleDropdown
                         trigger={
-                          <IconButton
-                            icon={ <IconDotsVertical size="20"/> } color="black" rounded variant="outlined" size="sm"
-                          />
+                          <IconButton icon={ <IconDotsVertical size="20"/> } color="white" rounded size="sm"/>
                         }
                         items={ [
                           { text: 'Delete', icon: <IconTrash size="18"/>, onClick: () => setIsDeleteModalOpen(true) },

@@ -3,7 +3,7 @@ import React from 'react';
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import classNames from "classnames";
-import { IconFileText, IconHome2, IconMessageChatbot } from "@tabler/icons-react";
+import { IconCash, IconFileText, IconHome2 } from "@tabler/icons-react";
 import ServicesSwitcher from "@/components/core/shared/ServicesSwitcher";
 import UserDropdown from "@/components/core/shared/UserDropdown";
 import requireAuthBusiness from "@/guards/require-auth-business";
@@ -11,7 +11,7 @@ import requireAuthBusiness from "@/guards/require-auth-business";
 const links = [
   { name: 'Overview', href: '/dashboard/statement', icon: <IconHome2 size="20"/> },
   { name: 'Analysis', href: '/dashboard/statement/analysis', icon: <IconFileText size="20"/> },
-  { name: 'Subscription', href: '/dashboard/statement/subscription', icon: <IconMessageChatbot size="20"/> },
+  { name: 'Plan', href: '/dashboard/statement/subscription', icon: <IconCash size="20"/> },
 ];
 
 const StatementLayout = ({ children }) => {
@@ -33,7 +33,7 @@ const StatementLayout = ({ children }) => {
                   key={ item.href } href={ item.href }
                   className={ classNames(
                     'flex items-center px-7 py-3 rounded-2xl',
-                    { 'bg-zinc-100 font-semibold': pathname === item.href },
+                    { 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold': pathname === item.href },
                     { 'hover:bg-zinc-50': pathname !== item.href }
                   ) }
                 >
@@ -46,7 +46,7 @@ const StatementLayout = ({ children }) => {
         </div>
       </div>
       <div className="h-screen overflow-y-auto flex flex-col relative">
-        <div className="sticky top-0 inset-x-0 bg-gradient-to-b from-white/90 from-60% z-50">
+        <div className="sticky top-0 inset-x-0 bg-gradient-to-b from-white z-50">
           <div className="w-full max-w-5xl mx-auto pt-6 pb-10 space-x-4 flex items-center justify-end">
             <UserDropdown/>
             <ServicesSwitcher/>

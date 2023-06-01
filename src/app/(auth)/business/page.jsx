@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { useGetUserBusinesses } from "@/api/business";
+import { useGetUserBusiness } from "@/api/business";
 import { IconCircleCheckFilled, IconCircleXFilled, IconHourglass } from "@tabler/icons-react";
 import CreateBusiness from "@/components/core/dashboard/overview/CreateBusiness";
 import requireAuth from "@/guards/require-auth";
@@ -9,9 +9,7 @@ import Button from "@/components/global/Button";
 import Link from "next/link";
 
 const BusinessPage = () => {
-  const { data, isLoading } = useGetUserBusinesses();
-
-  const business = data?.businesses?.[0];
+  const { data: business, isLoading } = useGetUserBusiness();
 
   return (
     <>

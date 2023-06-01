@@ -1,95 +1,76 @@
 "use client"
 import React from 'react';
-import { useAuth } from "@/hooks/use-auth";
-import { useGetUserBusinesses } from "@/api/business";
-import DashboardTitle from "@/components/core/dashboard/shared/DashboardTitle";
-import { IconBriefcase, IconCheck, IconCircleCheckFilled, IconHourglass } from "@tabler/icons-react";
-import CreateBusiness from "@/components/core/dashboard/overview/CreateBusiness";
-import classNames from "classnames";
+import { IconAngle, IconCash, IconFileText, IconPlus } from "@tabler/icons-react";
+import dynamic from "next/dynamic";
+import { useGetStatementOverview } from "@/api/statement";
+import { useGetUserBusiness } from "@/api/business";
+import RecentAnalysis from "@/components/core/dashboard/statement/RecentAnalysis";
+
+const StatementChart = dynamic(() => import("../../../components/core/dashboard/statement/StatementChart"));
 
 const StatementOverviewPage = () => {
-  const { user } = useAuth();
-  const { data, isLoading } = useGetUserBusinesses();
-
-  const business = data?.businesses?.[0];
+  const { data: business, isLoading: isBusinessLoading } = useGetUserBusiness();
+  const { data = {}, isLoading: isOverviewLoading } = useGetStatementOverview(business._id)
 
   return (
-    <>
-      <DashboardTitle text={ `Hi ${ user.firstName }` }></DashboardTitle>
-
-      <div className="grid md:grid-cols-12 gap-16 md:gap-10">
-        <div className="md:col-span-4">
-          <ol className="relative text-gray-500 border-l border-gray-200">
-            <li className="mb-10 ml-8">
-              <div
-                className="absolute flex items-center justify-center w-8 h-8 bg-green-500 text-white rounded-full -left-4 ring-4 ring-white"
-              >
-                <IconCheck size="18"/>
+    <div className="space-y-6 text-sm">
+      {
+        (isBusinessLoading || isOverviewLoading) ? (
+          <div className="grid grid-cols-4 gap-6">
+            <div className="bg-gray-100 rounded-2xl min-h-[120px]"></div>
+            <div className="bg-gray-100 rounded-2xl min-h-[120px]"></div>
+            <div className="bg-gray-100 rounded-2xl min-h-[120px]"></div>
+            <div className="bg-gray-100 rounded-2xl min-h-[120px]"></div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-4 gap-6">
+            <div className="border border-gray-300 rounded-2xl px-6 py-4">
+              <div className="flex items-center mb-1">
+                <IconFileText size="18" className="mr-2"/>
+                <p className="text-sm text-ellipsis whitespace-nowrap overflow-hidden">Statements analyzed</p>
               </div>
-              <h3 className="font-medium leading-tight">Account verification</h3>
-              <p className="text-sm mt-1">Verify your identity by providing your national id</p>
-            </li>
-            <li className="mb-10 ml-8">
-              <div
-                className={ classNames(
-                  'absolute flex items-center justify-center w-8 h-8 text-white rounded-full -left-4 ring-4 ring-white',
-                  business?.status === 'verified' ? 'bg-green-500' : 'bg-orange-500'
-                ) }
-              >
-                <IconBriefcase size="18"/>
+              <div className="text-3xl font-semibold">
+                { data.totalStatements }
               </div>
-              <h3 className="font-medium leading-tight">Setup your business</h3>
-              <p className="text-sm mt-1">Provide details about your business</p>
-            </li>
-          </ol>
+            </div>
+            <div className="border border-gray-300 rounded-2xl px-6 py-4">
+              <div className="flex items-center mb-1">
+                <IconCash size="18" className="mr-2"/>
+                <p className="text-sm text-ellipsis whitespace-nowrap overflow-hidden">Plan</p>
+              </div>
+              <div className="text-3xl font-semibold">
+                Basic
+              </div>
+            </div>
+            <div className="border border-gray-300 rounded-2xl px-6 py-4">
+              <div className="flex items-center mb-1">
+                <IconAngle size="18" className="mr-2"/>
+                <p className="text-sm text-ellipsis whitespace-nowrap overflow-hidden">Something here</p>
+              </div>
+              <div className="text-3xl font-semibold">
+                0
+              </div>
+            </div>
+            <div
+              className="border border-gray-300 rounded-2xl px-6 py-4 flex flex-col items-center justify-center hover:bg-gray-100 cursor-pointer"
+            >
+              <div className="text-3xl font-semibold">
+                <IconPlus/>
+              </div>
+              <p className="text-sm text-ellipsis whitespace-nowrap overflow-hidden mt-1">New analysis</p>
+            </div>
+          </div>
+        )
+      }
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-span-5">
+          <RecentAnalysis/>
         </div>
-        <div className="md:col-span-8">
-          {
-            isLoading ? (
-              <div className="bg-gray-100 rounded-xl w-full h-[300px]"></div>
-            ) : (
-              <>
-                {
-                  business ? (
-                    <>
-                      {
-                        business.status === 'pending' && (
-                          <div
-                            className="border border-gray-300 rounded-xl px-10 py-24 flex flex-col items-center justify-center text-center"
-                          >
-                            <IconHourglass size="72" className="text-orange-600"/>
-                            <h6 className="text-lg mt-8 font-semibold max-w-sl">Business verification pending</h6>
-                            <p className="max-w-sm mt-2">
-                              We are currently verifying your business information, you'll be notified via email when
-                              review is completed
-                            </p>
-                          </div>
-                        )
-                      }
-                      {
-                        business.status === 'verified' && (
-                          <div
-                            className="border border-gray-300 rounded-xl px-10 py-24 flex flex-col items-center justify-center text-center"
-                          >
-                            <IconCircleCheckFilled size="72" className="text-green-600"/>
-                            <h6 className="text-lg mt-8 font-semibold max-w-sl">Business verification successful</h6>
-                            <p className="max-w-sm mt-2">
-                              You business information has been successfully verified
-                            </p>
-                          </div>
-                        )
-                      }
-                    </>
-                  ) : (
-                    <CreateBusiness/>
-                  )
-                }
-              </>
-            )
-          }
+        <div className="col-span-7 flex flex-col">
+          <StatementChart/>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
