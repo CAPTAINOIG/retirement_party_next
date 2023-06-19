@@ -3,5 +3,31 @@ export const delay = (ms) => {
 };
 
 export const formatCurrency = (value) => {
+  if (isNaN(value)) return value;
   return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(+value)
+};
+
+export const getModeArray = array => {
+  if (array.length === 0) return null;
+  let modeMap = {};
+  let maxCount = 1;
+  let modes = [];
+  for (let i = 0; i < array.length; i++) {
+    const el = array[i];
+    if (modeMap[el] == null) modeMap[el] = 1;
+    else modeMap[el]++;
+    if (modeMap[el] > maxCount) {
+      modes = [el];
+      maxCount = modeMap[el];
+    } else if (modeMap[el] === maxCount) {
+      modes.push(el);
+      maxCount = modeMap[el];
+    }
+  }
+  return modes;
+};
+
+export const capitalize = (word) => {
+  if (!word) return word;
+  return word.charAt(0).toUpperCase() + word.slice(1);
 };

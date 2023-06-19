@@ -11,8 +11,9 @@ import { useAnalyzeStatement, useCreateStatement } from "@/api/statement";
 import { GridLoader } from "react-spinners";
 import { useQueryClient } from "@tanstack/react-query";
 import { useGetUserBusiness } from "@/api/business";
+import Link from "next/link";
 
-const NewAnalysis = ({ isOpen, onClose, onView }) => {
+const NewAnalysis = ({ isOpen, onClose }) => {
   const toast = useToast();
   const qc = useQueryClient();
   const { data: business } = useGetUserBusiness();
@@ -65,11 +66,6 @@ const NewAnalysis = ({ isOpen, onClose, onView }) => {
     onClose();
   };
 
-  const handleView = () => {
-    onView(response.current);
-    handleClose();
-  };
-
   return (
     <Drawer isOpen={ isOpen } onClose={ handleClose }>
       {
@@ -120,9 +116,11 @@ const NewAnalysis = ({ isOpen, onClose, onView }) => {
                     <p className="max-w-xs mt-2">
                       Click the button below to view analysis results
                     </p>
-                    <Button onClick={ handleView } variant="outlined" className="mt-8">
-                      View result
-                    </Button>
+                    <Link href={ `/dashboard/statement/analysis/${ response.current.transactionId }` }>
+                      <Button variant="outlined" className="mt-8">
+                        View result
+                      </Button>
+                    </Link>
                   </div>
                 </>
               ) : (

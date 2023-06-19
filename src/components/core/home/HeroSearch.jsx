@@ -11,7 +11,6 @@ const HeroSearch = ({ className }) => {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-    console.log(params.get('q'))
     if (params.get('q')) setQuery(params.get('q'))
   }, [params]);
 

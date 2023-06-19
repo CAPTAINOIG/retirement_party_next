@@ -8,7 +8,7 @@ const StatementChart = () => {
   const { data: business, isLoading: isBusinessLoading } = useGetUserBusiness();
   const { data: { statements = [] } = {}, isLoading: isStatementsLoading } = useGetStatements(business._id);
 
-  const data = statements.reverse().reduce((acc, statement) => {
+  const data = [...statements].reverse().reduce((acc, statement) => {
     const date = Date.parse(statement.createdAt);
     const index = acc.findIndex(i => isSameDay(new Date(i.date), new Date(date)));
     if (index !== -1) {

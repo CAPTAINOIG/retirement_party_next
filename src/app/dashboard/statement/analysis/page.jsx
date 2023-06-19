@@ -4,21 +4,14 @@ import Button from "@/components/global/Button";
 import { IconChevronRight, IconExclamationCircle, IconPlus } from "@tabler/icons-react";
 import NewAnalysis from "@/components/core/dashboard/statement/NewAnalysis";
 import { useGetStatements } from "@/api/statement";
-import AnalysisDetails from "@/components/core/dashboard/statement/AnalysisDetails";
 import { useGetUserBusiness } from "@/api/business";
 import { format } from "date-fns";
+import Link from "next/link";
 
 const StatementAnalysisPage = () => {
   const [isAnalyzeOpen, setIsAnalyzeOpen] = useState(false);
-  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const { data: business, isLoading: isBusinessLoading } = useGetUserBusiness();
   const { data: { statements = [] } = {}, isLoading: isStatementsLoading } = useGetStatements(business._id);
-  const [transactionId, setTransactionId] = useState(null);
-
-  const handleClick = (statement) => {
-    setTransactionId(statement.transactionId);
-    setIsDetailsOpen(true);
-  };
 
   return (
     <div>
@@ -27,9 +20,9 @@ const StatementAnalysisPage = () => {
           Analysis history
         </h1>
         <Button
-          onClick={ () => setIsAnalyzeOpen(true) } leftIcon={ <IconPlus size="20"/> } variant="outlined"
+          onClick={ () => setIsAnalyzeOpen(true) } leftIcon={ <IconPlus size="20"/> } variant="subtle" color="black"
         >
-          Analyze
+          Analyze statement
         </Button>
       </div>
       <div className="mt-10">
@@ -69,12 +62,13 @@ const StatementAnalysisPage = () => {
                               { format(new Date(statement.createdAt), 'do MMM, yyyy') }
                             </td>
                             <td>
-                              <Button
-                                onClick={ () => handleClick(statement) }
-                                variant="outlined" color="black" size="xs" rightIcon={ <IconChevronRight size="16"/> }
-                              >
-                                View
-                              </Button>
+                              <Link href={ `/dashboard/statement/analysis/${ statement.transactionId }` }>
+                                <Button
+                                  variant="outlined" color="black" size="xs" rightIcon={ <IconChevronRight size="16"/> }
+                                >
+                                  View
+                                </Button>
+                              </Link>
                             </td>
                           </tr>
                         ))
@@ -100,16 +94,7 @@ const StatementAnalysisPage = () => {
 
       <NewAnalysis
         isOpen={ isAnalyzeOpen }
-        onView={ handleClick }
         onClose={ () => setIsAnalyzeOpen(false) }
-      />
-      <AnalysisDetails
-        isOpen={ isDetailsOpen }
-        transactionId={ transactionId }
-        onClose={ () => {
-          setTransactionId(null);
-          setIsDetailsOpen(false);
-        } }
       />
     </div>
   );

@@ -48,12 +48,12 @@ const StatementLayout = ({ children }) => {
       <div className="h-screen overflow-y-auto flex flex-col relative">
         <div className="sticky top-0 inset-x-0 bg-gradient-to-b from-white z-50">
           <div className="w-full max-w-5xl mx-auto pt-6 pb-10 space-x-4 flex items-center justify-end">
-            <UserDropdown/>
             <ServicesSwitcher/>
+            <UserDropdown/>
           </div>
         </div>
         <div className="flex-1">
-          <div className="h-full w-full max-w-5xl mx-auto flex flex-col">
+          <div className="h-full w-full max-w-5xl mx-auto flex flex-col pb-10">
             { children }
           </div>
         </div>

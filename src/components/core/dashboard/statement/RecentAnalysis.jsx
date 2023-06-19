@@ -16,36 +16,44 @@ const RecentAnalysis = () => {
           <div className="min-h-[300px] bg-gray-100 rounded-2xl">
           </div>
         ) : (
-          <div className="border border-gray-300 rounded-2xl px-8 py-6">
-            <div className="flex items-center mb-8">
-              <h3 className="font-semibold mr-4">Recent analysis</h3>
-              <Link href="/dashboard/statement/analysis">
-                <Button variant="outlined" size="sm" rightIcon={ <IconArrowRight size="16"/> }>View all</Button>
-              </Link>
-            </div>
-            <div className="space-y-8">
-              {
-                statements.slice(0, 4).map((statement, i) => (
-                  <div key={ i } className="flex items-center">
-                    <div>
-                      <div
-                        className="w-8 h-8 rounded-full flex items-center justify-center bg-primary-50 text-primary-600"
-                      >
-                        <IconFileText size="18"/>
+          <div className="border border-gray-300 rounded-2xl overflow-hidden">
+            <div className="px-8 py-6">
+              <div className="flex items-center mb-8">
+                <h3 className="font-semibold mr-4">Recent analysis</h3>
+              </div>
+              <div className="space-y-8">
+                {
+                  [...statements].slice(0, 4).map((statement, i) => (
+                    <div key={ i } className="flex items-center">
+                      <div>
+                        <div
+                          className="w-8 h-8 rounded-full flex items-center justify-center bg-primary-50 text-primary-600"
+                        >
+                          <IconFileText size="18"/>
+                        </div>
                       </div>
+                      <div className="px-4 overflow-hidden">
+                        <p className="font-medium leading-none">{ statement.name }</p>
+                        <p className="leading-none text-[.95rem] mt-1 text-ellipsis whitespace-nowrap overflow-hidden">
+                          { statement.transactionId }
+                        </p>
+                      </div>
+                      <Link href={ `/dashboard/statement/analysis/${ statement.transactionId }` }>
+                        <Button variant="outlined" size="sm" className="ml-auto">View</Button>
+                      </Link>
                     </div>
-                    <div className="px-4 overflow-hidden">
-                      <p className="font-medium leading-none">{ statement.name }</p>
-                      <p className="leading-none text-[.95rem] mt-1 text-ellipsis whitespace-nowrap overflow-hidden">
-                        { statement.transactionId }
-                      </p>
-                    </div>
-                    <Button variant="outlined" size="sm" className="ml-auto">View</Button>
-                  </div>
-                ))
-              }
-              { !statements.length && <p className="opacity-50">No analysis done yet</p> }
+                  ))
+                }
+                { !statements.length && <p className="opacity-50">No analysis done yet</p> }
+              </div>
             </div>
+            <hr/>
+            <Link
+              href="/dashboard/statement/analysis"
+              className="w-full hover:bg-gray-50 flex items-center justify-center px-8 py-2.5 font-medium"
+            >
+              View all <IconArrowRight size="16" className="ml-4"/>
+            </Link>
           </div>
         )
       }
