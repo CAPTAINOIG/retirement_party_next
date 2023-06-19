@@ -25,7 +25,7 @@ const SweepingSummary = ({ data }) => {
           <div>Usually sweeps highest deposit within</div>
           <div>
             {
-              `${ Math.min(...(highest_deposit_sweep || [0])) } and ${ Math.max(...(highest_deposit_sweep || [0])) } days`
+              highest_deposit_sweep?.length ? `${ Math.min(...(highest_deposit_sweep)) } and ${ Math.max(...(highest_deposit_sweep)) } days` : 'N/A'
             }
           </div>
         </div>
@@ -33,7 +33,7 @@ const SweepingSummary = ({ data }) => {
           <div>Usually sweeps any deposit within</div>
           <div>
             {
-              `${ Math.min(...highlight.each_deposit_sweep) } and ${ Math.max(...highlight.each_deposit_sweep) } days`
+              highlight.each_deposit_sweep?.location ? `${ Math.min(...(highlight.each_deposit_sweep || [0])) } and ${ Math.max(...(highlight.each_deposit_sweep || [0])) } days` : 'N/A'
             }
           </div>
         </div>
