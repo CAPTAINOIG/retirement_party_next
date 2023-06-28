@@ -100,7 +100,7 @@ const TransactionPatterns = ({ data }) => {
           </div>
         </div>
         <div className="px-6 py-2 grid grid-cols-2 gap-6 items-center">
-          <div>Credit turnover</div>
+          <div>Total turnover</div>
           <div>
             { formatCurrency(highlight.credit_turnover) }
           </div>
@@ -108,7 +108,7 @@ const TransactionPatterns = ({ data }) => {
         <div className="px-6 py-2 grid grid-cols-2 gap-6 items-center">
           <div>Negative balance days</div>
           <div>
-            { formatCurrency(highlight.days_overdraft) }
+            { highlight.days_overdraft }
           </div>
         </div>
         <div className="px-6 py-2 grid grid-cols-2 gap-6 items-center">

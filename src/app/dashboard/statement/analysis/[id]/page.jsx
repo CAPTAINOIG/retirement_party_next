@@ -3,7 +3,7 @@ import React from 'react';
 import SimpleDropdown from "@/components/global/SimpleDropdown";
 import IconButton from "@/components/global/IconButton";
 import { IconChevronLeft, IconDotsVertical, IconFileText, IconListDetails, IconTrash } from "@tabler/icons-react";
-import { useGetTransactionDetails } from "@/api/statement";
+import { useGetStatement, useGetTransactionDetails } from "@/api/statement";
 import AccountActivityChart from "@/components/core/dashboard/statement/details/AccountActivityChart";
 import Link from "next/link";
 import CashFlowHighlights from "@/components/core/dashboard/statement/details/CashFlowHighlights";
@@ -26,16 +26,19 @@ import DerivedData from "@/components/core/dashboard/statement/details/DerivedDa
 import SweepingDetails from "@/components/core/dashboard/statement/details/SweepingDetails";
 import NetMonthlyEarnings from "@/components/core/dashboard/statement/details/NetMonthlyEarnings";
 import StatementOwnership from "@/components/core/dashboard/statement/details/StatementOwnership";
+import { useGetUserBusiness } from "@/api/business";
 
 const StatementDetails = ({ params: { id } }) => {
-  const { data, isLoading } = useGetTransactionDetails(id);
+  const { data: business } = useGetUserBusiness();
+  const { data: { statement } = {}, isLoading: isStatementLoading } = useGetStatement(business._id, id);
+  const { data, isLoading: isTransactionsLoading } = useGetTransactionDetails(statement?.transactionId);
 
   const { highlight } = data?.analytics_data ?? {};
 
   return (
     <>
       {
-        isLoading ? (
+        (isTransactionsLoading || isStatementLoading) ? (
           <>
             <div className="bg-gray-100 rounded-2xl w-[200px] py-4"></div>
             <div className="bg-gray-100 rounded-2xl w-[400px] py-4 mt-4"></div>

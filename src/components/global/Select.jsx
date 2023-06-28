@@ -15,19 +15,17 @@ const Select = forwardRef((
           { 'bg-transparent border border-zinc-300': bordered },
           { 'bg-slate-200': !bordered }
         ) }
-
       >
         <select
-          id={ id } { ...props } ref={ ref } className="mt-2 pb-2 w-full bg-transparent appearance-none peer" placeholder=" "
+          id={ id } { ...props } ref={ ref } className="mt-2 pb-2 w-full bg-transparent appearance-none peer"
+          placeholder=" "
         >
           {
             loading
               ? <option value="" disabled>Loading..</option>
               : (
                 <>
-                  {
-                    !!placeholder && <option value="">{ placeholder }</option>
-                  }
+                  { !!placeholder && <option value="">{ placeholder }</option> }
                   {
                     options.map(option => (
                       <option key={ option.value } value={ option.value }>{ option.text }</option>

@@ -4,6 +4,7 @@ import React from "react";
 const products = [
   {
     name: 'Sensiii',
+    slug: 'sensii',
     description: `An advanced embedded AI assistant`,
     backgroundColor: 'bg-blue-500',
     textColor: 'text-blue-500',
@@ -13,6 +14,7 @@ const products = [
   },
   {
     name: 'BeTrue',
+    slug: 'betrue',
     description: `A customer eligibility platform for businesses`,
     backgroundColor: 'bg-red-500',
     textColor: 'text-red-500',
@@ -22,6 +24,7 @@ const products = [
   },
   {
     name: 'Statement',
+    slug: 'statement',
     description: `Analyze any bank statement in seconds`,
     backgroundColor: 'bg-teal-500',
     textColor: 'text-teal-500',
@@ -31,6 +34,7 @@ const products = [
   },
   {
     name: 'MineMe',
+    slug: 'mineme',
     description: `A bespoke customer data analyzed for businesses`,
     backgroundColor: 'bg-orange-500',
     textColor: 'text-orange-500',

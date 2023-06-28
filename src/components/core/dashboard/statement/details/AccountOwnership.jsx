@@ -26,7 +26,7 @@ const AccountOwnership = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-10 gap-8 items-start">
+      <div className="grid grid-cols-11 gap-8 items-start">
         <div className="col-span-4 border border-gray-300 rounded-2xl">
           <h3 className="font-medium px-8 pt-6 pb-4">Outgoing receipt</h3>
           <div className="divide-y divide-gray-300">
@@ -47,8 +47,8 @@ const AccountOwnership = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="col-span-6 relative overflow-x-auto rounded-xl border border-gray-300">
-          <table className="w-full text-sm text-left">
+        <div className="col-span-7 relative overflow-x-auto rounded-xl border border-gray-300">
+          <table className="w-full text-md text-left">
             <thead className="border-b border-gray-300">
             <tr>
               <th scope="col" className="font-medium border pl-6 pr-2 py-3">Entity</th>

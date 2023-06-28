@@ -34,12 +34,12 @@ const RecentAnalysis = () => {
                       </div>
                       <div className="px-4 overflow-hidden">
                         <p className="font-medium leading-none">{ statement.name }</p>
-                        <p className="leading-none text-[.95rem] mt-1 text-ellipsis whitespace-nowrap overflow-hidden">
-                          { statement.transactionId }
+                        <p className="leading-none text-[.95rem] mt-1.5 text-ellipsis whitespace-nowrap overflow-hidden">
+                          { statement.bank } - { statement.from }
                         </p>
                       </div>
-                      <Link href={ `/dashboard/statement/analysis/${ statement.transactionId }` }>
-                        <Button variant="outlined" size="sm" className="ml-auto">View</Button>
+                      <Link href={ `/dashboard/statement/analysis/${ statement._id }` } className="ml-auto">
+                        <Button variant="outlined" size="sm">View</Button>
                       </Link>
                     </div>
                   ))

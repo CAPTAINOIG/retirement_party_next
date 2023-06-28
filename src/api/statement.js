@@ -8,9 +8,9 @@ export const useAnalyzeStatement = () => {
   });
 };
 
-export const useCreateStatement = () => {
+export const useCreateStatement = (business) => {
   return useMutation((body) => {
-    return http.post('/statement', body)
+    return http.post(`/statement/${ business }`, body)
   });
 };
 
@@ -19,6 +19,13 @@ export const useGetStatements = (business) => {
     const res = await http.get(`/statement/${ business }`);
     return res.data;
   }, { enabled: !!business });
+};
+
+export const useGetStatement = (business, id) => {
+  return useQuery(['statements', id], async () => {
+    const res = await http.get(`/statement/${ business }/${ id }`)
+    return res.data;
+  }, { enabled: !!business && !!id });
 };
 
 export const useGetTransactionDetails = (id) => {
@@ -33,4 +40,79 @@ export const useGetStatementOverview = (business) => {
     const res = await http.get(`/statement/${ business }/overview`);
     return res.data;
   }, { enabled: !!business });
+};
+
+export const useGetMonoInstitutions = ({ key }) => {
+  return useQuery(['institutions'], async () => {
+    const res = await axios.get('https://api.withmono.com/v1/institutions', {
+      headers: { 'mono-sec-key': key }
+    });
+    return res.data;
+  });
+};
+
+export const useCreateMonoSession = ({ key }) => {
+  return useMutation(({ app, institution, auth_method }) => {
+    return axios.post('https://api.withmono.com/v1/connect/session', { app, institution, auth_method }, {
+      headers: { 'mono-sec-key': key }
+    });
+  });
+};
+
+export const useLoginMono = ({ key }) => {
+  return useMutation(({ username, password, sessionId }) => {
+    return axios.post('https://api.withmono.com/v1/connect/login', { username, password }, {
+      headers: { 'x-session-id': sessionId, 'mono-sec-key': key }
+    });
+  });
+};
+
+export const useCommitMonoSession = ({ key }) => {
+  return useMutation(({ sessionId, ...body }) => {
+    return axios.post('https://api.withmono.com/v1/connect/commit', body, {
+      headers: { 'x-session-id': sessionId, 'mono-sec-key': key }
+    });
+  });
+};
+
+export const useGetMonoTransactions = ({ key }) => {
+  return useMutation(async ({ code }) => {
+    const { data: { id } } = await axios.post('https://api.withmono.com/account/auth', { code }, {
+      headers: { 'mono-sec-key': key }
+    });
+    const res = await http.get(`https://api.withmono.com/accounts/${ id }/transactions`, {
+      params: { paginate: false },
+      headers: { 'mono-sec-key': key }
+    });
+    return res.data;
+  });
+};
+
+export const useAnalyzeJson = () => {
+  return useMutation(({ ...payload }) => {
+    const fd = new FormData();
+    Object.keys(payload).forEach(key => {
+      fd.append(key, typeof payload[key] === 'string' ? payload[key] : JSON.stringify(payload[key]));
+    });
+    return axios.post('https://view.bankstatement.ai/index.php/analysis/get_transactions', fd);
+  });
+};
+
+export const useGetStatementSettings = (business) => {
+  return useQuery(['statement', 'settings'], async () => {
+    const res = await http.get(`/statement/${ business }/settings`);
+    return res.data;
+  }, { enabled: !!business });
+};
+
+export const useCreateStatementSettings = (business) => {
+  return useMutation((body = {}) => {
+    return http.post(`/statement/${ business }/settings`, body);
+  });
+};
+
+export const useUpdateStatementSettings = (business) => {
+  return useMutation((body) => {
+    return http.patch(`/statement/${ business }/settings`, body)
+  });
 };
