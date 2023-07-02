@@ -116,22 +116,20 @@ const AnalyzePdf = ({ onBack }) => {
           <>
             {
               success ? (
-                <>
-                  <div className="h-full rounded-xl px-10 py-24 flex flex-col items-center justify-center text-center">
-                    <IconCircleCheckFilled size="80" className="text-green-600"/>
-                    <h6 className="text-xl mt-8 font-semibold max-w-xs">
-                      Analysis successful
-                    </h6>
-                    <p className="max-w-xs mt-2">
-                      Click the button below to view analysis results
-                    </p>
-                    <Link href={ `/dashboard/statement/analysis/${ response.current._id }` }>
-                      <Button variant="outlined" className="mt-8">
-                        View result
-                      </Button>
-                    </Link>
-                  </div>
-                </>
+                <div className="h-full rounded-xl px-10 py-24 flex flex-col items-center justify-center text-center">
+                  <IconCircleCheckFilled size="80" className="text-green-600"/>
+                  <h6 className="text-xl mt-8 font-semibold max-w-xs">
+                    Analysis successful
+                  </h6>
+                  <p className="max-w-xs mt-2">
+                    Click the button below to view analysis results
+                  </p>
+                  <Link href={ `/dashboard/statement/analysis/${ response.current._id }` }>
+                    <Button variant="outlined" className="mt-8">
+                      View result
+                    </Button>
+                  </Link>
+                </div>
               ) : (
                 <>
                   {
@@ -188,9 +186,10 @@ const AnalyzePdf = ({ onBack }) => {
                                 label="Statement type" bordered placeholder="Select one"
                                 { ...register('type', { required: 'Statement type is required' }) }
                                 error={ errors?.type?.message }
-                                options={ [{ text: 'Personal', value: 'personal' }, {
-                                  text: 'Business', value: 'business'
-                                }] }
+                                options={ [
+                                  { text: 'Personal', value: 'personal' },
+                                  { text: 'Business', value: 'business' }
+                                ] }
                               />
                               <Input
                                 label="Pdf password (Optional)" bordered

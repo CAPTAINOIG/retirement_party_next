@@ -80,6 +80,7 @@ const StatementAnalysisPage = () => {
                                 'px-2.5 py-1 leading-none inline-block rounded-full border border-gray-600 text-gray-600',
                                 { '!border-red-500 !text-red-500': statement.from === 'pdf' },
                                 { '!border-blue-500 !text-blue-500': statement.from === 'mono' },
+                                { '!border-teal-500 !text-teal-500': statement.from === 'mbs' },
                               ) }>
                                 { statement.from }
                               </div>

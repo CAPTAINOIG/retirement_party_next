@@ -116,3 +116,27 @@ export const useUpdateStatementSettings = (business) => {
     return http.patch(`/statement/${ business }/settings`, body)
   });
 };
+
+export const useInitializeMbs = (business) => {
+  return useMutation(({ ...body }) => {
+    return http.post(`/analysis/${ business }/mbs/initialize`, body);
+  });
+};
+
+export const useCheckMbsStatus = (business) => {
+  return useMutation((requestId) => {
+    return http.post(`/analysis/${ business }/mbs/status`, { requestId });
+  });
+};
+
+export const useSubmitMbsTicket = (business) => {
+  return useMutation(({ ticketNo, password }) => {
+    return http.post(`/analysis/${ business }/mbs/submit`, { ticketNo, password });
+  });
+};
+
+export const useRetrieveMbsPdf = (business) => {
+  return useMutation(({ ticketNo }) => {
+    return http.post(`/analysis/${ business }/mbs/retrieve`, { ticketNo });
+  });
+};
