@@ -1,12 +1,11 @@
 import React from 'react';
+import Card from "@/components/global/Card";
 
 const StatementOwnership = ({ data }) => {
   const { highlight } = data?.analytics_data ?? {}
 
   return (
-    <div
-      className="border border-gray-300 rounded-2xl mb-4 px-10 py-10 h-full text-center flex flex-col items-center justify-center"
-    >
+    <Card className="mb-4 px-10 py-10 h-full text-center flex flex-col items-center justify-center">
       <div className="text-3xl">
         { highlight.name_check.score }%
       </div>
@@ -14,7 +13,7 @@ const StatementOwnership = ({ data }) => {
       <div className="mt-1">
         { highlight.name_check.message }
       </div>
-    </div>
+    </Card>
   );
 };
 

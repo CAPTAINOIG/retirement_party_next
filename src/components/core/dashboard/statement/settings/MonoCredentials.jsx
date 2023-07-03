@@ -6,6 +6,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useGetUserBusiness } from "@/api/business";
 import { useGetStatementSettings, useUpdateStatementSettings } from "@/api/statement";
 import { useForm } from "react-hook-form";
+import Card from "@/components/global/Card";
 
 const MonoCredentials = () => {
   const toast = useToast();
@@ -31,7 +32,7 @@ const MonoCredentials = () => {
   };
 
   return (
-    <div className="border border-gray-300 rounded-2xl px-8 py-8">
+    <Card className="px-8 py-8">
       <h4 className="font-medium">Mono Credentials</h4>
       <p className="mt-2 text-[.95rem] opacity-80">
         Set up your mono integration by providing the following credentials from your mono dashboard
@@ -56,7 +57,7 @@ const MonoCredentials = () => {
           Save
         </Button>
       </form>
-    </div>
+    </Card>
   );
 };
 

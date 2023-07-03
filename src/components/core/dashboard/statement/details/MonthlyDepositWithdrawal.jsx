@@ -1,12 +1,13 @@
 import React from 'react';
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { capitalize, formatCurrency } from "@/lib/utils";
+import Card from "@/components/global/Card";
 
 const MonthlyDepositWithdrawal = ({ data }) => {
   const { monthly_analytics } = data?.analytics_data ?? {};
 
   return (
-    <div className="border border-gray-300 rounded-2xl px-8 py-8 w-full">
+    <Card className="px-8 py-8 w-full">
       <h3 className="font-medium mb-8">Monthly Deposit vs Withdrawal</h3>
       <div className="h-[400px]">
         <ResponsiveContainer width="100%" height="100%">
@@ -36,7 +37,7 @@ const MonthlyDepositWithdrawal = ({ data }) => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </Card>
   );
 };
 

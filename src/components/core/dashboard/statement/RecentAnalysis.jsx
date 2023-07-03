@@ -4,6 +4,7 @@ import Button from "@/components/global/Button";
 import { IconArrowRight, IconFileText } from "@tabler/icons-react";
 import { useGetStatements } from "@/api/statement";
 import { useGetUserBusiness } from "@/api/business";
+import Card from "@/components/global/Card";
 
 const RecentAnalysis = () => {
   const { data: business, isLoading: isBusinessLoading } = useGetUserBusiness();
@@ -16,10 +17,10 @@ const RecentAnalysis = () => {
           <div className="min-h-[300px] bg-gray-100 rounded-2xl">
           </div>
         ) : (
-          <div className="border border-gray-300 rounded-2xl overflow-hidden">
+          <Card className="overflow-hidden">
             <div className="px-8 py-6">
               <div className="flex items-center mb-8">
-                <h3 className="font-semibold mr-4">Recent analysis</h3>
+                <h3 className="font-semibold text-base mr-4">Recent analysis</h3>
               </div>
               <div className="space-y-8">
                 {
@@ -27,14 +28,14 @@ const RecentAnalysis = () => {
                     <div key={ i } className="flex items-center">
                       <div>
                         <div
-                          className="w-8 h-8 rounded-full flex items-center justify-center bg-primary-50 text-primary-600"
+                          className="w-10 h-10 rounded-full flex items-center justify-center bg-red-50 text-red-700"
                         >
-                          <IconFileText size="18"/>
+                          <IconFileText size="20"/>
                         </div>
                       </div>
-                      <div className="px-4 overflow-hidden">
+                      <div className="px-4">
                         <p className="font-medium leading-none">{ statement.name }</p>
-                        <p className="leading-none text-[.95rem] mt-1.5 text-ellipsis whitespace-nowrap overflow-hidden">
+                        <p className="leading-none text-[.95rem] mt-1.5 text-ellipsis whitespace-nowrap opacity-80">
                           { statement.bank } - { statement.from }
                         </p>
                       </div>
@@ -47,14 +48,14 @@ const RecentAnalysis = () => {
                 { !statements.length && <p className="opacity-50">No analysis done yet</p> }
               </div>
             </div>
-            <hr/>
+            <hr className="border-gray-300"/>
             <Link
               href="/dashboard/statement/analysis"
               className="w-full hover:bg-gray-50 flex items-center justify-center px-8 py-2.5 font-medium"
             >
               View all <IconArrowRight size="16" className="ml-4"/>
             </Link>
-          </div>
+          </Card>
         )
       }
     </>

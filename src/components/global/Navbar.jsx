@@ -1,7 +1,7 @@
 "use client"
 import React, { createElement, useState } from 'react';
 import Link from "next/link";
-import { IconApps, IconLogout, IconMenu } from "@tabler/icons-react";
+import { IconChartBar, IconLayout2, IconLogout, IconMenu } from "@tabler/icons-react";
 import { useIsomorphicLayoutEffect } from "react-use";
 import classNames from "classnames";
 import Button from "@/components/global/Button.jsx";
@@ -48,8 +48,9 @@ const Navbar = () => {
         <div className="container h-full">
           <nav className="relative z-50 flex justify-between h-full">
             <div className="flex items-center md:gap-x-12 flex-1 h-full">
-              <Link href="/" className="text-xl w-[170px]">
-                <img src={ scrolled ? '/images/light-3.svg' : '/images/dark-3.svg' } alt="logo"/>
+              <Link href="/" className="text-[1.6rem] flex items-center">
+                <IconChartBar size="32" className="mr-3"/>
+                Stati<b className="ml-[1px]">sense.</b>
               </Link>
               <div className="hidden lg:flex md:space-x-3 ml-auto h-full">
                 <Hover className="h-full inline-flex items-center">
@@ -67,7 +68,7 @@ const Navbar = () => {
                                 animate={ { opacity: 1, y: 0 } }
                                 exit={ { opacity: 0, y: 20 } }
                                 className={ classNames(
-                                  'p-4 rounded-2xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-1/2 -translate-x-1/2 right-0 w-[630px] grid grid-cols-2 gap-4',
+                                  'p-4 rounded-2xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-1/2 -translate-x-1/2 right-0 w-[600px] grid grid-cols-2',
                                 ) }
                               >
                                 {
@@ -139,7 +140,11 @@ const Navbar = () => {
                           </div>
                         }
                         items={ [
-                          { text: 'Dashboard', icon: <IconApps size="18"/>, onClick: () => router.push('/dashboard') },
+                          {
+                            text: 'Dashboard',
+                            icon: <IconLayout2 size="18"/>,
+                            onClick: () => router.push('/dashboard')
+                          },
                           { text: 'Logout', icon: <IconLogout size="18"/>, onClick: handleLogout }
                         ] }
                       />

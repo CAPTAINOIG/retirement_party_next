@@ -27,6 +27,8 @@ import SweepingDetails from "@/components/core/dashboard/statement/details/Sweep
 import NetMonthlyEarnings from "@/components/core/dashboard/statement/details/NetMonthlyEarnings";
 import StatementOwnership from "@/components/core/dashboard/statement/details/StatementOwnership";
 import { useGetUserBusiness } from "@/api/business";
+import { format } from "date-fns";
+import Card from "@/components/global/Card";
 
 const StatementDetails = ({ params: { id } }) => {
   const { data: business } = useGetUserBusiness();
@@ -56,7 +58,7 @@ const StatementDetails = ({ params: { id } }) => {
                     <div className="flex items-center space-x-3">
                       <Link href="/dashboard/statement/analysis">
                         <IconButton
-                          variant="text" color="black" size="sm" rounded icon={ <IconChevronLeft size="20"/> }
+                          variant="subtle" color="black" size="sm" rounded icon={ <IconChevronLeft size="20"/> }
                         />
                       </Link>
                       <h3 className="text-xl font-medium">Analysis details</h3>
@@ -87,32 +89,35 @@ const StatementDetails = ({ params: { id } }) => {
                       />
                     </div>
                   </div>
-                  <div className="space-y-10">
+                  <div className="space-y-8">
                     <div className="grid grid-cols-9 gap-10 items-center">
                       <div className="col-span-5 space-y-6">
-                        <div className="border border-gray-300 rounded-2xl">
+                        <Card>
                           <h3 className="font-medium px-6 py-6">Details</h3>
                           <div className="divide-y divide-gray-300">
                             <div className="px-6 py-2 flex items-center justify-between">
-                              <div>Account name</div>
-                              <div>
-                                { highlight.name_check.account_name }
+                              <div className="flex-1">
+                                Account name:&nbsp;&nbsp;{ highlight.name_check.account_name }
+                              </div>
+                              <div className="flex-1">
+                                Bank:&nbsp;&nbsp;{ statement.bank || 'N/A' }
                               </div>
                             </div>
-                            <div className="px-6 py-2 flex items-center justify-between">
-                              <div>From</div>
-                              <div>
-                                { highlight.from_statement }
+                            <div className="px-6 py-2 flex items-center text-left">
+                              <div className="flex-1">
+                                From&nbsp;&nbsp;{ highlight.from_statement }
+                              </div>
+                              <div className="flex-1">
+                                To&nbsp;&nbsp;{ highlight.to_statement }
                               </div>
                             </div>
-                            <div className="px-6 py-2 flex items-center justify-between">
-                              <div>To</div>
+                            <div className="px-6 py-2 flex items-center">
                               <div>
-                                { highlight.to_statement }
+                                Date analyzed:&nbsp;&nbsp;{ format(new Date(statement.createdAt), 'do MMM, yyyy') }
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </Card>
                       </div>
                       <div className="col-span-2">
                         <AccountActivityChart data={ data }/>

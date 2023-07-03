@@ -1,11 +1,12 @@
 import React from 'react';
 import { formatCurrency, getModeArray } from "@/lib/utils";
+import Card from "@/components/global/Card";
 
 const SalaryHighlights = ({ data }) => {
   const { highlight } = data?.analytics_data ?? {};
 
   return (
-    <div className="border border-gray-300 rounded-2xl">
+    <Card>
       <h3 className="font-medium px-6 py-6">Salary Highlights</h3>
       <div className="divide-y divide-gray-300">
         <div className="px-6 py-2 grid grid-cols-3 gap-6">
@@ -64,7 +65,7 @@ const SalaryHighlights = ({ data }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

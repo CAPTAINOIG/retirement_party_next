@@ -1,10 +1,11 @@
 import React from 'react';
+import Card from "@/components/global/Card";
 
 const SweepingSummary = ({ data }) => {
   const { highlight, salary_sweep_week, highest_deposit_sweep } = data?.analytics_data ?? {};
 
   return (
-    <div className="border border-gray-300 rounded-2xl">
+    <Card>
       <h3 className="font-medium px-6 py-6">Sweeping Summary</h3>
       <div className="divide-y divide-gray-300">
         <div className="px-6 py-2 grid grid-cols-2 gap-6">
@@ -46,7 +47,7 @@ const SweepingSummary = ({ data }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

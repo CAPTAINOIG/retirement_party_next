@@ -26,8 +26,11 @@ const ServiceSwitcher = () => (
             leaveTo="opacity-0 translate-y-1"
           >
             <Popover.Panel className="absolute right-0 z-10 mt-3 w-screen max-w-xs px-4 sm:px-0 lg:max-w-[280px]">
-              <div className="overflow-hidden rounded-2xl shadow-md ring-1 ring-black ring-opacity-5">
-                <div className="relative grid gap-2 bg-white p-4 lg:grid-cols-2">
+              <div className="overflow-hidden rounded-2xl shadow-md ring-1 ring-black ring-opacity-5 bg-white">
+                <div className="border-b py-2 text-center">
+                  <h4 className="font-semibold">Apps</h4>
+                </div>
+                <div className="relative grid gap-2 p-4 lg:grid-cols-2">
                   {
                     products.map((product) => (
                       <Link

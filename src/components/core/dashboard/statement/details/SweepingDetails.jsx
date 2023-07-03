@@ -1,10 +1,11 @@
 import React from 'react';
+import Card from "@/components/global/Card";
 
 const SweepingDetails = ({ data }) => {
   const { highlight } = data?.analytics_data ?? {}
 
   return (
-    <div className="border border-gray-300 rounded-2xl">
+    <Card>
       <div className="px-7 py-6">
         <h3 className="font-medium">Sweeping details</h3>
         <p className="text-sm opacity-75">Based on deposit range</p>
@@ -39,7 +40,7 @@ const SweepingDetails = ({ data }) => {
           <div>{ Math.ceil(highlight.average_ohundredm_sweep) }</div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

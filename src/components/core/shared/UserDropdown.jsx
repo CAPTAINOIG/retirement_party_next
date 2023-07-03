@@ -1,6 +1,6 @@
 import React from 'react';
 import SimpleDropdown from "@/components/global/SimpleDropdown";
-import { IconChevronDown, IconLogout } from "@tabler/icons-react";
+import { IconChevronDown, IconLogout, IconUserCog } from "@tabler/icons-react";
 import { useAuth } from "@/hooks/use-auth";
 import classNames from "classnames";
 
@@ -26,7 +26,8 @@ const UserDropdown = ({ className }) => {
         </div>
       }
       items={ [
-        { text: 'Logout', icon: <IconLogout size="18"/>, onClick: handleLogout }
+        { text: 'Account settings', icon: <IconUserCog size="18"/>, onClick: () => null },
+        { text: 'Logout', icon: <IconLogout size="18"/>, onClick: handleLogout },
       ] }
     />
   );

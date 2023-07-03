@@ -2,6 +2,7 @@ import React from 'react';
 import { IconCircleFilled, IconFolderExclamation } from "@tabler/icons-react";
 import { formatCurrency } from "@/lib/utils";
 import classNames from "classnames";
+import Card from "@/components/global/Card";
 
 const InvestmentDistribution = ({ data }) => {
   const { highlight } = data?.analytics_data ?? {}
@@ -17,7 +18,7 @@ const InvestmentDistribution = ({ data }) => {
 
   return (
     <>
-      <div className="relative overflow-x-auto rounded-xl border border-gray-300">
+      <Card className="relative overflow-x-auto">
         <div className="flex items-center px-6 py-6">
           <h3 className="font-medium">Investment Distribution</h3>
           {
@@ -110,9 +111,9 @@ const InvestmentDistribution = ({ data }) => {
             </p>
           )
         }
-      </div>
+      </Card>
       <div className="grid grid-cols-2 gap-8 items-start">
-        <div className="border border-gray-300 rounded-2xl">
+        <Card>
           <h3 className="font-medium px-8 py-6">Investment companies</h3>
           {
             highlight.investor_list?.length ? (
@@ -132,8 +133,8 @@ const InvestmentDistribution = ({ data }) => {
               </p>
             )
           }
-        </div>
-        <div className="border border-gray-300 rounded-2xl">
+        </Card>
+        <Card>
           <h3 className="font-medium px-8 py-6">Suspected repayments</h3>
           {
             highlight.suspected_investment?.length ? (
@@ -153,7 +154,7 @@ const InvestmentDistribution = ({ data }) => {
               </p>
             )
           }
-        </div>
+        </Card>
       </div>
     </>
   );

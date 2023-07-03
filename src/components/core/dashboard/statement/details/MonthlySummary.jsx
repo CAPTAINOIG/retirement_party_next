@@ -2,6 +2,7 @@ import React from 'react';
 import { formatCurrency } from "@/lib/utils";
 import classNames from "classnames";
 import { IconCircleFilled } from "@tabler/icons-react";
+import Card from "@/components/global/Card";
 
 const MonthlySummary = ({ data }) => {
   const { monthly_analytics } = data?.analytics_data ?? {};
@@ -24,7 +25,7 @@ const MonthlySummary = ({ data }) => {
   const minBenefit = Math.min(...monthly_analytics.map(i => i.benefit).filter(i => i > 0))
 
   return (
-    <div className="relative overflow-x-auto rounded-xl border border-gray-300">
+    <Card className="relative overflow-x-auto">
       <div className="flex items-center px-6 py-6">
         <h3 className="font-medium">Monthly Summary</h3>
         <div className="flex items-center ml-auto space-x-6">
@@ -112,7 +113,7 @@ const MonthlySummary = ({ data }) => {
         }
         </tbody>
       </table>
-    </div>
+    </Card>
   );
 };
 

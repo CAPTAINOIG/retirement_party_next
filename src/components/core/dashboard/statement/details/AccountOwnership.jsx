@@ -1,11 +1,12 @@
 import React from 'react';
+import Card from "@/components/global/Card";
 
 const AccountOwnership = ({ data }) => {
   const { highlight, lender_details } = data?.analytics_data ?? {};
 
   return (
     <>
-      <div className="border border-gray-300 rounded-2xl px-7 py-6">
+      <Card className="px-7 py-6">
         <h3 className="font-medium mb-6">Account ownership</h3>
         <div className="grid grid-cols-4">
           <div>
@@ -25,9 +26,9 @@ const AccountOwnership = ({ data }) => {
             <div className="opacity-80 text-sm leading-none mt-1">Deposit rate from external account</div>
           </div>
         </div>
-      </div>
+      </Card>
       <div className="grid grid-cols-11 gap-8 items-start">
-        <div className="col-span-4 border border-gray-300 rounded-2xl">
+        <Card className="col-span-4">
           <h3 className="font-medium px-8 pt-6 pb-4">Outgoing receipt</h3>
           <div className="divide-y divide-gray-300">
             <div className="px-8 py-2">
@@ -46,8 +47,8 @@ const AccountOwnership = ({ data }) => {
               { highlight.transfer_from?.[0]?.name } most frequent
             </div>
           </div>
-        </div>
-        <div className="col-span-7 relative overflow-x-auto rounded-xl border border-gray-300">
+        </Card>
+        <Card className="col-span-7 relative overflow-x-auto">
           <table className="w-full text-md text-left">
             <thead className="border-b border-gray-300">
             <tr>
@@ -83,7 +84,7 @@ const AccountOwnership = ({ data }) => {
             }
             </tbody>
           </table>
-        </div>
+        </Card>
       </div>
     </>
   );

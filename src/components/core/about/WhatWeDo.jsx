@@ -18,7 +18,7 @@ const WhatWeDo = () => {
           </div>
           <div className="lg:col-span-8">
             <ul role="list" className="grid md:grid-cols-2 gap-8">
-              <li className="rounded-xl bg-slate-200/70 px-10 md:px-12 py-12 md:py-14">
+              <li className="rounded-3xl bg-slate-200/50 px-10 md:px-12 py-12 md:py-14">
                 <IconDatabase className="mb-8 text-slate-300/60" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Evidence Based Advocacy
@@ -28,7 +28,7 @@ const WhatWeDo = () => {
                   for reporting and improvment purposes for better decision making
                 </p>
               </li>
-              <li className="rounded-xl bg-slate-200/70 px-10 md:px-12 py-12 md:py-14">
+              <li className="rounded-3xl bg-slate-200/50 px-10 md:px-12 py-12 md:py-14">
                 <IconChartInfographic className="mb-8 text-slate-300/60" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Data Analysis and Visualization
@@ -38,7 +38,7 @@ const WhatWeDo = () => {
                   compelling infographics. This makes complex information eye-catching, shareable and easily digestible
                 </p>
               </li>
-              <li className="rounded-xl bg-slate-200/70 px-10 md:px-12 py-12 md:py-14">
+              <li className="rounded-3xl bg-slate-200/50 px-10 md:px-12 py-12 md:py-14">
                 <IconDeviceHeartMonitor className="mb-8 text-slate-300/60" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Monitoring and Evaluation
@@ -48,7 +48,7 @@ const WhatWeDo = () => {
                   interventions, projects, or programs for performance evaluation to achieve the desired result
                 </p>
               </li>
-              <li className="rounded-xl bg-slate-200/70 px-10 md:px-12 py-12 md:py-14">
+              <li className="rounded-3xl bg-slate-200/50 px-10 md:px-12 py-12 md:py-14">
                 <IconUserQuestion className="mb-8 text-slate-300/60" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Professional Training

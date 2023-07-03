@@ -11,6 +11,7 @@ const products = [
     icon: IconMessageChatbot,
     homeLink: '/sensii',
     dashboardLink: '/dashboard/sensii',
+    status: 'active'
   },
   {
     name: 'BeTrue',
@@ -21,6 +22,7 @@ const products = [
     icon: IconUserCheck,
     homeLink: '/betrue',
     dashboardLink: '/dashboard/betrue',
+    status: 'active'
   },
   {
     name: 'Statement',
@@ -31,6 +33,7 @@ const products = [
     icon: IconFileText,
     homeLink: '/statement',
     dashboardLink: '/dashboard/statement',
+    status: 'active'
   },
   {
     name: 'MineMe',
@@ -41,6 +44,7 @@ const products = [
     icon: IconDatabase,
     homeLink: '/mineme',
     dashboardLink: '/dashboard/mineme',
+    status: 'active'
   }
 ];
 

@@ -3,7 +3,7 @@ import React, { createElement, useState } from 'react';
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import classNames from "classnames";
-import { IconFileText, IconHome2, IconSettings2 } from "@tabler/icons-react";
+import { IconFileText, IconLayout, IconSettings2 } from "@tabler/icons-react";
 import ServicesSwitcher from "@/components/core/shared/ServicesSwitcher";
 import UserDropdown from "@/components/core/shared/UserDropdown";
 import requireAuthBusiness from "@/guards/require-auth-business";
@@ -17,7 +17,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useQueryClient } from "@tanstack/react-query";
 
 const links = [
-  { name: 'Overview', href: '/dashboard/statement', icon: <IconHome2 size="20"/> },
+  { name: 'Overview', href: '/dashboard/statement', icon: <IconLayout size="20"/> },
   { name: 'Analysis', href: '/dashboard/statement/analysis', icon: <IconFileText size="20"/> },
   { name: 'Settings', href: '/dashboard/statement/settings', icon: <IconSettings2 size="20"/> },
 ];
@@ -56,10 +56,17 @@ const StatementLayout = ({ children }) => {
             {
               settings ? (
                 <div className="h-screen w-full grid grid-cols-[0_1fr] md:grid-cols-[300px_1fr] overflow-y-hidden">
-                  <div className="h-screen border-r border-zinc-200 flex flex-col">
-                    <div className="p-8 md:p-10">
-                      <Link href="/">
-                        <div className="px-7">Logo.</div>
+                  <div className="h-screen border-r border-slate-200 flex flex-col">
+                    <div className="p-8 md:p-10 mb-4">
+                      <Link href={ "/dashboard" }>
+                        <div className="px-5 text-lg font-medium flex items-center">
+                          <div
+                            className={ classNames('w-10 h-10 rounded-full mr-3 flex items-center justify-center', product.backgroundColor) }
+                          >
+                            { createElement(product.icon, { size: 22, className: `text-white` }) }
+                          </div>
+                          { product.name }
+                        </div>
                       </Link>
                     </div>
                     <div className="flex-1 overflow-y-auto px-8 md:px-10">
@@ -70,8 +77,7 @@ const StatementLayout = ({ children }) => {
                               key={ item.href } href={ item.href }
                               className={ classNames(
                                 'flex items-center px-7 py-3 rounded-2xl',
-                                { 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold': pathname === item.href },
-                                { 'hover:bg-zinc-50': pathname !== item.href }
+                                pathname === item.href ? `bg-slate-100 font-bold` : 'hover:bg-slate-100 opacity-90'
                               ) }
                             >
                               <div className="mr-4">{ item.icon }</div>
@@ -82,7 +88,7 @@ const StatementLayout = ({ children }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="h-screen overflow-y-auto flex flex-col relative">
+                  <div className="h-screen overflow-y-auto flex flex-col relative bg-slate-50">
                     <div className="sticky top-0 inset-x-0 bg-gradient-to-b from-white z-50">
                       <div className="w-full max-w-5xl mx-auto pt-6 pb-10 space-x-4 flex items-center justify-end">
                         <ServicesSwitcher/>

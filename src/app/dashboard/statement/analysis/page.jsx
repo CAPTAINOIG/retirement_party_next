@@ -9,6 +9,7 @@ import { format } from "date-fns";
 import Link from "next/link";
 import classNames from "classnames";
 import { formatCurrency } from "@/lib/utils";
+import Card from "@/components/global/Card";
 
 const StatementAnalysisPage = () => {
   const [isAnalyzeOpen, setIsAnalyzeOpen] = useState(false);
@@ -35,9 +36,9 @@ const StatementAnalysisPage = () => {
             <>
               {
                 !!statements.length ? (
-                  <div className="relative overflow-x-auto rounded-xl border">
+                  <Card className="relative overflow-x-auto">
                     <table className="w-full text-[.95rem] text-left">
-                      <thead className="text-gray-500 border-b">
+                      <thead className="text-gray-500 border-b border-slate-200">
                       <tr>
                         <th scope="col" className="px-6 py-4">
                           Name
@@ -61,8 +62,11 @@ const StatementAnalysisPage = () => {
                       </thead>
                       <tbody>
                       {
-                        statements.map(statement => (
-                          <tr className="bg-white border-b hover:bg-gray-50" key={ statement._id }>
+                        statements.map((statement, i) => (
+                          <tr
+                            className={ classNames('hover:bg-gray-50', { 'border-b': i < statements.length - 1 }) }
+                            key={ statement._id }
+                          >
                             <td scope="row" className="px-6 py-4 whitespace-nowrap">
                               { statement.name }
                             </td>
@@ -102,7 +106,7 @@ const StatementAnalysisPage = () => {
                       }
                       </tbody>
                     </table>
-                  </div>
+                  </Card>
                 ) : (
                   <>
                     <div

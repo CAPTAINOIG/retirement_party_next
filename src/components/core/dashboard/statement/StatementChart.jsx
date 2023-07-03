@@ -31,7 +31,7 @@ const StatementChart = () => {
               !!statements.length && (
                 <>
                   <div className="px-2 mb-8">
-                    <h4 className="font-semibold">Analysis overview</h4>
+                    <h4 className="font-semibold text-base">Analysis overview</h4>
                   </div>
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart

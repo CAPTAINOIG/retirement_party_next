@@ -6,6 +6,7 @@ import { useGetStatementSettings, useUpdateStatementSettings } from "@/api/state
 import { useGetUserBusiness } from "@/api/business";
 import { useToast } from "@/hooks/use-toast";
 import { useQueryClient } from "@tanstack/react-query";
+import Card from "@/components/global/Card";
 
 const MbsCredentials = () => {
   const toast = useToast();
@@ -32,7 +33,7 @@ const MbsCredentials = () => {
   };
 
   return (
-    <div className="border border-gray-300 rounded-2xl px-8 py-8">
+    <Card className="px-8 py-8">
       <h4 className="font-medium">MyBankStatement(MBS) Credentials</h4>
       <p className="mt-2 text-[.95rem] opacity-80">
         Set up your mbs integration by providing the following credentials from your mbs account
@@ -62,7 +63,7 @@ const MbsCredentials = () => {
           Save
         </Button>
       </form>
-    </div>
+    </Card>
   );
 };
 

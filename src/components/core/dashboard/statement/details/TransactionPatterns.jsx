@@ -1,6 +1,7 @@
 import React from 'react';
 import { differenceInDays } from "date-fns";
 import { formatCurrency } from "@/lib/utils";
+import Card from "@/components/global/Card";
 
 const TransactionPatterns = ({ data }) => {
   const { highlight, weekly_analytics } = data?.analytics_data ?? {};
@@ -24,7 +25,7 @@ const TransactionPatterns = ({ data }) => {
   const spikeDeposit = ((highlight.spike_deposit / remainingAverageDeposit) * 100) >= 150;
 
   return (
-    <div className="border border-gray-300 rounded-2xl">
+    <Card>
       <h3 className="font-medium px-6 py-6">Transaction Patterns</h3>
       <div className="divide-y divide-gray-300">
         <div className="px-6 py-2 grid grid-cols-2 gap-6">
@@ -118,7 +119,7 @@ const TransactionPatterns = ({ data }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

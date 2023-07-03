@@ -2,6 +2,7 @@ import React from 'react';
 import { IconCircleFilled, IconFolderExclamation } from "@tabler/icons-react";
 import { formatCurrency } from "@/lib/utils";
 import classNames from "classnames";
+import Card from "@/components/global/Card";
 
 const WeeklyTransactions = ({ data }) => {
   const { credit_mweek } = data?.analytics_data ?? {}
@@ -16,7 +17,7 @@ const WeeklyTransactions = ({ data }) => {
   }, {});
 
   return (
-    <div className="relative overflow-x-auto rounded-xl border border-gray-300">
+    <Card className="relative overflow-x-auto">
       <div className="flex items-center px-6 py-6">
         <h3 className="font-medium">Weekly Transactions</h3>
         {
@@ -109,7 +110,7 @@ const WeeklyTransactions = ({ data }) => {
           </p>
         )
       }
-    </div>
+    </Card>
   );
 };
 

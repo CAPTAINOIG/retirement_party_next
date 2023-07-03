@@ -1,6 +1,7 @@
 import React from 'react';
 import { IconCheck, IconX } from "@tabler/icons-react";
 import Progress from "@/components/global/Progress";
+import Card from "@/components/global/Card";
 
 const BehaviorAnalysis = ({ data }) => {
   const { highlight, eligibility, ...analytics_data } = data?.analytics_data ?? {};
@@ -27,7 +28,7 @@ const BehaviorAnalysis = ({ data }) => {
   return (
     <>
       <div className="grid grid-cols-3 gap-8">
-        <div className="border border-gray-300 rounded-2xl py-6 px-7">
+        <Card className="py-6 px-7">
           <h3 className="font-medium mb-6">General spending</h3>
           <div className="space-y-4">
             <div>
@@ -43,8 +44,8 @@ const BehaviorAnalysis = ({ data }) => {
               <Progress width={ lodgementDepositRatio } className="mt-3"/>
             </div>
           </div>
-        </div>
-        <div className="border border-gray-300 rounded-2xl py-6 px-7">
+        </Card>
+        <Card className="py-6 px-7">
           <h3 className="font-medium mb-6">Activity rates</h3>
           <div className="space-y-4">
             <div>
@@ -64,8 +65,8 @@ const BehaviorAnalysis = ({ data }) => {
               <Progress width={ highlight.weekly_percent_withdraw } className="mt-3"/>
             </div>
           </div>
-        </div>
-        <div className="border border-gray-300 rounded-2xl">
+        </Card>
+        <Card>
           <h3 className="font-medium px-7 py-6">30 day pattern</h3>
           <div className="divide-y divide-gray-300">
             <div className="flex items-center justify-between py-3 px-7">
@@ -99,11 +100,11 @@ const BehaviorAnalysis = ({ data }) => {
               }
             </div>
           </div>
-        </div>
+        </Card>
       </div>
       <div className="grid grid-cols-12 gap-8">
         <div className="col-span-4">
-          <div className="border border-gray-300 rounded-2xl">
+          <Card>
             <div className="divide-y divide-gray-300">
               <div className="flex items-center justify-between py-3 px-7">
                 <div>ATM person</div>
@@ -186,10 +187,10 @@ const BehaviorAnalysis = ({ data }) => {
                 }
               </div>
             </div>
-          </div>
+          </Card>
         </div>
         <div className="col-span-8 grid grid-cols-2 gap-8">
-          <div className="border border-gray-300 rounded-2xl py-6 px-7">
+          <Card className="py-6 px-7">
             <h3 className="font-medium mb-6">Deposit amount</h3>
             <div className="space-y-4">
               <div>
@@ -205,8 +206,8 @@ const BehaviorAnalysis = ({ data }) => {
                 <Progress width={ debtRepaidSalaryRatio } className="mt-3"/>
               </div>
             </div>
-          </div>
-          <div className="border border-gray-300 rounded-2xl">
+          </Card>
+          <Card>
             <div className="px-7 py-6">
               <h3 className="font-medium">Deposit amount</h3>
             </div>
@@ -236,9 +237,8 @@ const BehaviorAnalysis = ({ data }) => {
                 <div>{ highlight.over_hundred_m }</div>
               </div>
             </div>
-          </div>
-          <div
-            className="col-span-2 border border-gray-300 rounded-2xl py-8 px-10 grid grid-cols-12 gap-8 items-center">
+          </Card>
+          <Card className="col-span-2 py-8 px-10 grid grid-cols-12 gap-8 items-center">
             <div className="col-span-4">
               <h3 className="font-medium text-lg">Eligibility data score meter</h3>
               <p className="mt-1 text-[.94rem] opacity-80">
@@ -259,7 +259,7 @@ const BehaviorAnalysis = ({ data }) => {
                 <Progress width={ eligibility.threat } className="mt-1"/>
               </div>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </>

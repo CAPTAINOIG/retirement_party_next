@@ -1,12 +1,13 @@
 import React from 'react';
 import { formatCurrency } from "@/lib/utils";
 import { IconCheck, IconX } from "@tabler/icons-react";
+import Card from "@/components/global/Card";
 
 const DerivedData = ({ data }) => {
   const { highlight, lender_details } = data?.analytics_data ?? {};
 
   return (
-    <div className="border border-gray-300 rounded-2xl">
+    <Card>
       <h3 className="font-medium px-7 py-6">Derived data</h3>
       <div className="divide-y divide-gray-300">
         <div className="flex items-center justify-between py-1.5 px-7">
@@ -80,7 +81,7 @@ const DerivedData = ({ data }) => {
           }
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

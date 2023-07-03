@@ -3,8 +3,8 @@ import React from 'react';
 const Testimonials = () => {
   return (
     <section id="testimonials" aria-label="What our customers are saying">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl md:text-center">
+      <div className="container sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
           <h2 className="text-4xl md:text-6xl font-medium text-slate-900">
             Loved by businesses worldwide.
           </h2>

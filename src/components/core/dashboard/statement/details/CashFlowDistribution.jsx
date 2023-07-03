@@ -1,5 +1,6 @@
 import React from 'react';
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
+import Card from "@/components/global/Card";
 
 const COLORS = ['#0369a1', '#0f766e', '#FF8042', '#dc2626', '#be123c', '#7e22ce', '#FFBB28', '#FF8042'];
 
@@ -7,7 +8,7 @@ const CashFlowDistribution = ({ data }) => {
   const { credit_expenses, debit_expenses } = data?.analytics_data ?? {};
 
   return (
-    <div className="border border-gray-300 rounded-2xl">
+    <Card>
       <h3 className="font-medium px-7 py-6 border-b">Cash-flow Distribution</h3>
       <div className="grid grid-cols-2 divide-x">
         <div>
@@ -91,7 +92,7 @@ const CashFlowDistribution = ({ data }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

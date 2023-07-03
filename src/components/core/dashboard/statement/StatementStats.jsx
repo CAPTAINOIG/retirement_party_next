@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { IconAngle, IconCash, IconFileText, IconPlus } from "@tabler/icons-react";
+import { IconPlus } from "@tabler/icons-react";
 import { useGetStatementOverview } from "@/api/statement";
 import { useGetUserBusiness } from "@/api/business";
 import NewAnalysis from "@/components/core/dashboard/statement/NewAnalysis";
+import Card from "@/components/global/Card";
+import { formatCurrency } from "@/lib/utils";
 
 const StatementStats = () => {
   const [isAnalyzeOpen, setIsAnalyzeOpen] = useState(false);
@@ -12,42 +14,39 @@ const StatementStats = () => {
   return (
     <>
       <div className="grid grid-cols-4 gap-6">
-        <div className="border border-gray-300 rounded-2xl px-6 py-4">
-          <div className="flex items-center mb-1">
-            <IconFileText size="18" className="mr-2"/>
-            <p className="text-sm text-ellipsis whitespace-nowrap overflow-hidden">Statements analyzed</p>
-          </div>
-          <div className="text-3xl font-semibold">
+        <Card className="px-6 py-4">
+          <div className="text-3xl font-semibold text-gray-800">
             { data.totalStatements }
           </div>
-        </div>
-        <div className="border border-gray-300 rounded-2xl px-6 py-4">
-          <div className="flex items-center mb-1">
-            <IconCash size="18" className="mr-2"/>
-            <p className="text-sm text-ellipsis whitespace-nowrap overflow-hidden">Plan</p>
+          <div className="flex items-center mt-1">
+            <p className="text-sm text-ellipsis whitespace-nowrap overflow-hidden">Statements analyzed</p>
           </div>
-          <div className="text-3xl font-semibold">
+        </Card>
+        <Card className="px-6 py-4">
+          <div className="text-3xl font-semibold text-gray-800">
             Basic
           </div>
-        </div>
-        <div className="border border-gray-300 rounded-2xl px-6 py-4">
           <div className="flex items-center mb-1">
-            <IconAngle size="18" className="mr-2"/>
-            <p className="text-sm text-ellipsis whitespace-nowrap overflow-hidden">Something here</p>
+            <p className="text-sm text-ellipsis whitespace-nowrap overflow-hidden mt-1">Subscription</p>
           </div>
-          <div className="text-3xl font-semibold">
-            0
+        </Card>
+        <Card className="px-6 py-4">
+          <div className="text-3xl font-semibold text-gray-800">
+            { formatCurrency(0) }
           </div>
-        </div>
-        <div
+          <div className="flex items-center mb-1">
+            <p className="text-sm text-ellipsis whitespace-nowrap overflow-hidden mt-1">Wallet balance</p>
+          </div>
+        </Card>
+        <Card
           onClick={ () => setIsAnalyzeOpen(true) }
-          className="border border-gray-300 rounded-2xl px-6 py-4 flex flex-col items-center justify-center hover:bg-gray-100 cursor-pointer"
+          className="px-6 py-4 flex flex-col items-center justify-center hover:bg-slate-50 cursor-pointer"
         >
-          <div className="text-3xl font-semibold">
+          <div className="text-3xl font-semibold text-gray-800">
             <IconPlus/>
           </div>
           <p className="text-sm text-ellipsis whitespace-nowrap overflow-hidden mt-1">New analysis</p>
-        </div>
+        </Card>
       </div>
 
       <NewAnalysis
