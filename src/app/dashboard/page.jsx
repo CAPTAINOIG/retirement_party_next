@@ -151,18 +151,20 @@ const DashboardPage = () => {
 
   return (
     <div className="bg-slate-100/70">
-      <div className="container py-16 min-h-screen flex flex-col">
-        <div className="my-auto">
-          <div className="mb-16 flex items-center justify-between">
+      <div className="container py-10 md:py-16 min-h-screen flex flex-col">
+        <div>
+          <div className="mb-12 md:mb-16 flex items-start justify-between">
             <div>
-              <h1 className="text-3xl font-semibold">
+              <h1 className="text-2xl md:text-3xl font-semibold">
                 Welcome { user.firstName } 👋🏽
               </h1>
-              <p className="text-[1.05rem] mt-2">Select a product below to continue</p>
+              <p className="text-base md:text-[1.05rem] mt-2">
+                Select a product below to continue
+              </p>
             </div>
-            <UserDropdown/>
+            <UserDropdown className="mt-1"/>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
             {
               products.map(product => (
                 <Card

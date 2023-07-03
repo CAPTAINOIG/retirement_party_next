@@ -14,7 +14,7 @@ const tabs = [
 const StatementSettings = () => {
   return (
     <>
-      <h1 className="text-xl font-semibold mb-10 px-2">
+      <h1 className="text-xl font-semibold mb-6 md:mb-10 px-2">
         Settings
       </h1>
       <div>
@@ -38,12 +38,12 @@ const StatementSettings = () => {
           </Tab.List>
           <Tab.Panels className="mt-6 px-1">
             <Tab.Panel>
-              <div className="grid grid-cols-2">
+              <div className="grid md:grid-cols-2 gap-4 md:gap-8">
                 <WidgetCustomization/>
               </div>
             </Tab.Panel>
             <Tab.Panel>
-              <div className="grid grid-cols-2 gap-8 items-start">
+              <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-start">
                 <MbsCredentials/>
                 <MonoCredentials/>
               </div>

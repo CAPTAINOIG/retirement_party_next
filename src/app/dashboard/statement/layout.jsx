@@ -24,6 +24,19 @@ const links = [
 
 const product = products.find(p => p.slug === 'statement');
 
+const StatementLogo = ({ className }) => (
+  <div className={ className }>
+    <div className="text-lg font-medium flex items-center">
+      <div
+        className={ classNames("w-10 h-10 rounded-full mr-3 flex items-center justify-center", product.backgroundColor) }
+      >
+        { createElement(product.icon, { size: 22, className: `text-white` }) }
+      </div>
+      { product.name }
+    </div>
+  </div>
+);
+
 const StatementLayout = ({ children }) => {
   const toast = useToast();
   const qc = useQueryClient();
@@ -56,17 +69,10 @@ const StatementLayout = ({ children }) => {
             {
               settings ? (
                 <div className="h-screen w-full grid grid-cols-[0_1fr] md:grid-cols-[300px_1fr] overflow-y-hidden">
-                  <div className="h-screen border-r border-slate-200 flex flex-col">
-                    <div className="p-8 md:p-10 mb-4">
+                  <div className="h-screen border-r border-slate-200 flex flex-col overflow-hidden">
+                    <div className="p-8 md:p-10 mb-4 hidden md:block">
                       <Link href={ "/dashboard" }>
-                        <div className="px-5 text-lg font-medium flex items-center">
-                          <div
-                            className={ classNames('w-10 h-10 rounded-full mr-3 flex items-center justify-center', product.backgroundColor) }
-                          >
-                            { createElement(product.icon, { size: 22, className: `text-white` }) }
-                          </div>
-                          { product.name }
-                        </div>
+                        <StatementLogo className="px-5"/>
                       </Link>
                     </div>
                     <div className="flex-1 overflow-y-auto px-8 md:px-10">
@@ -90,15 +96,39 @@ const StatementLayout = ({ children }) => {
                   </div>
                   <div className="h-screen overflow-y-auto flex flex-col relative bg-slate-100/70">
                     <div className="sticky top-0 inset-x-0 bg-gradient-to-b from-slate-100/70 z-50">
-                      <div className="w-full max-w-5xl mx-auto pt-6 pb-10 space-x-4 flex items-center justify-end">
+                      <div className="container !max-w-5xl pt-6 pb-10 space-x-4 flex items-center md:justify-end">
+                        <StatementLogo className="md:hidden mr-auto"/>
                         <ServicesSwitcher/>
                         <UserDropdown/>
                       </div>
                     </div>
                     <div className="flex-1">
-                      <div className="h-full w-full max-w-5xl mx-auto flex flex-col pb-10">
+                      <div className="container h-full !max-w-5xl flex flex-col mb-32 mb:pb-10">
                         { children }
                       </div>
+                    </div>
+                    <div className="md:hidden fixed bottom-0 left-0 w-full bg-white shadow border-t">
+                      <div className="grid grid-cols-3 w-full">
+                        {
+                          links.map(item => (
+                            <Link
+                              key={ item.href } href={ item.href }
+                              className="flex flex-col justify-center items-center text-center px-2 py-3"
+                            >
+                              <div
+                                className={ classNames(
+                                  'rounded-2xl mb-1 px-4 py-1',
+                                  pathname === item.href ? `bg-slate-200` : 'opacity-90'
+                                ) }
+                              >
+                                { item.icon }
+                              </div>
+                              { item.name }
+                            </Link>
+                          ))
+                        }
+                      </div>
+
                     </div>
                   </div>
                 </div>

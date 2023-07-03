@@ -3,9 +3,11 @@ import SimpleDropdown from "@/components/global/SimpleDropdown";
 import { IconChevronDown, IconLogout, IconUserCog } from "@tabler/icons-react";
 import { useAuth } from "@/hooks/use-auth";
 import classNames from "classnames";
+import { useRouter } from "next/navigation";
 
 const UserDropdown = ({ className }) => {
   const { user, logout } = useAuth();
+  const router = useRouter();
 
   const handleLogout = () => {
     logout();
@@ -15,18 +17,17 @@ const UserDropdown = ({ className }) => {
   return (
     <SimpleDropdown
       trigger={
-        <div className="flex items-center">
+        <div className={ classNames('flex items-center', className) }>
           <img
             src={ `https://ui-avatars.com/api/?name=${ user.firstName } ${ user.lastName }` }
-            className={ classNames('w-8 h-8 rounded-full', className) }
-            alt={ `${ user.firstName } ${ user.lastName }` }
+            className="w-8 h-8 rounded-full" alt={ `${ user.firstName } ${ user.lastName }` }
           />
-          <p className="ml-2">{ user.firstName }</p>
+          <p className="ml-2 hidden md:block">{ user.firstName }</p>
           <IconChevronDown size="18" className="ml-3"/>
         </div>
       }
       items={ [
-        { text: 'Account settings', icon: <IconUserCog size="18"/>, onClick: () => null },
+        { text: 'Account settings', icon: <IconUserCog size="18"/>, onClick: () => router.push('/dashboard/account') },
         { text: 'Logout', icon: <IconLogout size="18"/>, onClick: handleLogout },
       ] }
     />

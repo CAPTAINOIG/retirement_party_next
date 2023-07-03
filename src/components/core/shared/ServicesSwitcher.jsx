@@ -38,12 +38,12 @@ const ServiceSwitcher = () => {
                     <IconHome2 size="18" className="mr-3"/>
                     <h4 className="font-semibold">Apps</h4>
                   </div>
-                  <div className="relative grid gap-2 p-4 lg:grid-cols-2">
+                  <div className="relative grid gap-2 px-4 py-6 grid-cols-2">
                     {
                       products.map((product) => (
                         <Link
                           key={ product.name } href={ product.dashboardLink }
-                          className="flex flex-col items-center rounded-xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                          className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                         >
                           <div
                             className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-white', product.backgroundColor) }

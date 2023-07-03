@@ -34,7 +34,7 @@ const Hero = () => {
     >
       <div className="container">
         <h1
-          className="mx-auto max-w-4xl font-display text-5xl sm:text-7xl md:text-8xl font-bold leading-[1.2] sm:tracking-tight text-slate-300"
+          className="mx-auto max-w-4xl font-display text-[3.2rem] sm:text-7xl md:text-8xl font-bold leading-[1.2] sm:tracking-tight text-slate-300"
         >
           Simplified data insights for African{ ' ' }<br/>
           <span

@@ -27,7 +27,7 @@ const BehaviorAnalysis = ({ data }) => {
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-8">
         <Card className="py-6 px-7">
           <h3 className="font-medium mb-6">General spending</h3>
           <div className="space-y-4">
@@ -102,8 +102,8 @@ const BehaviorAnalysis = ({ data }) => {
           </div>
         </Card>
       </div>
-      <div className="grid grid-cols-12 gap-8">
-        <div className="col-span-4">
+      <div className="grid md:grid-cols-12 gap-8">
+        <div className="md:col-span-4">
           <Card>
             <div className="divide-y divide-gray-300">
               <div className="flex items-center justify-between py-3 px-7">
@@ -189,7 +189,7 @@ const BehaviorAnalysis = ({ data }) => {
             </div>
           </Card>
         </div>
-        <div className="col-span-8 grid grid-cols-2 gap-8">
+        <div className="md:col-span-8 grid md:grid-cols-2 gap-8">
           <Card className="py-6 px-7">
             <h3 className="font-medium mb-6">Deposit amount</h3>
             <div className="space-y-4">
@@ -238,14 +238,14 @@ const BehaviorAnalysis = ({ data }) => {
               </div>
             </div>
           </Card>
-          <Card className="col-span-2 py-8 px-10 grid grid-cols-12 gap-8 items-center">
-            <div className="col-span-4">
+          <Card className="md:col-span-2 py-8 px-10 grid md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-4">
               <h3 className="font-medium text-lg">Eligibility data score meter</h3>
               <p className="mt-1 text-[.94rem] opacity-80">
                 Constitutes behaviour that is seen as a pattern for account owner
               </p>
             </div>
-            <div className="col-span-8 space-y-4">
+            <div className="md:col-span-8 space-y-4">
               <div>
                 <p>Guarantibility</p>
                 <Progress width={ eligibility.guarantee } className="mt-1"/>

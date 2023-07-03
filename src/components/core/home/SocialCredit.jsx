@@ -4,7 +4,7 @@ import { IconArrowRight, IconBrandFacebook, IconBrandLinkedin, IconBrandTwitter 
 
 const SocialCredit = () => {
   return (
-    <div>
+    <div className="py-14 overflow-hidden">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">

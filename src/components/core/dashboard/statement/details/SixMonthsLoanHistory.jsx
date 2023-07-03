@@ -112,7 +112,7 @@ const SixMonthsLoanHistory = ({ data }) => {
           )
         }
       </Card>
-      <div className="grid grid-cols-2 gap-8 items-start">
+      <div className="grid md:grid-cols-2 gap-8 items-start">
         <Card>
           <h3 className="font-medium px-8 py-6">Lenders found</h3>
           {

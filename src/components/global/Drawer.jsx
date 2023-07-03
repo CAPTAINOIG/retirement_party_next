@@ -40,23 +40,25 @@ const Drawer = (
     <AnimatePresence initial={ false } mode="wait" onExitComplete={ () => null }>
       {
         isOpen && (
-          <Backdrop onClick={ onClose } className="text-black">
+          <div>
+            <Backdrop onClick={ onClose } className="text-black"/>
             <motion.div
-              onClick={ e => e.stopPropagation() }
               variants={ variants }
               initial="hidden"
               animate="visible"
               exit="exit"
               className={ classNames(
-                "fixed right-0 bottom-0 sm:top-0 w-full sm:max-w-xl overflow-hidden",
-                "rounded-t-3xl md:rounded-r-3xl md:rounded-l-3xl md:p-4"
+                "fixed right-0 bottom-0 top-0 w-full h-full sm:max-w-xl overflow-hidden flex flex-col justify-end z-[999]",
+                "rounded-t-3xl md:rounded-r-3xl md:rounded-l-3xl md:p-4 pointer-events-none"
               ) }
             >
-              <div className={ classNames(
-                "relative inset-x-0 bottom-0 bg-white h-min max-h-full sm:h-full overflow-x-hidden overflow-y-auto",
-                "rounded-t-3xl md:rounded-r-3xl md:rounded-l-3xl flex flex-col",
-                { 'p-8 md:p-10': padding }
-              ) }>
+              <div
+                className={ classNames(
+                  "relative inset-x-0 bottom-0 bg-white h-min max-h-full sm:h-full overflow-x-hidden overflow-y-auto",
+                  "rounded-t-3xl md:rounded-r-3xl md:rounded-l-3xl flex flex-col pointer-events-auto",
+                  { 'p-8 md:p-10': padding }
+                ) }
+              >
                 {
                   !!title && (
                     <div className="flex items-center justify-between mb-10">
@@ -71,7 +73,7 @@ const Drawer = (
                 { children }
               </div>
             </motion.div>
-          </Backdrop>
+          </div>
         )
       }
     </AnimatePresence>

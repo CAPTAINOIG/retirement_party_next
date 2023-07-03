@@ -25,7 +25,8 @@ const StatementAnalysisPage = () => {
         <Button
           onClick={ () => setIsAnalyzeOpen(true) } leftIcon={ <IconPlus size="20"/> } variant="outlined" color="black"
         >
-          Analyze statement
+          <span className="md:hidden">New</span>
+          <span className="hidden md:inline">Analyze statement</span>
         </Button>
       </div>
       <div className="mt-10">
@@ -70,13 +71,13 @@ const StatementAnalysisPage = () => {
                             <td scope="row" className="px-6 py-4 whitespace-nowrap">
                               { statement.name }
                             </td>
-                            <td className="px-6 py-4">
+                            <td className="px-6 py-4 whitespace-nowrap">
                               { statement.bank || 'N/A' }
                             </td>
-                            <td className="px-6 py-4">
+                            <td className="px-6 py-4 whitespace-nowrap">
                               { statement.totalCredit ? formatCurrency(statement.totalCredit) : 'N/A' }
                             </td>
-                            <td className="px-6 py-4">
+                            <td className="px-6 py-4 whitespace-nowrap">
                               { statement.totalDebit ? formatCurrency(statement.totalDebit) : 'N/A' }
                             </td>
                             <td className="px-6 py-4">
@@ -89,10 +90,10 @@ const StatementAnalysisPage = () => {
                                 { statement.from }
                               </div>
                             </td>
-                            <td className="px-6 py-4">
+                            <td className="px-6 py-4 whitespace-nowrap">
                               { format(new Date(statement.createdAt), 'do MMM, yyyy') }
                             </td>
-                            <td>
+                            <td className="px-6 py-4">
                               <Link href={ `/dashboard/statement/analysis/${ statement._id }` }>
                                 <Button
                                   variant="outlined" color="black" size="xs" rightIcon={ <IconChevronRight size="16"/> }

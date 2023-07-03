@@ -22,7 +22,7 @@ const RecentAnalysis = () => {
               <div className="flex items-center mb-8">
                 <h3 className="font-semibold text-base mr-4">Recent analysis</h3>
               </div>
-              <div className="space-y-8">
+              <div className="space-y-8 text-md">
                 {
                   [...statements].slice(0, 4).map((statement, i) => (
                     <div key={ i } className="flex items-center">
@@ -51,7 +51,7 @@ const RecentAnalysis = () => {
             <hr/>
             <Link
               href={ "/dashboard/statement/analysis" }
-              className="w-full hover:bg-gray-50 flex items-center justify-center px-8 py-2.5 font-medium"
+              className="w-full hover:bg-gray-50 flex items-center justify-center px-8 py-2.5 font-medium text-md"
             >
               View all <IconArrowRight size="16" className="ml-4"/>
             </Link>

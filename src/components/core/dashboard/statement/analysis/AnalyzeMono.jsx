@@ -55,7 +55,7 @@ const AnalyzeMono = ({ onBack }) => {
                   <p>
                     Your mono credentials has not been configured, please setup your credentials to proceed
                   </p>
-                  <Link href="/dashboard/statement/settings">
+                  <Link href={ "/dashboard/statement/settings" }>
                     <Button color="white" variant="outlined" size="sm" className="mt-1.5">Setup</Button>
                   </Link>
                 </div>
@@ -64,7 +64,7 @@ const AnalyzeMono = ({ onBack }) => {
             {
               isLoading ? (
                 <>
-                  <div className="grid grid-cols-4 gap-4">
+                  <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
                     {
                       Array(20).fill(null).map((_, i) => (
                         <div key={ i } className="w-full h-32 bg-gray-100 rounded-2xl"></div>
@@ -73,7 +73,7 @@ const AnalyzeMono = ({ onBack }) => {
                   </div>
                 </>
               ) : (
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
                   {
                     institutions.map(institution => (
                       <div

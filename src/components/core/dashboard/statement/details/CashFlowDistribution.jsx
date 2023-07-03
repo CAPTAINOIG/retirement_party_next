@@ -10,7 +10,7 @@ const CashFlowDistribution = ({ data }) => {
   return (
     <Card>
       <h3 className="font-medium px-7 py-6 border-b">Cash-flow Distribution</h3>
-      <div className="grid grid-cols-2 divide-x">
+      <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x">
         <div>
           <h3 className="font-medium px-8 pt-6 pb-4">Deposit</h3>
           <div className="w-100% h-[300px]">

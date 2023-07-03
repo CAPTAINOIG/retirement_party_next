@@ -8,7 +8,7 @@ const AccountOwnership = ({ data }) => {
     <>
       <Card className="px-7 py-6">
         <h3 className="font-medium mb-6">Account ownership</h3>
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-2">
           <div>
             <div className="text-[1.05rem]">{ lender_details.lender_name }</div>
             <div className="opacity-80 text-sm leading-none mt-1">Account owner</div>
@@ -27,8 +27,8 @@ const AccountOwnership = ({ data }) => {
           </div>
         </div>
       </Card>
-      <div className="grid grid-cols-11 gap-8 items-start">
-        <Card className="col-span-4">
+      <div className="grid md:grid-cols-11 gap-8 items-start">
+        <Card className="md:col-span-4">
           <h3 className="font-medium px-8 pt-6 pb-4">Outgoing receipt</h3>
           <div className="divide-y divide-gray-300">
             <div className="px-8 py-2">
@@ -48,7 +48,7 @@ const AccountOwnership = ({ data }) => {
             </div>
           </div>
         </Card>
-        <Card className="col-span-7 relative overflow-x-auto">
+        <Card className="md:col-span-7 relative overflow-x-auto">
           <table className="w-full text-md text-left">
             <thead className="border-b border-gray-300">
             <tr>

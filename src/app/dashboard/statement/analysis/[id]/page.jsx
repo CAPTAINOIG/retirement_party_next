@@ -44,7 +44,7 @@ const StatementDetails = ({ params: { id } }) => {
           <>
             <div className="bg-slate-200 rounded-2xl w-[200px] py-4"></div>
             <div className="bg-slate-200 rounded-2xl w-[400px] py-4 mt-4"></div>
-            <div className="grid grid-cols-2 gap-8 mt-8">
+            <div className="grid md:grid-cols-2 gap-8 mt-8">
               <div className="bg-slate-200 rounded-2xl w-full h-[300px]"></div>
               <div className="bg-slate-200 rounded-2xl w-full h-[300px]"></div>
             </div>
@@ -90,8 +90,8 @@ const StatementDetails = ({ params: { id } }) => {
                     </div>
                   </div>
                   <div className="space-y-8">
-                    <div className="grid grid-cols-9 gap-10 items-center">
-                      <div className="col-span-5 space-y-6">
+                    <div className="grid md:grid-cols-9 gap-4 md:gap-10 items-center">
+                      <div className="md:col-span-5 mt-4 md:mt-0 order-last md:order-first space-y-6">
                         <Card>
                           <h3 className="font-medium px-6 py-6">Details</h3>
                           <div className="divide-y divide-gray-300">
@@ -119,34 +119,34 @@ const StatementDetails = ({ params: { id } }) => {
                           </div>
                         </Card>
                       </div>
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <AccountActivityChart data={ data }/>
                       </div>
-                      <div className="col-span-2">
+                      <div className="md:col-span-2">
                         <AnalyticsScoreChart data={ data }/>
                       </div>
                     </div>
-                    <div className="grid grid-cols-10 gap-6">
-                      <div className="col-span-7">
+                    <div className="grid md:grid-cols-10 gap-6">
+                      <div className="md:col-span-7">
                         <CashFlowHighlights data={ data }/>
                       </div>
-                      <div className="col-span-3">
+                      <div className="md:col-span-3">
                         <NetMonthlyEarnings data={ data }/>
                       </div>
                     </div>
-                    <div className="grid grid-cols-10 gap-6">
-                      <div className="col-span-7">
+                    <div className="grid md:grid-cols-10 gap-6">
+                      <div className="md:col-span-7">
                         <SalaryHighlights data={ data }/>
                       </div>
-                      <div className="col-span-3">
+                      <div className="md:col-span-3">
                         <StatementOwnership data={ data }/>
                       </div>
                     </div>
-                    <div className="grid grid-cols-9 gap-6">
-                      <div className="col-span-6">
+                    <div className="grid md:grid-cols-9 gap-6">
+                      <div className="md:col-span-6">
                         <TransactionPatterns data={ data }/>
                       </div>
-                      <div className="col-span-3 space-y-6">
+                      <div className="md:col-span-3 space-y-6">
                         <DerivedData data={ data }/>
                         <SweepingDetails data={ data }/>
                       </div>

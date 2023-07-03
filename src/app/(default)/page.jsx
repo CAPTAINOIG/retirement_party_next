@@ -16,7 +16,7 @@ const HomePage = () => {
       <div className="py-28 md:py-40">
         <AiAssistant/>
       </div>
-      <div className="bg-white py-28 md:py-40 space-y-32 md:space-y-48">
+      <div className="bg-white py-16 md:py-40 space-y-24 md:space-y-32">
         <Categories/>
         <SocialCredit/>
       </div>
