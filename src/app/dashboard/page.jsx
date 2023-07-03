@@ -150,7 +150,7 @@ const DashboardPage = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-slate-100">
+    <div className="bg-slate-100/70">
       <div className="container py-16 min-h-screen flex flex-col">
         <div className="my-auto">
           <div className="mb-16 flex items-center justify-between">

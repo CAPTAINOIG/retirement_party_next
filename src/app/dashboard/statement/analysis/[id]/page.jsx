@@ -42,11 +42,11 @@ const StatementDetails = ({ params: { id } }) => {
       {
         (isTransactionsLoading || isStatementLoading) ? (
           <>
-            <div className="bg-gray-100 rounded-2xl w-[200px] py-4"></div>
-            <div className="bg-gray-100 rounded-2xl w-[400px] py-4 mt-4"></div>
+            <div className="bg-slate-200 rounded-2xl w-[200px] py-4"></div>
+            <div className="bg-slate-200 rounded-2xl w-[400px] py-4 mt-4"></div>
             <div className="grid grid-cols-2 gap-8 mt-8">
-              <div className="bg-gray-100 rounded-2xl w-full h-[300px]"></div>
-              <div className="bg-gray-100 rounded-2xl w-full h-[300px]"></div>
+              <div className="bg-slate-200 rounded-2xl w-full h-[300px]"></div>
+              <div className="bg-slate-200 rounded-2xl w-full h-[300px]"></div>
             </div>
           </>
         ) : (
@@ -56,7 +56,7 @@ const StatementDetails = ({ params: { id } }) => {
                 <>
                   <div className="flex items-center justify-between mb-10">
                     <div className="flex items-center space-x-3">
-                      <Link href="/dashboard/statement/analysis">
+                      <Link href={ "/dashboard/statement/analysis" }>
                         <IconButton
                           variant="subtle" color="black" size="sm" rounded icon={ <IconChevronLeft size="20"/> }
                         />

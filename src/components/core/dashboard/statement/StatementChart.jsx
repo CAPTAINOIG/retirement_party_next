@@ -23,7 +23,7 @@ const StatementChart = () => {
     <>
       {
         (isStatementsLoading || isBusinessLoading) ? (
-          <div className="min-h-[300px] bg-gray-100 rounded-2xl">
+          <div className="min-h-[300px] bg-slate-200 rounded-2xl">
           </div>
         ) : (
           <>

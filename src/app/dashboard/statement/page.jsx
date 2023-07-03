@@ -17,10 +17,10 @@ const StatementOverviewPage = () => {
       {
         (isBusinessLoading || isOverviewLoading) ? (
           <div className="grid grid-cols-4 gap-6">
-            <div className="bg-gray-100 rounded-2xl min-h-[120px]"></div>
-            <div className="bg-gray-100 rounded-2xl min-h-[120px]"></div>
-            <div className="bg-gray-100 rounded-2xl min-h-[120px]"></div>
-            <div className="bg-gray-100 rounded-2xl min-h-[120px]"></div>
+            <div className="bg-slate-200 rounded-2xl min-h-[120px]"></div>
+            <div className="bg-slate-200 rounded-2xl min-h-[120px]"></div>
+            <div className="bg-slate-200 rounded-2xl min-h-[120px]"></div>
+            <div className="bg-slate-200 rounded-2xl min-h-[120px]"></div>
           </div>
         ) : (
           <StatementStats/>

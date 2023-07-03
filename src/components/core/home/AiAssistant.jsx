@@ -15,9 +15,6 @@ const AiAssistant = () => {
         <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
           <div className="flex justify-center">
             <ChatIllustrations class="w-10/12"/>
-            {/*<img*/ }
-            {/*  src="/images/chat.svg" alt="" className="w-full md:w-10/12 chat-illustration"*/ }
-            {/*/>*/ }
           </div>
           <div className="relative mt-12 max-w-lg mx-auto">
             <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">

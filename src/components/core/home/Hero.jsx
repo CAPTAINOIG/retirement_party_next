@@ -30,7 +30,7 @@ const Hero = () => {
 
   return (
     <div
-      className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] pattern-2 relative rounded-[0_0_1000px_1000px/2%]"
+      className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] pattern-2 relative"
     >
       <div className="container">
         <h1

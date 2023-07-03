@@ -32,7 +32,7 @@ const LoginPage = () => {
       <div className="container py-20">
         <div className="w-full max-w-md mx-auto rounded-xl">
           <div className="mb-10">
-            <h1 className="text-3xl font-semibold">Login</h1>
+            <h1 className="text-3xl font-bold">Login</h1>
             <p className="mt-3">Enter your credentials below to sign in to your account</p>
           </div>
           <form onSubmit={ handleSubmit(submit) }>
@@ -59,7 +59,7 @@ const LoginPage = () => {
             </Button>
             <p className="mt-4">
               New to Statisense?
-              <Link href="/register" className="ml-2 text-primary-600 italic">Sign up here</Link>
+              <Link href={ "/register" } className="ml-2 text-primary-600 italic">Sign up here</Link>
             </p>
           </form>
         </div>

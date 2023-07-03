@@ -31,7 +31,7 @@ const StatementAnalysisPage = () => {
       <div className="mt-10">
         {
           (isBusinessLoading || isStatementsLoading) ? (
-            <div className="h-[200px] bg-gray-100 rounded-2xl"></div>
+            <div className="h-[200px] bg-slate-200 rounded-2xl"></div>
           ) : (
             <>
               {

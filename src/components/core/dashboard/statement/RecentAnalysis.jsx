@@ -14,7 +14,7 @@ const RecentAnalysis = () => {
     <>
       {
         (isStatementsLoading || isBusinessLoading) ? (
-          <div className="min-h-[300px] bg-gray-100 rounded-2xl">
+          <div className="min-h-[300px] bg-slate-200 rounded-2xl">
           </div>
         ) : (
           <Card className="overflow-hidden">
@@ -48,9 +48,9 @@ const RecentAnalysis = () => {
                 { !statements.length && <p className="opacity-50">No analysis done yet</p> }
               </div>
             </div>
-            <hr className="border-gray-300"/>
+            <hr/>
             <Link
-              href="/dashboard/statement/analysis"
+              href={ "/dashboard/statement/analysis" }
               className="w-full hover:bg-gray-50 flex items-center justify-center px-8 py-2.5 font-medium"
             >
               View all <IconArrowRight size="16" className="ml-4"/>
