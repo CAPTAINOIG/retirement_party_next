@@ -5,10 +5,12 @@ import { useGetCategoryQuery, useGetInfographicsQuery } from "@/api/infographics
 import PageHeader from "@/components/core/shared/PageHeader";
 import InfographicCard from "@/components/core/shared/InfographicCard";
 
-const CategoryInfographicsPage = ({ params: { category: id } }) => {
+const CategoryInfographicsPage = ({ params: { category: slug } }) => {
   const router = useRouter();
-  const { data: { category = null } = {}, isLoading: isCategoryLoading } = useGetCategoryQuery(id);
-  const { data = {}, isLoading: isInfographicsLoading } = useGetInfographicsQuery({ category: id });
+  const { data: { category = null } = {}, isLoading: isCategoryLoading } = useGetCategoryQuery(slug);
+  const { data = {}, isLoading: isInfographicsLoading } = useGetInfographicsQuery({
+    category: category?._id, enabled: !!category?._id
+  });
 
   const { infographics = [] } = data;
 

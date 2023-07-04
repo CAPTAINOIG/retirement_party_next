@@ -19,11 +19,11 @@ import SimilarInfographics from "@/components/core/infographics/SimilarInfograph
 import { useToast } from "@/hooks/use-toast";
 import IconButton from "@/components/global/IconButton";
 
-const InfographicDetailsPage = ({ params: { infographic: id } }) => {
+const InfographicDetailsPage = ({ params: { infographic: slug } }) => {
   const router = useRouter();
   const viewed = useRef(null);
   const { mutateAsync: addView } = useAddViewMutation();
-  const { data: { infographic = null } = {}, isLoading: isInfographicLoading } = useGetInfographicQuery(id);
+  const { data: { infographic = null } = {}, isLoading: isInfographicLoading } = useGetInfographicQuery(slug);
 
   useEffect(() => {
     if (infographic && viewed.current !== infographic._id) {

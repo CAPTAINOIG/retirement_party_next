@@ -10,11 +10,11 @@ export const useGetInfographicsQuery = ({ category, search, enabled = true } = {
   }, { enabled });
 };
 
-export const useGetInfographicQuery = (id) => {
-  return useQuery(['infographics', id], async () => {
-    const res = await http.get(`/infographic/${ id }`);
+export const useGetInfographicQuery = (slug) => {
+  return useQuery(['infographics', slug], async () => {
+    const res = await http.get(`/infographic/${ slug }`);
     return res.data
-  }, { enabled: !!id });
+  }, { enabled: !!slug });
 };
 
 export const useGetCategoriesQuery = () => {
@@ -24,11 +24,11 @@ export const useGetCategoriesQuery = () => {
   });
 };
 
-export const useGetCategoryQuery = (id) => {
-  return useQuery(['categories', id], async () => {
-    const res = await http.get(`/category/${ id }`);
+export const useGetCategoryQuery = (slug) => {
+  return useQuery(['categories', slug], async () => {
+    const res = await http.get(`/category/${ slug }`);
     return res.data
-  }, { enabled: !!id });
+  }, { enabled: !!slug });
 };
 
 export const useAddViewMutation = () => {
