@@ -34,9 +34,11 @@ const AnalyzePdf = ({ onBack }) => {
     try {
       const payload = {
         file,
-        ...values,
+        full_name: values.full_name,
+        type: values.type === 'personal' ? 1 : 2,
         start_date: '',
         end_date: '',
+        password: values.password,
       };
       const fd = new FormData();
       Object.keys(payload).forEach(key => fd.append(key, payload[key]));
