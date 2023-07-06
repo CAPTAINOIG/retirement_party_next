@@ -1,14 +1,13 @@
 "use client"
 import React, { createElement } from 'react';
 import requireAuth from "@/guards/require-auth";
-import { useAuth } from "@/hooks/use-auth";
 import classNames from "classnames";
 import {
   IconBooks,
   IconBriefcase,
   IconChartArcs3,
   IconChartArrows,
-  IconChartBar,
+  IconChartCircles,
   IconFileText,
   IconHeadphones,
   IconMessageChatbot,
@@ -16,7 +15,6 @@ import {
   IconUsers,
   IconUsersGroup
 } from "@tabler/icons-react";
-import UserDropdown from "@/components/core/shared/UserDropdown";
 import { useRouter } from "next/navigation";
 import Card from "@/components/global/Card";
 
@@ -44,6 +42,17 @@ const products = [
     status: 'active'
   },
   {
+    name: 'Financial report',
+    slug: 'financial-report',
+    description: `Analyze financial reports in seconds`,
+    backgroundColor: 'bg-indigo-500',
+    textColor: 'text-indigo-500',
+    icon: IconBooks,
+    homeLink: '/financial-report',
+    dashboardLink: '/dashboard/financial-report',
+    status: 'active'
+  },
+  {
     name: 'Customer report',
     slug: 'customer-report',
     description: `Analyze customers reports in seconds`,
@@ -52,17 +61,6 @@ const products = [
     icon: IconUsers,
     homeLink: '/customer-report',
     dashboardLink: '/dashboard/customer-reports',
-    status: 'coming-soon'
-  },
-  {
-    name: 'Financial report',
-    slug: 'financial-report',
-    description: `Analyze financial reports in seconds`,
-    backgroundColor: 'bg-indigo-500',
-    textColor: 'text-indigo-500',
-    icon: IconBooks,
-    homeLink: '/financial-report',
-    dashboardLink: '/dashboard/financial-reports',
     status: 'coming-soon'
   },
   {
@@ -115,7 +113,7 @@ const products = [
     description: `Get your procurement analysis in a few steps`,
     backgroundColor: 'bg-teal-500',
     textColor: 'text-teal-500',
-    icon: IconChartBar,
+    icon: IconChartCircles,
     homeLink: '/procurement-analysis',
     dashboardLink: '/dashboard/procurement-analysis',
     status: 'coming-soon'
@@ -144,67 +142,64 @@ const products = [
   },
 ];
 
-
 const DashboardPage = () => {
-  const { user } = useAuth();
   const router = useRouter();
 
   return (
-    <div className="bg-slate-100/70">
-      <div className="container py-10 md:py-16 min-h-screen flex flex-col">
-        <div>
-          <div className="mb-12 md:mb-16 flex items-start justify-between">
-            <div>
-              <h1 className="text-2xl md:text-3xl font-semibold">
-                Welcome { user.firstName } 👋🏽
-              </h1>
-              <p className="text-base md:text-[1.05rem] mt-2">
-                Select a product below to continue
-              </p>
-            </div>
-            <UserDropdown className="mt-1"/>
-          </div>
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-            {
-              products.map(product => (
-                <Card
-                  key={ product.name }
-                  onClick={ () => router.push(product.dashboardLink) }
-                  className={ classNames(
-                    'rounded-3xl px-10 py-6 transition-all h-full flex items-center',
-                    { 'disabled': product.status === 'coming-soon' },
-                    { 'hover:-translate-y-1 cursor-pointer': product.status === 'active' }
-                  ) }
-                >
-                  <div>
-                    <div
-                      className={ classNames('w-12 h-12 rounded-2xl flex items-center justify-center', product.textColor) }
-                    >
-                      { createElement(product.icon, { size: 44 }) }
-                    </div>
+    <>
+      <div className="bg-[#11161b] text-white pt-12 md:pt-16 pb-12 md:pb-16">
+        <div className="container !max-w-5xl">
+          <h1 className="text-3xl md:text-4xl font-semibold max-w-lg flex items-center">
+            All the tools you need to run your business
+          </h1>
+          <p className="mt-2 md:mt-4 md:text-[1.05rem] opacity-75">
+            Select a product below to continue
+          </p>
+        </div>
+      </div>
+      <div className="container py-10 !max-w-5xl min-h-screen flex flex-col">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+          {
+            products.map(product => (
+              <Card
+                key={ product.name }
+                onClick={ () => router.push(product.dashboardLink) }
+                className={ classNames(
+                  'rounded-2xl px-10 py-8 transition-all h-full',
+                  { 'disabled': product.status === 'coming-soon' },
+                  { 'hover:-translate-y-1 hover:shadow-md cursor-pointer': product.status === 'active' }
+                ) }
+              >
+                <div>
+                  <div
+                    className={ classNames('rounded-2xl justify-center', product.textColor) }
+                  >
+                    { createElement(product.icon, { size: 44 }) }
                   </div>
-                  <div className="ml-6">
+                </div>
+                <div className="mt-4">
+                  <div className="flex items-center">
                     <h4 className="font-medium text-[1.06rem]">{ product.name }</h4>
-                    <p className="leading-tight mt-1">
-                      { product.description }
-                    </p>
                     {
                       product.status === 'coming-soon' && (
                         <div
-                          className="px-2 py-1 mt-2 leading-none bg-slate-200 text-black rounded-full text-xs inline-flex"
+                          className="px-2 py-1 ml-2 leading-none bg-slate-200 text-black rounded-full text-xs inline-flex"
                         >
-                          Coming soon
+                          Alpha
                         </div>
                       )
                     }
                   </div>
-                </Card>
-              ))
-            }
-          </div>
+                  <p className="leading-tight mt-1">
+                    { product.description }
+                  </p>
+                </div>
+              </Card>
+            ))
+          }
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -71,7 +71,7 @@ const Verify = () => {
                       You are now subscribed 🥳
                     </h2>
                     <p className="text-lg mt-4 max-w-md">
-                      You email address has been confirmed. You are now subscribed to Statisense weekly insights
+                      Your email address has been confirmed. You are now subscribed to Statisense weekly insights
                     </p>
                     <Link href="/">
                       <Button variant="outlined" leftIcon={ <IconArrowLeft/> } className="mt-10">

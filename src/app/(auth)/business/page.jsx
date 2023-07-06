@@ -68,9 +68,9 @@ const BusinessPage = () => {
                               Business verification successful
                             </h6>
                             <p className="max-w-md mt-3">
-                              You business information has been successfully verified, click the button below to continue
+                              Your business information has been successfully verified, click the button below to continue
                             </p>
-                            <Link href="/dashboard">
+                            <Link href={ "/dashboard" }>
                               <Button variant="outlined" className="mt-10">Continue</Button>
                             </Link>
                           </div>
