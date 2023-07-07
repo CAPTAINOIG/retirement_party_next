@@ -13,7 +13,7 @@ const AuthLayout = ({ children }) => {
             <IconChartBar size="32" className="mr-3"/>
             Stati<b className="ml-[1px]">sense.</b>
           </Link>
-          <p className="text-xl md:text-3xl text-slate-300 max-w-xs !leading-snug">
+          <p className="text-xl md:text-[1.8rem] text-slate-300 max-w-[260px] !leading-snug">
             Get insights to make better business decisions
           </p>
         </div>
