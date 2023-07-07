@@ -30,3 +30,9 @@ export const useConfirmEmailVerificationOtp = () => {
     return http.post('/auth/verification/email/confirm', { otp });
   });
 };
+
+export const useChangePassword = () => {
+  return useMutation(({ currentPassword, newPassword }) => {
+    return http.post('/auth/password/change', { currentPassword, newPassword });
+  });
+};
