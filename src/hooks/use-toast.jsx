@@ -97,7 +97,7 @@ const Toast = ({ toast, onClose }) => {
       exit={ { opacity: 0, y: 20, scale: 0.5 } }
       transition={ { type: "spring", stiffness: 500, damping: 30, mass: 1 } }
       className={ classNames(
-        "px-4 py-3 rounded-xl flex items-start w-full",
+        "px-4 py-3 rounded-xl flex items-start w-full z-[9999]",
         { 'bg-green-600 text-white': toast.type === 'success' },
         { 'bg-red-600 text-white': toast.type === 'error' },
         { 'bg-orange-600 text-white': toast.type === 'warning' },
