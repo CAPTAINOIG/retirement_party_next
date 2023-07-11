@@ -1,8 +1,15 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import SimpleDropdown from "@/components/global/SimpleDropdown";
 import IconButton from "@/components/global/IconButton";
-import { IconChevronLeft, IconDotsVertical, IconFileText, IconListDetails, IconTrash } from "@tabler/icons-react";
+import {
+  IconChevronLeft,
+  IconDotsVertical,
+  IconFileText,
+  IconListDetails,
+  IconSparkles,
+  IconTrash
+} from "@tabler/icons-react";
 import { useGetStatement, useGetTransactionDetails } from "@/api/statement";
 import AccountActivityChart from "@/components/core/dashboard/statement/details/AccountActivityChart";
 import Link from "next/link";
@@ -29,9 +36,12 @@ import StatementOwnership from "@/components/core/dashboard/statement/details/St
 import { useGetUserBusiness } from "@/api/business";
 import { format } from "date-fns";
 import Card from "@/components/global/Card";
+import Button from "@/components/global/Button";
+import StatementDetailsChat from "@/components/core/dashboard/statement/details/StatementDetailsChat";
 
 const StatementDetails = ({ params: { id } }) => {
   const { data: business } = useGetUserBusiness();
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const { data: { statement } = {}, isLoading: isStatementLoading } = useGetStatement(business._id, id);
   const { data, isLoading: isTransactionsLoading } = useGetTransactionDetails(statement?.transactionId);
 
@@ -64,6 +74,11 @@ const StatementDetails = ({ params: { id } }) => {
                       <h3 className="text-xl font-medium">Analysis details</h3>
                     </div>
                     <div className="flex items-center space-x-4">
+                      <Button
+                        onClick={ () => setIsChatOpen(true) } color="primary" leftIcon={ <IconSparkles size="20"/> }
+                      >
+                        Chat
+                      </Button>
                       <SimpleDropdown
                         trigger={
                           <IconButton
@@ -168,6 +183,17 @@ const StatementDetails = ({ params: { id } }) => {
               )
             }
           </>
+        )
+      }
+
+      {
+        (!!statement && !!data?.analytics_data) && (
+          <StatementDetailsChat
+            isOpen={ isChatOpen }
+            onClose={ () => setIsChatOpen(false) }
+            result={ data?.analytics_data }
+            statement={ statement }
+          />
         )
       }
     </>
