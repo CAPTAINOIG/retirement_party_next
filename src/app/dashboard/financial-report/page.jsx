@@ -1,10 +1,15 @@
 import React from 'react';
+import Card from "@/components/global/Card";
 
 const FinancialReportPage = () => {
   return (
-    <div>
-
-    </div>
+    <>
+      <div className="grid grid-cols-3">
+        <Card className="p-8">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, pariatur!
+        </Card>
+      </div>
+    </>
   );
 };
 

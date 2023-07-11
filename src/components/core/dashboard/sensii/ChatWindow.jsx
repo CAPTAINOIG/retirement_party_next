@@ -171,6 +171,7 @@ const ChatWindow = ({ selected, onClose }) => {
                     <div className="max-w-3xl mx-auto flex space-x-3 items-center">
                       <input
                         value={ value } onChange={ e => setValue(e.target.value) }
+                        maxLength={ 120 }
                         onKeyUp={ e => {
                           if (e.key.toLowerCase() === 'enter') send();
                         } }

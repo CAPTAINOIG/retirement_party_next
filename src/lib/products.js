@@ -1,9 +1,52 @@
-import { IconDatabase, IconFileText, IconMessageChatbot, IconUserCheck } from "@tabler/icons-react";
-import React from "react";
+import {
+  IconAssembly,
+  IconBooks,
+  IconBriefcase,
+  IconBuildingHospital,
+  IconChartDots3,
+  IconChartHistogram,
+  IconChartPie4,
+  IconClipboardText,
+  IconCreditCard,
+  IconEditCircle,
+  IconFileChart,
+  IconFileText,
+  IconGasStation,
+  IconGavel,
+  IconMessageChatbot,
+  IconPaperBag,
+  IconReportMoney,
+  IconUserCircle,
+  IconUsersGroup
+} from "@tabler/icons-react";
 
 const products = [
   {
-    name: 'Sensiii',
+    name: 'Bank statement',
+    slug: 'bank-statement',
+    description: `Analyze any bank statement in seconds`,
+    backgroundColor: 'bg-teal-500',
+    textColor: 'text-teal-500',
+    icon: IconFileText,
+    homeLink: '/statement',
+    dashboardLink: '/dashboard/statement',
+    status: 'active',
+    categories: ['featured', 'general', 'financial']
+  },
+  {
+    name: 'Financial report',
+    slug: 'financial-report',
+    description: `Analyze financial reports in seconds`,
+    backgroundColor: 'bg-indigo-500',
+    textColor: 'text-indigo-500',
+    icon: IconBooks,
+    homeLink: '/financial-report',
+    dashboardLink: '/dashboard/financial-report',
+    status: 'active',
+    categories: ['featured', 'investment']
+  },
+  {
+    name: 'Chat assistant',
     slug: 'sensii',
     description: `An advanced embedded AI assistant`,
     backgroundColor: 'bg-blue-500',
@@ -11,41 +54,211 @@ const products = [
     icon: IconMessageChatbot,
     homeLink: '/sensii',
     dashboardLink: '/dashboard/sensii',
-    status: 'active'
+    status: 'active',
+    categories: ['general']
   },
   {
-    name: 'BeTrue',
-    slug: 'betrue',
-    description: `A customer eligibility platform for businesses`,
-    backgroundColor: 'bg-red-500',
-    textColor: 'text-red-500',
-    icon: IconUserCheck,
-    homeLink: '/betrue',
-    dashboardLink: '/dashboard/betrue',
-    status: 'active'
-  },
-  {
-    name: 'Statement',
-    slug: 'statement',
-    description: `Analyze any bank statement in seconds`,
-    backgroundColor: 'bg-teal-500',
-    textColor: 'text-teal-500',
-    icon: IconFileText,
-    homeLink: '/statement',
-    dashboardLink: '/dashboard/statement',
-    status: 'active'
-  },
-  {
-    name: 'MineMe',
-    slug: 'mineme',
-    description: `A bespoke customer data analyzed for businesses`,
+    name: 'Custom report',
+    slug: 'custom-report',
+    description: `Analyze customs reports in seconds`,
     backgroundColor: 'bg-orange-500',
     textColor: 'text-orange-500',
-    icon: IconDatabase,
-    homeLink: '/mineme',
-    dashboardLink: '/dashboard/mineme',
-    status: 'active'
+    icon: IconEditCircle,
+    homeLink: '/custom-report',
+    dashboardLink: '/dashboard/custom-reports',
+    status: 'coming-soon',
+    categories: ['featured', 'general']
+  },
+  {
+    name: 'Invoices',
+    slug: 'invoices',
+    description: `Get insights on your invoices`,
+    backgroundColor: 'bg-indigo-500',
+    textColor: 'text-indigo-500',
+    icon: IconClipboardText,
+    homeLink: '/invoices',
+    dashboardLink: '/dashboard/invoices',
+    status: 'coming-soon',
+    categories: ['general']
+  },
+  {
+    name: 'Expenses',
+    slug: 'expenses',
+    description: `Get insights on your expenses`,
+    backgroundColor: 'bg-teal-500',
+    textColor: 'text-teal-500',
+    icon: IconReportMoney,
+    homeLink: '/expenses',
+    dashboardLink: '/dashboard/expenses',
+    status: 'coming-soon',
+    categories: ['general']
+  },
+  {
+    name: 'Customer profile',
+    slug: 'customer-profile',
+    description: `Understand your customers`,
+    backgroundColor: 'bg-yellow-500',
+    textColor: 'text-yellow-500',
+    icon: IconUserCircle,
+    homeLink: '/customer-profile',
+    dashboardLink: '/dashboard/customer-profile',
+    status: 'coming-soon',
+    categories: ['financial', 'insurance']
+  },
+  {
+    name: 'Credit Portfolio',
+    slug: 'credit-portfolio',
+    description: `Maintain your credit portfolio`,
+    backgroundColor: 'bg-red-500',
+    textColor: 'text-red-500',
+    icon: IconCreditCard,
+    homeLink: '/credit-portfolio',
+    dashboardLink: '/dashboard/credit-portfolio',
+    status: 'coming-soon',
+    categories: ['financial']
+  },
+  {
+    name: 'Investment Portfolio',
+    slug: 'investment-portfolio',
+    description: `Track your investments`,
+    backgroundColor: 'bg-purple-500',
+    textColor: 'text-purple-500',
+    icon: IconBriefcase,
+    homeLink: '/investment-portfolio',
+    dashboardLink: '/dashboard/investment-portfolio',
+    status: 'coming-soon',
+    categories: ['financial']
+  },
+  {
+    name: 'Saving portfolio',
+    slug: 'saving-portfolio',
+    description: `Monitor your savings`,
+    backgroundColor: 'bg-indigo-500',
+    textColor: 'text-indigo-500',
+    icon: IconPaperBag,
+    homeLink: '/saving-portfolio',
+    dashboardLink: '/dashboard/saving-portfolio',
+    status: 'coming-soon',
+    categories: ['financial']
+  },
+  {
+    name: 'Credit Modelling',
+    slug: 'credit-modelling',
+    description: `Model your credit score`,
+    backgroundColor: 'bg-orange-500',
+    textColor: 'text-orange-500',
+    icon: IconChartHistogram,
+    homeLink: '/credit-modelling',
+    dashboardLink: '/dashboard/credit-modelling',
+    status: 'coming-soon',
+    categories: ['financial']
+  },
+  {
+    name: 'Trading insight',
+    slug: 'trading-insight',
+    description: `Get insights on your trades`,
+    backgroundColor: 'bg-blue-500',
+    textColor: 'text-blue-500',
+    icon: IconFileChart,
+    homeLink: '/trading-insight',
+    dashboardLink: '/dashboard/trading-insight',
+    status: 'coming-soon',
+    categories: ['investment']
+  },
+  {
+    name: 'Hospital distribution',
+    slug: 'hospital-distribution',
+    description: `Manage hospital distributions`,
+    backgroundColor: 'bg-purple-500',
+    textColor: 'text-purple-500',
+    icon: IconBuildingHospital,
+    homeLink: '/hospital-distribution',
+    dashboardLink: '/dashboard/hospital-distribution',
+    status: 'coming-soon',
+    categories: ['insurance']
+  },
+  {
+    name: 'Risk assessment',
+    slug: 'risk-assessment',
+    description: `Perform risk assessments`,
+    backgroundColor: 'bg-orange-500',
+    textColor: 'text-orange-500',
+    icon: IconAssembly,
+    homeLink: '/risk-assessment',
+    dashboardLink: '/dashboard/risk-assessment',
+    status: 'coming-soon',
+    categories: ['insurance']
+  },
+  {
+    name: 'Legal',
+    slug: 'legal',
+    description: `Manage your legal matters`,
+    backgroundColor: 'bg-yellow-500',
+    textColor: 'text-yellow-500',
+    icon: IconGavel,
+    homeLink: '/legal',
+    dashboardLink: '/dashboard/legal',
+    status: 'coming-soon',
+    categories: ['cooking']
+  },
+  {
+    name: 'Oil and gas',
+    slug: 'oil-and-gas',
+    description: `Manage your oil and gas operations`,
+    backgroundColor: 'bg-indigo-500',
+    textColor: 'text-indigo-500',
+    icon: IconGasStation,
+    homeLink: '/oil-and-gas',
+    dashboardLink: '/dashboard/oil-and-gas',
+    status: 'coming-soon',
+    categories: ['cooking']
+  },
+  {
+    name: 'Government',
+    slug: 'government',
+    description: `Interact with government operations`,
+    backgroundColor: 'bg-teal-500',
+    textColor: 'text-teal-500',
+    icon: IconUsersGroup,
+    homeLink: '/government',
+    dashboardLink: '/dashboard/government',
+    status: 'coming-soon',
+    categories: ['cooking']
+  },
+  {
+    name: 'Financial Model',
+    slug: 'financial-model',
+    description: `Create and manage financial models`,
+    backgroundColor: 'bg-blue-500',
+    textColor: 'text-blue-500',
+    icon: IconChartPie4,
+    homeLink: '/financial-model',
+    dashboardLink: '/dashboard/financial-model',
+    status: 'coming-soon',
+    categories: ['advisory']
+  },
+  {
+    name: 'Investment analysis',
+    slug: 'investment-analysis',
+    description: `Analyze your investments`,
+    backgroundColor: 'bg-orange-500',
+    textColor: 'text-orange-500',
+    icon: IconChartDots3,
+    homeLink: '/investment-analysis',
+    dashboardLink: '/dashboard/investment-analysis',
+    status: 'coming-soon',
+    categories: ['advisory']
   }
+];
+
+export const categories = [
+  { id: 'featured', name: "Featured" },
+  { id: 'general', name: "General" },
+  { id: 'financial', name: "Financial services" },
+  { id: 'investment', name: "Investment advisory" },
+  { id: 'insurance', name: "Insurance & HMO" },
+  { id: 'cooking', name: "Currently cooking" },
+  { id: 'advisory', name: "Advisory" }
 ];
 
 export default products

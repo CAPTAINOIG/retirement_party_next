@@ -3,7 +3,7 @@ import React, { createElement, useState } from 'react';
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import classNames from "classnames";
-import { IconFileText, IconLayout, IconSettings2 } from "@tabler/icons-react";
+import { IconBooks, IconLayout, IconSettings2 } from "@tabler/icons-react";
 import ServicesSwitcher from "@/components/core/shared/ServicesSwitcher";
 import UserDropdown from "@/components/core/shared/UserDropdown";
 import requireAuthBusiness from "@/guards/require-auth-business";
@@ -17,14 +17,14 @@ import { useToast } from "@/hooks/use-toast";
 import { useQueryClient } from "@tanstack/react-query";
 
 const links = [
-  { name: 'Overview', href: '/dashboard/statement', icon: <IconLayout size="20"/> },
-  { name: 'Analysis', href: '/dashboard/statement/analysis', icon: <IconFileText size="20"/> },
-  { name: 'Settings', href: '/dashboard/statement/settings', icon: <IconSettings2 size="20"/> },
+  { name: 'Overview', href: '/dashboard/financial-report', icon: <IconLayout size="20"/> },
+  { name: 'Reports', href: '/dashboard/financial-report/reports', icon: <IconBooks size="20"/> },
+  { name: 'Settings', href: '/dashboard/financial-report/settings', icon: <IconSettings2 size="20"/> },
 ];
 
-const product = products.find(p => p.slug === 'bank-statement');
+const product = products.find(p => p.slug === 'financial-report');
 
-const StatementLogo = ({ className }) => (
+const Logo = ({ className }) => (
   <div className={ className }>
     <div className="text-[1.05rem] font-medium flex items-center">
       <div
@@ -37,7 +37,7 @@ const StatementLogo = ({ className }) => (
   </div>
 );
 
-const StatementLayout = ({ children }) => {
+const FinancialReportLayout = ({ children }) => {
   const toast = useToast();
   const qc = useQueryClient();
   const pathname = usePathname();
@@ -72,7 +72,7 @@ const StatementLayout = ({ children }) => {
                   <div className="h-screen border-r border-slate-200 flex flex-col overflow-hidden">
                     <div className="p-8 md:p-10 mb-4 hidden md:block">
                       <Link href={ "/dashboard" }>
-                        <StatementLogo className="px-5"/>
+                        <Logo className="px-5"/>
                       </Link>
                     </div>
                     <div className="flex-1 overflow-y-auto px-8 md:px-10">
@@ -95,9 +95,9 @@ const StatementLayout = ({ children }) => {
                     </div>
                   </div>
                   <div className="h-screen overflow-y-auto flex flex-col relative bg-slate-100/70">
-                    <div className="sticky top-0 inset-x-0 bg-gradient-to-b from-slate-100 z-50">
+                    <div className="sticky top-0 inset-x-0 bg-gradient-to-b from-slate-100/70 z-50">
                       <div className="container !max-w-5xl pt-6 pb-10 space-x-4 flex items-center md:justify-end">
-                        <StatementLogo className="md:hidden mr-auto"/>
+                        <Logo className="md:hidden mr-auto"/>
                         <ServicesSwitcher/>
                         <UserDropdown/>
                       </div>
@@ -200,4 +200,4 @@ const StatementLayout = ({ children }) => {
   );
 };
 
-export default requireAuthBusiness(StatementLayout);
+export default requireAuthBusiness(FinancialReportLayout);

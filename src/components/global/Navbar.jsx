@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className="container h-full">
           <nav className="relative z-50 flex justify-between h-full">
             <div className="flex items-center md:gap-x-12 flex-1 h-full">
-              <Link href="/" className="text-[1.6rem] flex items-center">
+              <Link href={ "/" } className="text-[1.6rem] flex items-center">
                 <IconChartBar size="32" className="mr-3"/>
                 Stati<b className="ml-[1px]">sense.</b>
               </Link>
@@ -72,7 +72,7 @@ const Navbar = () => {
                                 ) }
                               >
                                 {
-                                  products.map(product => (
+                                  products.slice(0, 6).map(product => (
                                     <div
                                       key={ product.name }
                                       className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
@@ -101,7 +101,7 @@ const Navbar = () => {
                     )
                   }
                 </Hover>
-                <Link className="inline-flex items-center rounded-full py-1 px-4" href="/infographics">
+                <Link className="inline-flex items-center rounded-full py-1 px-4" href={ "/infographics" }>
                   Insights
                 </Link>
               </div>
@@ -111,12 +111,12 @@ const Navbar = () => {
                 {
                   !user ? (
                     <>
-                      <Link href="/login">
+                      <Link href={ "/login" }>
                         <Button variant="outlined" color={ scrolled ? "black" : "white" }>Sign in</Button>
                       </Link>
                       {
                         scrolled && (
-                          <Link href="/register">
+                          <Link href={ "/register" }>
                             <Button>Get started</Button>
                           </Link>
                         )
@@ -185,19 +185,19 @@ const Navbar = () => {
                 className="fixed inset-x-0 top-24 mt-4 flex origin-top flex-col rounded-3xl bg-white px-4 py-6 text-lg tracking-tight shadow-xl z-50 space-y-2"
               >
                 <Link
-                  onClick={ () => setIsMobileNavVisible(false) } href="/about"
+                  onClick={ () => setIsMobileNavVisible(false) } href={ "/about" }
                   className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
                 >
                   About us
                 </Link>
                 <Link
-                  onClick={ () => setIsMobileNavVisible(false) } href="/#services"
+                  onClick={ () => setIsMobileNavVisible(false) } href={ "/#services" }
                   className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
                 >
                   Our services
                 </Link>
                 <Link
-                  onClick={ () => setIsMobileNavVisible(false) } href="/infographics"
+                  onClick={ () => setIsMobileNavVisible(false) } href={ "/infographics" }
                   className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
                 >
                   Infographics
@@ -206,13 +206,13 @@ const Navbar = () => {
                   <hr className="mx-2 my-2 border-zinc-300/40"/>
                 </div>
                 <Link
-                  onClick={ () => setIsMobileNavVisible(false) } href="/login"
+                  onClick={ () => setIsMobileNavVisible(false) } href={ "/login" }
                   className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
                 >
                   Sign in
                 </Link>
                 <Link
-                  onClick={ () => setIsMobileNavVisible(false) } href="/register"
+                  onClick={ () => setIsMobileNavVisible(false) } href={ "/register" }
                   className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
                 >
                   Sign up
