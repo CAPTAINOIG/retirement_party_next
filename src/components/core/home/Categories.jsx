@@ -11,12 +11,12 @@ const Categories = () => {
 
   return (
     <div>
-      <div className="container mb-12 md:mb-16">
+      <div className="container mb-12 md:mb-16 flex flex-col items-center justify-center">
         <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-gray-900">
-          Popular categories
+          Popular public data insights.
         </h2>
         <p className="mt-4 text-base md:text-lg">
-          See trending categories across our channels
+          Review some work on public data from the past, as we prepare you for the future.
         </p>
       </div>
       {

@@ -1,24 +1,25 @@
 import React from "react";
 import Button from "@/components/global/Button.jsx";
 import { IconArrowRight, IconBrandFacebook, IconBrandLinkedin, IconBrandTwitter } from "@tabler/icons-react";
+import Link from "next/link";
 
-const SocialCredit = () => {
+const InsightsOnTheGo = () => {
   return (
     <div className="py-14 overflow-hidden">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
-              Let's make magic pop from your customer data.
+              Get insights on popular topics on the go.
             </h2>
-            <ul className="list-disc list-inside mt-6 text-base md:text-lg">
-              <li>We integrate your data set for insight</li>
-              <li>Our AI models makes sense of everything</li>
-              <li>Get result in infographics, charts, reports, etc</li>
-            </ul>
-            <Button color="black" className="mt-12" size="lg" rightIcon={ <IconArrowRight/> }>
-              Let's get started
-            </Button>
+            <p className="mt-6 text-base md:text-lg max-w-sm">
+              Chat with Lens for insights on various topics like economy, business, etc
+            </p>
+            <Link href={ '/infographics' }>
+              <Button color="black" className="mt-12" size="lg" rightIcon={ <IconArrowRight/> }>
+                Let's go
+              </Button>
+            </Link>
           </div>
           <div className="relative -order-1 md:order-1 flex md:justify-center">
             <div className="relative w-full sm:w-[400px]">
@@ -318,4 +319,4 @@ const SocialCredit = () => {
   );
 };
 
-export default SocialCredit;
+export default InsightsOnTheGo;

@@ -10,27 +10,32 @@ SwiperCore.use([Autoplay]);
 const items = [
   {
     image: "/images/banking.webp",
-    name: "Banking",
+    name: "Financial Services",
     description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
   },
   {
     image: "/images/lending.webp",
-    name: "Lending",
+    name: "Investment Advisory",
     description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
   },
   {
     image: "/images/recruitment.webp",
-    name: "Recruitment",
+    name: "Lending",
     description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
   },
   {
     image: "/images/identity.webp",
-    name: "Identity",
+    name: "Education",
+    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
+  },
+  {
+    image: "/images/lending.webp",
+    name: "Procurement",
     description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
   },
 ];
 
-const SwiperSection = () => {
+const SupportingSectors = () => {
   const swiperElRef = useRef(null);
 
   useEffect(() => {
@@ -54,16 +59,14 @@ const SwiperSection = () => {
   return (
     <>
       <div className="relative">
-        <div className="container">
-          <div>
-            <div className="relative max-w-2xl">
-              <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
-                Profile your customers for credibility in 5mins.
-              </h2>
-              <p className="mt-6 text-base md:text-lg">
-                Over 300 configurable nodes on Cashflow insights, psycometry, identity credibility, social scoring etc
-              </p>
-            </div>
+        <div className="container flex flex-col md:items-center md:text-center">
+          <div className="relative max-w-2xl">
+            <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
+              Supporting sectors with AI insights
+            </h2>
+            <p className="mt-6 text-base md:text-lg">
+              Insights from templates at a very high level
+            </p>
           </div>
         </div>
         <div className="relative -order-1 md:order-1 overflow-hidden mt-20">
@@ -98,4 +101,4 @@ const SwiperSection = () => {
   );
 };
 
-export default SwiperSection;
+export default SupportingSectors;
