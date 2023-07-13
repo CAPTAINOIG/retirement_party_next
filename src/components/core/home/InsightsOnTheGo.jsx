@@ -10,10 +10,10 @@ const InsightsOnTheGo = () => {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
-              Get insights on popular topics on the go.
+              Get insights on various topics on the go.
             </h2>
             <p className="mt-6 text-base md:text-lg max-w-sm">
-              Chat with Lens for insights on various topics like economy, business, etc
+              Chat with Lens for insights on topics like economy, business, education, election etc
             </p>
             <Link href={ '/infographics' }>
               <Button color="black" className="mt-12" size="lg" rightIcon={ <IconArrowRight/> }>

@@ -3,7 +3,7 @@ import { IconChartInfographic, IconDatabase, IconMessage2, IconRepeat, IconRobot
 
 const HowItWorks = () => {
   return (
-    <div id="services" className="bg-[#11100f] text-zinc-100 py-28 sm:py-40 rounded-[1200px/.5%]">
+    <div id="services" className="bg-[#11100f] text-zinc-100 py-28 sm:py-40">
       <section aria-label="Our services" className="container">
         <div className="flex flex-col md:items-center md:text-center">
           <h2 className="text-4xl md:text-6xl font-medium tracking-tight">

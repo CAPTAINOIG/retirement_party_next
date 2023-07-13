@@ -26,7 +26,7 @@ const AiAssistant = () => {
             <p className="mt-6 text-base md:text-lg">
               We are building Africa's most robust data assistant.
             </p>
-            <Link href={ '/signup' }>
+            <Link href={ '/register' }>
               <Button color="black" className="mt-12" rightIcon={ <IconArrowRight/> } size="lg">
                 Get started
               </Button>
