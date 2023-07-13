@@ -4,6 +4,7 @@ import SwiperCore, { Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Button from "@/components/global/Button";
 
 SwiperCore.use([Autoplay]);
 
@@ -49,7 +50,7 @@ const SupportingSectors = () => {
       breakpoints: {
         0: { slidesPerView: 1.1 },
         640: { slidesPerView: 1.2 },
-        1024: { slidesPerView: 3.5 }
+        1024: { slidesPerView: 3.8 }
       }
     };
     Object.assign(swiperElRef.current, swiperParams);
@@ -65,7 +66,7 @@ const SupportingSectors = () => {
               Supporting sectors with AI insights
             </h2>
             <p className="mt-6 text-base md:text-lg">
-              Insights from templates at a very high level
+              Insights for every team and business
             </p>
           </div>
         </div>
@@ -81,12 +82,13 @@ const SupportingSectors = () => {
                         className="min-h-[400px] md:min-h-[450px] relative layer-bg bg-cover rounded-lg"
                       >
                         <div
-                          className="absolute inset-0 bg-black/10 group-hover:bg-black/50 z-[1] px-12 py-14 text-white transition-all duration-300"
+                          className="absolute inset-0 bg-black/50 z-[1] px-12 py-14 text-white transition-all duration-300"
                         >
                           <h2 className="text-3xl font-medium">
                             { item.name }
                           </h2>
-                          <p className="text-lg mt-5 transition-all duration-300">{ item.description }</p>
+                          <p className="text-lg mt-2 transition-all duration-300 opacity-80">Lorem ipsum dolor sit.</p>
+                          <Button variant="outlined" color="white" className="mt-6">Get started</Button>
                         </div>
                       </div>
                     </div>

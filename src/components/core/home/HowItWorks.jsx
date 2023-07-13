@@ -18,7 +18,7 @@ const HowItWorks = () => {
             <li className="rounded-2xl bg-slate-700/30 px-10 py-12">
               <IconDatabase className="mb-6 text-primary-300/60" size="48"/>
               <h3 className="font-medium text-xl">
-                Plug your data
+                1. Plug your data
               </h3>
               <p className="mt-2 text-base opacity-70">
                 Random or from template, we have your covered
@@ -27,7 +27,7 @@ const HowItWorks = () => {
             <li className="rounded-2xl bg-slate-700/30 px-10 py-12">
               <IconRobot className="mb-6 text-primary-300/60" size="48"/>
               <h3 className="font-medium text-xl">
-                AI takes over
+                2. AI takes over
               </h3>
               <p className="mt-2 text-base opacity-70">
                 Extract, analyze, find insight
@@ -36,7 +36,7 @@ const HowItWorks = () => {
             <li className="rounded-2xl bg-slate-700/30 px-10 py-12">
               <IconMessage2 className="mb-6 text-primary-300/60" size="48"/>
               <h3 className="font-medium text-xl">
-                Chat with Lens
+                3. Chat with Lens
               </h3>
               <p className="mt-2 text-base opacity-70">
                 Human interactive conversation style data presentation
@@ -47,7 +47,7 @@ const HowItWorks = () => {
             <li className="md:col-start-2 md:col-span-2 rounded-2xl bg-slate-700/30 px-10 py-12">
               <IconChartInfographic className="mb-6 text-primary-300/60" size="48"/>
               <h3 className="font-medium text-xl">
-                View report
+                4. View report
               </h3>
               <p className="mt-2 text-base opacity-70">
                 We present standard report, infographics etc
@@ -56,7 +56,7 @@ const HowItWorks = () => {
             <li className="md:col-span-2 rounded-2xl bg-slate-700/30 px-10 py-12">
               <IconRepeat className="mb-6 text-primary-300/60" size="48"/>
               <h3 className="font-medium text-xl">
-                Repeat
+                5. Repeat
               </h3>
               <p className="mt-2 text-base opacity-70">
                 We are definitely building the best data assistant in Africa

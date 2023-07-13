@@ -19,8 +19,7 @@ const AiAssistant = () => {
           </div>
           <div className="relative mt-12 max-w-lg mx-auto">
             <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
-              Plug your data,<br/>
-              docs and dumps,<br/>
+              Plug your business data and docs,
               Chat with <span className="text-primary-600">Lens</span>.
             </h2>
             <p className="mt-6 text-base md:text-lg">

@@ -7,10 +7,10 @@ const Testimonials = () => {
       <div className="container sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl flex flex-col md:items-center md:text-center">
           <h2 className="text-4xl md:text-6xl font-medium text-slate-900">
-            Loved by businesses worldwide.
+            Over 200 million social impressions
           </h2>
           <p className="mt-6 text-lg tracking-tight text-slate-700">
-            Over 200 Million impressions on data insights across digital and social channels.
+            Loved by businesses across Africa, our data insights travel far
           </p>
         </div>
         <ul

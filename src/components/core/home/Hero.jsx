@@ -42,11 +42,11 @@ const Hero = () => {
             className="relative font-bold bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent"
           />.
         </h1>
-        <p className="mx-auto mt-8 max-w-xl text-lg tracking-tight text-slate-400">
-          We use AI to extract and simplify data and documents for businesses, consumers and governments.
+        <p className="mx-auto mt-8 max-w-2xl text-lg tracking-tight text-slate-400">
+          We use AI to simplify data and documents for businesses, consumers and governments.
         </p>
         <Link href={ "/register" }>
-          <Button size="xl" className="mt-16" rightIcon={ <IconChevronRight size="20"/> } color="white">
+          <Button size="xl" className="mt-12" rightIcon={ <IconChevronRight size="20"/> } color="white">
             Get started
           </Button>
         </Link>
