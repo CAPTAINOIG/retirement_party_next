@@ -8,17 +8,20 @@ const StatementChart = dynamic(() => import("../../../components/core/dashboard/
 
 const StatementOverviewPage = () => {
   return (
-    <div className="space-y-6">
-      <StatementStats/>
-      <div className="md:grid space-y-6 md:space-y-0 md:grid-cols-12 gap-6">
-        <div className="md:col-span-5">
-          <RecentAnalysis/>
-        </div>
-        <div className="md:col-span-7 flex flex-col h-[340px]">
-          <StatementChart/>
+    <>
+      <h2 className="hidden md:block mb-10 font-semibold text-xl">Overview</h2>
+      <div className="space-y-6">
+        <StatementStats/>
+        <div className="md:grid space-y-6 md:space-y-0 md:grid-cols-12 gap-6">
+          <div className="md:col-span-5">
+            <RecentAnalysis/>
+          </div>
+          <div className="md:col-span-7 flex flex-col h-[340px]">
+            <StatementChart/>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

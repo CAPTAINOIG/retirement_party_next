@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import classNames from "classnames";
 import { IconBooks, IconLayout, IconSettings2 } from "@tabler/icons-react";
-import ServicesSwitcher from "@/components/core/shared/ServicesSwitcher";
+import ServicesSwitcher from "@/components/core/shared/AppSwitcherMobile";
 import UserDropdown from "@/components/core/shared/UserDropdown";
 import requireAuthBusiness from "@/guards/require-auth-business";
 import { useCreateStatementSettings, useGetStatementSettings } from "@/api/statement";

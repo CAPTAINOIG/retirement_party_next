@@ -23,7 +23,9 @@ const StatementAnalysisPage = () => {
           Analysis history
         </h1>
         <Button
-          onClick={ () => setIsAnalyzeOpen(true) } leftIcon={ <IconPlus size="20"/> } variant="outlined" color="black"
+          onClick={ () => setIsAnalyzeOpen(true) }
+          leftIcon={ <IconPlus size="20"/> }
+          variant="outlined" color="primary"
         >
           <span className="md:hidden">New</span>
           <span className="hidden md:inline">Analyze statement</span>
