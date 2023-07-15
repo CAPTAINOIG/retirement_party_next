@@ -22,7 +22,7 @@ const RecentAnalysis = () => {
               <div className="flex items-center mb-8">
                 <h3 className="font-semibold text-base mr-4">Recent analysis</h3>
               </div>
-              <div className="space-y-8 text-md">
+              <div className="space-y-8 text-md w-full">
                 {
                   [...statements].slice(0, 4).map((statement, i) => (
                     <div key={ i } className="flex items-center">
@@ -33,9 +33,11 @@ const RecentAnalysis = () => {
                           <IconFileText size="20"/>
                         </div>
                       </div>
-                      <div className="px-4">
+                      <div className="px-4 overflow-hidden">
                         <p className="font-medium leading-none">{ statement.name }</p>
-                        <p className="leading-none text-[.95rem] mt-1.5 text-ellipsis whitespace-nowrap opacity-80">
+                        <p
+                          className="leading-none text-[.95rem] mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap opacity-80"
+                        >
                           { statement.bank } - { statement.from }
                         </p>
                       </div>

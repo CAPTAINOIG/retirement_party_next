@@ -10,8 +10,9 @@ import { formatCurrency, getModeArray, shuffle } from "@/lib/utils";
 const generatePrompt = data => {
   const { highlight, weekly_analytics, salary_details, debit_expenses } = data || {};
   if (!highlight) return '';
-  return `You name is Lens, you are a friendly AI assistant that helps users provide answers from an analyzed bank statement using the context provided. The following is some data scraped from a Nigerian bank statement for ${ data?.name } from ${ data?.highlight?.from_statement } to ${ data?.highlight?.to_statement }. Answer any question pertaining to the bank statement data provided. Make all amounts comma separated, rounded to 2dp and prepend with ₦, for example ₦2,000,000. Say you don’t know if you are unable to answer based on the context provided.
+  return `Answer the question based on the context below. If the question cannot be answered using the information provided answer with "I don't know". You name is Lens, you are a friendly AI assistant that helps users provide answers from an analyzed bank statement using the context provided. The following is some data scraped from a Nigerian bank statement for ${ data?.name } from ${ data?.highlight?.from_statement } to ${ data?.highlight?.to_statement }. Answer any question pertaining to the bank statement data provided. Make all amounts comma separated, rounded to 2dp and prepend with ₦, for example ₦2,000,000. Say you don’t know if you are unable to answer based on the context provided.
 
+###
 Context:
 Total deposit: ${ highlight?.total_deposit }
 Total withdrawal: ${ highlight?.total_withdrawal }
@@ -46,6 +47,8 @@ Weekly balances (in JSON): ${ JSON.stringify(weekly_analytics) }
 Salary details (in JSON): ${ JSON.stringify(salary_details) }
 Debit expenses (in JSON): ${ JSON.stringify(debit_expenses) }
 Cash flow (in JSON): ${ JSON.stringify(data?.cashFlow) }
+
+###
 `
 };
 
@@ -64,7 +67,6 @@ const suggestions = shuffle([
 ]);
 
 const StatementDetailsChat = ({ isOpen, onClose, statement, result }) => {
-  console.log({ statement, result });
   const socket = useRef(null);
   const [value, setValue] = useState('');
   const [connected, setConnected] = useState(false);

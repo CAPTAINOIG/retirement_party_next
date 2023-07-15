@@ -191,16 +191,10 @@ const Navbar = () => {
                   About us
                 </Link>
                 <Link
-                  onClick={ () => setIsMobileNavVisible(false) } href={ "/#services" }
-                  className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
-                >
-                  Our services
-                </Link>
-                <Link
                   onClick={ () => setIsMobileNavVisible(false) } href={ "/infographics" }
                   className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
                 >
-                  Infographics
+                  Insights
                 </Link>
                 <div>
                   <hr className="mx-2 my-2 border-zinc-300/40"/>

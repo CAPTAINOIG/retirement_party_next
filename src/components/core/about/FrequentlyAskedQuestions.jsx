@@ -15,7 +15,7 @@ const FAQ = () => {
           <div className="space-y-4 lg:col-span-7">
             {
               faqs.map(faq => (
-                <div key={ faq.q } className="border border-slate-200 rounded-xl">
+                <div key={ faq.q } className="border border-slate-200 rounded-2xl">
                   <Collapsible
                     header={ (
                       <h5 className="md:text-lg font-medium">

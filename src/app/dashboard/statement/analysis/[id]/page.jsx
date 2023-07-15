@@ -53,7 +53,7 @@ const StatementDetails = ({ params: { id } }) => {
         (isTransactionsLoading || isStatementLoading) ? (
           <>
             <div className="bg-slate-200 rounded-2xl w-[200px] py-4"></div>
-            <div className="bg-slate-200 rounded-2xl w-[400px] py-4 mt-4"></div>
+            <div className="bg-slate-200 rounded-2xl w-[250px] md:w-[400px] py-4 mt-4"></div>
             <div className="grid md:grid-cols-2 gap-8 mt-8">
               <div className="bg-slate-200 rounded-2xl w-full h-[300px]"></div>
               <div className="bg-slate-200 rounded-2xl w-full h-[300px]"></div>
@@ -73,7 +73,7 @@ const StatementDetails = ({ params: { id } }) => {
                       </Link>
                       <h3 className="text-xl font-medium">Analysis details</h3>
                     </div>
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-2 md:space-x-4">
                       <Button
                         onClick={ () => setIsChatOpen(true) } color="primary" leftIcon={ <IconSparkles size="20"/> }
                       >
@@ -110,7 +110,7 @@ const StatementDetails = ({ params: { id } }) => {
                         <Card>
                           <h3 className="font-medium px-6 py-6">Details</h3>
                           <div className="divide-y divide-gray-300">
-                            <div className="px-6 py-2 flex items-center justify-between">
+                            <div className="px-6 py-2 flex flex-col md:flex-row md:items-center justify-between">
                               <div className="flex-1">
                                 Account name:&nbsp;&nbsp;{ highlight.name_check.account_name }
                               </div>
@@ -118,7 +118,7 @@ const StatementDetails = ({ params: { id } }) => {
                                 Bank:&nbsp;&nbsp;{ statement.bank || 'N/A' }
                               </div>
                             </div>
-                            <div className="px-6 py-2 flex items-center text-left">
+                            <div className="px-6 py-2 flex flex-col md:flex-row md:items-center text-left">
                               <div className="flex-1">
                                 From&nbsp;&nbsp;{ highlight.from_statement }
                               </div>

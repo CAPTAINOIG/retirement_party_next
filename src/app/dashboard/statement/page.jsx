@@ -10,7 +10,7 @@ const StatementOverviewPage = () => {
   return (
     <div className="space-y-6">
       <StatementStats/>
-      <div className="grid md:grid-cols-12 gap-6">
+      <div className="md:grid space-y-6 md:space-y-0 md:grid-cols-12 gap-6">
         <div className="md:col-span-5">
           <RecentAnalysis/>
         </div>

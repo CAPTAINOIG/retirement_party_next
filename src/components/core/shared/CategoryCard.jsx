@@ -6,17 +6,17 @@ const CategoryCard = ({ category }) => {
   return (
     <Link href={ `/infographics/${ category.slug }` }>
       <div
-        className="text-white rounded-2xl overflow-hidden hover:brightness-125 transition-all cursor-pointer relative isolate"
+        className="text-white rounded-3xl overflow-hidden hover:brightness-125 transition-all cursor-pointer relative isolate"
       >
         <Image
           src={ category.image } alt={ category.name }
           className="absolute inset-0 z-[-1] object-cover w-full h-full"
         />
-        <div className="relative bg-black bg-opacity-50 px-8 md:px-12 py-8 md:py-10">
+        <div className="relative bg-black bg-opacity-50 px-8 md:px-12 py-8 md:py-11">
           <h3 className="text-[1.6rem] font-medium leading-tight text-ellipsis overflow-hidden whitespace-nowrap">
             { category.name }
           </h3>
-          <p className="text-[1.1rem] opacity-70">
+          <p className="text-[1.1rem] opacity-70 mt-1">
             { category.totalInfographics } infographics
           </p>
         </div>

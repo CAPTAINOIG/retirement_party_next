@@ -8,7 +8,6 @@ const Backdrop = ({ children, onClick }) => {
     <motion.div
       ref={ ref }
       onClick={ (e) => {
-        console.log(e);
         if (e.currentTarget === ref.current) onClick?.()
       } }
       initial={ { opacity: 0 } }

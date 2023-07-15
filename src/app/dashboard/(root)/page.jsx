@@ -11,17 +11,19 @@ const DashboardPage = () => {
 
   return (
     <>
-      <div className="bg-[#11161b] text-white pt-12 md:pt-16 pb-12 md:pb-16">
+      <div className="bg-[#11161b] text-white pt-12 md:pt-16 pb-12 md:pb-14">
         <div className="container !max-w-5xl">
-          <h1 className="text-3xl md:text-4xl font-semibold max-w-lg flex items-center">
+          <h1
+            className="text-[2rem] md:text-4xl leading-[1.3] font-semibold max-w-[300px] md:max-w-lg flex items-center"
+          >
             All the tools you need to run your business
           </h1>
-          <p className="mt-2 md:mt-4 md:text-[1.05rem] opacity-75">
+          <p className="mt-3 md:mt-4 opacity-75">
             Select a product below to continue
           </p>
         </div>
       </div>
-      <div className="container py-10 !max-w-5xl min-h-screen flex flex-col space-y-10">
+      <div className="container py-12 md:py-16 !max-w-5xl min-h-screen flex flex-col space-y-10">
         {
           categories.map(c => (
             <div key={ c.id }>

@@ -4,13 +4,13 @@ import { IconBrandFacebook, IconBrandInstagram, IconBrandTwitter } from "@tabler
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#11100f] text-zinc-200 py-20 rounded-[1200px_1200px_0_0/1%]">
+      <footer className="bg-[#11100f] text-zinc-200 py-20">
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-20 lg:gap-10 pt-10 pb-32">
             <div>
               <p className="text-base font-medium">Products</p>
               <div className="flex flex-col mt-6 space-y-4">
-                <Link href="/infographics" className="opacity-70 hover:text-primary-300">
+                <Link href={ '/infographics' } className="opacity-70 hover:text-primary-300">
                   Infographics
                 </Link>
                 <Link href="/" className="opacity-70 hover:text-primary-300">
@@ -24,7 +24,7 @@ const Footer = () => {
             <div>
               <p className="text-base font-medium">The Company</p>
               <div className="flex flex-col mt-6 space-y-4">
-                <Link href="/about" className="opacity-70 hover:text-primary-300">
+                <Link href={ '/about' } className="opacity-70 hover:text-primary-300">
                   About us
                 </Link>
                 <Link href="/" className="opacity-70 hover:text-primary-300">

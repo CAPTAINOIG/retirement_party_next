@@ -1,17 +1,19 @@
+"use client"
 import React from 'react';
 import Card from "@/components/global/Card";
 import { formatCurrency } from "@/lib/utils";
-import { IconMinus, IconPlus } from "@tabler/icons-react";
+import { IconLayoutList, IconPlus } from "@tabler/icons-react";
+import Button from "@/components/global/Button";
 
 const WalletPage = () => {
   return (
     <>
-      <div className="bg-[#11161b] text-white pt-10 pb-12">
+      <div className="bg-[#11161b] text-white pt-12 md:pt-16 pb-10 md:pb-12">
         <div className="container !max-w-5xl">
-          <h1 className="text-2xl md:text-3xl font-semibold max-w-lg flex items-center">
+          <h1 className="text-3xl md:text-4xl font-semibold max-w-lg flex items-center">
             Wallet account
           </h1>
-          <p className="mt-2 opacity-75">
+          <p className="mt-2 md:mt-3 opacity-75">
             View your wallet balance and transactions
           </p>
         </div>
@@ -24,21 +26,17 @@ const WalletPage = () => {
                 { formatCurrency(0) }
               </div>
               <p className="opacity-75">Available balance</p>
-              <div className="grid grid-cols-2 gap-4 mt-10">
-                <div
-                  className="bg-slate-100 hover:bg-slate-200 cursor-pointer rounded-2xl flex flex-col items-center justify-center text-center px-4 py-10"
-                  tabIndex="1"
+              <div className="mt-10 space-y-3">
+                <Button
+                  variant="outlined" block className="text-left" leftIcon={ <IconPlus size="20"/> }
                 >
-                  <IconPlus/>
-                  <p className="mt-2">Fund wallet</p>
-                </div>
-                <div
-                  className="bg-slate-100 hover:bg-slate-200 cursor-pointer rounded-2xl flex flex-col items-center justify-center text-center px-4 py-10"
-                  tabIndex="1"
+                  Fund wallet
+                </Button>
+                <Button
+                  variant="outlined" block className="text-left" leftIcon={ <IconLayoutList size="20"/> }
                 >
-                  <IconMinus/>
-                  <p className="mt-2">Withdraw</p>
-                </div>
+                  Manage subscriptions
+                </Button>
               </div>
             </Card>
           </div>

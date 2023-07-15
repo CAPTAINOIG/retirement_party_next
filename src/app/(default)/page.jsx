@@ -20,7 +20,7 @@ const HomePage = () => {
         <SupportingSectors/>
       </div>
       <HowItWorks/>
-      <div className="bg-white pt-28 pb-16 md:py-40 space-y-24 md:space-y-32">
+      <div className="bg-white py-28 md:py-40 space-y-32 md:space-y-36">
         <Categories/>
         <InsightsOnTheGo/>
       </div>

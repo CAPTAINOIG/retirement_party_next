@@ -48,9 +48,9 @@ const SupportingSectors = () => {
         disableOnInteraction: true,
       },
       breakpoints: {
-        0: { slidesPerView: 1.1 },
-        640: { slidesPerView: 1.2 },
-        1024: { slidesPerView: 3.8 }
+        0: { slidesPerView: 1.3 },
+        640: { slidesPerView: 1.5 },
+        1024: { slidesPerView: 3.9 }
       }
     };
     Object.assign(swiperElRef.current, swiperParams);
@@ -76,19 +76,26 @@ const SupportingSectors = () => {
               items.map((item, i) => (
                 <swiper-slide key={ i }>
                   <div className="p-2 group relative">
-                    <div className="item rounded-2xl overflow-hidden">
+                    <div className="rounded-3xl overflow-hidden">
                       <div
                         style={ { backgroundImage: `url(${ item.image })` } }
-                        className="min-h-[400px] md:min-h-[450px] relative layer-bg bg-cover rounded-lg"
+                        className="min-h-[360px] md:min-h-[420px] relative layer-bg bg-cover rounded-lg group"
                       >
                         <div
-                          className="absolute inset-0 bg-black/50 z-[1] px-12 py-14 text-white transition-all duration-300"
+                          className="absolute inset-0 bg-black/50 z-[1] px-10 md:px-12 py-12 md:py-14 text-white"
                         >
-                          <h2 className="text-3xl font-medium">
+                          <h2 className="text-2xl md:text-3xl font-medium">
                             { item.name }
                           </h2>
-                          <p className="text-lg mt-2 transition-all duration-300 opacity-80">Lorem ipsum dolor sit.</p>
-                          <Button variant="outlined" color="white" className="mt-6">Get started</Button>
+                          <p className="md:text-lg mt-2 opacity-80">
+                            Lorem ipsum dolor sit.
+                          </p>
+                          <Button
+                            variant="outlined" color="white"
+                            className="mt-6 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all ease-in-out duration-500"
+                          >
+                            Get started
+                          </Button>
                         </div>
                       </div>
                     </div>
