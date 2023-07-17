@@ -151,7 +151,7 @@ const StatementLayout = ({ children }) => {
                       </div>
                     </div>
                     <div className="flex-1">
-                      <div className="container h-full !max-w-5xl flex flex-col mb-32 mb:pb-10">
+                      <div className="container h-full !max-w-5xl flex flex-col pb-32 mb:pb-10">
                         { children }
                       </div>
                     </div>
