@@ -30,7 +30,7 @@ export const useGetStatement = (business, id) => {
 
 export const useGetTransactionDetails = (id) => {
   return useQuery(['statement', id], async () => {
-    const res = await axios.get(`https://view.bankstatement.ai/index.php/data_analysis/getdata/${ id }`)
+    const res = await axios.get(`https://view.statementanalysis.co/index.php/data_analysis/getdata/${ id }`)
     return res.data;
   }, { enabled: !!id });
 };
@@ -94,7 +94,7 @@ export const useAnalyzeJson = () => {
     Object.keys(payload).forEach(key => {
       fd.append(key, typeof payload[key] === 'string' ? payload[key] : JSON.stringify(payload[key]));
     });
-    return axios.post('https://view.bankstatement.ai/index.php/analysis/get_transactions', fd);
+    return axios.post('https://view.statementanalysis.co/index.php/analysis/get_transactions', fd);
   });
 };
 
