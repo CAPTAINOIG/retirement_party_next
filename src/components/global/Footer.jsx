@@ -11,18 +11,18 @@ const Footer = () => {
               <p className="text-base font-medium">Products</p>
               <div className="flex flex-col mt-6 space-y-4">
                 <Link href={ '/infographics' } className="opacity-70 hover:text-primary-300">
-                  Infographics
+                  Insights
                 </Link>
-                <Link href="/" className="opacity-70 hover:text-primary-300">
-                  Credibility
+                <Link href={ '/dashboard/statement' } className="opacity-70 hover:text-primary-300">
+                  Statement
                 </Link>
-                <Link href="/" className="opacity-70 hover:text-primary-300">
-                  Analysis
+                <Link href={ '/dashboard/financial-report' } className="opacity-70 hover:text-primary-300">
+                  Financial report
                 </Link>
               </div>
             </div>
             <div>
-              <p className="text-base font-medium">The Company</p>
+              <p className="text-base font-medium">Company</p>
               <div className="flex flex-col mt-6 space-y-4">
                 <Link href={ '/about' } className="opacity-70 hover:text-primary-300">
                   About us
@@ -35,10 +35,10 @@ const Footer = () => {
             <div>
               <p className="text-base font-medium">Help</p>
               <div className="flex flex-col mt-6 space-y-4">
-                <Link href="/" className="opacity-70 hover:text-primary-300">
+                <Link href={ '/about#footer' } className="opacity-70 hover:text-primary-300">
                   FAQs
                 </Link>
-                <Link href="/" className="opacity-70 hover:text-primary-300">
+                <Link href={ '/contact' } className="opacity-70 hover:text-primary-300">
                   Contact Us
                 </Link>
               </div>

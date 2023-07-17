@@ -4,7 +4,7 @@ import faqs from "@/lib/faqs";
 
 const FAQ = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white" id="footer">
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
