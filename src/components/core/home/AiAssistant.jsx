@@ -1,15 +1,11 @@
 "use client"
-import React, { useState } from 'react';
+import React from 'react';
 import Button from "@/components/global/Button";
 import { IconArrowRight } from "@tabler/icons-react";
-import Chat from "@/components/core/shared/Chat";
-import ClientOnly from "@/components/global/ClientOnly";
 import ChatIllustrations from "@/components/svgs/ChatIllustrations";
 import Link from "next/link";
 
 const AiAssistant = () => {
-  const [isChatOpen, setIsChatOpen] = useState(false);
-
   return (
     <>
       <div className="container">
@@ -33,13 +29,6 @@ const AiAssistant = () => {
           </div>
         </div>
       </div>
-
-      <ClientOnly>
-        <Chat
-          isOpen={ isChatOpen }
-          onClose={ () => setIsChatOpen(false) }
-        />
-      </ClientOnly>
     </>
   );
 };
