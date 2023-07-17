@@ -1,17 +1,18 @@
 "use client"
 import React, { useState } from 'react';
 import Button from "@/components/global/Button";
-import { IconChevronRight, IconExclamationCircle, IconPlus } from "@tabler/icons-react";
+import { IconExclamationCircle, IconPlus } from "@tabler/icons-react";
 import NewAnalysis from "@/components/core/dashboard/statement/NewAnalysis";
 import { useGetStatements } from "@/api/statement";
 import { useGetUserBusiness } from "@/api/business";
 import { format } from "date-fns";
-import Link from "next/link";
 import classNames from "classnames";
 import { formatCurrency } from "@/lib/utils";
 import Card from "@/components/global/Card";
+import { useRouter } from "next/navigation";
 
 const StatementAnalysisPage = () => {
+  const router = useRouter();
   const [isAnalyzeOpen, setIsAnalyzeOpen] = useState(false);
   const { data: business, isLoading: isBusinessLoading } = useGetUserBusiness();
   const { data: { statements = [] } = {}, isLoading: isStatementsLoading } = useGetStatements(business._id);
@@ -67,8 +68,9 @@ const StatementAnalysisPage = () => {
                       {
                         statements.map((statement, i) => (
                           <tr
-                            className={ classNames('hover:bg-gray-50', { 'border-b': i < statements.length - 1 }) }
                             key={ statement._id }
+                            onClick={ () => router.push(`/dashboard/statement/analysis/${ statement._id }`) }
+                            className={ classNames('hover:bg-gray-50 cursor-pointer select-none', { 'border-b': i < statements.length - 1 }) }
                           >
                             <td scope="row" className="px-6 py-4 whitespace-nowrap">
                               { statement.name }
@@ -94,15 +96,6 @@ const StatementAnalysisPage = () => {
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                               { format(new Date(statement.createdAt), 'do MMM, yyyy') }
-                            </td>
-                            <td className="px-6 py-4">
-                              <Link href={ `/dashboard/statement/analysis/${ statement._id }` }>
-                                <Button
-                                  variant="outlined" color="black" size="xs" rightIcon={ <IconChevronRight size="16"/> }
-                                >
-                                  View
-                                </Button>
-                              </Link>
                             </td>
                           </tr>
                         ))
