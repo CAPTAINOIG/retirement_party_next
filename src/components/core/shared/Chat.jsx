@@ -4,6 +4,7 @@ import { io } from "socket.io-client";
 import { IconChevronLeft, IconChevronRight, IconRobot, IconSend, IconUser } from "@tabler/icons-react";
 import Drawer from "@/components/global/Drawer";
 import IconButton from "@/components/global/IconButton";
+import Card from "@/components/global/Card";
 
 const Chat = ({ isOpen, onClose }) => {
   const socket = useRef(null);
@@ -13,9 +14,26 @@ const Chat = ({ isOpen, onClose }) => {
   const [waiting, setWaiting] = useState(false);
   const scrollEl = useRef(null);
 
-  const handleConnected = useCallback(() => {
-    setConnected(true);
+  const start = (m) => {
+    socket.current = io(process.env.NEXT_PUBLIC_BASE_URL, { query: { type: 'public' } });
+    socket.current.on('connect', () => handleConnected(m));
+    socket.current.on('disconnect', handleDisconnect);
+    socket.current.on('message', handleMessage);
+  };
+
+  const stop = () => socket.current?.disconnect();
+
+  const send = useCallback((m = '') => {
+    if (!m.length) return;
+    socket.current.emit('message', { text: m })
+    setValue('');
+    setWaiting(true);
   }, []);
+
+  const handleConnected = useCallback((m) => {
+    setConnected(true);
+    if (m) send(m);
+  }, [send]);
 
   const handleDisconnect = useCallback(() => {
     setConnected(false);
@@ -28,22 +46,6 @@ const Chat = ({ isOpen, onClose }) => {
     setMessages(args.messages);
     if (args.messages.at(-1).role === 'assistant') setWaiting(false);
   }, []);
-
-  const start = () => {
-    socket.current = io(process.env.NEXT_PUBLIC_BASE_URL, { query: { type: 'public' } });
-    socket.current.on('connect', handleConnected);
-    socket.current.on('disconnect', handleDisconnect);
-    socket.current.on('message', handleMessage);
-  };
-
-  const send = () => {
-    if (!value.length) return;
-    socket.current.emit('message', { text: value })
-    setValue('');
-    setWaiting(true);
-  };
-
-  const stop = () => socket.current?.disconnect();
 
   useUnmount(() => stop());
 
@@ -58,7 +60,7 @@ const Chat = ({ isOpen, onClose }) => {
         {
           !connected ? (
             <>
-              <div className="bg-blue-900 px-16 pt-32 pb-36">
+              <div className="bg-blue-900 px-16 pt-20 pb-24">
                 <h2 className="text-4xl font-semibold text-white leading-snug">
                   Hi there 👋🏽<br/>How can we help you?
                 </h2>
@@ -69,13 +71,27 @@ const Chat = ({ isOpen, onClose }) => {
                 </p>
               </div>
               <div className="px-16 -mt-8 space-y-4">
-                <div
-                  onClick={ start }
-                  className="px-7 py-5 bg-white shadow-md rounded-2xl flex justify-between items-center hover:bg-indigo-50 cursor-pointer"
-                >
+                <Card hover onClick={ start } className="px-7 py-5 flex items-center justify-between">
                   Chat with Sensii
                   <IconChevronRight/>
+                </Card>
+                <div className="font-medium text-slate-500 py-1 px-2">
+                  Trending questions:
                 </div>
+                {
+                  [
+                    'Tell me about the current president of Nigeria',
+                    'Tell me about the current president of Ghana',
+                  ].map(m => (
+                    <Card
+                      onClick={ () => start(m) } key={ m } hover
+                      className="px-7 py-5 flex items-center justify-between"
+                    >
+                      { m }
+                      <IconChevronRight/>
+                    </Card>
+                  ))
+                }
               </div>
             </>
           ) : (
@@ -153,12 +169,16 @@ const Chat = ({ isOpen, onClose }) => {
                 <input
                   value={ value } onChange={ e => setValue(e.target.value) }
                   onKeyUp={ e => {
-                    if (e.key.toLowerCase() === 'enter') send();
+                    if (e.key.toLowerCase() === 'enter') send(value);
                   } }
                   type="text" className="bg-slate-200 w-full py-3 px-10 rounded-full"
                   placeholder="Type your message here.."
                 />
-                <div><IconButton onClick={ send } icon={ <IconSend size="20"/> } rounded/></div>
+                <div>
+                  <IconButton
+                    onClick={ () => send(value) } icon={ <IconSend size="20"/> } rounded
+                  />
+                </div>
               </div>
             </div>
           )
