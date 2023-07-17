@@ -8,10 +8,14 @@ import TrendingInfographics from "@/components/core/home/TrendingInfographics";
 import classNames from "classnames";
 import CategoryCard from "@/components/core/shared/CategoryCard";
 import SearchResults from "@/components/core/infographics/SearchResults";
+import { IconSparkles } from "@tabler/icons-react";
+import IconButton from "@/components/global/IconButton";
+import Chat from "@/components/core/shared/Chat";
 
 const InfographicsPage = () => {
   const params = useSearchParams();
   const [query, setQuery] = useState('');
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const { data: { categories = [] } = {}, isLoading: isCategoriesLoading } = useGetCategoriesQuery();
 
   useEffect(() => {
@@ -23,6 +27,10 @@ const InfographicsPage = () => {
       <PageHeader
         title="Search for insights"
         append={ <HeroSearch className="mt-6 md:mt-10 mb-4 w-full"/> }
+      />
+      <IconButton
+        onClick={ () => setIsChatOpen(true) } className="fixed bottom-12 right-12"
+        rounded variant="filled" color="primary" size="xl" icon={ <IconSparkles size="32"/> }
       />
       <div className="py-20 md:py-32">
         {
@@ -80,6 +88,11 @@ const InfographicsPage = () => {
           }
         </div>
       </div>
+
+      <Chat
+        isOpen={ isChatOpen }
+        onClose={ () => setIsChatOpen(false) }
+      />
     </>
   );
 };

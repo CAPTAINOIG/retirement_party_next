@@ -58,9 +58,7 @@ const Chat = ({ isOpen, onClose }) => {
         {
           !connected ? (
             <>
-              <div
-                className="bg-gradient-to-b from-blue-600 via-blue-500 via-50% to-blue-400 px-16 pt-32 pb-36 rounded-b-md"
-              >
+              <div className="bg-blue-900 px-16 pt-32 pb-36">
                 <h2 className="text-4xl font-semibold text-white leading-snug">
                   Hi there 👋🏽<br/>How can we help you?
                 </h2>

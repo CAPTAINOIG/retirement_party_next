@@ -98,6 +98,7 @@ const IconButton = forwardRef((
       'w-8 h-8 text-[.94rem]': size === 'sm',
       'w-10 h-10': size === 'md',
       'w-12 h-12': size === 'lg',
+      'w-16 h-16': size === 'xl',
       'opacity-50 pointer-events-none cursor-not-allowed': disabled,
       'opacity-80 pointer-events-none cursor-default': loading,
       '!rounded-full': rounded,
