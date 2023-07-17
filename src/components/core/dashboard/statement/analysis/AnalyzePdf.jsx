@@ -80,7 +80,7 @@ const AnalyzePdf = ({ onBack }) => {
               />
               <h2 className="font-medium ml-4">Analyze PDF</h2>
             </div>
-            <div className="h-full flex flex-col justify-center items-center text-center">
+            <div className="h-full flex flex-col justify-center items-center text-center py-16">
               <Dropzone
                 onDrop={ acceptedFiles => {
                   if (!acceptedFiles.length) return toast.error('Only pdf files allowed')
