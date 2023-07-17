@@ -60,8 +60,8 @@ const Chat = ({ isOpen, onClose }) => {
         {
           !connected ? (
             <>
-              <div className="bg-blue-900 px-16 pt-20 pb-24">
-                <h2 className="text-4xl font-semibold text-white leading-snug">
+              <div className="bg-primary-700 px-10 md:px-14 pt-14 md:pt-20 pb-24">
+                <h2 className="text-3xl md:text-4xl font-semibold text-white leading-snug">
                   Hi there 👋🏽<br/>How can we help you?
                 </h2>
                 <p className="mt-6 text-white">
@@ -70,7 +70,7 @@ const Chat = ({ isOpen, onClose }) => {
                   Beatae.
                 </p>
               </div>
-              <div className="px-16 -mt-8 space-y-4">
+              <div className="px-10 md:px-16 -mt-8 pb-12 space-y-4">
                 <Card hover onClick={ start } className="px-7 py-5 flex items-center justify-between">
                   Chat with Sensii
                   <IconChevronRight/>

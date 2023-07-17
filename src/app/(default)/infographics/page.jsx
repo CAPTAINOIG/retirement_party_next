@@ -29,7 +29,7 @@ const InfographicsPage = () => {
         append={ <HeroSearch className="mt-6 md:mt-10 mb-4 w-full"/> }
       />
       <IconButton
-        onClick={ () => setIsChatOpen(true) } className="fixed bottom-12 right-12"
+        onClick={ () => setIsChatOpen(true) } className="fixed bottom-8 md:bottom-12 right-8 md:right-12 z-50"
         rounded variant="filled" color="primary" size="xl" icon={ <IconSparkles size="32"/> }
       />
       <div className="py-20 md:py-32">
