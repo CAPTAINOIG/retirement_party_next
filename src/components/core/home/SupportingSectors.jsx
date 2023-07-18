@@ -1,10 +1,11 @@
 "use client"
 import React, { useEffect, useRef } from "react";
-import SwiperCore, { Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Button from "@/components/global/Button";
+import SwiperCore from "swiper";
+import { Autoplay } from "swiper/modules";
 
 SwiperCore.use([Autoplay]);
 
