@@ -112,7 +112,7 @@ const Navbar = () => {
                   !user ? (
                     <>
                       <Link href={ "/login" }>
-                        <Button variant="outlined" color={ scrolled ? "black" : "white" }>Sign in</Button>
+                        <Button variant="subtle" color={ scrolled ? "black" : "white" }>Sign in</Button>
                       </Link>
                       {
                         scrolled && (
