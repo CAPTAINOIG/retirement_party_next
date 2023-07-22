@@ -7,6 +7,7 @@ import OtpPinInput from "@/components/global/OtpPinInput";
 import Button from "@/components/global/Button";
 import { IconLogout, IconReload } from "@tabler/icons-react";
 import { requireAuthUnverified } from "@/guards/require-auth-unverified";
+import AuthLayout from "@/components/core/shared/AuthLayout";
 
 const VerificationPage = () => {
   const toast = useToast();
@@ -41,7 +42,7 @@ const VerificationPage = () => {
   };
 
   return (
-    <>
+    <AuthLayout>
       <div className="container py-20">
         <div className="w-full max-w-md mx-auto rounded-xl">
           <h1 className="text-3xl font-semibold">Verify your email address</h1>
@@ -70,7 +71,7 @@ const VerificationPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </AuthLayout>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useAuth } from "@/hooks/use-auth.js";
 import { useRouter, useSearchParams } from "next/navigation";
+import Loader from "@/components/global/Loader";
 
 // eslint-disable-next-line react/display-name
 export const requireAuthUnverified = (Component, props) => ({ children }) => {
@@ -21,7 +22,12 @@ export const requireAuthUnverified = (Component, props) => ({ children }) => {
         { children }
       </Component>
     );
-  } else {
-    return <></>
   }
+
+  return (
+    <div className="h-screen w-full flex flex-col justify-center items-center">
+      <Loader/>
+      <p className="mt-5">Loading..</p>
+    </div>
+  )
 };

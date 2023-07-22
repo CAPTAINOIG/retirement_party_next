@@ -28,8 +28,9 @@ const requireAuthBusiness = (Component, props) => ({ children }) => {
   )
 
   return (
-    <div className="h-screen w-full flex justify-center items-center">
+    <div className="h-screen w-full flex flex-col justify-center items-center">
       <Loader/>
+      <p className="mt-5">Loading..</p>
     </div>
   )
 };

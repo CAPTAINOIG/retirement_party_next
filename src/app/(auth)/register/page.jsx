@@ -11,6 +11,7 @@ import Checkbox from "@/components/global/Checkbox";
 import Link from "next/link";
 import Button from "@/components/global/Button";
 import requireNoAuth from "@/guards/require-no-auth";
+import AuthLayout from "@/components/core/shared/AuthLayout";
 
 const RegisterPage = () => {
   const toast = useToast();
@@ -33,7 +34,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <>
+    <AuthLayout>
       <div className="container py-20">
         <div className="w-full max-w-md mx-auto rounded-xl">
           <div className="mb-10">
@@ -88,12 +89,12 @@ const RegisterPage = () => {
             </Button>
             <p className="mt-4">
               Already have an account?
-              <Link href="/login" className="ml-2 text-primary-600 italic">Login here</Link>
+              <Link href={ "/login" } className="ml-2 text-primary-600 italic">Login here</Link>
             </p>
           </form>
         </div>
       </div>
-    </>
+    </AuthLayout>
   );
 };
 

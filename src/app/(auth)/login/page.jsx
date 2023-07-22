@@ -10,6 +10,7 @@ import Checkbox from "@/components/global/Checkbox";
 import Button from "@/components/global/Button";
 import Link from "next/link";
 import requireNoAuth from "@/guards/require-no-auth";
+import AuthLayout from "@/components/core/shared/AuthLayout";
 
 const LoginPage = () => {
   const toast = useToast();
@@ -28,7 +29,7 @@ const LoginPage = () => {
   };
 
   return (
-    <>
+    <AuthLayout>
       <div className="container py-20">
         <div className="w-full max-w-md mx-auto rounded-xl">
           <div className="mb-10">
@@ -64,7 +65,7 @@ const LoginPage = () => {
           </form>
         </div>
       </div>
-    </>
+    </AuthLayout>
   );
 };
 

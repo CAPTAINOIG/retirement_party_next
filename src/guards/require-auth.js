@@ -12,8 +12,7 @@ const requireAuth = (Component, props) => ({ children }) => {
   useEffect(() => {
     if (resolved && !authenticated) {
       router.replace(`/login?from=${ pathname }`);
-    }
-    else if (resolved && authenticated && user && !user.emailVerified) {
+    } else if (resolved && authenticated && user && !user.emailVerified) {
       router.push(`/verification?from=${ pathname }`);
     }
   }, [resolved, authenticated, user, router, pathname]);
@@ -25,8 +24,9 @@ const requireAuth = (Component, props) => ({ children }) => {
   )
 
   return (
-    <div className="h-screen w-full flex justify-center items-center">
+    <div className="h-screen w-full flex flex-col justify-center items-center">
       <Loader/>
+      <p className="mt-5">Loading..</p>
     </div>
   )
 };
