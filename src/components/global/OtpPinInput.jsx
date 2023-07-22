@@ -63,7 +63,7 @@ const OtpPinInput = ({ disabled, length = 6, onDone }, ref) => {
             onFocus={ handleFocus } onKeyDown={ handleKeydown } onPaste={ handlePaste }
             className={
               classNames(
-                'inline-flex px-2 py-4 sm:px-2 sm:py-5 rounded-xl border border-zinc-300 focus:ring focus:ring-primary-100 text-xl text-center',
+                'inline-flex bg-transparent px-2 py-4 sm:px-2 sm:py-5 rounded-3xl border border-zinc-300 focus:ring focus:ring-primary-100 text-xl text-center',
                 { 'opacity-60 pointer-events-none': disabled }
               )
             }
