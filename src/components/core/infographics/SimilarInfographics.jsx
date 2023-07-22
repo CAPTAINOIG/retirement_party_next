@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGetInfographicsQuery } from "@/api/infographics";
-import InfographicCard from "@/components/core/shared/InfographicCard";
+import InfographicCard from "@/components/core/infographics/InfographicCard";
 import { IconInfoTriangle } from "@tabler/icons-react";
 
 const SimilarInfographics = ({ infographic }) => {

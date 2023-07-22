@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGetInfographicsQuery } from "@/api/infographics.js";
-import InfographicCard from "@/components/core/shared/InfographicCard.jsx";
+import InfographicCard from "@/components/core/infographics/InfographicCard.jsx";
 
 const SearchResults = ({ query }) => {
   const { data = {}, isLoading: isInfographicsLoading } = useGetInfographicsQuery({

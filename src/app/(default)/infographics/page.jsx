@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from "next/navigation";
 import { useGetCategoriesQuery } from "@/api/infographics";
 import PageHeader from "@/components/core/shared/PageHeader";
-import HeroSearch from "@/components/core/home/HeroSearch";
+import InfographicsSearchInput from "@/components/core/infographics/InfographicsSearchInput";
 import TrendingInfographics from "@/components/core/home/TrendingInfographics";
 import classNames from "classnames";
-import CategoryCard from "@/components/core/shared/CategoryCard";
+import CategoryCard from "@/components/core/infographics/CategoryCard";
 import SearchResults from "@/components/core/infographics/SearchResults";
 import { IconSparkles } from "@tabler/icons-react";
 import IconButton from "@/components/global/IconButton";
@@ -26,7 +26,7 @@ const InfographicsPage = () => {
     <>
       <PageHeader
         title="Search for insights"
-        append={ <HeroSearch className="mt-6 md:mt-10 mb-4 w-full"/> }
+        append={ <InfographicsSearchInput className="mt-6 md:mt-10 mb-4 w-full"/> }
       />
       <IconButton
         onClick={ () => setIsChatOpen(true) } className="fixed bottom-8 md:bottom-12 right-8 md:right-12 z-50"

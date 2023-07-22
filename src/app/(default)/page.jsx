@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Hero from "@/components/core/home/Hero";
-import AiAssistant from "@/components/core/home/AiAssistant";
+import PlugYourData from "@/components/core/home/PlugYourData";
 import Categories from "@/components/core/home/Categories";
 import InsightsOnTheGo from "@/components/core/home/InsightsOnTheGo";
 import HowItWorks from "@/components/core/home/HowItWorks";
@@ -14,7 +14,7 @@ const HomePage = () => {
     <div className="bg-slate-100">
       <Hero/>
       <div className="py-28 md:py-40">
-        <AiAssistant/>
+        <PlugYourData/>
       </div>
       <div className="bg-white py-28 md:py-40 space-y-32 md:space-y-48">
         <SupportingSectors/>

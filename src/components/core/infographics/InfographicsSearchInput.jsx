@@ -4,7 +4,7 @@ import classNames from "classnames";
 import IconButton from "@/components/global/IconButton.jsx";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const HeroSearch = ({ className }) => {
+const InfographicsSearchInput = ({ className }) => {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams()
@@ -44,4 +44,4 @@ const HeroSearch = ({ className }) => {
   );
 };
 
-export default HeroSearch;
+export default InfographicsSearchInput;

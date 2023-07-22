@@ -5,7 +5,7 @@ import { IconArrowRight } from "@tabler/icons-react";
 import ChatIllustrations from "@/components/svgs/ChatIllustrations";
 import Link from "next/link";
 
-const AiAssistant = () => {
+const PlugYourData = () => {
   return (
     <>
       <div className="container">
@@ -33,4 +33,4 @@ const AiAssistant = () => {
   );
 };
 
-export default AiAssistant;
+export default PlugYourData;

@@ -3,7 +3,7 @@ import React from 'react';
 import { useRouter } from "next/navigation";
 import { useGetCategoryQuery, useGetInfographicsQuery } from "@/api/infographics";
 import PageHeader from "@/components/core/shared/PageHeader";
-import InfographicCard from "@/components/core/shared/InfographicCard";
+import InfographicCard from "@/components/core/infographics/InfographicCard";
 
 const CategoryInfographicsPage = ({ params: { category: slug } }) => {
   const router = useRouter();
