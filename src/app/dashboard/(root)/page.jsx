@@ -38,7 +38,7 @@ const DashboardPage = () => {
                 />
               ))
             }
-            <div className="grid gap-6">
+            <div className="grid gap-4 md:gap-6">
               {
                 products.filter(p => p.categories.includes('featured') && (p.slug !== featured)).map(product => (
                   <ProductCard

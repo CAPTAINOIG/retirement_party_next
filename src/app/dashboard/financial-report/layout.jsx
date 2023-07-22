@@ -62,7 +62,7 @@ const FinancialReportLayout = ({ children }) => {
         isSettingsLoading ? (
           <div className="h-screen w-full flex flex-col justify-center items-center text-center">
             <Loader/>
-            <p className="mt-6">Fetching settings..</p>
+            <p className="mt-6">Fetching configurations..</p>
           </div>
         ) : (
           <>
