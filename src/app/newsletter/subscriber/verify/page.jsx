@@ -53,7 +53,7 @@ const Verify = () => {
                     <p className="text-2xl font-semibold max-w-xs mt-8">
                       { error || 'Invalid url' }
                     </p>
-                    <Link href="/">
+                    <Link href={ "/" }>
                       <Button variant="outlined" leftIcon={ <IconArrowLeft/> } className="mt-10">
                         Return to website
                       </Button>
@@ -73,7 +73,7 @@ const Verify = () => {
                     <p className="text-lg mt-4 max-w-md">
                       Your email address has been confirmed. You are now subscribed to Statisense weekly insights
                     </p>
-                    <Link href="/">
+                    <Link href={ "/" }>
                       <Button variant="outlined" leftIcon={ <IconArrowLeft/> } className="mt-10">
                         Return to website
                       </Button>

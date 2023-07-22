@@ -27,7 +27,7 @@ const Footer = () => {
                 <Link href={ '/about' } className="opacity-70 hover:text-primary-300">
                   About us
                 </Link>
-                <Link href="/" className="opacity-70 hover:text-primary-300">
+                <Link href={ "/careers" } className="opacity-70 hover:text-primary-300">
                   Careers
                 </Link>
               </div>
@@ -48,8 +48,8 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 items-start sm:items-center sm:space-x-8">
               <div>&copy; Statisense, 2023 All rights reserved</div>
-              <Link href="/" className="hover:text-primary-400">Terms & Conditions</Link>
-              <Link href="/" className="hover:text-primary-400">Privacy Policy</Link>
+              <Link href={ "/terms" } className="hover:text-primary-400">Terms & Conditions</Link>
+              <Link href={ "/policy" } className="hover:text-primary-400">Privacy Policy</Link>
             </div>
             <div className="flex items-center space-x-6 mt-8 md:mt-0">
               <a
