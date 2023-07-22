@@ -63,47 +63,6 @@ const CreateBusiness = () => {
             { ...register('country', { required: 'This field is required' }) }
             error={ errors?.country?.message } disabled={ isCreateLoading }
           />
-          <div className="grid md:grid-cols-2 gap-4">
-            <Select
-              label="State" bordered options={ [{ text: 'Lagos', value: 'lagos' }] }
-              { ...register('state', { required: 'This field is required' }) }
-              error={ errors?.state?.message } disabled={ isCreateLoading }
-            />
-            <Select
-              label="City" bordered options={ [{ text: 'Surulere', value: 'surulere' }] }
-              { ...register('city', { required: 'This field is required' }) }
-              error={ errors?.city?.message } disabled={ isCreateLoading }
-            />
-          </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            <Select
-              label="Registration type" bordered
-              options={
-                [
-                  { value: "NG-RC-PRI", text: 'Private Incorporated Company' },
-                  { value: "NG-RC-PUB", text: 'Public Incorporated Company' },
-                  { value: "NG-NEPZA", text: 'Free Zone Entity' },
-                  { value: "NG-BN", text: 'Business Name Registration' },
-                  { value: "NG-CACIT", text: 'Incorporated Trustees' },
-                  { value: "NG-GOV", text: 'Government Entity' },
-                  { value: "NG-GOV-APPR", text: 'Private entity created by Government Approval' },
-                  { value: "NG-COOP", text: 'Cooperative Society' },
-                ]
-              }
-              { ...register('registrationType', { required: 'This field is required' }) }
-              error={ errors?.registrationType?.message } disabled={ isCreateLoading }
-            />
-            <Select
-              label="Registration year" bordered
-              options={
-                [
-                  { value: "2000", text: '2000' },
-                ]
-              }
-              { ...register('registrationYear', { required: 'This field is required' }) }
-              error={ errors?.registrationYear?.message } disabled={ isCreateLoading }
-            />
-          </div>
           <Input
             label="RC number" bordered
             { ...register('rcNumber', { required: 'This field is required' }) }
