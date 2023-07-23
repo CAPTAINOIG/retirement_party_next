@@ -16,11 +16,11 @@ const Modal = (
 
   const variants = {
     hidden: {
-      y: '-100px',
+      scale: 0.8,
       opacity: 0,
     },
     visible: {
-      y: '0',
+      scale: 1,
       opacity: 1,
       transition: {
         type: 'spring',
@@ -29,7 +29,7 @@ const Modal = (
       }
     },
     exit: {
-      y: '100px',
+      scale: 1.2,
       opacity: 0,
       transition: {
         type: 'spring',

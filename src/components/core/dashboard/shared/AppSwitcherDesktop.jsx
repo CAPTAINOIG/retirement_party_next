@@ -1,14 +1,11 @@
 import React, { createElement, Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
-import { IconChevronRight, IconGridDots, IconHome2 } from "@tabler/icons-react";
+import { IconChevronRight, IconGridDots, IconHome2, IconLayoutGrid } from "@tabler/icons-react";
 import products from "@/lib/products";
 import classNames from "classnames";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 const ServiceSwitcher = () => {
-  const router = useRouter();
-
   return (
     <>
       <Popover className="relative">
@@ -37,18 +34,16 @@ const ServiceSwitcher = () => {
               leaveTo="opacity-0 translate-y-1"
             >
               <Popover.Panel
-                className="absolute bottom-0 left-full z-10 mt-3 w-screen max-w-xs px-4 sm:px-0 lg:max-w-[280px]">
+                className="absolute bottom-0 left-[calc(100%_+_40px)] z-10 mt-3 w-screen max-w-xs px-4 sm:px-0 lg:max-w-[360px]"
+              >
                 <div className="overflow-hidden rounded-2xl shadow-md ring-1 ring-black ring-opacity-5 bg-white">
-                  <div
-                    onClick={ () => router.push('/dashboard') } tabIndex="0"
-                    className="border-b py-2 text-center flex items-center justify-center hover:bg-slate-100 cursor-pointer"
-                  >
+                  <div className="border-b py-2 text-center flex items-center justify-center">
                     <IconHome2 size="18" className="mr-3"/>
                     <h4 className="font-semibold">Apps</h4>
                   </div>
-                  <div className="relative grid gap-2 px-4 py-4 grid-cols-2">
+                  <div className="relative grid gap-2 px-4 py-4 grid-cols-3">
                     {
-                      products.slice(0, 6).map((product) => (
+                      products.slice(0, 5).map((product) => (
                         <Link
                           key={ product.name } href={ product.dashboardLink }
                           className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
@@ -66,6 +61,21 @@ const ServiceSwitcher = () => {
                         </Link>
                       ))
                     }
+                    <Link
+                      href={ "/dashboard" }
+                      className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                    >
+                      <div
+                        className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-slate-600') }
+                      >
+                        { createElement(IconLayoutGrid) }
+                      </div>
+                      <div className="mt-2">
+                        <p className="text-sm text-gray-900">
+                          View all
+                        </p>
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </Popover.Panel>

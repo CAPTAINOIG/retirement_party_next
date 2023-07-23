@@ -1,10 +1,14 @@
 import React from 'react';
+import classNames from "classnames";
 
-const DashboardTitle = ({ text }) => {
+const DashboardTitle = ({ text, className, ...props }) => {
   return (
-    <>
-      <h2 className="text-2xl font-medium mb-12">{ text }</h2>
-    </>
+    <h2
+      { ...props }
+      className={ classNames('hidden md:block mb-10 font-semibold text-xl', className) }
+    >
+      { text }
+    </h2>
   );
 };
 

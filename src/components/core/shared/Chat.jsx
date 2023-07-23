@@ -1,7 +1,14 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { useIsomorphicLayoutEffect, useUnmount } from "react-use";
 import { io } from "socket.io-client";
-import { IconChevronLeft, IconChevronRight, IconRobot, IconSend, IconUser } from "@tabler/icons-react";
+import {
+  IconChevronLeft,
+  IconChevronRight, IconFileTextAi,
+  IconMessageChatbot,
+  IconRobot,
+  IconSend, IconSparkles,
+  IconUser
+} from "@tabler/icons-react";
 import Drawer from "@/components/global/Drawer";
 import IconButton from "@/components/global/IconButton";
 import Card from "@/components/global/Card";
@@ -60,38 +67,36 @@ const Chat = ({ isOpen, onClose }) => {
         {
           !connected ? (
             <>
-              <div className="bg-primary-700 px-10 md:px-14 pt-14 md:pt-20 pb-24">
+              <div className="bg-gray-900 rounded-b-lg pattern-5 px-10 md:px-14 pt-14 md:pt-32 pb-40">
                 <h2 className="text-3xl md:text-4xl font-semibold text-white leading-snug">
                   Hi there 👋🏽<br/>How can we help you?
                 </h2>
                 <p className="mt-6 text-white">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius iure quaerat sunt voluptate. Aspernatur
-                  at, cum debitis delectus dolore eius eos ipsum iure molestiae nulla officia optio sequi similique.
-                  Beatae.
+                  at.
                 </p>
               </div>
-              <div className="px-10 md:px-16 -mt-8 pb-12 space-y-4">
-                <Card hover onClick={ start } className="px-7 py-5 flex items-center justify-between">
-                  Chat with Sensii
-                  <IconChevronRight/>
+              <div className="px-10 md:px-16 -mt-14 pb-12 space-y-4 relative z-[2]">
+                <Card hover onClick={ start } className="px-7 py-5 flex items-center">
+                  <IconMessageChatbot size="32" className="text-blue-600"/>
+                  <div className="flex-1 px-4">
+                    <p>Chat with Lens</p>
+                    <p className="text-[.94rem] mt-1 opacity-70 leading-snug">
+                      Ask questions about macro economic data.
+                    </p>
+                  </div>
+                  <IconChevronRight className="opacity-70"/>
                 </Card>
-                <div className="font-medium text-slate-500 py-1 px-2">
-                  Trending questions:
-                </div>
-                {
-                  [
-                    'Tell me about the current president of Nigeria',
-                    'Tell me about the current president of Ghana',
-                  ].map(m => (
-                    <Card
-                      onClick={ () => start(m) } key={ m } hover
-                      className="px-7 py-5 flex items-center justify-between"
-                    >
-                      { m }
-                      <IconChevronRight/>
-                    </Card>
-                  ))
-                }
+                <Card hover className="px-7 py-5 flex items-center">
+                  <IconFileTextAi size="32" className="text-orange-600"/>
+                  <div className="flex-1 px-4">
+                    <p>Upload your document</p>
+                    <p className="text-[.94rem] mt-1 opacity-70 leading-snug">
+                      Analyze and chat with your documents.
+                    </p>
+                  </div>
+                  <IconChevronRight className="opacity-70"/>
+                </Card>
               </div>
             </>
           ) : (
@@ -106,7 +111,7 @@ const Chat = ({ isOpen, onClose }) => {
                     className="w-8 h-8 flex items-center justify-center bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-full">
                     <IconRobot size="18"/>
                   </div>
-                  <p className="ml-2">Bot</p>
+                  <p className="ml-2">Lens</p>
                 </div>
               </div>
               <div className="flex-1 flex flex-col overflow-y-auto" ref={ scrollEl }>
@@ -140,7 +145,10 @@ const Chat = ({ isOpen, onClose }) => {
                                       <IconUser size="18"/>
                                     </div>
                                   </div>
-                                  <p className="ml-4 mt-1" dangerouslySetInnerHTML={ { __html: message.content } }/>
+                                  <p
+                                    className="ml-4 mt-1 whitespace-pre-wrap"
+                                    dangerouslySetInnerHTML={ { __html: message.content } }
+                                  />
                                 </div>
                               )
                             }
@@ -161,7 +169,25 @@ const Chat = ({ isOpen, onClose }) => {
                 }
                 {
                   !messages.length && !waiting && (
-                    <p className="m-auto opacity-50 py-10">What type of data are you looking for?</p>
+                    <div className="px-10 py-8">
+                      <h4 className="mb-6 px-2 font-medium">Most asked questions</h4>
+                      <div className="space-y-3">
+                        {
+                          [
+                            'Tell me about the current president of Nigeria',
+                            'Tell me about the current president of Ghana',
+                          ].map(m => (
+                            <div
+                              onClick={ () => send(m) } key={ m }
+                              className="border rounded-3xl px-6 py-4 flex items-center hover:bg-slate-100 cursor-pointer"
+                            >
+                              <IconSparkles className="mr-2 text-slate-600"/>
+                              { m }
+                            </div>
+                          ))
+                        }
+                      </div>
+                    </div>
                   )
                 }
               </div>
@@ -171,8 +197,8 @@ const Chat = ({ isOpen, onClose }) => {
                   onKeyUp={ e => {
                     if (e.key.toLowerCase() === 'enter') send(value);
                   } }
-                  type="text" className="bg-slate-200 w-full py-3 px-10 rounded-full"
-                  placeholder="Type your message here.."
+                  type="text" className="bg-slate-100 w-full py-3 px-10 rounded-full"
+                  placeholder="Ask me anything.."
                 />
                 <div>
                   <IconButton

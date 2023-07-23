@@ -95,7 +95,9 @@ const ChatWindow = ({ selected, onClose }) => {
                       <ConversationTitle conversation={ conversation }/>
                       <SimpleDropdown
                         trigger={
-                          <IconButton icon={ <IconDotsVertical size="20"/> } color="white" rounded size="sm"/>
+                          <IconButton
+                            variant="outlined" icon={ <IconDotsVertical size="20"/> } color="black" rounded size="sm"
+                          />
                         }
                         items={ [
                           { text: 'Delete', icon: <IconTrash size="18"/>, onClick: () => setIsDeleteModalOpen(true) },
@@ -122,7 +124,7 @@ const ChatWindow = ({ selected, onClose }) => {
                                           </div>
                                         </div>
                                         <p
-                                          className="bg-slate-100 rounded-2xl px-6 py-3 max-w-[75%]"
+                                          className="bg-slate-100 rounded-2xl px-6 py-3 max-w-[75%] whitespace-pre-wrap"
                                           dangerouslySetInnerHTML={ { __html: message.content } }
                                         />
                                       </div>
@@ -132,7 +134,7 @@ const ChatWindow = ({ selected, onClose }) => {
                                     message.role === 'user' && (
                                       <div className="flex space-x-4 justify-end">
                                         <p
-                                          className="bg-primary-500 text-white rounded-2xl px-6 py-3 max-w-[75%]"
+                                          className="bg-blue-500 text-white rounded-2xl px-6 py-3 max-w-[75%] whitespace-pre-wrap"
                                           dangerouslySetInnerHTML={ { __html: message.content } }
                                         />
                                         <div>

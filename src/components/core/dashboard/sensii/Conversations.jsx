@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IconCheck, IconMessageCircle, IconMessagePlus, IconUserPlus } from "@tabler/icons-react";
+import { IconCheck, IconMessageCircle, IconMessagePlus } from "@tabler/icons-react";
 import { useCreateConversation, useGetConversations } from "@/api/conversations";
 import { useToast } from "@/hooks/use-toast";
 import { useQueryClient } from "@tanstack/react-query";
@@ -52,8 +52,8 @@ const Conversations = ({ onClick, selected }) => {
                     <div
                       key={ conversation._id } onClick={ () => onClick(conversation._id) }
                       className={ classNames(
-                        'flex items-center px-4 py-3 w-full space-x-3 rounded-2xl cursor-pointer',
-                        selected === conversation._id ? 'bg-slate-200 border' : 'hover:bg-gray-100'
+                        'flex items-center px-6 py-3 w-full space-x-3 rounded-full cursor-pointer',
+                        selected === conversation._id ? 'bg-slate-100 font-semibold' : 'hover:bg-gray-100'
                       ) }
                     >
                       <IconMessageCircle size="20"/>
@@ -65,15 +65,6 @@ const Conversations = ({ onClick, selected }) => {
             )
           }
         </div>
-      </div>
-      <div className="flex flex-col space-y-2 mt-auto px-8 md:px-6">
-        <button
-          onClick={ () => setIsUpgradeOpen(true) }
-          className="flex items-center px-4 py-3 rounded-2xl hover:bg-zinc-100"
-        >
-          <span className="mr-4"><IconUserPlus/></span>
-          Upgrade to plus
-        </button>
       </div>
 
       <Modal isOpen={ isUpgradeOpen } onClose={ () => setIsUpgradeOpen(false) } title="Your plan">

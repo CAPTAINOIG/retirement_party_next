@@ -44,9 +44,9 @@ const SimpleDropdown = ({ trigger, items, direction = 'bottom-right' }) => {
                     static
                     className={ classNames(
                       'absolute bg-white text-gray-900 shadow border p-2 rounded-xl flex flex-col z-50 min-w-[200px]',
-                      { 'top-full right-0 mt-2': direction === 'bottom-right' },
-                      { 'bottom-full right-0 mb-2': direction === 'top-right' },
-                      { 'left-full bottom-0 ml-2': direction === 'right-bottom' },
+                      { 'top-full right-0 mt-4': direction === 'bottom-right' },
+                      { 'bottom-full right-0 mb-4': direction === 'top-right' },
+                      { 'left-full bottom-0 ml-4': direction === 'right-bottom' },
                     ) }
                   >
                     {

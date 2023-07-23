@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Conversations from "@/components/core/dashboard/sensii/Conversations";
 import ChatWindow from "@/components/core/dashboard/sensii/ChatWindow";
 
-const SensiiPage = () => {
+const InsightsConversations = () => {
   const [id, setId] = useState(null);
 
   const handleClick = (id) => {
@@ -12,7 +12,7 @@ const SensiiPage = () => {
 
   return (
     <div className="h-screen w-full grid grid-cols-[0_1fr] md:grid-cols-[300px_1fr] overflow-y-hidden">
-      <div className="h-screen border-r border-zinc-200 flex flex-col py-5">
+      <div className="h-screen bg-white border-r border-slate-200 flex flex-col py-5">
         <Conversations onClick={ handleClick } selected={ id }/>
       </div>
       <div className="relative">
@@ -24,4 +24,4 @@ const SensiiPage = () => {
   );
 };
 
-export default SensiiPage;
+export default InsightsConversations;

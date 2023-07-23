@@ -1,11 +1,13 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import Button from "@/components/global/Button";
 import { IconArrowRight } from "@tabler/icons-react";
 import ChatIllustrations from "@/components/svgs/ChatIllustrations";
-import Link from "next/link";
+import Chat from "@/components/core/shared/Chat";
 
 const PlugYourData = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   return (
     <>
       <div className="container">
@@ -21,14 +23,20 @@ const PlugYourData = () => {
             <p className="mt-6 text-base md:text-lg">
               We are building Africa's most robust data assistant.
             </p>
-            <Link href={ '/register' }>
-              <Button color="black" className="mt-12" rightIcon={ <IconArrowRight/> } size="lg">
-                Get started
-              </Button>
-            </Link>
+            <Button
+              onClick={ () => setIsChatOpen(true) }
+              color="black" className="mt-12" rightIcon={ <IconArrowRight/> } size="lg"
+            >
+              Get started
+            </Button>
           </div>
         </div>
       </div>
+
+      <Chat
+        isOpen={ isChatOpen }
+        onClose={ () => setIsChatOpen(false) }
+      />
     </>
   );
 };

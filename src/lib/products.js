@@ -46,14 +46,14 @@ const products = [
     categories: ['featured', 'investment']
   },
   {
-    name: 'Chat assistant',
-    slug: 'sensii',
+    name: 'Macro economics',
+    slug: 'insights',
     description: `An advanced embedded AI assistant`,
     backgroundColor: '!bg-blue-500',
     textColor: '!text-blue-500',
     icon: IconMessageChatbot,
-    homeLink: '/sensii',
-    dashboardLink: '/dashboard/sensii',
+    homeLink: '/insights',
+    dashboardLink: '/dashboard/insights',
     status: 'active',
     categories: ['general']
   },
@@ -65,7 +65,7 @@ const products = [
     textColor: '!text-red-500',
     icon: IconEditCircle,
     homeLink: '/custom-report',
-    dashboardLink: '/dashboard/custom-reports',
+    dashboardLink: '/dashboard/custom-report',
     status: 'coming-soon',
     categories: ['general']
   },

@@ -68,9 +68,29 @@ body {
   -webkit-background-clip: text;
 }
 
-.chat-illustration {
-  transform: rotate3d(1, 1, 1, -1deg);
-  @media (max-width: 700px) {
-    transform: none
-  }
+.bg-gradient-1 {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-gradient-1:before {
+  position: absolute;
+  top: -120%;
+  right: -125%;
+  opacity: .2;
+  width: 450%;
+  height: 500%;
+  content: "";
+  border-bottom: 4px solid #19191c;
+  background: radial-gradient(rgba(25, 25, 28, 0) 50%, #19191c 80%), conic-gradient(#9c3cf7 0, #19191c 15.2%, #19191c 18.2%, #1e1ae8 20.5%, #19191c 30.2%, #19191c 50%, #0e0ab4 56.5%, #1e1ae8 59.4%, #060551 66.2%, #101057 72.9%, #242473 85.1%, #1e1ae8 89.1%, #0a06b7 90.6%, #19191c 93.7%, #9c3cf7 100%);
+  animation-name: example;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  z-index: 1;
+}
+
+.bg-gradient-1 > * {
+  position: relative;
+  z-index: 2;
 }

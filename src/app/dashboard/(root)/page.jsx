@@ -99,7 +99,7 @@ const ProductCard = ({ product, onClick }) => {
           {
             product.status === 'coming-soon' && (
               <div
-                className="absolute top-0 right-0 px-3 py-1 ml-2 leading-none bg-slate-100 text-black rounded-bl-lg text-xs inline-flex"
+                className="absolute top-0 right-0 px-3 py-1 ml-2 leading-none bg-slate-100 text-slate-500 rounded-bl-lg text-xs inline-flex"
               >
                 Coming soon
               </div>
