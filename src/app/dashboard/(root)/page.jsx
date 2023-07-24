@@ -18,7 +18,7 @@ const DashboardPage = () => {
           <h1
             className="text-[2rem] md:text-4xl leading-[1.3] font-semibold max-w-[300px] md:max-w-lg flex items-center"
           >
-            All the tools you need to run your business
+            Insights for every business and industry
           </h1>
           <p className="mt-3 md:mt-4 opacity-75">
             Select a product below to continue
@@ -27,7 +27,7 @@ const DashboardPage = () => {
       </div>
       <div className="container py-12 md:py-16 !max-w-5xl min-h-screen flex flex-col space-y-10">
         <div>
-          <h3 className="text-xl font-medium mb-8 px-1">Featured</h3>
+          <h3 className="text-xl font-medium mb-8 px-1 border-b pb-6">Featured</h3>
           <div className="grid md:grid-cols-2 gap-4 md:gap-6">
             {
               products.filter(p => p.slug === featured).map(product => (
@@ -54,7 +54,7 @@ const DashboardPage = () => {
         {
           categories.filter(c => c.id !== 'featured').map(c => (
             <div key={ c.id }>
-              <h3 className="text-xl font-medium mb-8 px-1">{ c.name }</h3>
+              <h3 className="text-xl font-medium mb-8 px-1 border-b pb-6">{ c.name }</h3>
               <div className="grid md:grid-cols-3 gap-4 md:gap-6">
                 {
                   products.filter(p => p.categories.includes(c.id)).map(product => (
