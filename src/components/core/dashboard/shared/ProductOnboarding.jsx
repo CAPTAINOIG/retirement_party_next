@@ -15,7 +15,7 @@ const ProductOnboarding = ({ product, handleSubmit, isLoading }) => {
   };
 
   return (
-    <div className="bg-slate-50">
+    <div className="bg-slate-50 px-6">
       <div className="max-w-[600px] mx-auto py-12">
         <div className="flex items-center">
           <div
@@ -24,7 +24,7 @@ const ProductOnboarding = ({ product, handleSubmit, isLoading }) => {
             { createElement(product.icon, { size: 36 }) }
           </div>
           <div className="ml-4">
-            <p className="font-medium text-lg">{ product.name } by StatiSense</p>
+            <p className="font-semibold text-lg">{ product.name }</p>
             <p>{ product.description }</p>
           </div>
         </div>

@@ -28,9 +28,7 @@ const BusinessPage = () => {
                   <>
                     {
                       business.status === 'pending' && (
-                        <div
-                          className="rounded-xl flex flex-col items-center justify-center text-center"
-                        >
+                        <div className="rounded-xl flex flex-col items-center justify-center text-center">
                           <IconHourglass size="80" className="text-orange-600"/>
                           <h6 className="text-xl mt-10 font-semibold max-w-xs">
                             Business information submitted
@@ -47,9 +45,7 @@ const BusinessPage = () => {
                     }
                     {
                       business.status === 'unverified' && (
-                        <div
-                          className="rounded-xl flex flex-col items-center justify-center text-center"
-                        >
+                        <div className="rounded-xl flex flex-col items-center justify-center text-center">
                           <IconCircleXFilled size="80" className="text-red-600"/>
                           <h6 className="text-xl mt-10 font-semibold max-w-xs">
                             Business verification failed
@@ -66,9 +62,7 @@ const BusinessPage = () => {
                     }
                     {
                       business.status === 'verified' && (
-                        <div
-                          className="rounded-xl px-10 py-24 flex flex-col items-center justify-center text-center"
-                        >
+                        <div className="rounded-xl px-10 py-24 flex flex-col items-center justify-center text-center">
                           <IconCircleCheckFilled size="80" className="text-green-600"/>
                           <h6 className="text-xl mt-10 font-semibold max-w-xs">
                             Business verification successful
