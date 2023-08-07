@@ -6,8 +6,8 @@ import { useIsomorphicLayoutEffect, useUnmount } from "react-use";
 import Loader from "@/components/global/Loader";
 import { useAuth } from "@/hooks/use-auth";
 import SimpleDropdown from "@/components/global/SimpleDropdown";
-import DeleteConversationAlert from "@/components/core/dashboard/sensii/DeleteConversationAlert";
-import ConversationTitle from "@/components/core/dashboard/sensii/ConversationTitle";
+import DeleteConversationAlert from "@/components/core/dashboard/assistant/DeleteConversationAlert";
+import ConversationTitle from "@/components/core/dashboard/assistant/ConversationTitle";
 import { useGetConversation } from "@/api/conversations";
 import { useToast } from "@/hooks/use-toast";
 

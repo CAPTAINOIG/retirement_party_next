@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
-import Conversations from "@/components/core/dashboard/sensii/Conversations";
-import ChatWindow from "@/components/core/dashboard/sensii/ChatWindow";
+import Conversations from "@/components/core/dashboard/assistant/Conversations";
+import ChatWindow from "@/components/core/dashboard/assistant/ChatWindow";
 
 const InsightsConversations = () => {
   const [id, setId] = useState(null);

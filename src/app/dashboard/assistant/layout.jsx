@@ -6,11 +6,11 @@ import classNames from "classnames";
 import AppDashboardLayout from "@/components/core/dashboard/shared/AppDashboardLayout";
 
 const links = [
-  { name: 'Overview', href: '/dashboard/insights', icon: <IconLayout2 size="20"/> },
-  { name: 'Conversations', href: '/dashboard/insights/conversations', icon: <IconMessages size="20"/> },
+  { name: 'Overview', href: '/dashboard/assistant', icon: <IconLayout2 size="20"/> },
+  { name: 'Conversations', href: '/dashboard/assistant/conversations', icon: <IconMessages size="20"/> },
 ];
 
-const product = products.find(p => p.slug === 'insights');
+const product = products.find(p => p.slug === 'assistant');
 
 const Logo = ({ className }) => (
   <div className={ className }>
