@@ -6,7 +6,10 @@ import { useRouter } from "next/navigation";
 import Card from "@/components/global/Card";
 import products, { categories } from "@/lib/products";
 
-const featured = 'custom-report';
+const featured = products.filter(p => p.categories.includes('featured'));
+const highlighted = featured.at(0);
+const top = featured.slice(1, featured.length);
+const bottom = featured.length > 3 ? featured.at(-1) : null;
 
 const DashboardPage = () => {
   const router = useRouter();
@@ -28,25 +31,35 @@ const DashboardPage = () => {
       <div className="container py-12 md:py-16 !max-w-5xl min-h-screen flex flex-col space-y-10">
         <div>
           <h3 className="text-xl font-medium mb-8 px-1 border-b pb-6">Featured</h3>
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-            {
-              products.filter(p => p.slug === featured).map(product => (
-                <FeaturedProductCard
-                  product={ product }
-                  key={ product.name }
-                  onClick={ () => router.push(product.dashboardLink) }
-                />
-              ))
-            }
-            <div className="grid gap-4 md:gap-6">
+          <div className="grid md:grid-cols-11 gap-4 md:gap-6">
+            <div className="md:col-span-5">
+              <FeaturedProductCard
+                product={ highlighted }
+                key={ highlighted.name }
+                onClick={ () => router.push(highlighted.dashboardLink) }
+              />
+            </div>
+            <div className="md:col-span-6 grid md:grid-cols-2 gap-4 md:gap-6">
               {
-                products.filter(p => p.categories.includes('featured') && (p.slug !== featured)).map(product => (
-                  <ProductCard
-                    product={ product }
-                    key={ product.name }
-                    onClick={ () => router.push(product.dashboardLink) }
-                  />
+                top.slice(0, 2).map(product => (
+                  <div key={ product.name }>
+                    <ProductCard
+                      product={ product }
+                      onClick={ () => router.push(product.dashboardLink) }
+                    />
+                  </div>
                 ))
+              }
+              {
+                !!bottom && (
+                  <div className="md:col-span-2">
+                    <ProductCard
+                      product={ bottom }
+                      key={ bottom.name }
+                      onClick={ () => router.push(bottom.dashboardLink) }
+                    />
+                  </div>
+                )
               }
             </div>
           </div>
