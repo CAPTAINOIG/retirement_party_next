@@ -1,0 +1,46 @@
+import React from 'react';
+import Dropzone from "react-dropzone";
+import classNames from "classnames";
+import { IconCloudUpload } from "@tabler/icons-react";
+
+const CircleUploadFileInput = ({ onChange, label = 'Drag and drop a file or click to select', accept }) => {
+  return (
+    <>
+      <Dropzone
+        onDrop={ acceptedFiles => {
+          if (!acceptedFiles.length) return toast.error('Only pdf files allowed')
+          onChange(acceptedFiles[0])
+        } }
+        accept={ accept }
+      >
+        {
+          ({ getRootProps, getInputProps, isDragAccept, isDragReject }) => (
+            <>
+              <div
+                { ...getRootProps() }
+                className={ classNames(
+                  "w-48 h-48 border-2 border-gray-300 border-dashed rounded-full cursor-pointer hover:bg-gray-50 flex items-center justify-center relative before:absolute before:inset-0 before:border-2 before:border-slate-200 before:rounded-full before:animate-ping",
+                  { 'border-red-500 text-red-500 before:border-0 before:!animate-none': isDragReject },
+                  { 'border-green-500 text-green-500 before:border-0 before:!animate-none': isDragAccept },
+                ) }
+              >
+                <input { ...getInputProps() } />
+                <IconCloudUpload size="75" className="opacity-30"/>
+              </div>
+              {
+                isDragReject && (
+                  <div className="flex items-center bg-red-100 text-red-600 rounded-2xl w-max mt-4 px-4 py-1">
+                    Only pdf files allowed
+                  </div>
+                )
+              }
+            </>
+          )
+        }
+      </Dropzone>
+      <p className="mt-10 max-w-[200px]">{ label }</p>
+    </>
+  );
+};
+
+export default CircleUploadFileInput;

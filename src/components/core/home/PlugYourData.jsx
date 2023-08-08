@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Button from "@/components/global/Button";
 import { IconArrowRight } from "@tabler/icons-react";
 import ChatIllustrations from "@/components/svgs/ChatIllustrations";
-import Chat from "@/components/core/shared/Chat";
+import TestRun from "@/components/core/shared/TestRun";
 
 const PlugYourData = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -33,7 +33,7 @@ const PlugYourData = () => {
         </div>
       </div>
 
-      <Chat
+      <TestRun
         isOpen={ isChatOpen }
         onClose={ () => setIsChatOpen(false) }
       />

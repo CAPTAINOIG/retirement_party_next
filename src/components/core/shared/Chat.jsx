@@ -1,19 +1,11 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { useIsomorphicLayoutEffect, useUnmount } from "react-use";
+import { useIsomorphicLayoutEffect, useMount, useUnmount } from "react-use";
 import { io } from "socket.io-client";
-import {
-  IconChevronLeft,
-  IconChevronRight, IconFileTextAi,
-  IconMessageChatbot,
-  IconRobot,
-  IconSend, IconSparkles,
-  IconUser
-} from "@tabler/icons-react";
-import Drawer from "@/components/global/Drawer";
+import { IconChevronLeft, IconRobot, IconSend, IconSparkles, IconUser } from "@tabler/icons-react";
 import IconButton from "@/components/global/IconButton";
-import Card from "@/components/global/Card";
+import Loader from "@/components/global/Loader";
 
-const Chat = ({ isOpen, onClose }) => {
+const Chat = ({ onBack }) => {
   const socket = useRef(null);
   const [value, setValue] = useState('');
   const [connected, setConnected] = useState(false);
@@ -21,9 +13,9 @@ const Chat = ({ isOpen, onClose }) => {
   const [waiting, setWaiting] = useState(false);
   const scrollEl = useRef(null);
 
-  const start = (m) => {
+  const start = () => {
     socket.current = io(process.env.NEXT_PUBLIC_BASE_URL, { query: { type: 'public' } });
-    socket.current.on('connect', () => handleConnected(m));
+    socket.current.on('connect', () => handleConnected());
     socket.current.on('disconnect', handleDisconnect);
     socket.current.on('message', handleMessage);
   };
@@ -37,10 +29,9 @@ const Chat = ({ isOpen, onClose }) => {
     setWaiting(true);
   }, []);
 
-  const handleConnected = useCallback((m) => {
+  const handleConnected = useCallback(() => {
     setConnected(true);
-    if (m) send(m);
-  }, [send]);
+  }, []);
 
   const handleDisconnect = useCallback(() => {
     setConnected(false);
@@ -54,6 +45,8 @@ const Chat = ({ isOpen, onClose }) => {
     if (args.messages.at(-1).role === 'assistant') setWaiting(false);
   }, []);
 
+  useMount(() => start())
+
   useUnmount(() => stop());
 
   useIsomorphicLayoutEffect(() => {
@@ -63,153 +56,122 @@ const Chat = ({ isOpen, onClose }) => {
 
   return (
     <>
-      <Drawer isOpen={ isOpen } onClose={ onClose } padding={ false }>
-        {
-          !connected ? (
-            <>
-              <div className="bg-gray-900 rounded-b-lg pattern-5 px-10 md:px-14 pt-14 md:pt-32 pb-40">
-                <h2 className="text-3xl md:text-4xl font-semibold text-white leading-snug">
-                  Hi there 👋🏽<br/>How can we help you?
-                </h2>
-                <p className="mt-6 text-white">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius iure quaerat sunt voluptate. Aspernatur
-                  at.
-                </p>
-              </div>
-              <div className="px-10 md:px-16 -mt-14 pb-12 space-y-4 relative z-[2]">
-                <Card hover onClick={ start } className="px-7 py-5 flex items-center">
-                  <IconMessageChatbot size="32" className="text-blue-600"/>
-                  <div className="flex-1 px-4">
-                    <p>Chat with Lens</p>
-                    <p className="text-[.94rem] mt-1 opacity-70 leading-snug">
-                      Ask questions about macro economic data.
-                    </p>
-                  </div>
-                  <IconChevronRight className="opacity-70"/>
-                </Card>
-                <Card hover className="px-7 py-5 flex items-center">
-                  <IconFileTextAi size="32" className="text-orange-600"/>
-                  <div className="flex-1 px-4">
-                    <p>Upload your document</p>
-                    <p className="text-[.94rem] mt-1 opacity-70 leading-snug">
-                      Analyze and chat with your documents.
-                    </p>
-                  </div>
-                  <IconChevronRight className="opacity-70"/>
-                </Card>
-              </div>
-            </>
-          ) : (
-            <div className="h-full flex flex-col overflow-hidden">
-              <div className="border-b">
-                <div className="max-w-xl mx-auto flex items-center px-10 py-6">
-                  <IconButton
-                    onClick={ stop } icon={ <IconChevronLeft size="20"/> } size="sm" variant="text" color="black"
-                    className="mr-3" rounded
-                  />
-                  <div
-                    className="w-8 h-8 flex items-center justify-center bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-full">
-                    <IconRobot size="18"/>
-                  </div>
-                  <p className="ml-2">Lens</p>
+      {
+        !connected ? (
+          <div className="h-full flex flex-col items-center justify-center">
+            <Loader/>
+            <p className="mt-5">Connecting..</p>
+          </div>
+        ) : (
+          <div className="h-full flex flex-col overflow-hidden">
+            <div className="border-b">
+              <div className="max-w-xl mx-auto flex items-center px-10 py-6">
+                <IconButton
+                  onClick={ onBack } icon={ <IconChevronLeft size="20"/> } size="sm" variant="text" color="black"
+                  className="mr-3" rounded
+                />
+                <div
+                  className="w-8 h-8 flex items-center justify-center bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-full">
+                  <IconRobot size="18"/>
                 </div>
+                <p className="ml-2">Lens</p>
               </div>
-              <div className="flex-1 flex flex-col overflow-y-auto" ref={ scrollEl }>
-                {
-                  !!messages.length && (
-                    <div className="w-full max-w-xl mx-auto flex flex-col px-10 py-6 space-y-6">
+            </div>
+            <div className="flex-1 flex flex-col overflow-y-auto" ref={ scrollEl }>
+              {
+                !!messages.length && (
+                  <div className="w-full max-w-xl mx-auto flex flex-col px-10 py-6 space-y-6">
+                    {
+                      messages.filter(m => m.role.match(/^assistant|user$/i)).map((message, i) => (
+                        <div key={ i }>
+                          {
+                            message.role === 'assistant' && (
+                              <div className="flex">
+                                <div>
+                                  <div
+                                    className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-full"
+                                  >
+                                    <IconRobot size="18"/>
+                                  </div>
+                                </div>
+                                <p className="ml-4 mt-1" dangerouslySetInnerHTML={ { __html: message.content } }/>
+                              </div>
+                            )
+                          }
+                          {
+                            message.role === 'user' && (
+                              <div className="flex">
+                                <div>
+                                  <div
+                                    className="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full"
+                                  >
+                                    <IconUser size="18"/>
+                                  </div>
+                                </div>
+                                <p
+                                  className="ml-4 mt-1 whitespace-pre-wrap"
+                                  dangerouslySetInnerHTML={ { __html: message.content } }
+                                />
+                              </div>
+                            )
+                          }
+                        </div>
+                      ))
+                    }
+                  </div>
+                )
+              }
+              {
+                waiting && (
+                  <div className="w-full max-w-xl mx-auto flex items-start px-10 py-4">
+                    <div className="border border-gray-300 rounded-xl px-4 py-1.5">
+                      Generating response...
+                    </div>
+                  </div>
+                )
+              }
+              {
+                !messages.length && !waiting && (
+                  <div className="px-10 py-8">
+                    <h4 className="mb-6 px-2 font-medium">Most asked questions</h4>
+                    <div className="space-y-3">
                       {
-                        messages.filter(m => m.role.match(/^assistant|user$/i)).map((message, i) => (
-                          <div key={ i }>
-                            {
-                              message.role === 'assistant' && (
-                                <div className="flex">
-                                  <div>
-                                    <div
-                                      className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-full"
-                                    >
-                                      <IconRobot size="18"/>
-                                    </div>
-                                  </div>
-                                  <p className="ml-4 mt-1" dangerouslySetInnerHTML={ { __html: message.content } }/>
-                                </div>
-                              )
-                            }
-                            {
-                              message.role === 'user' && (
-                                <div className="flex">
-                                  <div>
-                                    <div
-                                      className="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full"
-                                    >
-                                      <IconUser size="18"/>
-                                    </div>
-                                  </div>
-                                  <p
-                                    className="ml-4 mt-1 whitespace-pre-wrap"
-                                    dangerouslySetInnerHTML={ { __html: message.content } }
-                                  />
-                                </div>
-                              )
-                            }
+                        [
+                          'Tell me about the current president of Nigeria',
+                          'Tell me about the current president of Ghana',
+                        ].map(m => (
+                          <div
+                            onClick={ () => send(m) } key={ m }
+                            className="border rounded-3xl px-6 py-4 flex items-center hover:bg-slate-100 cursor-pointer"
+                          >
+                            <IconSparkles className="mr-2 text-slate-600"/>
+                            { m }
                           </div>
                         ))
                       }
                     </div>
-                  )
-                }
-                {
-                  waiting && (
-                    <div className="w-full max-w-xl mx-auto flex items-start px-10 py-4">
-                      <div className="border border-gray-300 rounded-xl px-4 py-1.5">
-                        Generating response...
-                      </div>
-                    </div>
-                  )
-                }
-                {
-                  !messages.length && !waiting && (
-                    <div className="px-10 py-8">
-                      <h4 className="mb-6 px-2 font-medium">Most asked questions</h4>
-                      <div className="space-y-3">
-                        {
-                          [
-                            'Tell me about the current president of Nigeria',
-                            'Tell me about the current president of Ghana',
-                          ].map(m => (
-                            <div
-                              onClick={ () => send(m) } key={ m }
-                              className="border rounded-3xl px-6 py-4 flex items-center hover:bg-slate-100 cursor-pointer"
-                            >
-                              <IconSparkles className="mr-2 text-slate-600"/>
-                              { m }
-                            </div>
-                          ))
-                        }
-                      </div>
-                    </div>
-                  )
-                }
-              </div>
-              <div className="w-full max-w-xl mx-auto px-10 py-4 flex space-x-2 items-center">
-                <input
-                  value={ value } onChange={ e => setValue(e.target.value) }
-                  onKeyUp={ e => {
-                    if (e.key.toLowerCase() === 'enter') send(value);
-                  } }
-                  type="text" className="bg-slate-100 w-full py-3 px-10 rounded-full"
-                  placeholder="Ask me anything.."
+                  </div>
+                )
+              }
+            </div>
+            <div className="w-full max-w-xl mx-auto px-10 py-4 flex space-x-2 items-center">
+              <input
+                value={ value } onChange={ e => setValue(e.target.value) }
+                onKeyUp={ e => {
+                  if (e.key.toLowerCase() === 'enter') send(value);
+                } }
+                type="text" className="bg-slate-100 w-full py-3 px-10 rounded-full"
+                placeholder="Ask me anything.."
+              />
+              <div>
+                <IconButton
+                  onClick={ () => send(value) } icon={ <IconSend size="20"/> } rounded
                 />
-                <div>
-                  <IconButton
-                    onClick={ () => send(value) } icon={ <IconSend size="20"/> } rounded
-                  />
-                </div>
               </div>
             </div>
-          )
-        }
-      </Drawer>
+          </div>
+        )
+      }
     </>
   );
 };
