@@ -3,7 +3,6 @@ import React, { createElement, useState } from 'react';
 import classNames from "classnames";
 import { IconBooks, IconLayout, IconSettings2 } from "@tabler/icons-react";
 import requireAuthBusiness from "@/guards/require-auth-business";
-import { useCreateFinancialReportSettings, useGetFinancialReportSettings } from "@/api/statement";
 import { useGetUserBusiness } from "@/api/business";
 import products from "@/lib/products";
 import Loader from "@/components/global/Loader";
@@ -12,6 +11,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import AppDashboardLayout from "@/components/core/dashboard/shared/AppDashboardLayout";
 import ProductOnboarding from "@/components/core/dashboard/shared/ProductOnboarding";
 import DashboardContent from "@/components/core/dashboard/shared/DashboardContent";
+import { useCreateFinancialReportSettings, useGetFinancialReportSettings } from "@/api/financial-report";
 
 const links = [
   { name: 'Overview', href: '/dashboard/financial-report', icon: <IconLayout size="20"/> },
