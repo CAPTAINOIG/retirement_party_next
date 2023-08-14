@@ -52,11 +52,18 @@ const StatementDetails = ({ params: { id } }) => {
       {
         (isTransactionsLoading || isStatementLoading) ? (
           <>
-            <div className="bg-slate-200 rounded-2xl w-[200px] py-4"></div>
-            <div className="bg-slate-200 rounded-2xl w-[250px] md:w-[400px] py-4 mt-4"></div>
-            <div className="grid md:grid-cols-2 gap-8 mt-8">
-              <div className="bg-slate-200 rounded-2xl w-full h-[300px]"></div>
-              <div className="bg-slate-200 rounded-2xl w-full h-[300px]"></div>
+            <div className="flex justify-between items-center">
+              <div className="bg-slate-200 rounded-3xl w-[200px] py-4"/>
+              <div className="bg-slate-200 rounded-3xl w-[150px] py-4"/>
+            </div>
+            <div className="flex flex-col md:flex-row space-x-6 mt-8">
+              <div className="col-span-3 min-h-[200px] flex-1 bg-slate-200 rounded-3xl"/>
+              <div className="col-span-2 bg-slate-200 rounded-full w-[200px] h-[200px]"/>
+              <div className="col-span-2 bg-slate-200 rounded-full w-[200px] h-[200px]"/>
+            </div>
+            <div className="grid md:grid-cols-12 gap-8 mt-8">
+              <div className="col-span-8 min-h-[200px] bg-slate-200 rounded-3xl"/>
+              <div className="col-span-4 min-h-[200px] bg-slate-200 rounded-3xl"/>
             </div>
           </>
         ) : (
