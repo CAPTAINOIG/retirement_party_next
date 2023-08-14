@@ -11,7 +11,7 @@ const InvoiceDetails = ({ invoice }) => {
 
   return (
     <>
-      <Card className="col-span-6 p-10">
+      <Card className="p-10">
         {
           !edit ? (
             <>

@@ -79,11 +79,13 @@ const InvoiceDetailsPage = ({ params: { id } }) => {
                       />
                     </div>
                   </div>
-                  <div className="grid grid-cols-11 gap-6 items-start">
-                    <Card className="col-span-5 overflow-hidden sticky top-10">
+                  <div className="grid lg:grid-cols-11 gap-6 items-start">
+                    <Card className="lg:col-span-5 overflow-hidden hidden lg:block md:sticky top-10">
                       <Image src={ invoice.file } alt="Invoice"/>
                     </Card>
-                    <InvoiceDetails invoice={ invoice }/>
+                    <div className="md:col-span-6">
+                      <InvoiceDetails invoice={ invoice }/>
+                    </div>
                   </div>
                 </>
               ) : (
