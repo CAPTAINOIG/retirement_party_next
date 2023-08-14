@@ -48,41 +48,48 @@ const InvoiceDetailsPage = ({ params: { id } }) => {
           </>
         ) : (
           <>
-            <div className="flex items-center justify-between mb-10">
-              <div className="flex items-center space-x-3">
-                <Link href={ "/dashboard/invoices/invoices" }>
-                  <IconButton
-                    variant="subtle" color="black" size="sm" rounded icon={ <IconChevronLeft size="20"/> }
-                  />
-                </Link>
-                <h3 className="text-xl font-medium">
-                  Invoice { !!invoice.number ? <>(#{ invoice.number })</> : <>details</> }
-                </h3>
-              </div>
-              <div className="flex items-center space-x-2 md:space-x-4">
-                <SimpleDropdown
-                  trigger={
-                    <IconButton
-                      variant="text" size="sm" icon={ <IconDotsVertical size="20"/> } color="black" rounded
-                    />
-                  }
-                  items={ [
-                    {
-                      text: <div className="text-red-600">Delete invoice</div>,
-                      icon: <IconTrash size="20" className="text-red-600"/>,
-                      onClick: () => setIsDeleteOpen(true)
-                    },
-                  ] }
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-11 gap-6 items-start">
-              <Card className="col-span-5 overflow-hidden sticky top-10">
-                <Image src={ invoice.file } alt="Invoice"/>
-              </Card>
-              <InvoiceDetails invoice={ invoice }/>
-            </div>
+            {
+              !!invoice ? (
+                <>
+                  <div className="flex items-center justify-between mb-10">
+                    <div className="flex items-center space-x-3">
+                      <Link href={ "/dashboard/invoices/invoices" }>
+                        <IconButton
+                          variant="subtle" color="black" size="sm" rounded icon={ <IconChevronLeft size="20"/> }
+                        />
+                      </Link>
+                      <h3 className="text-xl font-medium">
+                        Invoice { !!invoice.number ? <>(#{ invoice.number })</> : <>details</> }
+                      </h3>
+                    </div>
+                    <div className="flex items-center space-x-2 md:space-x-4">
+                      <SimpleDropdown
+                        trigger={
+                          <IconButton
+                            variant="text" size="sm" icon={ <IconDotsVertical size="20"/> } color="black" rounded
+                          />
+                        }
+                        items={ [
+                          {
+                            text: <div className="text-red-600">Delete invoice</div>,
+                            icon: <IconTrash size="20" className="text-red-600"/>,
+                            onClick: () => setIsDeleteOpen(true)
+                          },
+                        ] }
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-11 gap-6 items-start">
+                    <Card className="col-span-5 overflow-hidden sticky top-10">
+                      <Image src={ invoice.file } alt="Invoice"/>
+                    </Card>
+                    <InvoiceDetails invoice={ invoice }/>
+                  </div>
+                </>
+              ) : (
+                <>Could not fetch invoice</>
+              )
+            }
           </>
         )
       }
