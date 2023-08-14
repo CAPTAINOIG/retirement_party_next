@@ -73,8 +73,9 @@ const Navbar = () => {
                               >
                                 {
                                   products.slice(0, 6).map(product => (
-                                    <div
+                                    <Link
                                       key={ product.name }
+                                      href={ product.dashboardLink }
                                       className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
                                     >
                                       <div className="mr-4">
@@ -90,7 +91,7 @@ const Navbar = () => {
                                           { product.description }
                                         </p>
                                       </div>
-                                    </div>
+                                    </Link>
                                   ))
                                 }
                               </motion.div>
