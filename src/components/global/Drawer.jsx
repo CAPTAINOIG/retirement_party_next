@@ -55,7 +55,7 @@ const Drawer = (
               <div
                 className={ classNames(
                   "relative inset-x-0 bottom-0 bg-white h-min max-h-full sm:h-full overflow-x-hidden overflow-y-auto",
-                  "rounded-t-[30px] md:rounded-r-[30px] md:rounded-l-[30px] flex flex-col pointer-events-auto",
+                  "rounded-t-[30px] md:rounded-r-[30px] md:rounded-l-[30px] min-h-[50vh] flex flex-col pointer-events-auto",
                   { 'p-8 md:p-10': padding }
                 ) }
               >

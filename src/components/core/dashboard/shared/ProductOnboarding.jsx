@@ -28,7 +28,7 @@ const ProductOnboarding = ({ product, handleSubmit, isLoading }) => {
             <p>{ product.description }</p>
           </div>
         </div>
-        <Card className="p-12 mt-10">
+        <Card className="p-8 md:p-12 mt-10">
           <h2 className="mb-6 font-medium">
             Kindly accept the terms and conditions before proceeding
           </h2>

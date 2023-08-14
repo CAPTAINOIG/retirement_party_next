@@ -127,7 +127,6 @@ const ProductCard = ({ product, onClick }) => {
   );
 };
 
-
 const FeaturedProductCard = ({ product, onClick }) => {
   return (
     <Card

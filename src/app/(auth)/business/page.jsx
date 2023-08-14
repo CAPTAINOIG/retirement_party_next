@@ -69,8 +69,7 @@ const BusinessPage = () => {
                           </h6>
                           <p className="max-w-md mt-3">
                             Your business information has been successfully verified, click the button below to continue
-                            to
-                            your dashboard
+                            to your dashboard
                           </p>
                           <Link href={ "/dashboard" }>
                             <Button variant="outlined" className="mt-10">Continue</Button>

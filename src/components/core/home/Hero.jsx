@@ -34,7 +34,7 @@ const Hero = () => {
         <h1
           className="mx-auto max-w-4xl font-display text-[3.2rem] sm:text-7xl md:text-8xl font-bold !leading-[1.1] tracking-tight text-slate-300"
         >
-          AI Simplified insights for African{ ' ' }<br/>
+          Ai Simplified insights for African{ ' ' }<br/>
           <span
             ref={ el }
             className="relative font-bold bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent"
