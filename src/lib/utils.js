@@ -2,9 +2,15 @@ export const delay = (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 };
 
-export const formatCurrency = (value) => {
+export const formatCurrency = (value, currency = 'ngn') => {
   if (isNaN(value)) return value;
-  return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(+value)
+  if (currency.toLowerCase() === 'ngn') {
+    return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(+value)
+  }
+  if (currency.toLowerCase() === 'usd') {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(+value)
+  }
+  return value;
 };
 
 export const getModeArray = array => {

@@ -3,15 +3,22 @@ import Dropzone from "react-dropzone";
 import classNames from "classnames";
 import { IconCloudUpload } from "@tabler/icons-react";
 
-const CircleUploadFileInput = ({ onChange, label = 'Drag and drop a file or click to select', accept }) => {
+const CircleUploadFileInput = (
+  {
+    onChange,
+    label = 'Drag and drop a file or click to select',
+    accept,
+    error = 'File not allowed',
+  }
+) => {
   return (
     <>
       <Dropzone
+        accept={ accept }
         onDrop={ acceptedFiles => {
           if (!acceptedFiles.length) return toast.error('Only pdf files allowed')
           onChange(acceptedFiles[0])
         } }
-        accept={ accept }
       >
         {
           ({ getRootProps, getInputProps, isDragAccept, isDragReject }) => (
@@ -29,8 +36,8 @@ const CircleUploadFileInput = ({ onChange, label = 'Drag and drop a file or clic
               </div>
               {
                 isDragReject && (
-                  <div className="flex items-center bg-red-100 text-red-600 rounded-2xl w-max mt-4 px-4 py-1">
-                    Only pdf files allowed
+                  <div className="flex items-center text-center bg-red-100 text-red-600 rounded-2xl w-max mt-4 px-4 py-1">
+                    { error }
                   </div>
                 )
               }
@@ -38,7 +45,7 @@ const CircleUploadFileInput = ({ onChange, label = 'Drag and drop a file or clic
           )
         }
       </Dropzone>
-      <p className="mt-10 max-w-[200px]">{ label }</p>
+      <p className="mt-10 max-w-[200px] text-center">{ label }</p>
     </>
   );
 };
