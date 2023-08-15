@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Drawer from "@/components/global/Drawer";
 import CircleUploadFileInput from "@/components/core/shared/CircleUploadFileInput";
-import { useCreateInvoice } from "@/api/invoice";
+import { useCreateReceipt } from "@/api/invoice";
 import { useGetUserBusiness } from "@/api/business";
 import { GridLoader } from "react-spinners";
 import { useQueryClient } from "@tanstack/react-query";
@@ -10,24 +10,24 @@ import { IconCircleCheckFilled } from "@tabler/icons-react";
 import Link from "next/link";
 import Button from "@/components/global/Button";
 
-const NewInvoice = ({ isOpen, onClose }) => {
+const NewReceipt = ({ isOpen, onClose }) => {
   const toast = useToast();
   const qc = useQueryClient();
   const response = useRef(null);
   const [success, setSuccess] = useState(false);
   const [isFetching, setIsFetching] = useState(false)
   const { data: business } = useGetUserBusiness();
-  const { mutateAsync: createInvoice, isLoading: isCreateInvoiceLoading } = useCreateInvoice(business._id);
+  const { mutateAsync: createReceipt, isLoading: isCreateReceiptLoading } = useCreateReceipt(business._id);
 
   const onChange = async (file) => {
     try {
       const fd = new FormData();
       fd.append('file', file);
-      const res = await createInvoice(fd);
+      const res = await createReceipt(fd);
       setIsFetching(true)
-      await qc.invalidateQueries(['invoices']);
+      await qc.invalidateQueries(['receipts']);
       setIsFetching(false)
-      response.current = res.data.invoice;
+      response.current = res.data.receipt;
       setSuccess(true);
     } catch (e) {
       toast.error(e?.response?.data?.message ?? e?.message ?? 'Something went wrong, please try again');
@@ -47,7 +47,7 @@ const NewInvoice = ({ isOpen, onClose }) => {
   return (
     <Drawer isOpen={ isOpen } onClose={ handleClose }>
       {
-        (isCreateInvoiceLoading || isFetching) ? (
+        (isCreateReceiptLoading || isFetching) ? (
           <div className="h-full flex flex-col items-center justify-center">
             <GridLoader color={ "#2563eb" }/>
             <p className="mt-6">Processing</p>
@@ -74,19 +74,19 @@ const NewInvoice = ({ isOpen, onClose }) => {
                 <div className="h-full rounded-xl px-10 py-24 flex flex-col items-center justify-center text-center">
                   <IconCircleCheckFilled size="80" className="text-green-600"/>
                   <h6 className="text-xl mt-8 font-semibold max-w-xs">
-                    Invoice added
+                    Receipt added
                   </h6>
                   <p className="max-w-xs mt-1.5">
-                    Click the button below to view invoice
+                    Click the button below to view receipt
                   </p>
                   <div className="flex flex-col mt-8 space-y-3">
-                    <Link href={ `/dashboard/invoices/invoices/${ response.current._id }` }>
+                    <Link href={ `/dashboard/invoices/receipts/${ response.current._id }` }>
                       <Button variant="outlined">
                         View result
                       </Button>
                     </Link>
                     <Button onClick={ reset } variant="text">
-                      Upload another invoice
+                      Upload another receipt
                     </Button>
                   </div>
                 </div>
@@ -99,4 +99,4 @@ const NewInvoice = ({ isOpen, onClose }) => {
   );
 };
 
-export default NewInvoice;
+export default NewReceipt;
