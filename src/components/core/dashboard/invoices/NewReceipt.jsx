@@ -26,6 +26,7 @@ const NewReceipt = ({ isOpen, onClose }) => {
       const res = await createReceipt(fd);
       setIsFetching(true)
       await qc.invalidateQueries(['receipts']);
+      await qc.invalidateQueries(['invoices', 'overview']);
       setIsFetching(false)
       response.current = res.data.receipt;
       setSuccess(true);
@@ -67,7 +68,7 @@ const NewReceipt = ({ isOpen, onClose }) => {
                         'image/png': ['.png'],
                       }
                     }
-                    label="Drag and drop a picture or pdf file or click to select"
+                    label="Drag and drop a receipt in picture or pdf format or click to select"
                   />
                 </div>
               ) : (

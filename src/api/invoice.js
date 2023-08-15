@@ -77,3 +77,10 @@ export const useDeleteReceipt = (business, id) => {
     return http.delete(`/business/${ business }/receipt/${ id }`);
   });
 };
+
+export const useGetInvoicesOverview = (business) => {
+  return useQuery(['invoices', 'overview'], async () => {
+    const res = await http.get(`/business/${ business }/invoice/overview`);
+    return res.data;
+  });
+};

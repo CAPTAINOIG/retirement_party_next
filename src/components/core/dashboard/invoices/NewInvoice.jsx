@@ -26,6 +26,7 @@ const NewInvoice = ({ isOpen, onClose }) => {
       const res = await createInvoice(fd);
       setIsFetching(true)
       await qc.invalidateQueries(['invoices']);
+      await qc.invalidateQueries(['invoices', 'overview']);
       setIsFetching(false)
       response.current = res.data.invoice;
       setSuccess(true);
@@ -67,7 +68,7 @@ const NewInvoice = ({ isOpen, onClose }) => {
                         'image/png': ['.png'],
                       }
                     }
-                    label="Drag and drop a picture or pdf file or click to select"
+                    label="Drag and drop a invoice in picture or pdf format or click to select"
                   />
                 </div>
               ) : (
