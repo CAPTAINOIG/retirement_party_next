@@ -10,20 +10,20 @@ export const useAnalyzeStatement = () => {
 
 export const useCreateStatement = (business) => {
   return useMutation((body) => {
-    return http.post(`/statement/${ business }`, body)
+    return http.post(`/business/${ business }/statement`, body)
   });
 };
 
 export const useGetStatements = (business) => {
   return useQuery(['statements'], async () => {
-    const res = await http.get(`/statement/${ business }`);
+    const res = await http.get(`/business/${ business }/statement`);
     return res.data;
   }, { enabled: !!business });
 };
 
 export const useGetStatement = (business, id) => {
   return useQuery(['statements', id], async () => {
-    const res = await http.get(`/statement/${ business }/${ id }`)
+    const res = await http.get(`/business/${ business }/statement/${ id }`)
     return res.data;
   }, { enabled: !!business && !!id });
 };
@@ -37,7 +37,7 @@ export const useGetTransactionDetails = (id) => {
 
 export const useGetStatementOverview = (business) => {
   return useQuery(['statement', 'overview'], async () => {
-    const res = await http.get(`/statement/${ business }/overview`);
+    const res = await http.get(`/business/${ business }/statement/overview`);
     return res.data;
   }, { enabled: !!business });
 };
@@ -100,43 +100,43 @@ export const useAnalyzeJson = () => {
 
 export const useGetStatementSettings = (business) => {
   return useQuery(['statement', 'settings'], async () => {
-    const res = await http.get(`/statement/${ business }/settings`);
+    const res = await http.get(`/business/${ business }/statement/settings`);
     return res.data;
   }, { enabled: !!business });
 };
 
 export const useCreateStatementSettings = (business) => {
   return useMutation((body = {}) => {
-    return http.post(`/statement/${ business }/settings`, body);
+    return http.post(`/business/${ business }/statement/settings`, body);
   });
 };
 
 export const useUpdateStatementSettings = (business) => {
   return useMutation((body) => {
-    return http.patch(`/statement/${ business }/settings`, body)
+    return http.patch(`/business/${ business }/statement/settings`, body)
   });
 };
 
 export const useInitializeMbs = (business) => {
   return useMutation(({ ...body }) => {
-    return http.post(`/analysis/${ business }/mbs/initialize`, body);
+    return http.post(`/business/${ business }/statement/analysis/mbs/initialize`, body);
   });
 };
 
 export const useCheckMbsStatus = (business) => {
   return useMutation((requestId) => {
-    return http.post(`/analysis/${ business }/mbs/status`, { requestId });
+    return http.post(`/business/${ business }/statement/analysis/mbs/status`, { requestId });
   });
 };
 
 export const useSubmitMbsTicket = (business) => {
   return useMutation(({ ticketNo, password }) => {
-    return http.post(`/analysis/${ business }/mbs/submit`, { ticketNo, password });
+    return http.post(`/business/${ business }/statement/analysis/mbs/submit`, { ticketNo, password });
   });
 };
 
 export const useRetrieveMbsPdf = (business) => {
   return useMutation(({ ticketNo }) => {
-    return http.post(`/analysis/${ business }/mbs/retrieve`, { ticketNo });
+    return http.post(`/business/${ business }/statement/analysis/mbs/retrieve`, { ticketNo });
   });
 };
