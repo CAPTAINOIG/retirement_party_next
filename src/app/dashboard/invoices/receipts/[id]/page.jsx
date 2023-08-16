@@ -29,6 +29,7 @@ const ReceiptDetailsPage = ({ params: { id } }) => {
       await deleteReceipt(null);
       router.replace('/dashboard/invoices/receipts');
       await qc.invalidateQueries(['receipts'])
+      await qc.invalidateQueries(['invoices', 'overview'])
     } catch (e) {
       toast.error(e?.response?.data?.message ?? e?.message ?? 'Something went wrong, please try again');
     }
