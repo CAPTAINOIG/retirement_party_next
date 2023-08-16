@@ -11,7 +11,7 @@ const ChatOverviewPage = () => {
     <DashboardContent>
       <DashboardTitle text="Top Insights"/>
       <div className="grid md:grid-cols-3 gap-5 md:gap-6">
-        <Link href={ '/dashboard/insights/conversations' } className="flex">
+        <Link href={ '/dashboard/assistant/conversations' } className="flex">
           <Card
             hover
             className="px-6 py-12 h-full w-full flex flex-col items-center justify-center cursor-pointer"
