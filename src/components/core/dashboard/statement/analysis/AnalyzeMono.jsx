@@ -12,7 +12,6 @@ import {
 import IconButton from "@/components/global/IconButton";
 import { IconArrowLeft, IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import { useForm } from "react-hook-form";
-import { Tab } from "@headlessui/react";
 import classNames from "classnames";
 import Input from "@/components/global/Input";
 import { capitalize, delay } from "@/lib/utils";
@@ -21,6 +20,7 @@ import Link from "next/link";
 import { GridLoader } from "react-spinners";
 import { useGetUserBusiness } from "@/api/business";
 import { useQueryClient } from "@tanstack/react-query";
+import Tabs from "@/components/global/Tabs";
 
 const CLAN_API_KEY = process.env.CLAN_API_KEY;
 
@@ -240,28 +240,16 @@ const AnalyzeMonoLogin = ({ institution, onBack }) => {
                   </div>
                   <div>
                     <img src={ institution.icon } alt={ institution.name } className="w-24"/>
-                    <Tab.Group selectedIndex={ tabIndex } onChange={ i => setTabIndex(i) } as="div" className="mt-6">
-                      <Tab.List className="inline-flex p-1.5 space-x-1 bg-blue-900/5 rounded-full">
-                        {
-                          institution.auth_methods.map(method => (
-                            <Tab
-                              key={ method._id }
-                              className={ ({ selected }) =>
-                                classNames(
-                                  'py-1.5 px-6 text-[.96rem] leading-5 font-medium rounded-full focus:outline-none transition-all duration-150',
-                                  selected ? 'bg-white text-primary-800 shadow' : 'text-slate-500 hover:bg-white/[0.12]'
-                                )
-                              }
-                            >
-                              { method.name }
-                            </Tab>
-                          ))
-                        }
-                      </Tab.List>
-                      <Tab.Panels className="mt-6">
-                        {
-                          institution.auth_methods.map(method => (
-                            <Tab.Panel key={ method._id }>
+                    <Tabs
+                      index={ tabIndex }
+                      onChange={ setTabIndex }
+                      className="mt-8"
+                      tabs={
+                        institution.auth_methods.map(method => ({
+                          key: method._id,
+                          name: method.name,
+                          panel: (
+                            <>
                               <h4 className="mb-6 px-2 text-lg font-medium">{ method.ui.title }</h4>
                               <form onSubmit={ handleSubmit(handleLogin) }>
                                 {
@@ -296,11 +284,11 @@ const AnalyzeMonoLogin = ({ institution, onBack }) => {
                                   Login
                                 </Button>
                               </form>
-                            </Tab.Panel>
-                          ))
-                        }
-                      </Tab.Panels>
-                    </Tab.Group>
+                            </>
+                          )
+                        }))
+                      }
+                    />
                   </div>
                 </>
               )
