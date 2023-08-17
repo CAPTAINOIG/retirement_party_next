@@ -32,13 +32,13 @@ const Hero = () => {
     <div className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] pattern-2 relative">
       <div className="container">
         <h1
-          className="mx-auto max-w-4xl font-display text-[3.2rem] sm:text-7xl md:text-8xl font-bold !leading-[1.1] tracking-tight text-slate-300"
+          className="mx-auto max-w-4xl font-display text-[3.2rem] sm:text-7xl md:text-8xl font-bold !leading-[1.05] tracking-tight text-slate-300"
         >
           Ai Simplified insights for African{ ' ' }<br/>
           <span
             ref={ el }
             className="relative font-bold bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent"
-          />.
+          >businesses</span>.
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-lg tracking-tight text-slate-400">
           We use AI to simplify data and documents for businesses, consumers and governments.
