@@ -3,11 +3,9 @@ import SimpleDropdown from "@/components/global/SimpleDropdown";
 import { IconChevronDown, IconLogout, IconUserCog } from "@tabler/icons-react";
 import { useAuth } from "@/hooks/use-auth";
 import classNames from "classnames";
-import { useRouter } from "next/navigation";
 
 const UserDropdown = ({ className }) => {
   const { user, logout } = useAuth();
-  const router = useRouter();
 
   const handleLogout = () => {
     logout();
@@ -27,7 +25,13 @@ const UserDropdown = ({ className }) => {
         </div>
       }
       items={ [
-        { text: 'Account settings', icon: <IconUserCog size="18"/>, onClick: () => router.push('/dashboard/account') },
+        {
+          text: 'Account settings',
+          icon: <IconUserCog size="18"/>,
+          onClick: () => {
+            location.href = 'https://app.statisense.co/account';
+          }
+        },
         { text: 'Logout', icon: <IconLogout size="18"/>, onClick: handleLogout },
       ] }
     />

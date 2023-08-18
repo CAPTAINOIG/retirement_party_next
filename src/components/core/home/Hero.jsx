@@ -43,7 +43,7 @@ const Hero = () => {
         <p className="mx-auto mt-8 max-w-2xl text-lg tracking-tight text-slate-400">
           We use AI to simplify data and documents for businesses, consumers and governments.
         </p>
-        <Link href={ "/register" } className="inline-flex mt-12">
+        <Link href={ "https://app.statisense.co/register" } className="inline-flex mt-12">
           <Button size="xl" rightIcon={ <IconChevronRight size="20"/> } color="white">
             Get started
           </Button>

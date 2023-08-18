@@ -75,7 +75,7 @@ const Navbar = () => {
                                   products.slice(0, 6).map(product => (
                                     <Link
                                       key={ product.name }
-                                      href={ product.dashboardLink }
+                                      href={ `https://app.statisense.co/${ product.slug }` }
                                       className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
                                     >
                                       <div className="mr-4">
@@ -112,12 +112,12 @@ const Navbar = () => {
                 {
                   !user ? (
                     <>
-                      <Link href={ "/login" }>
+                      <Link href={ "https://app.statisense.co/login" }>
                         <Button variant="subtle" color={ scrolled ? "black" : "white" }>Sign in</Button>
                       </Link>
                       {
                         scrolled && (
-                          <Link href={ "/register" }>
+                          <Link href={ "https://app.statisense.co/register" }>
                             <Button>Get started</Button>
                           </Link>
                         )
@@ -201,13 +201,13 @@ const Navbar = () => {
                   <hr className="mx-2 my-2 border-zinc-300/40"/>
                 </div>
                 <Link
-                  onClick={ () => setIsMobileNavVisible(false) } href={ "/login" }
+                  onClick={ () => setIsMobileNavVisible(false) } href={ "https://app.statisense.co/login" }
                   className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
                 >
                   Sign in
                 </Link>
                 <Link
-                  onClick={ () => setIsMobileNavVisible(false) } href={ "/register" }
+                  onClick={ () => setIsMobileNavVisible(false) } href={ "https://app.statisense.co/register" }
                   className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
                 >
                   Sign up
