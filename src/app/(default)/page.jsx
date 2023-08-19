@@ -17,14 +17,17 @@ const HomePage = () => {
       <div className="pt-28 md:pt-40">
        <Analytic/>
       </div>
-      <div className="py-28 md:py-40">
+      <div className="py-28 md:py-40 relative">
         <PlugYourData/>
+        <div className="xl:block hidden absolute bottom-[-1rem] w-full">
+          <img alt="curve" src="/images/curve-2.svg"/>
+        </div>
       </div>
-      <div className="bg-white py-28 md:py-40 space-y-32 md:space-y-48">
+      <div className="bg-white py-28 md:py-40 xl:md:pt-[2rem] space-y-32 md:space-y-48">
         <SupportingSectors/>
       </div>
       <HowItWorks/>
-      <div className="bg-white py-28 md:py-40 space-y-32 md:space-y-36">
+      <div className="bg-white py-28 md:py-40 space-y-32 md:space-y-36 xl:mt-[-2rem] xl:pt-[6rem]">
         <Categories/>
         <InsightsOnTheGo/>
       </div>

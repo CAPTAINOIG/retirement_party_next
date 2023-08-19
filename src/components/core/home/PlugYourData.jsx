@@ -10,7 +10,7 @@ const PlugYourData = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container xl:pb-[15rem]">
         <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
           <ChatSimulation/>
           <div className="relative mt-12 max-w-lg mx-auto">

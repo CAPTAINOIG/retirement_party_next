@@ -48,7 +48,7 @@ const Analytic = () => {
                       className="text-[.92rem] overflow-hidden text-ellipsis whitespace-nowrap opacity-80">Opay -
                       mono</p>
                     </div>
-                    <a className="ml-auto" href="/statement/analysis/64de05a27194c20a68257893">
+                    <a className="ml-auto" href="#">
                       <button type="button"
                               className="px-4 py-1 text-[.94rem] border border-gray-300 text-gray-800 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 rounded-full transition duration-100 inline-flex items-center whitespace-nowrap">
                         <span className="flex-1">View</span></button>
@@ -70,14 +70,14 @@ const Analytic = () => {
                     <div className="px-4 overflow-hidden"><p className="font-medium">Jude Francis</p><p
                       className="text-[.92rem] overflow-hidden text-ellipsis whitespace-nowrap opacity-80">Kuda Bank -
                       mono</p></div>
-                    <a className="ml-auto" href="/statement/analysis/64d3d526085e4637426bf5a8">
+                    <a className="ml-auto" href="#">
                       <button type="button"
                               className="px-4 py-1 text-[.94rem] border border-gray-300 text-gray-800 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 rounded-full transition duration-100 inline-flex items-center whitespace-nowrap">
                         <span className="flex-1">View</span></button>
                     </a></div>
                   <hr/>
                   <a className="w-full hover:bg-gray-50 flex items-center justify-center px-8 font-medium text-md"
-                     href="/statement/analysis">View all <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                     href="#">View all <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                               viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                               stroke-width="2" stroke-linecap="round"
                                                               stroke-linejoin="round" className="ml-4">
@@ -109,7 +109,7 @@ const Analytic = () => {
               className="absolute animate-bounceTwo delay-six bg-white rounded-lg shadow-lg bottom-[7rem] right-[-5rem] grid gap-2 px-4 py-4 grid-cols-2">
               <a
                 className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
-                href="/custom-report">
+                href="#">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center text-white !bg-red-500">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -122,7 +122,7 @@ const Analytic = () => {
                 <div className="mt-2"><p className="text-sm text-gray-900">Custom report</p></div>
               </a><a
               className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
-              href="/financial-report">
+              href="#">
               <div className="w-10 h-10 rounded-full flex items-center justify-center text-white !bg-indigo-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -140,7 +140,7 @@ const Analytic = () => {
               <div className="mt-2"><p className="text-sm text-gray-900">Financial report</p></div>
             </a><a
               className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
-              href="/assistant">
+              href="#">
               <div className="w-10 h-10 rounded-full flex items-center justify-center text-white !bg-blue-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -154,7 +154,7 @@ const Analytic = () => {
               <div className="mt-2"><p className="text-sm text-gray-900">Data assistant</p></div>
             </a><a
               className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
-              href="/statement">
+              href="#">
               <div className="w-10 h-10 rounded-full flex items-center justify-center text-white !bg-teal-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
