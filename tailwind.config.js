@@ -51,12 +51,18 @@ module.exports = {
           "11.67%": {transform: 'rotate(0deg) scale(1.2)'},
           "16.67%": {transform: 'scale(1)'},
           "100%": {transform: 'scale(1)'}
+        },
+        bounceThree: {
+          "5%": {transform: 'scale(1.2) translateY(-20px)'},
+          "16.67%": {transform: 'scale(1)'},
+          "100%": {transform: 'scale(1)'}
         }
       },
     },
     animation: {
       bounce: "bounce 10s ease infinite",
-      bounceTwo: "bounceTwo 12s ease infinite"
+      bounceTwo: "bounceTwo 6s ease infinite",
+      bounceThree: "bounceThree 12s ease infinite"
     },
     container: {
       center: true,

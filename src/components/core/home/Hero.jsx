@@ -31,7 +31,7 @@ const Hero = () => {
 
   return (
     <div className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] pattern-2 relative overflow-hidden">
-      <div className="absolute top-[-0.1rem] opacity-20 w-[650px] h-[100px] right-[33%]">
+      <div className="absolute animate-bounceThree top-[-0.4rem] opacity-20 w-[650px] h-[100px] right-[33%]">
         <img alt="curve" src="/images/curve.svg" />
       </div>
       <div className="absolute h-[80px] w-[80px] animate-bounce opacity-10 right-[15%] bottom-[30%]">

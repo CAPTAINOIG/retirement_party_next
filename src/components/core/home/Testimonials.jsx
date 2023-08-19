@@ -5,7 +5,7 @@ const Testimonials = () => {
   return (
     <section id="testimonials">
       <div className="container sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl flex flex-col md:items-center md:text-center">
+        <div className="mx-auto max-w-2xl flex flex-col md:items-center md:text-center !xl:mt-0">
           <h2 className="text-4xl md:text-6xl font-medium text-slate-900">
             Over 200 million social impressions
           </h2>
@@ -44,7 +44,7 @@ const Testimonials = () => {
               </li>
               <li>
                 <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
-                  <IconBrandTwitter size="100" className="animate-bounceTwo delay-two absolute bottom-6 right-6 text-slate-300/20"/>
+                  <IconBrandTwitter size="100" className="animate-bounceTwo absolute bottom-6 right-6 text-slate-300/20"/>
                   <blockquote className="relative">
                     <p className="text-lg text-slate-900">
                       I’m trying to get a hold of someone in support, I’m in a lot of trouble right now and they are
@@ -70,7 +70,7 @@ const Testimonials = () => {
             <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
               <li>
                 <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
-                  <IconBrandInstagram size="100" className="animate-bounceTwo delay-four absolute bottom-6 right-6 text-slate-300/20"/>
+                  <IconBrandInstagram size="100" className="animate-bounceTwo delay-two absolute bottom-6 right-6 text-slate-300/20"/>
                   <blockquote className="relative">
                     <p className="text-lg text-slate-900">
                       The best part about Statisense is every time I pay my employees, my bank balance doesn’t go down
@@ -93,7 +93,7 @@ const Testimonials = () => {
               </li>
               <li>
                 <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
-                  <IconBrandFacebook size="100" className="animate-bounceTwo delay-six absolute bottom-6 right-6 text-slate-300/20"/>
+                  <IconBrandFacebook size="100" className="animate-bounceTwo delay-four absolute bottom-6 right-6 text-slate-300/20"/>
                   <blockquote className="relative">
                     <p className="text-lg text-slate-900">
                       There are so many things I had to do with my old software that I just don’t dol with
@@ -117,7 +117,7 @@ const Testimonials = () => {
             <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
               <li>
                 <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
-                  <IconBrandTwitter size="100" className="animate-bounceTwo delay-eight absolute bottom-6 right-6 text-slate-300/20"/>
+                  <IconBrandTwitter size="100" className="animate-bounceTwo delay-two absolute bottom-6 right-6 text-slate-300/20"/>
                   <blockquote className="relative">
                     <p className="text-lg text-slate-900">
                       I used to have to remit tax to the EU and with Statisense I somehow don’t have to do that anymore.
@@ -138,7 +138,7 @@ const Testimonials = () => {
               </li>
               <li>
                 <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
-                  <IconBrandInstagram size="100" className="animate-bounceTwo delay-ten absolute bottom-6 right-6 text-slate-300/20"/>
+                  <IconBrandInstagram size="100" className="animate-bounceTwo delay-four absolute bottom-6 right-6 text-slate-300/20"/>
                   <blockquote className="relative">
                     <p className="text-lg text-slate-900">
                       This is the fourth email I’ve sent to your support team. I am literally being held in jail for tax

@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <div className="bg-slate-100">
       <Hero/>
-      <div className="pt-28 md:pt-40">
+      <div className="pt-28 md:py-40">
        <Analytic/>
       </div>
       <div className="py-28 md:py-40 relative">
@@ -32,7 +32,10 @@ const HomePage = () => {
         <InsightsOnTheGo/>
       </div>
       <Newsletter/>
-      <div className="bg-white py-28 md:py-40 space-y-32 md:space-y-48">
+      <div className="bg-white py-28 md:py-40 space-y-32 md:space-y-48 relative xl:space-y-[-1rem]">
+        <div className="xl:block hidden absolute top-[-20%] w-full z-10">
+          <img alt="curve" src="/images/curve-3.svg"/>
+        </div>
         <Testimonials/>
       </div>
     </div>
