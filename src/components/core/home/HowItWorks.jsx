@@ -16,23 +16,17 @@ const HowItWorks = () => {
         <div className="space-y-8">
           <ul role="list" className="mt-16 grid md:grid-cols-3 gap-8">
             <li className="rounded-3xl bg-slate-700/30 px-10 md:px-10 py-10 md:py-12">
-              <IconDatabase className="mb-6 text-primary-300/60" size="48"/>
+              <IconDatabase className="animate-bounce mb-6 text-primary-300/60" size="48"/>
               <h3 className="font-medium text-lg md:text-xl flex items-center">
-                <span
-                  className="w-7 h-7 rounded-full inline-flex items-center justify-center bg-slate-700/60 text-slate-300 mr-2 text-md"
-                >1</span>
                 Plug your data
               </h3>
               <p className="mt-2 text-base opacity-70">
                 Random or from template, we have your covered
               </p>
             </li>
-            <li className="rounded-3xl bg-slate-700/30 px-10 md:px-10 py-10 md:py-12">
-              <IconRobot className="mb-6 text-primary-300/60" size="48"/>
+            <li className="rounded-3xl bg-slate-700/30 px-10 md:px-10 py-10 md:py-12 group">
+              <IconRobot className="animate-bounce delay-two mb-6 text-primary-300/60" size="48"/>
               <h3 className="font-medium text-lg md:text-xl flex items-center">
-                <span
-                  className="w-7 h-7 rounded-full inline-flex items-center justify-center bg-slate-700/60 text-slate-300 mr-2 text-md"
-                >2</span>
                 AI takes over
               </h3>
               <p className="mt-2 text-base opacity-70">
@@ -40,11 +34,8 @@ const HowItWorks = () => {
               </p>
             </li>
             <li className="rounded-3xl bg-slate-700/30 px-10 md:px-10 py-10 md:py-12">
-              <IconMessage2 className="mb-6 text-primary-300/60" size="48"/>
+              <IconMessage2 className="animate-bounce delay-four mb-6 text-primary-300/60" size="48"/>
               <h3 className="font-medium text-lg md:text-xl flex items-center">
-                <span
-                  className="w-7 h-7 rounded-full inline-flex items-center justify-center bg-slate-700/60 text-slate-300 mr-2 text-md"
-                >3</span>
                 Chat with Lens
               </h3>
               <p className="mt-2 text-base opacity-70">
@@ -54,11 +45,8 @@ const HowItWorks = () => {
           </ul>
           <ul role="list" className="grid md:grid-cols-6 gap-8">
             <li className="md:col-start-2 md:col-span-2 rounded-3xl bg-slate-700/30 px-10 md:px-10 py-10 md:py-12">
-              <IconChartInfographic className="mb-6 text-primary-300/60" size="48"/>
+              <IconChartInfographic className="animate-bounce delay-six mb-6 text-primary-300/60" size="48"/>
               <h3 className="font-medium text-lg md:text-xl flex items-center">
-                <span
-                  className="w-7 h-7 rounded-full inline-flex items-center justify-center bg-slate-700/60 text-slate-300 mr-2 text-md"
-                >4</span>
                 View report
               </h3>
               <p className="mt-2 text-base opacity-70">
@@ -66,11 +54,8 @@ const HowItWorks = () => {
               </p>
             </li>
             <li className="md:col-span-2 rounded-3xl bg-slate-700/30 px-10 md:px-10 py-10 md:py-12">
-              <IconRepeat className="mb-6 text-primary-300/60" size="48"/>
+              <IconRepeat className="animate-bounce delay-eight mb-6 text-primary-300/60" size="48"/>
               <h3 className="font-medium text-lg md:text-xl flex items-center">
-                <span
-                  className="w-7 h-7 rounded-full inline-flex items-center justify-center bg-slate-700/60 text-slate-300 mr-2 text-md"
-                >5</span>
                 Repeat
               </h3>
               <p className="mt-2 text-base opacity-70">

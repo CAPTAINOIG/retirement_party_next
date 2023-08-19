@@ -26,7 +26,7 @@ const InsightsOnTheGo = () => {
           >
             <div className="relative w-full">
               <div className="relative z-[3]">
-                <img src="/images/laptop.png" alt="Laptop" className="w-full rounded-3xl"/>
+                <img src="/images/laptop.gif" alt="Laptop" className="w-full rounded-3xl"/>
               </div>
             </div>
           </div>

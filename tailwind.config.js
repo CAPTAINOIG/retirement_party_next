@@ -37,6 +37,26 @@ module.exports = {
       ringWidth: {
         '3': '3px',
       },
+      keyframes: {
+        bounce: {
+          "0%, 4%, 10%, 16%, 20%": {transform: 'translateY(0)'},
+          "8%": {transform: 'translateY(-20px)'},
+          "12%": {transform: 'translateY(-10px)'},
+          "100%": {transform: 'translateY(0)'}
+        },
+        bounceTwo: {
+          "5%": {transform: 'scale(1.2)'},
+          "6.67%, 10%": {transform: 'rotate(-20deg) scale(1.2)'},
+          "8.33%": {transform: 'rotate(20deg) scale(1.2)'},
+          "11.67%": {transform: 'rotate(0deg) scale(1.2)'},
+          "16.67%": {transform: 'scale(1)'},
+          "100%": {transform: 'scale(1)'}
+        }
+      },
+    },
+    animation: {
+      bounce: "bounce 10s ease infinite",
+      bounceTwo: "bounceTwo 12s ease infinite"
     },
     container: {
       center: true,

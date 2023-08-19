@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .delay-two {
+    animation-delay: 2s;
+  }
+
+  .delay-four {
+    animation-delay: 4s;
+  }
+  .delay-six {
+    animation-delay: 6s;
+  }
+  .delay-eight {
+    animation-delay: 8s;
+  }
+  .delay-ten {
+    animation-delay: 10s;
+  }
+}
+
 * {
   font-family: "Plus Jakarta Sans", sans-serif;
   outline: transparent !important;

@@ -131,8 +131,9 @@ const PlugYourData = () => {
     <>
       <div ref={ref} className="container">
         <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
-          <div className="h-[550px] overflow-hidden bg-white shadow rounded-[24px] p-10">
-            <div ref={section} className={`duration-500 ease-in-out`}>
+          <div className="md:h-[550px] overflow-hidden md:bg-white md:shadow md:rounded-[24px] md:p-10">
+            <img className="block md:hidden" src="/images/1.png"/>
+            <div ref={section} className={`duration-500 ease-in-out hidden md:block`}>
               <div className="flex items-center justify-end">
                 <div className="flex items-center gap-3">
                   <div className="bg-[#F1F5F9] p-6 rounded-[12px]">

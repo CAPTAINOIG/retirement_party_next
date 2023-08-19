@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import Typed from "typed.js";
 import Button from "@/components/global/Button";
 import { IconChevronRight } from "@tabler/icons-react";
@@ -28,8 +28,9 @@ const Hero = () => {
     }
   }, []);
 
+
   return (
-    <div className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] pattern-2 relative">
+    <div className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] pattern-2 relative overflow-hidden">
       <div className="container">
         <h1
           className="mx-auto max-w-4xl font-display text-[3.2rem] sm:text-7xl md:text-8xl font-bold !leading-[1.05] tracking-tight text-slate-300"
