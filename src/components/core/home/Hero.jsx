@@ -32,9 +32,6 @@ const Hero = () => {
   return (
     <div className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] relative overflow-hidden">
       <div className="absolute inset-0 bg-cover bg-hero animate-wide"></div>
-      <div className="absolute animate-bounceThree top-[-0.4rem] opacity-20 w-[650px] h-[100px] right-[33%]">
-        <img alt="curve" src="/images/curve.svg" />
-      </div>
       <div className="container z-10 relative">
         <h1
           className="mx-auto max-w-4xl font-display text-[3.2rem] sm:text-7xl md:text-8xl font-bold !leading-[1.05] tracking-tight text-slate-300"
