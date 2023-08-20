@@ -37,6 +37,9 @@ module.exports = {
       ringWidth: {
         '3': '3px',
       },
+      backgroundImage: {
+        hero: "linear-gradient(rgb(0 0 0 / 80%),rgb(0 0 0 / 80%)), url(/images/6.jpg)"
+      },
       keyframes: {
         bounce: {
           "0%, 4%, 10%, 16%, 20%": {transform: 'translateY(0)'},
@@ -56,13 +59,19 @@ module.exports = {
           "5%": {transform: 'scale(1.2) translateY(-20px)'},
           "16.67%": {transform: 'scale(1)'},
           "100%": {transform: 'scale(1)'}
+        },
+        wide:{
+          "0%":{transform: 'scale(1)'},
+          "50%":{transform: 'scale(1.2)'},
+          "100%":{transform: 'scale(1)'}
         }
       },
     },
     animation: {
       bounce: "bounce 10s ease infinite",
       bounceTwo: "bounceTwo 6s ease infinite",
-      bounceThree: "bounceThree 12s ease infinite"
+      bounceThree: "bounceThree 12s ease infinite",
+      wide: "wide 15s ease infinite"
     },
     container: {
       center: true,

@@ -1,5 +1,5 @@
 "use client"
-import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import Typed from "typed.js";
 import Button from "@/components/global/Button";
 import { IconChevronRight } from "@tabler/icons-react";
@@ -30,14 +30,12 @@ const Hero = () => {
 
 
   return (
-    <div className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] pattern-2 relative overflow-hidden">
+    <div className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] relative overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-hero animate-wide"></div>
       <div className="absolute animate-bounceThree top-[-0.4rem] opacity-20 w-[650px] h-[100px] right-[33%]">
         <img alt="curve" src="/images/curve.svg" />
       </div>
-      <div className="absolute h-[80px] w-[80px] animate-bounce opacity-10 right-[15%] bottom-[30%]">
-        <img alt="circle" src="/images/circle.svg"/>
-      </div>
-      <div className="container">
+      <div className="container z-10 relative">
         <h1
           className="mx-auto max-w-4xl font-display text-[3.2rem] sm:text-7xl md:text-8xl font-bold !leading-[1.05] tracking-tight text-slate-300"
         >
