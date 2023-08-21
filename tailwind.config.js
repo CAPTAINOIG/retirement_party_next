@@ -38,7 +38,7 @@ module.exports = {
         '3': '3px',
       },
       backgroundImage: {
-        hero: "linear-gradient(rgb(0 0 0 / 80%),rgb(0 0 0 / 80%)), url(/images/6.jpg)"
+        hero: "linear-gradient(rgb(0 0 0 / 80%),rgb(0 0 0 / 80%)), url(/images/8.jpg)"
       },
       keyframes: {
         bounce: {
@@ -62,7 +62,7 @@ module.exports = {
         },
         wide:{
           "0%":{transform: 'scale(1)'},
-          "50%":{transform: 'scale(1.2)'},
+          "50%":{transform: 'scale(1.3)'},
           "100%":{transform: 'scale(1)'}
         }
       },
