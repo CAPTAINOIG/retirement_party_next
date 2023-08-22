@@ -24,7 +24,7 @@ const Newsletter = ({ sm = false }) => {
 
   return (
     <div
-      className={ classNames('xl:pb-[25rem] bg-[#11100f] text-zinc-100 px-10 md:px-20 bg-gradient-1', sm ? 'py-24' : 'py-40') }
+      className={ classNames('bg-[#11100f] text-zinc-100 px-10 md:px-20 bg-gradient-1', sm ? 'py-24' : 'py-40 xl:pb-[25rem]') }
     >
       {
         view === 'form' && (
