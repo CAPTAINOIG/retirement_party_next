@@ -24,7 +24,7 @@ const Analytic = () => {
         <div>
           <img className="block md:hidden pt-10 w-full" src="/images/2.png"/>
           <div className="md:block hidden relative">
-            <div className="absolute animate-bounce rounded-lg bg-white shadow-lg top-[18rem] left-[-7rem]">
+            <div className="absolute animate-bounce rounded-[1.2rem] bg-white shadow-lg top-[18rem] left-[-7rem]">
               <div className="px-8 py-6">
                 <div className="flex items-center mb-8"><h3 className="font-semibold text-base mr-4">Recent
                   analysis</h3>
@@ -44,7 +44,7 @@ const Analytic = () => {
                         </svg>
                       </div>
                     </div>
-                    <div className="px-4 overflow-hidden"><p className="font-medium">Jude Francis</p><p
+                    <div className="px-4 overflow-hidden"><p className="font-medium">John Doe</p><p
                       className="text-[.92rem] overflow-hidden text-ellipsis whitespace-nowrap opacity-80">Opay -
                       mono</p>
                     </div>
@@ -67,7 +67,7 @@ const Analytic = () => {
                         </svg>
                       </div>
                     </div>
-                    <div className="px-4 overflow-hidden"><p className="font-medium">Jude Francis</p><p
+                    <div className="px-4 overflow-hidden"><p className="font-medium">Jane Doe</p><p
                       className="text-[.92rem] overflow-hidden text-ellipsis whitespace-nowrap opacity-80">Kuda Bank -
                       mono</p></div>
                     <a className="ml-auto" href="#">
@@ -106,7 +106,7 @@ const Analytic = () => {
                 Jan, 2023</p></div>
             </div>
             <div
-              className="absolute animate-bounceTwo delay-six bg-white rounded-lg shadow-lg bottom-[7rem] right-[-5rem] grid gap-2 px-4 py-4 grid-cols-2">
+              className="absolute animate-bounce delay-six bg-white rounded-[1.2rem] shadow-lg bottom-[7rem] right-[-5rem] grid gap-2 px-4 py-4 grid-cols-2">
               <a
                 className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                 href="#">

@@ -49,7 +49,7 @@ const InsightsOnTheGo = () => {
             <div className="relative w-full">
               <img alt="img" className="mt-10 w-full block md:hidden" src="/images/5.png" />
               <div className="relative z-[3] hidden md:block">
-                <div className="absolute animate-bounce bg-white border shadow rounded-lg top-[5rem] left-[-5rem] p-6">
+                <div className="absolute animate-bounce bg-white border shadow rounded-[1.2rem] top-[5rem] left-[-5rem] p-6">
                   <div className="flex items-center gap-4 my-3">
                     <svg className="w-[40px] h-[40px] rounded-full bg-black fill-white p-2"
                          xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
@@ -82,7 +82,7 @@ const InsightsOnTheGo = () => {
                   </div>
                 </div>
                 <div
-                  className="absolute min-h-[250px] w-[400px] bg-white border shadow rounded-lg bottom-[5rem] right-[-15rem] p-6">
+                  className="absolute min-h-[250px] w-[400px] bg-white border shadow rounded-[1.2rem] bottom-[5rem] right-[-15rem] p-6">
                   <div className="flex items-center gap-2 my-3">
                     <svg className="w-[30px] h-[30px] fill-black"
                          xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
