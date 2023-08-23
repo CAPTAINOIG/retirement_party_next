@@ -8,14 +8,14 @@ import HowItWorks from "@/components/core/home/HowItWorks";
 import SupportingSectors from "@/components/core/home/SupportingSectors";
 import Newsletter from "@/components/core/home/Newsletter";
 import Testimonials from "@/components/core/home/Testimonials";
-import Analytic from "@/components/core/home/Analytic";
+import OmniChannel from "@/components/core/home/OmniChannel";
 
 const HomePage = () => {
   return (
     <div className="bg-slate-100">
       <Hero/>
       <div className="pt-28 md:py-40">
-       <Analytic/>
+       <OmniChannel/>
       </div>
       <div className="py-28 md:py-40 relative">
         <PlugYourData/>

@@ -2,16 +2,18 @@ import React from 'react';
 import {IconArrowRight} from "@tabler/icons-react";
 import Button from "@/components/global/Button";
 
-const Analytic = () => {
+const OmniChannel = () => {
   return (
     <div className="container">
       <div className="md:grid grid-cols-2 gap-10">
         <div className="flex flex-col justify-center">
           <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
-            Analytics at your fingertips
+            The AI Omni channel for Africa's data insight.
+
           </h2>
           <p className="mt-6 text-base md:text-lg">
-            We use AI to simplify data and documents for <br className="hidden md:block"/>businesses, consumers and governments.
+            We use AI models to simplify any data set <br className="hidden md:block"/>
+            into chats, reports and infographics.
           </p>
           <div>
             <Button
@@ -24,7 +26,7 @@ const Analytic = () => {
         <div>
           <img className="block md:hidden pt-10 w-full" src="/images/2.png"/>
           <div className="md:block hidden relative">
-            <div className="absolute animate-bounce rounded-[1.2rem] bg-white shadow-lg top-[18rem] left-[-7rem]">
+            <div className="absolute animate-bounce rounded-[1.2rem] bg-white shadow top-[18rem] left-[-7rem]">
               <div className="px-8 py-6">
                 <div className="flex items-center mb-8"><h3 className="font-semibold text-base mr-4">Recent
                   analysis</h3>
@@ -45,8 +47,7 @@ const Analytic = () => {
                       </div>
                     </div>
                     <div className="px-4 overflow-hidden"><p className="font-medium">John Doe</p><p
-                      className="text-[.92rem] overflow-hidden text-ellipsis whitespace-nowrap opacity-80">Opay -
-                      mono</p>
+                      className="text-[.92rem] overflow-hidden text-ellipsis whitespace-nowrap opacity-80">Opay</p>
                     </div>
                     <a className="ml-auto" href="#">
                       <button type="button"
@@ -68,8 +69,7 @@ const Analytic = () => {
                       </div>
                     </div>
                     <div className="px-4 overflow-hidden"><p className="font-medium">Jane Doe</p><p
-                      className="text-[.92rem] overflow-hidden text-ellipsis whitespace-nowrap opacity-80">Kuda Bank -
-                      mono</p></div>
+                      className="text-[.92rem] overflow-hidden text-ellipsis whitespace-nowrap opacity-80">Kuda Bank </p></div>
                     <a className="ml-auto" href="#">
                       <button type="button"
                               className="px-4 py-1 text-[.94rem] border border-gray-300 text-gray-800 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 rounded-full transition duration-100 inline-flex items-center whitespace-nowrap">
@@ -106,7 +106,7 @@ const Analytic = () => {
                 Jan, 2023</p></div>
             </div>
             <div
-              className="absolute animate-bounce delay-six bg-white rounded-[1.2rem] shadow-lg bottom-[7rem] right-[-5rem] grid gap-2 px-4 py-4 grid-cols-2">
+              className="absolute animate-bounce delay-six bg-white rounded-[1.2rem] shadow bottom-[7rem] right-[-5rem] grid gap-2 px-4 py-4 grid-cols-2">
               <a
                 className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                 href="#">
@@ -177,4 +177,4 @@ const Analytic = () => {
   );
 };
 
-export default Analytic;
+export default OmniChannel;
