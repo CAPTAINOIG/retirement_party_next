@@ -13,7 +13,7 @@ const RootLayout = ({ children }) => {
       <title>Statisense</title>
       <meta name="description" content="Statisense"/>
       <link rel="icon" href="./favicon.ico"/>
-      <link href="https://api.fontshare.com/v2/css?f[]=plus-jakarta-sans@1,2&display=swap" rel="stylesheet"/>
+      <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap" rel="stylesheet"/>
     </head>
     <body>
     <QueryProvider>
