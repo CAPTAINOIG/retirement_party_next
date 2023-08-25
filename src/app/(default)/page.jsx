@@ -33,7 +33,7 @@ const HomePage = () => {
       </div>
       <Newsletter/>
       <div className="bg-white py-28 md:py-40 space-y-32 md:space-y-48 relative xl:space-y-[-1rem]">
-        <div className="xl:block hidden absolute top-[-20%] w-full z-10">
+        <div className="xl:block hidden absolute top-[-23%] w-full z-10">
           <img alt="curve" src="/images/curve-3.svg"/>
         </div>
         <Testimonials/>
