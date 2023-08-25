@@ -8,12 +8,13 @@ const OmniChannel = () => {
       <div className="md:grid grid-cols-2 gap-10">
         <div className="flex flex-col justify-center">
           <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
-            The AI Omni channel for Africa's data insight.
-
+            The AI
+            Omnichannel
+            for Africa's data.
           </h2>
           <p className="mt-6 text-base md:text-lg">
-            We use AI models to simplify any data set <br className="hidden md:block"/>
-            into chats, reports and infographics.
+            We use AI models to simplify datasets
+            into <br className="hidden md:block"/> conversations, reports and infographics.
           </p>
           <div>
             <Button
@@ -69,7 +70,8 @@ const OmniChannel = () => {
                       </div>
                     </div>
                     <div className="px-4 overflow-hidden"><p className="font-medium">Jane Doe</p><p
-                      className="text-[.92rem] overflow-hidden text-ellipsis whitespace-nowrap opacity-80">Kuda Bank </p></div>
+                      className="text-[.92rem] overflow-hidden text-ellipsis whitespace-nowrap opacity-80">Kuda
+                      Bank </p></div>
                     <a className="ml-auto" href="#">
                       <button type="button"
                               className="px-4 py-1 text-[.94rem] border border-gray-300 text-gray-800 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 rounded-full transition duration-100 inline-flex items-center whitespace-nowrap">
@@ -78,9 +80,9 @@ const OmniChannel = () => {
                   <hr/>
                   <a className="w-full hover:bg-gray-50 flex items-center justify-center px-8 font-medium text-md"
                      href="#">View all <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                              viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                              stroke-width="2" stroke-linecap="round"
-                                                              stroke-linejoin="round" className="ml-4">
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" className="ml-4">
                     <path d="M5 12l14 0"></path>
                     <path d="M13 18l6 -6"></path>
                     <path d="M13 6l6 6"></path>
@@ -119,7 +121,7 @@ const OmniChannel = () => {
                     <path d="M9 7.07a7 7 0 0 0 1 13.93a7 7 0 0 0 6.929 -6"></path>
                   </svg>
                 </div>
-                <div className="mt-2"><p className="text-sm text-gray-900">Custom report</p></div>
+                <div className="mt-2"><p className="text-sm text-gray-900">Analyze docs</p></div>
               </a><a
               className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
               href="#">
@@ -142,16 +144,13 @@ const OmniChannel = () => {
               className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
               href="#">
               <div className="w-10 h-10 rounded-full flex items-center justify-center text-white !bg-blue-500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                     className="tabler-icon tabler-icon-message-chatbot">
-                  <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4"></path>
-                  <path d="M9.5 9h.01"></path>
-                  <path d="M14.5 9h.01"></path>
-                  <path d="M9.5 13a3.5 3.5 0 0 0 5 0"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#fff"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M120-120v-76l60-60v136h-60Zm165 0v-236l60-60v296h-60Zm165 0v-296l60 61v235h-60Zm165 0v-235l60-60v295h-60Zm165 0v-396l60-60v456h-60ZM120-356v-85l280-278 160 160 280-281v85L560-474 400-634 120-356Z"/>
                 </svg>
               </div>
-              <div className="mt-2"><p className="text-sm text-gray-900">Data assistant</p></div>
+              <div className="mt-2"><p className="text-sm text-gray-900">Market data</p></div>
             </a><a
               className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
               href="#">
@@ -166,7 +165,7 @@ const OmniChannel = () => {
                   <path d="M9 17l6 0"></path>
                 </svg>
               </div>
-              <div className="mt-2"><p className="text-sm text-gray-900">Bank statement</p></div>
+              <div className="mt-2"><p className="text-sm text-gray-900">Account insight</p></div>
             </a>
             </div>
             <img className="w-full" src="/images/4.png"/>

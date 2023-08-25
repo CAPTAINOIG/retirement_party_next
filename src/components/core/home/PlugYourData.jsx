@@ -1,7 +1,7 @@
 "use client"
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Button from "@/components/global/Button";
-import { IconArrowRight } from "@tabler/icons-react";
+import {IconArrowRight} from "@tabler/icons-react";
 import TestRun from "@/components/core/shared/TestRun";
 import ChatSimulation from "@/components/core/home/ChatSimulation";
 
@@ -15,15 +15,17 @@ const PlugYourData = () => {
           <ChatSimulation/>
           <div className="relative mt-12 max-w-lg mx-auto">
             <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
-              Plug your business data and docs,
-              Chat with <span className="text-primary-600">Lens</span>.
+              Convert your data
+              into conversations
+              <span className="text-primary-600"> infographics.</span>.
             </h2>
             <p className="mt-6 text-base md:text-lg">
-              We are building Africa's most robust data assistant.
+              Support your teams with conversation
+              ready insight of your customers and business data.
             </p>
             <Button
-              onClick={ () => setIsChatOpen(true) }
-              color="black" className="mt-12" rightIcon={ <IconArrowRight/> } size="lg"
+              onClick={() => setIsChatOpen(true)}
+              color="black" className="mt-12" rightIcon={<IconArrowRight/>} size="lg"
             >
               Get started
             </Button>
@@ -32,8 +34,8 @@ const PlugYourData = () => {
       </div>
 
       <TestRun
-        isOpen={ isChatOpen }
-        onClose={ () => setIsChatOpen(false) }
+        isOpen={isChatOpen}
+        onClose={() => setIsChatOpen(false)}
       />
     </>
   );

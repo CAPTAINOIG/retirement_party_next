@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconBrandFacebook, IconBrandInstagram, IconBrandTwitter } from "@tabler/icons-react";
+import {IconBrandFacebook, IconBrandInstagram, IconBrandTwitter} from "@tabler/icons-react";
 
 const Testimonials = () => {
   return (
@@ -7,7 +7,7 @@ const Testimonials = () => {
       <div className="container sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl flex flex-col md:items-center md:text-center !xl:mt-0">
           <h2 className="text-4xl md:text-6xl font-medium text-slate-900">
-            Over 200 million social impressions
+            Over 500 million social impressions
           </h2>
           <p className="mt-6 text-lg tracking-tight text-slate-700">
             Loved by businesses across Africa, our data insights travel far
@@ -21,7 +21,8 @@ const Testimonials = () => {
             <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
               <li>
                 <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
-                  <IconBrandFacebook size="100" className="animate-bounceTwo absolute bottom-6 right-6 text-slate-300/20"/>
+                  <IconBrandFacebook size="100"
+                                     className="animate-bounceTwo absolute bottom-6 right-6 text-slate-300/20"/>
                   <blockquote className="relative">
                     <p className="text-lg text-slate-900">
                       Statisense is so easy to use I can’t help but wonder if it’s really doing the things the
@@ -34,7 +35,6 @@ const Testimonials = () => {
                   >
                     <div>
                       <div className="font-display text-base text-slate-900">Sheryl Berge</div>
-                      <div className="mt-1 text-sm text-slate-500">CEO</div>
                     </div>
                     <div className="overflow-hidden rounded-full bg-slate-50">
                       <img src="" alt=""/>
@@ -44,7 +44,13 @@ const Testimonials = () => {
               </li>
               <li>
                 <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
-                  <IconBrandTwitter size="100" className="animate-bounceTwo absolute bottom-6 right-6 text-slate-300/20"/>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" width="70px" height="70px" fill="currentColor"
+                       className="animate-bounceTwo absolute bottom-6 right-6 text-slate-300/20">
+                    <g>
+                      <path
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </g>
+                  </svg>
                   <blockquote className="relative">
                     <p className="text-lg text-slate-900">
                       I’m trying to get a hold of someone in support, I’m in a lot of trouble right now and they are
@@ -56,7 +62,6 @@ const Testimonials = () => {
                   >
                     <div>
                       <div className="font-display text-base text-slate-900">Amy Hahn</div>
-                      <div className="mt-1 text-sm text-slate-500">Director</div>
                     </div>
                     <div className="overflow-hidden rounded-full bg-slate-50">
                       <img src="" alt=""/>
@@ -70,7 +75,8 @@ const Testimonials = () => {
             <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
               <li>
                 <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
-                  <IconBrandInstagram size="100" className="animate-bounceTwo delay-two absolute bottom-6 right-6 text-slate-300/20"/>
+                  <IconBrandInstagram size="100"
+                                      className="animate-bounceTwo delay-two absolute bottom-6 right-6 text-slate-300/20"/>
                   <blockquote className="relative">
                     <p className="text-lg text-slate-900">
                       The best part about Statisense is every time I pay my employees, my bank balance doesn’t go down
@@ -83,7 +89,6 @@ const Testimonials = () => {
                   >
                     <div>
                       <div className="font-display text-base text-slate-900">Leland Kiehn</div>
-                      <div className="mt-1 text-sm text-slate-500">Founder of Kiehn and Sons</div>
                     </div>
                     <div className="overflow-hidden rounded-full bg-slate-50">
                       <img src="" alt=""/>
@@ -93,7 +98,8 @@ const Testimonials = () => {
               </li>
               <li>
                 <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
-                  <IconBrandFacebook size="100" className="animate-bounceTwo delay-four absolute bottom-6 right-6 text-slate-300/20"/>
+                  <IconBrandFacebook size="100"
+                                     className="animate-bounceTwo delay-four absolute bottom-6 right-6 text-slate-300/20"/>
                   <blockquote className="relative">
                     <p className="text-lg text-slate-900">
                       There are so many things I had to do with my old software that I just don’t dol with
@@ -103,7 +109,6 @@ const Testimonials = () => {
                     className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
                     <div>
                       <div className="font-display text-base text-slate-900">Erin Powlowski</div>
-                      <div className="mt-1 text-sm text-slate-500">COO</div>
                     </div>
                     <div className="overflow-hidden rounded-full bg-slate-50">
                       <img src="" alt=""/>
@@ -117,7 +122,13 @@ const Testimonials = () => {
             <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
               <li>
                 <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
-                  <IconBrandTwitter size="100" className="animate-bounceTwo delay-two absolute bottom-6 right-6 text-slate-300/20"/>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" width="70px" height="70px" fill="currentColor"
+                       className="animate-bounceTwo delay-two absolute bottom-6 right-6 text-slate-300/20">
+                    <g>
+                      <path
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </g>
+                  </svg>
                   <blockquote className="relative">
                     <p className="text-lg text-slate-900">
                       I used to have to remit tax to the EU and with Statisense I somehow don’t have to do that anymore.
@@ -128,7 +139,6 @@ const Testimonials = () => {
                     className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
                     <div>
                       <div className="font-display text-base text-slate-900">Peter Renolds</div>
-                      <div className="mt-1 text-sm text-slate-500">Founder of West Inc</div>
                     </div>
                     <div className="overflow-hidden rounded-full bg-slate-50">
                       <img src="" alt=""/>
@@ -138,7 +148,8 @@ const Testimonials = () => {
               </li>
               <li>
                 <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
-                  <IconBrandInstagram size="100" className="animate-bounceTwo delay-four absolute bottom-6 right-6 text-slate-300/20"/>
+                  <IconBrandInstagram size="100"
+                                      className="animate-bounceTwo delay-four absolute bottom-6 right-6 text-slate-300/20"/>
                   <blockquote className="relative">
                     <p className="text-lg text-slate-900">
                       This is the fourth email I’ve sent to your support team. I am literally being held in jail for tax
@@ -149,7 +160,6 @@ const Testimonials = () => {
                     className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
                     <div>
                       <div className="font-display text-base text-slate-900">Amy Hahn</div>
-                      <div className="mt-1 text-sm text-slate-500">Director</div>
                     </div>
                     <div className="overflow-hidden rounded-full bg-slate-50">
                       <img src="" alt=""/>

@@ -39,7 +39,7 @@ const HowItWorks = () => {
             <li className="rounded-3xl bg-slate-700/30 px-10 md:px-10 py-10 md:py-12">
               <IconMessage2 className="animate-bounce delay-four mb-6 text-primary-300/60" size="48"/>
               <h3 className="font-medium text-lg md:text-xl flex items-center">
-                Chat with Lens
+                Chat with Bambi
               </h3>
               <p className="mt-2 text-base opacity-70">
                 Human interactive conversation style data presentation

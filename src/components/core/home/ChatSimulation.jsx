@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Typed from "typed.js";
-import { useInView } from "react-intersection-observer";
+import {useInView} from "react-intersection-observer";
 
 const ChatSimulation = () => {
   const el = useRef(null);
@@ -11,72 +11,49 @@ const ChatSimulation = () => {
   const sectFour = useRef(null)
   const sectFive = useRef(null)
   const typed = useRef(null);
-  const { ref, inView } = useInView({
+  const {ref, inView} = useInView({
     threshold: 0.5,
     triggerOnce: true
   });
   const [completed, setCompleted] = useState(0)
 
   useEffect(() => {
-    const options = {
+    const optionOne = {
       strings: [
         'Ok, I am always ready. Hit me.'
       ],
       typeSpeed: 10,
       backSpeed: 10,
-      backDelay: 1000,
       smartBackspace: true,
       showCursor: false,
-      onBegin: () => {
-        setCompleted(0)
-      },
       onComplete: () => {
         handleScroll()
       },
     };
-    if (inView) {
-      typed.current = new Typed(el.current, options);
-      return () => {
-        typed.current.destroy();
-      }
-    }
-  }, [inView]);
-
-  useEffect(() => {
-    const options = {
+    const optionTwo = {
       strings: [
         'Analyzing your pdf'
       ],
       typeSpeed: 10,
       backSpeed: 10,
-      backDelay: 1000,
+      backDelay: 19500,
       smartBackspace: true,
       showCursor: false,
-      startDelay: 3500,
+      startDelay: 500,
       onComplete: () => {
         setCompleted(3)
-        // section.current.style.transform = "translateY(-690px)"
       },
     };
-    if (inView) {
-      typed.current = new Typed(sect.current, options);
-      return () => {
-        typed.current.destroy();
-      }
-    }
-  }, [inView]);
-
-  useEffect(() => {
-    const options = {
+    const optionThree = {
       strings: [
         'I am done analyzing...ask me anything'
       ],
       typeSpeed: 10,
       backSpeed: 10,
-      backDelay: 1000,
       smartBackspace: true,
+      backDelay: 20500,
       showCursor: false,
-      startDelay: 4500,
+      startDelay: 500,
       onComplete: () => {
         setCompleted(4)
         setTimeout(function () {
@@ -85,25 +62,15 @@ const ChatSimulation = () => {
         }, 2000);
       },
     };
-    if (inView) {
-      typed.current = new Typed(sectTwo.current, options);
-      return () => {
-        typed.current.destroy();
-      }
-    }
-  }, [inView]);
-
-  useEffect(() => {
-    const options = {
+    const optionFour = {
       strings: [
         'From what I see, Access bank made the most money from e-banking charges in HY 2021. Topping the lot with N29.9b followed by UBA and FBN, the third on the list making more than FCMB, Union and Sterling put together'
       ],
       typeSpeed: 10,
       backSpeed: 10,
-      backDelay: 1000,
       smartBackspace: true,
       showCursor: false,
-      startDelay: 7500,
+      startDelay: 500,
       onComplete: () => {
         setCompleted(6)
         section.current.style.transform = "translateY(-840px)"
@@ -113,24 +80,15 @@ const ChatSimulation = () => {
         }, 2000);
       },
     };
-    if (inView) {
-      typed.current = new Typed(sectThree.current, options);
-      return () => {
-        typed.current.destroy();
-      }
-    }
-  }, [inView]);
-  useEffect(() => {
-    const options = {
+    const optionFive = {
       strings: [
         'Ok will do. Give me a sec to generate it..'
       ],
       typeSpeed: 10,
       backSpeed: 10,
-      backDelay: 1000,
       smartBackspace: true,
       showCursor: false,
-      startDelay: 13500,
+      startDelay: 500,
       onComplete: () => {
         setCompleted(8)
         section.current.style.transform = "translateY(-1120px)"
@@ -144,47 +102,66 @@ const ChatSimulation = () => {
         }, 3000);
       },
     };
-    if (inView) {
-      typed.current = new Typed(sectFour.current, options);
-      return () => {
-        typed.current.destroy();
-      }
-    }
-  }, [inView]);
-  useEffect(() => {
-    const options = {
+    const optionSix = {
       strings: [
         'Awesome is what we do'
       ],
       typeSpeed: 10,
       backSpeed: 10,
-      backDelay: 1000,
       smartBackspace: true,
       showCursor: false,
-      startDelay: 17500,
+      startDelay: 500,
+      onComplete: () => {
+        setTimeout(function () {
+          setCompleted(0)
+          section.current.style.trasnsitionDuration = "3s"
+          section.current.style.transform = "translateY(0px)"
+        }, 2000);
+      },
     };
     if (inView) {
-      typed.current = new Typed(sectFive.current, options);
+      if (completed === 0) {
+        typed.current = new Typed(el.current, optionOne);
+      }
+      if (completed === 2) {
+        typed.current = new Typed(sect.current, optionTwo);
+      }
+      if (completed === 3) {
+        typed.current = new Typed(sectTwo.current, optionThree);
+      }
+      if (completed === 5) {
+        typed.current = new Typed(sectThree.current, optionFour);
+      }
+      if (completed === 7) {
+        typed.current = new Typed(sectFour.current, optionFive);
+      }
+      if (completed === 10) {
+        typed.current = new Typed(sectFive.current, optionSix);
+      }
       return () => {
-        typed.current.destroy();
+        // typed.current.destroy();
       }
     }
-  }, [inView]);
+  }, [inView, completed]);
+
+
   const handleScroll = () => {
     if (completed === 0) {
-      setCompleted(1)
-      section.current.style.transform = "translateY(-110px)"
+      setTimeout(function () {
+        setCompleted(1)
+        section.current.style.transform = "translateY(-110px)"
+      }, 1000);
       setTimeout(function () {
         section.current.style.transform = "translateY(-400px)"
         setCompleted(2)
-      }, 2000);
+      }, 3000);
     }
   };
 
   return (
-    <div ref={ ref } className="md:h-[550px] overflow-hidden md:bg-white md:shadow md:rounded-[24px] md:p-10 relative">
+    <div ref={ref} className="md:h-[550px] overflow-hidden md:bg-white md:shadow md:rounded-[24px] md:p-10 relative">
       <img className="block md:hidden" src="/images/1.png" alt="1"/>
-      <div ref={ section } className={ `duration-500 ease-in-out hidden md:block` }>
+      <div ref={section} className={`duration-500 ease-in-out hidden md:block`}>
         <div className="flex items-center justify-end">
           <div className="flex items-center gap-3">
             <div className="bg-[#F1F5F9] p-6 rounded-[12px]">
@@ -197,29 +174,29 @@ const ChatSimulation = () => {
         </div>
         <div className="my-8 w-[80%]">
           <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
-            <p ref={ el } className="text-base md:text-lg">
+            <p ref={el} className="text-base md:text-lg">
             </p>
           </div>
         </div>
-        <div className={ `mb-8 items-center justify-end ${ completed >= 1 ? 'flex' : 'hidden' }` }>
+        <div className={`mb-8 items-center justify-end ${completed >= 1 ? 'flex' : 'hidden'}`}>
           <div className="flex items-end gap-3">
             <img alt="img" className="shadow rounded-lg w-[80%]" src="/images/9.png"/>
             <img className="w-[50px]" src="/images/face-one.png" alt="face one"/>
           </div>
         </div>
-        <div className={ `mb-8 w-[80%] ${ completed >= 2 ? 'block' : 'hidden' }` }>
+        <div className={`mb-8 w-[80%] ${completed >= 2 ? 'block' : 'hidden'}`}>
           <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
-            <p ref={ sect } className="text-base md:text-lg">
+            <p ref={sect} className="text-base md:text-lg">
             </p>
           </div>
         </div>
-        <div className={ `mb-8 w-[80%] ${ completed >= 3 ? 'block' : 'hidden' }` }>
+        <div className={`mb-8 w-[80%] ${completed >= 3 ? 'block' : 'hidden'}`}>
           <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
-            <p ref={ sectTwo } className="text-base md:text-lg">
+            <p ref={sectTwo} className="text-base md:text-lg">
             </p>
           </div>
         </div>
-        <div className={ `mb-8 items-center justify-end ${ completed >= 4 ? 'flex' : 'hidden' }` }>
+        <div className={`mb-8 items-center justify-end ${completed >= 4 ? 'flex' : 'hidden'}`}>
           <div className="flex items-center gap-3">
             <div className="bg-[#F1F5F9] p-6 rounded-[12px]">
               <p className="text-base md:text-lg">
@@ -229,13 +206,13 @@ const ChatSimulation = () => {
             <img className="w-[50px]" src="/images/face-one.png" alt="face-one"/>
           </div>
         </div>
-        <div className={ `mb-8 w-[80%] ${ completed >= 5 ? 'block' : 'hidden' }` }>
+        <div className={`mb-8 w-[80%] ${completed >= 5 ? 'block' : 'hidden'}`}>
           <div className="bg-[#F1F5F9] p-6 rounded-[24px] min-h-[210px]">
-            <p ref={ sectThree } className="text-base md:text-lg">
+            <p ref={sectThree} className="text-base md:text-lg">
             </p>
           </div>
         </div>
-        <div className={ `mb-8 items-center justify-end ${ completed >= 6 ? 'flex' : 'hidden' }` }>
+        <div className={`mb-8 items-center justify-end ${completed >= 6 ? 'flex' : 'hidden'}`}>
           <div className="flex items-center gap-3">
             <div className="bg-[#F1F5F9] p-6 rounded-[12px]">
               <p className="text-base md:text-lg">
@@ -245,18 +222,18 @@ const ChatSimulation = () => {
             <img className="w-[50px]" src="/images/face-one.png" alt="face-one"/>
           </div>
         </div>
-        <div className={ `mb-8 w-[80%] ${ completed >= 7 ? 'block' : 'hidden' }` }>
+        <div className={`mb-8 w-[80%] ${completed >= 7 ? 'block' : 'hidden'}`}>
           <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
-            <p ref={ sectFour } className="text-base md:text-lg">
+            <p ref={sectFour} className="text-base md:text-lg">
             </p>
           </div>
         </div>
-        <div className={ `mb-8 items-center justify-start ${ completed >= 8 ? 'flex' : 'hidden' }` }>
+        <div className={`mb-8 items-center justify-start ${completed >= 8 ? 'flex' : 'hidden'}`}>
           <div className="flex items-center gap-3">
             <img alt="img" className="shadow rounded-lg w-full" src="/images/7.png"/>
           </div>
         </div>
-        <div className={ `mb-8 items-center justify-end ${ completed >= 9 ? 'flex' : 'hidden' }` }>
+        <div className={`mb-8 items-center justify-end ${completed >= 9 ? 'flex' : 'hidden'}`}>
           <div className="flex items-center gap-3">
             <div className="bg-[#F1F5F9] p-6 rounded-[12px]">
               <p className="text-base md:text-lg">
@@ -266,9 +243,9 @@ const ChatSimulation = () => {
             <img className="w-[50px]" src="/images/face-one.png" alt="face-one"/>
           </div>
         </div>
-        <div className={ `mb-8 w-[80%] ${ completed >= 10 ? 'block' : 'hidden' }` }>
+        <div className={`mb-8 w-[80%] ${completed >= 10 ? 'block' : 'hidden'}`}>
           <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
-            <p ref={ sectFive } className="text-base md:text-lg">
+            <p ref={sectFive} className="text-base md:text-lg">
             </p>
           </div>
         </div>

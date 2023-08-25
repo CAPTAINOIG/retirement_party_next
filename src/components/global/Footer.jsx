@@ -17,7 +17,7 @@ const Footer = () => {
                   Statement
                 </Link>
                 <Link href={ '/dashboard/financial-report' } className="opacity-70 hover:text-primary-300">
-                  Financial report
+                  More
                 </Link>
               </div>
             </div>
