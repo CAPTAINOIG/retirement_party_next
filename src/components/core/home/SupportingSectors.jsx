@@ -71,7 +71,7 @@ const SupportingSectors = () => {
             </p>
           </div>
         </div>
-        <div className="relative -order-1 md:order-1 overflow-hidden mt-20">
+        <div className="relative -order-1 md:order-1 overflow-hidden mt-10 md:mt-20">
           <swiper-container ref={ swiperElRef } init={ false }>
             {
               items.map((item, i) => (

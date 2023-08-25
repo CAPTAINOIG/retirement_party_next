@@ -4,8 +4,9 @@ import Button from "@/components/global/Button.jsx";
 
 const PageHeader = ({ title, subtitle, onBack, backText, isLoading = false, append }) => {
   return (
-    <div className="pt-36 pb-6 md:pb-10 md:pt-44 text-center bg-[#11100f] pattern-2">
-      <div className="container flex flex-col items-center">
+    <div className="pt-36 pb-6 md:pb-10 md:pt-44 text-center bg-[#11100f] relative overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-tw-dark min-h-screen opacity-80 scale-125"></div>
+      <div className="container flex flex-col items-center relative z-20">
         {
           !!onBack && (
             <Button

@@ -38,7 +38,7 @@ const InfographicsSearchInput = ({ className }) => {
           value={ query } onChange={ handleChange }
           onKeyUp={ e => e.key.toLowerCase() === 'enter' && handleSearch() }
           type="text" name="query" id="query" placeholder="Find infographics.."
-          className="rounded-full w-full h-[56px] md:h-[66px] py-0 pl-8 pr-16 outline-none bg-slate-200/10 shadow-md hover:outline-none focus:ring-primary-200 focus:border-primary-200"
+          className="rounded-full w-full h-[56px] md:h-[66px] py-0 pl-8 pr-16 outline-none hover:outline-none focus:border-primary-200 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm bg-slate-800 ring-0 text-slate-300 highlight-white/5 hover:bg-slate-700 transition-all duration-150"
         />
         <div className="absolute inline-flex items-center right-4 top-1/2 -translate-y-1/2 space-x-1">
           <IconButton

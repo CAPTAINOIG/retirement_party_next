@@ -41,12 +41,12 @@ const InfographicsPage = () => {
                 {
                   isCategoriesLoading ? (
                     <div className="grid md:grid-cols-3 gap-8">
-                      <div className="bg-zinc-200 w-full h-32 rounded-3xl"/>
-                      <div className="bg-zinc-200 w-full h-32 rounded-3xl"/>
-                      <div className="bg-zinc-200 w-full h-32 rounded-3xl"/>
-                      <div className="bg-zinc-200 w-full h-32 rounded-3xl"/>
-                      <div className="bg-zinc-200 w-full h-32 rounded-3xl"/>
-                      <div className="bg-zinc-200 w-full h-32 rounded-3xl"/>
+                      <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
+                      <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
+                      <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
+                      <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
+                      <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
+                      <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
                     </div>
                   ) : (
                     <>
