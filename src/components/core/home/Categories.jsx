@@ -26,14 +26,14 @@ const Categories = () => {
               Array(2).fill(null).map((_, i) => (
                 <div key={ i }>
                   <div className="hidden md:grid grid-cols-4 gap-8 px-4">
-                    <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-                    <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-                    <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-                    <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
+                    <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
+                    <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
+                    <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
+                    <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
                   </div>
                   <div className="grid md:hidden grid-cols-5 gap-5 px-4">
-                    <div className="bg-zinc-200 w-full h-32 col-span-3 rounded-xl"/>
-                    <div className="bg-zinc-200 w-full h-32 col-span-2 rounded-xl"/>
+                    <div className="bg-slate-200 w-full h-32 col-span-3 rounded-3xl"/>
+                    <div className="bg-slate-200 w-full h-32 col-span-2 rounded-3xl"/>
                   </div>
                 </div>
               ))

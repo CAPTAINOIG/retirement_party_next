@@ -11,9 +11,9 @@ const PlugYourData = () => {
   return (
     <>
       <div className="container xl:pb-[15rem]">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
           <ChatSimulation/>
-          <div className="relative mt-12 max-w-lg mx-auto">
+          <div className="relative max-w-lg mx-auto">
             <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
               Plug your business data and docs,
               Chat with <span className="text-primary-600">Lens</span>.

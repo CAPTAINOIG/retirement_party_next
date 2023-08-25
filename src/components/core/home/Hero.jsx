@@ -1,4 +1,3 @@
-"use client"
 import React, { useEffect, useRef } from 'react';
 import Typed from "typed.js";
 import Button from "@/components/global/Button";
@@ -29,19 +28,22 @@ const Hero = () => {
   }, []);
 
   return (
-    <div
-      className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] relative overflow-hidden min-h-screen"
-    >
-      <div className="absolute inset-0 bg-cover bg-right bg-hero animate-wide min-h-screen opacity-60"></div>
+    <div className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] relative overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-tw-dark origin-center opacity-80 animate-wide"
+      />
+      <div className="absolute inset-0 bg-cover bg-grid opacity-30"/>
       <div className="container z-10 relative">
         <h1
-          className="mx-auto max-w-4xl font-display text-[3.2rem] sm:text-7xl md:text-8xl font-bold !leading-[1.05] tracking-tight text-slate-300"
+          className="mx-auto max-w-[800px] font-display text-[3.6rem] sm:text-7xl md:text-8xl font-bold !leading-[1.05] tracking-tight text-slate-300"
         >
           AI Simplified insights for African{ ' ' }<br/>
           <span
             ref={ el }
             className="relative font-bold bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent"
-          >businesses</span>.
+          >
+            businesses
+          </span>.
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-lg tracking-tight text-slate-400">
           We use AI to simplify data and documents for businesses, consumers and governments.
