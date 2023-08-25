@@ -11,7 +11,7 @@ import SearchResults from "@/components/core/infographics/SearchResults";
 
 const InfographicsPage = () => {
   const params = useSearchParams();
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(params.get('q') || '');
   const { data: { categories = [] } = {}, isLoading: isCategoriesLoading } = useGetCategoriesQuery();
 
   useEffect(() => {
@@ -32,24 +32,26 @@ const InfographicsPage = () => {
         }
         <div className={ classNames('container', { 'mt-20 md:mt-28': !query }) }>
           {
-            isCategoriesLoading ? (
+            query ? (
               <>
-                <div className="grid md:grid-cols-3 gap-8">
-                  <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-                  <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-                  <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-                  <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-                  <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-                  <div className="bg-zinc-200 w-full h-32 rounded-xl"/>
-                </div>
+                <SearchResults query={ query }/>
               </>
             ) : (
               <>
                 {
-                  !!categories.length ? (
+                  isCategoriesLoading ? (
+                    <div className="grid md:grid-cols-3 gap-8">
+                      <div className="bg-zinc-200 w-full h-32 rounded-3xl"/>
+                      <div className="bg-zinc-200 w-full h-32 rounded-3xl"/>
+                      <div className="bg-zinc-200 w-full h-32 rounded-3xl"/>
+                      <div className="bg-zinc-200 w-full h-32 rounded-3xl"/>
+                      <div className="bg-zinc-200 w-full h-32 rounded-3xl"/>
+                      <div className="bg-zinc-200 w-full h-32 rounded-3xl"/>
+                    </div>
+                  ) : (
                     <>
                       {
-                        !query ? (
+                        !!categories.length ? (
                           <>
                             <div className="mx-auto max-w-4xl text-center mb-12 md:mb-16">
                               <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900">
@@ -58,21 +60,19 @@ const InfographicsPage = () => {
                             </div>
                             <div className="grid md:grid-cols-3 gap-8">
                               {
-                                categories.map((category) => (
+                                categories.filter(c => c.totalInfographics > 0).map((category) => (
                                   <CategoryCard category={ category } key={ category.name }/>
                                 ))
                               }
                             </div>
                           </>
                         ) : (
-                          <SearchResults query={ query }/>
+                          <div className="px-10 py-10 text-center opacity-50">
+                            <p className="text-lg italic">No categories added yet</p>
+                          </div>
                         )
                       }
                     </>
-                  ) : (
-                    <div className="px-10 py-10 text-center opacity-50">
-                      <p className="text-lg italic">No categories added yet</p>
-                    </div>
                   )
                 }
               </>

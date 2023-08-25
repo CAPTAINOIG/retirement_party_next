@@ -1,18 +1,24 @@
 "use client"
 import React from 'react';
 import { useRouter } from "next/navigation";
-import { useGetCategoryQuery, useGetInfographicsQuery } from "@/api/infographics";
+import { useGetCategoryInfographics, useGetCategoryQuery } from "@/api/infographics";
 import PageHeader from "@/components/core/shared/PageHeader";
 import InfographicCard from "@/components/core/infographics/InfographicCard";
+import Button from "@/components/global/Button";
+import InfographicLoadingCard from "@/components/core/infographics/InfographicLoadingCard";
 
 const CategoryInfographicsPage = ({ params: { category: slug } }) => {
   const router = useRouter();
   const { data: { category = null } = {}, isLoading: isCategoryLoading } = useGetCategoryQuery(slug);
-  const { data = {}, isLoading: isInfographicsLoading } = useGetInfographicsQuery({
-    category: category?._id, enabled: !!category?._id
-  });
+  const {
+    data,
+    isLoading: isInfographicsLoading,
+    isFetchingNextPage,
+    fetchNextPage,
+    hasNextPage
+  } = useGetCategoryInfographics(category?._id);
 
-  const { infographics = [] } = data;
+  const infographics = data?.pages.map(p => p.infographics).flat()
 
   return (
     <>
@@ -27,27 +33,34 @@ const CategoryInfographicsPage = ({ params: { category: slug } }) => {
           {
             isInfographicsLoading ? (
               <div className="grid md:grid-cols-3 gap-8">
-                {
-                  Array(3).fill(null).map((_, i) =>
-                    <div key={ i }>
-                      <div className="bg-zinc-200 w-full h-44 rounded-xl"/>
-                      <div className="bg-zinc-200 w-3/12 h-6 rounded-full mt-4"/>
-                      <div className="bg-zinc-200 w-5/12 h-6 rounded-full mt-3"/>
-                    </div>
-                  )
-                }
+                <InfographicLoadingCard/>
+                <InfographicLoadingCard/>
+                <InfographicLoadingCard/>
               </div>
             ) : (
               <>
                 {
                   !!infographics.length ? (
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <>
+                      <div className="grid md:grid-cols-3 gap-8">
+                        {
+                          infographics?.map?.((infographic) => (
+                            <InfographicCard key={ infographic._id } infographic={ infographic }/>
+                          ))
+                        }
+                      </div>
                       {
-                        infographics?.map?.((infographic) => (
-                          <InfographicCard key={ infographic._id } infographic={ infographic }/>
-                        ))
+                        hasNextPage && (
+                          <div className="mt-20 flex items-center justify-center">
+                            <Button
+                              onClick={ fetchNextPage } loading={ isFetchingNextPage } variant="outlined" size="lg"
+                            >
+                              Load more
+                            </Button>
+                          </div>
+                        )
                       }
-                    </div>
+                    </>
                   ) : (
                     <div className="p-20 text-center opacity-50">
                       <p>No infographics added yet</p>

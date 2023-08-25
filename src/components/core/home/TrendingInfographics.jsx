@@ -1,9 +1,10 @@
 import React from 'react';
-import { useGetInfographicsQuery } from "@/api/infographics.js";
+import { useGetTrendingInfographics } from "@/api/infographics.js";
 import InfographicCard from "@/components/core/infographics/InfographicCard.jsx";
+import InfographicLoadingCard from "@/components/core/infographics/InfographicLoadingCard";
 
 const TrendingInfographics = () => {
-  const { data = {}, isLoading: isInfographicsLoading } = useGetInfographicsQuery();
+  const { data = {}, isLoading: isInfographicsLoading } = useGetTrendingInfographics();
 
   const { infographics = [] } = data;
 
@@ -18,15 +19,9 @@ const TrendingInfographics = () => {
         {
           isInfographicsLoading ? (
             <div className="grid md:grid-cols-3 gap-10">
-              {
-                Array(3).fill(null).map((_, i) =>
-                  <div key={ i }>
-                    <div className="bg-zinc-200 w-full h-44 rounded-xl"/>
-                    <div className="bg-zinc-200 w-6/12 h-5 rounded-full mt-4"/>
-                    <div className="bg-zinc-200 w-4/12 h-5 rounded-full mt-3"/>
-                  </div>
-                )
-              }
+              <InfographicLoadingCard/>
+              <InfographicLoadingCard/>
+              <InfographicLoadingCard/>
             </div>
           ) : (
             <>

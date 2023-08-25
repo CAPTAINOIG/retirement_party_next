@@ -16,9 +16,6 @@ const CategoryCard = ({ category }) => {
           <h3 className="text-[1.6rem] font-medium leading-tight text-ellipsis overflow-hidden whitespace-nowrap">
             { category.name }
           </h3>
-          <p className="text-[1.1rem] opacity-70 mt-1">
-            { category.totalInfographics } infographics
-          </p>
         </div>
       </div>
     </Link>
