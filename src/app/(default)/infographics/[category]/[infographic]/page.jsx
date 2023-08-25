@@ -36,7 +36,7 @@ const InfographicDetailsPage = ({ params: { infographic: slug } }) => {
     <>
       <PageHeader
         title={ infographic?.title }
-        onBack={ () => router.push(`/infographics/${ infographic.category._id }`) }
+        onBack={ () => router.push(`/infographics/${ infographic.category.slug }`) }
         backText={ infographic?.category?.name || 'Back' }
         isLoading={ isInfographicLoading }
       />

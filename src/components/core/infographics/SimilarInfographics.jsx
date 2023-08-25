@@ -1,10 +1,11 @@
 import React from 'react';
-import { useGetInfographicsQuery } from "@/api/infographics";
+import { useGetInfographics } from "@/api/infographics";
 import InfographicCard from "@/components/core/infographics/InfographicCard";
 import { IconInfoTriangle } from "@tabler/icons-react";
+import InfographicLoadingCard from "@/components/core/infographics/InfographicLoadingCard";
 
 const SimilarInfographics = ({ infographic }) => {
-  const { data = {}, isLoading: isInfographicsLoading } = useGetInfographicsQuery({
+  const { data = {}, isLoading: isInfographicsLoading } = useGetInfographics({
     category: infographic.category._id
   });
 
@@ -15,15 +16,9 @@ const SimilarInfographics = ({ infographic }) => {
       {
         isInfographicsLoading ? (
           <div className="grid md:grid-cols-3 gap-8">
-            {
-              Array(3).fill(null).map((_, i) =>
-                <div key={ i }>
-                  <div className="bg-zinc-200 w-full h-44 rounded-xl"/>
-                  <div className="bg-zinc-200 w-3/12 h-6 rounded-full mt-4"/>
-                  <div className="bg-zinc-200 w-5/12 h-6 rounded-full mt-3"/>
-                </div>
-              )
-            }
+            <InfographicLoadingCard/>
+            <InfographicLoadingCard/>
+            <InfographicLoadingCard/>
           </div>
         ) : (
           <>
