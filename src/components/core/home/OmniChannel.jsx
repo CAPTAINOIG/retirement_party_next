@@ -8,7 +8,7 @@ const OmniChannel = () => {
       <div className="md:grid grid-cols-2 gap-10">
         <div className="flex flex-col justify-center">
           <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
-            The AI
+            The AI <br className="hidden md:block"/>
             Omnichannel
             for Africa's data.
           </h2>

@@ -7,7 +7,7 @@ const Testimonials = () => {
       <div className="container sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl flex flex-col md:items-center md:text-center !xl:mt-0">
           <h2 className="text-4xl md:text-6xl font-medium text-slate-900">
-            Over 500 million social impressions
+            Over 500 <br className="block md:hidden"/> million social impressions
           </h2>
           <p className="mt-6 text-lg tracking-tight text-slate-700">
             Loved by businesses across Africa, our data insights travel far
@@ -34,7 +34,7 @@ const Testimonials = () => {
                     className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6"
                   >
                     <div>
-                      <div className="font-display text-base text-slate-900">Sheryl Berge</div>
+                      <div className="font-display text-base text-slate-900">Toyin Adebayo</div>
                     </div>
                     <div className="overflow-hidden rounded-full bg-slate-50">
                       <img src="" alt=""/>
@@ -61,7 +61,7 @@ const Testimonials = () => {
                     className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6"
                   >
                     <div>
-                      <div className="font-display text-base text-slate-900">Amy Hahn</div>
+                      <div className="font-display text-base text-slate-900">Adeola Ibrahim</div>
                     </div>
                     <div className="overflow-hidden rounded-full bg-slate-50">
                       <img src="" alt=""/>
@@ -88,7 +88,7 @@ const Testimonials = () => {
                     className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6"
                   >
                     <div>
-                      <div className="font-display text-base text-slate-900">Leland Kiehn</div>
+                      <div className="font-display text-base text-slate-900">Emeka Mbah</div>
                     </div>
                     <div className="overflow-hidden rounded-full bg-slate-50">
                       <img src="" alt=""/>
@@ -108,7 +108,7 @@ const Testimonials = () => {
                   <figcaption
                     className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
                     <div>
-                      <div className="font-display text-base text-slate-900">Erin Powlowski</div>
+                      <div className="font-display text-base text-slate-900">Abimbola Usman</div>
                     </div>
                     <div className="overflow-hidden rounded-full bg-slate-50">
                       <img src="" alt=""/>
@@ -138,7 +138,7 @@ const Testimonials = () => {
                   <figcaption
                     className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
                     <div>
-                      <div className="font-display text-base text-slate-900">Peter Renolds</div>
+                      <div className="font-display text-base text-slate-900">Olisa Davies</div>
                     </div>
                     <div className="overflow-hidden rounded-full bg-slate-50">
                       <img src="" alt=""/>
@@ -159,7 +159,7 @@ const Testimonials = () => {
                   <figcaption
                     className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
                     <div>
-                      <div className="font-display text-base text-slate-900">Amy Hahn</div>
+                      <div className="font-display text-base text-slate-900">Anita Achebe </div>
                     </div>
                     <div className="overflow-hidden rounded-full bg-slate-50">
                       <img src="" alt=""/>
