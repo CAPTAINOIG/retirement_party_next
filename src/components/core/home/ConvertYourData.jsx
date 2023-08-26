@@ -5,7 +5,7 @@ import {IconArrowRight} from "@tabler/icons-react";
 import TestRun from "@/components/core/shared/TestRun";
 import ChatSimulation from "@/components/core/home/ChatSimulation";
 
-const PlugYourData = () => {
+const ConvertYourData = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
@@ -41,4 +41,4 @@ const PlugYourData = () => {
   );
 };
 
-export default PlugYourData;
+export default ConvertYourData;

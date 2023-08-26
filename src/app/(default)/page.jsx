@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Hero from "@/components/core/home/Hero";
-import PlugYourData from "@/components/core/home/PlugYourData";
+import ConvertYourData from "@/components/core/home/ConvertYourData";
 import Categories from "@/components/core/home/Categories";
 import InsightsOnTheGo from "@/components/core/home/InsightsOnTheGo";
 import HowItWorks from "@/components/core/home/HowItWorks";
@@ -18,7 +18,7 @@ const HomePage = () => {
        <OmniChannel/>
       </div>
       <div className="py-28 md:py-40 relative">
-        <PlugYourData/>
+        <ConvertYourData/>
         <div className="xl:block hidden absolute bottom-[-1rem] w-full">
           <img alt="curve" src="/images/curve-2.svg"/>
         </div>
