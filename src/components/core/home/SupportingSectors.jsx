@@ -11,27 +11,27 @@ SwiperCore.use([Autoplay]);
 
 const items = [
   {
-    image: "/images/banking.webp",
+    image: "/images/financial-services.jpg",
     name: "Financial Services",
     description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
   },
   {
-    image: "/images/lending.webp",
+    image: "/images/investment-advisory.jpg",
     name: "Investment Advisory",
     description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
   },
   {
-    image: "/images/recruitment.webp",
+    image: "/images/lending.jpg",
     name: "Lending",
     description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
   },
   {
-    image: "/images/identity.webp",
+    image: "/images/education.jpg",
     name: "Education",
     description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
   },
   {
-    image: "/images/lending.webp",
+    image: "/images/procurement.webp",
     name: "Procurement",
     description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
   },
@@ -80,7 +80,7 @@ const SupportingSectors = () => {
                     <div className="rounded-3xl overflow-hidden">
                       <div
                         style={ { backgroundImage: `url(${ item.image })` } }
-                        className="min-h-[360px] md:min-h-[420px] relative layer-bg bg-cover rounded-lg group"
+                        className="min-h-[360px] bg-cover bg-center md:min-h-[420px] relative layer-bg bg-cover rounded-lg group"
                       >
                         <div
                           className="absolute inset-0 bg-black/50 z-[1] px-10 md:px-12 py-12 md:py-14 text-white"
