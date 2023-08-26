@@ -88,9 +88,9 @@ const SupportingSectors = () => {
                           <h2 className="text-2xl md:text-3xl font-medium">
                             { item.name }
                           </h2>
-                          <p className="md:text-lg mt-2 opacity-80">
-                            Lorem ipsum dolor sit.
-                          </p>
+                          {/*<p className="md:text-lg mt-2 opacity-80">*/}
+                          {/*  Lorem ipsum dolor sit.*/}
+                          {/*</p>*/}
                           <Button
                             variant="outlined" color="white"
                             className="mt-6 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all ease-in-out duration-500"
