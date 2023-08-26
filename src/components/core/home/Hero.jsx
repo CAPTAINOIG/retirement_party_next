@@ -35,7 +35,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-cover bg-grid opacity-30"/>
       <div className="container z-10 relative">
         <h1
-          className="mx-auto max-w-[800px] font-display text-[3.6rem] sm:text-7xl md:text-8xl font-bold !leading-[1.05] tracking-tight text-slate-300"
+          className="mx-auto max-w-[820px] font-display text-[3.6rem] sm:text-7xl md:text-[6.5rem] font-bold !leading-[1.05] tracking-tight text-slate-300"
         >
           AI Simplified insights for African{ ' ' }<br/>
           <span

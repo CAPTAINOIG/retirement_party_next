@@ -28,7 +28,7 @@ const AboutPage = () => {
             <WhatWeDo/>
           </div>
         </div>
-        <Newsletter/>
+        <Newsletter sm/>
         <div className="py-24 md:py-32">
           <FrequentlyAskedQuestions/>
         </div>
