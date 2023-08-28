@@ -1,7 +1,7 @@
 "use client"
 import React, { createElement, useState } from 'react';
 import Link from "next/link";
-import { IconChartBar, IconLayout2, IconLogout, IconMenu } from "@tabler/icons-react";
+import { IconLayout2, IconLogout, IconMenu } from "@tabler/icons-react";
 import { useIsomorphicLayoutEffect } from "react-use";
 import classNames from "classnames";
 import Button from "@/components/global/Button.jsx";
@@ -11,6 +11,7 @@ import SimpleDropdown from "@/components/global/SimpleDropdown.jsx";
 import { useRouter } from "next/navigation";
 import Hover from "@/components/global/Hover.jsx";
 import products from "@/lib/products";
+import Logo from "@/components/core/shared/Logo";
 
 const Navbar = () => {
   const router = useRouter();
@@ -41,7 +42,7 @@ const Navbar = () => {
   return (
     <>
       <header className={ classNames(
-        'fixed top-0 inset-x-0 z-50 h-28 transition-all',
+        'fixed top-0 inset-x-0 z-50 h-32 transition-all',
         { 'bg-white/90 backdrop-blur-lg text-neutral-900 shadow !h-24': scrolled },
         { 'text-neutral-100': !scrolled },
       ) }>
@@ -49,15 +50,14 @@ const Navbar = () => {
           <nav className="relative z-50 flex justify-between h-full">
             <div className="flex items-center md:gap-x-12 flex-1 h-full">
               <Link href={ "/" } className="text-[1.6rem] flex items-center">
-                <IconChartBar size="32" className="mr-3"/>
-                Stati<b className="ml-[1px]">sense.</b>
+                <Logo className="mr-3" light={ !scrolled }/>
               </Link>
               <div className="hidden lg:flex md:space-x-3 ml-auto h-full">
                 <Hover className="h-full inline-flex items-center">
                   {
                     hovered => (
                       <div className="relative h-full flex items-center">
-                        <div className="inline-flex items-center rounded-full py-1 px-4">
+                        <div className="inline-flex items-center rounded-full py-1 px-4 text-[1.05rem] font-medium">
                           For businesses
                         </div>
                         <AnimatePresence mode="wait">
@@ -102,7 +102,10 @@ const Navbar = () => {
                     )
                   }
                 </Hover>
-                <Link className="inline-flex items-center rounded-full py-1 px-4" href={ "/infographics" }>
+                <Link
+                  href={ "/infographics" }
+                  className="inline-flex items-center rounded-full py-1 px-4 text-[1.05rem] font-medium"
+                >
                   Insights
                 </Link>
               </div>
