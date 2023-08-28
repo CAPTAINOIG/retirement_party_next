@@ -28,11 +28,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] relative overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-tw-dark origin-center opacity-80 animate-wide"
-      />
-      <div className="absolute inset-0 bg-cover bg-grid opacity-30"/>
+    <div
+      className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] relative overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900"
+    >
+      <div className="absolute inset-0 bg-cover bg-right bg-hero animate-wide min-h-screen opacity-60"></div>
       <div className="container z-10 relative">
         <h1
           className="mx-auto max-w-[820px] font-display text-[3.6rem] sm:text-7xl md:text-[6.5rem] font-bold !leading-[1.05] tracking-tight text-slate-300"
