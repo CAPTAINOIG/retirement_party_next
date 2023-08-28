@@ -1,6 +1,7 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Typed from "typed.js";
-import {useInView} from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
+import { IconSend } from "@tabler/icons-react";
 
 const ChatSimulation = () => {
   const el = useRef(null);
@@ -11,7 +12,7 @@ const ChatSimulation = () => {
   const sectFour = useRef(null)
   const sectFive = useRef(null)
   const typed = useRef(null);
-  const {ref, inView} = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.5,
     triggerOnce: true
   });
@@ -159,9 +160,12 @@ const ChatSimulation = () => {
   };
 
   return (
-    <div ref={ref} className="md:h-[550px] overflow-hidden md:bg-white md:shadow md:rounded-[24px] md:p-10 relative">
-      <img className="block md:hidden" src="/images/1.png" alt="1"/>
-      <div ref={section} className={`duration-500 ease-in-out hidden md:block`}>
+    <div
+      ref={ ref }
+      className="h-[400px] md:h-[550px] overflow-hidden bg-white shadow rounded-[24px] p-10 relative"
+    >
+      {/*<img className="block md:hidden" src="/images/1.png" alt="1"/>*/ }
+      <div ref={ section } className={ `duration-500 ease-in-out` }>
         <div className="flex items-center justify-end">
           <div className="flex items-center gap-3">
             <div className="bg-[#F1F5F9] p-6 rounded-[12px]">
@@ -174,29 +178,29 @@ const ChatSimulation = () => {
         </div>
         <div className="my-8 w-[80%]">
           <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
-            <p ref={el} className="text-base md:text-lg">
+            <p ref={ el } className="text-base md:text-lg">
             </p>
           </div>
         </div>
-        <div className={`mb-8 items-center justify-end ${completed >= 1 ? 'flex' : 'hidden'}`}>
+        <div className={ `mb-8 items-center justify-end ${ completed >= 1 ? 'flex' : 'hidden' }` }>
           <div className="flex items-end gap-3">
             <img alt="img" className="shadow rounded-lg w-[80%]" src="/images/9.png"/>
             <img className="w-[50px]" src="/images/face-one.png" alt="face one"/>
           </div>
         </div>
-        <div className={`mb-8 w-[80%] ${completed >= 2 ? 'block' : 'hidden'}`}>
+        <div className={ `mb-8 w-[80%] ${ completed >= 2 ? 'block' : 'hidden' }` }>
           <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
-            <p ref={sect} className="text-base md:text-lg">
+            <p ref={ sect } className="text-base md:text-lg">
             </p>
           </div>
         </div>
-        <div className={`mb-8 w-[80%] ${completed >= 3 ? 'block' : 'hidden'}`}>
+        <div className={ `mb-8 w-[80%] ${ completed >= 3 ? 'block' : 'hidden' }` }>
           <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
-            <p ref={sectTwo} className="text-base md:text-lg">
+            <p ref={ sectTwo } className="text-base md:text-lg">
             </p>
           </div>
         </div>
-        <div className={`mb-8 items-center justify-end ${completed >= 4 ? 'flex' : 'hidden'}`}>
+        <div className={ `mb-8 items-center justify-end ${ completed >= 4 ? 'flex' : 'hidden' }` }>
           <div className="flex items-center gap-3">
             <div className="bg-[#F1F5F9] p-6 rounded-[12px]">
               <p className="text-base md:text-lg">
@@ -206,13 +210,13 @@ const ChatSimulation = () => {
             <img className="w-[50px]" src="/images/face-one.png" alt="face-one"/>
           </div>
         </div>
-        <div className={`mb-8 w-[80%] ${completed >= 5 ? 'block' : 'hidden'}`}>
+        <div className={ `mb-8 w-[80%] ${ completed >= 5 ? 'block' : 'hidden' }` }>
           <div className="bg-[#F1F5F9] p-6 rounded-[24px] min-h-[210px]">
-            <p ref={sectThree} className="text-base md:text-lg">
+            <p ref={ sectThree } className="text-base md:text-lg">
             </p>
           </div>
         </div>
-        <div className={`mb-8 items-center justify-end ${completed >= 6 ? 'flex' : 'hidden'}`}>
+        <div className={ `mb-8 items-center justify-end ${ completed >= 6 ? 'flex' : 'hidden' }` }>
           <div className="flex items-center gap-3">
             <div className="bg-[#F1F5F9] p-6 rounded-[12px]">
               <p className="text-base md:text-lg">
@@ -222,18 +226,18 @@ const ChatSimulation = () => {
             <img className="w-[50px]" src="/images/face-one.png" alt="face-one"/>
           </div>
         </div>
-        <div className={`mb-8 w-[80%] ${completed >= 7 ? 'block' : 'hidden'}`}>
+        <div className={ `mb-8 w-[80%] ${ completed >= 7 ? 'block' : 'hidden' }` }>
           <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
-            <p ref={sectFour} className="text-base md:text-lg">
+            <p ref={ sectFour } className="text-base md:text-lg">
             </p>
           </div>
         </div>
-        <div className={`mb-8 items-center justify-start ${completed >= 8 ? 'flex' : 'hidden'}`}>
+        <div className={ `mb-8 items-center justify-start ${ completed >= 8 ? 'flex' : 'hidden' }` }>
           <div className="flex items-center gap-3">
             <img alt="img" className="shadow rounded-lg w-full" src="/images/7.png"/>
           </div>
         </div>
-        <div className={`mb-8 items-center justify-end ${completed >= 9 ? 'flex' : 'hidden'}`}>
+        <div className={ `mb-8 items-center justify-end ${ completed >= 9 ? 'flex' : 'hidden' }` }>
           <div className="flex items-center gap-3">
             <div className="bg-[#F1F5F9] p-6 rounded-[12px]">
               <p className="text-base md:text-lg">
@@ -243,24 +247,22 @@ const ChatSimulation = () => {
             <img className="w-[50px]" src="/images/face-one.png" alt="face-one"/>
           </div>
         </div>
-        <div className={`mb-8 w-[80%] ${completed >= 10 ? 'block' : 'hidden'}`}>
+        <div className={ `mb-8 w-[80%] ${ completed >= 10 ? 'block' : 'hidden' }` }>
           <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
-            <p ref={sectFive} className="text-base md:text-lg">
+            <p ref={ sectFive } className="text-base md:text-lg">
             </p>
           </div>
         </div>
       </div>
-      <div className="flex items-center gap-5 absolute bottom-3 right-0 w-full p-6">
-        <div className="w-[90%]">
-          <input
-            disabled type="text" name="email" id="topbar-search"
-            className="bg-transparent border border-gray-300 text-base md:text-lg text-gray-500 rounded-[30px] block w-full pl-6 py-4 my-2"
-            placeholder="Type here ..."
-          />
-        </div>
-        <div className="w-[10%] flex justify-end">
-          <div className="h-[50px] w-[50px] rounded-full bg-[#2B5387] p-4">
-            <img src="/images/1.svg" alt="1"/>
+      <div className="flex items-center space-x-4 absolute bottom-0 md:bottom-3 right-0 w-full p-6">
+        <input
+          disabled type="text" name="email" id="topbar-search"
+          className="bg-white border border-gray-300 text-base md:text-lg text-gray-500 rounded-[30px] block w-full pl-6 py-4 my-2"
+          placeholder="Type here ..."
+        />
+        <div>
+          <div className="h-[50px] w-[50px] rounded-full bg-[#2B5387] text-white p-4">
+            <IconSend size="20"/>
           </div>
         </div>
       </div>

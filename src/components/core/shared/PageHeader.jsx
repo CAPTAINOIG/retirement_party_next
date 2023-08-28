@@ -25,7 +25,7 @@ const PageHeader = ({ title, subtitle, onBack, backText, isLoading = false, appe
             </>
           ) : (
             <>
-              <h1 className="text-4xl md:text-[2.8rem] max-w-xl text-zinc-200 !leading-[1.2] font-medium">{ title }</h1>
+              <h1 className="text-3xl md:text-[2.8rem] max-w-xl text-zinc-200 !leading-[1.2] font-medium">{ title }</h1>
               { !!subtitle && <p className="md:text-lg mt-3 leading-[1.2] text-zinc-400">{ subtitle }</p> }
             </>
           )

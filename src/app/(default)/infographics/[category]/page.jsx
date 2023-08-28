@@ -23,7 +23,7 @@ const CategoryInfographicsPage = ({ params: { category: slug } }) => {
   return (
     <>
       <PageHeader
-        title={ `Insights on ${ category?.name }` }
+        title={ category?.name }
         onBack={ () => router.push('/infographics') }
         backText="Categories"
         isLoading={ isCategoryLoading }

@@ -43,13 +43,13 @@ const InfographicsSearchInput = ({ className }) => {
         <div className="absolute inline-flex items-center right-4 top-1/2 -translate-y-1/2 space-x-1">
           <IconButton
             icon={ <IconSearch size="20"/> } rounded onClick={ handleSearch } disabled={ query.length < 2 }
-            color="white"
+            color="white" variant="text"
           />
           {
             !!params.get('q') && (
               <IconButton
                 icon={ <IconX size="20"/> } rounded onClick={ handleReset } disabled={ query.length < 2 }
-                color="red" variant="outlined"
+                color="red" variant="text"
               />
             )
           }
