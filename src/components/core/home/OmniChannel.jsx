@@ -12,11 +12,11 @@ const OmniChannel = () => {
         <div className="grid md:grid-cols-2 gap-10">
           <div className="flex flex-col justify-center order-1 md:order-none">
             <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1] max-w-xl">
-              The AI Omni <br className="hidden md:block"/>channel for Africa's data insight.
+              The AI <br className="hidden md:block"/>Omnichannel for Africa's data.
             </h2>
             <p className="mt-6 text-base md:text-lg">
-              We use AI models to simplify any data set <br className="hidden md:block"/>
-              into chats, reports and infographics.
+              We use AI models to simplify datasets into <br className="hidden md:block"/> conversations, reports and
+              infographics.
             </p>
             <Link href="https://app.statisense.co">
               <Button color="black" className="mt-12" rightIcon={ <IconArrowRight/> } size="lg">
