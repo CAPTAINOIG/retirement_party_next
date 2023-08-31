@@ -5,6 +5,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SwiperCore from "swiper";
 import { Autoplay } from "swiper/modules";
+import Button from "@/components/global/Button";
+import Link from "next/link";
 
 SwiperCore.use([Autoplay]);
 
@@ -12,27 +14,27 @@ const items = [
   {
     image: "/images/financial-services.jpg",
     name: "Financial Services",
-    description: `Through deep dives into market data, consumer behavior, and regulatory changes, we equip financial service providers with the information needed to develop innovative products, comply with regulations, and meet customer expectations.`
+    description: `Our data informs innovation and compliance.`
   },
   {
     image: "/images/investment-advisory.jpg",
     name: "Investment Advisory",
-    description: `By evaluating market indicators, asset performance, and risk factors, we support investment advisors in offering tailored recommendations, optimizing portfolios, and helping clients achieve their financial goals.`
+    description: `We enhance investment strategies with data insights.`
   },
   {
     image: "/images/lending.jpg",
     name: "Lending",
-    description: `We analyze borrowing patterns, credit scores, and economic trends to help lenders assess risk and make informed lending decisions, enabling them to tailor loan offerings and optimize repayment strategies.`
+    description: `We provide data-driven insights for smarter lending decisions.`
   },
   {
     image: "/images/education.jpg",
     name: "Education",
-    description: `By examining student performance, curriculum effectiveness, and educational trends, we offer institutions actionable insights to enhance teaching methods, identify areas for improvement, and personalize learning experiences.`
+    description: `Our insights improve teaching and learning experiences.`
   },
   {
     image: "/images/procurement.webp",
     name: "Procurement",
-    description: `Our data-driven analysis of supply chain, vendor performance, and market trends empowers businesses to streamline procurement processes, reduce costs, and ensure efficient inventory management.`
+    description: `We optimize supply chains and procurement processes.`
   },
 ];
 
@@ -82,17 +84,25 @@ const SupportingSectors = () => {
                         className="min-h-[360px] bg-center md:min-h-[420px] relative layer-bg bg-cover rounded-lg group"
                       >
                         <div className="absolute inset-0 bg-black/50 z-[1] text-white flex flex-col">
-                          <div className="px-10 md:px-12 py-12 md:py-14">
+                          <div className="px-10 md:px-12 pt-12 md:pt-14">
                             <h2 className="text-2xl md:text-3xl font-medium">
                               { item.name }
                             </h2>
                           </div>
                           <div
-                            className="px-10 md:px-12 py-12 md:py-14 opacity-0 translate-y-20 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                            className="mt-6 px-10 md:px-12 opacity-0 translate-y-20 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
                           >
-                            <p className="md:text-lg mt-auto opacity-70">
+                            <p className="md:text-lg opacity-70">
                               { item.description }
                             </p>
+                            <Link href="https://app.statisense.co">
+                              <Button
+                                variant="outlined" color="white"
+                                className="mt-10 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all ease-in-out duration-500"
+                              >
+                                Get started
+                              </Button>
+                            </Link>
                           </div>
                         </div>
                       </div>
