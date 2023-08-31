@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IconBrandFacebook, IconBrandInstagram, IconBrandTwitter } from "@tabler/icons-react";
+import { IconBrandFacebook, IconBrandInstagram, IconBrandX } from "@tabler/icons-react";
 import React from "react";
 
 const Footer = () => {
@@ -31,6 +31,9 @@ const Footer = () => {
                 <Link href={ "/careers" } className="opacity-70 hover:text-primary-300">
                   Careers
                 </Link>
+                <Link href={ "/terms" } className="opacity-70 hover:text-primary-300">
+                  Privacy & Terms
+                </Link>
               </div>
             </div>
             <div>
@@ -49,8 +52,6 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 items-start sm:items-center sm:space-x-8">
               <div>&copy; Statisense, 2023 All rights reserved</div>
-              <Link href={ "/terms" } className="hover:text-primary-400">Terms & Conditions</Link>
-              <Link href={ "/policy" } className="hover:text-primary-400">Privacy Policy</Link>
             </div>
             <div className="flex items-center space-x-6 mt-8 md:mt-0">
               <a
@@ -63,13 +64,7 @@ const Footer = () => {
                 href="https://twitter.com/statisense" target="_blank" className="text-xl hover:text-blue-400"
                 rel="noreferrer"
               >
-                <svg viewBox="0 0 24 24" aria-hidden="true" width="20px" height="20px" fill="currentColor"
-                     className="text-whit hover:text-blue-400">
-                  <g>
-                    <path
-                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                  </g>
-                </svg>
+                <IconBrandX/>
               </a>
               <a
                 href="/" target="_blank" className="text-xl hover:text-red-600"

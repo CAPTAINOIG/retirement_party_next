@@ -32,7 +32,7 @@ const Newsletter = ({ sm = false }) => {
           view === 'form' && (
             <div className="container flex flex-col items-center text-center">
               <h2 className="text-[2.5rem] md:text-6xl max-w-2xl font-medium tracking-tight !leading-tight">
-                Get weekly statistics directly into your inbox
+                Get weekly statisense directly into your inbox
               </h2>
               <form
                 onSubmit={ handleSubmit(submit) }

@@ -29,12 +29,12 @@ const Hero = () => {
 
   return (
     <div
-      className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] relative overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900"
+      className="pt-48 pb-32 md:pt-52 md:pb-36 md:text-center bg-[#11100f] relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-950"
     >
       <div className="absolute inset-0 bg-cover bg-right bg-hero animate-wide min-h-screen opacity-60"></div>
       <div className="container z-10 relative">
         <h1
-          className="mx-auto max-w-[820px] font-display text-[3.6rem] sm:text-7xl md:text-[6.5rem] font-bold !leading-[1.05] tracking-tight text-slate-300"
+          className="mx-auto max-w-[860px] font-display text-[3.6rem] sm:text-7xl md:text-[6.5rem] font-bold !leading-[1.05] tracking-tight text-slate-300"
         >
           AI Simplified insights for African{ ' ' }<br/>
           <span

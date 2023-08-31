@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Button from "@/components/global/Button";
 import SwiperCore from "swiper";
 import { Autoplay } from "swiper/modules";
 
@@ -13,27 +12,27 @@ const items = [
   {
     image: "/images/financial-services.jpg",
     name: "Financial Services",
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
+    description: `Through deep dives into market data, consumer behavior, and regulatory changes, we equip financial service providers with the information needed to develop innovative products, comply with regulations, and meet customer expectations.`
   },
   {
     image: "/images/investment-advisory.jpg",
     name: "Investment Advisory",
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
+    description: `By evaluating market indicators, asset performance, and risk factors, we support investment advisors in offering tailored recommendations, optimizing portfolios, and helping clients achieve their financial goals.`
   },
   {
     image: "/images/lending.jpg",
     name: "Lending",
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
+    description: `We analyze borrowing patterns, credit scores, and economic trends to help lenders assess risk and make informed lending decisions, enabling them to tailor loan offerings and optimize repayment strategies.`
   },
   {
     image: "/images/education.jpg",
     name: "Education",
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
+    description: `By examining student performance, curriculum effectiveness, and educational trends, we offer institutions actionable insights to enhance teaching methods, identify areas for improvement, and personalize learning experiences.`
   },
   {
     image: "/images/procurement.webp",
     name: "Procurement",
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum doloremque et fugiat hic odit possimus quia sed sequi tempora?`
+    description: `Our data-driven analysis of supply chain, vendor performance, and market trends empowers businesses to streamline procurement processes, reduce costs, and ensure efficient inventory management.`
   },
 ];
 
@@ -80,23 +79,21 @@ const SupportingSectors = () => {
                     <div className="rounded-3xl overflow-hidden">
                       <div
                         style={ { backgroundImage: `url(${ item.image })` } }
-                        className="min-h-[360px] bg-cover bg-center md:min-h-[420px] relative layer-bg bg-cover rounded-lg group"
+                        className="min-h-[360px] bg-center md:min-h-[420px] relative layer-bg bg-cover rounded-lg group"
                       >
-                        <div
-                          className="absolute inset-0 bg-black/50 z-[1] px-10 md:px-12 py-12 md:py-14 text-white"
-                        >
-                          <h2 className="text-2xl md:text-3xl font-medium">
-                            { item.name }
-                          </h2>
-                          {/*<p className="md:text-lg mt-2 opacity-80">*/}
-                          {/*  Lorem ipsum dolor sit.*/}
-                          {/*</p>*/}
-                          <Button
-                            variant="outlined" color="white"
-                            className="mt-6 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all ease-in-out duration-500"
+                        <div className="absolute inset-0 bg-black/50 z-[1] text-white flex flex-col">
+                          <div className="px-10 md:px-12 py-12 md:py-14">
+                            <h2 className="text-2xl md:text-3xl font-medium">
+                              { item.name }
+                            </h2>
+                          </div>
+                          <div
+                            className="px-10 md:px-12 py-12 md:py-14 opacity-0 translate-y-20 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
                           >
-                            Get started
-                          </Button>
+                            <p className="md:text-lg mt-auto opacity-70">
+                              { item.description }
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
