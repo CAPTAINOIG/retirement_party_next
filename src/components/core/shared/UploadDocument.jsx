@@ -80,7 +80,7 @@ const UploadDocument = ({ onBack }) => {
               </p>
               <div className="grid grid-cols-3 gap-4">
                 {
-                  products.slice(0, 6).map(p => (
+                  products.filter(p => p.type === 'document').map(p => (
                     <Link href={ `https://app.statisense.co/${ p.slug }` } key={ p.slug }>
                       <div
                         className="h-full border border-slate-300/70 rounded-3xl flex flex-col items-center justify-center text-center py-8 px-8 hover:bg-slate-100 cursor-pointer"
