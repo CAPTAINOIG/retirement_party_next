@@ -109,7 +109,7 @@ const Navbar = () => {
                                       </div>
                                     </div>
                                     <div>
-                                      <h4 className="font-medium">Explore all products</h4>
+                                      <h4 className="font-medium">Explore 10+ products</h4>
                                     </div>
                                     <IconArrowRight className="ml-auto"/>
                                   </Link>
