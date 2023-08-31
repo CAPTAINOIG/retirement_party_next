@@ -1,7 +1,7 @@
 "use client"
 import React, { createElement, useState } from 'react';
 import Link from "next/link";
-import { IconLayout2, IconLogout, IconMenu } from "@tabler/icons-react";
+import { IconArrowRight, IconLayout2, IconLogout, IconMenu } from "@tabler/icons-react";
 import { useIsomorphicLayoutEffect } from "react-use";
 import classNames from "classnames";
 import Button from "@/components/global/Button.jsx";
@@ -68,32 +68,52 @@ const Navbar = () => {
                                 animate={ { opacity: 1, y: 0 } }
                                 exit={ { opacity: 0, y: 20 } }
                                 className={ classNames(
-                                  'p-4 rounded-2xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-1/2 -translate-x-1/2 right-0 w-[600px] grid grid-cols-2',
+                                  'rounded-3xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-1/2 -translate-x-1/2 right-0 w-[600px]',
                                 ) }
                               >
-                                {
-                                  products.slice(0, 6).map(product => (
-                                    <Link
-                                      key={ product.name }
-                                      href={ `https://app.statisense.co/${ product.slug }` }
-                                      className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
-                                    >
-                                      <div className="mr-4">
-                                        <div
-                                          className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-white', product.backgroundColor) }
+                                <div className="space-y-2 p-6">
+                                  <div className="grid grid-cols-2 gap-2">
+                                    {
+                                      products.filter(p => p.categories.includes('featured')).map(product => (
+                                        <Link
+                                          key={ product.name }
+                                          href={ `https://app.statisense.co/${ product.slug }` }
+                                          className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
                                         >
-                                          { createElement(product.icon) }
-                                        </div>
+                                          <div className="mr-4">
+                                            <div
+                                              className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-white', product.backgroundColor) }
+                                            >
+                                              { createElement(product.icon) }
+                                            </div>
+                                          </div>
+                                          <div>
+                                            <h4 className="font-medium">{ product.name }</h4>
+                                            <p className="text-sm opacity-80 leading-tight mt-1">
+                                              { product.description }
+                                            </p>
+                                          </div>
+                                        </Link>
+                                      ))
+                                    }
+                                  </div>
+                                  <Link
+                                    href={ `https://app.statisense.co` }
+                                    className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
+                                  >
+                                    <div className="mr-4">
+                                      <div
+                                        className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-slate-800 bg-slate-200') }
+                                      >
+                                        <IconLayout2/>
                                       </div>
-                                      <div>
-                                        <h4 className="font-medium">{ product.name }</h4>
-                                        <p className="text-sm opacity-80 leading-tight mt-1">
-                                          { product.description }
-                                        </p>
-                                      </div>
-                                    </Link>
-                                  ))
-                                }
+                                    </div>
+                                    <div>
+                                      <h4 className="font-medium">Explore all products</h4>
+                                    </div>
+                                    <IconArrowRight className="ml-auto"/>
+                                  </Link>
+                                </div>
                               </motion.div>
                             )
                           }
