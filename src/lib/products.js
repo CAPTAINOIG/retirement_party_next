@@ -31,7 +31,7 @@ const general = [
   {
     name: 'Custom report',
     slug: 'custom-report',
-    description: `Analyze customs reports in seconds`,
+    description: `Personalized insights for precise analysis.`,
     backgroundColor: '!bg-red-700',
     textColor: '!text-red-700',
     icon: IconEditCircle,
@@ -44,14 +44,14 @@ const general = [
   {
     name: 'Data assistant',
     slug: 'assistant',
-    description: `An advanced embedded AI assistant`,
+    description: `Support for efficient decision-making processes.`,
     backgroundColor: '!bg-blue-700',
     textColor: '!text-blue-700',
     icon: IconMessageChatbot,
     homeLink: '/assistant',
     dashboardLink: '/assistant',
     status: 'coming-soon',
-    categories: ['general']
+    categories: ['general'],
   },
 ];
 
@@ -59,7 +59,7 @@ const lending = [
   {
     name: 'Bank statement',
     slug: 'statement',
-    description: `Analyze any bank statement in seconds`,
+    description: `Optimize transactions with AI-driven insights.`,
     backgroundColor: '!bg-sky-700',
     textColor: '!text-sky-700',
     icon: IconFileText,
@@ -72,7 +72,7 @@ const lending = [
   {
     name: 'Credit Portfolio',
     slug: 'credit-portfolio',
-    description: `Maintain your credit portfolio`,
+    description: `Manage risk, enhance performance intelligently`,
     backgroundColor: '!bg-red-700',
     textColor: '!text-red-700',
     icon: IconCreditCard,
@@ -80,11 +80,12 @@ const lending = [
     dashboardLink: '/credit-portfolio',
     status: 'coming-soon',
     categories: ['lending'],
+    type: 'document',
   },
   {
     name: 'Customer profile',
     slug: 'customer-profile',
-    description: `Understand your customers`,
+    description: `Understand behaviors through insightful analysis.`,
     backgroundColor: '!bg-yellow-700',
     textColor: '!text-yellow-700',
     icon: IconUserCircle,
@@ -92,11 +93,12 @@ const lending = [
     dashboardLink: '/customer-profile',
     status: 'coming-soon',
     categories: ['investment', 'lending', 'insurance'],
+    type: 'document',
   },
   {
     name: 'Credit Modelling',
     slug: 'credit-modelling',
-    description: `Model your credit score`,
+    description: `Accurate credit assessment through advanced techniques.`,
     backgroundColor: '!bg-orange-700',
     textColor: '!text-orange-700',
     icon: IconChartHistogram,
@@ -104,6 +106,7 @@ const lending = [
     dashboardLink: '/credit-modelling',
     status: 'coming-soon',
     categories: ['lending'],
+    type: 'document',
   },
 ];
 
@@ -111,7 +114,7 @@ const payments = [
   {
     name: 'Invoices & Receipts',
     slug: 'invoice',
-    description: `Get insights on your invoices`,
+    description: `Streamlined automation for financial tracking.`,
     backgroundColor: '!bg-amber-700',
     textColor: '!text-amber-700',
     icon: IconClipboardText,
@@ -124,7 +127,7 @@ const payments = [
   {
     name: 'Fraud',
     slug: 'fraud',
-    description: `Detect fraudulent transactions`,
+    description: `Thwart fraud, ensuring secure transactions.`,
     backgroundColor: '!bg-red-700',
     textColor: '!text-red-700',
     icon: IconMasksTheater,
@@ -139,7 +142,7 @@ const identity = [
   {
     name: 'Government IDs',
     slug: 'govt-id',
-    description: `Analyze government ids in seconds`,
+    description: `Identity verification for reduced fraudulent activities.`,
     backgroundColor: '!bg-teal-700',
     textColor: '!text-teal-700',
     icon: IconId,
@@ -152,38 +155,38 @@ const identity = [
   {
     name: 'Social analytics',
     slug: 'social-analytics',
-    description: `Get insights on your social media`,
+    description: `Extract insights from analyzed social data.`,
     backgroundColor: '!bg-blue-700',
     textColor: '!text-blue-700',
     icon: IconSocial,
     homeLink: '/social-analytics',
     dashboardLink: '/social-analytics',
     status: 'coming-soon',
-    categories: ['identity']
+    categories: ['identity'],
   },
   {
     name: 'Psychometric',
     slug: 'profile',
-    description: `Profile your customers`,
+    description: `Decipher traits to enable precise assessment.`,
     backgroundColor: '!bg-yellow-700',
     textColor: '!text-yellow-700',
     icon: IconBrain,
     homeLink: '/profile',
     dashboardLink: '/profile',
     status: 'coming-soon',
-    categories: ['identity']
+    categories: ['identity'],
   },
   {
     name: 'Alternative data',
     slug: 'alternative-data',
-    description: `Get insights from alternative data`,
+    description: `Unconventional sources offer comprehensive insights.`,
     backgroundColor: '!bg-orange-700',
     textColor: '!text-orange-700',
     icon: IconDatabasePlus,
     homeLink: '/alternative-data',
     dashboardLink: '/alternative-data',
     status: 'coming-soon',
-    categories: ['identity']
+    categories: ['identity'],
   },
 ];
 
@@ -191,38 +194,38 @@ const digital = [
   {
     name: 'Survey',
     slug: 'survey',
-    description: `Generate and analyze surveys`,
+    description: `Analyze data gathered for actionable insights.`,
     backgroundColor: '!bg-blue-700',
     textColor: '!text-blue-700',
     icon: IconUserQuestion,
     homeLink: '/survey',
     dashboardLink: '/survey',
     status: 'coming-soon',
-    categories: ['digital-forms']
+    categories: ['digital-forms'],
   },
   {
     name: 'Digital forms',
     slug: 'digital-forms',
-    description: `Generate, fill, approve, analyze`,
+    description: `Simplify data collection through automated processes.`,
     backgroundColor: '!bg-cyan-700',
     textColor: '!text-cyan-700',
     icon: IconForms,
     homeLink: '/digital-forms',
     dashboardLink: '/digital-forms',
     status: 'coming-soon',
-    categories: ['digital-forms']
+    categories: ['digital-forms'],
   },
   {
     name: 'Polls',
     slug: 'polls',
-    description: `Generate and analyze polls`,
+    description: `Quick and informative insights from data collection.`,
     backgroundColor: '!bg-purple-700',
     textColor: '!text-purple-700',
     icon: IconChecklist,
     homeLink: '/polls',
     dashboardLink: '/polls',
     status: 'coming-soon',
-    categories: ['digital-forms']
+    categories: ['digital-forms'],
   },
 ];
 
@@ -230,38 +233,38 @@ const macroeconomics = [
   {
     name: 'Nigeria',
     slug: 'nigeria',
-    description: `Lorem ipsum dolor sit amet`,
+    description: `Tailored solutions for Nigeria's specific market.`,
     backgroundColor: '!bg-green-700',
     textColor: '!text-green-700',
     icon: IconFlag,
     homeLink: '/nigeria',
     dashboardLink: '/nigeria',
     status: 'coming-soon',
-    categories: ['government']
+    categories: ['government'],
   },
   {
     name: 'Africa',
     slug: 'africa',
-    description: `Lorem ipsum dolor sit amet`,
+    description: `Transformative strategies using valuable African data.`,
     backgroundColor: '!bg-red-700',
     textColor: '!text-red-700',
     icon: IconMap,
     homeLink: '/africa',
     dashboardLink: '/africa',
     status: 'coming-soon',
-    categories: ['government']
+    categories: ['government'],
   },
   {
     name: 'World',
     slug: 'world',
-    description: `Lorem ipsum dolor sit amet`,
+    description: `Navigate worldwide trends for informed decisions.`,
     backgroundColor: '!bg-blue-700',
     textColor: '!text-blue-700',
     icon: IconWorld,
     homeLink: '/world',
     dashboardLink: '/world',
     status: 'coming-soon',
-    categories: ['government']
+    categories: ['government'],
   },
 ];
 
@@ -269,26 +272,26 @@ const investments = [
   {
     name: 'Investment Portfolio',
     slug: 'investment-portfolio',
-    description: `Track your investments`,
+    description: `Optimize performance through strategic analysis.`,
     backgroundColor: '!bg-sky-700',
     textColor: '!text-sky-700',
     icon: IconBriefcase,
     homeLink: '/investment-portfolio',
     dashboardLink: '/investment-portfolio',
     status: 'coming-soon',
-    categories: ['investment']
+    categories: ['investment'],
   },
   {
     name: 'Saving portfolio',
     slug: 'saving-portfolio',
-    description: `Monitor your savings`,
+    description: `Effective management of personal savings portfolio.`,
     backgroundColor: '!bg-indigo-700',
     textColor: '!text-indigo-700',
     icon: IconReportMoney,
     homeLink: '/saving-portfolio',
     dashboardLink: '/saving-portfolio',
     status: 'coming-soon',
-    categories: ['investment']
+    categories: ['investment'],
   },
 ];
 
@@ -296,38 +299,38 @@ const markets = [
   {
     name: 'Capital',
     slug: 'capital',
-    description: `Get insights on your trades`,
+    description: `Strategic approaches to resource management.`,
     backgroundColor: '!bg-blue-700',
     textColor: '!text-blue-700',
     icon: IconCashBanknote,
     homeLink: '/capital',
     dashboardLink: '/capital',
     status: 'coming-soon',
-    categories: ['markets']
+    categories: ['markets'],
   },
   {
     name: 'Money',
     slug: 'money',
-    description: `Get insights on your trades`,
+    description: `...`,
     backgroundColor: '!bg-green-700',
     textColor: '!text-green-700',
     icon: IconCurrencyNaira,
     homeLink: '/money',
     dashboardLink: '/money',
     status: 'coming-soon',
-    categories: ['markets']
+    categories: ['markets'],
   },
   {
     name: 'Commodities',
     slug: 'commodities',
-    description: `Get insights on your trades`,
+    description: `Decode commodity market trends for advantage.`,
     backgroundColor: '!bg-red-700',
     textColor: '!text-red-700',
     icon: IconBasketFilled,
     homeLink: '/commodities',
     dashboardLink: '/commodities',
     status: 'coming-soon',
-    categories: ['markets']
+    categories: ['markets'],
   },
 ];
 
@@ -335,26 +338,26 @@ const insurance = [
   {
     name: 'Hospital distribution',
     slug: 'hospital-distribution',
-    description: `Manage hospital distributions`,
+    description: `Improve financial operations in healthcare distribution.`,
     backgroundColor: '!bg-purple-700',
     textColor: '!text-purple-700',
     icon: IconBuildingHospital,
     homeLink: '/hospital-distribution',
     dashboardLink: '/hospital-distribution',
     status: 'coming-soon',
-    categories: ['insurance']
+    categories: ['insurance'],
   },
   {
     name: 'Risk assessment',
     slug: 'risk-assessment',
-    description: `Perform risk assessments`,
+    description: `Informed decisions through comprehensive risk analysis.`,
     backgroundColor: '!bg-orange-700',
     textColor: '!text-orange-700',
     icon: IconAssembly,
     homeLink: '/risk-assessment',
     dashboardLink: '/risk-assessment',
     status: 'coming-soon',
-    categories: ['insurance']
+    categories: ['insurance'],
   },
 ];
 
@@ -371,7 +374,7 @@ const products = [
   {
     name: 'Financial report',
     slug: 'financial-report',
-    description: `Analyze financial reports in seconds`,
+    description: `Accurate reports for insights and decision-making.`,
     backgroundColor: '!bg-indigo-700',
     textColor: '!text-indigo-700',
     icon: IconBooks,
