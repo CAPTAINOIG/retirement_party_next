@@ -12,10 +12,10 @@ const Footer = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-20 lg:gap-10 pt-10 pb-32">
             <div className="md:col-span-2">
               <Logo light/>
-              <div className="mt-8 max-w-xs">
+              <p className="mt-8 max-w-xs text-[1.05rem]">
                 Statisense is a leading AI data company revolutionizing financial data analysis with innovation,
                 precision, and insightful AI tools for informed decisions.
-              </div>
+              </p>
             </div>
             <div>
               <h6 className="font-medium">Products</h6>
@@ -77,7 +77,7 @@ const Footer = () => {
                 <IconBrandX/>
               </a>
               <a
-                href="/" target="_blank" className="text-xl hover:text-red-600"
+                href="https://www.instagram.com/statisense/" target="_blank" className="text-xl hover:text-red-600"
                 rel="noreferrer"
               >
                 <IconBrandInstagram/>
