@@ -16,7 +16,7 @@ const FAQ = () => {
           <div className="space-y-4 lg:col-span-7">
             {
               faqs.map(faq => (
-                <Card key={ faq.q }>
+                <Card key={ faq.q } className="subtle-shadow">
                   <Collapsible
                     header={ (
                       <h5 className="md:text-lg font-medium">
