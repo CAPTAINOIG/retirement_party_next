@@ -27,8 +27,11 @@ const TermsAndPrivacy = () => {
 
   return (
     <>
-      <PageHeader title="Privacy & Terms"/>
-      <div className="container py-10 md:py-20 md:text-[1.1rem]">
+      <PageHeader
+        title="Privacy & Terms"
+        append={ <div className="h-4"></div> }
+      />
+      <div className="container pt-16 pb-24 md:pt-24 md:text-[1.1rem]">
         <Tab.Group selectedIndex={ index } onChange={ setIndex }>
           <div className="grid md:grid-cols-12 gap-12">
             <div className="md:col-span-4">
