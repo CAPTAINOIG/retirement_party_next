@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from "@/components/global/Card";
 
 const WhoWeAre = () => {
   return (
@@ -13,27 +14,27 @@ const WhoWeAre = () => {
             </div>
           </div>
           <div className="lg:col-span-8 text-lg">
-            <p className="text-center md:text-left">
+            <p className="text-center md:text-left px-2">
               Statisense is a pioneering AI data company at the forefront of transforming how businesses navigate their
               financial data. With a commitment to innovation, accuracy, and unparalleled insights, we specialize in
               analyzing financial reports, bank statements, and offer an AI chatbot, all geared towards empowering you
               with the knowledge you need to make informed decisions.
             </p>
-            <div className="grid md:grid-cols-2 gap-6 mt-10">
-              <div className="border border-slate-200 rounded-3xl p-10">
+            <div className="grid md:grid-cols-2 gap-8 mt-10">
+              <Card className="p-10">
                 <p>
                   <b>Our mission</b> is simple: leverage AI to make complex financial data understandable and accessible
                   for businesses of all sizes, empowering informed decisions. We're here to simplify the overwhelming
                   task of deciphering financial data.
                 </p>
-              </div>
-              <div className="border border-slate-200 rounded-3xl p-10">
+              </Card>
+              <Card className="p-10">
                 <p>
                   <b>Our vision</b> is straightforward yet impactful: empower businesses with essential knowledge and
                   insights for financial success in a fast-paced world. We're dedicated to bridging the data-action gap,
                   ensuring businesses thrive and adapt.
                 </p>
-              </div>
+              </Card>
             </div>
           </div>
         </div>

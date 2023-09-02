@@ -1,5 +1,6 @@
 import React from 'react';
 import { IconAnalyze, IconBuildingBank, IconCircleDot, IconLeaf } from "@tabler/icons-react";
+import Card from "@/components/global/Card";
 
 const WhatWeDo = () => {
   return (
@@ -14,8 +15,8 @@ const WhatWeDo = () => {
             </div>
           </div>
           <div className="lg:col-span-8">
-            <ul role="list" className="grid md:grid-cols-2 gap-8">
-              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="px-10 md:px-12 py-12 md:py-14">
                 <IconCircleDot className="mb-8 text-red-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Accuracy
@@ -23,8 +24,8 @@ const WhatWeDo = () => {
                 <p className="mt-4 opacity-80">
                   Our AI-driven analysis ensures precision and reliability, eliminating the possibility of human error.
                 </p>
-              </li>
-              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
+              </Card>
+              <Card className="px-10 md:px-12 py-12 md:py-14">
                 <IconBuildingBank className="mb-8 text-blue-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Expertise
@@ -33,8 +34,8 @@ const WhatWeDo = () => {
                   Our AI multipurpose chatbot acts as a 24/7 virtual assistant, connecting you with financial experts
                   who provide real-time guidance and answers to your queries.
                 </p>
-              </li>
-              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
+              </Card>
+              <Card className="px-10 md:px-12 py-12 md:py-14">
                 <IconLeaf className="mb-8 text-cyan-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Efficiency
@@ -43,8 +44,8 @@ const WhatWeDo = () => {
                   Say goodbye to time-consuming manual analysis. With our platform, you can expedite decision-making and
                   seize opportunities swiftly.
                 </p>
-              </li>
-              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
+              </Card>
+              <Card className="px-10 md:px-12 py-12 md:py-14">
                 <IconAnalyze className="mb-8 text-teal-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Innovation
@@ -53,8 +54,8 @@ const WhatWeDo = () => {
                   We continually evolve our offerings, staying on the cutting edge of AI advancements to provide you
                   with the most powerful insights.
                 </p>
-              </li>
-            </ul>
+              </Card>
+            </div>
           </div>
         </div>
       </section>

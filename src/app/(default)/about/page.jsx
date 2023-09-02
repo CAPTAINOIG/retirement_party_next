@@ -9,7 +9,7 @@ import WhoWeAre from "@/components/core/about/WhoWeAre";
 
 const AboutPage = () => {
   return (
-    <>
+    <div className="bg-slate-50">
       <PageHeader
         title="About us"
         append={ <div className="h-4"></div> }
@@ -27,7 +27,7 @@ const AboutPage = () => {
       <div className="py-24 md:py-32">
         <FrequentlyAskedQuestions/>
       </div>
-    </>
+    </div>
   );
 };
 

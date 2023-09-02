@@ -1,5 +1,6 @@
 import React from 'react';
 import { IconArrowSharpTurnRight, IconFilePower, IconLayout2, IconReportSearch } from "@tabler/icons-react";
+import Card from "@/components/global/Card";
 
 const WhatWeDo = () => {
   return (
@@ -17,8 +18,8 @@ const WhatWeDo = () => {
             </div>
           </div>
           <div className="lg:col-span-8">
-            <ul role="list" className="grid md:grid-cols-2 gap-8">
-              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="px-10 md:px-12 py-12 md:py-14">
                 <IconArrowSharpTurnRight className="mb-8 text-red-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Harness Cutting-Edge AI
@@ -27,8 +28,8 @@ const WhatWeDo = () => {
                   Statisense utilizes advanced AI technology to decode intricate financial reports and bank statements,
                   revealing deeper insights that traditional analysis might miss.
                 </p>
-              </li>
-              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
+              </Card>
+              <Card className="px-10 md:px-12 py-12 md:py-14">
                 <IconReportSearch className="mb-8 text-blue-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Spot Trends and Anomalies
@@ -37,8 +38,8 @@ const WhatWeDo = () => {
                   Our powerful algorithms uncover hidden trends, anomalies, and opportunities within complex financial
                   data, empowering you to make more informed decisions.
                 </p>
-              </li>
-              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
+              </Card>
+              <Card className="px-10 md:px-12 py-12 md:py-14">
                 <IconLayout2 className="mb-8 text-cyan-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Simplifying Financial Complexity
@@ -47,8 +48,8 @@ const WhatWeDo = () => {
                   Navigating the complexities of finance can be daunting. Statisense AI simplifies the process by
                   providing clear, actionable insights that help you confidently navigate the financial landscape.
                 </p>
-              </li>
-              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
+              </Card>
+              <Card className="px-10 md:px-12 py-12 md:py-14">
                 <IconFilePower className="mb-8 text-teal-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Empower Your Financial Strategy
@@ -57,8 +58,8 @@ const WhatWeDo = () => {
                   With Statisense AI, you're not just receiving data – you're gaining valuable insights that enable you
                   to navigate financial intricacies with confidence, seize opportunities, and stay ahead.
                 </p>
-              </li>
-            </ul>
+              </Card>
+            </div>
           </div>
         </div>
       </section>

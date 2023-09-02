@@ -1,10 +1,11 @@
 import React from 'react';
 import Collapsible from "@/components/global/Collapsible";
 import faqs from "@/lib/faqs";
+import Card from "@/components/global/Card";
 
 const FAQ = () => {
   return (
-    <div className="bg-white" id="footer">
+    <div id="faq">
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5">
@@ -15,7 +16,7 @@ const FAQ = () => {
           <div className="space-y-4 lg:col-span-7">
             {
               faqs.map(faq => (
-                <div key={ faq.q } className="border border-slate-200 rounded-2xl">
+                <Card key={ faq.q }>
                   <Collapsible
                     header={ (
                       <h5 className="md:text-lg font-medium">
@@ -28,7 +29,7 @@ const FAQ = () => {
                       </div>
                     ) }
                   />
-                </div>
+                </Card>
               ))
             }
           </div>

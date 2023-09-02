@@ -39,7 +39,7 @@ const Footer = () => {
             <div>
               <p className="text-base font-medium">Support</p>
               <div className="flex flex-col mt-6 space-y-4">
-                <Link href={ '/about#footer' } className="opacity-70 hover:text-primary-300">
+                <Link href={ '/about#faq' } className="opacity-70 hover:text-primary-300">
                   FAQs
                 </Link>
                 <Link href={ '/contact' } className="opacity-70 hover:text-primary-300">
