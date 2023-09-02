@@ -57,7 +57,7 @@ const Navbar = () => {
                   {
                     hovered => (
                       <div className="relative h-full flex items-center">
-                        <div className="inline-flex items-center rounded-full py-1 px-4 text-[1.05rem] font-medium">
+                        <div className="inline-flex items-center rounded-full py-1 px-4 font-medium">
                           For businesses
                         </div>
                         <AnimatePresence mode="wait">
@@ -122,7 +122,7 @@ const Navbar = () => {
                 </Hover>
                 <Link
                   href={ "/infographics" }
-                  className="inline-flex items-center rounded-full py-1 px-4 text-[1.05rem] font-medium"
+                  className="inline-flex items-center rounded-full py-1 px-4 font-medium"
                 >
                   Insights
                 </Link>

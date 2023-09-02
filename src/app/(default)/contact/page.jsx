@@ -38,31 +38,31 @@ const ContactUs = () => {
               <div className="grid grid-cols-5 gap-6">
                 <Link
                   href="mailto:info@statisense.com.ng" target="_blank"
-                  className="border hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
+                  className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
                 >
                   <IconMail size="32"/>
                 </Link>
                 <Link
                   href="https://facebook.com/statisense" target="_blank"
-                  className="border hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
+                  className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
                 >
                   <IconBrandFacebook size="32"/>
                 </Link>
                 <Link
                   href="https://twitter.com/statisense" target="_blank"
-                  className="border hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
+                  className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
                 >
                   <IconBrandX size="32"/>
                 </Link>
                 <Link
                   href="https://www.instagram.com/statisense/" target="_blank"
-                  className="border hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
+                  className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
                 >
                   <IconBrandInstagram size="32"/>
                 </Link>
                 <Link
                   href="https://www.linkedin.com/company/statisense/" target="_blank"
-                  className="border hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
+                  className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
                 >
                   <IconBrandLinkedin size="32"/>
                 </Link>
