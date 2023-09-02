@@ -18,7 +18,7 @@ const WhatWeDo = () => {
           </div>
           <div className="lg:col-span-8">
             <ul role="list" className="grid md:grid-cols-2 gap-8">
-              <li className="rounded-3xl border px-10 md:px-12 py-12 md:py-14">
+              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
                 <IconArrowSharpTurnRight className="mb-8 text-red-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Harness Cutting-Edge AI
@@ -28,7 +28,7 @@ const WhatWeDo = () => {
                   revealing deeper insights that traditional analysis might miss.
                 </p>
               </li>
-              <li className="rounded-3xl border px-10 md:px-12 py-12 md:py-14">
+              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
                 <IconReportSearch className="mb-8 text-blue-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Spot Trends and Anomalies
@@ -38,7 +38,7 @@ const WhatWeDo = () => {
                   data, empowering you to make more informed decisions.
                 </p>
               </li>
-              <li className="rounded-3xl border px-10 md:px-12 py-12 md:py-14">
+              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
                 <IconLayout2 className="mb-8 text-cyan-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Simplifying Financial Complexity
@@ -48,7 +48,7 @@ const WhatWeDo = () => {
                   providing clear, actionable insights that help you confidently navigate the financial landscape.
                 </p>
               </li>
-              <li className="rounded-3xl border px-10 md:px-12 py-12 md:py-14">
+              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
                 <IconFilePower className="mb-8 text-teal-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Empower Your Financial Strategy

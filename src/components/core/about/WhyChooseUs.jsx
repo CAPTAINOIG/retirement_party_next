@@ -15,7 +15,7 @@ const WhatWeDo = () => {
           </div>
           <div className="lg:col-span-8">
             <ul role="list" className="grid md:grid-cols-2 gap-8">
-              <li className="rounded-3xl border px-10 md:px-12 py-12 md:py-14">
+              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
                 <IconCircleDot className="mb-8 text-red-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Accuracy
@@ -24,7 +24,7 @@ const WhatWeDo = () => {
                   Our AI-driven analysis ensures precision and reliability, eliminating the possibility of human error.
                 </p>
               </li>
-              <li className="rounded-3xl border px-10 md:px-12 py-12 md:py-14">
+              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
                 <IconBuildingBank className="mb-8 text-blue-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Expertise
@@ -34,7 +34,7 @@ const WhatWeDo = () => {
                   who provide real-time guidance and answers to your queries.
                 </p>
               </li>
-              <li className="rounded-3xl border px-10 md:px-12 py-12 md:py-14">
+              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
                 <IconLeaf className="mb-8 text-cyan-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Efficiency
@@ -44,7 +44,7 @@ const WhatWeDo = () => {
                   seize opportunities swiftly.
                 </p>
               </li>
-              <li className="rounded-3xl border px-10 md:px-12 py-12 md:py-14">
+              <li className="rounded-3xl border border-slate-200 px-10 md:px-12 py-12 md:py-14">
                 <IconAnalyze className="mb-8 text-teal-600/20" size="60"/>
                 <h3 className="font-semibold text-xl">
                   Innovation

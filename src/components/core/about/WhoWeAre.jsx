@@ -20,14 +20,14 @@ const WhoWeAre = () => {
               with the knowledge you need to make informed decisions.
             </p>
             <div className="grid md:grid-cols-2 gap-6 mt-10">
-              <div className="border rounded-3xl p-10">
+              <div className="border border-slate-200 rounded-3xl p-10">
                 <p>
                   <b>Our mission</b> is simple: leverage AI to make complex financial data understandable and accessible
                   for businesses of all sizes, empowering informed decisions. We're here to simplify the overwhelming
                   task of deciphering financial data.
                 </p>
               </div>
-              <div className="border rounded-3xl p-10">
+              <div className="border border-slate-200 rounded-3xl p-10">
                 <p>
                   <b>Our vision</b> is straightforward yet impactful: empower businesses with essential knowledge and
                   insights for financial success in a fast-paced world. We're dedicated to bridging the data-action gap,
