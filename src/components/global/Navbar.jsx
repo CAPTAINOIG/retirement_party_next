@@ -78,7 +78,7 @@ const Navbar = () => {
                                         <Link
                                           key={ product.name }
                                           href={ `https://app.statisense.co/${ product.slug }` }
-                                          className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
+                                          className="rounded-2xl flex items-center hover:bg-gray-200/40 p-4 transition-all cursor-pointer"
                                         >
                                           <div className="mr-4">
                                             <div
@@ -99,7 +99,7 @@ const Navbar = () => {
                                   </div>
                                   <Link
                                     href={ `https://app.statisense.co` }
-                                    className="rounded-2xl flex items-center hover:bg-gray-200/70 p-4 transition-all cursor-pointer"
+                                    className="rounded-2xl flex items-center hover:bg-gray-200/40 p-4 transition-all cursor-pointer"
                                   >
                                     <div className="mr-4">
                                       <div
@@ -108,10 +108,8 @@ const Navbar = () => {
                                         <IconLayout2/>
                                       </div>
                                     </div>
-                                    <div>
-                                      <h4 className="font-medium">Explore 10+ products</h4>
-                                    </div>
-                                    <IconArrowRight className="ml-auto"/>
+                                    <h4 className="font-medium">Explore 10+ products</h4>
+                                    <IconArrowRight className="ml-auto mr-2"/>
                                   </Link>
                                 </div>
                               </motion.div>
