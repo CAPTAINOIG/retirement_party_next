@@ -1,29 +1,39 @@
 import Link from "next/link";
 import { IconBrandFacebook, IconBrandInstagram, IconBrandX } from "@tabler/icons-react";
 import React from "react";
+import Logo from "@/components/core/shared/Logo";
+import products from "@/lib/products";
 
 const Footer = () => {
   return (
     <>
       <footer className="bg-[#11100f] text-zinc-200 py-20 bg-gradient-to-br from-gray-900 to-gray-950">
         <div className="container">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-20 lg:gap-10 pt-10 pb-32">
-            <div>
-              <p className="text-base font-medium">Products</p>
-              <div className="flex flex-col mt-6 space-y-4">
-                <Link href={ '/infographics' } className="opacity-70 hover:text-primary-300">
-                  Insights
-                </Link>
-                <Link href={ '/dashboard/statement' } className="opacity-70 hover:text-primary-300">
-                  Statement
-                </Link>
-                <Link href={ '/dashboard/financial-report' } className="opacity-70 hover:text-primary-300">
-                  More
-                </Link>
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-20 lg:gap-10 pt-10 pb-32">
+            <div className="md:col-span-2">
+              <Logo light/>
+              <div className="mt-8 max-w-xs">
+                Statisense is a leading AI data company revolutionizing financial data analysis with innovation,
+                precision, and insightful AI tools for informed decisions.
               </div>
             </div>
             <div>
-              <p className="text-base font-medium">Company</p>
+              <h6 className="font-medium">Products</h6>
+              <div className="flex flex-col mt-6 space-y-4">
+                {
+                  products.filter(p => p.categories.includes('featured')).map(p => (
+                    <Link
+                      key={ p.slug } href={ `https://app.statisense.co${ p.dashboardLink }` }
+                      className="opacity-70 hover:text-primary-300"
+                    >
+                      { p.name }
+                    </Link>
+                  ))
+                }
+              </div>
+            </div>
+            <div>
+              <h6 className="font-medium">Company</h6>
               <div className="flex flex-col mt-6 space-y-4">
                 <Link href={ '/about' } className="opacity-70 hover:text-primary-300">
                   About us
@@ -37,7 +47,7 @@ const Footer = () => {
               </div>
             </div>
             <div>
-              <p className="text-base font-medium">Support</p>
+              <h6 className="font-medium">Support</h6>
               <div className="flex flex-col mt-6 space-y-4">
                 <Link href={ '/about#faq' } className="opacity-70 hover:text-primary-300">
                   FAQs
@@ -51,7 +61,7 @@ const Footer = () => {
 
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 items-start sm:items-center sm:space-x-8">
-              <div>&copy; Statisense, 2023 All rights reserved</div>
+              <div>Copyright &copy; { (new Date()).getFullYear() } Statisense</div>
             </div>
             <div className="flex items-center space-x-6 mt-8 md:mt-0">
               <a
