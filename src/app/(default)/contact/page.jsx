@@ -35,40 +35,40 @@ const ContactUs = () => {
           <div className="space-y-16">
             <div>
               <h5 className="text-xl font-medium mb-8 text-center">Connect with us</h5>
-              <div className="grid grid-cols-5 gap-6">
+              <div className="grid grid-cols-3 md:grid-cols-5 gap-6">
                 <Link
                   href="mailto:info@statisense.com.ng" target="_blank"
                   className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
                 >
-                  <IconMail size="32"/>
+                  <div><IconMail size="32"/></div>
                 </Link>
                 <Link
                   href="https://facebook.com/statisense" target="_blank"
                   className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
                 >
-                  <IconBrandFacebook size="32"/>
+                  <div><IconBrandFacebook size="32"/></div>
                 </Link>
                 <Link
                   href="https://twitter.com/statisense" target="_blank"
                   className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
                 >
-                  <IconBrandX size="32"/>
+                  <div><IconBrandX size="32"/></div>
                 </Link>
                 <Link
                   href="https://www.instagram.com/statisense/" target="_blank"
                   className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
                 >
-                  <IconBrandInstagram size="32"/>
+                  <div><IconBrandInstagram size="32"/></div>
                 </Link>
                 <Link
                   href="https://www.linkedin.com/company/statisense/" target="_blank"
                   className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-7 px-6"
                 >
-                  <IconBrandLinkedin size="32"/>
+                  <div><IconBrandLinkedin size="32"/></div>
                 </Link>
               </div>
             </div>
-            <Card className="p-10 subtle-shadow text-center">
+            <Card className="px-8 py-10 md:p-10 subtle-shadow text-center">
               <h5 className="text-xl font-medium mb-10">
                 Send us a message
               </h5>
