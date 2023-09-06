@@ -58,7 +58,7 @@ const ChatSimulation = () => {
       onComplete: () => {
         setCompleted(4)
         setTimeout(function () {
-          section.current.style.transform = "translateY(-640px)"
+          if (section.current) section.current.style.transform = "translateY(-640px)"
           setCompleted(5)
         }, 2000);
       },
@@ -74,9 +74,9 @@ const ChatSimulation = () => {
       startDelay: 500,
       onComplete: () => {
         setCompleted(6)
-        section.current.style.transform = "translateY(-840px)"
+        if (section.current) section.current.style.transform = "translateY(-840px)"
         setTimeout(function () {
-          section.current.style.transform = "translateY(-940px)"
+          if (section.current) section.current.style.transform = "translateY(-940px)"
           setCompleted(7)
         }, 2000);
       },
@@ -92,13 +92,13 @@ const ChatSimulation = () => {
       startDelay: 500,
       onComplete: () => {
         setCompleted(8)
-        section.current.style.transform = "translateY(-1120px)"
+        if (section.current) section.current.style.transform = "translateY(-1120px)"
         setTimeout(function () {
-          section.current.style.transform = "translateY(-1220px)"
+          if (section.current) section.current.style.transform = "translateY(-1220px)"
           setCompleted(9)
         }, 2000);
         setTimeout(function () {
-          section.current.style.transform = "translateY(-1325px)"
+          if (section.current) section.current.style.transform = "translateY(-1325px)"
           setCompleted(10)
         }, 3000);
       },
@@ -115,8 +115,8 @@ const ChatSimulation = () => {
       onComplete: () => {
         setTimeout(function () {
           setCompleted(0)
-          section.current.style.trasnsitionDuration = "3s"
-          section.current.style.transform = "translateY(0px)"
+          if (section.current) section.current.style.trasnsitionDuration = "3s"
+          if (section.current) section.current.style.transform = "translateY(0px)"
         }, 2000);
       },
     };
@@ -150,10 +150,10 @@ const ChatSimulation = () => {
     if (completed === 0) {
       setTimeout(function () {
         setCompleted(1)
-        section.current.style.transform = "translateY(-110px)"
+        if (section.current) section.current.style.transform = "translateY(-110px)"
       }, 1000);
       setTimeout(function () {
-        section.current.style.transform = "translateY(-400px)"
+        if (section.current) section.current.style.transform = "translateY(-400px)"
         setCompleted(2)
       }, 3000);
     }
@@ -164,7 +164,6 @@ const ChatSimulation = () => {
       ref={ ref }
       className="h-[400px] md:h-[550px] overflow-hidden bg-white shadow rounded-[24px] p-10 relative"
     >
-      {/*<img className="block md:hidden" src="/images/1.png" alt="1"/>*/ }
       <div ref={ section } className={ `duration-500 ease-in-out` }>
         <div className="flex items-center justify-end">
           <div className="flex items-center gap-3">
