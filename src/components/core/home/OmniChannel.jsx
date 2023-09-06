@@ -3,7 +3,6 @@ import { IconArrowRight, IconFileInvoice, IconFileTypeDocx } from "@tabler/icons
 import Button from "@/components/global/Button";
 import products from "@/lib/products";
 import classNames from "classnames";
-import Link from "next/link";
 
 const OmniChannel = () => {
   return (
@@ -18,16 +17,16 @@ const OmniChannel = () => {
               We use AI models to simplify datasets into <br className="hidden md:block"/> conversations, reports and
               infographics.
             </p>
-            <Link href="https://app.statisense.co">
+            <a href="https://app.statisense.co">
               <Button color="black" className="mt-12" rightIcon={ <IconArrowRight/> } size="lg">
                 Get started
               </Button>
-            </Link>
+            </a>
           </div>
           <div>
             <div className="relative">
               <div
-                className="hidden md:block absolute animate-bounce rounded-[1.2rem] bg-white shadow -bottom-20 -left-20"
+                className="hidden md:block absolute animate-[updown_1s_ease-in-out_infinite_alternate] rounded-3xl bg-white shadow -bottom-20 -left-20"
               >
                 <div className="px-8 py-6">
                   <div className="flex items-center mb-8"><h3 className="font-semibold text-base mr-4">
@@ -85,7 +84,7 @@ const OmniChannel = () => {
                 </div>
               </div>
               <div
-                className="hidden md:flex items-start px-8 py-6 animate-bounce delay-four absolute -left-16 -top-8 bg-white shadow border rounded-[1.2rem] transition-all duration-300 hover:scale-[1.01] hover:-translate-y-1 cursor-pointer custom-cursor-on-hover"
+                className="hidden md:flex items-start px-8 py-6 animate-[updown_2s_ease-in-out_infinite_alternate] absolute -left-16 -top-8 bg-white shadow border rounded-3xl"
               >
                 <div className="mt-1">
                   <IconFileTypeDocx className="text-blue-600"/>
@@ -96,10 +95,10 @@ const OmniChannel = () => {
                 </div>
               </div>
               <div
-                className="hidden md:grid gap-2 px-4 py-4 grid-cols-2 absolute top-16 -right-8 animate-bounce delay-six bg-white rounded-[1.2rem] shadow pointer-events-none"
+                className="w-[270px] hidden md:grid gap-2 px-4 py-4 grid-cols-2 absolute top-16 -right-8 animate-[updown_3s_ease-in-out_infinite_alternate] bg-white rounded-3xl shadow pointer-events-none"
               >
                 {
-                  products.slice(0, 4).map(p => (
+                  products.filter(p => p.categories.includes('featured')).slice(0, 4).map(p => (
                     <div
                       key={ p.slug }
                       className="flex flex-col items-center rounded-2xl text-center px-2 py-4 transition duration-150 ease-in-out"

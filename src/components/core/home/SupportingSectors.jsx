@@ -1,4 +1,3 @@
-"use client"
 import React, { useEffect, useRef } from "react";
 import "swiper/css";
 import "swiper/css/navigation";

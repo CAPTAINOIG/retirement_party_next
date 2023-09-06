@@ -23,7 +23,9 @@ const HowItWorks = () => {
         <div className="space-y-8">
           <ul role="list" className="mt-16 grid md:grid-cols-3 gap-8">
             <li className="rounded-3xl bg-gray-900 px-10 md:px-10 py-10 md:py-12">
-              <IconDatabase className="animate-bounce mb-6 text-primary-300/60" size="48"/>
+              <IconDatabase
+                className="animate-[updown_1s_ease-in-out_infinite_alternate] mb-6 text-primary-300/60" size="48"
+              />
               <h3 className="font-medium text-lg md:text-xl flex items-center">
                 Plug your data
               </h3>
@@ -32,7 +34,10 @@ const HowItWorks = () => {
               </p>
             </li>
             <li className="rounded-3xl bg-gray-900 px-10 md:px-10 py-10 md:py-12 group">
-              <IconRobot className="animate-bounce delay-two mb-6 text-primary-300/60" size="48"/>
+              <IconRobot
+                className="animate-[updown_1.2s_ease-in-out_infinite_alternate] delay-two mb-6 text-primary-300/60"
+                size="48"
+              />
               <h3 className="font-medium text-lg md:text-xl flex items-center">
                 AI takes over
               </h3>
@@ -41,7 +46,10 @@ const HowItWorks = () => {
               </p>
             </li>
             <li className="rounded-3xl bg-gray-900 px-10 md:px-10 py-10 md:py-12">
-              <IconMessage2 className="animate-bounce delay-four mb-6 text-primary-300/60" size="48"/>
+              <IconMessage2
+                className="animate-[updown_1.5s_ease-in-out_infinite_alternate] delay-four mb-6 text-primary-300/60"
+                size="48"
+              />
               <h3 className="font-medium text-lg md:text-xl flex items-center">
                 Chat with Bambi
               </h3>
@@ -52,7 +60,10 @@ const HowItWorks = () => {
           </ul>
           <ul role="list" className="grid md:grid-cols-6 gap-8">
             <li className="md:col-start-2 md:col-span-2 rounded-3xl bg-gray-900 px-10 md:px-10 py-10 md:py-12">
-              <IconChartInfographic className="animate-bounce delay-six mb-6 text-primary-300/60" size="48"/>
+              <IconChartInfographic
+                className="animate-[updown_1.8s_ease-in-out_infinite_alternate] delay-six mb-6 text-primary-300/60"
+                size="48"
+              />
               <h3 className="font-medium text-lg md:text-xl flex items-center">
                 View report
               </h3>
@@ -61,7 +72,10 @@ const HowItWorks = () => {
               </p>
             </li>
             <li className="md:col-span-2 rounded-3xl bg-gray-900 px-10 md:px-10 py-10 md:py-12">
-              <IconRepeat className="animate-bounce delay-eight mb-6 text-primary-300/60" size="48"/>
+              <IconRepeat
+                className="animate-[updown_2s_ease-in-out_infinite_alternate] delay-eight mb-6 text-primary-300/60"
+                size="48"
+              />
               <h3 className="font-medium text-lg md:text-xl flex items-center">
                 Repeat
               </h3>

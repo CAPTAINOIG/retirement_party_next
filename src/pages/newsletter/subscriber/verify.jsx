@@ -1,16 +1,14 @@
-"use client"
-import React, { useState } from 'react';
-import { IconArrowLeft, IconLinkOff, IconMailCheck } from "@tabler/icons-react";
-import { useSearchParams } from "next/navigation";
+import React, { useState } from "react";
 import { useVerifySubscriberEmail } from "@/api/other";
-import Loader from "@/components/global/Loader";
 import { useMount } from "react-use";
-import Button from "@/components/global/Button";
+import Loader from "@/components/global/Loader";
+import { IconArrowLeft, IconLinkOff, IconMailCheck } from "@tabler/icons-react";
 import Link from "next/link";
+import Button from "@/components/global/Button";
+import { useRouter } from "next/router";
 
 const Verify = () => {
-  const searchParams = useSearchParams();
-  const token = searchParams.get('token');
+  const { query: { token } } = useRouter();
   const [view, setView] = useState('');
   const [error, setError] = useState('');
   const { mutateAsync: verify, isLoading } = useVerifySubscriberEmail();

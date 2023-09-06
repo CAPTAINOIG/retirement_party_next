@@ -1,6 +1,5 @@
-"use client"
-import React, { useEffect, useRef } from 'react';
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
+import React, { useEffect, useRef } from "react";
 import { useAddViewMutation, useGetInfographicQuery } from "@/api/infographics";
 import PageHeader from "@/components/core/shared/PageHeader";
 import Image from "@/components/core/shared/Image";
@@ -18,9 +17,12 @@ import Newsletter from "@/components/core/home/Newsletter";
 import SimilarInfographics from "@/components/core/infographics/SimilarInfographics";
 import { useToast } from "@/hooks/use-toast";
 import IconButton from "@/components/global/IconButton";
+import DefaultLayout from "@/components/core/DefaultLayout";
+import Head from "next/head";
 
-const InfographicDetailsPage = ({ params: { infographic: slug } }) => {
+const InfographicDetailsPage = () => {
   const router = useRouter();
+  const { infographic: slug } = router.query;
   const viewed = useRef(null);
   const { mutateAsync: addView } = useAddViewMutation();
   const { data: { infographic = null } = {}, isLoading: isInfographicLoading } = useGetInfographicQuery(slug);
@@ -34,13 +36,16 @@ const InfographicDetailsPage = ({ params: { infographic: slug } }) => {
 
   return (
     <>
+      <Head>
+        <title>{ infographic?.title || 'Infographic' }</title>
+      </Head>
       <PageHeader
         title={ infographic?.title }
         onBack={ () => router.push(`/infographics/${ infographic.category.slug }`) }
         backText={ infographic?.category?.name || 'Back' }
         isLoading={ isInfographicLoading }
       />
-      <div className="py-24 md:py-32">
+      <div className="py-24 md:py-28">
         <div className="container">
           {
             isInfographicLoading ? (
@@ -161,5 +166,7 @@ const ShareButtons = ({ infographic }) => {
     </div>
   )
 };
+
+InfographicDetailsPage.Layout = DefaultLayout;
 
 export default InfographicDetailsPage;

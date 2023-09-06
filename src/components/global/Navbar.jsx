@@ -1,4 +1,3 @@
-"use client"
 import React, { createElement, useState } from 'react';
 import Link from "next/link";
 import { IconArrowRight, IconLayout2, IconLogout, IconMenu } from "@tabler/icons-react";

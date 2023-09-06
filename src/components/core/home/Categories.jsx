@@ -1,4 +1,3 @@
-"use client"
 import React from 'react';
 import { register } from "swiper/element/bundle";
 import { useGetCategoriesQuery } from "@/api/infographics.js";

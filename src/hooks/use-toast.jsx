@@ -1,4 +1,3 @@
-"use client"
 import React, { createContext, useContext, useState } from "react";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";

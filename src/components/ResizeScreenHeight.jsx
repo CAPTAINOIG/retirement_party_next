@@ -1,4 +1,3 @@
-"use client"
 import React, { useCallback, useLayoutEffect } from 'react';
 
 const ResizeScreenHeight = () => {

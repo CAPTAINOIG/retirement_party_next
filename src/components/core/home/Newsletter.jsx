@@ -1,4 +1,3 @@
-"use client"
 import React, { useState } from 'react';
 import Button from "@/components/global/Button.jsx";
 import { IconArrowRight, IconMailQuestion } from "@tabler/icons-react";

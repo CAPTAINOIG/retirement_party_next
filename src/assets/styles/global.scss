@@ -1,28 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer utilities {
-  .delay-two {
-    animation-delay: 2s;
-  }
-
-  .delay-four {
-    animation-delay: 4s;
-  }
-
-  .delay-six {
-    animation-delay: 6s;
-  }
-
-  .delay-eight {
-    animation-delay: 8s;
-  }
-
-  .delay-ten {
-    animation-delay: 10s;
-  }
-}
+//@layer utilities {
+//  .delay-two {
+//    animation-delay: 2s;
+//  }
+//
+//  .delay-four {
+//    animation-delay: 4s;
+//  }
+//
+//  .delay-six {
+//    animation-delay: 6s;
+//  }
+//
+//  .delay-eight {
+//    animation-delay: 8s;
+//  }
+//
+//  .delay-ten {
+//    animation-delay: 10s;
+//  }
+//}
 
 ::selection {
   @apply bg-teal-600 text-white
@@ -138,4 +134,13 @@ body {
 
 .subtle-shadow {
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
 }
