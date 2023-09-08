@@ -29,7 +29,7 @@ const InsightsOnTheGo = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden md:overflow-visible">
+    <div>
       <div className="container">
         <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
           <div className="relative md:col-span-6 order-1 md:order-none">

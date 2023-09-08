@@ -5,7 +5,7 @@ import Button from "@/components/global/Button";
 const ContactCategories = () => {
   return (
     <div className="grid md:grid-cols-4 gap-6">
-      <Card className="flex flex-col subtle-shadow px-10 py-8 border-t-[3px] border-t-blue-100">
+      <Card className="flex flex-col subtle-shadow px-10 py-8">
         <div className="flex items-center space-x-2">
           <IconDiscount size="20"/>
           <h5 className="font-medium text-lg">Sales</h5>
@@ -19,7 +19,7 @@ const ContactCategories = () => {
           </Button>
         </a>
       </Card>
-      <Card className="flex flex-col subtle-shadow px-10 py-8 border-t-[3px] border-t-orange-100">
+      <Card className="flex flex-col subtle-shadow px-10 py-8">
         <div className="flex items-center space-x-2">
           <IconHeadphones size="20"/>
           <h5 className="font-medium text-lg">Support</h5>
@@ -33,7 +33,7 @@ const ContactCategories = () => {
           </Button>
         </a>
       </Card>
-      <Card className="flex flex-col subtle-shadow px-10 py-8 border-t-[3px] border-t-red-100">
+      <Card className="flex flex-col subtle-shadow px-10 py-8">
         <div className="flex items-center space-x-2">
           <IconDeviceTv size="20"/>
           <h5 className="font-medium text-lg">Media</h5>
@@ -48,7 +48,7 @@ const ContactCategories = () => {
           </Button>
         </a>
       </Card>
-      <Card className="flex flex-col subtle-shadow px-10 py-8 border-t-[3px] border-t-teal-100">
+      <Card className="flex flex-col subtle-shadow px-10 py-8">
         <div className="flex items-center space-x-2">
           <IconHeartHandshake/>
           <h5 className="font-medium text-lg">Partnerships</h5>

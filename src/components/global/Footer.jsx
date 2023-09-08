@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-20 lg:gap-10 pt-10 pb-32">
             <div className="md:col-span-2">
               <Logo light/>
-              <p className="mt-8 max-w-xs opacity-70">
+              <p className="mt-8 max-w-xs opacity-70 leading-7">
                 Statisense is the leading AI data company revolutionizing financial data analysis with innovation,
                 precision, and insightful AI tools for informed decisions.
               </p>
