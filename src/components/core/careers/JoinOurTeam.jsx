@@ -3,7 +3,7 @@ const JoinOurTeam = () => {
     <div>
       <div className="container">
         <div className="grid md:grid-cols-11 gap-16 items-center">
-          <div className="col-span-6">
+          <div className="md:col-span-6">
             <div className="rounded-3xl overflow-hidden grid grid-cols-2 gap-0">
               <img
                 src="https://picsum.photos/400/400"
@@ -23,11 +23,11 @@ const JoinOurTeam = () => {
               />
             </div>
           </div>
-          <div className="col-span-5 order-1 md:order-none text-center md:text-left">
+          <div className="md:col-span-5 order-1 md:order-none text-center md:text-left">
             <h2 className="text-2xl md:text-4xl font-semibold">
               Join our Team
             </h2>
-            <p className="max-w-md mt-4 md:mt-6 md:text-lg">
+            <p className="max-w-md mx-auto md:mx-0 mt-4 md:mt-6 md:text-lg">
               Are you ready to be a part of a groundbreaking AI data company that's reshaping the landscape of data
               analysis across diverse industries? At Statisense, we're on a mission to revolutionize how businesses
               navigate and harness the power of data. We're looking for talented individuals who share our passion for
