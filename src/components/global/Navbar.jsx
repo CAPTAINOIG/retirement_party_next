@@ -10,7 +10,6 @@ import SimpleDropdown from "@/components/global/SimpleDropdown.jsx";
 import { useRouter } from "next/navigation";
 import Hover from "@/components/global/Hover.jsx";
 import products from "@/lib/products";
-import Logo from "@/components/core/shared/Logo";
 
 const Navbar = () => {
   const router = useRouter();
@@ -49,7 +48,7 @@ const Navbar = () => {
           <nav className="relative z-50 flex justify-between h-full">
             <div className="flex items-center md:gap-x-12 flex-1 h-full">
               <Link href={ "/" } className="text-[1.6rem] flex items-center">
-                <Logo className="mr-3" light={ !scrolled }/>
+                <img src="/images/logo.png" className="w-[160px]" alt=""/>
               </Link>
               <div className="hidden lg:flex md:space-x-3 ml-auto h-full">
                 <Hover className="h-full inline-flex items-center">
