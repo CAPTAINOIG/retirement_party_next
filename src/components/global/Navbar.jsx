@@ -1,6 +1,7 @@
 import React, { createElement, useState } from 'react';
 import Link from "next/link";
 import {
+  IconArrowRight,
   IconBuildingBank,
   IconCashBanknote,
   IconFiles,
@@ -23,32 +24,32 @@ import TestRun from "@/components/core/shared/TestRun";
 
 const items = [
   {
-    name: 'Banking AI',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+    name: 'For banking',
+    description: 'Data-driven insights for resilient banking operations.',
     icon: IconBuildingBank,
     bg: 'bg-teal-500',
   },
   {
-    name: 'Markets AI',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+    name: 'For markets',
+    description: 'Strategic data insights for market dynamics.',
     icon: IconShoppingBag,
     bg: 'bg-sky-500',
   },
   {
-    name: 'Identity AI',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+    name: 'For identity',
+    description: 'Strengthening identity verification with advanced data.',
     icon: IconIdBadge,
     bg: 'bg-red-500',
   },
   {
-    name: 'Accounting AI',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+    name: 'For accounting',
+    description: 'Streamlining financial management through data.',
     icon: IconCashBanknote,
     bg: 'bg-orange-500',
   },
   {
-    name: 'Documents AI',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+    name: 'For documents',
+    description: 'Data-driven solutions for efficient document management.',
     icon: IconFiles,
     bg: 'bg-cyan-500',
   },
@@ -139,6 +140,20 @@ const Navbar = () => {
                                       ))
                                     }
                                   </div>
+                                  <Link
+                                    href={ `https://app.statisense.co` }
+                                    className="rounded-2xl flex items-center hover:bg-gray-200/40 p-4 transition-all cursor-pointer"
+                                  >
+                                    <div className="mr-4">
+                                      <div
+                                        className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-slate-800 bg-slate-200') }
+                                      >
+                                        <IconLayout2/>
+                                      </div>
+                                    </div>
+                                    <h4 className="font-medium">Explore 10+ products</h4>
+                                    <IconArrowRight className="ml-auto mr-2"/>
+                                  </Link>
                                 </div>
                               </motion.div>
                             )
