@@ -1,7 +1,6 @@
 import React, { createElement, useState } from 'react';
 import Link from "next/link";
 import {
-  IconArrowRight,
   IconBuildingBank,
   IconCashBanknote,
   IconFiles,
@@ -36,16 +35,16 @@ const items = [
     bg: 'bg-cyan-500',
   },
   {
-    name: 'For markets',
-    description: 'Strategic data insights for market dynamics.',
-    icon: IconShoppingBag,
-    bg: 'bg-sky-500',
-  },
-  {
     name: 'For identity',
     description: 'Strengthening identity verification with advanced data.',
     icon: IconIdBadge,
     bg: 'bg-red-500',
+  },
+  {
+    name: 'For markets',
+    description: 'Strategic data insights for market dynamics.',
+    icon: IconShoppingBag,
+    bg: 'bg-sky-500',
   },
   {
     name: 'For accounting',
@@ -111,11 +110,11 @@ const Navbar = () => {
                                 animate={ { opacity: 1, y: 0 } }
                                 exit={ { opacity: 0, y: 20 } }
                                 className={ classNames(
-                                  'rounded-3xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-1/2 -translate-x-1/2 right-0 w-[650px]',
+                                  'rounded-3xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-[0] -translate-x-1/2 right-0 w-[900px]',
                                 ) }
                               >
                                 <div className="space-y-2 p-6">
-                                  <div className="grid grid-cols-2 gap-2">
+                                  <div className="grid grid-cols-3 gap-2">
                                     {
                                       items.map(item => (
                                         <Link
@@ -139,21 +138,20 @@ const Navbar = () => {
                                         </Link>
                                       ))
                                     }
-                                  </div>
-                                  <Link
-                                    href={ `https://app.statisense.co` }
-                                    className="rounded-2xl flex items-center hover:bg-gray-200/40 p-4 transition-all cursor-pointer"
-                                  >
-                                    <div className="mr-4">
-                                      <div
-                                        className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-slate-800 bg-slate-200') }
-                                      >
-                                        <IconLayout2/>
+                                    <Link
+                                      href={ `https://app.statisense.co` }
+                                      className="rounded-2xl flex items-center hover:bg-gray-200/40 p-4 transition-all cursor-pointer"
+                                    >
+                                      <div className="mr-4">
+                                        <div
+                                          className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-slate-800 bg-slate-200') }
+                                        >
+                                          <IconLayout2/>
+                                        </div>
                                       </div>
-                                    </div>
-                                    <h4 className="font-medium">Explore all products</h4>
-                                    <IconArrowRight className="ml-auto mr-2"/>
-                                  </Link>
+                                      <h4 className="font-medium">Explore all products</h4>
+                                    </Link>
+                                  </div>
                                 </div>
                               </motion.div>
                             )
