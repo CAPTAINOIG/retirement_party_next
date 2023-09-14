@@ -252,6 +252,15 @@ const Navbar = () => {
                 >
                   Insights
                 </Link>
+                <Link
+                  onClick={ () => {
+                    setIsMobileNavVisible(false);
+                    setIsChatbotOpen(true);
+                  } } href={ "/infographics" }
+                  className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
+                >
+                  Bambi
+                </Link>
                 <div>
                   <hr className="mx-2 my-2 border-zinc-300/40"/>
                 </div>
