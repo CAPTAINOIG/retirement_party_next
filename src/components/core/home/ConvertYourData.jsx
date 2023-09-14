@@ -24,7 +24,7 @@ const ConvertYourData = () => {
                 Support your teams with conversation ready insight of your customers and business data.
               </p>
               <Link href="https://app.statisense.co">
-                <Button color="black" className="mt-12" rightIcon={ <IconArrowRight/> } size="lg">
+                <Button className="mt-12" rightIcon={ <IconArrowRight/> } size="lg">
                   Get started
                 </Button>
               </Link>

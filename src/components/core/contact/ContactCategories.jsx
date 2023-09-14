@@ -14,7 +14,7 @@ const ContactCategories = () => {
           Wondering if Statisense is the right tool for your business? Chat with our team to see if there’s a fit.
         </p>
         <a href="mailto:sales@statisense.com.ng" className="flex mt-auto">
-          <Button variant="outlined" className="w-full">
+          <Button color="black" variant="outlined" className="w-full">
             Get in touch
           </Button>
         </a>
@@ -28,7 +28,7 @@ const ContactCategories = () => {
           Need a hand using Statisense or managing your account? Send us an email and we will get in touch with you
         </p>
         <a href="mailto:support@statisense.com.ng" className="flex mt-auto">
-          <Button variant="outlined" className="w-full">
+          <Button color="black" variant="outlined" className="w-full">
             Get support
           </Button>
         </a>
@@ -43,7 +43,7 @@ const ContactCategories = () => {
           Communications Manager will be in touch.
         </p>
         <a href="mailto:media@statisense.com.ng" className="flex mt-auto">
-          <Button variant="outlined" className="w-full">
+          <Button color="black" variant="outlined" className="w-full">
             Get in touch
           </Button>
         </a>
@@ -58,7 +58,7 @@ const ContactCategories = () => {
           circle back.
         </p>
         <a href="mailto:partnership@statisense.com.ng" className="flex mt-auto">
-          <Button variant="outlined" className="w-full">
+          <Button color="black" variant="outlined" className="w-full">
             Let's chat
           </Button>
         </a>

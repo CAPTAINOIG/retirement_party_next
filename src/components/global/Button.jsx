@@ -29,7 +29,7 @@ const classes = {
     }
   },
   primary: {
-    filled: 'bg-primary-600 hover:bg-primary-700 text-white focus:ring-4 focus:ring-primary-600 focus:ring-opacity-20',
+    filled: 'bg-primary-800 hover:bg-primary-700 text-white focus:ring-4 focus:ring-primary-600 focus:ring-opacity-20',
     outlined: 'border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-4 focus:ring-primary-600 focus:ring-opacity-20',
     subtle: 'bg-primary-600 bg-opacity-10 text-primary-600 hover:bg-opacity-20',
     text: 'bg-primary-600 bg-opacity-0 text-primary-600 hover:bg-opacity-10',
@@ -81,7 +81,7 @@ const classes = {
 const Button = forwardRef((
   {
     variant = 'filled',
-    color = 'black',
+    color = 'primary',
     size = 'md',
     type = 'button',
     disabled = false,

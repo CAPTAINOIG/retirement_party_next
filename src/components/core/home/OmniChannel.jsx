@@ -36,7 +36,7 @@ const OmniChannel = () => {
               Our models help generate industry grade reports from your data in seconds, regardless of format
             </p>
             <a href="https://app.statisense.co">
-              <Button color="black" className="mt-12" rightIcon={ <IconArrowRight/> } size="lg">
+              <Button className="mt-12" rightIcon={ <IconArrowRight/> } size="lg">
                 Get started
               </Button>
             </a>
@@ -106,7 +106,7 @@ const OmniChannel = () => {
                 className="hidden md:flex items-start px-8 py-6 animate-[updown_2s_ease-in-out_infinite_alternate] absolute -left-16 -top-8 bg-white shadow border rounded-3xl"
               >
                 <div className="mt-1">
-                  <IconFileTypeDocx className="text-blue-600"/>
+                  <IconFileTypeDocx className="text-teal-600"/>
                 </div>
                 <div className="ml-3">
                   <p>Q1 2023 progress report for our company</p>

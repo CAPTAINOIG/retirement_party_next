@@ -19,7 +19,7 @@ const FAQ = () => {
                 <Card key={ faq.q } className="subtle-shadow">
                   <Collapsible
                     header={ (
-                      <h5 className="md:text-lg font-medium">
+                      <h5 className="font-medium">
                         { faq.q }
                       </h5>
                     ) }

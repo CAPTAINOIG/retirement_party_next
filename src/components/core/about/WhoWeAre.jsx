@@ -3,8 +3,8 @@ import Card from "@/components/global/Card";
 
 const WhoWeAre = () => {
   return (
-    <div>
-      <section aria-label="Our services" className="container">
+    <section>
+      <div aria-label="Our services" className="container">
         <div className="grid lg:grid-cols-12 gap-6 md:gap-10">
           <div className="lg:col-span-4 relative">
             <div className="sticky top-36 text-center lg:text-left">
@@ -13,7 +13,7 @@ const WhoWeAre = () => {
               </h2>
             </div>
           </div>
-          <div className="lg:col-span-8 text-lg">
+          <div className="lg:col-span-8">
             <p className="text-center md:text-left px-2">
               Statisense is a pioneering AI data company at the forefront of transforming how businesses navigate their
               financial data. With a commitment to innovation, accuracy, and unparalleled insights, we specialize in
@@ -38,8 +38,8 @@ const WhoWeAre = () => {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

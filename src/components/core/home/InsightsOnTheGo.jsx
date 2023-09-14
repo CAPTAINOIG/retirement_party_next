@@ -39,7 +39,7 @@ const InsightsOnTheGo = () => {
               Chat with Lens for insights on topics like economy, business, education, election etc
             </p>
             <Link href={ '/infographics' }>
-              <Button color="black" className="mt-12" size="lg" rightIcon={ <IconArrowRight/> }>
+              <Button className="mt-12" size="lg" rightIcon={ <IconArrowRight/> }>
                 Let's go
               </Button>
             </Link>
