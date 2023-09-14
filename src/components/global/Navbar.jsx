@@ -151,7 +151,7 @@ const Navbar = () => {
                                         <IconLayout2/>
                                       </div>
                                     </div>
-                                    <h4 className="font-medium">Explore 10+ products</h4>
+                                    <h4 className="font-medium">Explore all products</h4>
                                     <IconArrowRight className="ml-auto mr-2"/>
                                   </Link>
                                 </div>
