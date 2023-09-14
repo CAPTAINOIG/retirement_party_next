@@ -1,21 +1,39 @@
-import React, { createElement } from 'react';
+import React, { createElement, useEffect, useRef } from 'react';
 import { IconArrowRight, IconFileInvoice, IconFileTypeDocx } from "@tabler/icons-react";
 import Button from "@/components/global/Button";
 import products from "@/lib/products";
 import classNames from "classnames";
+import Typed from "typed.js";
 
 const OmniChannel = () => {
+  const el = useRef(null);
+  const typed = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      strings: ['datasets', 'documents'],
+      typeSpeed: 50,
+      backSpeed: 10,
+      backDelay: 3000,
+      loop: true,
+      smartBackspace: true,
+    };
+    typed.current = new Typed(el.current, options);
+    return () => {
+      typed.current.destroy();
+    }
+  }, []);
+
   return (
     <div>
       <div className="container">
         <div className="grid md:grid-cols-2 gap-10">
           <div className="flex flex-col justify-center order-1 md:order-none">
             <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1] max-w-xl">
-              Connecting generative AI to Africa's data
+              Simplify your <br/> <span ref={ el }>datasets</span> <br/> into decisions
             </h2>
-            <p className="mt-6 text-base md:text-lg">
-              We use AI models to simplify datasets into <br className="hidden md:block"/> conversations, reports and
-              infographics.
+            <p className="mt-6 text-base md:text-lg max-w-md">
+              Our models help generate industry grade reports from your data in seconds, regardless of format
             </p>
             <a href="https://app.statisense.co">
               <Button color="black" className="mt-12" rightIcon={ <IconArrowRight/> } size="lg">
@@ -24,31 +42,32 @@ const OmniChannel = () => {
             </a>
           </div>
           <div>
-            <div className="relative">
+            <div className="relative !text-sm pointer-events-none">
               <div
                 className="hidden md:block absolute animate-[updown_1s_ease-in-out_infinite_alternate] rounded-3xl bg-white shadow -bottom-20 -left-20"
               >
                 <div className="px-8 py-6">
-                  <div className="flex items-center mb-8"><h3 className="font-semibold text-base mr-4">
+                  <div className="flex items-center mb-8"><h3 className="font-semibold mr-4">
                     Recent analysis
                   </h3>
                   </div>
-                  <div className="text-md w-64">
+                  <div className="w-64">
                     <div className="space-y-6">
                       <div className="flex items-center">
                         <div>
                           <div
-                            className="w-10 h-10 rounded-full flex items-center justify-center bg-red-50 text-red-700">
+                            className="w-10 h-10 rounded-full flex items-center justify-center bg-red-50 text-red-700"
+                          >
                             <IconFileInvoice size="20"/>
                           </div>
                         </div>
                         <div className="px-4 overflow-hidden"><p className="font-medium">John Doe</p><p
-                          className="text-[.92rem] overflow-hidden text-ellipsis whitespace-nowrap opacity-80">Opay</p>
+                          className="overflow-hidden text-ellipsis whitespace-nowrap opacity-80">Opay</p>
                         </div>
                         <a className="ml-auto" href="#">
                           <button
                             type="button"
-                            className="px-4 py-1 text-[.94rem] border border-gray-300 text-gray-800 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 rounded-full transition duration-100 inline-flex items-center whitespace-nowrap"
+                            className="px-4 py-1 border border-gray-300 text-gray-800 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 rounded-full transition duration-100 inline-flex items-center whitespace-nowrap"
                           >
                             <span className="flex-1">View</span>
                           </button>
@@ -62,14 +81,14 @@ const OmniChannel = () => {
                         </div>
                         <div className="px-4 overflow-hidden">
                           <p className="font-medium">Jane Doe</p>
-                          <p className="text-[.92rem] overflow-hidden text-ellipsis whitespace-nowrap opacity-80">
+                          <p className="overflow-hidden text-ellipsis whitespace-nowrap opacity-80">
                             Kuda Bank
                           </p>
                         </div>
                         <a className="ml-auto" href="#">
                           <button
                             type="button"
-                            className="px-4 py-1 text-[.94rem] border border-gray-300 text-gray-800 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 rounded-full transition duration-100 inline-flex items-center whitespace-nowrap"
+                            className="px-4 py-1 border border-gray-300 text-gray-800 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 rounded-full transition duration-100 inline-flex items-center whitespace-nowrap"
                           >
                             <span className="flex-1">View</span>
                           </button>
@@ -77,7 +96,7 @@ const OmniChannel = () => {
                       </div>
                     </div>
                     <hr className="my-4"/>
-                    <div className="w-full flex items-center justify-center px-8 font-medium text-md">
+                    <div className="w-full flex items-center justify-center px-8 font-medium">
                       View all <IconArrowRight size="16" className="ml-3"/>
                     </div>
                   </div>
@@ -91,7 +110,7 @@ const OmniChannel = () => {
                 </div>
                 <div className="ml-3">
                   <p>Q1 2023 progress report for our company</p>
-                  <p className="opacity-80 text-sm mt-1">1st Jan, 2023</p>
+                  <p className="opacity-80 mt-1">1st Jan, 2023</p>
                 </div>
               </div>
               <div
@@ -108,7 +127,7 @@ const OmniChannel = () => {
                       >
                         { createElement(p.icon, { size: 20 }) }
                       </div>
-                      <p className="text-sm mt-2 text-gray-900">{ p.name }</p>
+                      <p className="mt-2 text-gray-900">{ p.name }</p>
                     </div>
                   ))
                 }

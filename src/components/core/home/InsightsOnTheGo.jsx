@@ -15,11 +15,10 @@ const InsightsOnTheGo = () => {
         'A chart depicting the top 10 Foreign Direct Investment (FDI) that came into Africa in 2021. South Africa attracted the most investment, followed by Egypt and Mozambique.',
         'The top 10 easiest places to enforce contracts in 2018 were Kaduna, Bauchi, Jigawa, Borno, Katsina, Kebbi, Yobe, Edo, Ondo, and Kano. These states had the most favorable contract enforcement systems.',
       ],
-      typeSpeed: 10,
-      backSpeed: 10,
+      typeSpeed: 1,
+      backSpeed: 1,
       backDelay: 2000,
       loop: true,
-      smartBackspace: true,
       showCursor: false
     };
     typed.current = new Typed(el.current, options);
@@ -51,37 +50,37 @@ const InsightsOnTheGo = () => {
             <div className="relative w-3/4 md:w-full">
               <div className="relative">
                 <div
-                  className="hidden md:block absolute animate-bounce bg-white border shadow rounded-[1.2rem] top-[5rem] left-[-5rem] px-8 py-6"
+                  className="hidden md:block absolute animate-bounce bg-slate-100 rounded-[1.2rem] top-[5rem] left-[-5rem] px-8 py-4"
                 >
                   <div className="flex items-center gap-4 my-3">
                     <IconFileInvoice className="text-blue-600" size="20"/>
-                    <p className="text-base md:text-lg max-w-sm">
+                    <p className="max-w-sm">
                       Infographics on Africa
                     </p>
                   </div>
                   <div className="flex items-center gap-4 my-3">
                     <IconFolders className="text-teal-600" size="20"/>
-                    <p className="text-base md:text-lg max-w-sm">
+                    <p className="max-w-sm">
                       Africa
                     </p>
                   </div>
                   <div className="flex items-center gap-4 my-3">
                     <IconCalendar className="text-red-600" size="20"/>
-                    <p className="text-base md:text-lg max-w-sm">
+                    <p className="max-w-sm">
                       2023
                     </p>
                   </div>
                 </div>
                 <div
-                  className="hidden md:block absolute min-h-[250px] w-[400px] bg-white border shadow rounded-[1.2rem] bottom-[5rem] right-[-15rem] px-8 py-6"
+                  className="hidden md:block absolute min-h-[250px] w-[400px] bg-slate-100 rounded-[1.2rem] bottom-[5rem] right-[-15rem] px-8 py-4"
                 >
                   <div className="flex items-center gap-2 my-3">
                     <IconClock size="20"/>
-                    <p className="text-base md:text-lg max-w-sm">
+                    <p className="max-w-sm">
                       Date posted: Aug 16, 2023
                     </p>
                   </div>
-                  <p ref={ el } className="mt-6 text-base md:text-lg max-w-sm">
+                  <p ref={ el } className="mt-6 max-w-sm">
                     An infographics showing the countries with the most population in Africa. Nigeria is the most
                     populated African country and it shows that for every 100 Africans, 16 of them are Nigerians.
                   </p>

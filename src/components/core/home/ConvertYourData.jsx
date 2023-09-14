@@ -3,6 +3,7 @@ import Button from "@/components/global/Button";
 import { IconArrowRight } from "@tabler/icons-react";
 import TestRun from "@/components/core/shared/TestRun";
 import ChatSimulation from "@/components/core/home/ChatSimulation";
+import Link from "next/link";
 
 const ConvertYourData = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -22,12 +23,11 @@ const ConvertYourData = () => {
               <p className="mt-6 text-base md:text-lg">
                 Support your teams with conversation ready insight of your customers and business data.
               </p>
-              <Button
-                onClick={ () => setIsChatOpen(true) }
-                color="black" className="mt-12" rightIcon={ <IconArrowRight/> } size="lg"
-              >
-                Get started
-              </Button>
+              <Link href="https://app.statisense.co">
+                <Button color="black" className="mt-12" rightIcon={ <IconArrowRight/> } size="lg">
+                  Get started
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

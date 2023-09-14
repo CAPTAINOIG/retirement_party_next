@@ -19,7 +19,7 @@ const HomePage = () => {
       <div className="bg-slate-100">
         <Hero/>
         <div className="py-28 md:py-44 md:pb-48 relative overflow-hidden">
-          <div className="space-y-28 md:space-y-48">
+          <div className="space-y-28 md:space-y-56">
             <OmniChannel/>
             <ConvertYourData/>
           </div>

@@ -1,6 +1,15 @@
 import React, { createElement, useState } from 'react';
 import Link from "next/link";
-import { IconArrowRight, IconLayout2, IconLogout, IconMenu } from "@tabler/icons-react";
+import {
+  IconBuildingBank,
+  IconCashBanknote,
+  IconFiles,
+  IconIdBadge,
+  IconLayout2,
+  IconLogout,
+  IconMenu,
+  IconShoppingBag
+} from "@tabler/icons-react";
 import { useIsomorphicLayoutEffect } from "react-use";
 import classNames from "classnames";
 import Button from "@/components/global/Button.jsx";
@@ -9,14 +18,48 @@ import { useAuth } from "@/hooks/use-auth.js";
 import SimpleDropdown from "@/components/global/SimpleDropdown.jsx";
 import { useRouter } from "next/navigation";
 import Hover from "@/components/global/Hover.jsx";
-import products from "@/lib/products";
 import Logo from "@/components/core/shared/Logo";
+import TestRun from "@/components/core/shared/TestRun";
+
+const items = [
+  {
+    name: 'Banking AI',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+    icon: IconBuildingBank,
+    bg: 'bg-teal-500',
+  },
+  {
+    name: 'Markets AI',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+    icon: IconShoppingBag,
+    bg: 'bg-sky-500',
+  },
+  {
+    name: 'Identity AI',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+    icon: IconIdBadge,
+    bg: 'bg-red-500',
+  },
+  {
+    name: 'Accounting AI',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+    icon: IconCashBanknote,
+    bg: 'bg-orange-500',
+  },
+  {
+    name: 'Documents AI',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+    icon: IconFiles,
+    bg: 'bg-cyan-500',
+  },
+];
 
 const Navbar = () => {
   const router = useRouter();
   const { user, logout } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   useIsomorphicLayoutEffect(() => {
     if (isMobileNavVisible) document.scrollingElement.style.overflowY = 'hidden';
@@ -49,20 +92,14 @@ const Navbar = () => {
           <nav className="relative z-50 flex justify-between h-full">
             <div className="flex items-center md:gap-x-12 flex-1 h-full">
               <Link href={ "/" } className="text-[1.6rem] flex items-center">
-                {
-                  scrolled ? (
-                    <img src="/images/logo.png" className="w-[160px]" alt=""/>
-                  ) : (
-                    <Logo className="mr-3" light={ !scrolled }/>
-                  )
-                }
+                <Logo className="mr-3" light={ !scrolled }/>
               </Link>
               <div className="hidden lg:flex md:space-x-3 ml-auto h-full">
                 <Hover className="h-full inline-flex items-center">
                   {
                     hovered => (
                       <div className="relative h-full flex items-center">
-                        <div className="inline-flex items-center rounded-full py-1 px-4 font-medium">
+                        <div className="inline-flex items-center rounded-full py-1 px-4">
                           For businesses
                         </div>
                         <AnimatePresence mode="wait">
@@ -79,43 +116,29 @@ const Navbar = () => {
                                 <div className="space-y-2 p-6">
                                   <div className="grid grid-cols-2 gap-2">
                                     {
-                                      products.filter(p => p.categories.includes('featured')).map(product => (
+                                      items.map(item => (
                                         <Link
-                                          key={ product.name }
-                                          href={ `https://app.statisense.co/${ product.slug }` }
+                                          key={ item.name }
+                                          href={ `https://app.statisense.co/` }
                                           className="rounded-2xl flex items-center hover:bg-gray-200/40 p-4 transition-all cursor-pointer"
                                         >
                                           <div className="mr-4">
                                             <div
-                                              className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-white', product.backgroundColor) }
+                                              className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-white', item.bg) }
                                             >
-                                              { createElement(product.icon) }
+                                              { createElement(item.icon) }
                                             </div>
                                           </div>
                                           <div>
-                                            <h4 className="font-medium">{ product.name }</h4>
+                                            <h4 className="font-medium">{ item.name }</h4>
                                             <p className="text-sm opacity-80 leading-tight mt-1">
-                                              { product.description }
+                                              { item.description }
                                             </p>
                                           </div>
                                         </Link>
                                       ))
                                     }
                                   </div>
-                                  <Link
-                                    href={ `https://app.statisense.co` }
-                                    className="rounded-2xl flex items-center hover:bg-gray-200/40 p-4 transition-all cursor-pointer"
-                                  >
-                                    <div className="mr-4">
-                                      <div
-                                        className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-slate-800 bg-slate-200') }
-                                      >
-                                        <IconLayout2/>
-                                      </div>
-                                    </div>
-                                    <h4 className="font-medium">Explore 10+ products</h4>
-                                    <IconArrowRight className="ml-auto mr-2"/>
-                                  </Link>
                                 </div>
                               </motion.div>
                             )
@@ -127,10 +150,16 @@ const Navbar = () => {
                 </Hover>
                 <Link
                   href={ "/infographics" }
-                  className="inline-flex items-center rounded-full py-1 px-4 font-medium"
+                  className="inline-flex items-center rounded-full py-1 px-4"
                 >
                   Insights
                 </Link>
+                <button
+                  onClick={ () => setIsChatbotOpen(true) }
+                  className="inline-flex items-center rounded-full py-1 px-4"
+                >
+                  Bambi &reg;
+                </button>
               </div>
             </div>
             <div className="flex items-center justify-end gap-x-5 md:gap-x-4 ml-6">
@@ -243,6 +272,11 @@ const Navbar = () => {
           )
         }
       </AnimatePresence>
+
+      <TestRun
+        isOpen={ isChatbotOpen }
+        onClose={ () => setIsChatbotOpen(false) }
+      />
     </>
   );
 };

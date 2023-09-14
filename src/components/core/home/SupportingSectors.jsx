@@ -12,28 +12,28 @@ SwiperCore.use([Autoplay]);
 const items = [
   {
     image: "/images/financial-services.jpg",
-    name: "Financial Services",
-    description: `Our data informs innovation and compliance.`
-  },
-  {
-    image: "/images/investment-advisory.jpg",
-    name: "Investment Advisory",
-    description: `We enhance investment strategies with data insights.`
+    name: "Banking",
+    description: `We offer data insights for agile banking solutions.`
   },
   {
     image: "/images/lending.jpg",
-    name: "Lending",
-    description: `We provide data-driven insights for smarter lending decisions.`
+    name: "Identity",
+    description: `Our data solutions strengthen identity verification.`
   },
   {
-    image: "/images/education.jpg",
-    name: "Education",
-    description: `Our insights improve teaching and learning experiences.`
+    image: "/images/investment-advisory.jpg",
+    name: "Insurance",
+    description: `We provide data for personalized insurance strategies.`
   },
   {
     image: "/images/procurement.webp",
     name: "Procurement",
-    description: `We optimize supply chains and procurement processes.`
+    description: `Streamlining supply chains through data-driven insights.`
+  },
+  {
+    image: "/images/education.jpg",
+    name: "Markets",
+    description: `We deliver market intelligence for strategic decision-making.`
   },
 ];
 
@@ -64,10 +64,10 @@ const SupportingSectors = () => {
         <div className="container flex flex-col md:items-center md:text-center">
           <div className="relative max-w-2xl">
             <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
-              Supporting sectors with AI insights
+              Supporting sectors with Insights
             </h2>
             <p className="mt-6 text-base md:text-lg">
-              Insights for every team and business
+              Generate Industry grade data insights in seconds.
             </p>
           </div>
         </div>
