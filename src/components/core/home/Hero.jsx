@@ -46,7 +46,7 @@ const Hero = () => {
             Generative AI
           </span>
           <br/>
-          to Africa's data
+          to Africa's Data
         </h1>
         <p className="mx-auto mt-8 max-w-xl text-lg tracking-tight text-slate-400">
           Our data models help simplify business datasets into conversation, reports and infographics.
