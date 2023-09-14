@@ -35,13 +35,13 @@ const Hero = () => {
       <div className="absolute inset-0 bg-cover bg-right bg-hero animate-wide min-h-screen opacity-60"></div>
       <div className="container z-10 relative">
         <h1
-          className="mx-auto max-w-[860px] font-display text-[3.6rem] sm:text-7xl md:text-[6.5rem] font-bold !leading-[1] tracking-tight text-slate-300"
+          className="mx-auto max-w-[860px] font-display text-[3.4rem] sm:text-7xl md:text-[6.5rem] font-bold leading-[1.1] md:!leading-[1] tracking-tight text-slate-300"
         >
           Connecting
           <br/>
           <span
             ref={ el }
-            className="relative bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent"
+            className="relative bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent whitespace-nowrap"
           >
             Generative AI
           </span>
