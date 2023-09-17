@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import Card from "@/components/global/Card";
-import { IconChevronRight, IconFileTextAi, IconMessageChatbot } from "@tabler/icons-react";
-import Chat from "@/components/core/shared/Chat";
+import { IconChevronLeft, IconChevronRight, IconFileTextAi, IconMessageChatbot } from "@tabler/icons-react";
 import Drawer from "@/components/global/Drawer";
 import UploadDocument from "@/components/core/shared/UploadDocument";
+import Button from "@/components/global/Button";
+import Chat from "@/components/core/shared/Chat";
+
+const isChatEnabled = false;
 
 const TestRun = ({ isOpen, onClose }) => {
   const [view, setView] = useState('options');
@@ -54,16 +57,84 @@ const TestRun = ({ isOpen, onClose }) => {
       }
       {
         view === 'chat' && (
-          <Chat
-            onBack={ () => setView('options') }
-          />
+          <>
+            {
+              !isChatEnabled ? (
+                <div className="h-full flex flex-col overflow-hidden">
+                  <div className="border-b">
+                    <div className="max-w-xl mx-auto flex items-center px-10 py-6">
+                      <Button
+                        onClick={ () => setView('options') }
+                        leftIcon={ <IconChevronLeft size="20"/> } size="sm" variant="text"
+                        color="black" rounded
+                      >
+                        Back
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center justify-center text-center my-auto">
+                    <div className="w-24 h-24 rounded-full bg-primary-600 grid place-items-center">
+                      <IconMessageChatbot size="52" className="text-white"/>
+                    </div>
+                    <div className="flex-1 flex flex-col mt-10">
+                      <h5 className="font-semibold text-xl">Chat with Bambi</h5>
+                      <p className="mt-2 max-w-[300px]">
+                        Our AI data assistant Bambi is readily available to provide you with any macro economic data.
+                      </p>
+                    </div>
+                    <div className="px-2.5 py-1 rounded-full text-xs bg-red-500 text-white w-max mt-8">
+                      Coming soon
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Chat
+                  onBack={ () => setView('options') }
+                />
+              )
+            }
+          </>
         )
       }
       {
         view === 'document' && (
-          <UploadDocument
-            onBack={ () => setView('options') }
-          />
+          <>
+            {
+              !isChatEnabled ? (
+                <div className="h-full flex flex-col overflow-hidden">
+                  <div className="border-b">
+                    <div className="max-w-xl mx-auto flex items-center px-10 py-6">
+                      <Button
+                        onClick={ () => setView('options') }
+                        leftIcon={ <IconChevronLeft size="20"/> } size="sm" variant="text"
+                        color="black" rounded
+                      >
+                        Back
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center justify-center text-center my-auto">
+                    <div className="w-24 h-24 rounded-full bg-primary-600 grid place-items-center">
+                      <IconFileTextAi size="52" className="text-white"/>
+                    </div>
+                    <div className="flex-1 flex flex-col mt-10">
+                      <h5 className="font-semibold text-xl">Analyze any custom document</h5>
+                      <p className="mt-2 max-w-[300px]">
+                        Interact with your documents through conversations using our AI chatbot Bambi
+                      </p>
+                    </div>
+                    <div className="px-2.5 py-1 rounded-full text-xs bg-red-500 text-white w-max mt-8">
+                      Coming soon
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <UploadDocument
+                  onBack={ () => setView('options') }
+                />
+              )
+            }
+          </>
         )
       }
     </Drawer>
