@@ -54,7 +54,7 @@ const ContactCategories = () => {
           <h5 className="font-medium text-lg">Partnerships</h5>
         </div>
         <p className="mt-6 mb-6">
-          We’re into co-marketing with awesome brands. Fill out the form here, and our Partnerships Manager will
+          We’re into co-marketing with awesome brands. Send us an email, and our Partnerships Manager will
           circle back.
         </p>
         <a href="mailto:partnership@statisense.com.ng" className="flex mt-auto">

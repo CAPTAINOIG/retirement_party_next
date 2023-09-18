@@ -30,7 +30,7 @@ const Hero = () => {
 
   return (
     <div
-      className="pt-48 pb-32 md:pt-48 md:pb-36 md:text-center bg-[#11100f] relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-950"
+      className="pt-48 pb-32 md:pt-48 md:pb-36 md:text-center bg-[#11100f] relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950"
     >
       <div className="absolute inset-0 bg-cover bg-right bg-hero animate-wide min-h-screen opacity-60"></div>
       <div className="container z-10 relative">
