@@ -30,12 +30,12 @@ const Hero = () => {
 
   return (
     <div
-      className="pt-48 pb-32 md:pt-48 md:pb-36 md:text-center bg-[#11100f] relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950"
+      className="pt-48 pb-32 md:pt-52 md:pb-32 md:text-center bg-[#11100f] relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950"
     >
       <div className="absolute inset-0 bg-cover bg-right bg-hero animate-wide min-h-screen opacity-60"></div>
       <div className="container z-10 relative">
         <h1
-          className="mx-auto max-w-[860px] font-display text-[3.4rem] sm:text-7xl md:text-[6.5rem] font-bold leading-[1.1] md:!leading-[1] tracking-tight text-slate-300"
+          className="mx-auto max-w-[860px] font-display text-[3.4rem] sm:text-7xl md:text-[6.8rem] font-bold leading-[1.1] md:!leading-[1] tracking-tight text-slate-300"
         >
           Connecting
           <br/>

@@ -3,7 +3,7 @@ import * as React from "react"
 const Logo = ({ light = false, ...props }) => {
   const fill = light ? 'white' : '#006DB8';
   return (
-    <svg width="160" viewBox="0 0 104 28" fill="none" xmlns="http://www.w3.org/2000/svg" { ...props }>
+    <svg width="150" viewBox="0 0 104 28" fill="none" xmlns="http://www.w3.org/2000/svg" { ...props }>
       <path
         fillRule="evenodd" clipRule="evenodd" fill={ fill }
         d="M2.9631 5.15013L17.0124 0.0365876C17.3271 -0.0780353 17.6784 0.0857765 17.793 0.400648L18.5943 2.60247C19.1497 4.12824 18.3557 5.83089 16.8299 6.38624L2.69256 11.5318C2.42612 11.6288 2.12901 11.4902 2.032 11.2236L1.19867 8.93376C0.643314 7.40813 1.43717 5.70533 2.9631 5.15013Z"

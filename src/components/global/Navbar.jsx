@@ -110,11 +110,11 @@ const Navbar = () => {
                                 animate={ { opacity: 1, y: 0 } }
                                 exit={ { opacity: 0, y: 20 } }
                                 className={ classNames(
-                                  'rounded-3xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-[0] -translate-x-1/2 right-0 w-[900px]',
+                                  'rounded-3xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-[0] -translate-x-1/2 right-0 w-[600px]',
                                 ) }
                               >
                                 <div className="space-y-2 p-6">
-                                  <div className="grid grid-cols-3 gap-2">
+                                  <div className="grid grid-cols-2 gap-2">
                                     {
                                       items.map(item => (
                                         <Link
