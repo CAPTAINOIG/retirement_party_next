@@ -28,21 +28,24 @@ function MyApp({ Component, pageProps }) {
   });
 
   return (
-    <QueryProvider>
-      <AuthProvider>
-        <ToastProvider>
-          {
-            Component.Layout ? (
-              <Component.Layout>
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <QueryProvider>
+        <AuthProvider>
+          <ToastProvider>
+            {
+              Component.Layout ? (
+                <Component.Layout>
+                  <Component { ...pageProps } />
+                </Component.Layout>
+              ) : (
                 <Component { ...pageProps } />
-              </Component.Layout>
-            ) : (
-              <Component { ...pageProps } />
-            )
-          }
-        </ToastProvider>
-      </AuthProvider>
-    </QueryProvider>
+              )
+            }
+          </ToastProvider>
+        </AuthProvider>
+      </QueryProvider>
+    </>
   )
 }
 

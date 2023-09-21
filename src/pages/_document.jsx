@@ -20,7 +20,6 @@ class MyDocument extends Document {
             name="keywords"
             content="Statisense, AI data company, financial report analysis, bank statement analysis, AI chatbot, business decisions"
           />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <meta name="robots" content="index, follow"/>
           <meta
             property="og:title"
