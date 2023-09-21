@@ -1,15 +1,6 @@
-import React, { createElement, useState } from 'react';
+import React, { useState } from 'react';
 import Link from "next/link";
-import {
-  IconBuildingBank,
-  IconCashBanknote,
-  IconFiles,
-  IconIdBadge,
-  IconLayout2,
-  IconLogout,
-  IconMenu,
-  IconShoppingBag
-} from "@tabler/icons-react";
+import { IconLayout2, IconLogout, IconMenu } from "@tabler/icons-react";
 import { useIsomorphicLayoutEffect } from "react-use";
 import classNames from "classnames";
 import Button from "@/components/global/Button.jsx";
@@ -17,42 +8,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useAuth } from "@/hooks/use-auth.js";
 import SimpleDropdown from "@/components/global/SimpleDropdown.jsx";
 import { useRouter } from "next/navigation";
-import Hover from "@/components/global/Hover.jsx";
 import Logo from "@/components/core/shared/Logo";
 import TestRun from "@/components/core/shared/TestRun";
-
-const items = [
-  {
-    name: 'For banking',
-    description: 'Optimize financial decision-making with strategic insights for banking.',
-    icon: IconBuildingBank,
-    bg: 'bg-teal-500',
-  },
-  {
-    name: 'For documents',
-    description: 'Unlock versatile document analysis for informed, data-driven decisions.',
-    icon: IconFiles,
-    bg: 'bg-cyan-500',
-  },
-  {
-    name: 'For identity',
-    description: 'Strengthening identity verification with advanced data.',
-    icon: IconIdBadge,
-    bg: 'bg-red-500',
-  },
-  {
-    name: 'For markets',
-    description: 'Strategic data insights for market dynamics.',
-    icon: IconShoppingBag,
-    bg: 'bg-sky-500',
-  },
-  {
-    name: 'For accounting',
-    description: 'Streamlining financial management through data.',
-    icon: IconCashBanknote,
-    bg: 'bg-orange-500',
-  },
-];
+import NavProductsDropdown from "@/components/core/NavProductsDropdown";
 
 const Navbar = () => {
   const router = useRouter();
@@ -95,72 +53,12 @@ const Navbar = () => {
                 <Logo className="mr-3" light={ !scrolled }/>
               </Link>
               <div className="hidden lg:flex md:space-x-3 ml-auto h-full">
-                <Hover className="h-full inline-flex items-center">
-                  {
-                    hovered => (
-                      <div className="relative h-full flex items-center">
-                        <div className="inline-flex items-center rounded-full py-1 px-4">
-                          For businesses
-                        </div>
-                        <AnimatePresence mode="wait">
-                          {
-                            hovered && (
-                              <motion.div
-                                initial={ { opacity: 0, y: 20, x: '-50%', } }
-                                animate={ { opacity: 1, y: 0 } }
-                                exit={ { opacity: 0, y: 20 } }
-                                className={ classNames(
-                                  'rounded-3xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-[0] -translate-x-1/2 right-0 w-[600px]',
-                                ) }
-                              >
-                                <div className="space-y-2 p-6">
-                                  <div className="grid grid-cols-2 gap-2">
-                                    {
-                                      items.map(item => (
-                                        <Link
-                                          key={ item.name }
-                                          href={ `https://app.statisense.co/` }
-                                          className="rounded-2xl flex items-center hover:bg-gray-200/40 p-4 transition-all cursor-pointer"
-                                        >
-                                          <div className="mr-4">
-                                            <div
-                                              className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-white', item.bg) }
-                                            >
-                                              { createElement(item.icon) }
-                                            </div>
-                                          </div>
-                                          <div>
-                                            <h4 className="font-medium">{ item.name }</h4>
-                                            <p className="text-sm opacity-80 leading-tight mt-1">
-                                              { item.description }
-                                            </p>
-                                          </div>
-                                        </Link>
-                                      ))
-                                    }
-                                    <Link
-                                      href={ `https://app.statisense.co` }
-                                      className="rounded-2xl flex items-center hover:bg-gray-200/40 p-4 transition-all cursor-pointer"
-                                    >
-                                      <div className="mr-4">
-                                        <div
-                                          className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-slate-800 bg-slate-200') }
-                                        >
-                                          <IconLayout2/>
-                                        </div>
-                                      </div>
-                                      <h4 className="font-medium">Explore all products</h4>
-                                    </Link>
-                                  </div>
-                                </div>
-                              </motion.div>
-                            )
-                          }
-                        </AnimatePresence>
-                      </div>
-                    )
-                  }
-                </Hover>
+                <div className="relative h-full flex items-center group">
+                  <div className="inline-flex items-center rounded-full py-1 px-4 cursor-default">
+                    For businesses
+                  </div>
+                  <NavProductsDropdown/>
+                </div>
                 <Link
                   href={ "/infographics" }
                   className="inline-flex items-center rounded-full py-1 px-4"
