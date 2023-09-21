@@ -8,6 +8,7 @@ import '@/assets/styles/nprogress.scss'
 import { useIsomorphicLayoutEffect } from "react-use";
 import QueryProvider from "@/components/QueryProvider";
 import { ToastProvider } from "@/hooks/use-toast";
+import Head from "next/head";
 
 NProgress.configure({ showSpinner: false });
 
@@ -29,7 +30,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      </Head>
       <QueryProvider>
         <AuthProvider>
           <ToastProvider>
