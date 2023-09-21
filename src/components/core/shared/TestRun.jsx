@@ -16,8 +16,8 @@ const TestRun = ({ isOpen, onClose }) => {
       {
         view === 'options' && (
           <>
-            <div className="bg-gray-900 rounded-b-lg pattern-5 px-10 md:px-14 pt-14 md:pt-32 pb-40">
-              <h2 className="text-3xl md:text-4xl font-semibold text-white leading-snug">
+            <div className="bg-gray-900 rounded-b-lg pattern-5 px-10 md:px-14 pt-14 md:pt-32 pb-28 md:pb-40">
+              <h2 className="text-2xl md:text-4xl font-semibold text-white leading-snug">
                 Hi there, I'm Bambi 👋🏽<br/>How can I help you?
               </h2>
               <p className="mt-6 text-white">
