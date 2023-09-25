@@ -20,19 +20,13 @@ const Navbar = () => {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   useIsomorphicLayoutEffect(() => {
-    if (isMobileNavVisible) document.scrollingElement.style.overflowY = 'hidden';
-    else document.scrollingElement.style.overflowY = 'initial';
-  }, [isMobileNavVisible]);
-
-  useIsomorphicLayoutEffect(() => {
+    const handleScroll = (e) => {
+      const scrollTop = e.target.scrollingElement.scrollTop;
+      setScrolled(scrollTop > 50);
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleScroll = (e) => {
-    const scrollTop = e.target.scrollingElement.scrollTop;
-    setScrolled(scrollTop > 50);
-  };
 
   const handleLogout = () => {
     logout();

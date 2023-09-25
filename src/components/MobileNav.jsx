@@ -1,8 +1,14 @@
 import React from 'react';
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import { useIsomorphicLayoutEffect } from "react-use";
 
 const MobileNav = ({ isOpen, onClose, onChat }) => {
+  useIsomorphicLayoutEffect(() => {
+    if (isOpen) document.scrollingElement.style.overflowY = 'hidden';
+    else document.scrollingElement.style.overflowY = 'initial';
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {
@@ -39,7 +45,7 @@ const MobileNav = ({ isOpen, onClose, onChat }) => {
                   onClose();
                   onChat();
                 } }
-                className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
+                className="block w-full px-4 py-3 rounded-xl text-left hover:bg-zinc-200"
               >
                 Bambi
               </button>
