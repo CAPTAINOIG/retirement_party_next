@@ -9,7 +9,6 @@ import { useIsomorphicLayoutEffect } from "react-use";
 import QueryProvider from "@/components/QueryProvider";
 import { ToastProvider } from "@/hooks/use-toast";
 import Head from "next/head";
-import { ReactLenis } from "@studio-freight/react-lenis";
 
 NProgress.configure({ showSpinner: false });
 
@@ -34,23 +33,21 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </Head>
-      <ReactLenis root>
-        <QueryProvider>
-          <AuthProvider>
-            <ToastProvider>
-              {
-                Component.Layout ? (
-                  <Component.Layout>
-                    <Component { ...pageProps } />
-                  </Component.Layout>
-                ) : (
+      <QueryProvider>
+        <AuthProvider>
+          <ToastProvider>
+            {
+              Component.Layout ? (
+                <Component.Layout>
                   <Component { ...pageProps } />
-                )
-              }
-            </ToastProvider>
-          </AuthProvider>
-        </QueryProvider>
-      </ReactLenis>
+                </Component.Layout>
+              ) : (
+                <Component { ...pageProps } />
+              )
+            }
+          </ToastProvider>
+        </AuthProvider>
+      </QueryProvider>
     </>
   )
 }
