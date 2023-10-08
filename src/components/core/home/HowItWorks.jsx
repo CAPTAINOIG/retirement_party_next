@@ -30,7 +30,7 @@ const HowItWorks = () => {
                 Plug your data
               </h3>
               <p className="mt-2 text-base opacity-70">
-                Random or from template, we have your covered
+                From File (random, bespoke & template) or API. We have you covered
               </p>
             </li>
             <li className="rounded-3xl bg-gray-900/70 px-10 md:px-10 py-10 md:py-12">
@@ -80,7 +80,7 @@ const HowItWorks = () => {
                 Repeat
               </h3>
               <p className="mt-2 text-base opacity-70">
-                We are definitely building the best data assistant in Africa
+                We are building the generative AI for Africa's data
               </p>
             </li>
           </ul>

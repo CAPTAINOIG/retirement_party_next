@@ -11,29 +11,34 @@ SwiperCore.use([Autoplay]);
 
 const items = [
   {
-    image: "/images/financial-services.jpg",
+    image: "/images/banking.jpg",
     name: "Banking",
-    description: `We offer data insights for agile banking solutions.`
+    description: `Data-driven insights for agile financial services.`
   },
   {
-    image: "/images/lending.jpg",
-    name: "Identity",
-    description: `Our data solutions strengthen identity verification.`
-  },
-  {
-    image: "/images/investment-advisory.jpg",
-    name: "Insurance",
-    description: `We provide data for personalized insurance strategies.`
-  },
-  {
-    image: "/images/procurement.webp",
-    name: "Procurement",
-    description: `Streamlining supply chains through data-driven insights.`
-  },
-  {
-    image: "/images/education.jpg",
+    image: "/images/market.jpg",
     name: "Markets",
-    description: `We deliver market intelligence for strategic decision-making.`
+    description: `Strategic data insights for market dynamics.`
+  },
+  {
+    image: "/images/accounting.jpg",
+    name: "Accounting",
+    description: `Streamlining financial management through data.`
+  },
+  {
+    image: "/images/identity.jpg",
+    name: "Identity",
+    description: `Strengthening identity verification with advanced data.`
+  },
+  {
+    image: "/images/insurance.jpg",
+    name: "Insurance",
+    description: `Personalized insurance strategies through data insights.`
+  },
+  {
+    image: "/images/payments.jpg",
+    name: "Payments",
+    description: `Enhancing payment systems with data-driven solutions.`
   },
 ];
 

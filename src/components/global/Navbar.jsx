@@ -47,18 +47,18 @@ const Navbar = () => {
                 <Logo className="mr-3" light={ !scrolled }/>
               </Link>
               <div className="hidden lg:flex md:space-x-3 ml-auto h-full">
-                <Link
-                  href="https://market.statisense.co"
-                  className="inline-flex items-center rounded-full py-1 px-4"
-                >
-                  Markets
-                </Link>
                 <div className="relative h-full flex items-center group">
                   <div className="inline-flex items-center rounded-full py-1 px-4 cursor-default">
                     For businesses
                   </div>
                   <NavProductsDropdown/>
                 </div>
+                <Link
+                  href="https://market.statisense.co"
+                  className="inline-flex items-center rounded-full py-1 px-4"
+                >
+                  Markets
+                </Link>
                 <Link
                   href={ "/infographics" }
                   className="inline-flex items-center rounded-full py-1 px-4"
