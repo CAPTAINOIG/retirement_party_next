@@ -1,14 +1,7 @@
 import React, { createElement } from 'react';
 import classNames from "classnames";
 import Link from "next/link";
-import {
-  IconBuildingBank,
-  IconCashBanknote,
-  IconFiles,
-  IconIdBadge,
-  IconLayout2,
-  IconShoppingBag
-} from "@tabler/icons-react";
+import { IconBuildingBank, IconCashBanknote, IconFiles, IconIdBadge, IconLayout2 } from "@tabler/icons-react";
 
 const items = [
   {
@@ -28,12 +21,6 @@ const items = [
     description: 'Strengthening identity verification with advanced data.',
     icon: IconIdBadge,
     bg: 'bg-red-500',
-  },
-  {
-    name: 'For markets',
-    description: 'Strategic data insights for market dynamics.',
-    icon: IconShoppingBag,
-    bg: 'bg-sky-500',
   },
   {
     name: 'For accounting',
@@ -76,20 +63,20 @@ const NavProductsDropdown = () => {
               </Link>
             ))
           }
-          <Link
-            href={ `https://app.statisense.co` }
-            className="rounded-2xl flex items-center hover:bg-gray-200/40 p-4 transition-all cursor-pointer"
-          >
-            <div className="mr-4">
-              <div
-                className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-slate-800 bg-slate-200') }
-              >
-                <IconLayout2/>
-              </div>
-            </div>
-            <h4 className="font-medium">Explore all products</h4>
-          </Link>
         </div>
+        <Link
+          href={ `https://app.statisense.co` }
+          className="rounded-2xl flex items-center hover:bg-gray-200/40 py-4 px-6 transition-all cursor-pointer"
+        >
+          <div className="mr-4">
+            <div
+              className={ classNames('w-10 h-10 rounded-full flex items-center justify-center text-slate-800 bg-slate-200') }
+            >
+              <IconLayout2/>
+            </div>
+          </div>
+          <h4 className="font-medium">Explore business products</h4>
+        </Link>
       </div>
     </div>
   );
