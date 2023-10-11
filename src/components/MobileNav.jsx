@@ -2,6 +2,7 @@ import React from 'react';
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useIsomorphicLayoutEffect } from "react-use";
+import NavProductsDropdown from "@/components/core/NavProductsDropdown";
 
 const MobileNav = ({ isOpen, onClose, onChat }) => {
   useIsomorphicLayoutEffect(() => {
@@ -28,11 +29,15 @@ const MobileNav = ({ isOpen, onClose, onChat }) => {
               exit={ { opacity: 0, y: 20 } }
               className="fixed inset-x-0 top-24 mt-4 flex origin-top flex-col rounded-3xl bg-white px-4 py-6 text-lg tracking-tight shadow-xl z-50 space-y-2"
             >
+              <div className="relative block w-full px-4 py-3 rounded-xl hover:bg-zinc-200 group cursor-default">
+                For business
+                <NavProductsDropdown/>
+              </div>
               <Link
-                onClick={ onClose } href={ "/about" }
+                onClick={ onClose } href={ "https://market.statisense.co" } target="_blank"
                 className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
               >
-                About us
+                Market
               </Link>
               <Link
                 onClick={ onClose } href={ "/infographics" }
@@ -49,6 +54,12 @@ const MobileNav = ({ isOpen, onClose, onChat }) => {
               >
                 Bambi
               </button>
+              <Link
+                onClick={ onClose } href={ "/about" }
+                className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
+              >
+                About us
+              </Link>
               <div>
                 <hr className="mx-2 my-2 border-zinc-300/40"/>
               </div>

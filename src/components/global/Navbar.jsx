@@ -54,7 +54,7 @@ const Navbar = () => {
                   <NavProductsDropdown/>
                 </div>
                 <Link
-                  href="https://market.statisense.co"
+                  href="https://market.statisense.co" target="_blank"
                   className="inline-flex items-center rounded-full py-1 px-4"
                 >
                   Markets

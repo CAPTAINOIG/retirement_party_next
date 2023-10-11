@@ -34,12 +34,12 @@ const NavProductsDropdown = () => {
   return (
     <div
       className={ classNames(
-        'rounded-3xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-[0] -translate-x-1/2 right-0 w-[600px]',
+        'rounded-3xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-0 md:-translate-x-1/2 right-0 w-full md:w-[600px]',
         'transition-all duration-300 translate-y-10 opacity-0 pointer-events-none group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto'
       ) }
     >
       <div className="space-y-2 px-6 py-6">
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid md:grid-cols-2 gap-2">
           {
             items.map(item => (
               <Link
