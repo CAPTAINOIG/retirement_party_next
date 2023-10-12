@@ -36,8 +36,8 @@ const ConnectWithUs = () => {
           </div>
           <div>
             <p>Whatsapp</p>
-            <a href="https://wa.me/xxxxx" target="_blank" className="flex font-medium">
-              +2340000000000
+            <a href="https://wa.me/+2349055550090" target="_blank" className="flex font-medium">
+              +2349055550090
             </a>
           </div>
         </div>
