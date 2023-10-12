@@ -3,6 +3,7 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandThreads,
+  IconBrandWhatsapp,
   IconBrandX,
   IconMail
 } from "@tabler/icons-react";
@@ -26,6 +27,17 @@ const ConnectWithUs = () => {
             <p>Email address</p>
             <a href="mailto:info@statisense.com.ng" target="_blank" className="flex font-medium">
               info@statisense.com.ng
+            </a>
+          </div>
+        </div>
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-full flex items-center justify-center border">
+            <IconBrandWhatsapp size="20"/>
+          </div>
+          <div>
+            <p>Whatsapp</p>
+            <a href="https://wa.me/xxxxx" target="_blank" className="flex font-medium">
+              +2340000000000
             </a>
           </div>
         </div>
