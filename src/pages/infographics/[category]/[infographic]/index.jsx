@@ -5,6 +5,7 @@ import PageHeader from "@/components/core/shared/PageHeader";
 import Image from "@/components/core/shared/Image";
 import {
   IconBrandFacebook,
+  IconBrandLinkedin,
   IconBrandTelegram,
   IconBrandTwitter,
   IconBrandWhatsapp,
@@ -121,6 +122,9 @@ const ShareButtons = ({ infographic }) => {
     }
   };
 
+  const title = encodeURIComponent(infographic.title);
+  const url = encodeURIComponent(window.location.href);
+
   return (
     <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4">
       {
@@ -132,31 +136,39 @@ const ShareButtons = ({ infographic }) => {
         )
       }
       <a
-        href={ `https://www.facebook.com/sharer.php?u=${ window.location.href }` } target="_blank"
-        className="flex"
+        href={ `https://www.facebook.com/sharer/sharer.php?quote=${ title }&u=${ url }` }
+        target="_blank" className="flex"
       >
         <IconButton
           icon={ <IconBrandFacebook size="20"/> } rounded variant="subtle" color="primary"
         />
       </a>
       <a
-        href={ `https://twitter.com/share?url=${ window.location.href }` } target="_blank"
-        className="flex"
+        href={ `https://twitter.com/intent/tweet?text=${ title }&url=${ url }` }
+        target="_blank" className="flex"
       >
         <IconButton
           icon={ <IconBrandTwitter size="20"/> } rounded variant="subtle" color="primary"
         />
       </a>
       <a
-        href={ `https://telegram.me/share/url?url=${ window.location.href }` } target="_blank"
-        className="flex"
+        href={ `https://www.linkedin.com/shareArticle?mini=true&text=${ title }&url=${ url }` }
+        target="_blank" className="flex"
+      >
+        <IconButton
+          icon={ <IconBrandLinkedin size="20"/> } rounded variant="subtle" color="primary"
+        />
+      </a>
+      <a
+        href={ `https://t.me/share/url?url=${ url }&text=${ title }` }
+        target="_blank" className="flex"
       >
         <IconButton
           icon={ <IconBrandTelegram size="20"/> } rounded variant="subtle" color="primary"
         />
       </a>
       <a
-        href={ `https://api.whatsapp.com/send?text=${ infographic.title } ${ window.location.href }` }
+        href={ `https://wa.me/?text=${ title } ${ url }` }
         target="_blank" className="flex"
       >
         <IconButton
