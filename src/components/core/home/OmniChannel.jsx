@@ -5,6 +5,8 @@ import products from "@/lib/products";
 import classNames from "classnames";
 import Typed from "typed.js";
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+
 const OmniChannel = () => {
   const el = useRef(null);
   const typed = useRef(null);
@@ -35,7 +37,7 @@ const OmniChannel = () => {
             <p className="mt-6 text-base md:text-lg max-w-md">
               Our models help generate industry grade reports from your data in seconds, regardless of format
             </p>
-            <a href="https://app.statisense.co">
+            <a href={ APP_URL }>
               <Button className="mt-12" rightIcon={ <IconArrowRight/> } size="lg">
                 Get started
               </Button>

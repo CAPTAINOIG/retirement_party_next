@@ -3,6 +3,8 @@ import classNames from "classnames";
 import Link from "next/link";
 import { IconBuildingBank, IconCashBanknote, IconFiles, IconIdBadge, IconLayout2 } from "@tabler/icons-react";
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+
 const items = [
   {
     name: 'For banking',
@@ -44,7 +46,7 @@ const NavProductsDropdown = () => {
             items.map(item => (
               <Link
                 key={ item.name }
-                href={ `https://app.statisense.co/` }
+                href={ APP_URL }
                 className="rounded-2xl flex items-center hover:bg-gray-200/40 py-4 px-6 transition-all cursor-pointer"
               >
                 <div className="mr-4">
@@ -65,7 +67,7 @@ const NavProductsDropdown = () => {
           }
         </div>
         <Link
-          href={ `https://app.statisense.co` }
+          href={ APP_URL }
           className="rounded-2xl flex items-center hover:bg-gray-200/40 py-4 px-6 transition-all cursor-pointer"
         >
           <div className="mr-4">

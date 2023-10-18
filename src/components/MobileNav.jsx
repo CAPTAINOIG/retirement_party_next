@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useIsomorphicLayoutEffect } from "react-use";
 import NavProductsDropdown from "@/components/core/NavProductsDropdown";
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+
 const MobileNav = ({ isOpen, onClose, onChat }) => {
   useIsomorphicLayoutEffect(() => {
     if (isOpen) document.scrollingElement.style.overflowY = 'hidden';
@@ -64,13 +66,13 @@ const MobileNav = ({ isOpen, onClose, onChat }) => {
                 <hr className="mx-2 my-2 border-zinc-300/40"/>
               </div>
               <Link
-                onClick={ onClose } href={ "https://app.statisense.co/login" }
+                onClick={ onClose } href={ `${ APP_URL }/login` }
                 className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
               >
                 Sign in
               </Link>
               <Link
-                onClick={ onClose } href={ "https://app.statisense.co/register" }
+                onClick={ onClose } href={ `${ APP_URL }/register` }
                 className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
               >
                 Sign up

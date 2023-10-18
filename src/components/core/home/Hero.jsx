@@ -4,6 +4,8 @@ import Button from "@/components/global/Button";
 import { IconChevronRight } from "@tabler/icons-react";
 import Link from "next/link";
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+
 const Hero = () => {
   const el = useRef(null);
   const typed = useRef(null);
@@ -51,7 +53,7 @@ const Hero = () => {
         <p className="mx-auto mt-8 max-w-xl text-lg tracking-tight text-slate-400">
           Our data models help simplify business datasets into conversation, reports and infographics.
         </p>
-        <Link href={ "https://app.statisense.co/register" } className="inline-flex mt-12">
+        <Link href={ `${ APP_URL }/register` } className="inline-flex mt-12">
           <Button size="xl" rightIcon={ <IconChevronRight size="20"/> } color="white">
             Get started
           </Button>

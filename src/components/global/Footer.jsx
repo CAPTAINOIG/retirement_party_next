@@ -4,6 +4,8 @@ import React from "react";
 import Logo from "@/components/core/shared/Logo";
 import products from "@/lib/products";
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+
 const Footer = () => {
   return (
     <>
@@ -23,7 +25,7 @@ const Footer = () => {
                 {
                   products.filter(p => p.categories.includes('featured')).map(p => (
                     <Link
-                      key={ p.slug } href={ `https://app.statisense.co${ p.dashboardLink }` }
+                      key={ p.slug } href={ `${ APP_URL }${ p.dashboardLink }` }
                       className="opacity-70 hover:text-primary-300"
                     >
                       { p.name }

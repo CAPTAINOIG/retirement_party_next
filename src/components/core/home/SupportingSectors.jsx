@@ -9,6 +9,8 @@ import Link from "next/link";
 
 SwiperCore.use([Autoplay]);
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+
 const items = [
   {
     image: "/images/insurance.jpg",
@@ -99,7 +101,7 @@ const SupportingSectors = () => {
                             <p className="md:text-lg opacity-70">
                               { item.description }
                             </p>
-                            <Link href="https://app.statisense.co">
+                            <Link href={ APP_URL }>
                               <Button
                                 variant="outlined" color="white"
                                 className="mt-10 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all ease-in-out duration-500"

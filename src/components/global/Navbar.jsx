@@ -12,6 +12,8 @@ import TestRun from "@/components/core/shared/TestRun";
 import NavProductsDropdown from "@/components/core/NavProductsDropdown";
 import MobileNav from "@/components/MobileNav";
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+
 const Navbar = () => {
   const router = useRouter();
   const { user, logout } = useAuth();
@@ -78,12 +80,12 @@ const Navbar = () => {
                 {
                   !user ? (
                     <>
-                      <Link href={ "https://app.statisense.co/login" }>
+                      <Link href={ `${ APP_URL }/login` }>
                         <Button variant="subtle" color={ scrolled ? "black" : "white" }>Sign in</Button>
                       </Link>
                       {
                         scrolled && (
-                          <Link href={ "https://app.statisense.co/register" }>
+                          <Link href={ `${ APP_URL }/register` }>
                             <Button>Get started</Button>
                           </Link>
                         )

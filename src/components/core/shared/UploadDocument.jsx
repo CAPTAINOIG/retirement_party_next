@@ -5,6 +5,8 @@ import products from "@/lib/products";
 import UploadCustomDocument from "@/components/core/shared/UploadCustomDocument";
 import Link from "next/link";
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+
 const UploadDocument = ({ onBack }) => {
   const [view, setView] = useState('industry');
 
@@ -81,7 +83,7 @@ const UploadDocument = ({ onBack }) => {
               <div className="grid grid-cols-3 gap-4">
                 {
                   products.filter(p => p.type === 'document').map(p => (
-                    <Link href={ `https://app.statisense.co/${ p.slug }` } key={ p.slug }>
+                    <Link href={ `${ APP_URL }/${ p.slug }` } key={ p.slug }>
                       <div
                         className="h-full border border-slate-300/70 rounded-3xl flex flex-col items-center justify-center text-center py-8 px-8 hover:bg-slate-100 cursor-pointer"
                       >
