@@ -1,13 +1,6 @@
 import { useInfiniteQuery, useMutation, useQuery } from "@tanstack/react-query";
 import http from "../lib/http.js";
 
-export const useGetTrendingInfographics = () => {
-  return useQuery(['infographics', 'trending'], async () => {
-    const res = await http.get('/infographic/trending');
-    return res.data;
-  });
-};
-
 export const useGetInfographics = ({ category, search, enabled = true } = {}) => {
   return useQuery(['infographics', category, search], async () => {
     const res = await http.get('/infographic', {
@@ -41,25 +34,11 @@ export const useSearchInfographics = (search) => {
   });
 };
 
-export const useGetInfographicQuery = (slug) => {
-  return useQuery(['infographics', slug], async () => {
-    const res = await http.get(`/infographic/${ slug }`);
-    return res.data;
-  }, { enabled: !!slug });
-};
-
 export const useGetCategoriesQuery = () => {
   return useQuery(['categories'], async () => {
     const res = await http.get('/category');
     return res.data;
   });
-};
-
-export const useGetCategoryQuery = (slug) => {
-  return useQuery(['categories', slug], async () => {
-    const res = await http.get(`/category/${ slug }`);
-    return res.data;
-  }, { enabled: !!slug });
 };
 
 export const useAddViewMutation = () => {

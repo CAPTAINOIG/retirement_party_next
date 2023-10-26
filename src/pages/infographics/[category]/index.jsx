@@ -1,4 +1,4 @@
-import { useGetCategoryInfographics, useGetCategoryQuery } from "@/api/infographics";
+import { useGetCategoryInfographics } from "@/api/infographics";
 import PageHeader from "@/components/core/shared/PageHeader";
 import InfographicLoadingCard from "@/components/core/infographics/InfographicLoadingCard";
 import InfographicCard from "@/components/core/infographics/InfographicCard";
@@ -6,11 +6,18 @@ import Button from "@/components/global/Button";
 import DefaultLayout from "@/components/core/DefaultLayout";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { getImageLink } from "@/lib/utils";
 
-const CategoryInfographicsPage = () => {
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+
+export async function getServerSideProps({ res, params }) {
+  res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600')
+  const { category } = await (await fetch(`${ BASE_URL }/category/${ params.category }`)).json();
+  return { props: { category } };
+}
+
+const CategoryInfographicsPage = ({ category }) => {
   const router = useRouter();
-  const { category: slug } = router.query;
-  const { data: { category = null } = {}, isLoading: isCategoryLoading } = useGetCategoryQuery(slug);
   const {
     data,
     isLoading: isInfographicsLoading,
@@ -19,19 +26,26 @@ const CategoryInfographicsPage = () => {
     hasNextPage
   } = useGetCategoryInfographics(category?._id);
 
-  const infographics = data?.pages.map(p => p.infographics).flat()
+  const infographics = data?.pages.map(p => p.infographics).flat();
 
   return (
     <>
       <Head>
         <title>{ category?.name || 'Statisense' }</title>
+        <meta name="description" content={ `Browse insights on ${ category.name }` }/>
+        <meta property="og:title" content={ category.name }/>
+        <meta property="og:description" content={ `Browse insights on ${ category.name }` }/>
+        <meta property="og:image" content={ getImageLink(category.image) }/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content={ category.name }/>
+        <meta name="twitter:description" content={ `Browse insights on ${ category.name }` }/>
+        <meta name="twitter:image" content={ getImageLink(category.image) }/>
       </Head>
       <div className="bg-slate-50">
         <PageHeader
           title={ category?.name }
           onBack={ () => router.push('/infographics') }
           backText="Categories"
-          isLoading={ isCategoryLoading }
         />
         <div className="py-24 md:py-32">
           <div className="container">

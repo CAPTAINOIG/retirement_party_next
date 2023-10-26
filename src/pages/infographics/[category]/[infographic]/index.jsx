@@ -1,32 +1,31 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useRef } from "react";
-import { useAddViewMutation, useGetInfographicQuery } from "@/api/infographics";
+import { useAddViewMutation } from "@/api/infographics";
 import PageHeader from "@/components/core/shared/PageHeader";
 import Image from "@/components/core/shared/Image";
-import {
-  IconBrandFacebook,
-  IconBrandLinkedin,
-  IconBrandTelegram,
-  IconBrandTwitter,
-  IconBrandWhatsapp,
-  IconClock,
-  IconShare
-} from "@tabler/icons-react";
+import { IconClock } from "@tabler/icons-react";
 import { format } from "date-fns";
 import Link from "next/link";
 import Newsletter from "@/components/core/home/Newsletter";
 import SimilarInfographics from "@/components/core/infographics/SimilarInfographics";
-import { useToast } from "@/hooks/use-toast";
-import IconButton from "@/components/global/IconButton";
 import DefaultLayout from "@/components/core/DefaultLayout";
 import Head from "next/head";
+import ShareButtons from "@/components/core/infographics/ShareButtons";
+import ClientOnly from "@/components/global/ClientOnly";
+import { getImageLink } from "@/lib/utils";
 
-const InfographicDetailsPage = () => {
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+export async function getServerSideProps({ res, params }) {
+  res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600')
+  const { infographic } = await (await fetch(`${ baseUrl }/infographic/${ params.infographic }`)).json();
+  return { props: { infographic } };
+}
+
+const InfographicDetailsPage = ({ infographic }) => {
   const router = useRouter();
-  const { infographic: slug } = router.query;
   const viewed = useRef(null);
   const { mutateAsync: addView } = useAddViewMutation();
-  const { data: { infographic = null } = {}, isLoading: isInfographicLoading } = useGetInfographicQuery(slug);
 
   useEffect(() => {
     if (infographic && viewed.current !== infographic._id) {
@@ -39,65 +38,63 @@ const InfographicDetailsPage = () => {
     <>
       <Head>
         <title>{ infographic?.title || 'Infographic' }</title>
+        <meta name="description" content={ infographic.description }/>
+        <meta property="og:title" content={ infographic.title }/>
+        <meta property="og:description" content={ infographic.description }/>
+        <meta property="og:image" content={ getImageLink(infographic.image) }/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content={ infographic.title }/>
+        <meta name="twitter:description" content={ infographic.description }/>
+        <meta name="twitter:image" content={ getImageLink(infographic.image) }/>
       </Head>
       <PageHeader
         title={ infographic?.title }
         onBack={ () => router.push(`/infographics/${ infographic.category.slug }`) }
         backText={ infographic?.category?.name || 'Back' }
-        isLoading={ isInfographicLoading }
       />
       <div className="py-24 md:py-28">
         <div className="container">
-          {
-            isInfographicLoading ? (
-              <div className="max-w-xl mx-auto">
-                <div className="aspect-square w-full bg-zinc-500/20 rounded-xl"/>
-                <div className="bg-zinc-900/10 h-8 w-4/12 rounded-full mt-6"/>
-                <div className="bg-zinc-900/10 h-8 w-9/12 rounded-full mt-6"/>
-                <div className="bg-zinc-900/10 h-8 w-3/12 rounded-full mt-4"/>
-              </div>
-            ) : (
-              <div className="max-w-[580px] mx-auto">
-                <div className="flex items-stretch">
-                  <div>
-                    <div className="flex items-stetch">
-                      <Image src={ infographic.image } alt="" className="rounded-xl"/>
-                      <div className="hidden md:block relative px-6">
-                        <div className="sticky top-36">
-                          <ShareButtons infographic={ infographic }/>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-10">
-                      <div className="flex items-center opacity-70 mb-6">
-                        <IconClock className="mr-2" size="18"/>
-                        <p>Date posted: { format(new Date(infographic.createdAt), 'MMM dd, yyyy') }</p>
-                      </div>
-                      <p>
-                        { infographic.description }
-                      </p>
-                      <div className="mt-10 flex flex-row flex-wrap">
-                        {
-                          infographic.tags.split(',').map((tag, i) => (
-                            <Link key={ i } href={ `/infographics?q=${ tag }` }>
-                              <div
-                                className="bg-zinc-200 hover:bg-zinc-300 px-3 py-[2px] rounded-xl mr-3 mb-4 cursor-pointer"
-                              >
-                                { tag }
-                              </div>
-                            </Link>
-                          ))
-                        }
-                      </div>
-                      <div className="mt-6 md:hidden">
+          <div className="max-w-[580px] mx-auto">
+            <div className="flex items-stretch">
+              <div>
+                <div className="flex items-stetch">
+                  <Image src={ infographic.image } alt="" className="rounded-xl"/>
+                  <div className="hidden md:block relative px-6">
+                    <div className="sticky top-36">
+                      <ClientOnly>
                         <ShareButtons infographic={ infographic }/>
-                      </div>
+                      </ClientOnly>
                     </div>
                   </div>
                 </div>
+                <div className="mt-10">
+                  <div className="flex items-center opacity-70 mb-6">
+                    <IconClock className="mr-2" size="18"/>
+                    <p>Date posted: { format(new Date(infographic.createdAt), 'MMM dd, yyyy') }</p>
+                  </div>
+                  <p>
+                    { infographic.description }
+                  </p>
+                  <div className="mt-10 flex flex-row flex-wrap">
+                    {
+                      infographic.tags.split(',').map((tag, i) => <Link key={ i } href={ `/infographics?q=${ tag }` }>
+                        <div
+                          className="bg-zinc-200 hover:bg-zinc-300 px-3 py-[2px] rounded-xl mr-3 mb-4 cursor-pointer"
+                        >
+                          { tag }
+                        </div>
+                      </Link>)
+                    }
+                  </div>
+                  <div className="mt-6 md:hidden">
+                    <ClientOnly>
+                      <ShareButtons infographic={ infographic }/>
+                    </ClientOnly>
+                  </div>
+                </div>
               </div>
-            )
-          }
+            </div>
+          </div>
         </div>
       </div>
       <Newsletter sm/>
@@ -106,77 +103,6 @@ const InfographicDetailsPage = () => {
       </div>
     </>
   );
-};
-
-const ShareButtons = ({ infographic }) => {
-  const toast = useToast();
-
-  const handleShare = async () => {
-    try {
-      await navigator.share({
-        title: infographic.title,
-        url: window.location.href
-      });
-    } catch (e) {
-      toast.error('Could not share');
-    }
-  };
-
-  const title = encodeURIComponent(infographic.title);
-  const url = encodeURIComponent(window.location.href);
-
-  return (
-    <div className="flex flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-4">
-      {
-        !!navigator?.canShare?.() && (
-          <IconButton
-            onClick={ handleShare }
-            icon={ <IconShare size="20"/> } rounded variant="subtle" color="black"
-          />
-        )
-      }
-      <a
-        href={ `https://www.facebook.com/sharer/sharer.php?quote=${ title }&u=${ url }` }
-        target="_blank" className="flex"
-      >
-        <IconButton
-          icon={ <IconBrandFacebook size="20"/> } rounded variant="subtle" color="primary"
-        />
-      </a>
-      <a
-        href={ `https://twitter.com/intent/tweet?text=${ title }&url=${ url }` }
-        target="_blank" className="flex"
-      >
-        <IconButton
-          icon={ <IconBrandTwitter size="20"/> } rounded variant="subtle" color="primary"
-        />
-      </a>
-      <a
-        href={ `https://www.linkedin.com/shareArticle?mini=true&text=${ title }&url=${ url }` }
-        target="_blank" className="flex"
-      >
-        <IconButton
-          icon={ <IconBrandLinkedin size="20"/> } rounded variant="subtle" color="primary"
-        />
-      </a>
-      <a
-        href={ `https://t.me/share/url?url=${ url }&text=${ title }` }
-        target="_blank" className="flex"
-      >
-        <IconButton
-          icon={ <IconBrandTelegram size="20"/> } rounded variant="subtle" color="primary"
-        />
-      </a>
-      <a
-        href={ `https://wa.me/?text=${ title } ${ url }` }
-        target="_blank" className="flex"
-      >
-        <IconButton
-          icon={ <IconBrandWhatsapp size="20"/> } rounded variant="subtle" color="green"
-        />
-      </a>
-    </div>
-  )
 };
 
 InfographicDetailsPage.Layout = DefaultLayout;
