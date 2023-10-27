@@ -36,6 +36,7 @@ const CategoryInfographicsPage = ({ category }) => {
         <meta property="og:title" content={ category.name }/>
         <meta property="og:description" content={ `Browse insights on ${ category.name }` }/>
         <meta property="og:image" content={ getImageLink(category.image) }/>
+        <meta property="og:url" content={ `https://www.statisense.co/infographics/${ category.slug }` }/>
         <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:title" content={ category.name }/>
         <meta name="twitter:description" content={ `Browse insights on ${ category.name }` }/>

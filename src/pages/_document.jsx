@@ -12,35 +12,11 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="UTF-8"/>
-          <meta
-            name="description"
-            content="Statisense is a leading AI data company specializing in financial report analysis, bank statement evaluation, and AI chatbot services. Empowering businesses with accurate insights for informed decisions."
-          />
+          <meta name="robots" content="index, follow"/>
           <meta
             name="keywords"
             content="Statisense, AI data company, financial report analysis, bank statement analysis, AI chatbot, business decisions"
           />
-          <meta name="robots" content="index, follow"/>
-          <meta
-            property="og:title"
-            content="Statisense - Pioneering AI Data Company for Informed Business Decisions"
-          />
-          <meta
-            property="og:description"
-            content="Statisense is a leading AI data company specializing in financial report analysis, bank statement evaluation, and AI chatbot services. Empowering businesses with accurate insights for informed decisions."
-          />
-          <meta property="og:url" content="https://www.statisense.com/"/>
-          <meta property="og:image" content="https://www.statisense.com/images/logo.png"/>
-          <meta name="twitter:card" content="summary_large_image"/>
-          <meta
-            name="twitter:title"
-            content="Statisense - Pioneering AI Data Company for Informed Business Decisions"
-          />
-          <meta
-            name="twitter:description"
-            content="Statisense is a leading AI data company specializing in financial report analysis, bank statement evaluation, and AI chatbot services. Empowering businesses with accurate insights for informed decisions."
-          />
-          <meta name="twitter:image" content="https://www.statisense.com/images/logo.png"/>
 
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>

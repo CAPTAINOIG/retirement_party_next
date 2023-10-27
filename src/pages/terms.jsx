@@ -8,6 +8,7 @@ import TermsAndConditions from "@/components/core/terms/TermsAndConditions";
 import PrivacyPolicy from "@/components/core/terms/PrivacyPolicy";
 import DefaultLayout from "@/components/core/DefaultLayout";
 import Head from "next/head";
+import DefaultHeadTags from "@/components/DefaultHeadTags";
 
 const tabs = [
   { key: 'terms', name: 'Terms and conditions' },
@@ -30,6 +31,7 @@ const TermsAndPrivacy = () => {
     <>
       <Head>
         <title>Privacy & Terms • Statisense</title>
+        <DefaultHeadTags/>
       </Head>
       <div className="bg-slate-50">
         <PageHeader

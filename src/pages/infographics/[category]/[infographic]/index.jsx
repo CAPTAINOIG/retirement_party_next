@@ -42,6 +42,10 @@ const InfographicDetailsPage = ({ infographic }) => {
         <meta property="og:title" content={ infographic.title }/>
         <meta property="og:description" content={ infographic.description }/>
         <meta property="og:image" content={ getImageLink(infographic.image) }/>
+        <meta
+          property="og:url"
+          content={ `https://www.statisense.co/infographics/${ infographic.category.slug }/${ infographic.slug }` }
+        />
         <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:title" content={ infographic.title }/>
         <meta name="twitter:description" content={ infographic.description }/>

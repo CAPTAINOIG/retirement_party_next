@@ -7,12 +7,14 @@ import FrequentlyAskedQuestions from "@/components/core/about/FrequentlyAskedQue
 import React from "react";
 import DefaultLayout from "@/components/core/DefaultLayout";
 import Head from "next/head";
+import DefaultHeadTags from "@/components/DefaultHeadTags";
 
 const About = () => {
   return (
     <>
       <Head>
         <title>About us • Statisense</title>
+        <DefaultHeadTags/>
       </Head>
       <div className="bg-slate-50">
         <PageHeader

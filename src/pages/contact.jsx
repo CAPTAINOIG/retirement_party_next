@@ -4,12 +4,14 @@ import ContactCategories from "@/components/core/contact/ContactCategories";
 import ConnectWithUs from "@/components/core/contact/ConnectWithUs";
 import DefaultLayout from "@/components/core/DefaultLayout";
 import Head from "next/head";
+import DefaultHeadTags from "@/components/DefaultHeadTags";
 
 const Contact = () => {
   return (
     <>
       <Head>
         <title>Get in touch • Statisense</title>
+        <DefaultHeadTags/>
       </Head>
       <div className="bg-slate-50">
         <PageHeader

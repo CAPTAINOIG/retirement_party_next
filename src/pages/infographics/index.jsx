@@ -8,6 +8,7 @@ import CategoryCard from "@/components/core/infographics/CategoryCard";
 import DefaultLayout from "@/components/core/DefaultLayout";
 import Head from "next/head";
 import InfographicCard from "@/components/core/infographics/InfographicCard";
+import { getImageLink } from "@/lib/utils";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -35,6 +36,24 @@ const InfographicsPage = ({ categories, trending }) => {
     <>
       <Head>
         <title>Insights</title>
+        <meta
+          name="description"
+          content="Statisense is a leading AI data company specializing in financial report analysis, bank statement evaluation, and AI chatbot services. Empowering businesses with accurate insights for informed decisions."
+        />
+        <meta property="og:title" content="Browse insights"/>
+        <meta
+          property="og:description"
+          content="Statisense is a leading AI data company specializing in financial report analysis, bank statement evaluation, and AI chatbot services. Empowering businesses with accurate insights for informed decisions."
+        />
+        <meta property="og:image" content={ getImageLink(trending[0].image) }/>
+        <meta property="og:url" content={ `https://www.statisense.co/infographics` }/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="Browse insights"/>
+        <meta
+          name="twitter:description"
+          content="Statisense is a leading AI data company specializing in financial report analysis, bank statement evaluation, and AI chatbot services. Empowering businesses with accurate insights for informed decisions."
+        />
+        <meta name="twitter:image" content={ getImageLink(trending[0].image) }/>
       </Head>
       <div className="bg-slate-50">
         <PageHeader
