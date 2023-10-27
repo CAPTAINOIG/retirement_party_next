@@ -37,7 +37,7 @@ const InfographicDetailsPage = ({ infographic }) => {
   return (
     <>
       <Head>
-        <title>{ infographic?.title || 'Infographic' }</title>
+        <title>{ `${ infographic.title } • Statisense` }</title>
         <meta name="description" content={ infographic.description }/>
         <meta property="og:title" content={ infographic.title }/>
         <meta property="og:description" content={ infographic.description }/>

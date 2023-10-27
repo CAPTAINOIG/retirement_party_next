@@ -35,23 +35,23 @@ const InfographicsPage = ({ categories, trending }) => {
   return (
     <>
       <Head>
-        <title>Insights</title>
+        <title>Browse insights on various topics.</title>
         <meta
           name="description"
-          content="Statisense is a leading AI data company specializing in financial report analysis, bank statement evaluation, and AI chatbot services. Empowering businesses with accurate insights for informed decisions."
+          content="Discover a diverse range of valuable insights covering various topics."
         />
-        <meta property="og:title" content="Browse insights"/>
+        <meta property="og:title" content="Browse insights on various topics."/>
         <meta
           property="og:description"
-          content="Statisense is a leading AI data company specializing in financial report analysis, bank statement evaluation, and AI chatbot services. Empowering businesses with accurate insights for informed decisions."
+          content="Discover a diverse range of valuable insights covering various topics."
         />
         <meta property="og:image" content={ getImageLink(trending[0].image) }/>
         <meta property="og:url" content={ `https://www.statisense.co/infographics` }/>
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:title" content="Browse insights"/>
+        <meta name="twitter:title" content="Browse insights on various topics."/>
         <meta
           name="twitter:description"
-          content="Statisense is a leading AI data company specializing in financial report analysis, bank statement evaluation, and AI chatbot services. Empowering businesses with accurate insights for informed decisions."
+          content="Discover a diverse range of valuable insights covering various topics."
         />
         <meta name="twitter:image" content={ getImageLink(trending[0].image) }/>
       </Head>

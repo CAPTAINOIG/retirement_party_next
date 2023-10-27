@@ -31,15 +31,24 @@ const CategoryInfographicsPage = ({ category }) => {
   return (
     <>
       <Head>
-        <title>{ category?.name || 'Statisense' }</title>
-        <meta name="description" content={ `Browse insights on ${ category.name }` }/>
-        <meta property="og:title" content={ category.name }/>
-        <meta property="og:description" content={ `Browse insights on ${ category.name }` }/>
+        <title>{ `${ category.name } • Statisense` }</title>
+        <meta
+          name="description"
+          content={ `Explore a wide array of insights and information on ${ category.name }` }
+        />
+        <meta property="og:title" content={ `${ category.name } • Statisense` }/>
+        <meta
+          property="og:description"
+          content={ `Explore a wide array of insights and information on ${ category.name }` }
+        />
         <meta property="og:image" content={ getImageLink(category.image) }/>
         <meta property="og:url" content={ `https://www.statisense.co/infographics/${ category.slug }` }/>
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:title" content={ category.name }/>
-        <meta name="twitter:description" content={ `Browse insights on ${ category.name }` }/>
+        <meta name="twitter:title" content={ `${ category.name } • Statisense` }/>
+        <meta
+          name="twitter:description"
+          content={ `Explore a wide array of insights and information on ${ category.name }` }
+        />
         <meta name="twitter:image" content={ getImageLink(category.image) }/>
       </Head>
       <div className="bg-slate-50">
