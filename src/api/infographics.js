@@ -17,13 +17,14 @@ export const useGetInfographics = ({ category, search, enabled = true } = {}) =>
 export const useGetCategoryInfographics = (category) => {
   return useInfiniteQuery({
     queryKey: ['infographics', 'category', category],
-    queryFn: async ({ pageParam: page = 1 }) => {
+    queryFn: async ({ pageParam: page }) => {
       const res = await http.get('/infographic', {
         params: { category, page, limit: 20 }
       });
       return res.data;
     },
     enabled: !!category,
+    initialPageParam: 1,
     getNextPageParam: (lastPage) => lastPage.next,
   });
 };
@@ -31,13 +32,14 @@ export const useGetCategoryInfographics = (category) => {
 export const useSearchInfographics = (search) => {
   return useInfiniteQuery({
     queryKey: ['infographics', 'search', search],
-    queryFn: async ({ pageParam: page = 1 }) => {
+    queryFn: async ({ pageParam: page }) => {
       const res = await http.get('/infographic', {
         params: { search, page, limit: 20 }
       });
       return res.data;
     },
     enabled: !!search,
+    initialPageParam: 1,
     getNextPageParam: (lastPage) => lastPage.next,
   });
 };
