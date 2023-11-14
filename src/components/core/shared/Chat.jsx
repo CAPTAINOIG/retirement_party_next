@@ -4,6 +4,7 @@ import { io } from "socket.io-client";
 import { IconChevronLeft, IconRobot, IconSend, IconSparkles, IconUser } from "@tabler/icons-react";
 import IconButton from "@/components/global/IconButton";
 import Loader from "@/components/global/Loader";
+import Markdown from "react-markdown";
 
 const Chat = ({ onBack }) => {
   const socket = useRef(null);
@@ -74,7 +75,7 @@ const Chat = ({ onBack }) => {
                   className="w-8 h-8 flex items-center justify-center bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-full">
                   <IconRobot size="18"/>
                 </div>
-                <p className="ml-2">Lens</p>
+                <p className="ml-2">Bambi</p>
               </div>
             </div>
             <div className="flex-1 flex flex-col overflow-y-auto" ref={ scrollEl }>
@@ -94,7 +95,9 @@ const Chat = ({ onBack }) => {
                                     <IconRobot size="18"/>
                                   </div>
                                 </div>
-                                <p className="ml-4 mt-1" dangerouslySetInnerHTML={ { __html: message.content } }/>
+                                <p className="ml-4 mt-1">
+                                  <Markdown>{ message.content }</Markdown>
+                                </p>
                               </div>
                             )
                           }
@@ -108,10 +111,9 @@ const Chat = ({ onBack }) => {
                                     <IconUser size="18"/>
                                   </div>
                                 </div>
-                                <p
-                                  className="ml-4 mt-1 whitespace-pre-wrap"
-                                  dangerouslySetInnerHTML={ { __html: message.content } }
-                                />
+                                <p className="ml-4 mt-1">
+                                  <Markdown>{ message.content }</Markdown>
+                                </p>
                               </div>
                             )
                           }
