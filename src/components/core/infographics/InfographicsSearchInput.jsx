@@ -21,14 +21,14 @@ const InfographicsSearchInput = ({ className }) => {
 
   const handleChange = e => {
     if (!e.target.value.length && pathname.includes('infographic')) {
-      router.push('/infographics');
+      router.push('/infographics/trending');
     }
     setQuery(e.target.value);
   };
 
   const handleReset = () => {
     setQuery('')
-    router.push('/infographics');
+    router.push('/infographics/trending');
   };
 
   return (

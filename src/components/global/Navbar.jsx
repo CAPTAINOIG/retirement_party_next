@@ -62,7 +62,7 @@ const Navbar = () => {
                   Markets
                 </Link>
                 <Link
-                  href={ "/infographics" }
+                  href={ "/infographics/trending" }
                   className="inline-flex items-center rounded-full py-1 px-4"
                 >
                   Insights

@@ -42,7 +42,7 @@ const MobileNav = ({ isOpen, onClose, onChat }) => {
                 Market
               </Link>
               <Link
-                onClick={ onClose } href={ "/infographics" }
+                onClick={ onClose } href={ "/infographics/trending" }
                 className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
               >
                 Insights

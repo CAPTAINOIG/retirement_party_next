@@ -1,11 +1,15 @@
 import { useGetCategoryInfographics } from "@/api/infographics";
 import PageHeader from "@/components/core/shared/PageHeader";
-import InfographicLoadingCard from "@/components/core/infographics/InfographicLoadingCard";
+import ChatWithBambi from "@/components/core/infographics/ChatWithBambi";
 import InfographicCard from "@/components/core/infographics/InfographicCard";
+import InfographicLoadingCard from "@/components/core/infographics/InfographicLoadingCard";
+import InfographicsLayout from "@/components/core/InfographicsLayout";
+import PageHeader from "@/components/core/shared/PageHeader";
+import TestRun from "@/components/core/shared/TestRun";
 import Button from "@/components/global/Button";
 import DefaultLayout from "@/components/core/DefaultLayout";
 import { useRouter } from "next/router";
-import Head from "next/head";
+import { useState } from "react";
 import { getImageLink } from "@/lib/utils";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
@@ -23,13 +27,26 @@ const CategoryInfographicsPage = ({ category }) => {
     isLoading: isInfographicsLoading,
     isFetchingNextPage,
     fetchNextPage,
-    hasNextPage
+    hasNextPage,
   } = useGetCategoryInfographics(category?._id);
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+  const infographics = data?.pages.map((p) => p.infographics).flat();
 
   const infographics = data?.pages.map(p => p.infographics).flat();
 
   return (
-    <>
+    <InfographicsLayout
+      isInfographicsLoading={isInfographicsLoading}
+      pageTitle={category?.name}
+      PageHeader={
+        <PageHeader
+          title={category?.name}
+          onBack={() => router.push("/infographics/trending")}
+          backText="Categories"
+          isLoading={isCategoryLoading}
+        />
+      }
+    >
       <Head>
         <title>{ `${ category.name } • Statisense` }</title>
         <meta
@@ -52,10 +69,12 @@ const CategoryInfographicsPage = ({ category }) => {
         <meta name="twitter:image" content={ getImageLink(category.image) }/>
       </Head>
       <div className="bg-slate-50">
+        <ChatWithBambi setIsChatbotOpen={setIsChatbotOpen} />
         <PageHeader
           title={ category?.name }
-          onBack={ () => router.push('/infographics') }
+          onBack={ () => router.push("/infographics/trending") }
           backText="Categories"
+          isLoading={ isCategoryLoading }
         />
         <div className="py-24 md:py-32">
           <div className="container">
@@ -71,24 +90,27 @@ const CategoryInfographicsPage = ({ category }) => {
                   {
                     !!infographics.length ? (
                       <>
-                        <div className="grid md:grid-cols-3 gap-8">
-                          {
-                            infographics?.map?.((infographic) => (
-                              <InfographicCard key={ infographic._id } infographic={ infographic }/>
-                            ))
-                          }
-                        </div>
-                        {
-                          hasNextPage && (
+                        <div className="grid md:grid-cols-1 items-center lg:max-w-2xl mx-auto gap-8 gap-y-10">
+
+                          { infographics.map((infographic) => (
+                            <InfographicCard
+                              key={ infographic._id }
+                              infographic={ infographic }
+                            />
+                          )) }
+                          { hasNextPage && (
                             <div className="mt-20 flex items-center justify-center">
                               <Button
-                                onClick={ fetchNextPage } loading={ isFetchingNextPage } variant="outlined" size="lg"
+                                onClick={ fetchNextPage }
+                                loading={ isFetchingNextPage }
+                                variant="outlined"
+                                size="lg"
                               >
                                 Load more
                               </Button>
                             </div>
-                          )
-                        }
+                          ) }
+                        </div>
                       </>
                     ) : (
                       <div className="p-20 text-center opacity-50">
@@ -102,7 +124,8 @@ const CategoryInfographicsPage = ({ category }) => {
           </div>
         </div>
       </div>
-    </>
+      <TestRun isOpen={ isChatbotOpen } onClose={ () => setIsChatbotOpen(false) }/>
+    </InfographicsLayout>
   );
 };
 

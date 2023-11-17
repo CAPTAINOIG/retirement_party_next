@@ -38,7 +38,7 @@ const InsightsOnTheGo = () => {
             <p className="mt-6 text-base md:text-lg max-w-sm">
               Chat with Bambi, an AI assistant to get insights on topics like economy, business, education, election etc
             </p>
-            <Link href={ '/infographics' }>
+            <Link href={ '/infographics/trending' }>
               <Button className="mt-12" size="lg" rightIcon={ <IconArrowRight/> }>
                 Let's go
               </Button>

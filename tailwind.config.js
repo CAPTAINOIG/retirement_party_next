@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -72,6 +73,7 @@ module.exports = {
       bounce: "bounce 10s alternate ease infinite",
       bounceTwo: "bounceTwo 6s alternate ease infinite",
       bounceThree: "bounceThree 12s alternate ease infinite",
+      pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       wide: "wide 15s alternate ease infinite"
     },
     container: {
