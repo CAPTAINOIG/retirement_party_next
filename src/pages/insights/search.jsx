@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeader from '@/components/core/shared/PageHeader';
 import DefaultLayout from '@/components/core/DefaultLayout';
-import InfographicsLayout from '@/components/core/InfographicsLayout';
+import InsightsLayout from '@/components/core/InsightsLayout';
 import Head from 'next/head';
 import { IconSearch } from '@tabler/icons-react';
 import { useGetCategoriesQuery } from '@/api/infographics';
@@ -32,7 +32,7 @@ const InfographicsPage = () => {
         <meta name="twitter:image" content="/images/logo-icon-inverted.png" />
       </Head>
       <PageHeader title="Search Insights" />
-      <InfographicsLayout>
+      <InsightsLayout>
         <div className="relative">
           <IconSearch className="absolute top-1/2 left-6 -translate-y-1/2 opacity-30" />
           <input
@@ -67,7 +67,7 @@ const InfographicsPage = () => {
             )}
           </>
         )}
-      </InfographicsLayout>
+      </InsightsLayout>
     </>
   );
 };

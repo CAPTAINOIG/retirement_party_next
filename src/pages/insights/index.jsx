@@ -2,7 +2,7 @@ import React from 'react';
 import { useGetTrendingInfographics } from '@/api/infographics';
 import PageHeader from '@/components/core/shared/PageHeader';
 import DefaultLayout from '@/components/core/DefaultLayout';
-import InfographicsLayout from '@/components/core/InfographicsLayout';
+import InsightsLayout from '@/components/core/InsightsLayout';
 import InfographicCard from '@/components/core/infographics/InfographicCard';
 import AddPost from '@/components/core/infographics/AddPost';
 import Head from 'next/head';
@@ -31,7 +31,7 @@ const InfographicsPage = () => {
         <meta name="twitter:image" content="/images/logo-icon-inverted.png" />
       </Head>
       <PageHeader title="Trending Insights" />
-      <InfographicsLayout>
+      <InsightsLayout>
         <div className="space-y-4">
           <AddPost />
           {isInfographicsLoading ? (
@@ -55,7 +55,7 @@ const InfographicsPage = () => {
             </>
           )}
         </div>
-      </InfographicsLayout>
+      </InsightsLayout>
     </>
   );
 };

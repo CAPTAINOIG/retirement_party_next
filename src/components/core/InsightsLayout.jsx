@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import AskBambiCard from '@/components/core/infographics/AskBambiCard';
 
-const InfographicsLayout = ({ children }) => {
+const InsightsLayout = ({ children }) => {
   return (
     <div className="bg-slate-100 py-16">
       <div className="container">
@@ -23,8 +23,8 @@ const InfographicsLayout = ({ children }) => {
   );
 };
 
-InfographicsLayout.propTypes = {
-  children: PropTypes.element,
+InsightsLayout.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element]),
 };
 
-export default InfographicsLayout;
+export default InsightsLayout;

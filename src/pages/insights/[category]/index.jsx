@@ -1,7 +1,7 @@
 import { useGetCategoryInfographics } from '@/api/infographics';
 import PageHeader from '@/components/core/shared/PageHeader';
 import InfographicCard from '@/components/core/infographics/InfographicCard';
-import InfographicsLayout from '@/components/core/InfographicsLayout';
+import InsightsLayout from '@/components/core/InsightsLayout';
 import Button from '@/components/global/Button';
 import DefaultLayout from '@/components/core/DefaultLayout';
 import React from 'react';
@@ -49,7 +49,7 @@ const CategoryInfographicsPage = ({ category }) => {
         <meta name="twitter:image" content={getImageLink(category.image)} />
       </Head>
       <PageHeader title={`${category.name} Insights`} />
-      <InfographicsLayout>
+      <InsightsLayout>
         {isInfographicsLoading ? (
           <div className="space-y-4">
             <div className="bg-slate-200 w-full h-[450px] rounded-3xl" />
@@ -79,7 +79,7 @@ const CategoryInfographicsPage = ({ category }) => {
             )}
           </>
         )}
-      </InfographicsLayout>
+      </InsightsLayout>
     </>
   );
 };
