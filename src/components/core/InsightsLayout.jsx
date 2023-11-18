@@ -5,18 +5,18 @@ import AskBambiCard from '@/components/core/infographics/AskBambiCard';
 
 const InsightsLayout = ({ children }) => {
   return (
-    <div className="bg-slate-100 py-16">
-      <div className="container">
-        <div className="grid lg:grid-cols-[320px_1fr_220px] gap-8 relative">
-          <div className="space-y-4">
-            <div className="md:sticky top-32">
+    <div className="bg-slate-100 py-12 md:py-16">
+      <div className="container !max-w-5xl">
+        <div className="grid md:grid-cols-[310px_1fr] gap-10 relative">
+          <div>
+            <div className="sticky top-32 grid gap-8">
+              <div className="order-1 md:order-none">
+                <InsightsSideNav />
+              </div>
               <AskBambiCard />
             </div>
           </div>
           <div className="order-1 md:order-none">{children}</div>
-          <div className="hidden lg:block">
-            <InsightsSideNav />
-          </div>
         </div>
       </div>
     </div>
