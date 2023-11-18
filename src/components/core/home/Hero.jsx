@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import Typed from "typed.js";
-import Button from "@/components/global/Button";
-import { IconChevronRight } from "@tabler/icons-react";
-import Link from "next/link";
+import Typed from 'typed.js';
+import Button from '@/components/global/Button';
+import { IconChevronRight } from '@tabler/icons-react';
+import Link from 'next/link';
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
 
@@ -12,12 +12,7 @@ const Hero = () => {
 
   useEffect(() => {
     const options = {
-      strings: [
-        'Generative AI',
-        'Banking AI',
-        'Identity AI',
-        'Markets AI',
-      ],
+      strings: ['Generative AI', 'Banking AI', 'Identity AI', 'Markets AI'],
       typeSpeed: 50,
       backSpeed: 10,
       backDelay: 3000,
@@ -27,34 +22,30 @@ const Hero = () => {
     typed.current = new Typed(el.current, options);
     return () => {
       typed.current.destroy();
-    }
+    };
   }, []);
 
   return (
-    <div
-      className="pt-48 pb-32 md:pt-52 md:pb-32 md:text-center bg-[#11100f] relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950"
-    >
+    <div className="pt-48 pb-32 md:pt-52 md:pb-32 md:text-center bg-[#11100f] relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950">
       <div className="absolute inset-0 bg-cover bg-right bg-hero animate-wide min-h-screen opacity-60"></div>
       <div className="container z-10 relative">
-        <h1
-          className="mx-auto max-w-[860px] font-display text-[3.4rem] sm:text-7xl md:text-[6.8rem] font-bold leading-[1.1] md:!leading-[1] tracking-tight text-slate-300"
-        >
+        <h1 className="mx-auto max-w-[860px] font-display text-[3.4rem] sm:text-7xl md:text-[6.8rem] font-bold leading-[1.1] md:!leading-[1] tracking-tight text-slate-300">
           Connecting
-          <br/>
+          <br />
           <span
-            ref={ el }
+            ref={el}
             className="relative bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent whitespace-nowrap"
           >
             Generative AI
           </span>
-          <br/>
+          <br />
           to Africa's Data
         </h1>
         <p className="mx-auto mt-8 max-w-xl text-lg tracking-tight text-slate-400">
           Our data models help simplify business datasets into conversation, reports and infographics.
         </p>
-        <Link href={ `${ APP_URL }/register` } className="inline-flex mt-12">
-          <Button size="xl" rightIcon={ <IconChevronRight size="20"/> } color="white">
+        <Link href={`${APP_URL}/register`} className="inline-flex mt-12">
+          <Button size="xl" rightIcon={<IconChevronRight size="20" />} color="white">
             Get started
           </Button>
         </Link>

@@ -1,17 +1,17 @@
-import SendMessageForm from "@/components/core/contact/SendMessageForm";
-import PageHeader from "@/components/core/shared/PageHeader";
-import ContactCategories from "@/components/core/contact/ContactCategories";
-import ConnectWithUs from "@/components/core/contact/ConnectWithUs";
-import DefaultLayout from "@/components/core/DefaultLayout";
-import Head from "next/head";
-import DefaultHeadTags from "@/components/DefaultHeadTags";
+import SendMessageForm from '@/components/core/contact/SendMessageForm';
+import PageHeader from '@/components/core/shared/PageHeader';
+import ContactCategories from '@/components/core/contact/ContactCategories';
+import ConnectWithUs from '@/components/core/contact/ConnectWithUs';
+import DefaultLayout from '@/components/core/DefaultLayout';
+import Head from 'next/head';
+import DefaultHeadTags from '@/components/DefaultHeadTags';
 
 const Contact = () => {
   return (
     <>
       <Head>
         <title>Get in touch • Statisense</title>
-        <DefaultHeadTags/>
+        <DefaultHeadTags />
       </Head>
       <div className="bg-slate-50">
         <PageHeader
@@ -22,13 +22,13 @@ const Contact = () => {
         </PageHeader>
         <div className="py-20 md:py-28 space-y-36">
           <div className="container space-y-24">
-            <ContactCategories/>
+            <ContactCategories />
             <div className="grid md:grid-cols-2 gap-16">
               <div>
-                <ConnectWithUs/>
+                <ConnectWithUs />
               </div>
               <div>
-                <SendMessageForm/>
+                <SendMessageForm />
               </div>
             </div>
           </div>

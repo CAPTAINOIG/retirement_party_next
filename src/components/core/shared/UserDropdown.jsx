@@ -1,8 +1,8 @@
 import React from 'react';
-import SimpleDropdown from "@/components/global/SimpleDropdown";
-import { IconChevronDown, IconLogout, IconUserCog } from "@tabler/icons-react";
-import { useAuth } from "@/hooks/use-auth";
-import classNames from "classnames";
+import SimpleDropdown from '@/components/global/SimpleDropdown';
+import { IconChevronDown, IconLogout, IconUserCog } from '@tabler/icons-react';
+import { useAuth } from '@/hooks/use-auth';
+import classNames from 'classnames';
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
 
@@ -17,25 +17,26 @@ const UserDropdown = ({ className }) => {
   return (
     <SimpleDropdown
       trigger={
-        <div className={ classNames('flex items-center', className) }>
+        <div className={classNames('flex items-center', className)}>
           <img
-            src={ `https://ui-avatars.com/api/?name=${ user.firstName } ${ user.lastName }` }
-            className="w-8 h-8 rounded-full" alt={ `${ user.firstName } ${ user.lastName }` }
+            src={`https://ui-avatars.com/api/?name=${user.firstName} ${user.lastName}`}
+            className="w-8 h-8 rounded-full"
+            alt={`${user.firstName} ${user.lastName}`}
           />
-          <p className="ml-2 hidden md:block">{ user.firstName }</p>
-          <IconChevronDown size="18" className="ml-3"/>
+          <p className="ml-2 hidden md:block">{user.firstName}</p>
+          <IconChevronDown size="18" className="ml-3" />
         </div>
       }
-      items={ [
+      items={[
         {
           text: 'Account settings',
-          icon: <IconUserCog size="18"/>,
+          icon: <IconUserCog size="18" />,
           onClick: () => {
-            location.href = `${ APP_URL }/account`;
-          }
+            location.href = `${APP_URL}/account`;
+          },
         },
-        { text: 'Logout', icon: <IconLogout size="18"/>, onClick: handleLogout },
-      ] }
+        { text: 'Logout', icon: <IconLogout size="18" />, onClick: handleLogout },
+      ]}
     />
   );
 };

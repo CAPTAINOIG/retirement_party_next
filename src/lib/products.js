@@ -24,8 +24,8 @@ import {
   IconSocial,
   IconUserCircle,
   IconUserQuestion,
-  IconWorld
-} from "@tabler/icons-react";
+  IconWorld,
+} from '@tabler/icons-react';
 
 const general = [
   {
@@ -150,7 +150,7 @@ const identity = [
     dashboardLink: '/govt-id',
     status: 'coming-soon',
     categories: ['identity'],
-    type: 'document'
+    type: 'document',
   },
   {
     name: 'Social analytics',
@@ -387,16 +387,16 @@ const products = [
 ];
 
 export const categories = [
-  { id: 'featured', name: "Featured" },
-  { id: 'general', name: "General" },
-  { id: 'lending', name: "Lending" },
-  { id: 'payments', name: "Payments" },
-  { id: 'identity', name: "Identity" },
-  { id: 'digital-forms', name: "Digital forms" },
-  { id: 'government', name: "Government" },
-  { id: 'investment', name: "Investments" },
-  { id: 'markets', name: "Markets" },
-  { id: 'insurance', name: "Insurance & HMO" },
+  { id: 'featured', name: 'Featured' },
+  { id: 'general', name: 'General' },
+  { id: 'lending', name: 'Lending' },
+  { id: 'payments', name: 'Payments' },
+  { id: 'identity', name: 'Identity' },
+  { id: 'digital-forms', name: 'Digital forms' },
+  { id: 'government', name: 'Government' },
+  { id: 'investment', name: 'Investments' },
+  { id: 'markets', name: 'Markets' },
+  { id: 'insurance', name: 'Insurance & HMO' },
 ];
 
 export default products;

@@ -1,34 +1,32 @@
-import React, { useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
-import { useAuth } from "@/hooks/use-auth";
-import Loader from "@/components/global/Loader.jsx";
+import React, { useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useAuth } from '@/hooks/use-auth';
+import Loader from '@/components/global/Loader.jsx';
 
 // eslint-disable-next-line react/display-name
-const requireAuth = (Component, props) => ({ children }) => {
-  const pathname = usePathname();
-  const { authenticated, resolved, user } = useAuth();
-  const router = useRouter();
+const requireAuth =
+  (Component, props) =>
+  ({ children }) => {
+    const pathname = usePathname();
+    const { authenticated, resolved, user } = useAuth();
+    const router = useRouter();
 
-  useEffect(() => {
-    if (resolved && !authenticated) {
-      router.replace(`/login?from=${ pathname }`);
-    } else if (resolved && authenticated && user && !user.emailVerified) {
-      router.push(`/verification?from=${ pathname }`);
-    }
-  }, [resolved, authenticated, user, router, pathname]);
+    useEffect(() => {
+      if (resolved && !authenticated) {
+        router.replace(`/login?from=${pathname}`);
+      } else if (resolved && authenticated && user && !user.emailVerified) {
+        router.push(`/verification?from=${pathname}`);
+      }
+    }, [resolved, authenticated, user, router, pathname]);
 
-  if (resolved && authenticated && user?.emailVerified) return (
-    <Component { ...props }>
-      { children }
-    </Component>
-  )
+    if (resolved && authenticated && user?.emailVerified) return <Component {...props}>{children}</Component>;
 
-  return (
-    <div className="h-screen w-full flex flex-col justify-center items-center">
-      <Loader/>
-      <p className="mt-5">Loading..</p>
-    </div>
-  )
-};
+    return (
+      <div className="h-screen w-full flex flex-col justify-center items-center">
+        <Loader />
+        <p className="mt-5">Loading..</p>
+      </div>
+    );
+  };
 
 export default requireAuth;

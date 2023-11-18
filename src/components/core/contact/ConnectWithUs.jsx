@@ -5,8 +5,8 @@ import {
   IconBrandThreads,
   IconBrandWhatsapp,
   IconBrandX,
-  IconMail
-} from "@tabler/icons-react";
+  IconMail,
+} from '@tabler/icons-react';
 
 const ConnectWithUs = () => {
   return (
@@ -21,7 +21,7 @@ const ConnectWithUs = () => {
       <div className="grid grid-cols-1 gap-8 mt-8">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-full flex items-center justify-center border">
-            <IconMail size="20"/>
+            <IconMail size="20" />
           </div>
           <div>
             <p>Email address</p>
@@ -32,7 +32,7 @@ const ConnectWithUs = () => {
         </div>
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-full flex items-center justify-center border">
-            <IconBrandWhatsapp size="20"/>
+            <IconBrandWhatsapp size="20" />
           </div>
           <div>
             <p>Whatsapp</p>
@@ -45,34 +45,49 @@ const ConnectWithUs = () => {
       <div className="mt-10">
         <div className="grid grid-cols-5 sm:grid-cols-7 gap-3 sm:gap-4">
           <a
-            href="https://twitter.com/statisense" target="_blank"
+            href="https://twitter.com/statisense"
+            target="_blank"
             className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-4 px-6"
           >
-            <div><IconBrandX size="28"/></div>
+            <div>
+              <IconBrandX size="28" />
+            </div>
           </a>
           <a
-            href="https://facebook.com/statisense" target="_blank"
+            href="https://facebook.com/statisense"
+            target="_blank"
             className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-4 px-6"
           >
-            <div><IconBrandFacebook size="28"/></div>
+            <div>
+              <IconBrandFacebook size="28" />
+            </div>
           </a>
           <a
-            href="https://www.instagram.com/statisense/" target="_blank"
+            href="https://www.instagram.com/statisense/"
+            target="_blank"
             className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-4 px-6"
           >
-            <div><IconBrandInstagram size="28"/></div>
+            <div>
+              <IconBrandInstagram size="28" />
+            </div>
           </a>
           <a
-            href="https://www.threads.net/@statisense" target="_blank"
+            href="https://www.threads.net/@statisense"
+            target="_blank"
             className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-4 px-6"
           >
-            <div><IconBrandThreads size="28"/></div>
+            <div>
+              <IconBrandThreads size="28" />
+            </div>
           </a>
           <a
-            href="https://www.linkedin.com/company/statisense/" target="_blank"
+            href="https://www.linkedin.com/company/statisense/"
+            target="_blank"
             className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-4 px-6"
           >
-            <div><IconBrandLinkedin size="28"/></div>
+            <div>
+              <IconBrandLinkedin size="28" />
+            </div>
           </a>
         </div>
       </div>

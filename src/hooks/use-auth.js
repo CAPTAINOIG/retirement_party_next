@@ -1,24 +1,20 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { useGetProfile } from "@/api/auth.js";
-import { useMount } from "react-use";
+import { createContext, useContext, useEffect, useState } from 'react';
+import { useGetProfile } from '@/api/auth.js';
+import { useMount } from 'react-use';
 
 const authContext = createContext({
   user: null,
-  updateUser: () => {
-  },
-  authenticate: () => {
-  },
-  reloadUser: () => {
-  },
+  updateUser: () => {},
+  authenticate: () => {},
+  reloadUser: () => {},
   resolved: false,
   authenticated: false,
-  logout: () => {
-  }
+  logout: () => {},
 });
 
 export function AuthProvider({ children }) {
   const auth = useProvideAuth();
-  return <authContext.Provider value={ auth }>{ children }</authContext.Provider>;
+  return <authContext.Provider value={auth}>{children}</authContext.Provider>;
 }
 
 export const useAuth = () => {
@@ -55,7 +51,7 @@ export function useProvideAuth() {
   };
 
   const updateUser = (user) => {
-    setUser(old => ({ ...old, ...user }));
+    setUser((old) => ({ ...old, ...user }));
   };
 
   const reloadUser = async () => {
@@ -78,6 +74,6 @@ export function useProvideAuth() {
     authenticate,
     resolved,
     authenticated,
-    logout
+    logout,
   };
 }

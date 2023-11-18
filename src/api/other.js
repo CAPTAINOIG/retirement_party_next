@@ -1,5 +1,5 @@
-import { useMutation } from "@tanstack/react-query";
-import http from "@/lib/http";
+import { useMutation } from '@tanstack/react-query';
+import http from '@/lib/http';
 
 export const useNewsletterSubscribe = () => {
   return useMutation({

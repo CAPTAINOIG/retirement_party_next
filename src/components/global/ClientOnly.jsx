@@ -7,9 +7,7 @@ const ClientOnly = ({ children }) => {
     setShow(true);
   }, []);
 
-  return (
-    <>{ show && children }</>
-  );
+  return <>{show && children}</>;
 };
 
 export default ClientOnly;

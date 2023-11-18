@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from "@/components/global/Card";
+import Card from '@/components/global/Card';
 
 const WhoWeAre = () => {
   return (
@@ -8,9 +8,7 @@ const WhoWeAre = () => {
         <div className="grid lg:grid-cols-12 gap-6 md:gap-10">
           <div className="lg:col-span-4 relative">
             <div className="sticky top-36 text-center lg:text-left">
-              <h2 className="text-3xl md:text-5xl font-medium tracking-tight">
-                Who are we
-              </h2>
+              <h2 className="text-3xl md:text-5xl font-medium tracking-tight">Who are we</h2>
             </div>
           </div>
           <div className="lg:col-span-8">
