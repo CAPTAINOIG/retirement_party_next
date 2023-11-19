@@ -31,9 +31,9 @@ const CategoryInfographicsPage = ({ category }) => {
   return (
     <>
       <Head>
-        <title>{`${category.name} • Statisense`}</title>
+        <title>{`Insights on ${category.name} • Statisense`}</title>
         <meta name="description" content={`Explore a wide array of insights and information on ${category.name}`} />
-        <meta property="og:title" content={`${category.name} • Statisense`} />
+        <meta property="og:title" content={`Insights on ${category.name} • Statisense`} />
         <meta
           property="og:description"
           content={`Explore a wide array of insights and information on ${category.name}`}
@@ -41,14 +41,14 @@ const CategoryInfographicsPage = ({ category }) => {
         <meta property="og:image" content={getImageLink(category.image)} />
         <meta property="og:url" content={`https://www.statisense.co/insights/${category.slug}`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${category.name} • Statisense`} />
+        <meta name="twitter:title" content={`Insights on ${category.name} • Statisense`} />
         <meta
           name="twitter:description"
           content={`Explore a wide array of insights and information on ${category.name}`}
         />
         <meta name="twitter:image" content={getImageLink(category.image)} />
       </Head>
-      <PageHeader title={`${category.name} Insights`} />
+      <PageHeader title={`Insights on ${category.name}`} />
       <InsightsLayout>
         {isInfographicsLoading ? (
           <div className="space-y-4">
