@@ -8,11 +8,11 @@ const InsightsSideNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-1">
       <Link
         href="/insights"
         className={cn('py-3 px-8 rounded-3xl w-full hover:bg-slate-200 flex items-center', {
-          'font-bold bg-slate-200': pathname && pathname === '/insights',
+          'font-semibold bg-slate-200': pathname && pathname === '/insights',
         })}
       >
         <IconTrendingUp2 size="20" className="mr-3" /> Trending insights
@@ -20,7 +20,7 @@ const InsightsSideNav = () => {
       <Link
         href="/insights/search"
         className={cn('py-3 px-8 rounded-3xl w-full hover:bg-slate-200 flex items-center', {
-          'font-bold bg-slate-200': pathname && pathname.includes('search'),
+          'font-semibold bg-slate-200': pathname && pathname.includes('search'),
         })}
       >
         <IconSearch size="20" className="mr-3" /> Search insights
@@ -28,7 +28,7 @@ const InsightsSideNav = () => {
       <Link
         href="/insights/saved"
         className={cn('py-3 px-8 rounded-3xl w-full hover:bg-slate-200 flex items-center', {
-          'font-bold bg-slate-200': pathname && pathname.includes('categories'),
+          'font-semibold bg-slate-200': pathname && pathname.includes('categories'),
         })}
       >
         <IconBookmark size="20" className="mr-3" /> Bookmarked insights

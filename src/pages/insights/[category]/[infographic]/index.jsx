@@ -114,7 +114,7 @@ const InfographicDetailsPage = ({ infographic }) => {
                     </ClientOnly>
                   </div>
                   <h3 className="text-lg font-bold text-center px-2 mt-12">Comments (3)</h3>
-                  <Card className="mt-6 shadow-sm rounded-2xl">
+                  <Card className="mt-6 shadow-sm rounded-2xl overflow-hidden">
                     <InfographicComments />
                   </Card>
                 </div>

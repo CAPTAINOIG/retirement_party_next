@@ -7,7 +7,7 @@ const InsightsLayout = ({ children }) => {
   return (
     <div className="bg-slate-100 py-12 md:py-16">
       <div className="container !max-w-5xl">
-        <div className="grid md:grid-cols-[310px_1fr] gap-10 relative">
+        <div className="grid md:grid-cols-[310px_1fr] gap-12 relative">
           <div>
             <div className="sticky top-32 grid gap-8">
               <div className="order-1 md:order-none">

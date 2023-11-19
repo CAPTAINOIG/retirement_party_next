@@ -10,7 +10,6 @@ const AskBambiCard = () => {
   return (
     <>
       <Card className="relative shadow-none border-0 bg-gradient-to-br from-teal-800 to-primary-800 text-white overflow-hidden px-8 py-8 md:px-10 md:py-10">
-        <div className="absolute inset-0 bg-cover bg-right -scale-0 bg-tw-dark animate-wide min-h-screen opacity-60"></div>
         <div className="relative z-[2] flex flex-row md:flex-col md:items-center md:justify-center">
           <IconSparkles size="60" className="text-white" />
           <div className="ml-6 md:ml-0 md:mt-10 md:text-center">
