@@ -74,7 +74,11 @@ const Navbar = () => {
             <div className="flex items-center justify-end gap-x-5 md:gap-x-4 ml-6">
               <div className="hidden lg:block space-x-4">
                 {!resolved ? (
-                  <div className="animate-pulse bg-slate-100/10 rounded-3xl w-[100px] h-[32px]" />
+                  <div
+                    className={classNames('animate-pulse bg-slate-100/10 rounded-3xl w-[100px] h-[32px]', {
+                      'bg-slate-900/10': scrolled,
+                    })}
+                  />
                 ) : (
                   <>
                     {!user ? (
