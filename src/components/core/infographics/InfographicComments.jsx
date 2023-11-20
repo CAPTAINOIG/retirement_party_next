@@ -4,27 +4,34 @@ import InfographicCommentLoading from '@/components/core/infographics/Infographi
 import Button from '@/components/global/Button';
 import { IconMessageOff } from '@tabler/icons-react';
 import AddInfographicComment from '@/components/core/infographics/AddInfographicComment';
+import { useGetInfographicComments } from '@/api/infographics';
 
-const InfographicComments = () => {
-  const comments = Array(3).fill(null);
-  const isCommentsLoading = false;
-  const hasMoreComments = false;
+const InfographicComments = ({ infographicId }) => {
+  
+  const {
+    data: { pages = [] } = {},
+    isFetching,
+    isLoading: isCommentsLoading,
+    hasNextPage,
+    fetchNextPage,
+  } = useGetInfographicComments(infographicId);
+  const comments = pages.map((p) => p.comments).flat();
 
   return (
     <>
-      <AddInfographicComment />
+      <AddInfographicComment infographicId={infographicId} />
       <hr />
-      {comments?.map((_, i) => (
-        <InfographicComment key={i} />
+      {comments?.map((comment, i) => (
+        <InfographicComment comment={comment} key={i} />
       ))}
       {isCommentsLoading && (
         <div className="space-y-6 py-6">
           <InfographicCommentLoading />
         </div>
       )}
-      {hasMoreComments && !isCommentsLoading && (
+      {hasNextPage && !isCommentsLoading && (
         <div className="flex items-center w-full py-3">
-          <Button color="black" size="sm" variant="text" className="mx-auto flex items-center justify-center">
+          <Button loading={isFetching} onClick={fetchNextPage} color="black" size="sm" variant="text" className="mx-auto flex items-center justify-center">
             View More Comments
           </Button>
         </div>
@@ -40,3 +47,4 @@ const InfographicComments = () => {
 };
 
 export default InfographicComments;
+

@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/use-auth.js';

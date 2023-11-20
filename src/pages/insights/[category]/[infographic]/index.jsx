@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
-import React, { useEffect, useRef } from 'react';
-import { useAddViewMutation } from '@/api/infographics';
+import React, { useEffect, useRef, useState } from 'react';
+import { useAddViewMutation, useReactToInfographic } from '@/api/infographics';
 import PageHeader from '@/components/core/shared/PageHeader';
 import Image from '@/components/core/shared/Image';
 import { IconClock, IconThumbUp, IconThumbUpFilled } from '@tabler/icons-react';
@@ -14,6 +14,9 @@ import { getImageLink } from '@/lib/utils';
 import InfographicComments from '@/components/core/infographics/InfographicComments';
 import Card from '@/components/global/Card';
 import Button from '@/components/global/Button';
+import { useAuth } from '@/hooks/use-auth';
+import { useToast } from '@/hooks/use-toast';
+import LoginRequiredAlert from '@/components/core/infographics/LoginRequiredModal';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -24,11 +27,19 @@ export async function getServerSideProps({ res, params }) {
 }
 
 const InfographicDetailsPage = ({ infographic }) => {
+  const toast = useToast();
   const router = useRouter();
   const viewed = useRef(null);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const { mutateAsync: addView } = useAddViewMutation();
-
-  const isLiked = true;
+  const { user } = useAuth();
+  const [isLiked, setIsLiked] = useState(!!infographic.reactions.find((reaction) => reaction.user._id === user?._id));
+  const [reactionCount, setReactionCount] = useState(infographic.totalReactions);
+  const { mutateAsync: react } = useReactToInfographic();
+  
+  useEffect(() => {
+    setIsLiked(!!infographic.reactions.find((reaction) => reaction.user._id === user?._id));
+  }, [infographic.reactions, user]);
 
   useEffect(() => {
     if (infographic && viewed.current !== infographic._id) {
@@ -37,6 +48,23 @@ const InfographicDetailsPage = ({ infographic }) => {
     }
   }, [addView, infographic]);
 
+  const likeInfographic = async () => {
+    try {
+      if (user) {
+        if (isLiked) {
+          setReactionCount((reactionCount) => reactionCount - 1);
+        } else {
+          setReactionCount((reactionCount) => reactionCount + 1);
+        }
+        setIsLiked((isLiked) => !isLiked);
+        await react({ infographicId: infographic.id, reaction: 'like' });
+      } else {
+        setIsLoginModalOpen(true);
+      }
+    } catch (e) {
+      toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
+    }
+  };
   return (
     <>
       <Head>
@@ -83,6 +111,7 @@ const InfographicDetailsPage = ({ infographic }) => {
 
                     <div className="flex flex-row space-x-2 ml-auto">
                       <Button
+                        onClick={likeInfographic}
                         variant="outlined"
                         color="black"
                         size="sm"
@@ -94,7 +123,7 @@ const InfographicDetailsPage = ({ infographic }) => {
                           )
                         }
                       >
-                        20k
+                        {reactionCount}
                       </Button>
                     </div>
                   </div>
@@ -113,15 +142,16 @@ const InfographicDetailsPage = ({ infographic }) => {
                       <ShareButtons infographic={infographic} />
                     </ClientOnly>
                   </div>
-                  <h3 className="text-lg font-bold text-center px-2 mt-12">Comments (3)</h3>
+                  <h3 className="text-lg font-bold text-center px-2 mt-12">Comments ({infographic.totalComments})</h3>
                   <Card className="mt-6 shadow-sm rounded-2xl overflow-hidden">
-                    <InfographicComments />
+                    <InfographicComments infographicId={infographic._id} />
                   </Card>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <LoginRequiredAlert isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
       </div>
     </>
   );
@@ -130,3 +160,4 @@ const InfographicDetailsPage = ({ infographic }) => {
 InfographicDetailsPage.Layout = DefaultLayout;
 
 export default InfographicDetailsPage;
+

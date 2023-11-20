@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from '@/components/core/shared/Image.jsx';
 import { formatDistance } from 'date-fns';
@@ -7,12 +7,42 @@ import Button from '@/components/global/Button';
 import InfographicComments from './InfographicComments';
 import classNames from 'classnames';
 import Card from '@/components/global/Card';
+import { useAuth } from '@/hooks/use-auth';
+import { useReactToInfographic } from '@/api/infographics';
+import { useToast } from '@/hooks/use-toast';
+import LoginRequiredAlert from './LoginRequiredModal';
 
 const InfographicCard = ({ infographic }) => {
+  const toast = useToast();
+  const { user } = useAuth();
   const [isCommentsOpen, setIsCommentsOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [showFullDescription, setShowFullDescription] = useState(true);
+  const [reactionCount, setReactionCount] = useState(infographic.totalReactions);
+  const [isLiked, setIsLiked] = useState(!!infographic.reactions.find((reaction) => reaction.user._id === user?._id));
+  const { mutateAsync: react } = useReactToInfographic();
 
-  const isLiked = true;
+  useEffect(() => {
+    setIsLiked(!!infographic.reactions.find((reaction) => reaction.user._id === user?._id));
+  }, [infographic.reactions, user]);
+
+  const likeInfographic = async () => {
+    try {
+      if (user) {
+        if (isLiked) {
+          setReactionCount((reactionCount) => reactionCount - 1);
+        } else {
+          setReactionCount((reactionCount) => reactionCount + 1);
+        }
+        setIsLiked((isLiked) => !isLiked);
+        await react({ infographicId: infographic.id, reaction: 'like' });
+      } else {
+        setIsLoginModalOpen(true);
+      }
+    } catch (e) {
+      toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
+    }
+  };
 
   return (
     <Card className="overflow-hidden">
@@ -43,12 +73,13 @@ const InfographicCard = ({ infographic }) => {
       </Link>
       <div className="flex flex-row space-x-2 px-6 py-4">
         <Button
+          onClick={likeInfographic}
           variant="outlined"
           color="black"
           size="sm"
           leftIcon={!isLiked ? <IconThumbUp size="18" /> : <IconThumbUpFilled className="text-primary-500" size="18" />}
         >
-          20k
+          {reactionCount}
         </Button>
         <Button
           onClick={() => setIsCommentsOpen((v) => !v)}
@@ -57,17 +88,19 @@ const InfographicCard = ({ infographic }) => {
           leftIcon={<IconMessageCircle size="18" />}
           size="sm"
         >
-          500
+          {infographic.totalComments}
         </Button>
       </div>
       <hr />
       {isCommentsOpen && (
         <>
-          <InfographicComments />
+          <InfographicComments infographicId={infographic.id} />
         </>
       )}
+      <LoginRequiredAlert isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
     </Card>
   );
 };
 
 export default InfographicCard;
+
