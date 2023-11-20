@@ -6,7 +6,6 @@ import classNames from 'classnames';
 import Button from '@/components/global/Button.jsx';
 import { useAuth } from '@/hooks/use-auth.js';
 import SimpleDropdown from '@/components/global/SimpleDropdown.jsx';
-import { useRouter } from 'next/navigation';
 import Logo from '@/components/core/shared/Logo';
 import AskBambi from '@/components/core/shared/AskBambi';
 import NavProductsDropdown from '@/components/core/NavProductsDropdown';
@@ -15,8 +14,7 @@ import MobileNav from '@/components/MobileNav';
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
 
 const Navbar = () => {
-  const router = useRouter();
-  const { user, logout } = useAuth();
+  const { resolved, user, logout } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
@@ -40,15 +38,15 @@ const Navbar = () => {
       <header
         className={classNames(
           'fixed top-0 inset-x-0 z-50 h-32 transition-all',
-          { 'bg-white/90 backdrop-blur-lg text-neutral-900 shadow !h-24': scrolled },
-          { 'text-neutral-100': !scrolled }
+          { 'bg-white/90 backdrop-blur-lg shadow !h-24': scrolled },
+          { 'text-slate-100': !scrolled }
         )}
       >
         <div className="container h-full">
           <nav className="relative z-50 flex justify-between h-full">
             <div className="flex items-center md:gap-x-12 flex-1 h-full">
-              <Link href={'/'} className="text-[1.6rem] flex items-center">
-                <Logo className="mr-3" light={!scrolled} />
+              <Link href={'/'}>
+                <Logo light={!scrolled} />
               </Link>
               <div className="hidden lg:flex md:space-x-3 ml-auto h-full">
                 <div className="relative h-full flex items-center group">
@@ -75,49 +73,55 @@ const Navbar = () => {
             </div>
             <div className="flex items-center justify-end gap-x-5 md:gap-x-4 ml-6">
               <div className="hidden lg:block space-x-4">
-                {!user ? (
+                {!resolved ? (
+                  <div className="animate-pulse bg-slate-100/10 rounded-3xl w-[100px] h-[32px]" />
+                ) : (
                   <>
-                    <Link href={`${APP_URL}/login`}>
-                      <Button variant="subtle" color={scrolled ? 'black' : 'white'}>
-                        Sign in
-                      </Button>
-                    </Link>
-                    {scrolled && (
-                      <Link href={`${APP_URL}/register`}>
-                        <Button>Get started</Button>
-                      </Link>
+                    {!user ? (
+                      <>
+                        <Link href={`${APP_URL}/login`}>
+                          <Button variant="subtle" color={scrolled ? 'black' : 'white'}>
+                            Sign in
+                          </Button>
+                        </Link>
+                        {scrolled && (
+                          <Link href={`${APP_URL}/register`}>
+                            <Button>Get started</Button>
+                          </Link>
+                        )}
+                      </>
+                    ) : (
+                      <div className="flex items-center space-x-4">
+                        <SimpleDropdown
+                          trigger={
+                            <div
+                              className={classNames(
+                                'flex items-center space-x-2 hover:bg-gray-200/5 rounded-full pl-3 pr-4 py-2 transition-all',
+                                { 'hover:!bg-gray-200/50': scrolled }
+                              )}
+                            >
+                              <img
+                                src={`https://ui-avatars.com/api/?name=${user.firstName} ${user.lastName}`}
+                                className="w-8 h-8 rounded-full"
+                                alt={`${user.firstName} ${user.lastName}`}
+                              />
+                              <div>
+                                {user.firstName} {user.lastName}
+                              </div>
+                            </div>
+                          }
+                          items={[
+                            {
+                              text: 'Dashboard',
+                              icon: <IconLayout2 size="18" />,
+                              onClick: () => (location.href = APP_URL),
+                            },
+                            { text: 'Logout', icon: <IconLogout size="18" />, onClick: handleLogout },
+                          ]}
+                        />
+                      </div>
                     )}
                   </>
-                ) : (
-                  <div className="flex items-center space-x-4">
-                    <SimpleDropdown
-                      trigger={
-                        <div
-                          className={classNames(
-                            'flex items-center space-x-4 hover:bg-gray-200/5 rounded-full pl-3 pr-4 py-2 transition-all',
-                            { 'hover:!bg-gray-200/50': scrolled }
-                          )}
-                        >
-                          <img
-                            src={`https://ui-avatars.com/api/?name=${user.firstName} ${user.lastName}`}
-                            className="w-8 h-8 rounded-full"
-                            alt={`${user.firstName} ${user.lastName}`}
-                          />
-                          <div>
-                            {user.firstName} {user.lastName}
-                          </div>
-                        </div>
-                      }
-                      items={[
-                        {
-                          text: 'Dashboard',
-                          icon: <IconLayout2 size="18" />,
-                          onClick: () => router.push('/dashboard'),
-                        },
-                        { text: 'Logout', icon: <IconLogout size="18" />, onClick: handleLogout },
-                      ]}
-                    />
-                  </div>
                 )}
               </div>
               <div className="-mr-1 lg:hidden">
