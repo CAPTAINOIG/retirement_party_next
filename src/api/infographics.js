@@ -74,7 +74,7 @@ export const useAddViewMutation = () => {
 
 export const useGetInfographicComments = (infographicId) => {
   return useInfiniteQuery({
-    queryKey: ['comments', infographicId],
+    queryKey: ['infographics', infographicId, 'comments'],
     queryFn: async ({ pageParam }) => {
       const res = await http.get(`/infographic/${infographicId}/comments`, {
         params: { page: pageParam },
@@ -88,7 +88,7 @@ export const useGetInfographicComments = (infographicId) => {
 
 export const useGetInfographicCommentReplies = (commentId) => {
   return useInfiniteQuery({
-    queryKey: ['replies', commentId],
+    queryKey: ['comments', commentId, 'replies'],
     queryFn: async ({ pageParam }) => {
       const res = await http.get(`/infographic/comments/${commentId}/replies`, {
         params: { page: pageParam },
@@ -102,7 +102,7 @@ export const useGetInfographicCommentReplies = (commentId) => {
 
 export const useGetCommentReactions = (commentId) => {
   return useQuery({
-    queryKey: ['commentReactions', commentId],
+    queryKey: ['comments', commentId, 'reactions'],
     queryFn: async () => {
       const res = await http.get(`/infographic/comments/${commentId}/reactions`);
       return res.data;
@@ -145,31 +145,23 @@ export const useReactToInfographic = () => {
 };
 
 export const useReactToInfographicComment = (commentId, userId) => {
-  const queryClient = useQueryClient();
+  const qc = useQueryClient();
   return useMutation({
     mutationFn: ({ reaction }) => {
       return http.post(`/infographic/comments/${commentId}/reactions`, { reaction });
     },
-    //Optimistic update
     onMutate: async () => {
-      // Stop the queries that may affect this operation
-      await queryClient.cancelQueries(['commentReactions', commentId]);
-
-      // Get a snapshot of current data
-      const snapshotOfPreviousTodos = queryClient.getQueryData(['commentReactions', commentId]);
-
-      // Modify cache to reflect this optimistic update
-      queryClient.setQueryData(['commentReactions', commentId], (oldReactions) => {
-        const userHasReacted = !!oldReactions.reactions.find((reaction) => reaction.user._id === userId);
-        if (userHasReacted) {
-          //removing the reaction from array and reducing count by one
+      await qc.cancelQueries({ queryKey: ['comments', commentId, 'reactions'] });
+      const previousReactions = qc.getQueryData(['comments', commentId, 'reactions']);
+      qc.setQueryData(['comments', commentId, 'reactions'], (oldReactions) => {
+        const hasReacted = !!oldReactions.reactions.find((reaction) => reaction.user._id === userId);
+        if (hasReacted) {
           return {
             success: true,
             count: oldReactions.reactions.length - 1,
-            reactions: oldReactions.reactions.filter((reaction) => reaction.user._id === userId),
+            reactions: oldReactions.reactions.filter((reaction) => reaction.user._id !== userId),
           };
         }
-        //adding the reaction to array and increasing count by one
         return {
           success: true,
           count: oldReactions.reactions.length + 1,
@@ -185,19 +177,13 @@ export const useReactToInfographicComment = (commentId, userId) => {
           ],
         };
       });
-      // Return a snapshot so we can rollback in case of failure
-      return {
-        snapshotOfPreviousTodos,
-      };
+      return { previousReactions };
     },
-    onError: (error, newReactions, { snapshotOfPreviousTodos }) => {
-      // Rollback the changes using the snapshot if there's an error
-      queryClient.setQueryData(['commentReactions', commentId], snapshotOfPreviousTodos);
+    onError: (error, newReactions, { previousReactions }) => {
+      qc.setQueryData(['comments', commentId, 'reactions'], previousReactions);
     },
-
     onSuccess() {
-      // Refetch or invalidate related queries
-      queryClient.invalidateQueries(['commentReactions', commentId]);
+      qc.invalidateQueries({ queryKey: ['comments', commentId, 'reactions'] });
     },
   });
 };
@@ -209,4 +195,3 @@ export const useReactToInfographicCommentReply = () => {
     },
   });
 };
-

@@ -4,6 +4,7 @@ import InfographicCommentLoading from '@/components/core/infographics/Infographi
 import InfographicCommentReply from '@/components/core/infographics/InfographicCommentReply';
 import AddInfographicCommentReply from '@/components/core/infographics/AddInfographicCommentReply';
 import { useGetInfographicCommentReplies } from '@/api/infographics';
+import { IconMessageOff } from '@tabler/icons-react';
 
 const InfographicCommentReplies = ({ commentId }) => {
   const {
@@ -27,19 +28,31 @@ const InfographicCommentReplies = ({ commentId }) => {
           <InfographicCommentLoading />
         </div>
       )}
+      {!isRepliesLoading && !replies?.length && (
+        <div className="flex items-center space-x-4 w-full opacity-75">
+          <IconMessageOff size="20" />
+          <p>No replies yet</p>
+        </div>
+      )}
       {hasNextPage && !isRepliesLoading && (
         <div className="flex justify-center mt-8">
-          <Button oading={isFetching} onClick={fetchNextPage}  color="black" size="sm" variant="outlined" className="mx-auto flex items-center justify-center">
+          <Button
+            oading={isFetching}
+            onClick={fetchNextPage}
+            color="black"
+            size="sm"
+            variant="outlined"
+            className="mx-auto flex items-center justify-center"
+          >
             View more replies
           </Button>
         </div>
       )}
       <div className="mt-8">
-        <AddInfographicCommentReply commentId={commentId}/>
+        <AddInfographicCommentReply commentId={commentId} />
       </div>
     </>
   );
 };
 
 export default InfographicCommentReplies;
-

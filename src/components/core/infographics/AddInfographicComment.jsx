@@ -12,23 +12,25 @@ const AddInfographicComment = ({ infographicId }) => {
   const { user } = useAuth();
   const qc = useQueryClient();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const { mutateAsync: addComment, isPending } = useAddInfographicComment(infographicId);
-  const submit = async (values, e) => {
+
+  let query = qc.getQueryState(['infographics', infographicId, 'comments']);
+  const isFetching = query.isInvalidated && query.fetchStatus === 'fetching';
+
+  const submit = async (values) => {
     try {
-      if (user) {
-        await addComment(values);
-        await qc.invalidateQueries({
-          queryKey: ['comments', infographicId],
-        });
-        e.target.reset();
-      } else {
-        setIsLoginModalOpen(true);
-      }
+      if (!user) return setIsLoginModalOpen(true);
+      await addComment(values);
+      await qc.invalidateQueries({
+        queryKey: ['infographics', infographicId, 'comments'],
+      });
+      reset();
     } catch (e) {
       toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
     }
   };
+
   return (
     <div className="py-6 px-6">
       <form onSubmit={handleSubmit(submit)}>
@@ -38,9 +40,9 @@ const AddInfographicComment = ({ infographicId }) => {
             placeholder="Add a comment"
             rows="1"
             {...register('content', { required: 'Comment is required' })}
-            disabled={isPending}
+            disabled={isPending || isFetching}
           />
-          <Button type="submit" color="black" variant="subtle" loading={isPending}>
+          <Button type="submit" color="black" variant="subtle" loading={isPending || isFetching}>
             Add comment
           </Button>
         </div>
@@ -51,4 +53,3 @@ const AddInfographicComment = ({ infographicId }) => {
 };
 
 export default AddInfographicComment;
-

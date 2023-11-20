@@ -7,7 +7,6 @@ import AddInfographicComment from '@/components/core/infographics/AddInfographic
 import { useGetInfographicComments } from '@/api/infographics';
 
 const InfographicComments = ({ infographicId }) => {
-  
   const {
     data: { pages = [] } = {},
     isFetching,
@@ -31,13 +30,20 @@ const InfographicComments = ({ infographicId }) => {
       )}
       {hasNextPage && !isCommentsLoading && (
         <div className="flex items-center w-full py-3">
-          <Button loading={isFetching} onClick={fetchNextPage} color="black" size="sm" variant="text" className="mx-auto flex items-center justify-center">
+          <Button
+            loading={isFetching}
+            onClick={fetchNextPage}
+            color="black"
+            size="sm"
+            variant="text"
+            className="mx-auto flex items-center justify-center"
+          >
             View More Comments
           </Button>
         </div>
       )}
       {!isCommentsLoading && !comments.length && (
-        <div className="flex justify-center space-x-4 w-full py-6 opacity-75">
+        <div className="flex items-center justify-center space-x-4 w-full py-6 opacity-75">
           <IconMessageOff size="20" />
           <p>No comments yet</p>
         </div>
@@ -47,4 +53,3 @@ const InfographicComments = ({ infographicId }) => {
 };
 
 export default InfographicComments;
-

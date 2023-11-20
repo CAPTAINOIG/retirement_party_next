@@ -3,18 +3,16 @@ import { formatDistance } from 'date-fns';
 import Button from '@/components/global/Button';
 import { IconThumbUp, IconThumbUpFilled } from '@tabler/icons-react';
 import { useToast } from '@/hooks/use-toast';
-import { useRouter } from 'next/navigation';
 import { useGetCommentReplyReactions, useReactToInfographicCommentReply } from '@/api/infographics';
 import { useAuth } from '@/hooks/use-auth';
 import LoginRequiredAlert from './LoginRequiredModal';
 
 const InfographicCommentReply = ({ reply }) => {
   const toast = useToast();
-  const router = useRouter();
   const { user } = useAuth();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [reactionCount, setReactionCount] = useState(reply.totalReactions);
-  const { data: { reactions = [] } = {}, isLoading: isInfographicsLoading } = useGetCommentReplyReactions(reply.id);
+  const { data: { reactions = [] } = {} } = useGetCommentReplyReactions(reply.id);
   const [isLiked, setIsLiked] = useState(false);
   const { mutateAsync: react } = useReactToInfographicCommentReply();
 
@@ -24,17 +22,10 @@ const InfographicCommentReply = ({ reply }) => {
 
   const likeCommentReply = async () => {
     try {
-      if (user) {
-        if (isLiked) {
-          setReactionCount((reactionCount) => reactionCount - 1);
-        } else {
-          setReactionCount((reactionCount) => reactionCount + 1);
-        }
-        setIsLiked((isLiked) => !isLiked);
-        await react({ replyId: reply.id, reaction: 'like' });
-      } else {
-        setIsLoginModalOpen(true);
-      }
+      if (!user) return setIsLoginModalOpen(true);
+      setReactionCount((v) => (isLiked ? v - 1 : v + 1));
+      setIsLiked((v) => !v);
+      await react({ replyId: reply.id, reaction: 'like' });
     } catch (e) {
       toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
     }
@@ -48,7 +39,7 @@ const InfographicCommentReply = ({ reply }) => {
         <div className="flex items-center w-full">
           <div className="lg:flex">
             <p className="font-medium leading-none">
-            {reply.user.firstName} {reply.user.lastName}
+              {reply.user.firstName} {reply.user.lastName}
             </p>
             <p className="opacity-70 leading-none mt-1 lg:mt-0 lg:ml-2">@{reply.user.username} </p>
           </div>
@@ -75,4 +66,3 @@ const InfographicCommentReply = ({ reply }) => {
 };
 
 export default InfographicCommentReply;
-

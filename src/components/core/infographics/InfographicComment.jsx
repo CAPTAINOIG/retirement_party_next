@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { formatDistance } from 'date-fns';
 import Button from '@/components/global/Button';
 import { IconMessageCircle, IconThumbUp, IconThumbUpFilled } from '@tabler/icons-react';
@@ -13,29 +13,21 @@ const InfographicComment = ({ comment }) => {
   const { user } = useAuth();
   const [isRepliesOpen, setIsRepliesOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const { data: { reactions = [] } = {}, isLoading: isReactionLoading } = useGetCommentReactions(comment.id);
-  const [reactionCount, setReactionCount] = useState(reactions.length);
-  const [isLiked, setIsLiked] = useState(false);
+  const { data: { reactions = [] } = {} } = useGetCommentReactions(comment.id);
   const { mutateAsync: react } = useReactToInfographicComment(comment.id, user?._id);
-  useEffect(() => {
-    setIsLiked(!!reactions.find((reaction) => reaction.user._id === user?._id));
-  }, [reactions, user]);
 
-  useEffect(() => {
-    setReactionCount(reactions.length);
-  }, [reactions]);
+  const totalReactions = reactions.length || comment.totalReactions;
+  const isLiked = !!reactions.find((reaction) => reaction.user._id === user?._id);
 
-  const likeComment = async () => {
+  const handleReact = async () => {
     try {
-      if (user) {
-        await react({ reaction: 'like' });
-      } else {
-        setIsLoginModalOpen(true);
-      }
+      if (!user) return setIsLoginModalOpen(true);
+      await react({ reaction: 'like' });
     } catch (e) {
       toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
     }
   };
+
   return (
     <div className="px-6 py-6 flex flex-col gap-1 border-b">
       <div className="flex space-x-3">
@@ -56,7 +48,7 @@ const InfographicComment = ({ comment }) => {
           <div className="flex items-center space-x-3 mt-3">
             <Button
               type="button"
-              onClick={likeComment}
+              onClick={handleReact}
               variant="outlined"
               color="black"
               leftIcon={
@@ -64,7 +56,7 @@ const InfographicComment = ({ comment }) => {
               }
               size="sm"
             >
-              {reactionCount}
+              {totalReactions}
             </Button>
             <Button
               type="button"
@@ -84,10 +76,10 @@ const InfographicComment = ({ comment }) => {
           )}
         </div>
       </div>
+
       <LoginRequiredAlert isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
     </div>
   );
 };
 
 export default InfographicComment;
-

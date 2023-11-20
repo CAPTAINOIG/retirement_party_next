@@ -12,25 +12,27 @@ const AddInfographicCommentReply = ({ commentId }) => {
   const { user } = useAuth();
   const qc = useQueryClient();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const { mutateAsync: addCommentReply, isPending } = useAddInfographicCommentReply(commentId);
-  const submit = async (values, e) => {
+
+  const query = qc.getQueryState(['comments', commentId, 'replies']);
+  const isFetching = query.isInvalidated && query.fetchStatus === 'fetching';
+
+  const submit = async (values) => {
     try {
-      if (user) {
-        await addCommentReply(values);
-        await qc.invalidateQueries({
-          queryKey: ['replies', commentId],
-        });
-        e.target.reset();
-      } else {
-        setIsLoginModalOpen(true);
-      }
+      if (!user) return setIsLoginModalOpen(true);
+      await addCommentReply(values);
+      await qc.invalidateQueries({
+        queryKey: ['comments', commentId, 'replies'],
+      });
+      reset();
     } catch (e) {
       toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
     }
   };
+
   return (
-    <div>
+    <>
       <form onSubmit={handleSubmit(submit)}>
         <div className="flex flex-col md:flex-row gap-3 md:items-center">
           <textarea
@@ -38,17 +40,16 @@ const AddInfographicCommentReply = ({ commentId }) => {
             placeholder="Add a reply"
             rows="1"
             {...register('content', { required: 'Comment is required' })}
-            disabled={isPending}
+            disabled={isPending || isFetching}
           />
-          <Button type="submit" color="black" variant="subtle" loading={isPending}>
+          <Button type="submit" color="black" variant="subtle" loading={isPending || isFetching}>
             Reply
           </Button>
         </div>
       </form>
       <LoginRequiredAlert isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
-    </div>
+    </>
   );
 };
 
 export default AddInfographicCommentReply;
-

@@ -26,19 +26,12 @@ const InfographicCard = ({ infographic }) => {
     setIsLiked(!!infographic.reactions.find((reaction) => reaction.user._id === user?._id));
   }, [infographic.reactions, user]);
 
-  const likeInfographic = async () => {
+  const handleReact = async () => {
     try {
-      if (user) {
-        if (isLiked) {
-          setReactionCount((reactionCount) => reactionCount - 1);
-        } else {
-          setReactionCount((reactionCount) => reactionCount + 1);
-        }
-        setIsLiked((isLiked) => !isLiked);
-        await react({ infographicId: infographic.id, reaction: 'like' });
-      } else {
-        setIsLoginModalOpen(true);
-      }
+      if (!user) return setIsLoginModalOpen(true);
+      setReactionCount((v) => (isLiked ? v - 1 : v + 1));
+      setIsLiked((v) => !v);
+      await react({ infographicId: infographic.id, reaction: 'like' });
     } catch (e) {
       toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
     }
@@ -73,7 +66,7 @@ const InfographicCard = ({ infographic }) => {
       </Link>
       <div className="flex flex-row space-x-2 px-6 py-4">
         <Button
-          onClick={likeInfographic}
+          onClick={handleReact}
           variant="outlined"
           color="black"
           size="sm"
@@ -103,4 +96,3 @@ const InfographicCard = ({ infographic }) => {
 };
 
 export default InfographicCard;
-
