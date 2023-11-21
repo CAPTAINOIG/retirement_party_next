@@ -1,15 +1,15 @@
 import React from 'react';
-import classNames from "classnames";
+import { cn } from '@/lib/utils';
 
 const Card = ({ className, children, hover = false, ...props }) => {
   return (
     <div
-      className={ classNames(
-        'bg-white shadow border rounded-[1.2rem] transition-all duration-300', className,
-        { 'hover:scale-[1.01] hover:-translate-y-1 cursor-pointer': hover }
-      ) } { ...props }
+      className={cn('bg-white shadow border rounded-3xl transition-all duration-300', className, {
+        'hover:scale-[1.01] hover:-translate-y-1 cursor-pointer': hover,
+      })}
+      {...props}
     >
-      { children }
+      {children}
     </div>
   );
 };

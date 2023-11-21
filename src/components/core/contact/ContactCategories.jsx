@@ -1,13 +1,13 @@
-import { IconDeviceTv, IconDiscount, IconHeadphones, IconHeartHandshake } from "@tabler/icons-react";
-import Card from "@/components/global/Card";
-import Button from "@/components/global/Button";
+import { IconDeviceTv, IconDiscount, IconHeadphones, IconHeartHandshake } from '@tabler/icons-react';
+import Card from '@/components/global/Card';
+import Button from '@/components/global/Button';
 
 const ContactCategories = () => {
   return (
     <div className="grid md:grid-cols-4 gap-6">
       <Card className="flex flex-col subtle-shadow px-10 py-8">
         <div className="flex items-center space-x-2">
-          <IconDiscount size="20"/>
+          <IconDiscount size="20" />
           <h5 className="font-medium text-lg">Sales</h5>
         </div>
         <p className="mt-6 mb-6">
@@ -21,7 +21,7 @@ const ContactCategories = () => {
       </Card>
       <Card className="flex flex-col subtle-shadow px-10 py-8">
         <div className="flex items-center space-x-2">
-          <IconHeadphones size="20"/>
+          <IconHeadphones size="20" />
           <h5 className="font-medium text-lg">Support</h5>
         </div>
         <p className="mt-6 mb-6">
@@ -35,12 +35,12 @@ const ContactCategories = () => {
       </Card>
       <Card className="flex flex-col subtle-shadow px-10 py-8">
         <div className="flex items-center space-x-2">
-          <IconDeviceTv size="20"/>
+          <IconDeviceTv size="20" />
           <h5 className="font-medium text-lg">Media</h5>
         </div>
         <p className="mt-6 mb-6">
-          We love working with journalists to share compelling stories. Send us a note and our PR and
-          Communications Manager will be in touch.
+          We love working with journalists to share compelling stories. Send us a note and our PR and Communications
+          Manager will be in touch.
         </p>
         <a href="mailto:media@statisense.com.ng" className="flex mt-auto">
           <Button color="black" variant="outlined" className="w-full">
@@ -50,12 +50,11 @@ const ContactCategories = () => {
       </Card>
       <Card className="flex flex-col subtle-shadow px-10 py-8">
         <div className="flex items-center space-x-2">
-          <IconHeartHandshake/>
+          <IconHeartHandshake />
           <h5 className="font-medium text-lg">Partnerships</h5>
         </div>
         <p className="mt-6 mb-6">
-          We’re into co-marketing with awesome brands. Send us an email, and our Partnerships Manager will
-          circle back.
+          We’re into co-marketing with awesome brands. Send us an email, and our Partnerships Manager will circle back.
         </p>
         <a href="mailto:partnership@statisense.com.ng" className="flex mt-auto">
           <Button color="black" variant="outlined" className="w-full">

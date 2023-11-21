@@ -24,8 +24,10 @@ $color: #1b7191;
   right: 0;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px #{$color}, 0 0 5px #{$color};
-  opacity: 1.0;
+  box-shadow:
+    0 0 10px #{$color},
+    0 0 5px #{$color};
+  opacity: 1;
   transform: rotate(3deg) translate(0px, -4px);
 }
 
@@ -70,4 +72,3 @@ $color: #1b7191;
     transform: rotate(360deg);
   }
 }
-

@@ -1,7 +1,7 @@
 import React from 'react';
-import { register } from "swiper/element/bundle";
-import { useGetCategoriesQuery } from "@/api/infographics.js";
-import CategoriesSlides from "@/components/core/home/CategoriesSlides.jsx";
+import { register } from 'swiper/element/bundle';
+import { useGetCategoriesQuery } from '@/api/infographics.js';
+import CategoriesSlides from '@/components/core/home/CategoriesSlides.jsx';
 
 register();
 
@@ -11,47 +11,41 @@ const Categories = () => {
   return (
     <div>
       <div className="container mb-12 md:mb-16 flex flex-col items-center justify-center">
-        <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-gray-900">
-          Popular public data insights.
-        </h2>
+        <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-gray-900">Popular public data insights.</h2>
         <p className="mt-4 text-base md:text-lg">
           Review some work on public data from the past, as we prepare you for the future.
         </p>
       </div>
-      {
-        isCategoriesLoading ? (
-          <div className="space-y-4 md:space-y-6">
-            {
-              Array(2).fill(null).map((_, i) => (
-                <div key={ i }>
-                  <div className="hidden md:grid grid-cols-4 gap-8 px-4">
-                    <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
-                    <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
-                    <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
-                    <div className="bg-slate-200 w-full h-32 rounded-3xl"/>
-                  </div>
-                  <div className="grid md:hidden grid-cols-5 gap-5 px-4">
-                    <div className="bg-slate-200 w-full h-32 col-span-3 rounded-3xl"/>
-                    <div className="bg-slate-200 w-full h-32 col-span-2 rounded-3xl"/>
-                  </div>
+      {isCategoriesLoading ? (
+        <div className="space-y-4 md:space-y-6">
+          {Array(2)
+            .fill(null)
+            .map((_, i) => (
+              <div key={i}>
+                <div className="hidden md:grid grid-cols-4 gap-8 px-4">
+                  <div className="bg-slate-200 w-full h-32 rounded-3xl" />
+                  <div className="bg-slate-200 w-full h-32 rounded-3xl" />
+                  <div className="bg-slate-200 w-full h-32 rounded-3xl" />
+                  <div className="bg-slate-200 w-full h-32 rounded-3xl" />
                 </div>
-              ))
-            }
-          </div>
-        ) : (
-          <>
-            {
-              !!categories.length ? (
-                <CategoriesSlides categories={ categories }/>
-              ) : (
-                <div className="px-10 py-10 text-center opacity-50">
-                  <p className="text-lg italic">No categories added yet</p>
+                <div className="grid md:hidden grid-cols-5 gap-5 px-4">
+                  <div className="bg-slate-200 w-full h-32 col-span-3 rounded-3xl" />
+                  <div className="bg-slate-200 w-full h-32 col-span-2 rounded-3xl" />
                 </div>
-              )
-            }
-          </>
-        )
-      }
+              </div>
+            ))}
+        </div>
+      ) : (
+        <>
+          {!!categories.length ? (
+            <CategoriesSlides categories={categories} />
+          ) : (
+            <div className="px-10 py-10 text-center opacity-50">
+              <p className="text-lg italic">No categories added yet</p>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 };

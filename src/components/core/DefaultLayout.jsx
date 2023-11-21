@@ -1,15 +1,13 @@
-import Navbar from "@/components/global/Navbar";
-import Footer from "@/components/global/Footer";
+import Navbar from '@/components/global/Navbar';
+import Footer from '@/components/global/Footer';
 
 const DefaultLayout = ({ children }) => {
   return (
     <div>
-      <Navbar/>
-      <main>
-        { children }
-      </main>
+      <Navbar />
+      <main>{children}</main>
       <div>
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );

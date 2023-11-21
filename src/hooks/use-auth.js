@@ -1,24 +1,21 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { useGetProfile } from "@/api/auth.js";
-import { useMount } from "react-use";
+import { createContext, useContext, useEffect, useState } from 'react';
+import { useGetProfile } from '@/api/auth.js';
+import { useMount } from 'react-use';
+import { clearCookie, getCrossSubdomainCookie, setCrossSubdomainCookie } from '@/lib/utils';
 
 const authContext = createContext({
   user: null,
-  updateUser: () => {
-  },
-  authenticate: () => {
-  },
-  reloadUser: () => {
-  },
+  updateUser: () => {},
+  authenticate: () => {},
+  reloadUser: () => {},
   resolved: false,
   authenticated: false,
-  logout: () => {
-  }
+  logout: () => {},
 });
 
 export function AuthProvider({ children }) {
   const auth = useProvideAuth();
-  return <authContext.Provider value={ auth }>{ children }</authContext.Provider>;
+  return <authContext.Provider value={auth}>{children}</authContext.Provider>;
 }
 
 export const useAuth = () => {
@@ -46,16 +43,17 @@ export function useProvideAuth() {
     setUser(data.user);
     setAuthenticated(true);
     setResolved(true);
-    if (data.token) localStorage.setItem('token', data.token);
+    if (data.token) setCrossSubdomainCookie('token', data.token);
   };
 
   const logout = () => {
-    localStorage.clear();
     sessionStorage.clear();
+    setResolved(true);
+    clearCookie('token');
   };
 
   const updateUser = (user) => {
-    setUser(old => ({ ...old, ...user }));
+    setUser((old) => ({ ...old, ...user }));
   };
 
   const reloadUser = async () => {
@@ -63,12 +61,9 @@ export function useProvideAuth() {
   };
 
   useMount(() => {
-    const token = localStorage.getItem('token');
-    if (!authenticated && token) reloadUser();
-    else {
-      localStorage.clear();
-      setResolved(true);
-    }
+    const token = getCrossSubdomainCookie('token');
+    if (!token) return logout();
+    if (!resolved && !authenticated) reloadUser();
   });
 
   return {
@@ -78,6 +73,6 @@ export function useProvideAuth() {
     authenticate,
     resolved,
     authenticated,
-    logout
+    logout,
   };
 }

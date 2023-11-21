@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import Button from "@/components/global/Button.jsx";
-import { IconArrowRight, IconCalendar, IconClock, IconFileInvoice, IconFolders } from "@tabler/icons-react";
-import Link from "next/link";
-import Typed from "typed.js";
+import React, { useEffect, useRef } from 'react';
+import Button from '@/components/global/Button.jsx';
+import { IconArrowRight, IconCalendar, IconClock, IconFileInvoice, IconFolders } from '@tabler/icons-react';
+import Link from 'next/link';
+import Typed from 'typed.js';
 
 const InsightsOnTheGo = () => {
   const el = useRef(null);
@@ -19,12 +19,12 @@ const InsightsOnTheGo = () => {
       backSpeed: 1,
       backDelay: 2000,
       loop: true,
-      showCursor: false
+      showCursor: false,
     };
     typed.current = new Typed(el.current, options);
     return () => {
       typed.current.destroy();
-    }
+    };
   }, []);
 
   return (
@@ -38,54 +38,40 @@ const InsightsOnTheGo = () => {
             <p className="mt-6 text-base md:text-lg max-w-sm">
               Chat with Bambi, an AI assistant to get insights on topics like economy, business, education, election etc
             </p>
-            <Link href={ '/infographics' }>
-              <Button className="mt-12" size="lg" rightIcon={ <IconArrowRight/> }>
+            <Link href={'/insights'}>
+              <Button className="mt-12" size="lg" rightIcon={<IconArrowRight />}>
                 Let's go
               </Button>
             </Link>
           </div>
-          <div
-            className="relative md:col-span-4 flex md:justify-center w-full overflow-hidden md:overflow-visible py-4"
-          >
+          <div className="relative md:col-span-4 flex md:justify-center w-full overflow-hidden md:overflow-visible py-4">
             <div className="relative w-3/4 md:w-full">
               <div className="relative">
-                <div
-                  className="hidden md:block absolute animate-bounce bg-slate-100 rounded-[1.2rem] top-[5rem] left-[-5rem] px-8 py-4"
-                >
+                <div className="hidden md:block absolute animate-bounce bg-slate-100 rounded-[1.2rem] top-[5rem] left-[-5rem] px-8 py-4">
                   <div className="flex items-center gap-4 my-3">
-                    <IconFileInvoice className="text-blue-600" size="20"/>
-                    <p className="max-w-sm">
-                      Infographics on Africa
-                    </p>
+                    <IconFileInvoice className="text-blue-600" size="20" />
+                    <p className="max-w-sm">Infographics on Africa</p>
                   </div>
                   <div className="flex items-center gap-4 my-3">
-                    <IconFolders className="text-teal-600" size="20"/>
-                    <p className="max-w-sm">
-                      Africa
-                    </p>
+                    <IconFolders className="text-teal-600" size="20" />
+                    <p className="max-w-sm">Africa</p>
                   </div>
                   <div className="flex items-center gap-4 my-3">
-                    <IconCalendar className="text-red-600" size="20"/>
-                    <p className="max-w-sm">
-                      2023
-                    </p>
+                    <IconCalendar className="text-red-600" size="20" />
+                    <p className="max-w-sm">2023</p>
                   </div>
                 </div>
-                <div
-                  className="hidden md:block absolute min-h-[250px] w-[400px] bg-slate-100 rounded-[1.2rem] bottom-[5rem] right-[-15rem] px-8 py-4"
-                >
+                <div className="hidden md:block absolute min-h-[250px] w-[400px] bg-slate-100 rounded-[1.2rem] bottom-[5rem] right-[-15rem] px-8 py-4">
                   <div className="flex items-center gap-2 my-3">
-                    <IconClock size="20"/>
-                    <p className="max-w-sm">
-                      Date posted: Aug 16, 2023
-                    </p>
+                    <IconClock size="20" />
+                    <p className="max-w-sm">Date posted: Aug 16, 2023</p>
                   </div>
-                  <p ref={ el } className="mt-6 max-w-sm">
+                  <p ref={el} className="mt-6 max-w-sm">
                     An infographics showing the countries with the most population in Africa. Nigeria is the most
                     populated African country and it shows that for every 100 Africans, 16 of them are Nigerians.
                   </p>
                 </div>
-                <img src="/images/3.png" alt="Laptop" className="w-full rounded-3xl"/>
+                <img src="/images/3.png" alt="Laptop" className="w-full rounded-3xl" />
               </div>
             </div>
           </div>

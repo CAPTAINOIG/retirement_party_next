@@ -1,34 +1,33 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useAuth } from "@/hooks/use-auth.js";
-import Loader from "../components/global/Loader.jsx";
+/* eslint-disable react/display-name */
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/hooks/use-auth.js';
+import Loader from '../components/global/Loader.jsx';
 
 // eslint-disable-next-line react/display-name
-const requireNoAuth = (Component, props) => ({ children }) => {
-  const { authenticated, resolved, user } = useAuth();
-  const router = useRouter();
+const requireNoAuth =
+  (Component, props) =>
+  ({ children }) => {
+    const { authenticated, resolved, user } = useAuth();
+    const router = useRouter();
 
-  useEffect(() => {
-    if (resolved && authenticated && user) {
-      if (user.emailVerified) router.replace(router.query?.from ?? '/dashboard');
-      else router.push('/verification');
+    useEffect(() => {
+      if (resolved && authenticated && user) {
+        if (user.emailVerified) router.replace(router.query?.from ?? '/dashboard');
+        else router.push('/verification');
+      }
+    }, [resolved, authenticated, user, router]);
+
+    if (resolved && !authenticated) {
+      return <Component {...props}>{children}</Component>;
     }
-  }, [resolved, authenticated, user, router]);
 
-  if (resolved && !authenticated) {
     return (
-      <Component { ...props }>
-        { children }
-      </Component>
+      <div className="my-auto w-full flex flex-col justify-center items-center">
+        <Loader />
+        <p className="mt-5">Loading..</p>
+      </div>
     );
-  }
-
-  return (
-    <div className="my-auto w-full flex flex-col justify-center items-center">
-      <Loader/>
-      <p className="mt-5">Loading..</p>
-    </div>
-  )
-};
+  };
 
 export default requireNoAuth;

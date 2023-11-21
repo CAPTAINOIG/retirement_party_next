@@ -1,7 +1,7 @@
 import React from 'react';
-import Collapsible from "@/components/global/Collapsible";
-import faqs from "@/lib/faqs";
-import Card from "@/components/global/Card";
+import Collapsible from '@/components/global/Collapsible';
+import faqs from '@/lib/faqs';
+import Card from '@/components/global/Card';
 
 const FAQ = () => {
   return (
@@ -14,24 +14,14 @@ const FAQ = () => {
             </h2>
           </div>
           <div className="space-y-4 lg:col-span-7">
-            {
-              faqs.map(faq => (
-                <Card key={ faq.q } className="subtle-shadow">
-                  <Collapsible
-                    header={ (
-                      <h5 className="font-medium">
-                        { faq.q }
-                      </h5>
-                    ) }
-                    content={ (
-                      <div className="opacity-80 pb-6 px-6">
-                        { faq.a }
-                      </div>
-                    ) }
-                  />
-                </Card>
-              ))
-            }
+            {faqs.map((faq) => (
+              <Card key={faq.q} className="subtle-shadow">
+                <Collapsible
+                  header={<h5 className="font-medium">{faq.q}</h5>}
+                  content={<div className="opacity-80 pb-6 px-6">{faq.a}</div>}
+                />
+              </Card>
+            ))}
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { useIsomorphicLayoutEffect } from "react-use";
+import { useIsomorphicLayoutEffect } from 'react-use';
 
 const Portal = ({ selector, children }) => {
   const elementRef = useRef(null);

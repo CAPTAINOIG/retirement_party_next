@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
-import http from "@/lib/http.js";
+import { useQuery } from '@tanstack/react-query';
+import http from '@/lib/http.js';
 
 export const useGetProfile = () => {
   return useQuery({
@@ -9,5 +9,5 @@ export const useGetProfile = () => {
     },
     enabled: false,
     retry: false,
-  })
+  });
 };

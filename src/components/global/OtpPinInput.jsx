@@ -1,18 +1,22 @@
 import React, { forwardRef, useImperativeHandle, useRef } from 'react';
-import classNames from "classnames";
+import classNames from 'classnames';
 
 const OtpPinInput = ({ disabled, length = 6, onDone }, ref) => {
   const parent = useRef(null);
 
-  useImperativeHandle(ref, () => {
-    const handleReset = () => {
-      [...parent.current.children].forEach(el => {
-        el.value = ''
-      });
-      setTimeout(() => focusLast(), 500)
-    };
-    return { reset: handleReset };
-  }, []);
+  useImperativeHandle(
+    ref,
+    () => {
+      const handleReset = () => {
+        [...parent.current.children].forEach((el) => {
+          el.value = '';
+        });
+        setTimeout(() => focusLast(), 500);
+      };
+      return { reset: handleReset };
+    },
+    []
+  );
 
   const handleDone = () => {
     const value = [...parent.current.children].reduce((acc, child) => acc + child.value, '');
@@ -20,7 +24,7 @@ const OtpPinInput = ({ disabled, length = 6, onDone }, ref) => {
   };
 
   const focusLast = () => {
-    const el = [...parent.current.children].find(child => !child.value);
+    const el = [...parent.current.children].find((child) => !child.value);
     if (el) el.focus();
   };
 
@@ -31,7 +35,7 @@ const OtpPinInput = ({ disabled, length = 6, onDone }, ref) => {
   const handleKeydown = (e) => {
     if (e.target.value) return;
     if (e.code.toLowerCase() === 'backspace') {
-      const el = [...parent.current.children].reverse().find(child => child.value);
+      const el = [...parent.current.children].reverse().find((child) => child.value);
       if (!el) return;
       el.value = '';
       el.focus();
@@ -55,21 +59,23 @@ const OtpPinInput = ({ disabled, length = 6, onDone }, ref) => {
   };
 
   return (
-    <div ref={ parent } className="w-full grid grid-cols-6 gap-2 md:gap-4" onInput={ handleInput }>
-      {
-        Array(length).fill(null).map((_, i) => (
+    <div ref={parent} className="w-full grid grid-cols-6 gap-2 md:gap-4" onInput={handleInput}>
+      {Array(length)
+        .fill(null)
+        .map((_, i) => (
           <input
-            maxLength="1" disabled={ disabled } key={ i }
-            onFocus={ handleFocus } onKeyDown={ handleKeydown } onPaste={ handlePaste }
-            className={
-              classNames(
-                'inline-flex bg-transparent px-2 py-4 sm:px-2 sm:py-5 rounded-3xl border border-zinc-300 focus:ring focus:ring-primary-100 text-xl text-center',
-                { 'opacity-60 pointer-events-none': disabled }
-              )
-            }
+            maxLength="1"
+            disabled={disabled}
+            key={i}
+            onFocus={handleFocus}
+            onKeyDown={handleKeydown}
+            onPaste={handlePaste}
+            className={classNames(
+              'inline-flex bg-transparent px-2 py-4 sm:px-2 sm:py-5 rounded-3xl border border-zinc-300 focus:ring focus:ring-primary-100 text-xl text-center',
+              { 'opacity-60 pointer-events-none': disabled }
+            )}
           />
-        ))
-      }
+        ))}
     </div>
   );
 };
