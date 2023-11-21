@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react';
-import { useAddViewMutation, useReactToInfographic } from '@/api/infographics';
+import { useAddViewMutation, useGetInfographicsReactions, useReactToInfographic } from '@/api/infographics';
 import PageHeader from '@/components/core/shared/PageHeader';
 import Image from '@/components/core/shared/Image';
 import { IconClock, IconThumbUp, IconThumbUpFilled } from '@tabler/icons-react';
@@ -33,14 +33,12 @@ const InfographicDetailsPage = ({ infographic }) => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const { mutateAsync: addView } = useAddViewMutation();
   const { user } = useAuth();
-  const [isLiked, setIsLiked] = useState(!!infographic.reactions.find((reaction) => reaction.user._id === user?._id));
-  const [reactionCount, setReactionCount] = useState(infographic.totalReactions);
-  const { mutateAsync: react } = useReactToInfographic();
+  const { data: { reactions } = {} } = useGetInfographicsReactions(infographic.id);
+  const { mutateAsync: react } = useReactToInfographic(infographic.id, user?._id);
   
-  useEffect(() => {
-    setIsLiked(!!infographic.reactions.find((reaction) => reaction.user._id === user?._id));
-  }, [infographic.reactions, user]);
-
+  const totalReactions = reactions ? reactions.length : infographic.totalReactions;
+  const isLiked = !!reactions?.find((reaction) => reaction.user._id === user?._id);
+  
   useEffect(() => {
     if (infographic && viewed.current !== infographic._id) {
       addView({ id: infographic._id });
@@ -50,17 +48,8 @@ const InfographicDetailsPage = ({ infographic }) => {
 
   const likeInfographic = async () => {
     try {
-      if (user) {
-        if (isLiked) {
-          setReactionCount((reactionCount) => reactionCount - 1);
-        } else {
-          setReactionCount((reactionCount) => reactionCount + 1);
-        }
-        setIsLiked((isLiked) => !isLiked);
-        await react({ infographicId: infographic.id, reaction: 'like' });
-      } else {
-        setIsLoginModalOpen(true);
-      }
+      if (!user) return setIsLoginModalOpen(true);
+      await react({ reaction: 'like' });
     } catch (e) {
       toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
     }
@@ -123,7 +112,7 @@ const InfographicDetailsPage = ({ infographic }) => {
                           )
                         }
                       >
-                        {reactionCount}
+                        {totalReactions}
                       </Button>
                     </div>
                   </div>

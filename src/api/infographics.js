@@ -100,6 +100,16 @@ export const useGetInfographicCommentReplies = (commentId) => {
   });
 };
 
+export const useGetInfographicsReactions = (infographicId) => {
+  return useQuery({
+    queryKey: ['infographics', infographicId, 'reactions'],
+    queryFn: async () => {
+      const res = await http.get(`/infographic/${infographicId}/reactions`);
+      return res.data;
+    },
+  });
+};
+
 export const useGetCommentReactions = (commentId) => {
   return useQuery({
     queryKey: ['comments', commentId, 'reactions'],
@@ -112,7 +122,7 @@ export const useGetCommentReactions = (commentId) => {
 
 export const useGetCommentReplyReactions = (commentReplyId) => {
   return useQuery({
-    queryKey: ['commentReplyReactions', commentReplyId],
+    queryKey: ['commentReplyReactions', commentReplyId, 'reactions'],
     queryFn: async () => {
       const res = await http.get(`/infographic/replies/${commentReplyId}/reactions`);
       return res.data;
@@ -136,10 +146,46 @@ export const useAddInfographicCommentReply = (commentId) => {
   });
 };
 
-export const useReactToInfographic = () => {
+export const useReactToInfographic = (infographicId, userId) => {
+  const qc = useQueryClient();
   return useMutation({
-    mutationFn: ({ infographicId, reaction }) => {
+    mutationFn: ({ reaction }) => {
       return http.post(`/infographic/${infographicId}/reactions`, { reaction });
+    },
+    onMutate: async () => {
+      await qc.cancelQueries({ queryKey: ['infographics', infographicId, 'reactions'] });
+      const previousReactions = qc.getQueryData(['infographics', infographicId, 'reactions']);
+      qc.setQueryData(['infographics', infographicId, 'reactions'], (oldReactions) => {
+        const hasReacted = !!oldReactions.reactions.find((reaction) => reaction.user._id === userId);
+        if (hasReacted) {
+          return {
+            success: true,
+            count: oldReactions.reactions.length - 1,
+            reactions: oldReactions.reactions.filter((reaction) => reaction.user._id !== userId),
+          };
+        }
+        return {
+          success: true,
+          count: oldReactions.reactions.length + 1,
+          reactions: [
+            {
+              comment: infographicId,
+              reaction: 'like',
+              user: {
+                _id: userId,
+              },
+            },
+            ...oldReactions.reactions,
+          ],
+        };
+      });
+      return { previousReactions };
+    },
+    onError: (error, newReactions, { previousReactions }) => {
+      qc.setQueryData(['infographics', infographicId, 'reactions'], previousReactions);
+    },
+    onSuccess() {
+      qc.invalidateQueries({ queryKey: ['infographics', infographicId, 'reactions'] });
     },
   });
 };
@@ -188,10 +234,47 @@ export const useReactToInfographicComment = (commentId, userId) => {
   });
 };
 
-export const useReactToInfographicCommentReply = () => {
+export const useReactToInfographicCommentReply = (commentReplyId, userId) => {
+  const qc = useQueryClient();
   return useMutation({
-    mutationFn: ({ replyId, reaction }) => {
-      return http.post(`/infographic/replies/${replyId}/reactions`, { reaction });
+    mutationFn: ({ reaction }) => {
+      return http.post(`/infographic/replies/${commentReplyId}/reactions`, { reaction });
+    },
+    onMutate: async () => {
+      await qc.cancelQueries({ queryKey: ['commentReplyReactions', commentReplyId, 'reactions'] });
+      const previousReactions = qc.getQueryData(['commentReplyReactions', commentReplyId, 'reactions']);
+      qc.setQueryData(['commentReplyReactions', commentReplyId, 'reactions'], (oldReactions) => {
+        const hasReacted = !!oldReactions.reactions.find((reaction) => reaction.user._id === userId);
+        if (hasReacted) {
+          return {
+            success: true,
+            count: oldReactions.reactions.length - 1,
+            reactions: oldReactions.reactions.filter((reaction) => reaction.user._id !== userId),
+          };
+        }
+        return {
+          success: true,
+          count: oldReactions.reactions.length + 1,
+          reactions: [
+            {
+              comment: commentReplyId,
+              reaction: 'like',
+              user: {
+                _id: userId,
+              },
+            },
+            ...oldReactions.reactions,
+          ],
+        };
+      });
+      return { previousReactions };
+    },
+    onError: (error, newReactions, { previousReactions }) => {
+      qc.setQueryData(['commentReplyReactions', commentReplyId, 'reactions'], previousReactions);
+    },
+    onSuccess() {
+      qc.invalidateQueries({ queryKey: ['commentReplyReactions', commentReplyId, 'reactions'] });
     },
   });
 };
+

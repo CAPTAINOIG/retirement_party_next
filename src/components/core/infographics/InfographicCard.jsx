@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from '@/components/core/shared/Image.jsx';
 import { formatDistance } from 'date-fns';
@@ -8,7 +8,7 @@ import InfographicComments from './InfographicComments';
 import classNames from 'classnames';
 import Card from '@/components/global/Card';
 import { useAuth } from '@/hooks/use-auth';
-import { useReactToInfographic } from '@/api/infographics';
+import { useGetInfographicsReactions, useReactToInfographic } from '@/api/infographics';
 import { useToast } from '@/hooks/use-toast';
 import LoginRequiredAlert from './LoginRequiredModal';
 
@@ -18,20 +18,16 @@ const InfographicCard = ({ infographic }) => {
   const [isCommentsOpen, setIsCommentsOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [showFullDescription, setShowFullDescription] = useState(true);
-  const [reactionCount, setReactionCount] = useState(infographic.totalReactions);
-  const [isLiked, setIsLiked] = useState(!!infographic.reactions.find((reaction) => reaction.user._id === user?._id));
-  const { mutateAsync: react } = useReactToInfographic();
+  const { data: { reactions } = {} } = useGetInfographicsReactions(infographic.id);
+  const { mutateAsync: react } = useReactToInfographic(infographic.id, user?._id);
 
-  useEffect(() => {
-    setIsLiked(!!infographic.reactions.find((reaction) => reaction.user._id === user?._id));
-  }, [infographic.reactions, user]);
+  const totalReactions = reactions ? reactions.length : infographic.totalReactions;
+  const isLiked = !!reactions?.find((reaction) => reaction.user._id === user?._id);
 
   const handleReact = async () => {
     try {
       if (!user) return setIsLoginModalOpen(true);
-      setReactionCount((v) => (isLiked ? v - 1 : v + 1));
-      setIsLiked((v) => !v);
-      await react({ infographicId: infographic.id, reaction: 'like' });
+      await react({ reaction: 'like' });
     } catch (e) {
       toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
     }
@@ -72,7 +68,7 @@ const InfographicCard = ({ infographic }) => {
           size="sm"
           leftIcon={!isLiked ? <IconThumbUp size="18" /> : <IconThumbUpFilled className="text-primary-500" size="18" />}
         >
-          {reactionCount}
+          {totalReactions}
         </Button>
         <Button
           onClick={() => setIsCommentsOpen((v) => !v)}
@@ -96,3 +92,4 @@ const InfographicCard = ({ infographic }) => {
 };
 
 export default InfographicCard;
+

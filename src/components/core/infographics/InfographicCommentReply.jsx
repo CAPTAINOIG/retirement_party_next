@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { formatDistance } from 'date-fns';
 import Button from '@/components/global/Button';
 import { IconThumbUp, IconThumbUpFilled } from '@tabler/icons-react';
@@ -11,21 +11,16 @@ const InfographicCommentReply = ({ reply }) => {
   const toast = useToast();
   const { user } = useAuth();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [reactionCount, setReactionCount] = useState(reply.totalReactions);
-  const { data: { reactions = [] } = {} } = useGetCommentReplyReactions(reply.id);
-  const [isLiked, setIsLiked] = useState(false);
-  const { mutateAsync: react } = useReactToInfographicCommentReply();
+  const { data: { reactions } = {} } = useGetCommentReplyReactions(reply.id);
+  const { mutateAsync: react } = useReactToInfographicCommentReply(reply.id, user?._id);
 
-  useEffect(() => {
-    setIsLiked(!!reactions.find((reaction) => reaction.user === user?._id));
-  }, [reactions, user]);
+  const totalReactions = reactions ? reactions.length : reply.totalReactions;
+  const isLiked = !!reactions?.find((reaction) => reaction.user._id === user?._id);
 
-  const likeCommentReply = async () => {
+  const handleReact = async () => {
     try {
       if (!user) return setIsLoginModalOpen(true);
-      setReactionCount((v) => (isLiked ? v - 1 : v + 1));
-      setIsLiked((v) => !v);
-      await react({ replyId: reply.id, reaction: 'like' });
+      await react({ reaction: 'like' });
     } catch (e) {
       toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
     }
@@ -48,7 +43,7 @@ const InfographicCommentReply = ({ reply }) => {
         <p className="mt-1.5">{reply.content}</p>
         <div className="flex items-center space-x-2 mt-3">
           <Button
-            onClick={likeCommentReply}
+            onClick={handleReact}
             variant="outlined"
             color="black"
             leftIcon={
@@ -56,7 +51,7 @@ const InfographicCommentReply = ({ reply }) => {
             }
             size="sm"
           >
-            {reactionCount}
+            {totalReactions}
           </Button>
         </div>
       </div>
@@ -66,3 +61,4 @@ const InfographicCommentReply = ({ reply }) => {
 };
 
 export default InfographicCommentReply;
+

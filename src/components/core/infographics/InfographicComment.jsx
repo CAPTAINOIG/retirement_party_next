@@ -13,11 +13,11 @@ const InfographicComment = ({ comment }) => {
   const { user } = useAuth();
   const [isRepliesOpen, setIsRepliesOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const { data: { reactions = [] } = {} } = useGetCommentReactions(comment.id);
+  const { data: { reactions } = {} } = useGetCommentReactions(comment.id);
   const { mutateAsync: react } = useReactToInfographicComment(comment.id, user?._id);
 
-  const totalReactions = reactions.length || comment.totalReactions;
-  const isLiked = !!reactions.find((reaction) => reaction.user._id === user?._id);
+  const totalReactions = reactions ? reactions.length : comment.totalReactions;
+  const isLiked = !!reactions?.find((reaction) => reaction.user._id === user?._id);
 
   const handleReact = async () => {
     try {
@@ -83,3 +83,4 @@ const InfographicComment = ({ comment }) => {
 };
 
 export default InfographicComment;
+
