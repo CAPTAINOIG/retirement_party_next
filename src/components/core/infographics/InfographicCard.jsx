@@ -34,62 +34,64 @@ const InfographicCard = ({ infographic }) => {
   };
 
   return (
-    <Card className="overflow-hidden">
-      <div className="px-8 py-6">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-primary-400 rounded-full"></div>
-          <div>
-            <p className="font-medium leading-none">Statisense</p>
-            <p className="opacity-70 text-sm leading-none mt-1">
-              @statisense • {formatDistance(new Date(), new Date(infographic.createdAt))} ago
+    <>
+      <Card className="overflow-hidden">
+        <div className="px-8 py-6">
+          <div className="flex items-center space-x-2">
+            <img src="/images/logo-icon-inverted.png" alt="Statisense logo" className="w-8 h-8 rounded-full" />
+            <div>
+              <p className="font-medium leading-none">Statisense</p>
+              <p className="opacity-70 text-sm leading-none mt-1">
+                @statisense • {formatDistance(new Date(), new Date(infographic.createdAt))} ago
+              </p>
+            </div>
+          </div>
+          <div className="mt-4">
+            <h5 className="font-medium text-lg">{infographic.title}</h5>
+            <p
+              className={classNames('text-base text-primary mt-1 leading-snug', {
+                'line-clamp-2 ': showFullDescription,
+              })}
+            >
+              {infographic.description}
+            </p>
+            <p onClick={() => setShowFullDescription((v) => !v)} className="text-slate-700 cursor-pointer mt-1">
+              {!showFullDescription ? 'See less' : 'See more'}
             </p>
           </div>
         </div>
-        <div className="mt-4">
-          <h5 className="font-medium text-lg">{infographic.title}</h5>
-          <p
-            className={classNames('text-base text-primary mt-1 leading-snug', { 'line-clamp-2 ': showFullDescription })}
+        <Link href={`/insights/${infographic.category.slug}/${infographic.slug}`} className="flex w-full">
+          <Image src={infographic.image} alt={infographic.title} className="w-full object-contain border-b-0" />
+        </Link>
+        <div className="flex flex-row space-x-2 px-6 py-4">
+          <Button
+            onClick={handleReact}
+            variant="outlined"
+            color="black"
+            size="sm"
+            leftIcon={
+              !isLiked ? <IconThumbUp size="18" /> : <IconThumbUpFilled className="text-primary-500" size="18" />
+            }
           >
-            {infographic.description}
-          </p>
-          <p onClick={() => setShowFullDescription((v) => !v)} className="text-slate-700 cursor-pointer mt-1">
-            {!showFullDescription ? 'See less' : 'See more'}
-          </p>
+            {totalReactions}
+          </Button>
+          <Button
+            onClick={() => setIsCommentsOpen((v) => !v)}
+            variant="outlined"
+            color="black"
+            leftIcon={<IconMessageCircle size="18" />}
+            size="sm"
+          >
+            {infographic.totalComments}
+          </Button>
         </div>
-      </div>
-      <Link href={`/insights/${infographic.category.slug}/${infographic.slug}`} className="flex w-full">
-        <Image src={infographic.image} alt={infographic.title} className="w-full object-contain border-b-0" />
-      </Link>
-      <div className="flex flex-row space-x-2 px-6 py-4">
-        <Button
-          onClick={handleReact}
-          variant="outlined"
-          color="black"
-          size="sm"
-          leftIcon={!isLiked ? <IconThumbUp size="18" /> : <IconThumbUpFilled className="text-primary-500" size="18" />}
-        >
-          {totalReactions}
-        </Button>
-        <Button
-          onClick={() => setIsCommentsOpen((v) => !v)}
-          variant="outlined"
-          color="black"
-          leftIcon={<IconMessageCircle size="18" />}
-          size="sm"
-        >
-          {infographic.totalComments}
-        </Button>
-      </div>
-      <hr />
-      {isCommentsOpen && (
-        <>
-          <InfographicComments infographicId={infographic.id} />
-        </>
-      )}
+        <hr />
+        {isCommentsOpen && <InfographicComments infographicId={infographic.id} />}
+      </Card>
+
       <LoginRequiredAlert isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
-    </Card>
+    </>
   );
 };
 
 export default InfographicCard;
-

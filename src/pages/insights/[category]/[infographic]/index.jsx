@@ -35,10 +35,10 @@ const InfographicDetailsPage = ({ infographic }) => {
   const { user } = useAuth();
   const { data: { reactions } = {} } = useGetInfographicsReactions(infographic.id);
   const { mutateAsync: react } = useReactToInfographic(infographic.id, user?._id);
-  
+
   const totalReactions = reactions ? reactions.length : infographic.totalReactions;
   const isLiked = !!reactions?.find((reaction) => reaction.user._id === user?._id);
-  
+
   useEffect(() => {
     if (infographic && viewed.current !== infographic._id) {
       addView({ id: infographic._id });
@@ -140,8 +140,9 @@ const InfographicDetailsPage = ({ infographic }) => {
             </div>
           </div>
         </div>
-        <LoginRequiredAlert isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
       </div>
+
+      <LoginRequiredAlert isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
     </>
   );
 };
@@ -149,4 +150,3 @@ const InfographicDetailsPage = ({ infographic }) => {
 InfographicDetailsPage.Layout = DefaultLayout;
 
 export default InfographicDetailsPage;
-

@@ -47,6 +47,7 @@ const AddInfographicCommentReply = ({ commentId }) => {
           </Button>
         </div>
       </form>
+
       <LoginRequiredAlert isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
     </>
   );

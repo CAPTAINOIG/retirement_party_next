@@ -55,10 +55,10 @@ const InfographicCommentReply = ({ reply }) => {
           </Button>
         </div>
       </div>
+
       <LoginRequiredAlert isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
     </div>
   );
 };
 
 export default InfographicCommentReply;
-

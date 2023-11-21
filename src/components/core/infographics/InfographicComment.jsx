@@ -83,4 +83,3 @@ const InfographicComment = ({ comment }) => {
 };
 
 export default InfographicComment;
-
