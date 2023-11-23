@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '@/components/global/Button';
 import { IconArrowRight } from '@tabler/icons-react';
-import AskBambi from '@/components/core/shared/AskBambi';
 import ChatSimulation from '@/components/core/home/ChatSimulation';
 import Link from 'next/link';
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
 
 const ConvertYourData = () => {
-  const [isChatOpen, setIsChatOpen] = useState(false);
-
   return (
     <>
       <div className="container xl:pb-[15rem]">
@@ -34,8 +31,6 @@ const ConvertYourData = () => {
           </div>
         </div>
       </div>
-
-      <AskBambi isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </>
   );
 };

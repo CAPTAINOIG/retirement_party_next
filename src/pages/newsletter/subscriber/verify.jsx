@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Button from '@/components/global/Button';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import DefaultHeadTags from '@/components/DefaultHeadTags';
+import DefaultHeadTags from '@/components/others/DefaultHeadTags';
 
 const Verify = () => {
   const {

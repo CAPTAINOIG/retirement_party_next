@@ -4,7 +4,7 @@ import DefaultLayout from '@/components/core/DefaultLayout';
 import OpenPositions from '@/components/core/careers/OpenPositions';
 import JoinOurTeam from '@/components/core/careers/JoinOurTeam';
 import Head from 'next/head';
-import DefaultHeadTags from '@/components/DefaultHeadTags';
+import DefaultHeadTags from '@/components/others/DefaultHeadTags';
 
 const Careers = () => {
   return (

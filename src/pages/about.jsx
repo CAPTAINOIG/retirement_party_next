@@ -7,7 +7,7 @@ import FrequentlyAskedQuestions from '@/components/core/about/FrequentlyAskedQue
 import React from 'react';
 import DefaultLayout from '@/components/core/DefaultLayout';
 import Head from 'next/head';
-import DefaultHeadTags from '@/components/DefaultHeadTags';
+import DefaultHeadTags from '@/components/others/DefaultHeadTags';
 
 const About = () => {
   return (

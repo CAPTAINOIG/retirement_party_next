@@ -7,17 +7,16 @@ import Button from '@/components/global/Button.jsx';
 import { useAuth } from '@/hooks/use-auth.js';
 import SimpleDropdown from '@/components/global/SimpleDropdown.jsx';
 import Logo from '@/components/core/shared/Logo';
-import AskBambi from '@/components/core/shared/AskBambi';
 import NavProductsDropdown from '@/components/core/NavProductsDropdown';
-import MobileNav from '@/components/MobileNav';
+import MobileNav from '@/components/core/MobileNav';
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+const INSIGHTS_URL = process.env.NEXT_PUBLIC_INSIGHTS_URL;
 
 const Navbar = () => {
   const { resolved, user, logout } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
-  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   useIsomorphicLayoutEffect(() => {
     const handleScroll = (e) => {
@@ -53,22 +52,12 @@ const Navbar = () => {
                   <div className="inline-flex items-center rounded-full py-1 px-4 cursor-default">For businesses</div>
                   <NavProductsDropdown />
                 </div>
-                <Link
-                  href="https://market.statisense.co"
-                  target="_blank"
-                  className="inline-flex items-center rounded-full py-1 px-4"
-                >
+                <Link href="https://market.statisense.co" className="inline-flex items-center rounded-full py-1 px-4">
                   Markets
                 </Link>
-                <Link href={'/insights'} className="inline-flex items-center rounded-full py-1 px-4">
+                <Link href={INSIGHTS_URL} className="inline-flex items-center rounded-full py-1 px-4">
                   Insights
                 </Link>
-                <button
-                  onClick={() => setIsChatbotOpen(true)}
-                  className="inline-flex items-center rounded-full py-1 px-4"
-                >
-                  Bambi &reg;
-                </button>
               </div>
             </div>
             <div className="flex items-center justify-end gap-x-5 md:gap-x-4 ml-6">
@@ -88,11 +77,9 @@ const Navbar = () => {
                             Sign in
                           </Button>
                         </Link>
-                        {scrolled && (
-                          <Link href={`${APP_URL}/register`}>
-                            <Button>Get started</Button>
-                          </Link>
-                        )}
+                        <Link href={`${APP_URL}/register`}>
+                          <Button>Get started</Button>
+                        </Link>
                       </>
                     ) : (
                       <div className="flex items-center space-x-4">
@@ -144,12 +131,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      <MobileNav
-        isOpen={isMobileNavVisible}
-        onChat={() => setIsChatbotOpen(true)}
-        onClose={() => setIsMobileNavVisible(false)}
-      />
-      <AskBambi isOpen={isChatbotOpen} onClose={() => setIsChatbotOpen(false)} />
+      <MobileNav isOpen={isMobileNavVisible} onClose={() => setIsMobileNavVisible(false)} />
     </>
   );
 };

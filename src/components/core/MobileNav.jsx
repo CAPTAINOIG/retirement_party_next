@@ -5,8 +5,9 @@ import { useIsomorphicLayoutEffect } from 'react-use';
 import NavProductsDropdown from '@/components/core/NavProductsDropdown';
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+const INSIGHTS_URL = process.env.NEXT_PUBLIC_INSIGHTS_URL;
 
-const MobileNav = ({ isOpen, onClose, onChat }) => {
+const MobileNav = ({ isOpen, onClose }) => {
   useIsomorphicLayoutEffect(() => {
     if (isOpen) document.scrollingElement.style.overflowY = 'hidden';
     else document.scrollingElement.style.overflowY = 'initial';
@@ -42,18 +43,9 @@ const MobileNav = ({ isOpen, onClose, onChat }) => {
             >
               Market
             </Link>
-            <Link onClick={onClose} href={'/insights'} className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200">
+            <Link onClick={onClose} href={INSIGHTS_URL} className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200">
               Insights
             </Link>
-            <button
-              onClick={() => {
-                onClose();
-                onChat();
-              }}
-              className="block w-full px-4 py-3 rounded-xl text-left hover:bg-zinc-200"
-            >
-              Bambi
-            </button>
             <Link onClick={onClose} href={'/about'} className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200">
               About us
             </Link>

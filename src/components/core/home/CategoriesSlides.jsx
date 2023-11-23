@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import CategoryCard from '@/components/core/infographics/CategoryCard.jsx';
+import CategoryCard from '@/components/core/home/CategoryCard.jsx';
 
 const CategoriesSlides = ({ categories }) => {
   const swiperElRef = useRef(null);

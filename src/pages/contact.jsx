@@ -4,7 +4,7 @@ import ContactCategories from '@/components/core/contact/ContactCategories';
 import ConnectWithUs from '@/components/core/contact/ConnectWithUs';
 import DefaultLayout from '@/components/core/DefaultLayout';
 import Head from 'next/head';
-import DefaultHeadTags from '@/components/DefaultHeadTags';
+import DefaultHeadTags from '@/components/others/DefaultHeadTags';
 
 const Contact = () => {
   return (

@@ -29,7 +29,7 @@ const UserDropdown = ({ className }) => {
       }
       items={[
         {
-          text: 'Account settings',
+          text: 'Manage account',
           icon: <IconUserCog size="18" />,
           onClick: () => {
             location.href = `${APP_URL}/account`;

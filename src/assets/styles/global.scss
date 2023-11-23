@@ -8,12 +8,11 @@
 
 html,
 body {
-  @apply bg-white w-full;
+  @apply text-[15px] bg-white w-full;
 }
 
 :root {
   --swiper-navigation-color: #fff;
-  font-size: 15px;
 }
 
 .container {
