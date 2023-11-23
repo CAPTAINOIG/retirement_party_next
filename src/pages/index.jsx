@@ -9,7 +9,7 @@ import InsightsOnTheGo from '@/components/core/home/InsightsOnTheGo';
 import Newsletter from '@/components/core/home/Newsletter';
 import Testimonials from '@/components/core/home/Testimonials';
 import DefaultLayout from '@/components/core/DefaultLayout';
-import DefaultHeadTags from '@/components/DefaultHeadTags';
+import DefaultHeadTags from '@/components/others/DefaultHeadTags';
 
 const HomePage = () => {
   return (

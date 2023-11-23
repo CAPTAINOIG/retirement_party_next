@@ -6,7 +6,7 @@ import { Router } from 'next/router';
 import NProgress from 'nprogress';
 import '@/assets/styles/nprogress.scss';
 import { useIsomorphicLayoutEffect } from 'react-use';
-import QueryProvider from '@/components/QueryProvider';
+import QueryProvider from '@/components/others/QueryProvider';
 import { ToastProvider } from '@/hooks/use-toast';
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
