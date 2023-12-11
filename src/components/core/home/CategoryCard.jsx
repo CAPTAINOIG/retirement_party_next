@@ -3,9 +3,11 @@ import Link from 'next/link';
 import Image from '@/components/core/shared/Image.jsx';
 import { clsx } from 'clsx';
 
+const INSIGHTS_URL = process.env.NEXT_PUBLIC_INSIGHTS_URL;
+
 const CategoryCard = ({ category, sm = false }) => {
   return (
-    <Link href={`/insights/${category.slug}`}>
+    <Link href={`${INSIGHTS_URL}/${category.slug}`} target="_blank">
       <div
         className={clsx(
           'text-white rounded-3xl overflow-hidden hover:brightness-125 transition-all cursor-pointer relative isolate',
