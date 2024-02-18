@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { useIsomorphicLayoutEffect } from 'react-use';
 import NavProductsDropdown from '@/components/core/NavProductsDropdown';
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
-const INSIGHTS_URL = process.env.NEXT_PUBLIC_INSIGHTS_URL;
+const ACCOUNTS_URL = process.env.NEXT_PUBLIC_ACCOUNTS_URL;
+const SNAPSHOTS_URL = process.env.NEXT_PUBLIC_SNAPSHOTS_URL;
 
 const MobileNav = ({ isOpen, onClose }) => {
   useIsomorphicLayoutEffect(() => {
@@ -43,8 +43,12 @@ const MobileNav = ({ isOpen, onClose }) => {
             >
               Market
             </Link>
-            <Link onClick={onClose} href={INSIGHTS_URL} className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200">
-              Insights
+            <Link
+              onClick={onClose}
+              href={SNAPSHOTS_URL}
+              className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
+            >
+              Snapshots
             </Link>
             <Link onClick={onClose} href={'/about'} className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200">
               About us
@@ -54,14 +58,14 @@ const MobileNav = ({ isOpen, onClose }) => {
             </div>
             <Link
               onClick={onClose}
-              href={`${APP_URL}/login`}
+              href={`${ACCOUNTS_URL}/login`}
               className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
             >
               Sign in
             </Link>
             <Link
               onClick={onClose}
-              href={`${APP_URL}/register`}
+              href={`${ACCOUNTS_URL}/register`}
               className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
             >
               Sign up

@@ -10,8 +10,8 @@ import Logo from '@/components/core/shared/Logo';
 import NavProductsDropdown from '@/components/core/NavProductsDropdown';
 import MobileNav from '@/components/core/MobileNav';
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
-const INSIGHTS_URL = process.env.NEXT_PUBLIC_INSIGHTS_URL;
+const ACCOUNTS_URL = process.env.NEXT_PUBLIC_ACCOUNTS_URL;
+const SNAPSHOTS_URL = process.env.NEXT_PUBLIC_SNAPSHOTS_URL;
 
 const Navbar = () => {
   const { resolved, user, logout } = useAuth();
@@ -55,8 +55,8 @@ const Navbar = () => {
                 <Link href="https://market.statisense.co" className="inline-flex items-center rounded-full py-1 px-4">
                   Markets
                 </Link>
-                <Link href={INSIGHTS_URL} className="inline-flex items-center rounded-full py-1 px-4">
-                  Insights
+                <Link href={SNAPSHOTS_URL} className="inline-flex items-center rounded-full py-1 px-4">
+                  Snapshots
                 </Link>
               </div>
             </div>
@@ -72,12 +72,12 @@ const Navbar = () => {
                   <>
                     {!user ? (
                       <>
-                        <Link href={`${APP_URL}/login`}>
+                        <Link href={`${ACCOUNTS_URL}/login`}>
                           <Button variant="subtle" color={scrolled ? 'black' : 'white'}>
                             Sign in
                           </Button>
                         </Link>
-                        <Link href={`${APP_URL}/register`}>
+                        <Link href={`${ACCOUNTS_URL}/register`}>
                           <Button>Get started</Button>
                         </Link>
                       </>
@@ -105,7 +105,7 @@ const Navbar = () => {
                             {
                               text: 'Dashboard',
                               icon: <IconLayout2 size="18" />,
-                              onClick: () => (location.href = APP_URL),
+                              onClick: () => (location.href = ACCOUNTS_URL),
                             },
                             { text: 'Logout', icon: <IconLogout size="18" />, onClick: handleLogout },
                           ]}
