@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useIsomorphicLayoutEffect } from 'react-use';
 import NavProductsDropdown from '@/components/core/NavProductsDropdown';
 
-const ACCOUNTS_URL = process.env.NEXT_PUBLIC_ACCOUNTS_URL;
+const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 const SNAPSHOTS_URL = process.env.NEXT_PUBLIC_SNAPSHOTS_URL;
 
 const MobileNav = ({ isOpen, onClose }) => {
@@ -58,14 +58,14 @@ const MobileNav = ({ isOpen, onClose }) => {
             </div>
             <Link
               onClick={onClose}
-              href={`${ACCOUNTS_URL}/login`}
+              href={`${ACCOUNT_URL}/login`}
               className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
             >
               Sign in
             </Link>
             <Link
               onClick={onClose}
-              href={`${ACCOUNTS_URL}/register`}
+              href={`${ACCOUNT_URL}/register`}
               className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
             >
               Sign up

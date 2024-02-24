@@ -4,7 +4,7 @@ import { IconChevronDown, IconLogout, IconUserCog } from '@tabler/icons-react';
 import { useAuth } from '@/hooks/use-auth';
 import classNames from 'classnames';
 
-const ACCOUNTS_URL = process.env.NEXT_PUBLIC_ACCOUNTS_URL;
+const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 
 const UserDropdown = ({ className }) => {
   const { user, logout } = useAuth();
@@ -32,7 +32,7 @@ const UserDropdown = ({ className }) => {
           text: 'Manage account',
           icon: <IconUserCog size="18" />,
           onClick: () => {
-            location.href = `${ACCOUNTS_URL}/account`;
+            location.href = `${ACCOUNT_URL}/account`;
           },
         },
         { text: 'Logout', icon: <IconLogout size="18" />, onClick: handleLogout },
