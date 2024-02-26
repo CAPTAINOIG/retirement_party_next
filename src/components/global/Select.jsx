@@ -15,13 +15,7 @@ const Select = forwardRef(
             { 'bg-slate-200': !bordered }
           )}
         >
-          <select
-            id={id}
-            {...props}
-            ref={ref}
-            className="peer mt-2 w-full appearance-none bg-transparent pb-2"
-            placeholder=" "
-          >
+          <select id={id} {...props} ref={ref} className="peer mt-2 w-full appearance-none bg-transparent pb-2">
             {loading ? (
               <option value="" disabled>
                 Loading..
