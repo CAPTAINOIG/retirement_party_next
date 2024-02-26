@@ -70,33 +70,33 @@ const SupportingSectors = () => {
       <div className="relative">
         <div className="container flex flex-col md:items-center md:text-center">
           <div className="relative max-w-2xl">
-            <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1]">
+            <h2 className="text-4xl font-medium leading-tight md:text-6xl md:leading-[1.1]">
               Supporting sectors with Insights
             </h2>
             <p className="mt-6 text-base md:text-lg">Generate Industry grade data insights in seconds.</p>
           </div>
         </div>
-        <div className="relative -order-1 md:order-1 overflow-hidden mt-10 md:mt-20">
+        <div className="relative -order-1 mt-10 overflow-hidden md:order-1 md:mt-20">
           <swiper-container ref={swiperElRef} init={false}>
             {items.map((item, i) => (
               <swiper-slide key={i}>
-                <div className="p-2 group relative">
-                  <div className="rounded-3xl overflow-hidden">
+                <div className="group relative p-2">
+                  <div className="overflow-hidden rounded-3xl">
                     <div
                       style={{ backgroundImage: `url(${item.image})` }}
-                      className="min-h-[360px] bg-center md:min-h-[420px] relative layer-bg bg-cover rounded-lg group"
+                      className="layer-bg group relative min-h-[360px] rounded-lg bg-cover bg-center md:min-h-[420px]"
                     >
-                      <div className="absolute inset-0 bg-black/50 z-[1] text-white flex flex-col">
-                        <div className="px-10 md:px-12 pt-12 md:pt-14">
-                          <h2 className="text-2xl md:text-3xl font-medium">{item.name}</h2>
+                      <div className="absolute inset-0 z-[1] flex flex-col bg-black/50 text-white">
+                        <div className="px-10 pt-12 md:px-12 md:pt-14">
+                          <h2 className="text-2xl font-medium md:text-3xl">{item.name}</h2>
                         </div>
-                        <div className="mt-6 px-10 md:px-12 opacity-0 translate-y-20 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                          <p className="md:text-lg opacity-70">{item.description}</p>
+                        <div className="mt-6 translate-y-20 px-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 md:px-12">
+                          <p className="opacity-70 md:text-lg">{item.description}</p>
                           <Link href={APP_URL}>
                             <Button
                               variant="outlined"
                               color="white"
-                              className="mt-10 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all ease-in-out duration-500"
+                              className="mt-10 translate-y-6 opacity-0 transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100"
                             >
                               Get started
                             </Button>

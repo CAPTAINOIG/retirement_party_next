@@ -14,8 +14,8 @@ const categories = [
 const SendMessageForm = () => {
   return (
     <>
-      <Card className="px-8 py-10 md:px-12 subtle-shadow">
-        <h5 className="text-xl font-medium mb-10">Let's start a conversation</h5>
+      <Card className="subtle-shadow px-8 py-10 md:px-12">
+        <h5 className="mb-10 text-xl font-medium">Let's start a conversation</h5>
         <div className="space-y-6">
           <Input label="Full name" bordered />
           <Input label="Email address" bordered />

@@ -1,17 +1,17 @@
 import React from 'react';
 import { Tab } from '@headlessui/react';
-import classNames from 'classnames';
+import { cn } from '@/lib/utils';
 
 const Tabs = ({ index, onChange, tabs, ...props }) => {
   return (
     <Tab.Group as="div" {...props} selectedIndex={index} onChange={onChange}>
-      <Tab.List className="inline-flex p-1.5 space-x-1 bg-blue-900/5 rounded-full">
+      <Tab.List className="inline-flex space-x-1 rounded-full bg-blue-900/5 p-1.5">
         {tabs.map((tab) => (
           <Tab
             key={tab.key}
             className={({ selected }) =>
-              classNames(
-                'py-1.5 px-6 text-[.96rem] leading-5 font-medium rounded-full focus:outline-none transition-all duration-150',
+              cn(
+                'rounded-full px-6 py-1.5 text-[.96rem] font-medium leading-5 transition-all duration-150 focus:outline-none',
                 selected ? 'bg-white text-primary-800 shadow' : 'text-slate-500 hover:bg-white/[0.12]'
               )
             }

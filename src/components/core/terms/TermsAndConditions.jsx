@@ -2,9 +2,9 @@ import React from 'react';
 
 const TermsAndConditions = () => {
   return (
-    <ol className="list-decimal list-inside space-y-6">
+    <ol className="list-inside list-decimal space-y-6">
       <li>
-        <h3 className="inline-flex font-semibold mb-4">Overview</h3>
+        <h3 className="mb-4 inline-flex font-semibold">Overview</h3>
         <p className="mb-4">
           The following are the terms of an agreement between you and Statisense. By accessing, or using this Website,
           you acknowledge that you have read, understand, and agree to be bound by these terms and to comply with all
@@ -16,7 +16,7 @@ const TermsAndConditions = () => {
         </p>
       </li>
       <li>
-        <h3 className="inline-flex font-semibold mb-4">General</h3>
+        <h3 className="mb-4 inline-flex font-semibold">General</h3>
         <p className="mb-4">
           This Website contains proprietary notices and copyright information, the terms of which must be observed and
           followed. Please see the tab entitled “Copyright and trademark information” for related information.
@@ -41,7 +41,7 @@ const TermsAndConditions = () => {
         </p>
       </li>
       <li>
-        <h3 className="inline-flex font-semibold mb-4">Rules of conduct</h3>
+        <h3 className="mb-4 inline-flex font-semibold">Rules of conduct</h3>
         <p className="mb-4">
           Your use of Statisense website link and any related Statisense websites (Statisense Websites) is subject to
           all applicable local, state, national and international laws and regulations, and you agree not to violate
@@ -80,7 +80,7 @@ const TermsAndConditions = () => {
         </p>
       </li>
       <li>
-        <h3 className="inline-flex font-semibold mb-4">Your content</h3>
+        <h3 className="mb-4 inline-flex font-semibold">Your content</h3>
         <p className="mb-4">
           You agree that you will only upload, share, post, publish, transmit, or otherwise make available ("Share") on
           or through the Site Content that you have the right and authority to Share and for which you have the right
@@ -110,7 +110,7 @@ const TermsAndConditions = () => {
         </p>
       </li>
       <li>
-        <h3 className="inline-flex font-semibold mb-4">Disclaimer</h3>
+        <h3 className="mb-4 inline-flex font-semibold">Disclaimer</h3>
         <p className="mb-4">
           From time to time, this Website may contain technical inaccuracies or typographical errors, and we do not
           warrant the accuracy of any posted information. Please confirm you are using the most up-to-date pages on this
@@ -127,7 +127,7 @@ const TermsAndConditions = () => {
         </p>
       </li>
       <li>
-        <h3 className="inline-flex font-semibold mb-4">Confidential information</h3>
+        <h3 className="mb-4 inline-flex font-semibold">Confidential information</h3>
         <p className="mb-4">
           Statisense does not want to receive confidential or proprietary information from you through our Web site.
           Please note that any information or material sent to will be deemed NOT to be confidential. By sending
@@ -144,7 +144,7 @@ const TermsAndConditions = () => {
         </p>
       </li>
       <li>
-        <h3 className="inline-flex font-semibold mb-4">Linking to this site</h3>
+        <h3 className="mb-4 inline-flex font-semibold">Linking to this site</h3>
         <p>
           Statisense consents only to links to this Website in which the link and the pages that are activated by the
           link do not: (a) create frames around any page on this Website or use other techniques that alter in any way
@@ -158,7 +158,7 @@ const TermsAndConditions = () => {
         </p>
       </li>
       <li>
-        <h3 className="inline-flex font-semibold mb-4">Disclaimer of warranty</h3>
+        <h3 className="mb-4 inline-flex font-semibold">Disclaimer of warranty</h3>
         <p className="mb-4">
           Use of this site is at your sole risk. All materials, information, products, software, programs, and services
           are provided "as is," with no warranties or guarantees whatsoever. Statisense expressly disclaims to the
@@ -173,7 +173,7 @@ const TermsAndConditions = () => {
         </p>
       </li>
       <li>
-        <h3 className="inline-flex font-semibold mb-4">Limitation of liability</h3>
+        <h3 className="mb-4 inline-flex font-semibold">Limitation of liability</h3>
         <p>
           To the fullest extent permitted by applicable law, in no event will Statisense be liable to any party for any
           direct, indirect, incidental, special, exemplary or consequential damages of any type whatsoever related to or

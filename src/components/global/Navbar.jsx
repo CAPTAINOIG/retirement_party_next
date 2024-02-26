@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { IconLayout2, IconLogout, IconMenu } from '@tabler/icons-react';
 import { useIsomorphicLayoutEffect } from 'react-use';
-import classNames from 'classnames';
 import Button from '@/components/global/Button.jsx';
 import { useAuth } from '@/hooks/use-auth.js';
 import SimpleDropdown from '@/components/global/SimpleDropdown.jsx';
 import Logo from '@/components/core/shared/Logo';
 import NavProductsDropdown from '@/components/core/NavProductsDropdown';
 import MobileNav from '@/components/core/MobileNav';
+import { cn } from '@/lib/utils';
 
 const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 const SNAPSHOTS_URL = process.env.NEXT_PUBLIC_SNAPSHOTS_URL;
@@ -35,36 +35,36 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={classNames(
-          'fixed top-0 inset-x-0 z-50 h-32 transition-all',
-          { 'bg-white/90 backdrop-blur-lg shadow !h-24': scrolled },
+        className={cn(
+          'fixed inset-x-0 top-0 z-50 h-32 transition-all',
+          { '!h-24 bg-white/90 shadow backdrop-blur-lg': scrolled },
           { 'text-slate-100': !scrolled }
         )}
       >
         <div className="container h-full">
-          <nav className="relative z-50 flex justify-between h-full">
-            <div className="flex items-center md:gap-x-12 flex-1 h-full">
+          <nav className="relative z-50 flex h-full justify-between">
+            <div className="flex h-full flex-1 items-center md:gap-x-12">
               <Link href={'/'}>
                 <Logo light={!scrolled} />
               </Link>
-              <div className="hidden lg:flex md:space-x-3 ml-auto h-full">
-                <div className="relative h-full flex items-center group">
-                  <div className="inline-flex items-center rounded-full py-1 px-4 cursor-default">For businesses</div>
+              <div className="ml-auto hidden h-full md:space-x-3 lg:flex">
+                <div className="group relative flex h-full items-center">
+                  <div className="inline-flex cursor-default items-center rounded-full px-4 py-1">For businesses</div>
                   <NavProductsDropdown />
                 </div>
-                <Link href="https://market.statisense.co" className="inline-flex items-center rounded-full py-1 px-4">
+                <Link href="https://market.statisense.co" className="inline-flex items-center rounded-full px-4 py-1">
                   Markets
                 </Link>
-                <Link href={SNAPSHOTS_URL} className="inline-flex items-center rounded-full py-1 px-4">
+                <Link href={SNAPSHOTS_URL} className="inline-flex items-center rounded-full px-4 py-1">
                   Snapshots
                 </Link>
               </div>
             </div>
-            <div className="flex items-center justify-end gap-x-5 md:gap-x-4 ml-6">
-              <div className="hidden lg:block space-x-4">
+            <div className="ml-6 flex items-center justify-end gap-x-5 md:gap-x-4">
+              <div className="hidden space-x-4 lg:block">
                 {!resolved ? (
                   <div
-                    className={classNames('animate-pulse bg-slate-100/10 rounded-3xl w-[100px] h-[32px]', {
+                    className={cn('h-[32px] w-[100px] animate-pulse rounded-3xl bg-slate-100/10', {
                       'bg-slate-900/10': scrolled,
                     })}
                   />
@@ -86,14 +86,14 @@ const Navbar = () => {
                         <SimpleDropdown
                           trigger={
                             <div
-                              className={classNames(
-                                'flex items-center space-x-2 hover:bg-gray-200/5 rounded-full pl-3 pr-4 py-2 transition-all',
+                              className={cn(
+                                'flex items-center space-x-2 rounded-full py-2 pl-3 pr-4 transition-all hover:bg-gray-200/5',
                                 { 'hover:!bg-gray-200/50': scrolled }
                               )}
                             >
                               <img
                                 src={`https://ui-avatars.com/api/?name=${user.firstName} ${user.lastName}`}
-                                className="w-8 h-8 rounded-full"
+                                className="h-8 w-8 rounded-full"
                                 alt={`${user.firstName} ${user.lastName}`}
                               />
                               <div>
@@ -118,7 +118,7 @@ const Navbar = () => {
               <div className="-mr-1 lg:hidden">
                 <button
                   onClick={() => setIsMobileNavVisible(true)}
-                  className="relative z-10 flex h-8 w-8 items-center justify-center [&amp;:not(:focus-visible)]:focus:outline-none"
+                  className="[&amp;:not(:focus-visible)]:focus:outline-none relative z-10 flex h-8 w-8 items-center justify-center"
                   aria-label="Toggle Navigation"
                   type="button"
                   aria-expanded="false"

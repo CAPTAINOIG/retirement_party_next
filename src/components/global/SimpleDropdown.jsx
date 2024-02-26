@@ -1,8 +1,8 @@
 import React from 'react';
 import { Menu } from '@headlessui/react';
-import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import PropTypes from 'prop-types';
+import { cn } from '@/lib/utils';
 
 const SimpleDropdown = ({ trigger, items, direction = 'bottom-right' }) => {
   const variants = {
@@ -29,7 +29,7 @@ const SimpleDropdown = ({ trigger, items, direction = 'bottom-right' }) => {
   return (
     <Menu>
       {({ open }) => (
-        <div className={classNames('relative z-10 flex', { 'z-20': open })}>
+        <div className={cn('relative z-10 flex', { 'z-20': open })}>
           <Menu.Button as="div" className="w-full cursor-pointer">
             {trigger}
           </Menu.Button>
@@ -42,19 +42,19 @@ const SimpleDropdown = ({ trigger, items, direction = 'bottom-right' }) => {
                 animate="visible"
                 exit="exit"
                 static
-                className={classNames(
-                  'absolute bg-white text-gray-900 shadow border p-2 rounded-xl flex flex-col z-50 min-w-[200px]',
-                  { 'top-full right-0 mt-4': direction === 'bottom-right' },
+                className={cn(
+                  'absolute z-50 flex min-w-[200px] flex-col rounded-xl border bg-white p-2 text-gray-900 shadow',
+                  { 'right-0 top-full mt-4': direction === 'bottom-right' },
                   { 'bottom-full right-0 mb-4': direction === 'top-right' },
-                  { 'left-full bottom-0 ml-4': direction === 'right-bottom' }
+                  { 'bottom-0 left-full ml-4': direction === 'right-bottom' }
                 )}
               >
                 {items.map((item, i) => (
                   <Menu.Item key={i}>
                     {({ active }) => (
                       <button
-                        className={classNames(
-                          `whitespace-nowrap flex items-center px-3 py-2 rounded-lg space-x-4 transition-all`,
+                        className={cn(
+                          `flex items-center space-x-4 whitespace-nowrap rounded-lg px-3 py-2 transition-all`,
                           { 'bg-zinc-900/5': active }
                         )}
                         onClick={item?.onClick ?? null}

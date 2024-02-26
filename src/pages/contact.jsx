@@ -20,10 +20,10 @@ const Contact = () => {
         >
           <div className="h-4" slot="append"></div>
         </PageHeader>
-        <div className="py-20 md:py-28 space-y-36">
+        <div className="space-y-36 py-20 md:py-28">
           <div className="container space-y-24">
             <ContactCategories />
-            <div className="grid md:grid-cols-2 gap-16">
+            <div className="grid gap-16 md:grid-cols-2">
               <div>
                 <ConnectWithUs />
               </div>

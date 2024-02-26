@@ -19,24 +19,24 @@ const positions = [
 const OpenPositions = () => {
   return (
     <section aria-label="Our services" className="container">
-      <div className="grid lg:grid-cols-12 gap-10">
-        <div className="lg:col-span-4 relative">
+      <div className="grid gap-10 lg:grid-cols-12">
+        <div className="relative lg:col-span-4">
           <div className="sticky top-36 text-center lg:text-left">
-            <h2 className="text-3xl md:text-4xl font-medium tracking-tight">Open positions</h2>
+            <h2 className="text-3xl font-medium tracking-tight md:text-4xl">Open positions</h2>
             <p className="mt-4">Do you crave a challenge and love to innovate? Then we have a role for you.</p>
           </div>
         </div>
-        <div className="lg:col-span-8 space-y-6">
+        <div className="space-y-6 lg:col-span-8">
           {positions.map((p) => (
-            <Card key={p.title} className="px-12 py-10 flex flex-col md:flex-row md:items-center subtle-shadow">
+            <Card key={p.title} className="subtle-shadow flex flex-col px-12 py-10 md:flex-row md:items-center">
               <div className="flex-1">
-                <h4 className="font-medium text-lg">{p.title}</h4>
+                <h4 className="text-lg font-medium">{p.title}</h4>
                 <p className="mt-2 opacity-80">{p.description}</p>
               </div>
               <a
                 href={`mailto:jobs@statisense.com.ng?subject=Application for ${p.title}`}
                 target="_blank"
-                className="mt-4 md:mt-0 md:ml-4"
+                className="mt-4 md:ml-4 md:mt-0"
               >
                 <Button variant="subtle">Apply</Button>
               </a>

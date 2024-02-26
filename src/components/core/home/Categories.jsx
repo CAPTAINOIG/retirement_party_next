@@ -10,8 +10,8 @@ const Categories = () => {
 
   return (
     <div>
-      <div className="container mb-12 md:mb-16 flex flex-col items-center justify-center">
-        <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-gray-900">Popular public data insights.</h2>
+      <div className="container mb-12 flex flex-col items-center justify-center md:mb-16">
+        <h2 className="text-4xl font-medium tracking-tight text-gray-900 md:text-6xl">Popular public data insights.</h2>
         <p className="mt-4 text-base md:text-lg">
           Review some work on public data from the past, as we prepare you for the future.
         </p>
@@ -22,15 +22,15 @@ const Categories = () => {
             .fill(null)
             .map((_, i) => (
               <div key={i}>
-                <div className="hidden md:grid grid-cols-4 gap-8 px-4">
-                  <div className="bg-slate-200 w-full h-32 rounded-3xl" />
-                  <div className="bg-slate-200 w-full h-32 rounded-3xl" />
-                  <div className="bg-slate-200 w-full h-32 rounded-3xl" />
-                  <div className="bg-slate-200 w-full h-32 rounded-3xl" />
+                <div className="hidden grid-cols-4 gap-8 px-4 md:grid">
+                  <div className="h-32 w-full rounded-3xl bg-slate-200" />
+                  <div className="h-32 w-full rounded-3xl bg-slate-200" />
+                  <div className="h-32 w-full rounded-3xl bg-slate-200" />
+                  <div className="h-32 w-full rounded-3xl bg-slate-200" />
                 </div>
-                <div className="grid md:hidden grid-cols-5 gap-5 px-4">
-                  <div className="bg-slate-200 w-full h-32 col-span-3 rounded-3xl" />
-                  <div className="bg-slate-200 w-full h-32 col-span-2 rounded-3xl" />
+                <div className="grid grid-cols-5 gap-5 px-4 md:hidden">
+                  <div className="col-span-3 h-32 w-full rounded-3xl bg-slate-200" />
+                  <div className="col-span-2 h-32 w-full rounded-3xl bg-slate-200" />
                 </div>
               </div>
             ))}

@@ -22,16 +22,16 @@ const MobileNav = ({ isOpen, onClose }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-zinc-900/80 z-50"
+            className="fixed inset-0 z-50 bg-zinc-900/80"
             aria-hidden="true"
           />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed inset-x-0 top-24 mt-4 flex origin-top flex-col rounded-3xl bg-white px-4 py-6 text-lg tracking-tight shadow-xl z-50 space-y-2"
+            className="fixed inset-x-0 top-24 z-50 mt-4 flex origin-top flex-col space-y-2 rounded-3xl bg-white px-4 py-6 text-lg tracking-tight shadow-xl"
           >
-            <div className="relative block w-full px-4 py-3 rounded-xl hover:bg-zinc-200 group cursor-default">
+            <div className="group relative block w-full cursor-default rounded-xl px-4 py-3 hover:bg-zinc-200">
               For business
               <NavProductsDropdown />
             </div>
@@ -39,18 +39,18 @@ const MobileNav = ({ isOpen, onClose }) => {
               onClick={onClose}
               href={'https://market.statisense.co'}
               target="_blank"
-              className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
+              className="block w-full rounded-xl px-4 py-3 hover:bg-zinc-200"
             >
               Market
             </Link>
             <Link
               onClick={onClose}
               href={SNAPSHOTS_URL}
-              className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
+              className="block w-full rounded-xl px-4 py-3 hover:bg-zinc-200"
             >
               Snapshots
             </Link>
-            <Link onClick={onClose} href={'/about'} className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200">
+            <Link onClick={onClose} href={'/about'} className="block w-full rounded-xl px-4 py-3 hover:bg-zinc-200">
               About us
             </Link>
             <div>
@@ -59,14 +59,14 @@ const MobileNav = ({ isOpen, onClose }) => {
             <Link
               onClick={onClose}
               href={`${ACCOUNT_URL}/login`}
-              className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
+              className="block w-full rounded-xl px-4 py-3 hover:bg-zinc-200"
             >
               Sign in
             </Link>
             <Link
               onClick={onClose}
               href={`${ACCOUNT_URL}/register`}
-              className="block w-full px-4 py-3 rounded-xl hover:bg-zinc-200"
+              className="block w-full rounded-xl px-4 py-3 hover:bg-zinc-200"
             >
               Sign up
             </Link>

@@ -9,19 +9,19 @@ const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#11100f] text-zinc-200 py-20 bg-gradient-to-br from-gray-900 to-gray-950">
+      <footer className="bg-[#11100f] bg-gradient-to-br from-gray-900 to-gray-950 py-20 text-zinc-200">
         <div className="container">
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-20 lg:gap-10 pt-10 pb-32">
+          <div className="grid gap-20 pb-32 pt-10 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
             <div className="md:col-span-2">
               <Logo light />
-              <p className="mt-8 max-w-xs opacity-70 leading-7">
+              <p className="mt-8 max-w-xs leading-7 opacity-70">
                 Statisense is the leading datatech company helping simplify data and documents for businesses, consumers
                 and governments.
               </p>
             </div>
             <div>
               <h6 className="font-medium">Products</h6>
-              <div className="flex flex-col mt-6 space-y-4">
+              <div className="mt-6 flex flex-col space-y-4">
                 {products
                   .filter((p) => p.categories.includes('featured'))
                   .map((p) => (
@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
             <div>
               <h6 className="font-medium">Company</h6>
-              <div className="flex flex-col mt-6 space-y-4">
+              <div className="mt-6 flex flex-col space-y-4">
                 <Link href={'/about'} className="opacity-70 hover:text-primary-300">
                   About us
                 </Link>
@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
             <div>
               <h6 className="font-medium">Support</h6>
-              <div className="flex flex-col mt-6 space-y-4">
+              <div className="mt-6 flex flex-col space-y-4">
                 <Link href={'/about#faq'} className="opacity-70 hover:text-primary-300">
                   FAQs
                 </Link>
@@ -62,11 +62,11 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 items-start sm:items-center sm:space-x-8">
+          <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
+            <div className="flex flex-col items-start space-y-4 sm:flex-row sm:items-center sm:space-x-8 sm:space-y-0">
               <div>Copyright &copy; {new Date().getFullYear()} Statisense</div>
             </div>
-            <div className="flex items-center space-x-6 mt-8 md:mt-0">
+            <div className="mt-8 flex items-center space-x-6 md:mt-0">
               <a
                 href="https://facebook.com/statisense"
                 target="_blank"

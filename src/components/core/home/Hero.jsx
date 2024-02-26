@@ -26,15 +26,15 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="pt-48 pb-32 md:pt-52 md:pb-32 md:text-center bg-[#11100f] relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950">
-      <div className="absolute inset-0 bg-cover bg-right bg-hero animate-wide min-h-screen opacity-60"></div>
-      <div className="container z-10 relative">
-        <h1 className="mx-auto max-w-[860px] font-display text-[3.4rem] sm:text-7xl md:text-[6.8rem] font-bold leading-[1.1] md:!leading-[1] tracking-tight text-slate-300">
+    <div className="to-primary-950 relative overflow-hidden bg-[#11100f] bg-gradient-to-br from-primary-900 pb-32 pt-48 md:pb-32 md:pt-52 md:text-center">
+      <div className="absolute inset-0 min-h-screen animate-wide bg-hero bg-cover bg-right opacity-60"></div>
+      <div className="container relative z-10">
+        <h1 className="font-display mx-auto max-w-[860px] text-[3.4rem] font-bold leading-[1.1] tracking-tight text-slate-300 sm:text-7xl md:text-[6.8rem] md:!leading-[1]">
           Connecting
           <br />
           <span
             ref={el}
-            className="relative bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent whitespace-nowrap"
+            className="relative whitespace-nowrap bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
           >
             Generative AI
           </span>
@@ -44,7 +44,7 @@ const Hero = () => {
         <p className="mx-auto mt-8 max-w-xl text-lg tracking-tight text-slate-400">
           Our data models help simplify business datasets into conversation, reports and infographics.
         </p>
-        <Link href={`${APP_URL}/register`} className="inline-flex mt-12">
+        <Link href={`${APP_URL}/register`} className="mt-12 inline-flex">
           <Button size="xl" rightIcon={<IconChevronRight size="20" />} color="white">
             Get started
           </Button>

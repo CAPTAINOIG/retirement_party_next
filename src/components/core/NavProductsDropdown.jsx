@@ -1,7 +1,7 @@
 import React, { createElement } from 'react';
-import classNames from 'classnames';
 import Link from 'next/link';
 import { IconBuildingBank, IconCashBanknote, IconFiles, IconIdBadge, IconLayout2 } from '@tabler/icons-react';
+import { cn } from '@/lib/utils';
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
 
@@ -35,43 +35,37 @@ const items = [
 const NavProductsDropdown = () => {
   return (
     <div
-      className={classNames(
-        'rounded-3xl bg-white shadow-md z-50 border text-gray-800 absolute top-full -mt-2 left-0 md:-translate-x-1/2 right-0 w-full md:w-[600px]',
-        'transition-all duration-300 translate-y-10 opacity-0 pointer-events-none group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto'
+      className={cn(
+        'absolute left-0 right-0 top-full z-50 -mt-2 w-full rounded-3xl border bg-white text-gray-800 shadow-md md:w-[600px] md:-translate-x-1/2',
+        'pointer-events-none translate-y-10 opacity-0 transition-all duration-300 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100'
       )}
     >
       <div className="space-y-2 px-6 py-6">
-        <div className="grid md:grid-cols-2 gap-2">
+        <div className="grid gap-2 md:grid-cols-2">
           {items.map((item) => (
             <Link
               key={item.name}
               href={APP_URL}
-              className="rounded-2xl flex items-center hover:bg-gray-200/40 py-4 px-6 transition-all cursor-pointer"
+              className="flex cursor-pointer items-center rounded-2xl px-6 py-4 transition-all hover:bg-gray-200/40"
             >
               <div className="mr-4">
-                <div
-                  className={classNames('w-10 h-10 rounded-full flex items-center justify-center text-white', item.bg)}
-                >
+                <div className={cn('flex h-10 w-10 items-center justify-center rounded-full text-white', item.bg)}>
                   {createElement(item.icon)}
                 </div>
               </div>
               <div>
                 <h4 className="font-medium">{item.name}</h4>
-                <p className="text-sm opacity-80 leading-tight mt-1">{item.description}</p>
+                <p className="mt-1 text-sm leading-tight opacity-80">{item.description}</p>
               </div>
             </Link>
           ))}
         </div>
         <Link
           href={APP_URL}
-          className="rounded-2xl flex items-center hover:bg-gray-200/40 py-4 px-6 transition-all cursor-pointer"
+          className="flex cursor-pointer items-center rounded-2xl px-6 py-4 transition-all hover:bg-gray-200/40"
         >
           <div className="mr-4">
-            <div
-              className={classNames(
-                'w-10 h-10 rounded-full flex items-center justify-center text-slate-800 bg-slate-200'
-              )}
-            >
+            <div className={cn('flex h-10 w-10 items-center justify-center rounded-full bg-slate-200 text-slate-800')}>
               <IconLayout2 />
             </div>
           </div>

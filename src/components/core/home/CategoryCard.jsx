@@ -10,18 +10,18 @@ const CategoryCard = ({ category, sm = false }) => {
     <Link href={`${SNAPSHOTS_URL}/c/${category.slug}`} target="_blank">
       <div
         className={clsx(
-          'text-white rounded-3xl overflow-hidden hover:brightness-125 transition-all cursor-pointer relative isolate',
+          'relative isolate cursor-pointer overflow-hidden rounded-3xl text-white transition-all hover:brightness-125',
           { 'rounded-2xl': sm }
         )}
       >
         <Image
           src={category.image}
           alt={category.name}
-          className="absolute inset-0 z-[-1] object-cover w-full h-full"
+          className="absolute inset-0 z-[-1] h-full w-full object-cover"
         />
-        <div className={clsx('relative bg-black bg-opacity-50 px-8 md:px-12 py-8 md:py-12', { 'md:py-9': sm })}>
+        <div className={clsx('relative bg-black bg-opacity-50 px-8 py-8 md:px-12 md:py-12', { 'md:py-9': sm })}>
           <h3
-            className={clsx('text-[1.6rem] font-medium leading-tight text-ellipsis overflow-hidden whitespace-nowrap', {
+            className={clsx('overflow-hidden text-ellipsis whitespace-nowrap text-[1.6rem] font-medium leading-tight', {
               'text-[1.5rem]': sm,
             })}
           >

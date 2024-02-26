@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import Loader from './Loader.jsx';
+import { cn } from '@/lib/utils';
 
 const classes = {
   red: {
@@ -99,7 +99,7 @@ const IconButton = forwardRef(
     },
     ref
   ) => {
-    const _className = classNames(
+    const _className = cn(
       {
         'w-6 h-6 text-[.88rem]': size === 'xs',
         'w-8 h-8 text-[.94rem]': size === 'sm',
@@ -124,7 +124,7 @@ const IconButton = forwardRef(
       >
         {loading ? (
           <span className="mx-auto">
-            <Loader size="sm" className={classNames(classes[color].loader[variant])} />
+            <Loader size="sm" className={cn(classes[color].loader[variant])} />
           </span>
         ) : (
           <>{!!icon && <span>{icon}</span>}</>

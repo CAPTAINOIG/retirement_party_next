@@ -4,9 +4,9 @@ import Button from '@/components/global/Button.jsx';
 
 const PageHeader = ({ title, subtitle, onBack, backText, isLoading = false, append }) => {
   return (
-    <div className="pt-36 pb-6 md:pb-10 md:pt-44 text-center bg-[#11100f] relative overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-tw-dark min-h-screen opacity-80 scale-125"></div>
-      <div className="container flex flex-col items-center relative z-20">
+    <div className="relative overflow-hidden bg-[#11100f] pb-6 pt-36 text-center md:pb-10 md:pt-44">
+      <div className="bg-tw-dark absolute inset-0 min-h-screen scale-125 bg-cover opacity-80"></div>
+      <div className="container relative z-20 flex flex-col items-center">
         {!!onBack && (
           <Button
             onClick={onBack}
@@ -21,13 +21,13 @@ const PageHeader = ({ title, subtitle, onBack, backText, isLoading = false, appe
         )}
         {isLoading ? (
           <>
-            <div className="bg-zinc-200/10 h-8 w-72 rounded-full mt-2" />
-            <div className="bg-zinc-200/10 h-8 w-56 rounded-full mt-4" />
+            <div className="mt-2 h-8 w-72 rounded-full bg-zinc-200/10" />
+            <div className="mt-4 h-8 w-56 rounded-full bg-zinc-200/10" />
           </>
         ) : (
           <>
-            <h1 className="text-3xl md:text-[2.8rem] max-w-xl text-zinc-200 !leading-[1.2] font-medium">{title}</h1>
-            {!!subtitle && <p className="max-w-2xl md:text-lg mt-3 leading-[1.2] text-zinc-400">{subtitle}</p>}
+            <h1 className="max-w-xl text-3xl font-medium !leading-[1.2] text-zinc-200 md:text-[2.8rem]">{title}</h1>
+            {!!subtitle && <p className="mt-3 max-w-2xl leading-[1.2] text-zinc-400 md:text-lg">{subtitle}</p>}
           </>
         )}
         {!!append && append}

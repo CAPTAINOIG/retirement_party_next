@@ -23,7 +23,7 @@ const requireNoAuth =
     }
 
     return (
-      <div className="my-auto w-full flex flex-col justify-center items-center">
+      <div className="my-auto flex w-full flex-col items-center justify-center">
         <Loader />
         <p className="mt-5">Loading..</p>
       </div>

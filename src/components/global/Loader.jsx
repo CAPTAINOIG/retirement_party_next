@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import { cn } from '@/lib/utils';
 
 const Loader = ({ text, size = 'md', className = 'bg-primary-600' }) => {
   return (
     <>
       <div
-        className={classNames(
+        className={cn(
           { 'small h-4': size === 'sm' },
-          'loader-wrap text-center relative inline-flex flex-col items-center'
+          'loader-wrap relative inline-flex flex-col items-center text-center'
         )}
       >
-        <div className={classNames('sp sp-3balls', className)} />
+        <div className={cn('sp sp-3balls', className)} />
         {!!text && <div className="mt-8 opacity-70">{text}</div>}
       </div>
       <style jsx>{`

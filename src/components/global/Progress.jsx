@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import { cn } from '@/lib/utils';
 
 const Progress = ({ width = 0, className }) => {
   let color = 'bg-gray-600';
@@ -9,11 +9,8 @@ const Progress = ({ width = 0, className }) => {
   if (width > 60) color = 'bg-green-600';
 
   return (
-    <div className={classNames('w-full bg-gray-200 rounded-full h-2', className)}>
-      <div
-        className={classNames('bg-blue-600 h-full rounded-full', color)}
-        style={{ width: `${Math.min(width, 100)}%` }}
-      />
+    <div className={cn('h-2 w-full rounded-full bg-gray-200', className)}>
+      <div className={cn('h-full rounded-full bg-blue-600', color)} style={{ width: `${Math.min(width, 100)}%` }} />
     </div>
   );
 };

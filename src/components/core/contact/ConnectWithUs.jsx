@@ -12,15 +12,15 @@ const ConnectWithUs = () => {
   return (
     <div>
       <div>
-        <h5 className="text-xl font-medium mb-8">Visit Statisense</h5>
+        <h5 className="mb-8 text-xl font-medium">Visit Statisense</h5>
         <p>
           Our office is located at No. 7, Samuel Adedoyin street, Victoria Island, Lagos. We are open Monday through
           Friday from 9:00am to 5:00pm
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-8 mt-8">
+      <div className="mt-8 grid grid-cols-1 gap-8">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-full flex items-center justify-center border">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full border">
             <IconMail size="20" />
           </div>
           <div>
@@ -31,7 +31,7 @@ const ConnectWithUs = () => {
           </div>
         </div>
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-full flex items-center justify-center border">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full border">
             <IconBrandWhatsapp size="20" />
           </div>
           <div>
@@ -43,11 +43,11 @@ const ConnectWithUs = () => {
         </div>
       </div>
       <div className="mt-10">
-        <div className="grid grid-cols-5 sm:grid-cols-7 gap-3 sm:gap-4">
+        <div className="grid grid-cols-5 gap-3 sm:grid-cols-7 sm:gap-4">
           <a
             href="https://twitter.com/statisense"
             target="_blank"
-            className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-4 px-6"
+            className="flex cursor-pointer items-center justify-center rounded-3xl border border-slate-300/70 px-6 py-4 hover:bg-slate-100"
           >
             <div>
               <IconBrandX size="28" />
@@ -56,7 +56,7 @@ const ConnectWithUs = () => {
           <a
             href="https://facebook.com/statisense"
             target="_blank"
-            className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-4 px-6"
+            className="flex cursor-pointer items-center justify-center rounded-3xl border border-slate-300/70 px-6 py-4 hover:bg-slate-100"
           >
             <div>
               <IconBrandFacebook size="28" />
@@ -65,7 +65,7 @@ const ConnectWithUs = () => {
           <a
             href="https://www.instagram.com/statisense/"
             target="_blank"
-            className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-4 px-6"
+            className="flex cursor-pointer items-center justify-center rounded-3xl border border-slate-300/70 px-6 py-4 hover:bg-slate-100"
           >
             <div>
               <IconBrandInstagram size="28" />
@@ -74,7 +74,7 @@ const ConnectWithUs = () => {
           <a
             href="https://www.threads.net/@statisense"
             target="_blank"
-            className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-4 px-6"
+            className="flex cursor-pointer items-center justify-center rounded-3xl border border-slate-300/70 px-6 py-4 hover:bg-slate-100"
           >
             <div>
               <IconBrandThreads size="28" />
@@ -83,7 +83,7 @@ const ConnectWithUs = () => {
           <a
             href="https://www.linkedin.com/company/statisense/"
             target="_blank"
-            className="border border-slate-300/70 hover:bg-slate-100 cursor-pointer rounded-3xl flex items-center justify-center py-4 px-6"
+            className="flex cursor-pointer items-center justify-center rounded-3xl border border-slate-300/70 px-6 py-4 hover:bg-slate-100"
           >
             <div>
               <IconBrandLinkedin size="28" />

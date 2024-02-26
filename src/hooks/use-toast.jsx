@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState } from 'react';
-import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTimeoutFn } from 'react-use';
 import { IconCheck, IconExclamationCircle, IconExclamationMark, IconInfoCircle } from '@tabler/icons-react';
 import Portal from '@/components/global/Portal.jsx';
+import { cn } from '@/lib/utils';
 
 const ToastContext = createContext({
   success: () => {},
@@ -59,8 +59,8 @@ export const ToastProvider = ({ children }) => {
       {children}
       <Portal selector="body">
         <div
-          className={classNames(
-            'p-4 md:p-8 space-y-3 w-full md:w-max md:max-w-md fixed bottom-0 left-1/2 transform -translate-x-1/2 z-[999]',
+          className={cn(
+            'fixed bottom-0 left-1/2 z-[999] w-full -translate-x-1/2 transform space-y-3 p-4 md:w-max md:max-w-md md:p-8',
             {
               'pointer-events-none': !toasts.length,
             }
@@ -89,16 +89,16 @@ const Toast = ({ toast, onClose }) => {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 20, scale: 0.5 }}
       transition={{ type: 'spring', stiffness: 500, damping: 30, mass: 1 }}
-      className={classNames(
-        'px-4 py-3 rounded-xl flex items-start w-full z-[9999]',
+      className={cn(
+        'z-[9999] flex w-full items-start rounded-xl px-4 py-3',
         { 'bg-green-600 text-white': toast.type === 'success' },
         { 'bg-red-600 text-white': toast.type === 'error' },
         { 'bg-orange-600 text-white': toast.type === 'warning' },
         { 'bg-blue-600 text-white': toast.type === 'info' },
-        { 'bg-white shadow text-gray-800': toast.type === 'default' }
+        { 'bg-white text-gray-800 shadow': toast.type === 'default' }
       )}
     >
-      <div className="mt-[2px] mr-3">
+      <div className="mr-3 mt-[2px]">
         {toast.type === 'success' && <IconCheck size="20" />}
         {toast.type === 'error' && <IconExclamationCircle size="20" />}
         {toast.type === 'warning' && <IconExclamationMark size="20" />}

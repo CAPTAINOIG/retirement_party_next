@@ -23,7 +23,7 @@ const requireAuth =
     if (resolved && authenticated && user?.emailVerified) return <Component {...props}>{children}</Component>;
 
     return (
-      <div className="h-screen w-full flex flex-col justify-center items-center">
+      <div className="flex h-screen w-full flex-col items-center justify-center">
         <Loader />
         <p className="mt-5">Loading..</p>
       </div>

@@ -48,8 +48,8 @@ const Testimonials = () => {
   return (
     <section id="testimonials">
       <div className="container sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl flex flex-col md:items-center md:text-center !xl:mt-0">
-          <h2 className="text-4xl md:text-6xl font-medium text-slate-900">
+        <div className="!xl:mt-0 mx-auto flex max-w-2xl flex-col md:items-center md:text-center">
+          <h2 className="text-4xl font-medium text-slate-900 md:text-6xl">
             Over 500 <br className="block md:hidden" /> million social impressions
           </h2>
           <p className="mt-6 text-lg tracking-tight text-slate-700">

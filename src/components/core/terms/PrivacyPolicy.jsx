@@ -11,9 +11,9 @@ const PrivacyPolicy = () => {
         consumer users of this website. This policy establishes how we will treat your personal information, so it is
         necessary for you to familiarize yourself with it.
       </p>
-      <ol className="list-decimal list-inside space-y-6">
+      <ol className="list-inside list-decimal space-y-6">
         <li>
-          <h3 className="inline-flex font-semibold mb-4">TYPE OF INFORMATION THAT WE STORE</h3>
+          <h3 className="mb-4 inline-flex font-semibold">TYPE OF INFORMATION THAT WE STORE</h3>
           <p className="mb-4">
             Statisense guarantees the total protection of the personal information of its visitors as well as that of
             its clients. We do not collect personal information from website visitors except in cases where information
@@ -39,7 +39,7 @@ const PrivacyPolicy = () => {
           </div>
         </li>
         <li>
-          <h3 className="inline-flex font-semibold mb-4">USE OF COOKIES</h3>
+          <h3 className="mb-4 inline-flex font-semibold">USE OF COOKIES</h3>
           <p className="mb-4">
             Statisense (statisense.co) uses cookies (data files stored on your hard drive by a website) each time you
             access our online platform. We use two types of cookies:
@@ -62,7 +62,7 @@ const PrivacyPolicy = () => {
           </div>
         </li>
         <li>
-          <h3 className="inline-flex font-semibold mb-4">WITH WHOM WE SHARE THE INFORMATION OBTAINED</h3>
+          <h3 className="mb-4 inline-flex font-semibold">WITH WHOM WE SHARE THE INFORMATION OBTAINED</h3>
           <p className="mb-4">
             Statisense does NOT obtain, collect, or administer any personal information related to your race, ethnicity,
             religion, philosophical practices, beliefs, personal or sexual life, political opinions, criminal records,
@@ -86,9 +86,9 @@ const PrivacyPolicy = () => {
           </p>
         </li>
         <li>
-          <h3 className="inline-flex font-semibold mb-4">WHY WE STORE YOUR INFORMATION</h3>
+          <h3 className="mb-4 inline-flex font-semibold">WHY WE STORE YOUR INFORMATION</h3>
           <p className="mb-4">Among the reasons we store your information, we collect and store it for:</p>
-          <ul className="list-disc list-inside mb-4 ml-6">
+          <ul className="mb-4 ml-6 list-inside list-disc">
             <li>
               To be able to share information for legal, security or protection purposes in accordance with the law.
             </li>
@@ -99,7 +99,7 @@ const PrivacyPolicy = () => {
             </li>
           </ul>
           <p className="mb-4">Similarly, we may use the information obtained to:</p>
-          <ul className="list-disc list-inside mb-4 ml-6">
+          <ul className="mb-4 ml-6 list-inside list-disc">
             <li>Understand, study and analyze the preferences, trends and behavior of our users.</li>
             <li>
               Understand, study and analyze the way in which users interact with our platform and improve the quality of
@@ -119,7 +119,7 @@ const PrivacyPolicy = () => {
           </ul>
         </li>
         <li>
-          <h3 className="inline-flex font-semibold mb-4">DATA SECURITY:</h3>
+          <h3 className="mb-4 inline-flex font-semibold">DATA SECURITY:</h3>
           <p className="mb-4">
             Your data is safe with us. Statisense takes all necessary precautions to avoid any type of loss,
             destruction, alteration or misuse of your data and personal information. However, keep in mind that this
@@ -128,7 +128,7 @@ const PrivacyPolicy = () => {
           </p>
         </li>
         <li>
-          <h3 className="inline-flex font-semibold mb-4">THIRD PARTY WEBSITES</h3>
+          <h3 className="mb-4 inline-flex font-semibold">THIRD PARTY WEBSITES</h3>
           <p className="mb-4">
             Our website (statisense.co) has links or links that lead directly to other websites. We are NOT responsible
             for what happens with your information on those websites, nor are we responsible for the privacy policies of
@@ -137,7 +137,7 @@ const PrivacyPolicy = () => {
         </li>
       </ol>
       <div>
-        <h3 className="inline-flex font-semibold mb-4">CHANGES AND IMPROVEMENTS IN OUR PRIVACY POLICY</h3>
+        <h3 className="mb-4 inline-flex font-semibold">CHANGES AND IMPROVEMENTS IN OUR PRIVACY POLICY</h3>
         <p className="mb-4">
           The terms, clauses and information presented in this privacy policy document may face changes as time
           progresses and we change some of our conditions. Statisense reserves the right to do so, and emphasizes the
@@ -147,7 +147,7 @@ const PrivacyPolicy = () => {
         </p>
       </div>
       <div>
-        <h3 className="inline-flex font-semibold mb-4">CONTACT INFORMATION</h3>
+        <h3 className="mb-4 inline-flex font-semibold">CONTACT INFORMATION</h3>
         <p className="mb-4">
           For comments and questions about our privacy policy, contact us through the following address and phone
           number:
@@ -156,7 +156,7 @@ const PrivacyPolicy = () => {
           <br />
           Address: 1038B, Ologun Agbaje Street, Off Adeola Odeku,Victoria Island, Lagos, Nigeria.
           <br />
-          <a href="tel:+2349018001800" className="opacity-70 inline-flex mt-2">
+          <a href="tel:+2349018001800" className="mt-2 inline-flex opacity-70">
             +2349018001800
           </a>
         </p>

@@ -41,21 +41,21 @@ const Verify = () => {
         <title>Verify Newsletter Email • Statisense</title>
         <DefaultHeadTags />
       </Head>
-      <div className="min-h-screen w-full bg-slate-100 flex flex-col">
-        <div className="bg-white shadow-md rounded-2xl p-16 my-auto w-full min-h-[300px] max-w-lg mx-auto flex flex-col">
+      <div className="flex min-h-screen w-full flex-col bg-slate-100">
+        <div className="mx-auto my-auto flex min-h-[300px] w-full max-w-lg flex-col rounded-2xl bg-white p-16 shadow-md">
           {isLoading ? (
-            <div className="flex flex-col items-center justify-center my-auto">
+            <div className="my-auto flex flex-col items-center justify-center">
               <Loader />
               <p className="mt-5">Verifying..</p>
             </div>
           ) : (
             <>
               {view === 'error' && (
-                <div className="text-center flex flex-col items-center justify-center my-auto">
-                  <div className="w-20 h-20 rounded-full grid place-items-center bg-red-600 text-white">
+                <div className="my-auto flex flex-col items-center justify-center text-center">
+                  <div className="grid h-20 w-20 place-items-center rounded-full bg-red-600 text-white">
                     <IconLinkOff size="44" />
                   </div>
-                  <p className="text-2xl font-semibold max-w-xs mt-8">{error || 'Invalid url'}</p>
+                  <p className="mt-8 max-w-xs text-2xl font-semibold">{error || 'Invalid url'}</p>
                   <Link href={'/'}>
                     <Button variant="outlined" leftIcon={<IconArrowLeft />} className="mt-10">
                       Return to website
@@ -64,12 +64,12 @@ const Verify = () => {
                 </div>
               )}
               {view === 'success' && (
-                <div className="text-center flex flex-col items-center justify-center my-auto">
-                  <div className="w-20 h-20 rounded-full grid place-items-center bg-green-600 text-white">
+                <div className="my-auto flex flex-col items-center justify-center text-center">
+                  <div className="grid h-20 w-20 place-items-center rounded-full bg-green-600 text-white">
                     <IconMailCheck size="44" />
                   </div>
-                  <h2 className="text-3xl font-semibold max-w-xs mt-8">You are now subscribed 🥳</h2>
-                  <p className="text-lg mt-4 max-w-md">
+                  <h2 className="mt-8 max-w-xs text-3xl font-semibold">You are now subscribed 🥳</h2>
+                  <p className="mt-4 max-w-md text-lg">
                     Your email address has been confirmed. You are now subscribed to Statisense weekly insights
                   </p>
                   <Link href={'/'}>

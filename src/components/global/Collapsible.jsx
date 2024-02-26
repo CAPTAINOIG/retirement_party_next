@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { IconChevronRight } from '@tabler/icons-react';
+import { cn } from '@/lib/utils';
 
 const Collapsible = ({ header, content }) => {
   const [expanded, setExpanded] = useState(false);
@@ -11,21 +11,18 @@ const Collapsible = ({ header, content }) => {
     <div className="overflow-hidden">
       <div
         onClick={() => setExpanded((v) => !v)}
-        className={classNames('flex justify-between items-center cursor-pointer px-6 py-4', {
+        className={cn('flex cursor-pointer items-center justify-between px-6 py-4', {
           'border-accent-400': expanded,
         })}
       >
         {header}
         <div>
           <div
-            className={classNames('w-8 h-8 rounded-full border flex items-center justify-center', {
-              'bg-primary-700 text-white border-0': expanded,
+            className={cn('flex h-8 w-8 items-center justify-center rounded-full border', {
+              'border-0 bg-primary-700 text-white': expanded,
             })}
           >
-            <IconChevronRight
-              size="20"
-              className={classNames('transition-all duration-300', { 'rotate-90': expanded })}
-            />
+            <IconChevronRight size="20" className={cn('transition-all duration-300', { 'rotate-90': expanded })} />
           </div>
         </div>
       </div>

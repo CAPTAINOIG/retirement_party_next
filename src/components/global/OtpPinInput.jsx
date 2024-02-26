@@ -1,5 +1,5 @@
 import React, { forwardRef, useImperativeHandle, useRef } from 'react';
-import classNames from 'classnames';
+import { cn } from '@/lib/utils';
 
 const OtpPinInput = ({ disabled, length = 6, onDone }, ref) => {
   const parent = useRef(null);
@@ -59,7 +59,7 @@ const OtpPinInput = ({ disabled, length = 6, onDone }, ref) => {
   };
 
   return (
-    <div ref={parent} className="w-full grid grid-cols-6 gap-2 md:gap-4" onInput={handleInput}>
+    <div ref={parent} className="grid w-full grid-cols-6 gap-2 md:gap-4" onInput={handleInput}>
       {Array(length)
         .fill(null)
         .map((_, i) => (
@@ -70,9 +70,9 @@ const OtpPinInput = ({ disabled, length = 6, onDone }, ref) => {
             onFocus={handleFocus}
             onKeyDown={handleKeydown}
             onPaste={handlePaste}
-            className={classNames(
-              'inline-flex bg-transparent px-2 py-4 sm:px-2 sm:py-5 rounded-3xl border border-zinc-300 focus:ring focus:ring-primary-100 text-xl text-center',
-              { 'opacity-60 pointer-events-none': disabled }
+            className={cn(
+              'inline-flex rounded-3xl border border-zinc-300 bg-transparent px-2 py-4 text-center text-xl focus:ring focus:ring-primary-100 sm:px-2 sm:py-5',
+              { 'pointer-events-none opacity-60': disabled }
             )}
           />
         ))}

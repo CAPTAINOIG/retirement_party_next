@@ -30,12 +30,12 @@ const InsightsOnTheGo = () => {
   return (
     <div>
       <div className="container">
-        <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
-          <div className="relative md:col-span-6 order-1 md:order-none">
-            <h2 className="text-4xl md:text-6xl font-medium leading-tight md:leading-[1.1] max-w-lg">
+        <div className="grid items-center gap-12 md:grid-cols-12 md:gap-16">
+          <div className="relative order-1 md:order-none md:col-span-6">
+            <h2 className="max-w-lg text-4xl font-medium leading-tight md:text-6xl md:leading-[1.1]">
               Get insights on various topics on the go.
             </h2>
-            <p className="mt-6 text-base md:text-lg max-w-sm">
+            <p className="mt-6 max-w-sm text-base md:text-lg">
               Chat with Bambi, an AI assistant to get insights on topics like economy, business, education, election etc
             </p>
             <Link href={'/insights'}>
@@ -44,25 +44,25 @@ const InsightsOnTheGo = () => {
               </Button>
             </Link>
           </div>
-          <div className="relative md:col-span-4 flex md:justify-center w-full overflow-hidden md:overflow-visible py-4">
+          <div className="relative flex w-full overflow-hidden py-4 md:col-span-4 md:justify-center md:overflow-visible">
             <div className="relative w-3/4 md:w-full">
               <div className="relative">
-                <div className="hidden md:block absolute animate-bounce bg-slate-100 rounded-[1.2rem] top-[5rem] left-[-5rem] px-8 py-4">
-                  <div className="flex items-center gap-4 my-3">
+                <div className="absolute left-[-5rem] top-[5rem] hidden animate-bounce rounded-[1.2rem] bg-slate-100 px-8 py-4 md:block">
+                  <div className="my-3 flex items-center gap-4">
                     <IconFileInvoice className="text-blue-600" size="20" />
                     <p className="max-w-sm">Infographics on Africa</p>
                   </div>
-                  <div className="flex items-center gap-4 my-3">
+                  <div className="my-3 flex items-center gap-4">
                     <IconFolders className="text-teal-600" size="20" />
                     <p className="max-w-sm">Africa</p>
                   </div>
-                  <div className="flex items-center gap-4 my-3">
+                  <div className="my-3 flex items-center gap-4">
                     <IconCalendar className="text-red-600" size="20" />
                     <p className="max-w-sm">2023</p>
                   </div>
                 </div>
-                <div className="hidden md:block absolute min-h-[250px] w-[400px] bg-slate-100 rounded-[1.2rem] bottom-[5rem] right-[-15rem] px-8 py-4">
-                  <div className="flex items-center gap-2 my-3">
+                <div className="absolute bottom-[5rem] right-[-15rem] hidden min-h-[250px] w-[400px] rounded-[1.2rem] bg-slate-100 px-8 py-4 md:block">
+                  <div className="my-3 flex items-center gap-2">
                     <IconClock size="20" />
                     <p className="max-w-sm">Date posted: Aug 16, 2023</p>
                   </div>

@@ -18,7 +18,7 @@ const About = () => {
       </Head>
       <div className="bg-slate-50">
         <PageHeader title="About us" append={<div className="h-4"></div>} />
-        <div className="pb-24 pt-16 md:pt-28 md:pb-32">
+        <div className="pb-24 pt-16 md:pb-32 md:pt-28">
           <WhoWeAre />
           <div className="mt-28 md:mt-40">
             <WhatWeDo />

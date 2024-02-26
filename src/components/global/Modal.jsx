@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import classNames from 'classnames';
 import Backdrop from './Backdrop.jsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import IconButton from './IconButton.jsx';
 import PropTypes from 'prop-types';
 import { IconX } from '@tabler/icons-react';
+import { cn } from '@/lib/utils';
 
 const Modal = ({ isOpen, title, padding = true, onClose, children, size = 'md' }) => {
   useEffect(() => {
@@ -47,14 +47,14 @@ const Modal = ({ isOpen, title, padding = true, onClose, children, size = 'md' }
             initial="hidden"
             animate="visible"
             exit="exit"
-            className={classNames('w-full overflow-hidden mx-auto relative rounded-2xl bg-white min-h-52', {
+            className={cn('relative mx-auto min-h-52 w-full overflow-hidden rounded-2xl bg-white', {
               'p-8': padding,
               'max-w-3xl': size === 'md',
               'max-w-lg': size === 'sm',
             })}
           >
             {!!title && (
-              <div className="flex items-center justify-between mb-10">
+              <div className="mb-10 flex items-center justify-between">
                 <h3 className="text-xl font-semibold">{title}</h3>
                 <IconButton
                   onClick={onClose}

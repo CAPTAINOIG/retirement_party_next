@@ -149,40 +149,40 @@ const ChatSimulation = () => {
   };
 
   return (
-    <div ref={ref} className="h-[400px] md:h-[550px] overflow-hidden bg-white shadow rounded-[24px] p-10 relative">
+    <div ref={ref} className="relative h-[400px] overflow-hidden rounded-[24px] bg-white p-10 shadow md:h-[550px]">
       <div ref={section} className={`duration-500 ease-in-out`}>
         <div className="flex items-center justify-end">
           <div className="flex items-center gap-3">
-            <div className="bg-[#F1F5F9] p-6 rounded-[12px]">
+            <div className="rounded-[12px] bg-[#F1F5F9] p-6">
               <p className="text-base md:text-lg">Hello Bambi, I have a document for you</p>
             </div>
             <img className="w-[50px]" src="/images/face-one.png" alt="face one" />
           </div>
         </div>
         <div className="my-8 w-[80%]">
-          <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
+          <div className="min-h-[70px] rounded-[12px] bg-[#F1F5F9] p-6">
             <p ref={el} className="text-base md:text-lg"></p>
           </div>
         </div>
         <div className={`mb-8 items-center justify-end ${completed >= 1 ? 'flex' : 'hidden'}`}>
           <div className="flex items-end gap-3">
-            <img alt="img" className="shadow rounded-lg w-[80%]" src="/images/9.png" />
+            <img alt="img" className="w-[80%] rounded-lg shadow" src="/images/9.png" />
             <img className="w-[50px]" src="/images/face-one.png" alt="face one" />
           </div>
         </div>
         <div className={`mb-8 w-[80%] ${completed >= 2 ? 'block' : 'hidden'}`}>
-          <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
+          <div className="min-h-[70px] rounded-[12px] bg-[#F1F5F9] p-6">
             <p ref={sect} className="text-base md:text-lg"></p>
           </div>
         </div>
         <div className={`mb-8 w-[80%] ${completed >= 3 ? 'block' : 'hidden'}`}>
-          <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
+          <div className="min-h-[70px] rounded-[12px] bg-[#F1F5F9] p-6">
             <p ref={sectTwo} className="text-base md:text-lg"></p>
           </div>
         </div>
         <div className={`mb-8 items-center justify-end ${completed >= 4 ? 'flex' : 'hidden'}`}>
           <div className="flex items-center gap-3">
-            <div className="bg-[#F1F5F9] p-6 rounded-[12px]">
+            <div className="rounded-[12px] bg-[#F1F5F9] p-6">
               <p className="text-base md:text-lg">
                 Gimme a summary of Bank earnings <br /> from this data
               </p>
@@ -191,53 +191,53 @@ const ChatSimulation = () => {
           </div>
         </div>
         <div className={`mb-8 w-[80%] ${completed >= 5 ? 'block' : 'hidden'}`}>
-          <div className="bg-[#F1F5F9] p-6 rounded-[24px] min-h-[210px]">
+          <div className="min-h-[210px] rounded-[24px] bg-[#F1F5F9] p-6">
             <p ref={sectThree} className="text-base md:text-lg"></p>
           </div>
         </div>
         <div className={`mb-8 items-center justify-end ${completed >= 6 ? 'flex' : 'hidden'}`}>
           <div className="flex items-center gap-3">
-            <div className="bg-[#F1F5F9] p-6 rounded-[12px]">
+            <div className="rounded-[12px] bg-[#F1F5F9] p-6">
               <p className="text-base md:text-lg">Give me the infographics</p>
             </div>
             <img className="w-[50px]" src="/images/face-one.png" alt="face-one" />
           </div>
         </div>
         <div className={`mb-8 w-[80%] ${completed >= 7 ? 'block' : 'hidden'}`}>
-          <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
+          <div className="min-h-[70px] rounded-[12px] bg-[#F1F5F9] p-6">
             <p ref={sectFour} className="text-base md:text-lg"></p>
           </div>
         </div>
         <div className={`mb-8 items-center justify-start ${completed >= 8 ? 'flex' : 'hidden'}`}>
           <div className="flex items-center gap-3">
-            <img alt="img" className="shadow rounded-lg w-full" src="/images/7.png" />
+            <img alt="img" className="w-full rounded-lg shadow" src="/images/7.png" />
           </div>
         </div>
         <div className={`mb-8 items-center justify-end ${completed >= 9 ? 'flex' : 'hidden'}`}>
           <div className="flex items-center gap-3">
-            <div className="bg-[#F1F5F9] p-6 rounded-[12px]">
+            <div className="rounded-[12px] bg-[#F1F5F9] p-6">
               <p className="text-base md:text-lg">Awesome</p>
             </div>
             <img className="w-[50px]" src="/images/face-one.png" alt="face-one" />
           </div>
         </div>
         <div className={`mb-8 w-[80%] ${completed >= 10 ? 'block' : 'hidden'}`}>
-          <div className="bg-[#F1F5F9] p-6 rounded-[12px] min-h-[70px]">
+          <div className="min-h-[70px] rounded-[12px] bg-[#F1F5F9] p-6">
             <p ref={sectFive} className="text-base md:text-lg"></p>
           </div>
         </div>
       </div>
-      <div className="flex items-center space-x-4 absolute bottom-0 md:bottom-3 right-0 w-full p-6">
+      <div className="absolute bottom-0 right-0 flex w-full items-center space-x-4 p-6 md:bottom-3">
         <input
           disabled
           type="text"
           name="email"
           id="topbar-search"
-          className="bg-white border border-gray-300 text-base md:text-lg text-gray-500 rounded-[30px] block w-full pl-6 py-4 my-2"
+          className="my-2 block w-full rounded-[30px] border border-gray-300 bg-white py-4 pl-6 text-base text-gray-500 md:text-lg"
           placeholder="Type here ..."
         />
         <div>
-          <div className="h-[50px] w-[50px] rounded-full bg-[#2B5387] text-white p-4">
+          <div className="h-[50px] w-[50px] rounded-full bg-[#2B5387] p-4 text-white">
             <IconSend size="20" />
           </div>
         </div>

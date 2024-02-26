@@ -2,7 +2,7 @@ import React from 'react';
 
 const NoData = ({ icon, text }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-x-2 md:space-y-0 text-center rounded-3xl border-2 border-dashed border-zinc-300 py-16 px-8 text-zinc-500">
+    <div className="flex flex-col items-center justify-center space-y-2 rounded-3xl border-2 border-dashed border-zinc-300 px-8 py-16 text-center text-zinc-500 md:flex-row md:space-x-2 md:space-y-0">
       {!!icon && icon}
       <p>{text || 'No data'}</p>
     </div>

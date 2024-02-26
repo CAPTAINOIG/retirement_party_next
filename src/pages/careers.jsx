@@ -15,7 +15,7 @@ const Careers = () => {
       </Head>
       <div className="bg-slate-50">
         <PageHeader title="Careers at Statisense" append={<div className="h-4"></div>} />
-        <div className="py-20 md:py-28 space-y-28 md:space-y-36">
+        <div className="space-y-28 py-20 md:space-y-36 md:py-28">
           <JoinOurTeam />
           <OpenPositions />
         </div>

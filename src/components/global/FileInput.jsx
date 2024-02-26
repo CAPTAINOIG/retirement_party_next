@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { IconUpload } from '@tabler/icons-react';
+import { cn } from '@/lib/utils';
 
 const FileInput = forwardRef(
   ({ label, rightIcon, id, bordered = false, error, disabled, value, onChange, ...props }, ref) => {
@@ -13,16 +13,16 @@ const FileInput = forwardRef(
     return (
       <div className="flex flex-col">
         {!!label && (
-          <label htmlFor={id} className="text-sm mb-2">
+          <label htmlFor={id} className="mb-2 text-sm">
             {label}
           </label>
         )}
         <div className="relative flex">
           <label
-            className={classNames(
-              'cursor-pointer px-4 py-2 rounded-md w-full transition duration-300 pr-12 focus-within:ring-2 ring-offset-2 ring-primary-800 ring-opacity-30',
-              { 'opacity-60 pointer-events-none': disabled },
-              { 'bg-transparent border border-gray-400': bordered },
+            className={cn(
+              'w-full cursor-pointer rounded-md px-4 py-2 pr-12 ring-primary-800 ring-opacity-30 ring-offset-2 transition duration-300 focus-within:ring-2',
+              { 'pointer-events-none opacity-60': disabled },
+              { 'border border-gray-400 bg-transparent': bordered },
               { 'bg-slate-200': !bordered }
             )}
             tabIndex="1"
@@ -38,11 +38,11 @@ const FileInput = forwardRef(
               className="absolute w-[1px] opacity-0"
             />
           </label>
-          <div className="absolute top-1/2 -translate-y-1/2 right-2 w-8 h-8 rounded-md flex items-center justify-center pointer-events-none">
+          <div className="pointer-events-none absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md">
             <IconUpload size="20" />
           </div>
         </div>
-        {!!error && <div className="text-sm text-red-500 mt-1">{error}</div>}
+        {!!error && <div className="mt-1 text-sm text-red-500">{error}</div>}
       </div>
     );
   }
