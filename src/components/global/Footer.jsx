@@ -1,5 +1,12 @@
 import Link from 'next/link';
-import { IconBrandFacebook, IconBrandInstagram, IconBrandX } from '@tabler/icons-react';
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandWhatsapp,
+  IconBrandX,
+  IconClock,
+  IconMail,
+} from '@tabler/icons-react';
 import React from 'react';
 import Logo from '@/components/core/shared/Logo';
 import products from '@/lib/products';
@@ -11,13 +18,33 @@ const Footer = () => {
     <>
       <footer className="bg-[#11100f] bg-gradient-to-br from-gray-900 to-gray-950 py-20 text-zinc-200">
         <div className="container">
-          <div className="grid gap-20 pb-32 pt-10 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
+          <div className="grid gap-20 pb-20 pt-10 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
             <div className="md:col-span-2">
               <Logo light />
-              <p className="mt-8 max-w-xs leading-7 opacity-70">
-                Statisense is the leading datatech company helping simplify data and documents for businesses, consumers
-                and governments.
-              </p>
+              <div className="mt-8 grid grid-cols-1 gap-3">
+                <div className="flex items-center space-x-3">
+                  <div>
+                    <IconMail size="20" />
+                  </div>
+                  <a href="mailto:info@statisense.com.ng" target="_blank" className="flex font-medium">
+                    info@statisense.com.ng
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div>
+                    <IconBrandWhatsapp size="20" />
+                  </div>
+                  <a href="https://wa.me/+2349055550090" target="_blank" className="flex font-medium">
+                    +2349055550090
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div>
+                    <IconClock size="20" />
+                  </div>
+                  <div className="flex font-medium">Mon-Fri 8:am-6:pm</div>
+                </div>
+              </div>
             </div>
             <div>
               <h6 className="font-medium">Products</h6>
@@ -25,11 +52,7 @@ const Footer = () => {
                 {products
                   .filter((p) => p.categories.includes('featured'))
                   .map((p) => (
-                    <Link
-                      key={p.slug}
-                      href={`${APP_URL}${p.dashboardLink}`}
-                      className="opacity-70 hover:text-primary-300"
-                    >
+                    <Link key={p.slug} href={`${APP_URL}${p.dashboardLink}`} className="hover:text-primary-300">
                       {p.name}
                     </Link>
                   ))}
@@ -38,13 +61,13 @@ const Footer = () => {
             <div>
               <h6 className="font-medium">Company</h6>
               <div className="mt-6 flex flex-col space-y-4">
-                <Link href={'/about'} className="opacity-70 hover:text-primary-300">
+                <Link href={'/about'} className="hover:text-primary-300">
                   About us
                 </Link>
-                <Link href={'/careers'} className="opacity-70 hover:text-primary-300">
+                <Link href={'/careers'} className="hover:text-primary-300">
                   Careers
                 </Link>
-                <Link href={'/terms'} className="opacity-70 hover:text-primary-300">
+                <Link href={'/terms'} className="hover:text-primary-300">
                   Privacy & Terms
                 </Link>
               </div>
@@ -52,14 +75,23 @@ const Footer = () => {
             <div>
               <h6 className="font-medium">Support</h6>
               <div className="mt-6 flex flex-col space-y-4">
-                <Link href={'/about#faq'} className="opacity-70 hover:text-primary-300">
+                <Link href={'/about#faq'} className="hover:text-primary-300">
                   FAQs
                 </Link>
-                <Link href={'/contact'} className="opacity-70 hover:text-primary-300">
+                <Link href={'/contact'} className="hover:text-primary-300">
                   Contact Us
                 </Link>
               </div>
             </div>
+          </div>
+
+          <div className="mb-10">
+            <p>
+              The Statisense Consult Limited (Statisense) is a pioneering datatech company at the forefront of
+              revolutionizing how businesses, consumers, and governments interact with data and documents. With
+              cutting-edge technologies and innovative solutions, Statisense is dedicated to simplifying the often
+              complex and overwhelming world of data and information management.
+            </p>
           </div>
 
           <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
