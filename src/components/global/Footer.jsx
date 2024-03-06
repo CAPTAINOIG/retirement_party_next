@@ -87,7 +87,7 @@ const Footer = () => {
 
           <div className="mb-10">
             <p>
-              The Statisense Consult Limited (Statisense) is a pioneering datatech company at the forefront of
+              THE STATISENSE CONSULT LIMITED (Statisense) is a pioneering datatech company at the forefront of
               revolutionizing how businesses, consumers, and governments interact with data and documents. With
               cutting-edge technologies and innovative solutions, Statisense is dedicated to simplifying the often
               complex and overwhelming world of data and information management.
