@@ -7,7 +7,8 @@ import useCountdown from '@/hooks/use-countdown';
 import Card from '@/components/global/Card';
 import Footer from '@/components/global/Footer';
 import Tabs from '@/components/global/Tabs';
-import ClientOnly from '@/components/global/ClientOnly';
+import { FaLaptop, FaUsers } from 'react-icons/fa6';
+import { FaCalendarAlt } from 'react-icons/fa';
 
 const Dica2024 = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -26,32 +27,38 @@ const Dica2024 = () => {
     {
       name: 'John Emeka Doe',
       image: 'https://mighty.tools/mockmind-api/content/abstract/32.jpg',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, quae.',
+      description: 'CEO Acme Limited',
+      category: 'Business',
     },
     {
       name: 'John Emeka Doe',
       image: 'https://mighty.tools/mockmind-api/content/abstract/46.jpg',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, quae.',
+      description: 'CEO Acme Limited',
+      category: 'Technology',
     },
     {
       name: 'John Emeka Doe',
       image: 'https://mighty.tools/mockmind-api/content/abstract/51.jpg',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, quae.',
+      description: 'CEO Acme Limited',
+      category: 'Government',
     },
     {
       name: 'John Emeka Doe',
       image: 'https://mighty.tools/mockmind-api/content/abstract/22.jpg',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, quae.',
+      description: 'CEO Acme Limited',
+      category: 'Banking',
     },
     {
       name: 'John Emeka Doe',
       image: 'https://mighty.tools/mockmind-api/content/abstract/9.jpg',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, quae.',
+      description: 'CEO Acme Limited',
+      category: 'Consulting',
     },
     {
       name: 'John Emeka Doe',
       image: 'https://mighty.tools/mockmind-api/content/abstract/10.jpg',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, quae.',
+      description: 'CEO Acme Limited',
+      category: 'Entertainment',
     },
   ];
 
@@ -73,13 +80,14 @@ const Dica2024 = () => {
         <div className="relative overflow-hidden bg-[#11100f] pb-6 pt-36 md:pb-32 md:pt-60">
           <div className="bg-tw-dark absolute inset-0 min-h-screen scale-125 bg-cover opacity-80"></div>
           <div className="container relative">
-            <div className="text-white">
+            <div className="max-w-[90%] text-white">
               <h1 className="text-[6rem] font-bold leading-none tracking-tight">
-                Join us as we Reimagine the Future of Data and AI
+                <span className="=uppercase flex text-[5.2rem] text-sky-500">#DICA2024</span>
+                Data Driven Africa: Are we still pretending?
               </h1>
-              <p className=" mt-8 max-w-[70%] text-xl opacity-70">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus aliquam architecto, aut debitis
-                delectus dolorem eaque enim fugiat.
+              <p className="mt-8 max-w-[70%] text-xl opacity-70">
+                Join us as we discuss advancing Africa through data intelligence powered consumers, businesses and
+                governments
               </p>
               <div className="mt-10 flex w-max items-center space-x-4 divide-x divide-white/10 rounded-3xl border border-white/10 bg-white/10 px-4">
                 <div className="flex flex-col px-4 py-8 text-center">
@@ -109,18 +117,55 @@ const Dica2024 = () => {
         <div className="relative">
           <div className="container">
             <h2 className="mb-16 max-w-4xl text-7xl font-bold">Things you'll get to know from this event</h2>
-            <div className="grid grid-cols-3 gap-10">
-              <Card className="p-8">
-                <h1 className="mb-3 text-xl font-semibold">Lorem ipsum dolor sit.</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, quae.</p>
+            <div className="grid grid-cols-2 gap-10">
+              <Card className="flex flex-col px-8 py-12">
+                <h1 className="text-2xl font-semibold">Prelude I</h1>
+                <div className="mt-4 flex items-center space-x-3">
+                  <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
+                    <FaCalendarAlt size="14" /> <span>July 2024</span>
+                  </div>
+                  <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
+                    <FaLaptop size="14" /> <span>Virtual</span>
+                  </div>
+                </div>
+                <p className="mt-4 text-lg">
+                  Our first virtual prelude will focus on foundational topics and set the stage for the main conference.
+                  Expect a series of webinars and interactive sessions designed to provide a comprehensive overview of
+                  current trends, tools, and techniques.
+                </p>
               </Card>
-              <Card className="p-8">
-                <h1 className="mb-3 text-xl font-semibold">Lorem ipsum dolor sit.</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, quae.</p>
+              <Card className="flex flex-col px-8 py-12">
+                <h1 className="text-2xl font-semibold">Prelude II</h1>
+                <div className="mt-4 flex items-center space-x-3">
+                  <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
+                    <FaCalendarAlt size="14" /> <span>August 2024</span>
+                  </div>
+                  <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
+                    <FaLaptop size="14" /> <span>Virtual</span>
+                  </div>
+                </div>
+                <p className="mt-4 text-lg">
+                  The second virtual prelude will dive deeper into advanced topics, featuring expert panels, case
+                  studies, and Q&A sessions. This is an excellent opportunity to gain deeper insights and prepare for
+                  the main event in September.
+                </p>
               </Card>
-              <Card className="p-8">
-                <h1 className="mb-3 text-xl font-semibold">Lorem ipsum dolor sit.</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, quae.</p>
+              <Card className="col-span-2 flex flex-col px-8 py-12">
+                <h1 className="text-2xl font-semibold">Main Conference</h1>
+                <div className="mt-4 flex items-center space-x-3">
+                  <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
+                    <FaCalendarAlt size="14" /> <span>September 2024</span>
+                  </div>
+                  <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
+                    <FaUsers size="14" /> <span>Physical</span>
+                  </div>
+                </div>
+                <p className="mt-4 text-lg">
+                  The main conference will be held in person, bringing together industry leaders, experts, and
+                  enthusiasts for a day of insightful presentations, networking opportunities, and hands-on workshops.
+                  This is a unique chance to engage with the community, explore the latest advancements in the field,
+                  and participate in discussions that will shape the future of our industry.
+                </p>
               </Card>
             </div>
           </div>
@@ -130,29 +175,32 @@ const Dica2024 = () => {
             <h2 className="mb-16 max-w-4xl text-7xl font-bold">Keynote Speakers</h2>
             <div className="grid grid-cols-3 gap-10">
               {speakers.map((s) => (
-                <div key="s.name">
-                  <img src={s.image} alt="Speaker 1" className="rounded-3xl" />
+                <div key={s.name}>
+                  <div className="relative">
+                    <img src={s.image} alt="Speaker 1" className="rounded-3xl" />
+                    <p className="absolute bottom-0 left-0 m-4 rounded-full bg-white/70 px-4 py-1 font-medium">
+                      {s.category}
+                    </p>
+                  </div>
                   <div className="mt-4">
                     <h1 className="text-xl font-semibold">{s.name}</h1>
-                    <p className="mt-2 leading-tight">{s.description}</p>
+                    <p className="mt-1 leading-tight">{s.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative hidden">
           <div className="container">
             <h2 className="mb-16 max-w-4xl text-7xl font-bold">Event Info & Schedule</h2>
-            <ClientOnly>
-              <Tabs
-                tabs={[
-                  { key: 'day1', name: 'Day 1' },
-                  { key: 'day2', name: 'Day 2' },
-                  { key: 'day3', name: 'Day 3' },
-                ]}
-              ></Tabs>
-            </ClientOnly>
+            <Tabs
+              tabs={[
+                { key: 'day1', name: 'Day 1' },
+                { key: 'day2', name: 'Day 2' },
+                { key: 'day3', name: 'Day 3' },
+              ]}
+            />
             <div className="grid grid-cols-1 gap-6">
               {[1, 2, 3, 4].map((n) => (
                 <Card key={n} className="flex items-center bg-white p-8">
@@ -173,6 +221,29 @@ const Dica2024 = () => {
                   </div>
                 </Card>
               ))}
+            </div>
+          </div>
+        </div>
+        <div className="relative">
+          <div className="container">
+            <div className="pattern-1 relative overflow-hidden rounded-3xl bg-slate-200 p-16">
+              <div className="relative z-[2]">
+                <h2 className="mb-16 max-w-4xl text-7xl font-bold">About us</h2>
+                <div className="space-y-10">
+                  <p className="text-xl">
+                    THE STATISENSE CONSULT LIMITED (Statisense) is a pioneering datatech company at the forefront of
+                    revolutionizing how businesses, consumers, and governments interact with data and documents. With
+                    cutting-edge technologies and innovative solutions, Statisense is dedicated to simplifying the often
+                    complex and overwhelming world of data and information management.
+                  </p>
+                  <p className="text-xl">
+                    STATISENSE is building Africa's most powerful AI for Data platform, revolutionizing how businesses,
+                    consumers, and governments use data to drive growth and scale. Statisense is achieving this by
+                    breaking down complex and overwhelming datasets into AI powered portable insights, simple enough for
+                    every African.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
