@@ -87,10 +87,10 @@ const Footer = () => {
 
           <div className="mb-10">
             <p>
-              THE STATISENSE CONSULT LIMITED (Statisense) is a pioneering datatech company at the forefront of
-              revolutionizing how businesses, consumers, and governments interact with data and documents. With
-              cutting-edge technologies and innovative solutions, Statisense is dedicated to simplifying the often
-              complex and overwhelming world of data and information management.
+              THE STATISENSE CONSULT LIMITED (Statisense) is building Africa's most powerful AI for Data platform,
+              revolutionizing how businesses, consumers, and governments use data to drive growth and scale. Statisense
+              is achieving this by breaking down complex and overwhelming datasets into AI powered portable insights,
+              simple enough for every African.
             </p>
           </div>
 
