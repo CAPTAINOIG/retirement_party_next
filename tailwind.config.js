@@ -40,7 +40,15 @@ module.exports = {
       backgroundImage: {
         hero: 'linear-gradient(rgb(0 0 0 / 85%),rgb(0 0 0 / 85%)), url(/images/8.jpg)',
       },
+      animation: {
+        'border-beam': 'border-beam calc(var(--duration)*.3s) infinite linear',
+      },
       keyframes: {
+        'border-beam': {
+          '100%': {
+            'offset-distance': '100%',
+          },
+        },
         bounce: {
           '0%, 4%, 10%, 16%, 20%': { transform: 'translateY(0)' },
           '8%': { transform: 'translateY(-20px)' },

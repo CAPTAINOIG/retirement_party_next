@@ -9,6 +9,7 @@ import Footer from '@/components/global/Footer';
 import Tabs from '@/components/global/Tabs';
 import { FaLaptop, FaUsers } from 'react-icons/fa6';
 import { FaCalendarAlt } from 'react-icons/fa';
+import { BorderBeam } from '@/components/global/BorderBeam';
 
 const Dica2024 = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,45 +26,39 @@ const Dica2024 = () => {
 
   const speakers = [
     {
-      name: 'John Emeka Doe',
+      name: 'Speaker 1',
       image: 'https://mighty.tools/mockmind-api/content/abstract/32.jpg',
-      description: 'CEO Acme Limited',
-      category: 'Business',
+      description: 'Business',
     },
     {
-      name: 'John Emeka Doe',
+      name: 'Speaker 2',
       image: 'https://mighty.tools/mockmind-api/content/abstract/46.jpg',
-      description: 'CEO Acme Limited',
-      category: 'Technology',
+      description: 'Technology',
     },
     {
-      name: 'John Emeka Doe',
+      name: 'Speaker 3',
       image: 'https://mighty.tools/mockmind-api/content/abstract/51.jpg',
-      description: 'CEO Acme Limited',
-      category: 'Government',
+      description: 'Government',
     },
     {
-      name: 'John Emeka Doe',
+      name: 'Speaker 4',
       image: 'https://mighty.tools/mockmind-api/content/abstract/22.jpg',
-      description: 'CEO Acme Limited',
-      category: 'Banking',
+      description: 'Banking',
     },
     {
-      name: 'John Emeka Doe',
+      name: 'Speaker 5',
       image: 'https://mighty.tools/mockmind-api/content/abstract/9.jpg',
-      description: 'CEO Acme Limited',
-      category: 'Consulting',
+      description: 'Consulting',
     },
     {
-      name: 'John Emeka Doe',
+      name: 'Speaker 6',
       image: 'https://mighty.tools/mockmind-api/content/abstract/10.jpg',
-      description: 'CEO Acme Limited',
-      category: 'Entertainment',
+      description: 'Entertainment',
     },
   ];
 
   return (
-    <>
+    <div suppressHydrationWarning>
       <div
         className={cn('fixed left-0 top-0 z-10 w-full py-10 transition-all duration-300', {
           'bg-white py-5 shadow': scrolled,
@@ -116,11 +111,11 @@ const Dica2024 = () => {
         </div>
         <div className="relative">
           <div className="container">
-            <h2 className="mb-16 max-w-4xl text-7xl font-bold">Things you'll get to know from this event</h2>
-            <div className="grid grid-cols-2 gap-10">
+            <h2 className="mb-16 max-w-4xl text-7xl font-bold">Mark Your Calendar: Upcoming Event Series</h2>
+            <div className="grid grid-cols-3 gap-10">
               <Card className="flex flex-col px-8 py-12">
                 <h1 className="text-2xl font-semibold">Prelude I</h1>
-                <div className="mt-4 flex items-center space-x-3">
+                <div className="mt-6 flex items-center space-x-3">
                   <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
                     <FaCalendarAlt size="14" /> <span>July 2024</span>
                   </div>
@@ -136,7 +131,7 @@ const Dica2024 = () => {
               </Card>
               <Card className="flex flex-col px-8 py-12">
                 <h1 className="text-2xl font-semibold">Prelude II</h1>
-                <div className="mt-4 flex items-center space-x-3">
+                <div className="mt-6 flex items-center space-x-3">
                   <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
                     <FaCalendarAlt size="14" /> <span>August 2024</span>
                   </div>
@@ -150,9 +145,10 @@ const Dica2024 = () => {
                   the main event in September.
                 </p>
               </Card>
-              <Card className="col-span-2 flex flex-col px-8 py-12">
+              <Card className="relative flex flex-col  px-8 py-12">
+                <BorderBeam />
                 <h1 className="text-2xl font-semibold">Main Conference</h1>
-                <div className="mt-4 flex items-center space-x-3">
+                <div className="mt-6 flex items-center space-x-3">
                   <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
                     <FaCalendarAlt size="14" /> <span>September 2024</span>
                   </div>
@@ -161,10 +157,9 @@ const Dica2024 = () => {
                   </div>
                 </div>
                 <p className="mt-4 text-lg">
-                  The main conference will be held in person, bringing together industry leaders, experts, and
-                  enthusiasts for a day of insightful presentations, networking opportunities, and hands-on workshops.
-                  This is a unique chance to engage with the community, explore the latest advancements in the field,
-                  and participate in discussions that will shape the future of our industry.
+                  Join us in person for a dynamic day filled with keynote speeches, breakout sessions, and networking
+                  opportunities. Attendees will engage with thought leaders, explore cutting-edge developments, and gain
+                  valuable insights to drive their work forward.
                 </p>
               </Card>
             </div>
@@ -178,9 +173,6 @@ const Dica2024 = () => {
                 <div key={s.name}>
                   <div className="relative">
                     <img src={s.image} alt="Speaker 1" className="rounded-3xl" />
-                    <p className="absolute bottom-0 left-0 m-4 rounded-full bg-white/70 px-4 py-1 font-medium">
-                      {s.category}
-                    </p>
                   </div>
                   <div className="mt-4">
                     <h1 className="text-xl font-semibold">{s.name}</h1>
@@ -231,12 +223,6 @@ const Dica2024 = () => {
                 <h2 className="mb-16 max-w-4xl text-7xl font-bold">About us</h2>
                 <div className="space-y-10">
                   <p className="text-xl">
-                    THE STATISENSE CONSULT LIMITED (Statisense) is a pioneering datatech company at the forefront of
-                    revolutionizing how businesses, consumers, and governments interact with data and documents. With
-                    cutting-edge technologies and innovative solutions, Statisense is dedicated to simplifying the often
-                    complex and overwhelming world of data and information management.
-                  </p>
-                  <p className="text-xl">
                     STATISENSE is building Africa's most powerful AI for Data platform, revolutionizing how businesses,
                     consumers, and governments use data to drive growth and scale. Statisense is achieving this by
                     breaking down complex and overwhelming datasets into AI powered portable insights, simple enough for
@@ -251,7 +237,7 @@ const Dica2024 = () => {
           <Footer />
         </footer>
       </div>
-    </>
+    </div>
   );
 };
 
