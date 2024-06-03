@@ -13,7 +13,7 @@ import { BorderBeam } from '@/components/global/BorderBeam';
 
 const Dica2024 = () => {
   const [scrolled, setScrolled] = useState(false);
-  const { weeks, days, hours, minutes, seconds } = useCountdown('5/30/2024');
+  const { weeks, days, hours, minutes, seconds } = useCountdown('6/30/2024');
 
   useIsomorphicLayoutEffect(() => {
     const handleScroll = (e) => {
@@ -124,9 +124,8 @@ const Dica2024 = () => {
                   </div>
                 </div>
                 <p className="mt-4 text-lg">
-                  Our first virtual prelude will focus on foundational topics and set the stage for the main conference.
-                  Expect a series of webinars and interactive sessions designed to provide a comprehensive overview of
-                  current trends, tools, and techniques.
+                  Discover foundational topics through webinars and interactive sessions, setting the stage for the main
+                  conference.
                 </p>
               </Card>
               <Card className="flex flex-col px-8 py-12">
@@ -140,9 +139,8 @@ const Dica2024 = () => {
                   </div>
                 </div>
                 <p className="mt-4 text-lg">
-                  The second virtual prelude will dive deeper into advanced topics, featuring expert panels, case
-                  studies, and Q&A sessions. This is an excellent opportunity to gain deeper insights and prepare for
-                  the main event in September.
+                  Dive into advanced topics with expert panels, case studies, and Q&A sessions to prepare for the main
+                  event.
                 </p>
               </Card>
               <Card className="relative flex flex-col  px-8 py-12">
@@ -157,9 +155,8 @@ const Dica2024 = () => {
                   </div>
                 </div>
                 <p className="mt-4 text-lg">
-                  Join us in person for a dynamic day filled with keynote speeches, breakout sessions, and networking
-                  opportunities. Attendees will engage with thought leaders, explore cutting-edge developments, and gain
-                  valuable insights to drive their work forward.
+                  Join us in person for keynote speeches, breakout sessions, and networking to explore new developments
+                  and gain insights.
                 </p>
               </Card>
             </div>
