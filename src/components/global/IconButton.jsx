@@ -31,16 +31,16 @@ const classes = {
     },
   },
   primary: {
-    filled: 'bg-primary-600 hover:bg-primary-700 text-white focus:ring-4 focus:ring-primary-600 focus:ring-opacity-20',
+    filled: 'bg-primary-400 hover:bg-primary-700 text-white focus:ring-4 focus:ring-primary-400 focus:ring-opacity-20',
     outlined:
-      'border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-4 focus:ring-primary-600 focus:ring-opacity-20',
-    subtle: 'bg-primary-600 bg-opacity-10 text-primary-600 hover:bg-opacity-20',
-    text: 'bg-primary-600 bg-opacity-0 text-primary-600 hover:bg-opacity-10',
+      'border border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-white focus:ring-4 focus:ring-primary-400 focus:ring-opacity-20',
+    subtle: 'bg-primary-400 bg-opacity-10 text-primary-400 hover:bg-opacity-20',
+    text: 'bg-primary-400 bg-opacity-0 text-primary-400 hover:bg-opacity-10',
     loader: {
       filled: 'bg-white',
-      outlined: 'bg-primary-600',
-      text: 'bg-primary-600',
-      subtle: 'bg-primary-600',
+      outlined: 'bg-primary-400',
+      text: 'bg-primary-400',
+      subtle: 'bg-primary-400',
     },
   },
   accent: {

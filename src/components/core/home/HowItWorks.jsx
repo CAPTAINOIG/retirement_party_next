@@ -17,7 +17,7 @@ const HowItWorks = () => {
           <ul role="list" className="mt-16 grid gap-8 md:grid-cols-3">
             <li className="rounded-3xl bg-gray-900/70 px-10 py-10 md:px-10 md:py-12">
               <IconDatabase
-                className="mb-6 animate-[updown_1s_ease-in-out_infinite_alternate] text-primary-300/30"
+                className="mb-6 animate-[updown_1s_ease-in-out_infinite_alternate] text-primary-300"
                 size="48"
               />
               <h3 className="flex items-center text-lg font-medium md:text-xl">Plug your data</h3>
@@ -27,7 +27,7 @@ const HowItWorks = () => {
             </li>
             <li className="rounded-3xl bg-gray-900/70 px-10 py-10 md:px-10 md:py-12">
               <IconRobot
-                className="delay-two mb-6 animate-[updown_1.2s_ease-in-out_infinite_alternate] text-primary-300/30"
+                className="delay-two mb-6 animate-[updown_1.2s_ease-in-out_infinite_alternate] text-primary-300"
                 size="48"
               />
               <h3 className="flex items-center text-lg font-medium md:text-xl">AI takes over</h3>
@@ -35,7 +35,7 @@ const HowItWorks = () => {
             </li>
             <li className="rounded-3xl bg-gray-900/70 px-10 py-10 md:px-10 md:py-12">
               <IconMessage2
-                className="delay-four mb-6 animate-[updown_1.5s_ease-in-out_infinite_alternate] text-primary-300/30"
+                className="delay-four mb-6 animate-[updown_1.5s_ease-in-out_infinite_alternate] text-primary-300"
                 size="48"
               />
               <h3 className="flex items-center text-lg font-medium md:text-xl">Chat with Bambi</h3>
@@ -45,7 +45,7 @@ const HowItWorks = () => {
           <ul role="list" className="grid gap-8 md:grid-cols-6">
             <li className="rounded-3xl bg-gray-900/70 px-10 py-10 md:col-span-2 md:col-start-2 md:px-10 md:py-12">
               <IconChartInfographic
-                className="delay-six mb-6 animate-[updown_1.8s_ease-in-out_infinite_alternate] text-primary-300/30"
+                className="delay-six mb-6 animate-[updown_1.8s_ease-in-out_infinite_alternate] text-primary-300"
                 size="48"
               />
               <h3 className="flex items-center text-lg font-medium md:text-xl">View report</h3>
@@ -53,7 +53,7 @@ const HowItWorks = () => {
             </li>
             <li className="rounded-3xl bg-gray-900/70 px-10 py-10 md:col-span-2 md:px-10 md:py-12">
               <IconRepeat
-                className="delay-eight mb-6 animate-[updown_2s_ease-in-out_infinite_alternate] text-primary-300/30"
+                className="delay-eight mb-6 animate-[updown_2s_ease-in-out_infinite_alternate] text-primary-300"
                 size="48"
               />
               <h3 className="flex items-center text-lg font-medium md:text-xl">Repeat</h3>

@@ -52,7 +52,7 @@ const Footer = () => {
                 {products
                   .filter((p) => p.categories.includes('featured'))
                   .map((p) => (
-                    <Link key={p.slug} href={`${APP_URL}${p.dashboardLink}`} className="hover:text-primary-300">
+                    <Link key={p.slug} href={`${APP_URL}${p.dashboardLink}`} className="hover:text-primary-700">
                       {p.name}
                     </Link>
                   ))}
@@ -61,13 +61,13 @@ const Footer = () => {
             <div>
               <h6 className="font-medium">Company</h6>
               <div className="mt-6 flex flex-col space-y-4">
-                <Link href={'/about'} className="hover:text-primary-300">
+                <Link href={'/about'} className="hover:text-primary-700">
                   About us
                 </Link>
-                <Link href={'/careers'} className="hover:text-primary-300">
+                <Link href={'/careers'} className="hover:text-primary-700">
                   Careers
                 </Link>
-                <Link href={'/terms'} className="hover:text-primary-300">
+                <Link href={'/terms'} className="hover:text-primary-700">
                   Privacy & Terms
                 </Link>
               </div>
@@ -75,10 +75,10 @@ const Footer = () => {
             <div>
               <h6 className="font-medium">Support</h6>
               <div className="mt-6 flex flex-col space-y-4">
-                <Link href={'/about#faq'} className="hover:text-primary-300">
+                <Link href={'/about#faq'} className="hover:text-primary-700">
                   FAQs
                 </Link>
-                <Link href={'/contact'} className="hover:text-primary-300">
+                <Link href={'/contact'} className="hover:text-primary-700">
                   Contact Us
                 </Link>
               </div>

@@ -8,7 +8,7 @@ const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
 
 const Hero = () => {
   return (
-    <div className="to-primary-950 relative overflow-hidden bg-[#11100f] bg-gradient-to-br from-primary-900 pb-32 pt-48 md:pb-32 md:pt-52 md:text-center">
+    <div className="to-primary-950 relative overflow-hidden bg-[#11100f] bg-gradient-to-br from-primary-50 pb-32 pt-48 md:pb-32 md:pt-52 md:text-center">
       <div className="absolute inset-0 min-h-screen animate-wide bg-hero bg-cover bg-right opacity-60"></div>
       <div className="container relative z-10">
         <h1 className="font-display mx-auto max-w-[860px] text-[3.4rem] font-bold leading-[1.1] tracking-tight text-slate-300 sm:text-7xl md:text-[6.8rem] md:!leading-[1]">
