@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 ::selection {
   @apply bg-cyan-600 text-white;
 }
@@ -8,7 +12,7 @@
 
 html,
 body {
-  @apply w-full bg-white text-[15px];
+  @apply bg-background w-full text-[15px];
 }
 
 :root {

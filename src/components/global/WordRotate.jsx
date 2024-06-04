@@ -17,8 +17,6 @@ export default function WordRotate({
 }) {
   const [index, setIndex] = useState(0);
 
-  console.log({ index });
-
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);

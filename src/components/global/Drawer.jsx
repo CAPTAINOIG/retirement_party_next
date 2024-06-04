@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import Backdrop from './Backdrop.jsx';
 import { AnimatePresence, motion } from 'framer-motion';
-import IconButton from './IconButton.jsx';
 import { useMediaQuery } from 'react-responsive';
-import { IconX } from '@tabler/icons-react';
 import Portal from '@/components/global/Portal';
+import { Button } from '@nextui-org/react';
+import { TbX } from 'react-icons/tb';
 import { cn } from '@/lib/utils';
 
-const Drawer = ({ isOpen, title, padding = true, onClose, children }) => {
+const Drawer = ({ isOpen, title, padding = true, onClose, children, width = 550, className }) => {
   const isMobile = useMediaQuery({ maxWidth: 640 });
 
   useEffect(() => {
     if (isOpen) document.body.style.overflow = 'hidden';
-    else document.body.style.overflowY = 'auto';
+    else document.body.style.overflowY = 'initial';
   }, [isOpen]);
 
   const variants = {
@@ -46,29 +46,26 @@ const Drawer = ({ isOpen, title, padding = true, onClose, children }) => {
               initial="hidden"
               animate="visible"
               exit="exit"
+              style={{ maxWidth: `${width}px` }}
               className={cn(
-                'fixed bottom-0 right-0 top-0 z-[999] flex h-full w-full flex-col justify-end overflow-hidden sm:max-w-xl',
-                'pointer-events-none md:p-4'
+                'fixed bottom-0 right-0 top-0 z-[900] flex h-full w-full flex-col justify-end overflow-hidden',
+                'pointer-events-none'
               )}
             >
               <div
                 className={cn(
-                  'relative inset-x-0 bottom-0 h-min max-h-full overflow-y-auto overflow-x-hidden bg-white sm:h-full',
-                  'pointer-events-auto flex min-h-[50vh] flex-col rounded-t-[30px] md:rounded-l-[30px] md:rounded-r-[30px]',
-                  { 'p-8 md:p-10': padding }
+                  'dark:bg-default-50 relative inset-x-0 bottom-0 h-min max-h-full overflow-y-auto overflow-x-hidden bg-white sm:h-full',
+                  'pointer-events-auto flex min-h-[50vh] flex-col rounded-t-2xl md:rounded-l-2xl md:rounded-r-none',
+                  { 'p-8 md:p-10': padding },
+                  className
                 )}
               >
                 {!!title && (
                   <div className="mb-10 flex items-center justify-between">
                     <h3 className="text-xl font-semibold">{title}</h3>
-                    <IconButton
-                      onClick={onClose}
-                      rounded
-                      icon={<IconX size="20" />}
-                      size="sm"
-                      color="red"
-                      variant="outlined"
-                    />
+                    <Button onClick={onClose} isIconOnly size="sm" color="danger" variant="bordered" radius="full">
+                      <TbX size="20" />
+                    </Button>
                   </div>
                 )}
                 {children}

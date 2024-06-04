@@ -1,19 +1,14 @@
-import SendMessageForm from '@/components/core/contact/SendMessageForm';
+'use client';
+import React from 'react';
 import PageHeader from '@/components/core/shared/PageHeader';
 import ContactCategories from '@/components/core/contact/ContactCategories';
 import ConnectWithUs from '@/components/core/contact/ConnectWithUs';
-import DefaultLayout from '@/components/core/DefaultLayout';
-import Head from 'next/head';
-import DefaultHeadTags from '@/components/others/DefaultHeadTags';
+import SendMessageForm from '@/components/core/contact/SendMessageForm';
 
-const Contact = () => {
+const ContactPageContent = () => {
   return (
     <>
-      <Head>
-        <title>Get in touch • Statisense</title>
-        <DefaultHeadTags />
-      </Head>
-      <div className="bg-slate-50">
+      <div className="bg-slate-50 text-black">
         <PageHeader
           title="We'd love to hear from you"
           subtitle="Have any questions or feedback? We'd love to hear from you"
@@ -38,6 +33,4 @@ const Contact = () => {
   );
 };
 
-Contact.Layout = DefaultLayout;
-
-export default Contact;
+export default ContactPageContent;

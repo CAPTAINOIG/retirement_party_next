@@ -14,7 +14,11 @@ const Hero = () => {
         <h1 className="font-display mx-auto max-w-[860px] text-[3.4rem] font-bold leading-[1.1] tracking-tight text-slate-300 sm:text-7xl md:text-[6.8rem] md:!leading-[1]">
           Connecting
           <br />
-          <WordRotate words={['Generative AI', 'Banking AI', 'Identity AI', 'Markets AI']} duration={5000} />
+          <WordRotate
+            words={['Generative AI', 'Banking AI', 'Identity AI', 'Markets AI']}
+            duration={5000}
+            className="relative whitespace-nowrap bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
+          />
           to Africa's Data
         </h1>
         <p className="mx-auto mt-8 max-w-xl text-lg tracking-tight text-slate-400">

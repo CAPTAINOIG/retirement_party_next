@@ -1,22 +1,16 @@
+'use client';
+import React from 'react';
 import PageHeader from '@/components/core/shared/PageHeader';
 import WhoWeAre from '@/components/core/about/WhoWeAre';
 import WhatWeDo from '@/components/core/about/WhatWeDo';
 import WhyChooseUs from '@/components/core/about/WhyChooseUs';
 import Newsletter from '@/components/core/home/Newsletter';
 import FrequentlyAskedQuestions from '@/components/core/about/FrequentlyAskedQuestions';
-import React from 'react';
-import DefaultLayout from '@/components/core/DefaultLayout';
-import Head from 'next/head';
-import DefaultHeadTags from '@/components/others/DefaultHeadTags';
 
-const About = () => {
+const AboutPageContent = () => {
   return (
     <>
-      <Head>
-        <title>About us • Statisense</title>
-        <DefaultHeadTags />
-      </Head>
-      <div className="bg-slate-50">
+      <div className="bg-slate-50 text-black">
         <PageHeader title="About us" append={<div className="h-4"></div>} />
         <div className="pb-24 pt-16 md:pb-32 md:pt-28">
           <WhoWeAre />
@@ -36,6 +30,4 @@ const About = () => {
   );
 };
 
-About.Layout = DefaultLayout;
-
-export default About;
+export default AboutPageContent;

@@ -1,4 +1,5 @@
-import Head from 'next/head';
+'use client';
+import React from 'react';
 import Hero from '@/components/core/home/Hero';
 import OmniChannel from '@/components/core/home/OmniChannel';
 import ConvertYourData from '@/components/core/home/ConvertYourData';
@@ -8,17 +9,11 @@ import Categories from '@/components/core/home/Categories';
 import InsightsOnTheGo from '@/components/core/home/InsightsOnTheGo';
 import Newsletter from '@/components/core/home/Newsletter';
 import Testimonials from '@/components/core/home/Testimonials';
-import DefaultLayout from '@/components/core/DefaultLayout';
-import DefaultHeadTags from '@/components/others/DefaultHeadTags';
 
-const HomePage = () => {
+const HomePageContent = () => {
   return (
     <>
-      <Head>
-        <title>Statisense - Pioneering AI Data Company for Informed Business Decisions</title>
-        <DefaultHeadTags />
-      </Head>
-      <div className="bg-slate-100">
+      <div className="bg-slate-100 text-black">
         <Hero />
         <div className="relative overflow-hidden py-28 md:py-44 md:pb-48">
           <div className="space-y-28 md:space-y-56">
@@ -51,6 +46,4 @@ const HomePage = () => {
   );
 };
 
-HomePage.Layout = DefaultLayout;
-
-export default HomePage;
+export default HomePageContent;

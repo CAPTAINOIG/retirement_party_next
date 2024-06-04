@@ -1,39 +1,33 @@
+'use client';
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import PageHeader from '@/components/core/shared/PageHeader';
 import { Tab } from '@headlessui/react';
 import Card from '@/components/global/Card';
+import { cn } from '@/lib/utils';
 import TermsAndConditions from '@/components/core/terms/TermsAndConditions';
 import PrivacyPolicy from '@/components/core/terms/PrivacyPolicy';
-import DefaultLayout from '@/components/core/DefaultLayout';
-import Head from 'next/head';
-import DefaultHeadTags from '@/components/others/DefaultHeadTags';
-import { cn } from '@/lib/utils';
+import { useSearchParams } from 'next/navigation';
 
 const tabs = [
   { key: 'terms', name: 'Terms and conditions' },
   { key: 'privacy', name: 'Privacy policy' },
 ];
 
-const TermsAndPrivacy = () => {
+const TermsPageContent = () => {
+  const params = useSearchParams();
   const [index, setIndex] = useState(0);
-  const { query } = useRouter();
 
   useEffect(() => {
-    const t = query.t;
+    const t = params.get('t');
     if (t) {
       const i = tabs.findIndex((i) => i.key === t.toLowerCase());
       if (i !== -1) setIndex(i);
     }
-  }, [query]);
+  }, [params]);
 
   return (
     <>
-      <Head>
-        <title>Privacy & Terms • Statisense</title>
-        <DefaultHeadTags />
-      </Head>
-      <div className="bg-slate-50">
+      <div className="bg-slate-50 text-black">
         <PageHeader title="Privacy & Terms" append={<div className="h-4"></div>} />
         <div className="container pb-24 pt-16 md:pt-24 md:text-[1.1rem]">
           <Tab.Group selectedIndex={index} onChange={setIndex}>
@@ -75,6 +69,4 @@ const TermsAndPrivacy = () => {
   );
 };
 
-TermsAndPrivacy.Layout = DefaultLayout;
-
-export default TermsAndPrivacy;
+export default TermsPageContent;

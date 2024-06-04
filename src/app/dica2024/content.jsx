@@ -1,19 +1,23 @@
+'use client';
 import React, { useState } from 'react';
-import Button from '@/components/global/Button';
-import Logo from '@/components/core/shared/Logo';
-import { cn } from '@/lib/utils';
 import { useIsomorphicLayoutEffect } from 'react-use';
-import useCountdown from '@/hooks/use-countdown';
-import Card from '@/components/global/Card';
-import Footer from '@/components/global/Footer';
-import Tabs from '@/components/global/Tabs';
-import { FaLaptop, FaUsers } from 'react-icons/fa6';
+import { cn } from '@/lib/utils';
+import Logo from '@/components/core/shared/Logo';
 import { FaCalendarAlt } from 'react-icons/fa';
+import { FaLaptop, FaUsers } from 'react-icons/fa6';
 import { BorderBeam } from '@/components/global/BorderBeam';
+import Tabs from '@/components/global/Tabs';
+import Footer from '@/components/global/Footer';
+import { Button, Card, useDisclosure } from '@nextui-org/react';
+import CountdownTimer from '@/app/dica2024/CountdownTimer';
+import ClientOnly from '@/components/global/ClientOnly';
+import RegisterModal from '@/app/dica2024/RegisterModal';
+import { useTheme } from 'next-themes';
 
-const Dica2024 = () => {
+const DICA2024PageContent = () => {
+  const { resolvedTheme: theme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
-  const { weeks, days, hours, minutes, seconds } = useCountdown('6/30/2024');
+  const { isOpen: isRegisterModalOpen, onClose: onRegisterModalClose, onOpen: onRegisterModalOpen } = useDisclosure();
 
   useIsomorphicLayoutEffect(() => {
     const handleScroll = (e) => {
@@ -58,15 +62,22 @@ const Dica2024 = () => {
   ];
 
   return (
-    <div suppressHydrationWarning>
+    <>
       <div
-        className={cn('fixed left-0 top-0 z-10 w-full py-10 transition-all duration-300', {
-          'bg-white py-5 shadow': scrolled,
+        className={cn('fixed left-0 top-0 z-10 w-full border-b border-transparent py-10 transition-all duration-300', {
+          'border-default-100 bg-white py-5 shadow dark:bg-black': scrolled,
         })}
       >
         <div className="container flex items-center justify-between">
-          <Logo light={!scrolled} />
-          <Button size="xl" color={scrolled ? 'primary' : 'white'}>
+          <Logo light={!scrolled || theme === 'dark'} />
+          <Button
+            size="xl"
+            variant="solid"
+            color="primary"
+            className="h-auto px-8 py-3 text-lg"
+            radius="full"
+            onClick={onRegisterModalOpen}
+          >
             Book your seat
           </Button>
         </div>
@@ -84,28 +95,9 @@ const Dica2024 = () => {
                 Join us as we discuss advancing Africa through data intelligence powered consumers, businesses and
                 governments
               </p>
-              <div className="mt-10 flex w-max items-center space-x-4 divide-x divide-white/10 rounded-3xl border border-white/10 bg-white/10 px-4">
-                <div className="flex flex-col px-4 py-8 text-center">
-                  <span className="text-[5rem] font-medium leading-none tracking-tight">{weeks}</span>
-                  <span>Weeks</span>
-                </div>
-                <div className="flex flex-col px-4 py-8 text-center">
-                  <span className="text-[5rem] font-medium leading-none tracking-tight">{days}</span>
-                  <span>days</span>
-                </div>
-                <div className="flex flex-col px-4 py-8 text-center">
-                  <span className="text-[5rem] font-medium leading-none tracking-tight">{hours}</span>
-                  <span>hours</span>
-                </div>
-                <div className="flex flex-col px-4 py-8 text-center">
-                  <span className="text-[5rem] font-medium leading-none tracking-tight">{minutes}</span>
-                  <span>minutes</span>
-                </div>
-                <div className="flex flex-col px-4 py-8 text-center">
-                  <span className="text-[5rem] font-medium leading-none tracking-tight">{seconds}</span>
-                  <span>seconds</span>
-                </div>
-              </div>
+              <ClientOnly>
+                <CountdownTimer />
+              </ClientOnly>
             </div>
           </div>
         </div>
@@ -113,13 +105,13 @@ const Dica2024 = () => {
           <div className="container">
             <h2 className="mb-16 max-w-4xl text-7xl font-bold">Mark Your Calendar: Upcoming Event Series</h2>
             <div className="grid grid-cols-3 gap-10">
-              <Card className="flex flex-col px-8 py-12">
+              <Card className="relative flex flex-col px-8 py-12" shadow="sm">
                 <h1 className="text-2xl font-semibold">Prelude I</h1>
                 <div className="mt-6 flex items-center space-x-3">
-                  <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
+                  <div className="bg-default-200/50 flex items-center space-x-2 rounded-2xl px-4 py-2">
                     <FaCalendarAlt size="14" /> <span>July 2024</span>
                   </div>
-                  <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
+                  <div className="bg-default-200/50 flex items-center space-x-2 rounded-2xl px-4 py-2">
                     <FaLaptop size="14" /> <span>Virtual</span>
                   </div>
                 </div>
@@ -128,13 +120,13 @@ const Dica2024 = () => {
                   conference.
                 </p>
               </Card>
-              <Card className="flex flex-col px-8 py-12">
+              <Card className="relative flex flex-col px-8 py-12" shadow="sm">
                 <h1 className="text-2xl font-semibold">Prelude II</h1>
                 <div className="mt-6 flex items-center space-x-3">
-                  <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
+                  <div className="bg-default-200/50 flex items-center space-x-2 rounded-2xl px-4 py-2">
                     <FaCalendarAlt size="14" /> <span>August 2024</span>
                   </div>
-                  <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
+                  <div className="bg-default-200/50 flex items-center space-x-2 rounded-2xl px-4 py-2">
                     <FaLaptop size="14" /> <span>Virtual</span>
                   </div>
                 </div>
@@ -143,14 +135,14 @@ const Dica2024 = () => {
                   event.
                 </p>
               </Card>
-              <Card className="relative flex flex-col  px-8 py-12">
+              <Card className="relative flex flex-col px-8 py-12" shadow="sm">
                 <BorderBeam />
                 <h1 className="text-2xl font-semibold">Main Conference</h1>
                 <div className="mt-6 flex items-center space-x-3">
-                  <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
+                  <div className="bg-default-200/50 flex items-center space-x-2 rounded-2xl px-4 py-2">
                     <FaCalendarAlt size="14" /> <span>September 2024</span>
                   </div>
-                  <div className="flex items-center space-x-2 rounded-2xl bg-slate-200/60 px-4 py-2">
+                  <div className="bg-default-200/50 flex items-center space-x-2 rounded-2xl px-4 py-2">
                     <FaUsers size="14" /> <span>Physical</span>
                   </div>
                 </div>
@@ -215,7 +207,7 @@ const Dica2024 = () => {
         </div>
         <div className="relative">
           <div className="container">
-            <div className="pattern-1 relative overflow-hidden rounded-3xl bg-slate-200 p-16">
+            <div className="pattern-1 relative overflow-hidden rounded-3xl bg-primary-50 p-16">
               <div className="relative z-[2]">
                 <h2 className="mb-16 max-w-4xl text-7xl font-bold">About us</h2>
                 <div className="space-y-10">
@@ -234,8 +226,10 @@ const Dica2024 = () => {
           <Footer />
         </footer>
       </div>
-    </div>
+
+      <RegisterModal isOpen={isRegisterModalOpen} onOpenChange={onRegisterModalOpen} onClose={onRegisterModalClose} />
+    </>
   );
 };
 
-export default Dica2024;
+export default DICA2024PageContent;
