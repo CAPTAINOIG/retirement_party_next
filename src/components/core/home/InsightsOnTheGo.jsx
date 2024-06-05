@@ -4,6 +4,8 @@ import { IconArrowRight, IconCalendar, IconClock, IconFileInvoice, IconFolders }
 import Link from 'next/link';
 import Typed from 'typed.js';
 
+const SNAPSHOTS_URL = process.env.NEXT_PUBLIC_SNAPSHOTS_URL;
+
 const InsightsOnTheGo = () => {
   const el = useRef(null);
   const typed = useRef(null);
@@ -38,7 +40,7 @@ const InsightsOnTheGo = () => {
             <p className="mt-6 max-w-sm text-base md:text-lg">
               Chat with Bambi, an AI assistant to get insights on topics like economy, business, education, election etc
             </p>
-            <Link href={'/insights'}>
+            <Link href={SNAPSHOTS_URL} target="_blank">
               <Button className="mt-12" size="lg" rightIcon={<IconArrowRight />}>
                 Let's go
               </Button>

@@ -5,7 +5,7 @@ import products from '@/lib/products';
 import Typed from 'typed.js';
 import { cn } from '@/lib/utils';
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 
 const OmniChannel = () => {
   const el = useRef(null);
@@ -37,7 +37,7 @@ const OmniChannel = () => {
             <p className="mt-6 max-w-md text-base md:text-lg">
               Our models help generate industry grade reports from your data in seconds, regardless of format
             </p>
-            <a href={APP_URL}>
+            <a href={ACCOUNT_URL}>
               <Button className="mt-12" rightIcon={<IconArrowRight />} size="lg">
                 Get started
               </Button>

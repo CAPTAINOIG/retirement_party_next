@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 SwiperCore.use([Autoplay]);
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 
 const items = [
   {
@@ -92,7 +92,7 @@ const SupportingSectors = () => {
                         </div>
                         <div className="mt-6 translate-y-20 px-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 md:px-12">
                           <p className="opacity-70 md:text-lg">{item.description}</p>
-                          <Link href={APP_URL}>
+                          <Link href={ACCOUNT_URL}>
                             <Button
                               variant="outlined"
                               color="white"

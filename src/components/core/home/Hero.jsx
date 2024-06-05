@@ -4,7 +4,7 @@ import { IconChevronRight } from '@tabler/icons-react';
 import Link from 'next/link';
 import WordRotate from '@/components/global/WordRotate';
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 
 const Hero = () => {
   return (
@@ -24,7 +24,7 @@ const Hero = () => {
         <p className="mx-auto mt-8 max-w-xl text-lg tracking-tight text-slate-400">
           Our data models help simplify business datasets into conversation, reports and infographics.
         </p>
-        <Link href={`${APP_URL}/register`} className="mt-12 inline-flex">
+        <Link href={`${ACCOUNT_URL}/register`} className="mt-12 inline-flex">
           <Button size="xl" rightIcon={<IconChevronRight size="20" />} color="white">
             Get started
           </Button>

@@ -4,7 +4,7 @@ import { IconArrowRight } from '@tabler/icons-react';
 import ChatSimulation from '@/components/core/home/ChatSimulation';
 import Link from 'next/link';
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 
 const ConvertYourData = () => {
   return (
@@ -22,7 +22,7 @@ const ConvertYourData = () => {
               <p className="mt-6 text-base md:text-lg">
                 Support your teams with conversation ready insight of your customers and business data.
               </p>
-              <Link href={APP_URL}>
+              <Link href={ACCOUNT_URL}>
                 <Button className="mt-12" rightIcon={<IconArrowRight />} size="lg">
                   Get started
                 </Button>
