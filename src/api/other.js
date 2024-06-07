@@ -8,6 +8,13 @@ export const useNewsletterSubscribe = () => {
     },
   });
 };
+export const useRegisterForDica = () => {
+  return useMutation({
+    mutationFn: (body) => {
+      return http.post('/dica/register', body);
+    },
+  });
+};
 
 export const useVerifySubscriberEmail = () => {
   return useMutation({

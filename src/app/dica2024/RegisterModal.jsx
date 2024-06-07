@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button, Checkbox, CheckboxGroup, Input, Select, SelectItem } from '@nextui-org/react';
 import Drawer from '@/components/global/Drawer';
+import { useToast } from '@/hooks/use-toast';
+import { useForm } from 'react-hook-form';
+import { useRegisterForDica } from '@/api/other';
 
 const countries = [
   { key: 'NG', label: 'Nigeria' },
@@ -15,6 +18,21 @@ const countries = [
 ];
 
 const RegisterModal = ({ isOpen, onClose }) => {
+  const toast = useToast();
+  const { register, handleSubmit } = useForm();
+  const { mutateAsync: registerForDica, isLoading } = useRegisterForDica();
+  const [interests, setInterests] = React.useState(['data-science']);
+  const [isInvalid, setIsInvalid] = React.useState(false);
+  const submit = async (values) => {
+    if (isInvalid) return;
+    console.log({ ...values, interests });
+    try {
+      await registerForDica(values);
+      toast.success("Registeration for DICA 24 Successful!")
+    } catch (e) {
+      toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
+    }
+  };
   return (
     <Drawer
       isOpen={isOpen}
@@ -28,7 +46,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
         We are excited to have you register for our upcoming conference 👍. Please provide the requested information for
         a smooth registration process. Contact us if you need assistance.
       </p>
-      <form className="mt-10 flex flex-col gap-6">
+      <form onSubmit={handleSubmit(submit)} className="mt-10 flex flex-col gap-6">
         <div className="grid grid-cols-2 gap-4">
           <Input
             type="text"
@@ -38,6 +56,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             classNames={{ input: 'text-lg px-2' }}
             labelPlacement="outside"
             size="lg"
+            {...register('firstName', { required: 'First Name is required' })}
           />
           <Input
             type="text"
@@ -47,6 +66,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             classNames={{ input: 'text-lg px-2' }}
             labelPlacement="outside"
             size="lg"
+            {...register('lastName', { required: 'Last Name is required' })}
           />
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -58,6 +78,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             classNames={{ input: 'text-lg px-2' }}
             labelPlacement="outside"
             size="lg"
+            {...register('email', { required: 'Email is required' })}
           />
           <Input
             type="phone"
@@ -67,6 +88,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             classNames={{ input: 'text-lg px-2' }}
             labelPlacement="outside"
             size="lg"
+            {...register('phone', { required: 'Phone Number is required' })}
           />
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -77,6 +99,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             placeholder="Select one"
             variant="bordered"
             size="lg"
+            {...register('country', { required: 'Country is required' })}
           >
             {countries.map((item) => (
               <SelectItem key={item.key} classNames={{ title: 'text-base' }}>
@@ -91,6 +114,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             placeholder="Select one"
             variant="bordered"
             size="lg"
+            {...register('ageGroup', { required: 'Age Group is required' })}
           >
             {[
               { key: '<=18', label: 'Under 18' },
@@ -106,10 +130,22 @@ const RegisterModal = ({ isOpen, onClose }) => {
           </Select>
         </div>
         <CheckboxGroup
+          name="interests"
           label="What topics are you interested in?"
           defaultValue={['data-science']}
+          value={interests}
+          onValueChange={setInterests}
           size="lg"
           classNames={{ label: 'text-base mb-2' }}
+          isInvalid={isInvalid}
+          onChange={(value) => {
+            if (value.length >= 1) {
+              setIsInvalid(false);
+            } else {
+              setIsInvalid(true);
+            }
+            console.log(value);
+          }}
         >
           <Checkbox value="data-science">Data Science</Checkbox>
           <Checkbox value="ai">AI</Checkbox>
@@ -122,9 +158,17 @@ const RegisterModal = ({ isOpen, onClose }) => {
           <Checkbox value="deep-learning">Deep Learning</Checkbox>
           <Checkbox value="natural-language-processing">Natural Language Processing</Checkbox>
         </CheckboxGroup>
-
+        {isInvalid && <p className="text-lg text-red-400">*Select at least one interest</p>}
         <div className="mt-4 flex">
-          <Button type="submit" size="lg" className="px-6" radius="full" variant="solid" color="primary">
+          <Button
+            isLoading={isLoading}
+            type="submit"
+            size="lg"
+            className="px-6"
+            radius="full"
+            variant="solid"
+            color="primary"
+          >
             Register
           </Button>
         </div>
@@ -134,3 +178,4 @@ const RegisterModal = ({ isOpen, onClose }) => {
 };
 
 export default RegisterModal;
+
