@@ -8,6 +8,7 @@ export const useNewsletterSubscribe = () => {
     },
   });
 };
+
 export const useRegisterForDica = () => {
   return useMutation({
     mutationFn: (body) => {
