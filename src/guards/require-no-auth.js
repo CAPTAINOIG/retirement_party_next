@@ -13,7 +13,7 @@ const requireNoAuth =
 
     useEffect(() => {
       if (resolved && authenticated && user) {
-        if (user.emailVerified) router.replace(router.query?.from ?? '/dashboard');
+        if (user.verification?.email) router.replace(router.query?.from ?? '/dashboard');
         else router.push('/verification');
       }
     }, [resolved, authenticated, user, router]);

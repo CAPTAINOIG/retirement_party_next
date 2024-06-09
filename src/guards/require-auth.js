@@ -15,12 +15,12 @@ const requireAuth =
     useEffect(() => {
       if (resolved && !authenticated) {
         router.replace(`/login?from=${pathname}`);
-      } else if (resolved && authenticated && user && !user.emailVerified) {
+      } else if (resolved && authenticated && user && !user.verification?.email) {
         router.push(`/verification?from=${pathname}`);
       }
     }, [resolved, authenticated, user, router, pathname]);
 
-    if (resolved && authenticated && user?.emailVerified) return <Component {...props}>{children}</Component>;
+    if (resolved && authenticated && user?.verification?.email) return <Component {...props}>{children}</Component>;
 
     return (
       <div className="flex h-screen w-full flex-col items-center justify-center">
