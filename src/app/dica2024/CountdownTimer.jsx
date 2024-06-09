@@ -5,26 +5,26 @@ const CountdownTimer = () => {
   const { weeks, days, hours, minutes, seconds } = useCountdown('6/30/2024');
 
   return (
-    <div className="mt-10 flex w-max items-center space-x-4 divide-x divide-white/10 rounded-3xl border border-white/10 bg-white/10 px-4">
-      <div className="flex flex-col px-4 py-8 text-center">
-        <span className="text-[5rem] font-medium leading-none tracking-tight">{weeks}</span>
-        <span>Weeks</span>
+    <div className="mt-10 flex w-max items-center divide-x divide-white/10 rounded-3xl border border-white/10 bg-white/10 px-2 md:px-4">
+      <div className="flex flex-col px-3 py-6 text-center md:px-6 md:py-8">
+        <span className="text-3xl font-medium leading-none tracking-tight md:text-[4.5rem]">{weeks}</span>
+        <span className="text-sm md:text-base">Weeks</span>
       </div>
-      <div className="flex flex-col px-4 py-8 text-center">
-        <span className="text-[5rem] font-medium leading-none tracking-tight">{days}</span>
-        <span>days</span>
+      <div className="flex flex-col px-3 py-6 text-center md:px-6 md:py-8">
+        <span className="text-3xl font-medium leading-none tracking-tight md:text-[4.5rem]">{days}</span>
+        <span className="text-sm md:text-base">days</span>
       </div>
-      <div className="flex flex-col px-4 py-8 text-center">
-        <span className="text-[5rem] font-medium leading-none tracking-tight">{hours}</span>
-        <span>hours</span>
+      <div className="flex flex-col px-3 py-6 text-center md:px-6 md:py-8">
+        <span className="text-3xl font-medium leading-none tracking-tight md:text-[4.5rem]">{hours}</span>
+        <span className="text-sm md:text-base">hours</span>
       </div>
-      <div className="flex flex-col px-4 py-8 text-center">
-        <span className="text-[5rem] font-medium leading-none tracking-tight">{minutes}</span>
-        <span>minutes</span>
+      <div className="flex flex-col px-3 py-6 text-center md:px-6 md:py-8">
+        <span className="text-3xl font-medium leading-none tracking-tight md:text-[4.5rem]">{minutes}</span>
+        <span className="text-sm md:text-base">minutes</span>
       </div>
-      <div className="flex flex-col px-4 py-8 text-center">
-        <span className="text-[5rem] font-medium leading-none tracking-tight">{seconds}</span>
-        <span>seconds</span>
+      <div className="flex flex-col px-3 py-6 text-center md:px-6 md:py-8">
+        <span className="text-3xl font-medium leading-none tracking-tight md:text-[4.5rem]">{seconds}</span>
+        <span className="text-sm md:text-base">seconds</span>
       </div>
     </div>
   );
