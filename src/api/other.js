@@ -9,10 +9,10 @@ export const useNewsletterSubscribe = () => {
   });
 };
 
-export const useRegisterForDica = () => {
+export const useCreateEventAttendee = () => {
   return useMutation({
     mutationFn: (body) => {
-      return http.post('/dica/register', body);
+      return http.post('/misc/event-attendees', body);
     },
   });
 };

@@ -3,7 +3,7 @@ import { Button, Checkbox, CheckboxGroup, Input, Select, SelectItem } from '@nex
 import Drawer from '@/components/global/Drawer';
 import { useToast } from '@/hooks/use-toast';
 import { Controller, useForm } from 'react-hook-form';
-import { useRegisterForDica } from '@/api/other';
+import { useCreateEventAttendee } from '@/api/other';
 
 const countries = [
   { key: 'NG', label: 'Nigeria' },
@@ -25,12 +25,18 @@ const RegisterModal = ({ isOpen, onClose }) => {
     formState: { errors },
     control,
   } = useForm();
-  const { mutateAsync: registerUser, isLoading } = useRegisterForDica();
+  const { mutateAsync: createEventAttendee, isLoading } = useCreateEventAttendee();
 
   const submit = async (values) => {
     try {
-      await registerUser(values);
-      toast.success('Registeration for DICA 24 Successful!');
+      const { firstName, lastName, interests, ...rest } = values;
+      await createEventAttendee({
+        event: 'dica2024',
+        name: `${firstName} ${lastName}`,
+        interests: interests.split(','),
+        ...rest,
+      });
+      toast.success('Registration for DICA 24 Successful!');
     } catch (e) {
       toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
     }
