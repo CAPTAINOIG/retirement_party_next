@@ -186,7 +186,7 @@ const DICA2024PageContent = () => {
                   <div className="hidden px-20 text-center text-xl md:flex">8:00am - 9:00am</div>
                   <div className="flex flex-1 flex-col items-start space-y-6 md:flex-row md:items-center md:space-x-4 md:space-y-0">
                     <img src={speakers[0].image} alt="Speaker 1" className="w-16 rounded-3xl" />
-                    <div className="div">
+                    <div>
                       <h1 className="text-xl font-medium leading-none">John Emeka Doe</h1>
                       <p className="mt-2 leading-tight opacity-90">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque fugit ipsum, magni
