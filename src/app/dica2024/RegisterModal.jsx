@@ -25,7 +25,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
     formState: { errors },
     control,
   } = useForm();
-  const { mutateAsync: createEventAttendee, isLoading } = useCreateEventAttendee();
+  const { mutateAsync: createEventAttendee, isPending: isCreateEventAttendeeLoading } = useCreateEventAttendee();
 
   const submit = async (values) => {
     try {
@@ -68,6 +68,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             {...register('firstName', { required: 'First Name is required' })}
             errorMessage={errors?.firstName?.message}
             isInvalid={!!errors?.firstName?.message}
+            isDisabled={isCreateEventAttendeeLoading}
           />
           <Input
             type="text"
@@ -80,6 +81,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             {...register('lastName', { required: 'Last Name is required' })}
             errorMessage={errors?.lastName?.message}
             isInvalid={!!errors?.lastName?.message}
+            isDisabled={isCreateEventAttendeeLoading}
           />
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -94,6 +96,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             {...register('email', { required: 'Email is required' })}
             errorMessage={errors?.email?.message}
             isInvalid={!!errors?.email?.message}
+            isDisabled={isCreateEventAttendeeLoading}
           />
           <Input
             type="phone"
@@ -106,6 +109,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             {...register('phone', { required: 'Phone Number is required' })}
             errorMessage={errors?.phone?.message}
             isInvalid={!!errors?.phone?.message}
+            isDisabled={isCreateEventAttendeeLoading}
           />
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -113,6 +117,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             name="country"
             rules={{ required: 'Country is required' }}
             control={control}
+            disabled={isCreateEventAttendeeLoading}
             render={({ field }) => (
               <Select
                 disallowEmptySelection
@@ -125,6 +130,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                 size="lg"
                 selectedKeys={field.value ? [field.value] : []}
                 onChange={(e) => field.onChange(e)}
+                isDisabled={field.disabled}
                 errorMessage={errors?.country?.message}
                 isInvalid={!!errors?.country?.message}
               >
@@ -140,6 +146,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             name="ageGroup"
             rules={{ required: 'Age Group is required' }}
             control={control}
+            disabled={isCreateEventAttendeeLoading}
             render={({ field }) => (
               <Select
                 disallowEmptySelection
@@ -152,6 +159,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                 size="lg"
                 selectedKeys={field.value ? [field.value] : []}
                 onChange={(e) => field.onChange(e)}
+                isDisabled={field.disabled}
                 errorMessage={errors?.ageGroup?.message}
                 isInvalid={!!errors?.ageGroup?.message}
               >
@@ -174,6 +182,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
           name="interests"
           control={control}
           rules={{ required: 'Select at least one interest' }}
+          disabled={isCreateEventAttendeeLoading}
           render={({ field: { onChange, value, ...field }, fieldState: { error } }) => {
             return (
               <CheckboxGroup
@@ -186,6 +195,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                 label="What topics are you interested in?"
                 classNames={{ label: 'text-base mb-2' }}
                 errorMessage={error?.message}
+                isDisabled={field.disabled}
               >
                 <Checkbox isInvalid={!!error?.message} value="data-science">
                   Data Science
@@ -223,7 +233,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
         />
         <div className="mt-4 flex">
           <Button
-            isLoading={isLoading}
+            isLoading={isCreateEventAttendeeLoading}
             type="submit"
             size="lg"
             className="px-6"
