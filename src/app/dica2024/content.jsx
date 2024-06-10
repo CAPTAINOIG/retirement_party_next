@@ -44,6 +44,56 @@ const speakers = [
     image: 'https://mighty.tools/mockmind-api/content/abstract/10.jpg',
     description: 'Entertainment',
   },
+  {
+    name: 'Speaker 7',
+    image: 'https://mighty.tools/mockmind-api/content/abstract/11.jpg',
+    description: 'Education',
+  },
+  {
+    name: 'Speaker 8',
+    image: 'https://mighty.tools/mockmind-api/content/abstract/12.jpg',
+    description: 'Healthcare',
+  },
+  {
+    name: 'Speaker 9',
+    image: 'https://mighty.tools/mockmind-api/content/abstract/13.jpg',
+    description: 'Finance',
+  },
+  {
+    name: 'Speaker 10',
+    image: 'https://mighty.tools/mockmind-api/content/abstract/14.jpg',
+    description: 'Legal',
+  },
+  {
+    name: 'Speaker 11',
+    image: 'https://mighty.tools/mockmind-api/content/abstract/15.jpg',
+    description: 'Media',
+  },
+  {
+    name: 'Speaker 12',
+    image: 'https://mighty.tools/mockmind-api/content/abstract/16.jpg',
+    description: 'Non-Profit',
+  },
+  {
+    name: 'Speaker 13',
+    image: 'https://mighty.tools/mockmind-api/content/abstract/17.jpg',
+    description: 'Other',
+  },
+  {
+    name: 'Speaker 14',
+    image: 'https://mighty.tools/mockmind-api/content/abstract/18.jpg',
+    description: 'Other',
+  },
+  {
+    name: 'Speaker 15',
+    image: 'https://mighty.tools/mockmind-api/content/abstract/19.jpg',
+    description: 'Other',
+  },
+  {
+    name: 'Speaker 16',
+    image: 'https://mighty.tools/mockmind-api/content/abstract/20.jpg',
+    description: 'Other',
+  },
 ];
 
 const DICA2024PageContent = () => {
@@ -180,7 +230,7 @@ const DICA2024PageContent = () => {
         <div className="relative" id="speakers">
           <div className="container">
             <h2 className="mb-16 max-w-4xl text-4xl font-bold md:text-6xl">Keynote Speakers</h2>
-            <div className="grid gap-10 md:grid-cols-3">
+            <div className="grid gap-10 md:grid-cols-4">
               {speakers.map((s) => (
                 <div key={s.name}>
                   <div className="relative">
