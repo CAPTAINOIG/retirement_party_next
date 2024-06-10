@@ -62,7 +62,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             for a smooth registration process. Contact us if you need assistance.
           </p>
           <form onSubmit={handleSubmit(submit)} className="mt-10 flex flex-col gap-6">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-4 md:grid-cols-2">
               <Input
                 type="text"
                 label="First Name"
@@ -90,7 +90,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                 isDisabled={isCreateEventAttendeeLoading}
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-4 md:grid-cols-2">
               <Input
                 type="email"
                 label="Email"
@@ -118,7 +118,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                 isDisabled={isCreateEventAttendeeLoading}
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-4 md:grid-cols-2">
               <Controller
                 name="country"
                 rules={{ required: 'Country is required' }}
