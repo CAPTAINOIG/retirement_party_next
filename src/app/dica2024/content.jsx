@@ -95,15 +95,15 @@ const DICA2024PageContent = () => {
         </div>
       </div>
       <div className="space-y-32 md:space-y-48">
-        <div
-          className="relative overflow-hidden bg-[#11100f]"
-          style={{
-            backgroundImage: 'url("/images/dica-bg.jpg")',
-            backgroundSize: '170%',
-            backgroundPosition: '0% 60%',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
+        <div className="relative overflow-hidden bg-[#11100f]">
+          <div
+            className="absolute inset-0 hidden bg-[url(/images/dica-bg.jpg)] bg-cover bg-no-repeat md:block"
+            style={{ backgroundSize: '180%', backgroundPosition: '0% 60%' }}
+          />
+          <div
+            className="absolute inset-0 bg-[url(/images/dica-bg.jpg)] bg-cover bg-no-repeat md:hidden"
+            style={{ backgroundSize: 'cover', backgroundPosition: '5% 30%' }}
+          />
           <div className="bg-tw-dark absolute inset-0 min-h-screen scale-[4] border bg-cover opacity-90"></div>
           <div className="absolute inset-0 bg-black bg-cover opacity-10"></div>
           <div className="container relative pb-28 pt-52 md:pb-32 md:pt-60">
