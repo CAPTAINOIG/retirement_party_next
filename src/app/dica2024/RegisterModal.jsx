@@ -4,7 +4,7 @@ import Drawer from '@/components/global/Drawer';
 import { useToast } from '@/hooks/use-toast';
 import { Controller, useForm } from 'react-hook-form';
 import { useCreateEventAttendee } from '@/api/other';
-import { TbCircleCheck } from 'react-icons/tb';
+import { TbCheck } from 'react-icons/tb';
 
 const countries = [
   { key: 'NG', label: 'Nigeria' },
@@ -19,14 +19,14 @@ const countries = [
 ];
 
 const RegisterModal = ({ isOpen, onClose }) => {
-  const [isEventAttendeeCreated, setIsEventAttendeeCreated] = useState(false);
+  const [view, setView] = useState('form');
   const toast = useToast();
   const {
     register,
     handleSubmit,
     formState: { errors },
     control,
-    reset
+    reset,
   } = useForm();
   const { mutateAsync: createEventAttendee, isPending: isCreateEventAttendeeLoading } = useCreateEventAttendee();
 
@@ -39,8 +39,8 @@ const RegisterModal = ({ isOpen, onClose }) => {
         interests: interests.split(','),
         ...rest,
       });
-      setIsEventAttendeeCreated(true);
-      reset()
+      setView('success');
+      reset();
     } catch (e) {
       toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
     }
@@ -55,29 +55,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
       width={650}
       className="md:p-12"
     >
-      {isEventAttendeeCreated ? (
-        <div className="flex flex-col items-center gap-4">
-          <TbCircleCheck size="100" className="text-green-500" />
-          <p className="text-center text-lg">
-            You have successfully registered for DICA 24.
-            <br /> See you soon!
-          </p>
-          <Button
-            type="button"
-            size="lg"
-            className="px-6"
-            radius="lg"
-            variant="solid"
-            color="primary"
-            onClick={() => {
-              onClose();
-              setIsEventAttendeeCreated(false);
-            }}
-          >
-            Close
-          </Button>
-        </div>
-      ) : (
+      {view === 'form' && (
         <>
           <p className="text-lg">
             We are excited to have you register for our upcoming conference. Please provide the requested information
@@ -275,9 +253,31 @@ const RegisterModal = ({ isOpen, onClose }) => {
           </form>
         </>
       )}
+      {view === 'success' && (
+        <div className="flex flex-col items-center gap-4 py-20">
+          <TbCheck size="100" className="text-green-500" />
+          <p className="text-center text-lg">
+            You have successfully registered for DICA 24.
+            <br /> See you soon!
+          </p>
+          <Button
+            type="button"
+            size="lg"
+            className="mt-8 px-6"
+            radius="lg"
+            variant="solid"
+            color="primary"
+            onClick={() => {
+              onClose();
+              setView('form');
+            }}
+          >
+            Close
+          </Button>
+        </div>
+      )}
     </Drawer>
   );
 };
 
 export default RegisterModal;
-

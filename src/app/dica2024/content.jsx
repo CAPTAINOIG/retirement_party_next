@@ -69,22 +69,44 @@ const DICA2024PageContent = () => {
       >
         <div className="container flex items-center justify-between">
           <Logo light={!scrolled || theme === 'dark'} />
-          <Button
-            size="xl"
-            variant="solid"
-            color="primary"
-            className="h-auto px-6 py-2 text-base md:px-8 md:py-3 md:text-lg"
-            radius="full"
-            onClick={onRegisterModalOpen}
-          >
-            Book your seat
-          </Button>
+          <div className="flex items-center space-x-4 md:space-x-12">
+            <div className="hidden items-center space-x-10 md:flex">
+              <a href={'#speakers'} className="hover:brightness-90">
+                Speakers
+              </a>
+              <a href={'#schedule'} className="hover:brightness-90">
+                Schedule
+              </a>
+              <a href={'#about'} className="hover:brightness-90">
+                About
+              </a>
+            </div>
+            <Button
+              size="xl"
+              variant="solid"
+              color="primary"
+              className="h-auto px-6 py-2 text-base md:px-8 md:py-3 md:text-lg"
+              radius="full"
+              onClick={onRegisterModalOpen}
+            >
+              Book your seat
+            </Button>
+          </div>
         </div>
       </div>
       <div className="space-y-32 md:space-y-48">
-        <div className="relative overflow-hidden bg-[#11100f] pb-28 pt-52 md:pb-32 md:pt-60">
-          <div className="bg-tw-dark absolute inset-0 min-h-screen scale-125 bg-cover opacity-80"></div>
-          <div className="container relative">
+        <div
+          className="relative overflow-hidden bg-[#11100f]"
+          style={{
+            backgroundImage: 'url("/images/dica-bg.jpg")',
+            backgroundSize: '170%',
+            backgroundPosition: '0% 60%',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <div className="bg-tw-dark absolute inset-0 min-h-screen scale-[4] border bg-cover opacity-90"></div>
+          <div className="absolute inset-0 bg-black bg-cover opacity-10"></div>
+          <div className="container relative pb-28 pt-52 md:pb-32 md:pt-60">
             <div className="text-white md:max-w-[90%]">
               <h1 className="text-[3.4rem] font-bold leading-none tracking-tight md:text-[5.8rem]">
                 <span className="flex text-[3rem] uppercase text-sky-500 md:text-[5rem]">#DICA2024</span>
@@ -155,7 +177,7 @@ const DICA2024PageContent = () => {
             </div>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative" id="speakers">
           <div className="container">
             <h2 className="mb-16 max-w-4xl text-4xl font-bold md:text-6xl">Keynote Speakers</h2>
             <div className="grid gap-10 md:grid-cols-3">
@@ -173,7 +195,7 @@ const DICA2024PageContent = () => {
             </div>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative" id="schedule">
           <div className="container">
             <h2 className="mb-16 max-w-4xl text-4xl font-bold md:text-6xl">Event Info & Schedule</h2>
             <div className="grid grid-cols-1 gap-6">
@@ -202,7 +224,7 @@ const DICA2024PageContent = () => {
             </div>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative" id="about">
           <div className="container">
             <div className="pattern-1 relative overflow-hidden rounded-3xl bg-primary-50 p-12 md:p-16">
               <div className="relative z-[2]">
