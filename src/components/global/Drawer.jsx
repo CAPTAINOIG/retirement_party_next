@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Backdrop from './Backdrop.jsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 import { useMediaQuery } from 'react-responsive';
 import Portal from '@/components/global/Portal';
 import { Button } from '@nextui-org/react';
@@ -54,7 +54,7 @@ const Drawer = ({ isOpen, title, padding = true, onClose, children, width = 550,
             >
               <div
                 className={cn(
-                  'dark:bg-default-50 relative inset-x-0 bottom-0 h-min max-h-full overflow-y-auto overflow-x-hidden bg-white sm:h-full',
+                  'relative inset-x-0 bottom-0 h-min max-h-full overflow-y-auto overflow-x-hidden bg-white dark:bg-default-50 sm:h-full',
                   'pointer-events-auto flex min-h-[50vh] flex-col rounded-t-2xl md:rounded-l-2xl md:rounded-r-none',
                   { 'p-8 md:p-10': padding },
                   className

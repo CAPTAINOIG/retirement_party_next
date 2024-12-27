@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Backdrop from './Backdrop.jsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 import IconButton from './IconButton.jsx';
 import PropTypes from 'prop-types';
 import { IconX } from '@tabler/icons-react';

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 import { useTimeoutFn } from 'react-use';
 import { IconCheck, IconExclamationCircle, IconExclamationMark, IconInfoCircle } from '@tabler/icons-react';
 import Portal from '@/components/global/Portal.jsx';

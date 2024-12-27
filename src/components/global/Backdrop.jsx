@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 const Backdrop = ({ children, onClick }) => {
   const ref = useRef(null);

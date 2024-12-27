@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@/components/global/Button';
 import { IconChevronRight } from '@tabler/icons-react';
 import Link from 'next/link';
-import WordRotate from '@/components/global/WordRotate';
+import TextLoop from '@/components/global/TextLoop';
 
 const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 
@@ -14,11 +14,13 @@ const Hero = () => {
         <h1 className="font-display mx-auto max-w-[860px] text-[3.4rem] font-bold leading-[1.1] tracking-tight text-slate-300 sm:text-7xl md:text-[6.8rem] md:!leading-[1]">
           Connecting
           <br />
-          <WordRotate
-            words={['Generative AI', 'Banking AI', 'Identity AI', 'Markets AI']}
-            duration={5000}
-            className="relative whitespace-nowrap bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
-          />
+          <TextLoop interval={5} className="text-primary-500">
+            <span>Generative AI</span>
+            <span>Banking AI</span>
+            <span>Identity AI</span>
+            <span>Markets AI</span>
+          </TextLoop>
+          <br />
           to Africa's Data
         </h1>
         <p className="mx-auto mt-8 max-w-xl text-lg tracking-tight text-slate-400">
