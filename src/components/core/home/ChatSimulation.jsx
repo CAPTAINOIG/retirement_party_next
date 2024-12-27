@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Typed from 'typed.js';
 import { useInView } from 'react-intersection-observer';
 import { IconSend } from '@tabler/icons-react';
@@ -17,6 +17,19 @@ const ChatSimulation = () => {
     triggerOnce: true,
   });
   const [completed, setCompleted] = useState(0);
+
+  const handleScroll = useCallback(() => {
+    if (completed === 0) {
+      setTimeout(function () {
+        setCompleted(1);
+        if (section.current) section.current.style.transform = 'translateY(-110px)';
+      }, 1000);
+      setTimeout(function () {
+        if (section.current) section.current.style.transform = 'translateY(-400px)';
+        setCompleted(2);
+      }, 3000);
+    }
+  }, [completed]);
 
   useEffect(() => {
     const optionOne = {
@@ -133,20 +146,7 @@ const ChatSimulation = () => {
         // typed.current.destroy();
       };
     }
-  }, [inView, completed]);
-
-  const handleScroll = () => {
-    if (completed === 0) {
-      setTimeout(function () {
-        setCompleted(1);
-        if (section.current) section.current.style.transform = 'translateY(-110px)';
-      }, 1000);
-      setTimeout(function () {
-        if (section.current) section.current.style.transform = 'translateY(-400px)';
-        setCompleted(2);
-      }, 3000);
-    }
-  };
+  }, [inView, completed, handleScroll]);
 
   return (
     <div ref={ref} className="relative h-[400px] overflow-hidden rounded-[24px] bg-white p-10 shadow md:h-[550px]">

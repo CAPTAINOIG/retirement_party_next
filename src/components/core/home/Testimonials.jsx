@@ -109,9 +109,6 @@ const TestimonialItem = ({ item }) => {
           <div>
             <div className="font-display text-base text-slate-900">{item.name}</div>
           </div>
-          <div className="overflow-hidden rounded-full bg-slate-50">
-            <img src="" alt="" />
-          </div>
         </figcaption>
       </figure>
     </li>

@@ -1,13 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import SwiperCore from 'swiper';
-import { Autoplay } from 'swiper/modules';
 import Button from '@/components/global/Button';
 import Link from 'next/link';
-
-SwiperCore.use([Autoplay]);
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 
 const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 
@@ -45,26 +43,6 @@ const items = [
 ];
 
 const SupportingSectors = () => {
-  const swiperElRef = useRef(null);
-
-  useEffect(() => {
-    const swiperParams = {
-      speed: 10000,
-      spaceBetween: 10,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: true,
-      },
-      breakpoints: {
-        0: { slidesPerView: 1.3 },
-        640: { slidesPerView: 1.5 },
-        1024: { slidesPerView: 3.9 },
-      },
-    };
-    Object.assign(swiperElRef.current, swiperParams);
-    swiperElRef.current.initialize();
-  }, []);
-
   return (
     <>
       <div className="relative">
@@ -77,9 +55,19 @@ const SupportingSectors = () => {
           </div>
         </div>
         <div className="relative -order-1 mt-10 overflow-hidden md:order-1 md:mt-20">
-          <swiper-container ref={swiperElRef} init={false}>
+          <Swiper
+            speed={10000}
+            spaceBetween={10}
+            autoplay={{ delay: 0, disableOnInteraction: true }}
+            modules={[Autoplay]}
+            breakpoints={{
+              0: { slidesPerView: 1.3 },
+              640: { slidesPerView: 1.5 },
+              1024: { slidesPerView: 3.9 },
+            }}
+          >
             {items.map((item, i) => (
-              <swiper-slide key={i}>
+              <SwiperSlide key={i}>
                 <div className="group relative p-2">
                   <div className="overflow-hidden rounded-3xl">
                     <div
@@ -106,9 +94,9 @@ const SupportingSectors = () => {
                     </div>
                   </div>
                 </div>
-              </swiper-slide>
+              </SwiperSlide>
             ))}
-          </swiper-container>
+          </Swiper>
         </div>
       </div>
     </>
