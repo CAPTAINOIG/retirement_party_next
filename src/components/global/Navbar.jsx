@@ -11,7 +11,7 @@ import MobileNav from '@/components/core/MobileNav';
 import { cn } from '@/lib/utils';
 
 const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
-const SNAPSHOTS_URL = process.env.NEXT_PUBLIC_SNAPSHOTS_URL;
+// const SNAPSHOTS_URL = process.env.NEXT_PUBLIC_SNAPSHOTS_URL;
 const MARKET_URL = process.env.NEXT_PUBLIC_MARKET_URL;
 
 const Navbar = () => {
@@ -56,9 +56,9 @@ const Navbar = () => {
                 <Link href={MARKET_URL} className="inline-flex items-center rounded-full px-4 py-1">
                   Markets
                 </Link>
-                <Link href={SNAPSHOTS_URL} className="inline-flex items-center rounded-full px-4 py-1">
-                  Snapshots
-                </Link>
+                {/*<Link href={SNAPSHOTS_URL} className="inline-flex items-center rounded-full px-4 py-1">*/}
+                {/*  Snapshots*/}
+                {/*</Link>*/}
               </div>
             </div>
             <div className="ml-6 flex items-center justify-end gap-x-5 md:gap-x-4">
