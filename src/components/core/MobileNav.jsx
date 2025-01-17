@@ -29,9 +29,9 @@ const MobileNav = ({ isOpen, onClose }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed inset-x-0 top-24 z-50 mt-4 flex origin-top flex-col space-y-2 rounded-3xl bg-white px-4 py-6 text-lg tracking-tight shadow-xl"
+            className="fixed inset-x-0 top-24 z-50 mt-4 flex origin-top flex-col space-y-2 rounded-3xl bg-white px-4 py-6 text-lg tracking-tight shadow-xl dark:bg-gray-800"
           >
-            <div className="group relative block w-full cursor-default rounded-xl px-4 py-3 hover:bg-zinc-200">
+            <div className="group relative block w-full cursor-default rounded-xl px-4 py-3 hover:bg-zinc-200 dark:hover:bg-white/10">
               For business
               <NavProductsDropdown />
             </div>
@@ -54,7 +54,7 @@ const MobileNav = ({ isOpen, onClose }) => {
               About us
             </Link>
             <div>
-              <hr className="mx-2 my-2 border-zinc-300/40" />
+              <hr className="mx-2 my-2 border-zinc-300/40 dark:border-zinc-300/10" />
             </div>
             <Link
               onClick={onClose}
