@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Checkbox, CheckboxGroup, Input, Select, SelectItem } from '@nextui-org/react';
+import { Button, Checkbox, CheckboxGroup, Input, Select, SelectItem } from '@heroui/react';
 import Drawer from '@/components/global/Drawer';
 import { useToast } from '@/hooks/use-toast';
 import { Controller, useForm } from 'react-hook-form';
@@ -267,7 +267,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
             radius="lg"
             variant="solid"
             color="primary"
-            onClick={() => {
+            onPress={() => {
               onClose();
               setView('form');
             }}

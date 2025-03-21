@@ -1,5 +1,5 @@
 'use client';
-import { NextUIProvider } from '@nextui-org/react';
+import { HeroUIProvider } from "@heroui/react";
 import { ToastProvider } from '@/hooks/use-toast';
 import { AuthProvider } from '@/hooks/use-auth';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -17,11 +17,11 @@ export function Providers({ children }) {
   return (
     <QueryClientProvider client={qc}>
       <AuthProvider>
-        <NextUIProvider>
+        <HeroUIProvider>
           <ThemeProvider attribute="class" defaultTheme="system">
             <ToastProvider>{children}</ToastProvider>
           </ThemeProvider>
-        </NextUIProvider>
+        </HeroUIProvider>
       </AuthProvider>
     </QueryClientProvider>
   );

@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Card, Spinner } from '@nextui-org/react';
+import { Card, Spinner } from "@heroui/react";
 
 const Loading = () => {
   return (

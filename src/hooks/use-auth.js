@@ -1,7 +1,9 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { useGetProfile } from '@/api/auth.js';
 import { useMount } from 'react-use';
-import { clearCookie, getCrossSubdomainCookie, setCrossSubdomainCookie } from '@/lib/utils';
+import { getCrossSubdomainCookie, setCrossSubdomainCookie } from '@/lib/utils';
+
+const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 
 const authContext = createContext({
   user: null,
@@ -11,6 +13,7 @@ const authContext = createContext({
   resolved: false,
   authenticated: false,
   logout: () => {},
+  error: null,
 });
 
 export function AuthProvider({ children }) {
@@ -29,10 +32,6 @@ export function useProvideAuth() {
   const { refetch, data, error } = useGetProfile();
 
   useEffect(() => {
-    if (!!error) logout();
-  }, [error]);
-
-  useEffect(() => {
     if (!!data) {
       const { user } = data.data;
       authenticate({ user });
@@ -48,8 +47,7 @@ export function useProvideAuth() {
 
   const logout = () => {
     sessionStorage.clear();
-    setResolved(true);
-    clearCookie('token');
+    window.location.href = `${ACCOUNT_URL}/logout?from=${location.origin}`;
   };
 
   const updateUser = (user) => {
@@ -62,7 +60,7 @@ export function useProvideAuth() {
 
   useMount(() => {
     const token = getCrossSubdomainCookie('token');
-    if (!token) return logout();
+    if (!token) return setResolved(true);
     if (!resolved && !authenticated) reloadUser();
   });
 
@@ -74,5 +72,6 @@ export function useProvideAuth() {
     resolved,
     authenticated,
     logout,
+    error,
   };
 }

@@ -3,7 +3,7 @@ import Backdrop from './Backdrop.jsx';
 import { AnimatePresence, motion } from 'motion/react';
 import { useMediaQuery } from 'react-responsive';
 import Portal from '@/components/global/Portal';
-import { Button } from '@nextui-org/react';
+import { Button } from '@heroui/react';
 import { TbX } from 'react-icons/tb';
 import { cn } from '@/lib/utils';
 
@@ -63,7 +63,7 @@ const Drawer = ({ isOpen, title, padding = true, onClose, children, width = 550,
                 {!!title && (
                   <div className="mb-10 flex items-center justify-between">
                     <h3 className="text-xl font-semibold">{title}</h3>
-                    <Button onClick={onClose} isIconOnly size="sm" color="danger" variant="bordered" radius="full">
+                    <Button onPress={onClose} isIconOnly size="sm" color="danger" variant="bordered" radius="full">
                       <TbX size="20" />
                     </Button>
                   </div>

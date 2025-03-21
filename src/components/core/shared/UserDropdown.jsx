@@ -1,43 +1,62 @@
 import React from 'react';
-import SimpleDropdown from '@/components/global/SimpleDropdown';
-import { IconChevronDown, IconLogout, IconUserCog } from '@tabler/icons-react';
 import { useAuth } from '@/hooks/use-auth';
-import { cn } from '@/lib/utils';
+import { cn, getImageLink } from '@/lib/utils';
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, User } from '@heroui/react';
+import { TbLogout, TbUser } from 'react-icons/tb';
 
 const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 
-const UserDropdown = ({ className }) => {
+const UserDropdown = () => {
   const { user, logout } = useAuth();
 
-  const handleLogout = () => {
-    logout();
-    window.location.reload();
-  };
-
   return (
-    <SimpleDropdown
-      trigger={
-        <div className={cn('flex items-center', className)}>
-          <img
-            src={`https://ui-avatars.com/api/?name=${user.firstName} ${user.lastName}`}
-            className="h-8 w-8 rounded-full"
-            alt={`${user.firstName} ${user.lastName}`}
-          />
-          <p className="ml-2 hidden md:block">{user.firstName}</p>
-          <IconChevronDown size="18" className="ml-3" />
-        </div>
-      }
-      items={[
-        {
-          text: 'Manage account',
-          icon: <IconUserCog size="18" />,
-          onClick: () => {
-            location.href = `${ACCOUNT_URL}/account`;
-          },
-        },
-        { text: 'Logout', icon: <IconLogout size="18" />, onClick: handleLogout },
-      ]}
-    />
+    <Dropdown className="w-full" classNames={{ content: 'shadow border border-default-100 w-[260px]' }}>
+      <DropdownTrigger className="w-full">
+        <User
+          className={cn('transition-transform')}
+          description={`@${user.username}`}
+          name={`${user.firstName} ${user.lastName}`}
+          avatarProps={{ radius: 'full', size: 'sm', src: getImageLink(user.image) }}
+          classNames={{
+            name: 'text-base leading-none font-medium',
+            description: 'text-sm leading-none mt-1.5',
+            base: 'gap-4 cursor-pointer',
+          }}
+        />
+      </DropdownTrigger>
+      <DropdownMenu
+        aria-label="User Actions"
+        variant="flat"
+        onAction={(key) => {
+          if (key === 'settings') window.open(`${ACCOUNT_URL}`, '_blank');
+          if (key === 'logout') logout();
+        }}
+      >
+        <DropdownItem
+          key="dashboard"
+          startContent={<TbUser size="20" />}
+          classNames={{
+            title: 'text-base',
+            description: 'text-sm',
+            base: 'rounded-xl px-4 py-2',
+          }}
+        >
+          Dashboard
+        </DropdownItem>
+        <DropdownItem
+          key="logout"
+          color="danger"
+          startContent={<TbLogout size="20" />}
+          classNames={{
+            title: 'text-base',
+            description: 'text-sm',
+            base: 'rounded-xl px-4 py-2',
+          }}
+        >
+          <span className="text-base">Log Out</span>
+        </DropdownItem>
+      </DropdownMenu>
+    </Dropdown>
   );
 };
 

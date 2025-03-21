@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { IconLayout2, IconLogout, IconMenu } from '@tabler/icons-react';
+import { IconMenu } from '@tabler/icons-react';
 import { useIsomorphicLayoutEffect } from 'react-use';
 import Button from '@/components/global/Button.jsx';
 import { useAuth } from '@/hooks/use-auth.js';
-import SimpleDropdown from '@/components/global/SimpleDropdown.jsx';
 import Logo from '@/components/core/shared/Logo';
 import NavProductsDropdown from '@/components/core/NavProductsDropdown';
 import MobileNav from '@/components/core/MobileNav';
 import { cn } from '@/lib/utils';
+import UserDropdown from '@/components/core/shared/UserDropdown';
 
 const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 const SNAPSHOTS_URL = process.env.NEXT_PUBLIC_SNAPSHOTS_URL;
 const MARKET_URL = process.env.NEXT_PUBLIC_MARKET_URL;
 
 const Navbar = () => {
-  const { resolved, user, logout } = useAuth();
+  const { resolved, authenticated } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
 
@@ -27,11 +27,6 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleLogout = () => {
-    logout();
-    window.location.reload();
-  };
 
   return (
     <>
@@ -71,7 +66,7 @@ const Navbar = () => {
                   />
                 ) : (
                   <>
-                    {!user ? (
+                    {!authenticated ? (
                       <>
                         <Link href={`${ACCOUNT_URL}/login`}>
                           <Button variant="subtle" color={scrolled ? 'black' : 'white'}>
@@ -84,33 +79,7 @@ const Navbar = () => {
                       </>
                     ) : (
                       <div className="flex items-center space-x-4">
-                        <SimpleDropdown
-                          trigger={
-                            <div
-                              className={cn(
-                                'flex items-center space-x-2 rounded-full py-2 pl-3 pr-4 transition-all hover:bg-gray-200/5',
-                                { 'hover:!bg-gray-200/50': scrolled }
-                              )}
-                            >
-                              <img
-                                src={`https://ui-avatars.com/api/?name=${user.firstName} ${user.lastName}`}
-                                className="h-8 w-8 rounded-full"
-                                alt={`${user.firstName} ${user.lastName}`}
-                              />
-                              <div>
-                                {user.firstName} {user.lastName}
-                              </div>
-                            </div>
-                          }
-                          items={[
-                            {
-                              text: 'Dashboard',
-                              icon: <IconLayout2 size="18" />,
-                              onClick: () => (location.href = ACCOUNT_URL),
-                            },
-                            { text: 'Logout', icon: <IconLogout size="18" />, onClick: handleLogout },
-                          ]}
-                        />
+                        <UserDropdown />
                       </div>
                     )}
                   </>

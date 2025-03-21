@@ -7,7 +7,7 @@ import { FaCalendarAlt } from 'react-icons/fa';
 import { FaLaptop, FaUsers } from 'react-icons/fa6';
 import { BorderBeam } from '@/components/global/BorderBeam';
 import Footer from '@/components/global/Footer';
-import { Button, Card, useDisclosure } from '@nextui-org/react';
+import { Button, Card, useDisclosure } from '@heroui/react';
 import CountdownTimer from '@/app/dica2024/CountdownTimer';
 import ClientOnly from '@/components/global/ClientOnly';
 import RegisterModal from '@/app/dica2024/RegisterModal';
@@ -137,7 +137,7 @@ const DICA2024PageContent = () => {
               color="primary"
               className="h-auto px-6 py-2 text-base md:px-8 md:py-3 md:text-lg"
               radius="full"
-              onClick={onRegisterModalOpen}
+              onPress={onRegisterModalOpen}
             >
               Book your seat
             </Button>

@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Button, Card } from '@nextui-org/react';
+import { Button, Card } from '@heroui/react';
 import { IconArrowLeft, IconLinkOff } from '@tabler/icons-react';
 import Link from 'next/link';
 import { RiArrowLeftLine, RiRefreshLine } from 'react-icons/ri';
@@ -21,7 +21,7 @@ export default function Error({ error, reset }) {
               leftIcon={<IconArrowLeft />}
               className="text-base"
               startContent={<RiRefreshLine />}
-              onClick={reset}
+              onPress={reset}
             >
               Retry
             </Button>
