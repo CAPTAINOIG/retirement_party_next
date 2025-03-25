@@ -9,16 +9,21 @@ import Categories from '@/components/core/home/Categories';
 import InsightsOnTheGo from '@/components/core/home/InsightsOnTheGo';
 import Newsletter from '@/components/core/home/Newsletter';
 import Testimonials from '@/components/core/home/Testimonials';
+import BeautifulStory from '@/components/core/home/BeautifulStory';
+import HowImmortalityWorks from '@/components/core/home/HowImmortalityWorks';
+import Templates from '@/components/core/home/Templates';
 
 const HomePageContent = () => {
   return (
     <>
       <div className="bg-slate-100 text-black">
-        <Hero />
+      <BeautifulStory />
+        {/* <Hero /> */}
         <div className="relative overflow-hidden py-28 md:py-44 md:pb-48">
           <div className="space-y-28 md:space-y-56">
             <OmniChannel />
-            <ConvertYourData />
+            <Templates />
+            {/* <ConvertYourData /> */}
           </div>
           <div className="absolute bottom-[-1rem] hidden w-full md:block">
             <img alt="curve" src="/images/curve-2.svg" />
@@ -27,7 +32,8 @@ const HomePageContent = () => {
         <div className="space-y-32 bg-white py-28 md:space-y-48 md:pb-48 md:pt-24">
           <SupportingSectors />
         </div>
-        <HowItWorks />
+        {/* <HowItWorks /> */}
+        <HowImmortalityWorks />
         <div className="space-y-24 overflow-hidden bg-white py-28 md:space-y-36 md:py-32">
           <Categories />
           <InsightsOnTheGo />
