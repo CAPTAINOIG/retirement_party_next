@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { FaCircle } from 'react-icons/fa6';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useWindowSize } from 'react-use';
 
 const HowImmortalityWorks = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {useWindowSize} from "react-use";
-import {motion} from "framer-motion";
+import {motion} from "motion/react";
 import Button from "@/components/global/Button";
 import ImmortalCard from "@/components/core/shared/ImmortalCard";
 
@@ -40,7 +40,7 @@ const Immortal = () => {
               whileInView="visible"
               className="bg-gradient-to-r from-green-600 to-primary bg-clip-text text-[4rem] font-bold leading-[1.1] tracking-tighter text-transparent md:text-[6rem] md:leading-[0.9] xl:text-[7rem] "
             >
-              Tell a beautiful story with data
+              Connect from any data source
             </motion.h1>
             <p className="max-w-xl text-lg tracking-tight text-slate-400">
               Immortal powers users make others see in their data in the most interesting way
