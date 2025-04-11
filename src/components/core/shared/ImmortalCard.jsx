@@ -222,8 +222,8 @@ const ImmortalCard = () => {
           spaceBetween={10}
           className="showcase h-full"
           autoplay={{
-            delay: 10000,
-            disableOnInteraction: true,
+            delay: 1000,
+            disableOnInteraction: false,
           }}
           speed={1000}
           modules={[Pagination]}
