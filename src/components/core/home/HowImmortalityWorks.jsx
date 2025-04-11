@@ -57,10 +57,7 @@ const HowImmortalityWorks = () => {
 
   return (
     <div className="relative w-full overflow-hidden bg-black">
-      <div className="absolute bottom-0 right-0 z-30 hidden w-full xl:block">
-        <img alt="curve" src="/images/hero-gradient-curve.svg" />
-      </div>
-      <div className="container relative mx-auto pt-[70px] md:block md:pb-[160px] md:pt-[160px] xl:pb-[19rem]">
+      <div className="container relative mx-auto py-[70px] md:block md:pb-[160px] md:pt-[160px]">
         <div className="grid grid-cols-12">
           <div className="relative col-span-12">
             <h2 className="bg-gradient-to-r from-green-600 to-primary bg-clip-text text-center text-[3rem] font-bold leading-[1] text-transparent md:text-[6rem]">

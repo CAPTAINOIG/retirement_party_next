@@ -1,72 +1,22 @@
-
-import React, { useEffect, useRef } from 'react';
-import { LuPresentation, LuServer, LuShapes, LuSquareChartGantt } from 'react-icons/lu';
-import {
-  IoAnalytics,
-  IoBarChartOutline,
-  IoFileTray,
-  IoLogoGithub,
-  IoLogoSlack,
-  IoMenu,
-  IoShapesOutline,
-  IoStatsChart,
-} from 'react-icons/io5';
-import { BsArrowsMove, BsRobot, BsTools } from 'react-icons/bs';
-import { TbChartArrowsVertical, TbChartDots2, TbChartGridDots, TbChartInfographic, TbPlanet } from 'react-icons/tb';
-import {
-  IoIosSettings,
-  IoLogoApple,
-  IoLogoChrome,
-  IoLogoDribbble,
-  IoLogoOctocat,
-  IoLogoWindows,
-  IoLogoYoutube,
-  IoMdAdd,
-  IoMdApps,
-} from 'react-icons/io';
-import { MdAbc, MdOutlineBubbleChart, MdSettingsInputAntenna, MdSettingsVoice } from 'react-icons/md';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// 'use client'
+import React, {useEffect, useRef} from 'react';
+import {LuPresentation, LuShapes, LuSquareChartGantt} from 'react-icons/lu';
+import {IoAnalytics, IoMenu, IoSparkles, IoStatsChart,} from 'react-icons/io5';
+import {BsRobot} from 'react-icons/bs';
+import {TbChartInfographic} from 'react-icons/tb';
+import {IoIosTrendingDown, IoMdAdd, IoMdApps,} from 'react-icons/io';
+import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-flip';
 import SwiperCore from 'swiper';
-import { Autoplay, EffectFlip } from 'swiper/modules';
-import { CgShapeCircle, CgShapeHexagon, CgShapeRhombus, CgShapeSquare, CgShapeTriangle } from 'react-icons/cg';
-import { RiShapeLine } from 'react-icons/ri';
-import { BiLogoInstagram, BiLogoLinkedin, BiShapePolygon, BiShapeTriangle } from 'react-icons/bi';
-import {
-  FaAmbulance,
-  FaCameraRetro,
-  FaCanadianMapleLeaf,
-  FaChartLine,
-  FaChartPie,
-  FaUser,
-  FaUserEdit,
-} from 'react-icons/fa';
-import {
-  PiAmazonLogoBold,
-  PiChartBar,
-  PiChartLineDownLight,
-  PiChartPieSliceDuotone,
-  PiPresentationChart,
-} from 'react-icons/pi';
-import { RxFigmaLogo } from 'react-icons/rx';
-import { FaChartSimple } from 'react-icons/fa6';
-import { TiChartAreaOutline } from 'react-icons/ti';
-import { AiFillGift } from 'react-icons/ai';
-import { TfiControlRecord } from 'react-icons/tfi';
-import { CiGlobe } from 'react-icons/ci';
-import {
-  GiAfrica,
-  GiAustralia,
-  GiMexico,
-  GiNigeria,
-  GiSouthAmerica,
-  GiSouthKorea,
-  GiSpain,
-  GiSriLanka,
-} from 'react-icons/gi';
+import {Autoplay, EffectFlip} from 'swiper/modules';
+import {AiOutlineStock} from 'react-icons/ai';
+import {CiCircleList, CiCoins1} from 'react-icons/ci';
 import Typed from 'typed.js';
+import StraightChart from "@/components/core/shared/StraightChart";
+import DonutChart from "@/components/core/shared/DonutChart";
+import {FiTrendingUp} from "react-icons/fi";
 
 const BeautifulPulse = () => {
   SwiperCore.use([Autoplay]);
@@ -90,15 +40,39 @@ const BeautifulPulse = () => {
     };
   }, []);
 
-  return (
-    <div className='grid md:grid-cols-2  md:place-content-end  mx-0'>
-      <div className="space-y-4  flex flex-col   items-center ">
-        <div className="hidden min-h-[100px] w-[250px] animate-pulse rounded-b-2xl bg-[#131416] duration-1000 ease-in-out md:block" />
+  const chart = [
+    {name: 'Inflow', value: 200000, fill: '#fff'},
+    {name: 'Outflow', value: 98000, fill: '#f4be37'},
+  ];
+  const text = ['Inflow', 'Outflow'];
+  const filteredGraph = [
+    {
+      name: 'Rent',
+      sold: 85,
+      units: 200,
+      available: 150,
+    },
+    {
+      name: 'Marketing',
+      sold: 200,
+      units: 180,
+      available: 50,
+    },
+    {
+      name: 'Tax',
+      sold: 100,
+      units: 1000,
+      available: 100,
+    },
+  ];
 
+  return (
+    <div className='grid md:grid-cols-2  md:place-content-end  mx-0 space-y-8 md:space-y-0 pb-[70px] md:pb-0'>
+      <div className="space-y-4  flex flex-col   items-center ">
         <div className="space-y-4 ">
           <div className="relative min-h-[60px] w-[250px] space-y-4 rounded-2xl rounded-bl-none bg-[#282A30] p-4">
             <div className="flex items-center gap-2">
-              <LuShapes className="text-slate-200" size="20px" />
+              <LuShapes className="text-slate-200" size="20px"/>
               <span className="text-white" ref={el}>
                 Elements
               </span>{' '}
@@ -109,7 +83,7 @@ const BeautifulPulse = () => {
               loop={true}
               autoplay={{
                 delay: 2000,
-                disableOnInteraction: false,
+                disableOnInteraction: true,
               }}
               speed={1000}
               modules={[EffectFlip]}
@@ -118,102 +92,211 @@ const BeautifulPulse = () => {
               className="mySwiper"
             >
               <SwiperSlide>
-                <div className="relative space-y-4 rounded-2xl rounded-tl-none bg-[#282A30] px-4 py-6">
+                <div className="relative space-y-6 rounded-2xl rounded-tl-none bg-[#282A30] px-4 py-6">
                   <div className="flex items-center gap-2">
-                    <MdAbc className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2 text-slate-800" size="20px" />
-                    <p className="text-slate-200">Texts</p>
+                    <CiCircleList className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2 text-slate-800"
+                                  size="20px"/>
+                    <p className="text-slate-200">List</p>
                   </div>
-                  <div className="space-y-1">
-                    <p className="bg-gradient-to-r from-green-600 to-primary bg-clip-text text-3xl font-semibold text-transparent">
-                      Heading
-                    </p>
-                    <p className="bg-gradient-to-r from-purple-600 to-primary bg-clip-text text-2xl font-bold text-transparent">
-                      Subheading
-                    </p>
-                    <p className="bg-gradient-to-r from-pink-600 to-primary bg-clip-text text-xl font-semibold text-transparent">
-                      Paragraph
-                    </p>
-                    <p className="bg-gradient-to-r from-blue-200 to-primary bg-clip-text text-md text-transparent">
-                      Caption
-                    </p>
-                    <p className="text-sm text-slate-200">List</p>
-                    <p className="text-small text-slate-200">100</p>
-                    <p className="text-xs text-slate-200">Femi is the G.O.A.T</p>
+                  <div className="space-y-4">
+                    <div className="flex gap-2">
+                      <div className="w-[15px] h-[15px] mt-1 rounded-full border border-pink-300"/>
+                      <div className="space-y-2">
+                        <p className="text-slate-200">Dashboard</p>
+                        <div className="flex gap-2 items-center">
+                          <div className="w-[10px] h-[10px] rounded-full border bg-pink-300"/>
+                          <p className="text-slate-200">Everything in one place</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex gap-2">
+                      <div>
+                        <div className="w-[15px] h-[15px] mt-1 rounded-full border border-yellow-300"/>
+                      </div>
+                      <div className="space-y-2 w-full">
+                        <p className="text-slate-200">Project</p>
+                        <div className="flex gap-2">
+                          <div>
+                            <div className="w-[10px] h-[10px] mt-1.5 rounded-full border bg-yellow-300"/>
+                          </div>
+                           <p className="text-slate-200">Clear overview, full efficiency</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="w-[15px] h-[15px] mt-1 rounded-full border border-green-300"/>
+                      <div className="space-y-2">
+                        <p className="text-slate-200">Task</p>
+                        <div className="flex gap-2 items-center">
+                         <div>
+                           <div className="w-[10px] h-[10px] rounded-full border bg-green-300"/>
+                         </div>
+                          <p className="text-slate-200">Where work gets done</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="rounded-lg bg-[#282A30] p-4 space-y-4">
+                  <div>
+                    <div className="grid grid-cols-2 gap-4 items-center">
+                      <div className="flex items-center gap-2 w-full">
+                        <p className="text-md text-white">Balance</p>
+                        <IoSparkles size="20px" className="text-white"/>
+                      </div>
+                      <select
+                        disabled
+                        className="block rounded-lg border border-gray-900 bg-[#1C1D22] p-2.5 text-sm text-gray-200 outline-none focus:border-blue-500 focus:ring-blue-500"
+                      >
+                        <option disabled>Select an option</option>
+                        <option value="Merchant Finance">Day</option>
+                        <option value="Merchant to Merchant BNPL">Month</option>
+                        <option value="SME Microcredits">Year</option>
+                      </select>
+                    </div>
+                    <p className="mt-4 text-slate-400">Total revenue</p>
+                    <div className="flex gap-2">
+                      <p className="text-bold text-xl text-white">
+                        <span className="text-slate-400">₦</span>756,000.00
+                      </p>
+                      <p className="flex items-center gap-2 text-sm text-blue-400">
+                        <FiTrendingUp size="20px" className="text-blue-400"/>
+                        ₦0.008
+                      </p>
+                    </div>
+                    <div className="pt-4 space-y-1">
+                      <div className="bg-[#1c1d22] h-[15px] rounded w-full"></div>
+                      <div className="bg-[#1c1d22] h-[15px] rounded w-[60%]"></div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-white">Payments</p>
+                      <p className="text-slate-400">This month</p>
+                      <div className="mt-4 space-y-2">
+                        <p className="text-bold text-small text-white">
+                          <span className="text-slate-400">₦</span>134,500.00
+                        </p>
+                        <p className="flex items-center gap-2 text-sm text-blue-400">
+                          <FiTrendingUp size="20px" className="text-blue-400"/>
+                          ₦0.008
+                        </p>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-white">Expenses</p>
+                      <p className="text-slate-400">This month</p>
+                      <div className="mt-4 space-y-2">
+                        <p className="text-bold text-small text-white">
+                          <span className="text-slate-400">₦</span>71,500.00
+                        </p>
+                        <p className="flex items-center gap-2 text-sm text-red-400">
+                          <IoIosTrendingDown size="20px" className="text-red-400"/>
+                          0.56%
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="relative space-y-4 rounded-2xl rounded-tl-none bg-[#282A30] px-4 py-6">
                   <div className="flex items-center gap-2">
-                    <TfiControlRecord
+                    <CiCoins1
                       className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2.5 text-slate-800"
                       size="20px"
                     />
-                    <p className="text-slate-200">Icons</p>
+                    <p className="text-slate-200">Coins</p>
                   </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    <FaUser className="text-slate-200" size="40px" />
-                    <FaUserEdit className="text-slate-200" size="40px" />
-                    <LuServer className="text-slate-200" size="40px" />
-                    <IoFileTray className="text-slate-200" size="40px" />
-                    <FaAmbulance className="text-slate-200" size="40px" />
-                    <BsTools className="text-slate-200" size="40px" />
-                    <IoIosSettings className="text-slate-200" size="40px" />
-                    <MdSettingsInputAntenna className="text-slate-200" size="40px" />
-                    <MdSettingsVoice className="text-slate-200" size="40px" />
-                    <AiFillGift className="text-slate-200" size="40px" />
-                    <BsArrowsMove className="text-slate-200" size="40px" />
-                    <TbPlanet className="text-slate-200" size="40px" />
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="space-y-1">
+                      <img src="/images/bitcoin.png"/>
+                      <p className="text-slate-200">Bitcoin</p>
+                    </div>
+                    <div className="space-y-1">
+                      <img src="/images/ethereum.png"/>
+                      <p className="text-slate-200">Ethereum</p>
+                    </div>
+                    <div className="space-y-1">
+                      <img src="/images/tether.png"/>
+                      <p className="text-slate-200">USDt</p>
+                    </div>
+                    <div className="space-y-1">
+                      <img src="/images/solana.png"/>
+                      <p className="text-slate-200">Solana</p>
+                    </div>
+                    <div className="space-y-1">
+                      <img src="/images/tron.png"/>
+                      <p className="text-slate-200">Tron</p>
+                    </div>
+                    <div className="space-y-1">
+                      <img src="/images/xrp.png"/>
+                      <p className="text-slate-200">Xrp</p>
+                    </div>
+                    <div className="space-y-1">
+                      <img src="/images/usdc.png"/>
+                      <p className="text-slate-200">USDC</p>
+                    </div>
+                    <div className="space-y-1">
+                      <img src="/images/bnb.png"/>
+                      <p className="text-slate-200">BNB</p>
+                    </div>
+                    <div className="space-y-1">
+                      <img src="/images/dogecoin.png"/>
+                      <p className="text-slate-200">Dogecoin</p>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="relative space-y-4 rounded-2xl rounded-tl-none bg-[#282A30] px-4 py-6">
                   <div className="flex items-center gap-2">
-                    <MdOutlineBubbleChart
+                    <AiOutlineStock
                       className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2.5 text-slate-800"
                       size="20px"
                     />
-                    <p className="text-slate-200">Charts</p>
+                    <p className="text-slate-200">Stocks</p>
                   </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    <FaChartLine className="text-slate-200" size="40px" />
-                    <FaChartPie className="text-slate-200" size="40px" />
-                    <FaChartSimple className="text-slate-200" size="40px" />
-                    <IoBarChartOutline className="text-slate-200" size="40px" />
-                    <TiChartAreaOutline className="text-slate-200" size="40px" />
-                    <PiPresentationChart className="text-slate-200" size="40px" />
-                    <PiChartPieSliceDuotone className="text-slate-200" size="40px" />
-                    <PiChartLineDownLight className="text-slate-200" size="40px" />
-                    <PiChartBar className="text-slate-200" size="40px" />
-                    <TbChartGridDots className="text-slate-200" size="40px" />
-                    <TbChartDots2 className="text-slate-200" size="40px" />
-                    <TbChartArrowsVertical className="text-slate-200" size="40px" />
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="relative space-y-4 rounded-2xl rounded-tl-none bg-[#282A30] px-4 py-6">
-                  <div className="flex items-center gap-2">
-                    <FaCameraRetro
-                      className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2.5 text-slate-800"
-                      size="20px"
-                    />
-                    <p className="text-slate-200">Logos</p>
-                  </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    <IoLogoDribbble className="text-pink-500" size="40px" />
-                    <IoLogoApple className="text-white" size="40px" />
-                    <IoLogoYoutube className="text-red-600" size="40px" />
-                    <IoLogoOctocat className="text-fuchsia-200" size="40px" />
-                    <IoLogoWindows className="text-blue-500" size="40px" />
-                    <IoLogoChrome className="text-slate-200" size="40px" />
-                    <IoLogoGithub className="text-slate-200" size="40px" />
-                    <IoLogoSlack className="text-emerald-200" size="40px" />
-                    <BiLogoLinkedin className="text-blue-800" size="40px" />
-                    <PiAmazonLogoBold className="text-yellow-600" size="40px" />
-                    <RxFigmaLogo className="text-purple-400" size="40px" />
-                    <BiLogoInstagram className="text-rose-400" size="40px" />
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-3 gap-2">
+                      <p className="text-slate-200">Index</p>
+                      <p className="text-slate-200">Last</p>
+                      <p className="text-slate-200">Change</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="grid grid-cols-3 gap-2">
+                        <p className="text-slate-200">Nasdaq</p>
+                        <p className="text-slate-200">16,098.19</p>
+                        <p className="text-green-300">+494.93</p>
+                      </div>
+                      <hr className="border border-slate-500"/>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="grid grid-cols-3 gap-2">
+                        <p className="text-slate-200">NYSE</p>
+                        <p className="text-slate-200">17,797.27</p>
+                        <p className="text-green-300">+358.63</p>
+                      </div>
+                      <hr className="border border-slate-500"/>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="grid grid-cols-3 gap-2">
+                        <p className="text-slate-200">S&P 500</p>
+                        <p className="text-slate-200">5,197.83</p>
+                        <p className="text-green-300">+135.58</p>
+                      </div>
+                      <hr className="border border-slate-500"/>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="grid grid-cols-3 gap-2">
+                        <p className="text-slate-200">FTSE 100</p>
+                        <p className="text-slate-200">7,910.53</p>
+                        <p className="text-green-300">+208.45</p>
+                      </div>
+                      <hr className="border border-slate-500"/>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -223,12 +306,12 @@ const BeautifulPulse = () => {
 
         <div className="relative w-[250px] space-y-4 rounded-2xl rounded-tl-none bg-[#282A30] px-4 py-6">
           <div className="flex items-center gap-2">
-            <IoMenu className="text-slate-200" size="20px" />
+            <IoMenu className="text-slate-200" size="20px"/>
             <p className="text-slate-200">Overview</p>
           </div>
           <div className="grid min-h-[20px] grid-cols-3 gap-2 rounded bg-[#1C1D22] p-4">
             <div className="space-y-1">
-              <IoMdAdd className="mx-auto h-[40px] w-[40px] rounded-full bg-pink-100 p-2 text-pink-950" size="30px" />
+              <IoMdAdd className="mx-auto h-[40px] w-[40px] rounded-full bg-pink-100 p-2 text-pink-950" size="30px"/>
               <p className="text-center text-small text-slate-200">Design</p>
             </div>
             <div className="space-y-1">
@@ -247,20 +330,28 @@ const BeautifulPulse = () => {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-2">
-            <div className="min-h-[30px] animate-pulse bg-[#1C1D22]"></div>
-            <div className="min-h-[30px] animate-pulse bg-[#1C1D22]"></div>
-            <div className="min-h-[30px] animate-pulse bg-[#1C1D22]"></div>
-            <div className="min-h-[30px] animate-pulse bg-[#1C1D22]"></div>
-            <div className="min-h-[30px] animate-pulse bg-[#1C1D22]"></div>
-            <div className="min-h-[30px] animate-pulse bg-[#1C1D22]"></div>
+            <div className="min-h-[20px] rounded animate-pulse bg-[#1C1D22]"></div>
+            <div className="min-h-[20px] rounded animate-pulse bg-[#1C1D22]"></div>
+            <div className="min-h-[20px] rounded animate-pulse bg-[#1C1D22]"></div>
+            <div className="min-h-[20px] rounded animate-pulse bg-[#1C1D22]"></div>
+            <div className="min-h-[20px] rounded animate-pulse bg-[#1C1D22]"></div>
+            <div className="min-h-[20px] rounded animate-pulse bg-[#1C1D22]"></div>
           </div>
         </div>
-
-        <div className="hidden min-h-[150px] w-[250px] animate-pulse rounded-t-2xl bg-[#282A30] md:block"></div>
       </div>
 
       <div className="space-y-8 flex flex-col md:items-end items-center">
-        <div className="hidden min-h-[250px] w-[250px] animate-pulse rounded-b-2xl bg-[#282A30] md:block"></div>
+        <div
+          className="space-y-4 rounded-lg bg-[#282A30] p-4 w-[250px]">
+          {filteredGraph?.slice(0, 4).map((property) => {
+            const values = [+property.sold, +property.units, +property.available];
+            return (
+              <div key={property.name} className="py-2">
+                <StraightChart data={values} title={property?.name}/>
+              </div>
+            );
+          })}
+        </div>
         <div className="relative min-h-full w-[250px]">
           <Swiper
             loop={true}
@@ -285,32 +376,37 @@ const BeautifulPulse = () => {
                 </div>
                 <div className="grid grid-cols-3 gap-4">
                   <div className="space-y-1 text-center">
-                    <div className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
-                      <LuSquareChartGantt className="text-slate-900" size="20px" />
+                    <div
+                      className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
+                      <LuSquareChartGantt className="text-slate-900" size="20px"/>
                     </div>
                     <p className="text-sm text-slate-400">Report</p>
                   </div>
                   <div className="space-y-1 text-center">
-                    <div className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
-                      <IoStatsChart className="text-slate-900" size="20px" />
+                    <div
+                      className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
+                      <IoStatsChart className="text-slate-900" size="20px"/>
                     </div>
                     <p className="text-sm text-slate-400">Chart</p>
                   </div>
                   <div className="space-y-1 text-center">
-                    <div className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
-                      <BsRobot className="text-slate-900" size="20px" />
+                    <div
+                      className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
+                      <BsRobot className="text-slate-900" size="20px"/>
                     </div>
                     <p className="text-sm text-slate-400">Gen AI</p>
                   </div>
                   <div className="space-y-1 text-center">
-                    <div className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
-                      <LuPresentation className="text-slate-900" size="20px" />
+                    <div
+                      className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
+                      <LuPresentation className="text-slate-900" size="20px"/>
                     </div>
                     <p className="text-sm text-slate-400">Present</p>
                   </div>
                   <div className="space-y-1 text-center">
-                    <div className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
-                      <TbChartInfographic className="text-slate-900" size="20px" />
+                    <div
+                      className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
+                      <TbChartInfographic className="text-slate-900" size="20px"/>
                     </div>
                     <p className="text-sm text-slate-400">Infographics</p>
                   </div>
@@ -320,47 +416,57 @@ const BeautifulPulse = () => {
             <SwiperSlide>
               <div className="space-y-4 rounded-2xl bg-[#282A30] px-4 py-6">
                 <div className="flex items-center gap-2">
-                  <CiGlobe className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2.5 text-slate-800" size="20px" />
-                  <p className="text-slate-200">Maps</p>
+                  <img
+                    className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2.5 text-slate-800"
+                    src="/images/logo-icon.png"
+                  />
+                  <p className="text-slate-200">Parrots</p>
                 </div>
-                <div className="space-y-1">
-                  <div className="min-h-[15px] w-[40%] bg-[#1C1D22]"></div>
-                  <div className="min-h-[15px] w-[80%] bg-[#1C1D22]"></div>
+                <div className="grid grid-cols-5 gap-2 items-center">
+                  <div className="col-span-3 flex gap-2">
+                    <div className="rounded-lg h-[10px] w-full bg-slate-200"/>
+                    <div className="rounded-lg h-[10px] w-full bg-slate-200"/>
+                  </div>
+                  <div className="flex justify-center col-span-2">
+                    <img
+                      className="w-[30px] h-[30px] rounded-full border border-yellow-400 hover:scale-110 ease-in-out transition-transform duration-300"
+                      src="/images/face-seven.png"/>
+                    <img
+                      className="w-[30px] h-[30px] rounded-full border border-yellow-400 -ml-3 hover:scale-110 ease-in-out transition-transform duration-300"
+                      src="/images/face-two.png"/>
+                    <img
+                      className="w-[30px] h-[30px] rounded-full border border-yellow-400 -ml-3 hover:scale-110 ease-in-out transition-transform duration-300"
+                      src="/images/face-three.png"/>
+                  </div>
                 </div>
-                <div className="grid grid-cols-3 gap-2">
-                  <GiAfrica className="text-slate-200" size="40px" />
-                  <FaCanadianMapleLeaf className="text-slate-200" size="40px" />
-                  <GiSouthAmerica className="text-slate-200" size="40px" />
-                  <GiMexico className="text-slate-200" size="40px" />
-                  <GiSpain className="text-slate-200" size="40px" />
-                  <GiSouthKorea className="text-slate-200" size="40px" />
-                  <GiNigeria className="text-slate-200" size="40px" />
-                  <GiAustralia className="text-slate-200" size="40px" />
-                  <GiSriLanka className="text-slate-200" size="40px" />
+                <div className="flex items-center gap-2 px-2">
+                  <div className="h-[20px] w-[20px] rounded bg-white"></div>
+                  <div className="flex items-center w-[80%] gap-2">
+                    <div className="rounded-lg h-[10px] w-[70%] bg-slate-200"/>
+                    <div className="rounded-lg h-[10px] w-[40%] bg-slate-200"/>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 bg-yellow-300 p-2 rounded">
+                  <div className="h-[20px] w-[20px] rounded bg-white"></div>
+                  <div className="flex items-center w-[80%] gap-2">
+                    <div className="rounded-lg h-[10px] w-[70%] bg-white"/>
+                    <div className="rounded-lg h-[10px] w-[40%] bg-white"/>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 px-2">
+                  <div className="h-[20px] w-[20px] rounded bg-white"></div>
+                  <div className="flex items-center w-[80%] gap-2">
+                    <div className="rounded-lg h-[10px] w-[70%] bg-slate-200"/>
+                    <div className="rounded-lg h-[10px] w-[40%] bg-slate-200"/>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="relative space-y-4 rounded-2xl rounded-tl-none bg-[#282A30] px-4 py-6">
-                <div className="flex items-center gap-2">
-                  <LuShapes className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2 text-slate-800" size="20px" />
-                  <p className="text-slate-200">Shapes</p>
-                </div>
-                <div className="space-y-1">
-                  <div className="min-h-[15px] w-[40%] bg-[#1C1D22]"></div>
-                  <div className="min-h-[15px] w-[80%] bg-[#1C1D22]"></div>
-                </div>
-                <div className="grid grid-cols-3 gap-2">
-                  <CgShapeSquare className="text-slate-200" size="40px" />
-                  <CgShapeCircle className="text-slate-200" size="40px" />
-                  <CgShapeTriangle className="text-slate-200" size="40px" />
-                  <CgShapeHexagon className="text-slate-200" size="40px" />
-                  <RiShapeLine className="text-slate-200" size="40px" />
-                  <BiShapeTriangle className="text-slate-200" size="40px" />
-                  <CgShapeRhombus className="text-slate-200" size="40px" />
-                  <BiShapePolygon className="text-slate-200" size="40px" />
-                  <IoShapesOutline className="text-slate-200" size="40px" />
-                </div>
+              <div
+                className="space-y-2 rounded-2xl bg-[#282A30] p-4 relative">
+                <p className="text-white">Inflow-Outflow</p>
+                <DonutChart data={chart} text={text}/>
               </div>
             </SwiperSlide>
           </Swiper>

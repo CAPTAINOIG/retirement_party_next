@@ -1,9 +1,10 @@
-
+'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useWindowSize } from 'react-use';
 import BeautifulPulse from '@/components/core/shared/BeautifulPulse';
 import Button from '@/components/global/Button';
+import HeroPulse from "@/components/core/shared/HeroPulse";
 
 const BeautifulStory = () => {
   const { width } = useWindowSize();
@@ -29,7 +30,7 @@ const BeautifulStory = () => {
       <div className="container relative mx-auto md:block pt-10">
         <div className="grid-cols-12 px-4 md:grid md:px-0 gap-y-10 space-y-10">
           <div className="relative col-span-12 grid-cols-12 md:grid gap-y-10 gap-5 space-y-20"> 
-            <div className="col-span-6 space-y-8 pt-[70px] md:py-[160px] xl:pb-[22rem] xl:pt-[100px] ">
+            <div className="col-span-6 space-y-8 pt-[70px] md:py-[160px] xl:pt-[100px] ">
               <div className='space-y-6 items-center justify-center text-center md:text-left md:items-start md:justify-start'>
                 <motion.h1
                   variants={textVariant}
@@ -47,8 +48,8 @@ const BeautifulStory = () => {
                 </Button>
               </div>
             </div>
-            <div className=" col-span-6  ">
-              <BeautifulPulse />
+            <div className="col-span-6">
+              <BeautifulPulse/>
             </div>
           </div>
         </div>
