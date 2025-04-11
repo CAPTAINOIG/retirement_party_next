@@ -22,7 +22,7 @@ const BigIdeas = () => {
               <span className="px-1 relative text-slate-200">busywork.</span>
               </span>
               </h2>
-              <p className="py-8 max-w-xl text-lg tracking-tight text-center text-slate-800">
+              <p className="py-8 max-w-xl text-lg tracking-tight text-center text-slate-800 mx-auto">
                 Lorem ipsum dolor sit amet, consectetur <br/> adipisicing elit. Assumenda, nobis?
               </p>
             </div>
