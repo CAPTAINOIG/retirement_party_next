@@ -6,9 +6,14 @@ export function middleware(request) {
       new URL('https://drive.google.com/file/d/1iUrEK2Maxo--GGeYJ7rBzPSj-S6ycfJF/view?usp=sharing')
     );
   }
+  if (request.nextUrl.pathname === '/2pagerdeck') {
+    return NextResponse.redirect(
+      new URL('https://drive.google.com/file/d/1vo9mlA-Bo1_vWXqj58VQBqy-mYr77bxI/view?usp=sharing')
+    );
+  }
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: '/investordeck',
+  matcher: ['/investordeck', '/2pagerdeck'],
 };
