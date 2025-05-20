@@ -201,7 +201,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
         <div className="flex flex-col items-center gap-4 py-20">
           <TbCheck size="100" className="text-green-500" />
           <p className="text-center text-lg">
-            You have successfully registered for DICA 24.
+            You have successfully registered.
             <br /> See you soon!
           </p>
           <Button
