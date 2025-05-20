@@ -34,9 +34,8 @@ const RegisterModal = ({ isOpen, onClose }) => {
     try {
       const { firstName, lastName, interests, ...rest } = values;
       await createEventAttendee({
-        event: 'dica2024',
+        event: 'main-2025',
         name: `${firstName} ${lastName}`,
-        interests: interests.split(','),
         ...rest,
       });
       setView('success');
@@ -47,14 +46,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
   };
 
   return (
-    <Drawer
-      isOpen={isOpen}
-      onClose={onClose}
-      size="2xl"
-      title="DICA 24 Event Registration"
-      width={650}
-      className="md:p-12"
-    >
+    <Drawer isOpen={isOpen} onClose={onClose} size="2xl" title="Book your seat" width={650} className="md:p-12">
       {view === 'form' && (
         <>
           <p className="text-lg">
@@ -90,34 +82,32 @@ const RegisterModal = ({ isOpen, onClose }) => {
                 isDisabled={isCreateEventAttendeeLoading}
               />
             </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              <Input
-                type="email"
-                label="Email"
-                placeholder=" "
-                variant="bordered"
-                classNames={{ input: 'text-lg px-2' }}
-                labelPlacement="outside"
-                size="lg"
-                {...register('email', { required: 'Email is required' })}
-                errorMessage={errors?.email?.message}
-                isInvalid={!!errors?.email?.message}
-                isDisabled={isCreateEventAttendeeLoading}
-              />
-              <Input
-                type="phone"
-                label="Phone Number"
-                placeholder=" "
-                variant="bordered"
-                classNames={{ input: 'text-lg px-2' }}
-                labelPlacement="outside"
-                size="lg"
-                {...register('phone', { required: 'Phone Number is required' })}
-                errorMessage={errors?.phone?.message}
-                isInvalid={!!errors?.phone?.message}
-                isDisabled={isCreateEventAttendeeLoading}
-              />
-            </div>
+            <Input
+              type="email"
+              label="Email"
+              placeholder=" "
+              variant="bordered"
+              classNames={{ input: 'text-lg px-2' }}
+              labelPlacement="outside"
+              size="lg"
+              {...register('email', { required: 'Email is required' })}
+              errorMessage={errors?.email?.message}
+              isInvalid={!!errors?.email?.message}
+              isDisabled={isCreateEventAttendeeLoading}
+            />
+            <Input
+              type="phone"
+              label="Phone Number"
+              placeholder=" "
+              variant="bordered"
+              classNames={{ input: 'text-lg px-2' }}
+              labelPlacement="outside"
+              size="lg"
+              {...register('phone', { required: 'Phone Number is required' })}
+              errorMessage={errors?.phone?.message}
+              isInvalid={!!errors?.phone?.message}
+              isDisabled={isCreateEventAttendeeLoading}
+            />
             <div className="grid gap-4 md:grid-cols-2">
               <Controller
                 name="country"
@@ -184,59 +174,6 @@ const RegisterModal = ({ isOpen, onClose }) => {
                 )}
               />
             </div>
-            <Controller
-              name="interests"
-              control={control}
-              rules={{ required: 'Select at least one interest' }}
-              disabled={isCreateEventAttendeeLoading}
-              render={({ field: { onChange, value, ...field }, fieldState: { error } }) => {
-                return (
-                  <CheckboxGroup
-                    {...field}
-                    value={value?.split(',') ?? []}
-                    onValueChange={(v) => {
-                      onChange({ target: { value: v.join(',') } });
-                    }}
-                    size="lg"
-                    label="What topics are you interested in?"
-                    classNames={{ label: 'text-base mb-2' }}
-                    errorMessage={error?.message}
-                    isDisabled={field.disabled}
-                  >
-                    <Checkbox isInvalid={!!error?.message} value="data-science">
-                      Data Science
-                    </Checkbox>
-                    <Checkbox isInvalid={!!error?.message} value="ai">
-                      AI
-                    </Checkbox>
-                    <Checkbox isInvalid={!!error?.message} value="cybersecurity">
-                      Cybersecurity
-                    </Checkbox>
-                    <Checkbox isInvalid={!!error?.message} value="data-analytics">
-                      Data Analytics
-                    </Checkbox>
-                    <Checkbox isInvalid={!!error?.message} value="cloud-computing">
-                      Cloud Computing
-                    </Checkbox>
-                    <Checkbox isInvalid={!!error?.message} value="big-data">
-                      Big Data
-                    </Checkbox>
-                    <Checkbox isInvalid={!!error?.message} value="artificial-intelligence">
-                      Artificial Intelligence
-                    </Checkbox>
-                    <Checkbox isInvalid={!!error?.message} value="machine-learning">
-                      Machine Learning
-                    </Checkbox>
-                    <Checkbox isInvalid={!!error?.message} value="deep-learning">
-                      Deep Learning
-                    </Checkbox>
-                    <Checkbox isInvalid={!!error?.message} value="natural-language-processing">
-                      Natural Language Processing
-                    </Checkbox>
-                  </CheckboxGroup>
-                );
-              }}
-            />
             <div className="mt-4 flex">
               <Button
                 isLoading={isCreateEventAttendeeLoading}

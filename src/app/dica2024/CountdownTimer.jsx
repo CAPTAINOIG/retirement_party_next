@@ -2,7 +2,7 @@ import React from 'react';
 import useCountdown from '@/hooks/use-countdown';
 
 const CountdownTimer = () => {
-  const { weeks, days, hours, minutes, seconds } = useCountdown('6/30/2024');
+  const { weeks, days, hours, minutes, seconds } = useCountdown('6/10/2025');
 
   return (
     <div className="mt-10 flex w-max items-center divide-x divide-white/10 rounded-3xl border border-white/10 bg-white/10 px-2 md:px-4">
