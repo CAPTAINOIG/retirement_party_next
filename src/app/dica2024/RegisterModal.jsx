@@ -18,6 +18,22 @@ const countries = [
   { key: 'AU', label: 'Australia' },
 ];
 
+const industries = [
+  { key: 'business', label: 'Business' },
+  { key: 'technology', label: 'Technology' },
+  { key: 'government', label: 'Government' },
+  { key: 'banking', label: 'Banking' },
+  { key: 'consulting', label: 'Consulting' },
+  { key: 'entertainment', label: 'Entertainment' },
+  { key: 'education', label: 'Education' },
+  { key: 'healthcare', label: 'Healthcare' },
+  { key: 'finance', label: 'Finance' },
+  { key: 'legal', label: 'Legal' },
+  { key: 'media', label: 'Media' },
+  { key: 'nonprofit', label: 'Non-Profit' },
+  { key: 'other', label: 'Other' },
+];
+
 const RegisterModal = ({ isOpen, onClose }) => {
   const [view, setView] = useState('form');
   const toast = useToast();
@@ -49,10 +65,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
     <Drawer isOpen={isOpen} onClose={onClose} size="2xl" title="Book your seat" width={650} className="md:p-12">
       {view === 'form' && (
         <>
-          <p className="text-lg">
-            We are excited to have you register for our upcoming conference. Please provide the requested information
-            for a smooth registration process. Contact us if you need assistance.
-          </p>
+          <p className="text-lg">We are excited to register you for our private unveiling</p>
           <form onSubmit={handleSubmit(submit)} className="mt-10 flex flex-col gap-6">
             <div className="grid gap-4 md:grid-cols-2">
               <Input
@@ -139,15 +152,15 @@ const RegisterModal = ({ isOpen, onClose }) => {
                 )}
               />
               <Controller
-                name="ageGroup"
-                rules={{ required: 'Age Group is required' }}
+                name="industry"
+                rules={{ required: 'Industry is required' }}
                 control={control}
                 disabled={isCreateEventAttendeeLoading}
                 render={({ field }) => (
                   <Select
                     disallowEmptySelection
                     selectionMode="single"
-                    label="Age group"
+                    label="Industry"
                     classNames={{ value: 'text-base px-2', listbox: 'px-2' }}
                     labelPlacement="outside"
                     placeholder="Select one"
@@ -156,16 +169,10 @@ const RegisterModal = ({ isOpen, onClose }) => {
                     selectedKeys={field.value ? [field.value] : []}
                     onChange={(e) => field.onChange(e)}
                     isDisabled={field.disabled}
-                    errorMessage={errors?.ageGroup?.message}
-                    isInvalid={!!errors?.ageGroup?.message}
+                    errorMessage={errors?.industry?.message}
+                    isInvalid={!!errors?.industry?.message}
                   >
-                    {[
-                      { key: '<18', label: 'Under 18' },
-                      { key: '18-30', label: '18-30' },
-                      { key: '31-40', label: '31-40' },
-                      { key: '41-50', label: '41-50' },
-                      { key: '>50', label: 'Over 50' },
-                    ].map((item) => (
+                    {industries.map((item) => (
                       <SelectItem key={item.key} classNames={{ title: 'text-base' }}>
                         {item.label}
                       </SelectItem>

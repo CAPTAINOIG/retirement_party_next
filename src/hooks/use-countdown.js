@@ -19,16 +19,15 @@ const useCountdown = (targetDate) => {
 };
 
 const getReturnValues = (countDown) => {
-  const weeks = Math.floor(countDown / (1000 * 60 * 60 * 24 * 7)) || 0;
+  // Calculate total days left
   const days = Math.floor(countDown / (1000 * 60 * 60 * 24)) || 0;
   const hours = Math.floor((countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) || 0;
   const minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60)) || 0;
   const seconds = Math.floor((countDown % (1000 * 60)) / 1000) || 0;
 
-  const expired = weeks + days + hours + minutes + seconds <= 0;
+  const expired = days + hours + minutes + seconds <= 0;
 
   return {
-    weeks: addLeadingZero(weeks),
     days: addLeadingZero(days),
     hours: addLeadingZero(hours),
     minutes: addLeadingZero(minutes),

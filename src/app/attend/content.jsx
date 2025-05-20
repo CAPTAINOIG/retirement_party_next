@@ -6,9 +6,9 @@ import Logo from '@/components/core/shared/Logo';
 import { Button, useDisclosure } from '@heroui/react';
 import RegisterModal from '@/app/dica2024/RegisterModal';
 import { useTheme } from 'next-themes';
-import Footer from '@/components/global/Footer';
 import CountdownTimer from '../dica2024/CountdownTimer';
 import ClientOnly from '@/components/global/ClientOnly';
+import Footer from '@/components/core/event/Footer';
 
 const AttendPageContent = () => {
   const { resolvedTheme: theme } = useTheme();
@@ -61,14 +61,13 @@ const AttendPageContent = () => {
           <div className="absolute inset-0 bg-black bg-cover opacity-10"></div>
           <div className="container relative pb-28 pt-52 md:pb-32 md:pt-60">
             <div className="text-white md:max-w-[90%]">
-              <h1 className="text-[3.4rem] font-bold leading-none tracking-tight md:text-[6.4rem]">
+              <h1 className="text-[3.4rem] font-bold leading-none tracking-tight md:text-[7rem]">
                 Unveiling
                 <br />
                 Immortality
               </h1>
               <p className="mt-8 text-lg opacity-70 md:max-w-[70%] md:text-xl">
-                Join us as we discuss advancing Africa through data intelligence powered consumers, businesses and
-                governments
+                We are connecting intelligence to African's data, join us.
               </p>
               <ClientOnly>
                 <CountdownTimer />
