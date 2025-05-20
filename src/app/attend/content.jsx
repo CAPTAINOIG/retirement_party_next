@@ -49,17 +49,13 @@ const AttendPageContent = () => {
       </div>
       <div>
         <div className="relative overflow-hidden bg-[#11100f]">
-          <div
-            className="absolute inset-0 hidden bg-[url(/images/dica-bg.jpg)] bg-cover bg-no-repeat md:block"
-            style={{ backgroundSize: '180%', backgroundPosition: '0% 60%' }}
+          <img
+            src="/images/hero.jpg"
+            alt="Hero image"
+            className="top absolute left-0 z-[1] h-full w-full object-cover"
           />
-          <div
-            className="absolute inset-0 bg-[url(/images/dica-bg.jpg)] bg-cover bg-no-repeat md:hidden"
-            style={{ backgroundSize: 'cover', backgroundPosition: '5% 30%' }}
-          />
-          <div className="bg-tw-dark absolute inset-0 min-h-screen scale-[4] border bg-cover opacity-90"></div>
-          <div className="absolute inset-0 bg-black bg-cover opacity-10"></div>
-          <div className="container relative pb-28 pt-52 md:pb-32 md:pt-60">
+          <div className="absolute inset-0 z-[2] bg-gradient-to-b from-transparent to-black/100" />
+          <div className="container relative z-[3] pb-28 pt-52 md:pb-32 md:pt-60">
             <div className="text-white md:max-w-[90%]">
               <h1 className="text-[3.4rem] font-bold leading-none tracking-tight md:text-[7rem]">
                 Unveiling
