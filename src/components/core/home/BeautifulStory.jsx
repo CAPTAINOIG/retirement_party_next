@@ -6,6 +6,9 @@ import BeautifulPulse from '@/components/core/shared/BeautifulPulse';
 import Button from '@/components/global/Button';
 import Link from 'next/link';
 import { IconChevronRight } from '@tabler/icons-react';
+import { AuroraBackground } from '@/components/ui/aurora-background';
+import { BackgroundBeams } from '@/components/ui/background-beams';
+import { Boxes } from '@/components/ui/background-boxes';
 
 const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 
@@ -30,7 +33,8 @@ const BeautifulStory = () => {
 
   return (
     <div className="relative w-full overflow-hidden bg-black">
-      <div className="relative container mt-32 md:block">
+      <BackgroundBeams />
+      <div className="pointer-events-none relative z-2 container mt-32 md:block">
         <div className="relative grid items-center gap-20 py-12 md:grid-cols-[1fr_1fr] md:gap-0 md:pt-10 md:pb-32">
           <div className="items-center justify-center text-center md:items-start md:justify-start md:text-left">
             <motion.h1
@@ -49,9 +53,6 @@ const BeautifulStory = () => {
                 Start creating
               </Button>
             </Link>
-            {/* <Button size="xl" className="bg-blue-600 text-white hover:bg-blue-700 mt-8">
-              Start Creating
-            </Button> */}
           </div>
           <BeautifulPulse />
         </div>
