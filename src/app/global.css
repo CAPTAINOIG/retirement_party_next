@@ -12,7 +12,7 @@
 
 html,
 body {
-  @apply w-full bg-background text-[15px];
+  @apply bg-background w-full text-[15px];
 }
 
 :root {
