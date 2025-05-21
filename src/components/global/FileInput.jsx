@@ -35,7 +35,7 @@ const FileInput = forwardRef(
               {...props}
               ref={ref}
               disabled={disabled}
-              className="absolute w-[1px] opacity-0"
+              className="absolute w-px opacity-0"
             />
           </label>
           <div className="pointer-events-none absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md">

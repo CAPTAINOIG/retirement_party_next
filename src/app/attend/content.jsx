@@ -52,10 +52,10 @@ const AttendPageContent = () => {
           <img
             src="/images/hero.jpg"
             alt="Hero image"
-            className="top absolute left-0 z-[1] h-full w-full object-cover"
+            className="top absolute left-0 z-1 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 z-[2] bg-gradient-to-b from-transparent to-black/100" />
-          <div className="container relative z-[3] pb-28 pt-52 md:pb-32 md:pt-60">
+          <div className="absolute inset-0 z-2 bg-linear-to-b from-transparent to-black" />
+          <div className="container relative z-3 pb-28 pt-52 md:pb-32 md:pt-60">
             <div className="text-white md:max-w-[90%]">
               <h1 className="text-[3.4rem] font-bold leading-none tracking-tight md:text-[7rem]">
                 Unveiling

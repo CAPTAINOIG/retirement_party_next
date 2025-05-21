@@ -11,14 +11,14 @@ const BigIdeas = () => {
   return (
     <div className="relative w-full overflow-hidden">
       <div className="container relative mx-auto md:block">
-        <div className="grid grid-cols-12 pb-[70px] md:pb-[160px] xl:pb-[19rem]">
+        <div className="grid grid-cols-12 pb-[70px] md:pb-[160px] xl:pb-76">
           <div className="relative col-span-12 space-y-6">
             <div>
               <h2 className="text-4xl font-medium text-center leading-tight md:text-6xl md:leading-[1.1]">
                 Work on big ideas, <br className="hidden md:block"/>without the{" "}
                 <span className="relative inline-block leading-[0.7]">
               <span
-                className="absolute inset-0 md:h-[60px] h-[45px] rotate-[3.5deg] rounded bottom-0 h-2 bg-gradient-to-r from-green-600 to-primary"></span>
+                className="absolute inset-0 md:h-[60px] h-[45px] rotate-[3.5deg] rounded bottom-0 h-2 bg-linear-to-r from-green-600 to-primary"></span>
               <span className="px-1 relative text-slate-200">busywork.</span>
               </span>
               </h2>

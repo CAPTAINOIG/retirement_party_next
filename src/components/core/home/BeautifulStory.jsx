@@ -33,7 +33,7 @@ const BeautifulStory = () => {
               variants={textVariant}
               initial="hidden"
               whileInView="visible"
-              className="bg-gradient-to-r from-green-600 to-primary bg-clip-text text-[4rem] font-bold leading-[1] tracking-tighter text-transparent md:text-[6rem] md:leading-[0.9] xl:text-[7rem]"
+              className="bg-linear-to-r from-green-600 to-primary bg-clip-text text-[4rem] font-bold leading-none tracking-tighter text-transparent md:text-[6rem] md:leading-[0.9] xl:text-[7rem]"
             >
               Tell a beautiful story with data
             </motion.h1>

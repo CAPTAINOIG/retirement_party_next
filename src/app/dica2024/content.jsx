@@ -277,7 +277,7 @@ const DICA2024PageContent = () => {
         <div className="relative" id="about">
           <div className="container">
             <div className="pattern-1 relative overflow-hidden rounded-3xl bg-primary-50 p-12 md:p-16">
-              <div className="relative z-[2]">
+              <div className="relative z-2">
                 <h2 className="mb-10 max-w-4xl text-4xl font-bold md:mb-16 md:text-6xl">About us</h2>
                 <p className="text-xl">
                   STATISENSE is building Africa's most powerful AI for Data platform, revolutionizing how businesses,

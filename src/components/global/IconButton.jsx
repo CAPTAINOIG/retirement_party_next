@@ -108,7 +108,7 @@ const IconButton = forwardRef(
         'w-16 h-16': size === 'xl',
         'opacity-50 pointer-events-none cursor-not-allowed': disabled,
         'opacity-80 pointer-events-none cursor-default': loading,
-        '!rounded-full': rounded,
+        'rounded-full!': rounded,
       },
       classes[color][variant],
       'font-medium rounded-xl transition duration-100 inline-flex justify-center items-center whitespace-nowrap',

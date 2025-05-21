@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin './hero.js';
+
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
 
 * {
   outline: transparent;
@@ -44,6 +46,7 @@ body {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
 .tooltip .tooltiptext::after {
   content: ' ';
   position: absolute;

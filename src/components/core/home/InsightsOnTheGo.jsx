@@ -49,7 +49,7 @@ const InsightsOnTheGo = () => {
           <div className="relative flex w-full overflow-hidden py-4 md:col-span-4 md:justify-center md:overflow-visible">
             <div className="relative w-3/4 md:w-full">
               <div className="relative">
-                <div className="absolute left-[-5rem] top-[5rem] hidden animate-bounce rounded-[1.2rem] bg-slate-100 px-8 py-4 md:block">
+                <div className="absolute -left-20 top-20 hidden animate-bounce rounded-[1.2rem] bg-slate-100 px-8 py-4 md:block">
                   <div className="my-3 flex items-center gap-4">
                     <IconFileInvoice className="text-blue-600" size="20" />
                     <p className="max-w-sm">Infographics on Africa</p>
@@ -63,7 +63,7 @@ const InsightsOnTheGo = () => {
                     <p className="max-w-sm">2023</p>
                   </div>
                 </div>
-                <div className="absolute bottom-[5rem] right-[-15rem] hidden min-h-[250px] w-[400px] rounded-[1.2rem] bg-slate-100 px-8 py-4 md:block">
+                <div className="absolute bottom-20 -right-60 hidden min-h-[250px] w-[400px] rounded-[1.2rem] bg-slate-100 px-8 py-4 md:block">
                   <div className="my-3 flex items-center gap-2">
                     <IconClock size="20" />
                     <p className="max-w-sm">Date posted: Aug 16, 2023</p>

@@ -146,7 +146,7 @@ const Parrots = () => {
                       src="/images/face-three.png"/>
                   </div>
                   <p className="text-md font-semibold">25 replies</p>
-                  <p className="text-sm font-[200] text-black">Last reply 4 min ago</p>
+                  <p className="text-sm font-extralight text-black">Last reply 4 min ago</p>
                 </div>
               </div>
             </div>

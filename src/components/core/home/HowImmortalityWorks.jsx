@@ -60,7 +60,7 @@ const HowImmortalityWorks = () => {
       <div className="container relative mx-auto py-[70px] md:block md:pb-[160px] md:pt-[160px]">
         <div className="grid grid-cols-12">
           <div className="relative col-span-12">
-            <h2 className="bg-gradient-to-r from-green-600 to-primary bg-clip-text text-center text-[3rem] font-bold leading-[1] text-transparent md:text-[6rem]">
+            <h2 className="bg-linear-to-r from-green-600 to-primary bg-clip-text text-center text-[3rem] font-bold leading-none text-transparent md:text-[6rem]">
               How Immortality
               <br /> works with us
             </h2>

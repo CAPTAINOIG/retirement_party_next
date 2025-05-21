@@ -43,7 +43,7 @@ const HomePageContent = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1004.85 307.16"
-              className="absolute md:bottom-[-2rem] bottom-[-1px] w-full md:block"
+              className="absolute md:-bottom-8 -bottom-px w-full md:block"
             >
               <path
                 id="wavePath"
@@ -70,7 +70,7 @@ const HomePageContent = () => {
         </div>
         {/* <HowItWorks /> */}
         <Immortal/>
-        <div className="space-y-32 bg-gradient-to-r from-[#F0FDF4] to-[#EFF6FF] py-28 md:space-y-48 md:pb-48 md:pt-24">
+        <div className="space-y-32 bg-linear-to-r from-[#F0FDF4] to-[#EFF6FF] py-28 md:space-y-48 md:pb-48 md:pt-24">
           <SupportingSectors/>
         </div>
         <HowImmortalityWorks/>

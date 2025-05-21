@@ -9,7 +9,7 @@ const StraightChart = ({ title, data }) => {
 
   return (
     <div className="space-y-1">
-      <p className="text-chatsm pb-1 font-[400] text-slate-200">{title}</p>
+      <p className="text-chatsm pb-1 font-normal text-slate-200">{title}</p>
       <div className="flex h-[7px] rounded-full">
         {percentages.map((value, i) => (
           <div

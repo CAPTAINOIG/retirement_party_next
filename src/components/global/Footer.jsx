@@ -16,7 +16,7 @@ const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#11100f] bg-gradient-to-br from-gray-900 to-gray-950 py-20 text-zinc-200">
+      <footer className="bg-[#11100f] bg-linear-to-br from-gray-900 to-gray-950 py-20 text-zinc-200">
         <div className="container">
           <div className="grid gap-20 pb-20 pt-10 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
             <div className="md:col-span-2">

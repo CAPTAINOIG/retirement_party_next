@@ -68,7 +68,7 @@ const Templates = () => {
               We got you cover with different  infographic  <br /> to represent your business data.
               {/* Lorem ipsum dolor sit amet, consectetur <br /> adipisicing elit. Assumenda, nobis? */}
             </p>
-            <div className="my-[2rem] text-center">
+            <div className="my-8 text-center">
               <Swiper
                 loop={true}
                 autoplay={{

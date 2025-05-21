@@ -25,14 +25,14 @@ const Newsletter = ({ sm = false }) => {
     <div
       className={cn(
         'relative bg-[#11100f] px-10 text-zinc-100 md:px-20',
-        sm ? 'overflow-hidden py-24' : 'py-40 xl:pb-[20rem]'
+        sm ? 'overflow-hidden py-24' : 'py-40 xl:pb-80'
       )}
     >
       <div className="bg-tw-dark absolute inset-0 z-10 min-h-screen scale-125 bg-cover opacity-80"></div>
       <div className="relative z-20">
         {view === 'form' && (
           <div className="container flex flex-col items-center text-center">
-            <h2 className="max-w-2xl text-[2.5rem] font-medium !leading-tight tracking-tight md:text-6xl">
+            <h2 className="max-w-2xl text-[2.5rem] font-medium leading-tight! tracking-tight md:text-6xl">
               Get weekly statisense directly into your inbox
             </h2>
             <form
@@ -44,7 +44,7 @@ const Newsletter = ({ sm = false }) => {
                 name="query"
                 id="query"
                 placeholder="Full name"
-                className="w-full rounded-full bg-zinc-700/50 px-8 py-4 !outline-none ring-zinc-500/10 transition-all focus:ring-4 disabled:pointer-events-none disabled:opacity-75 sm:w-[200%]"
+                className="w-full rounded-full bg-zinc-700/50 px-8 py-4 outline-none! ring-zinc-500/10 transition-all focus:ring-4 disabled:pointer-events-none disabled:opacity-75 sm:w-[200%]"
                 {...register('name', { required: 'Name is required' })}
                 disabled={isLoading}
               />
@@ -53,7 +53,7 @@ const Newsletter = ({ sm = false }) => {
                 name="query"
                 id="query"
                 placeholder="Email address"
-                className="w-full rounded-full bg-zinc-700/50 px-8 py-4 !outline-none ring-zinc-500/10 transition-all focus:ring-4 disabled:pointer-events-none disabled:opacity-75 sm:w-[300%]"
+                className="w-full rounded-full bg-zinc-700/50 px-8 py-4 outline-none! ring-zinc-500/10 transition-all focus:ring-4 disabled:pointer-events-none disabled:opacity-75 sm:w-[300%]"
                 {...register('email', { required: 'Email is required' })}
                 disabled={isLoading}
               />

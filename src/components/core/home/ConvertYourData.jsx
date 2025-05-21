@@ -9,7 +9,7 @@ const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 const ConvertYourData = () => {
   return (
     <>
-      <div className="container xl:pb-[15rem]">
+      <div className="container xl:pb-60">
         <div className="grid items-center gap-10 md:grid-cols-11 md:gap-16">
           <div className="md:col-span-5">
             <ChatSimulation />

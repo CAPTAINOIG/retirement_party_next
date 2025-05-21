@@ -29,7 +29,7 @@ const Immortal = () => {
         <img alt="curve" src="/images/hero-gradient-curve.svg"/>
       </div>
       <div className="relative mx-auto md:block">
-        <div className="md:grid grid-cols-12 py-[70px] md:pb-[160px] md:pt-[120px] xl:pb-[30rem] gap-8 space-y-8 md:space-y-0">
+        <div className="md:grid grid-cols-12 py-[70px] md:pb-[160px] md:pt-[120px] xl:pb-120 gap-8 space-y-8 md:space-y-0">
           <div className="col-span-7 md:flex gap-4 md:px-4 px-0 items-center space-y-4 md:space-y-0">
             <ImmortalCard/>
           </div>
@@ -38,7 +38,7 @@ const Immortal = () => {
               variants={textVariant}
               initial="hidden"
               whileInView="visible"
-              className="bg-gradient-to-r from-green-600 to-primary bg-clip-text text-[4rem] font-bold leading-[1.1] tracking-tighter text-transparent md:text-[6rem] md:leading-[0.9] xl:text-[7rem] "
+              className="bg-linear-to-r from-green-600 to-primary bg-clip-text text-[4rem] font-bold leading-[1.1] tracking-tighter text-transparent md:text-[6rem] md:leading-[0.9] xl:text-[7rem] "
             >
               Connect from any data source
             </motion.h1>

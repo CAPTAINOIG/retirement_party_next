@@ -3,9 +3,9 @@ import { IconChartInfographic, IconDatabase, IconMessage2, IconRepeat, IconRobot
 
 const HowItWorks = () => {
   return (
-    <div id="services" className="relative bg-gray-950 py-28 text-zinc-100 sm:py-40 xl:pb-[22rem]">
+    <div id="services" className="relative bg-gray-950 py-28 text-zinc-100 sm:py-40 xl:pb-88">
       <div className="bg-grid absolute inset-0 z-10 bg-cover opacity-30" />
-      <div className="absolute bottom-[-2rem] hidden w-full xl:block">
+      <div className="absolute -bottom-8 hidden w-full xl:block">
         <img alt="curve" src="/images/curve-3.svg" />
       </div>
       <section aria-label="Our services" className="container relative z-20">

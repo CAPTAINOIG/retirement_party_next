@@ -8,7 +8,7 @@ const ChartDetails = ({ text }) => {
       {text?.map((text, i) => (
         <div key={i} className="flex items-center gap-2">
           <div className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: colors[i] }}></div>
-          <p className="text-xs font-[600] text-slate-200">{text}</p>
+          <p className="text-xs font-semibold text-slate-200">{text}</p>
         </div>
       ))}
     </>

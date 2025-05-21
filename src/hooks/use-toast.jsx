@@ -60,7 +60,7 @@ export const ToastProvider = ({ children }) => {
       <Portal selector="body">
         <div
           className={cn(
-            'fixed bottom-0 left-1/2 z-[999] w-full -translate-x-1/2 transform space-y-3 p-4 md:w-max md:max-w-md md:p-8',
+            'fixed bottom-0 left-1/2 z-999 w-full -translate-x-1/2 transform space-y-3 p-4 md:w-max md:max-w-md md:p-8',
             {
               'pointer-events-none': !toasts.length,
             }
@@ -90,7 +90,7 @@ const Toast = ({ toast, onClose }) => {
       exit={{ opacity: 0, y: 20, scale: 0.5 }}
       transition={{ type: 'spring', stiffness: 500, damping: 30, mass: 1 }}
       className={cn(
-        'z-[9999] flex w-full items-start rounded-xl px-4 py-3',
+        'z-9999 flex w-full items-start rounded-xl px-4 py-3',
         { 'bg-green-600 text-white': toast.type === 'success' },
         { 'bg-red-600 text-white': toast.type === 'error' },
         { 'bg-orange-600 text-white': toast.type === 'warning' },

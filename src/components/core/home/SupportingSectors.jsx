@@ -74,7 +74,7 @@ const SupportingSectors = () => {
                       style={{ backgroundImage: `url(${item.image})` }}
                       className="layer-bg group relative min-h-[360px] rounded-lg bg-cover bg-center md:min-h-[420px]"
                     >
-                      <div className="absolute inset-0 z-[1] flex flex-col bg-black/50 text-white">
+                      <div className="absolute inset-0 z-1 flex flex-col bg-black/50 text-white">
                         <div className="px-10 pt-12 md:px-12 md:pt-14">
                           <h2 className="text-2xl font-medium md:text-3xl">{item.name}</h2>
                         </div>

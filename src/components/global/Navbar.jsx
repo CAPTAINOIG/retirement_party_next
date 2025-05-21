@@ -36,7 +36,7 @@ const Navbar = () => {
       <header
         className={cn(
           'fixed inset-x-0 top-0 z-50 h-32 transition-all',
-          { '!h-24 bg-white/90 text-black shadow backdrop-blur-lg': scrolled },
+          { 'h-24! bg-white/90 text-black shadow backdrop-blur-lg': scrolled },
           { 'text-slate-100': !scrolled }
         )}
       >

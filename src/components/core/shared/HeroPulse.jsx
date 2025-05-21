@@ -79,8 +79,8 @@ const HeroPulse = () => {
             className="relative w-[250px] space-y-4 rounded-2xl bg-[#282A30] px-4 py-6">
             <div>
               <div className="px-4 relative ">
-                <div className="bg-gradient-to-r from-green-600 to-primary rounded-xl pt-[10px] relative">
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-green-600 to-primary"/>
+                <div className="bg-linear-to-r from-green-600 to-primary rounded-xl pt-[10px] relative">
+                  <div className="absolute inset-0 rounded-xl bg-linear-to-r from-green-600 to-primary"/>
                   <div
                     className="bg-white rounded-xl min-h-[60px] group hover:-translate-y-6 ease-in-out duration-500 relative p-4">
                     <div className="space-y-0.5 hidden group-hover:block">

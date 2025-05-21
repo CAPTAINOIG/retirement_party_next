@@ -17,7 +17,7 @@ const Input = forwardRef(({ label, rightIcon, id, error, disabled, bordered = fa
         {!!label && (
           <span
             className={cn(
-              'absolute left-0 top-1/2 inline-flex -translate-y-1/2 px-5 text-sm opacity-80 transition-all peer-focus:top-4 peer-[:not(:placeholder-shown)]:top-4'
+              'absolute left-0 top-1/2 inline-flex -translate-y-1/2 px-5 text-sm opacity-80 transition-all peer-focus:top-4 peer-not-placeholder-shown:top-4'
             )}
           >
             {label} {props.value}
