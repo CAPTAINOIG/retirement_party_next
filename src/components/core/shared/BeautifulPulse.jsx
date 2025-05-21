@@ -1,22 +1,23 @@
 // 'use client'
-import React, {useEffect, useRef} from 'react';
-import {LuPresentation, LuShapes, LuSquareChartGantt} from 'react-icons/lu';
-import {IoAnalytics, IoMenu, IoSparkles, IoStatsChart,} from 'react-icons/io5';
-import {BsRobot} from 'react-icons/bs';
-import {TbChartInfographic} from 'react-icons/tb';
-import {IoIosTrendingDown, IoMdAdd, IoMdApps,} from 'react-icons/io';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import React, { useEffect, useRef } from 'react';
+import { LuPresentation, LuShapes, LuSquareChartGantt } from 'react-icons/lu';
+import { IoAnalytics, IoMenu, IoSparkles, IoStatsChart } from 'react-icons/io5';
+import { BsRobot } from 'react-icons/bs';
+import { TbChartInfographic } from 'react-icons/tb';
+import { IoIosTrendingDown, IoMdAdd, IoMdApps } from 'react-icons/io';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-flip';
 import SwiperCore from 'swiper';
-import {Autoplay, EffectFlip} from 'swiper/modules';
-import {AiOutlineStock} from 'react-icons/ai';
-import {CiCircleList, CiCoins1} from 'react-icons/ci';
+import { Autoplay, EffectFlip } from 'swiper/modules';
+import { AiOutlineStock } from 'react-icons/ai';
+import { CiCircleList, CiCoins1 } from 'react-icons/ci';
 import Typed from 'typed.js';
-import StraightChart from "@/components/core/shared/StraightChart";
-import DonutChart from "@/components/core/shared/DonutChart";
-import {FiTrendingUp} from "react-icons/fi";
+import StraightChart from '@/components/core/shared/StraightChart';
+import DonutChart from '@/components/core/shared/DonutChart';
+import { FiTrendingUp } from 'react-icons/fi';
+import ClientOnly from '@/components/global/ClientOnly';
 
 const BeautifulPulse = () => {
   SwiperCore.use([Autoplay]);
@@ -41,8 +42,8 @@ const BeautifulPulse = () => {
   }, []);
 
   const chart = [
-    {name: 'Inflow', value: 200000, fill: '#fff'},
-    {name: 'Outflow', value: 98000, fill: '#f4be37'},
+    { name: 'Inflow', value: 200000, fill: '#fff' },
+    { name: 'Outflow', value: 98000, fill: '#f4be37' },
   ];
   const text = ['Inflow', 'Outflow'];
   const filteredGraph = [
@@ -67,12 +68,12 @@ const BeautifulPulse = () => {
   ];
 
   return (
-    <div className='grid md:grid-cols-2  md:place-content-end  mx-0 space-y-8 md:space-y-0 pb-[70px] md:pb-0'>
-      <div className="space-y-4  flex flex-col   items-center ">
-        <div className="space-y-4 ">
+    <div className="mx-0 grid space-y-8 pb-[70px] md:grid-cols-2 md:place-content-end md:space-y-0 md:pb-0">
+      <div className="flex flex-col items-center space-y-4">
+        <div className="space-y-4">
           <div className="relative min-h-[60px] w-[250px] space-y-4 rounded-2xl rounded-bl-none bg-[#282A30] p-4">
             <div className="flex items-center gap-2">
-              <LuShapes className="text-slate-200" size="20px"/>
+              <LuShapes className="text-slate-200" size="20px" />
               <span className="text-white" ref={el}>
                 Elements
               </span>{' '}
@@ -94,43 +95,45 @@ const BeautifulPulse = () => {
               <SwiperSlide>
                 <div className="relative space-y-6 rounded-2xl rounded-tl-none bg-[#282A30] px-4 py-6">
                   <div className="flex items-center gap-2">
-                    <CiCircleList className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2 text-slate-800"
-                                  size="20px"/>
+                    <CiCircleList
+                      className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2 text-slate-800"
+                      size="20px"
+                    />
                     <p className="text-slate-200">List</p>
                   </div>
                   <div className="space-y-4">
                     <div className="flex gap-2">
-                      <div className="w-[15px] h-[15px] mt-1 rounded-full border border-pink-300"/>
+                      <div className="mt-1 h-[15px] w-[15px] rounded-full border border-pink-300" />
                       <div className="space-y-2">
                         <p className="text-slate-200">Dashboard</p>
-                        <div className="flex gap-2 items-center">
-                          <div className="w-[10px] h-[10px] rounded-full border bg-pink-300"/>
+                        <div className="flex items-center gap-2">
+                          <div className="h-[10px] w-[10px] rounded-full border bg-pink-300" />
                           <p className="text-slate-200">Everything in one place</p>
                         </div>
                       </div>
                     </div>
                     <div className="flex gap-2">
                       <div>
-                        <div className="w-[15px] h-[15px] mt-1 rounded-full border border-yellow-300"/>
+                        <div className="mt-1 h-[15px] w-[15px] rounded-full border border-yellow-300" />
                       </div>
-                      <div className="space-y-2 w-full">
+                      <div className="w-full space-y-2">
                         <p className="text-slate-200">Project</p>
                         <div className="flex gap-2">
                           <div>
-                            <div className="w-[10px] h-[10px] mt-1.5 rounded-full border bg-yellow-300"/>
+                            <div className="mt-1.5 h-[10px] w-[10px] rounded-full border bg-yellow-300" />
                           </div>
-                           <p className="text-slate-200">Clear overview, full efficiency</p>
+                          <p className="text-slate-200">Clear overview, full efficiency</p>
                         </div>
                       </div>
                     </div>
                     <div className="flex gap-2">
-                      <div className="w-[15px] h-[15px] mt-1 rounded-full border border-green-300"/>
+                      <div className="mt-1 h-[15px] w-[15px] rounded-full border border-green-300" />
                       <div className="space-y-2">
                         <p className="text-slate-200">Task</p>
-                        <div className="flex gap-2 items-center">
-                         <div>
-                           <div className="w-[10px] h-[10px] rounded-full border bg-green-300"/>
-                         </div>
+                        <div className="flex items-center gap-2">
+                          <div>
+                            <div className="h-[10px] w-[10px] rounded-full border bg-green-300" />
+                          </div>
                           <p className="text-slate-200">Where work gets done</p>
                         </div>
                       </div>
@@ -139,12 +142,12 @@ const BeautifulPulse = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="rounded-lg bg-[#282A30] p-4 space-y-4">
+                <div className="space-y-4 rounded-lg bg-[#282A30] p-4">
                   <div>
-                    <div className="grid grid-cols-2 gap-4 items-center">
-                      <div className="flex items-center gap-2 w-full">
+                    <div className="grid grid-cols-2 items-center gap-4">
+                      <div className="flex w-full items-center gap-2">
                         <p className="text-md text-white">Balance</p>
-                        <IoSparkles size="20px" className="text-white"/>
+                        <IoSparkles size="20px" className="text-white" />
                       </div>
                       <select
                         disabled
@@ -162,13 +165,13 @@ const BeautifulPulse = () => {
                         <span className="text-slate-400">₦</span>756,000.00
                       </p>
                       <p className="flex items-center gap-2 text-sm text-blue-400">
-                        <FiTrendingUp size="20px" className="text-blue-400"/>
+                        <FiTrendingUp size="20px" className="text-blue-400" />
                         ₦0.008
                       </p>
                     </div>
-                    <div className="pt-4 space-y-1">
-                      <div className="bg-[#1c1d22] h-[15px] rounded w-full"></div>
-                      <div className="bg-[#1c1d22] h-[15px] rounded w-[60%]"></div>
+                    <div className="space-y-1 pt-4">
+                      <div className="h-[15px] w-full rounded bg-[#1c1d22]"></div>
+                      <div className="h-[15px] w-[60%] rounded bg-[#1c1d22]"></div>
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
@@ -180,7 +183,7 @@ const BeautifulPulse = () => {
                           <span className="text-slate-400">₦</span>134,500.00
                         </p>
                         <p className="flex items-center gap-2 text-sm text-blue-400">
-                          <FiTrendingUp size="20px" className="text-blue-400"/>
+                          <FiTrendingUp size="20px" className="text-blue-400" />
                           ₦0.008
                         </p>
                       </div>
@@ -193,7 +196,7 @@ const BeautifulPulse = () => {
                           <span className="text-slate-400">₦</span>71,500.00
                         </p>
                         <p className="flex items-center gap-2 text-sm text-red-400">
-                          <IoIosTrendingDown size="20px" className="text-red-400"/>
+                          <IoIosTrendingDown size="20px" className="text-red-400" />
                           0.56%
                         </p>
                       </div>
@@ -212,39 +215,39 @@ const BeautifulPulse = () => {
                   </div>
                   <div className="grid grid-cols-3 gap-4">
                     <div className="space-y-1">
-                      <img src="/images/bitcoin.png"/>
+                      <img src="/images/bitcoin.png" />
                       <p className="text-slate-200">Bitcoin</p>
                     </div>
                     <div className="space-y-1">
-                      <img src="/images/ethereum.png"/>
+                      <img src="/images/ethereum.png" />
                       <p className="text-slate-200">Ethereum</p>
                     </div>
                     <div className="space-y-1">
-                      <img src="/images/tether.png"/>
+                      <img src="/images/tether.png" />
                       <p className="text-slate-200">USDt</p>
                     </div>
                     <div className="space-y-1">
-                      <img src="/images/solana.png"/>
+                      <img src="/images/solana.png" />
                       <p className="text-slate-200">Solana</p>
                     </div>
                     <div className="space-y-1">
-                      <img src="/images/tron.png"/>
+                      <img src="/images/tron.png" />
                       <p className="text-slate-200">Tron</p>
                     </div>
                     <div className="space-y-1">
-                      <img src="/images/xrp.png"/>
+                      <img src="/images/xrp.png" />
                       <p className="text-slate-200">Xrp</p>
                     </div>
                     <div className="space-y-1">
-                      <img src="/images/usdc.png"/>
+                      <img src="/images/usdc.png" />
                       <p className="text-slate-200">USDC</p>
                     </div>
                     <div className="space-y-1">
-                      <img src="/images/bnb.png"/>
+                      <img src="/images/bnb.png" />
                       <p className="text-slate-200">BNB</p>
                     </div>
                     <div className="space-y-1">
-                      <img src="/images/dogecoin.png"/>
+                      <img src="/images/dogecoin.png" />
                       <p className="text-slate-200">Dogecoin</p>
                     </div>
                   </div>
@@ -271,7 +274,7 @@ const BeautifulPulse = () => {
                         <p className="text-slate-200">16,098.19</p>
                         <p className="text-green-300">+494.93</p>
                       </div>
-                      <hr className="border border-slate-500"/>
+                      <hr className="border border-slate-500" />
                     </div>
                     <div className="space-y-1">
                       <div className="grid grid-cols-3 gap-2">
@@ -279,7 +282,7 @@ const BeautifulPulse = () => {
                         <p className="text-slate-200">17,797.27</p>
                         <p className="text-green-300">+358.63</p>
                       </div>
-                      <hr className="border border-slate-500"/>
+                      <hr className="border border-slate-500" />
                     </div>
                     <div className="space-y-1">
                       <div className="grid grid-cols-3 gap-2">
@@ -287,7 +290,7 @@ const BeautifulPulse = () => {
                         <p className="text-slate-200">5,197.83</p>
                         <p className="text-green-300">+135.58</p>
                       </div>
-                      <hr className="border border-slate-500"/>
+                      <hr className="border border-slate-500" />
                     </div>
                     <div className="space-y-1">
                       <div className="grid grid-cols-3 gap-2">
@@ -295,7 +298,7 @@ const BeautifulPulse = () => {
                         <p className="text-slate-200">7,910.53</p>
                         <p className="text-green-300">+208.45</p>
                       </div>
-                      <hr className="border border-slate-500"/>
+                      <hr className="border border-slate-500" />
                     </div>
                   </div>
                 </div>
@@ -306,12 +309,12 @@ const BeautifulPulse = () => {
 
         <div className="relative w-[250px] space-y-4 rounded-2xl rounded-tl-none bg-[#282A30] px-4 py-6">
           <div className="flex items-center gap-2">
-            <IoMenu className="text-slate-200" size="20px"/>
+            <IoMenu className="text-slate-200" size="20px" />
             <p className="text-slate-200">Overview</p>
           </div>
           <div className="grid min-h-[20px] grid-cols-3 gap-2 rounded bg-[#1C1D22] p-4">
             <div className="space-y-1">
-              <IoMdAdd className="mx-auto h-[40px] w-[40px] rounded-full bg-pink-100 p-2 text-pink-950" size="30px"/>
+              <IoMdAdd className="mx-auto h-[40px] w-[40px] rounded-full bg-pink-100 p-2 text-pink-950" size="30px" />
               <p className="text-center text-small text-slate-200">Design</p>
             </div>
             <div className="space-y-1">
@@ -330,24 +333,23 @@ const BeautifulPulse = () => {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-2">
-            <div className="min-h-[20px] rounded animate-pulse bg-[#1C1D22]"></div>
-            <div className="min-h-[20px] rounded animate-pulse bg-[#1C1D22]"></div>
-            <div className="min-h-[20px] rounded animate-pulse bg-[#1C1D22]"></div>
-            <div className="min-h-[20px] rounded animate-pulse bg-[#1C1D22]"></div>
-            <div className="min-h-[20px] rounded animate-pulse bg-[#1C1D22]"></div>
-            <div className="min-h-[20px] rounded animate-pulse bg-[#1C1D22]"></div>
+            <div className="min-h-[20px] animate-pulse rounded bg-[#1C1D22]"></div>
+            <div className="min-h-[20px] animate-pulse rounded bg-[#1C1D22]"></div>
+            <div className="min-h-[20px] animate-pulse rounded bg-[#1C1D22]"></div>
+            <div className="min-h-[20px] animate-pulse rounded bg-[#1C1D22]"></div>
+            <div className="min-h-[20px] animate-pulse rounded bg-[#1C1D22]"></div>
+            <div className="min-h-[20px] animate-pulse rounded bg-[#1C1D22]"></div>
           </div>
         </div>
       </div>
 
-      <div className="space-y-8 flex flex-col md:items-end items-center">
-        <div
-          className="space-y-4 rounded-lg bg-[#282A30] p-4 w-[250px]">
+      <div className="flex flex-col items-center space-y-8 md:items-end">
+        <div className="w-[250px] space-y-4 rounded-lg bg-[#282A30] p-4">
           {filteredGraph?.slice(0, 4).map((property) => {
             const values = [+property.sold, +property.units, +property.available];
             return (
               <div key={property.name} className="py-2">
-                <StraightChart data={values} title={property?.name}/>
+                <StraightChart data={values} title={property?.name} />
               </div>
             );
           })}
@@ -376,37 +378,32 @@ const BeautifulPulse = () => {
                 </div>
                 <div className="grid grid-cols-3 gap-4">
                   <div className="space-y-1 text-center">
-                    <div
-                      className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
-                      <LuSquareChartGantt className="text-slate-900" size="20px"/>
+                    <div className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
+                      <LuSquareChartGantt className="text-slate-900" size="20px" />
                     </div>
                     <p className="text-sm text-slate-400">Report</p>
                   </div>
                   <div className="space-y-1 text-center">
-                    <div
-                      className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
-                      <IoStatsChart className="text-slate-900" size="20px"/>
+                    <div className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
+                      <IoStatsChart className="text-slate-900" size="20px" />
                     </div>
                     <p className="text-sm text-slate-400">Chart</p>
                   </div>
                   <div className="space-y-1 text-center">
-                    <div
-                      className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
-                      <BsRobot className="text-slate-900" size="20px"/>
+                    <div className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
+                      <BsRobot className="text-slate-900" size="20px" />
                     </div>
                     <p className="text-sm text-slate-400">Gen AI</p>
                   </div>
                   <div className="space-y-1 text-center">
-                    <div
-                      className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
-                      <LuPresentation className="text-slate-900" size="20px"/>
+                    <div className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
+                      <LuPresentation className="text-slate-900" size="20px" />
                     </div>
                     <p className="text-sm text-slate-400">Present</p>
                   </div>
                   <div className="space-y-1 text-center">
-                    <div
-                      className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
-                      <TbChartInfographic className="text-slate-900" size="20px"/>
+                    <div className="mx-auto flex h-[50px] w-[50px] items-center justify-center rounded-full bg-slate-200 duration-500 ease-in-out hover:scale-[1.1]">
+                      <TbChartInfographic className="text-slate-900" size="20px" />
                     </div>
                     <p className="text-sm text-slate-400">Infographics</p>
                   </div>
@@ -422,51 +419,55 @@ const BeautifulPulse = () => {
                   />
                   <p className="text-slate-200">Parrots</p>
                 </div>
-                <div className="grid grid-cols-5 gap-2 items-center">
+                <div className="grid grid-cols-5 items-center gap-2">
                   <div className="col-span-3 flex gap-2">
-                    <div className="rounded-lg h-[10px] w-full bg-slate-200"/>
-                    <div className="rounded-lg h-[10px] w-full bg-slate-200"/>
+                    <div className="h-[10px] w-full rounded-lg bg-slate-200" />
+                    <div className="h-[10px] w-full rounded-lg bg-slate-200" />
                   </div>
-                  <div className="flex justify-center col-span-2">
+                  <div className="col-span-2 flex justify-center">
                     <img
-                      className="w-[30px] h-[30px] rounded-full border border-yellow-400 hover:scale-110 ease-in-out transition-transform duration-300"
-                      src="/images/face-seven.png"/>
+                      className="h-[30px] w-[30px] rounded-full border border-yellow-400 transition-transform duration-300 ease-in-out hover:scale-110"
+                      src="/images/face-seven.png"
+                    />
                     <img
-                      className="w-[30px] h-[30px] rounded-full border border-yellow-400 -ml-3 hover:scale-110 ease-in-out transition-transform duration-300"
-                      src="/images/face-two.png"/>
+                      className="-ml-3 h-[30px] w-[30px] rounded-full border border-yellow-400 transition-transform duration-300 ease-in-out hover:scale-110"
+                      src="/images/face-two.png"
+                    />
                     <img
-                      className="w-[30px] h-[30px] rounded-full border border-yellow-400 -ml-3 hover:scale-110 ease-in-out transition-transform duration-300"
-                      src="/images/face-three.png"/>
+                      className="-ml-3 h-[30px] w-[30px] rounded-full border border-yellow-400 transition-transform duration-300 ease-in-out hover:scale-110"
+                      src="/images/face-three.png"
+                    />
                   </div>
                 </div>
                 <div className="flex items-center gap-2 px-2">
                   <div className="h-[20px] w-[20px] rounded bg-white"></div>
-                  <div className="flex items-center w-[80%] gap-2">
-                    <div className="rounded-lg h-[10px] w-[70%] bg-slate-200"/>
-                    <div className="rounded-lg h-[10px] w-[40%] bg-slate-200"/>
+                  <div className="flex w-[80%] items-center gap-2">
+                    <div className="h-[10px] w-[70%] rounded-lg bg-slate-200" />
+                    <div className="h-[10px] w-[40%] rounded-lg bg-slate-200" />
                   </div>
                 </div>
-                <div className="flex items-center gap-2 bg-yellow-300 p-2 rounded">
+                <div className="flex items-center gap-2 rounded bg-yellow-300 p-2">
                   <div className="h-[20px] w-[20px] rounded bg-white"></div>
-                  <div className="flex items-center w-[80%] gap-2">
-                    <div className="rounded-lg h-[10px] w-[70%] bg-white"/>
-                    <div className="rounded-lg h-[10px] w-[40%] bg-white"/>
+                  <div className="flex w-[80%] items-center gap-2">
+                    <div className="h-[10px] w-[70%] rounded-lg bg-white" />
+                    <div className="h-[10px] w-[40%] rounded-lg bg-white" />
                   </div>
                 </div>
                 <div className="flex items-center gap-2 px-2">
                   <div className="h-[20px] w-[20px] rounded bg-white"></div>
-                  <div className="flex items-center w-[80%] gap-2">
-                    <div className="rounded-lg h-[10px] w-[70%] bg-slate-200"/>
-                    <div className="rounded-lg h-[10px] w-[40%] bg-slate-200"/>
+                  <div className="flex w-[80%] items-center gap-2">
+                    <div className="h-[10px] w-[70%] rounded-lg bg-slate-200" />
+                    <div className="h-[10px] w-[40%] rounded-lg bg-slate-200" />
                   </div>
                 </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div
-                className="space-y-2 rounded-2xl bg-[#282A30] p-4 relative">
+              <div className="relative space-y-2 rounded-2xl bg-[#282A30] p-4">
                 <p className="text-white">Inflow-Outflow</p>
-                <DonutChart data={chart} text={text}/>
+                <ClientOnly>
+                  <DonutChart data={chart} text={text} />
+                </ClientOnly>
               </div>
             </SwiperSlide>
           </Swiper>
@@ -477,4 +478,3 @@ const BeautifulPulse = () => {
 };
 
 export default BeautifulPulse;
-

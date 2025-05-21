@@ -1,10 +1,10 @@
-'use client'
-
+'use client';
 import React, { useCallback, useState } from 'react';
-import {Cell, Pie, PieChart, Sector} from 'recharts';
+import { Cell, Pie, PieChart, Sector } from 'recharts';
 import ChartDetails from './ChartDetails';
 
 const colors = ['#722282', '#f4be37', '#109618', '#990099', '#DC3912', '#8290DC'];
+
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
   const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props;
@@ -86,4 +86,5 @@ const DonutChart = ({ text, data }) => {
     </>
   );
 };
+
 export default DonutChart;
