@@ -2,17 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-::selection {
-  @apply bg-cyan-600 text-white;
-}
-
 * {
   outline: transparent;
 }
 
 html,
 body {
-  @apply bg-background w-full text-[15px];
+  @apply w-full text-[15px];
 }
 
 :root {
