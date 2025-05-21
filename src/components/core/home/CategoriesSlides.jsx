@@ -17,6 +17,7 @@ const CategoriesSlides = ({ categories }) => {
         0: { slidesPerView: 1.2 },
         640: { slidesPerView: 2.8 },
         1024: { slidesPerView: 3.8 },
+        1200: { slidesPerView: 4.6 },
       },
     };
     Object.assign(swiperElRef.current, swiperParams);

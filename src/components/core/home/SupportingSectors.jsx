@@ -48,9 +48,7 @@ const SupportingSectors = () => {
       <div className="relative">
         <div className="container flex flex-col md:items-center md:text-center">
           <div className="relative max-w-2xl">
-            <h2 className="text-4xl font-medium leading-tight md:text-6xl md:leading-[1.1]">
-              Supporting sectors with Insights
-            </h2>
+            <h2 className="text-4xl font-semibold tracking-tight md:text-7xl">Supporting sectors with Insights</h2>
             <p className="mt-6 text-base md:text-lg">Generate Industry grade data insights in seconds.</p>
           </div>
         </div>

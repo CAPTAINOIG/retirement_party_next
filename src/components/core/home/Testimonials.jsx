@@ -49,12 +49,10 @@ const Testimonials = () => {
     <section id="testimonials">
       <div className="container sm:px-6 lg:px-8">
         <div className="!xl:mt-0 mx-auto flex max-w-2xl flex-col md:items-center md:text-center">
-          <h2 className="text-4xl font-medium text-slate-900 md:text-6xl">
+          <h2 className="text-4xl font-semibold tracking-tighter md:text-7xl">
             Over 500 <br className="block md:hidden" /> million social impressions
           </h2>
-          <p className="mt-6 text-lg tracking-tight text-slate-700">
-            Loved by businesses across Africa, our data insights travel far
-          </p>
+          <p className="mt-6 text-lg tracking-tight">Loved by businesses across Africa, our data insights travel far</p>
         </div>
         <ul
           role="list"
@@ -94,13 +92,13 @@ const TestimonialItem = ({ item }) => {
     <li>
       <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
         {item.platform === 'facebook' && (
-          <IconBrandFacebook size="100" className="absolute bottom-6 right-6 text-slate-300/20" />
+          <IconBrandFacebook size="100" className="absolute right-6 bottom-6 text-slate-300/20" />
         )}
         {item.platform === 'twitter' && (
-          <IconBrandX size="100" className="absolute bottom-6 right-6 text-slate-300/20" />
+          <IconBrandX size="100" className="absolute right-6 bottom-6 text-slate-300/20" />
         )}
         {item.platform === 'instagram' && (
-          <IconBrandInstagram size="100" className="absolute bottom-6 right-6 text-slate-300/20" />
+          <IconBrandInstagram size="100" className="absolute right-6 bottom-6 text-slate-300/20" />
         )}
         <blockquote className="relative">
           <p className="text-lg text-slate-900">{item.content}</p>

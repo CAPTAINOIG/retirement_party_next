@@ -25,7 +25,7 @@ const Newsletter = ({ sm = false }) => {
     <div
       className={cn(
         'relative bg-[#11100f] px-10 text-zinc-100 md:px-20',
-        sm ? 'overflow-hidden py-24' : 'py-40 xl:pb-80'
+        sm ? 'overflow-hidden py-24' : 'py-40'
       )}
     >
       <div className="bg-tw-dark absolute inset-0 z-10 min-h-screen scale-125 bg-cover opacity-80"></div>

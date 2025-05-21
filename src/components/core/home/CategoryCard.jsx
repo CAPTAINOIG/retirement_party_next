@@ -19,9 +19,9 @@ const CategoryCard = ({ category, sm = false }) => {
           alt={category.name}
           className="absolute inset-0 z-[-1] h-full w-full object-cover"
         />
-        <div className={clsx('relative bg-black bg-opacity-50 px-8 py-8 md:px-12 md:py-12', { 'md:py-9': sm })}>
+        <div className={clsx('relative bg-black/50 px-8 py-8 md:px-12 md:py-12', { 'md:py-9': sm })}>
           <h3
-            className={clsx('overflow-hidden text-ellipsis whitespace-nowrap text-[1.6rem] font-medium leading-tight', {
+            className={clsx('overflow-hidden text-[1.6rem] leading-tight font-medium text-ellipsis whitespace-nowrap', {
               'text-[1.5rem]': sm,
             })}
           >

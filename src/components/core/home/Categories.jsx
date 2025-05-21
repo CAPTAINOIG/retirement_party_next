@@ -11,7 +11,7 @@ const Categories = () => {
   return (
     <div>
       <div className="container mb-12 flex flex-col items-center justify-center md:mb-16">
-        <h2 className="text-4xl font-medium tracking-tight text-gray-900 md:text-6xl">Popular public data insights.</h2>
+        <h2 className="text-4xl font-semibold tracking-tight md:text-7xl">Popular public data insights.</h2>
         <p className="mt-4 text-base md:text-lg">
           Review some work on public data from the past, as we prepare you for the future.
         </p>
