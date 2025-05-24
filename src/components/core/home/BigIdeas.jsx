@@ -11,18 +11,21 @@ const BigIdeas = () => {
       <div className="relative container mx-auto md:block">
         <div>
           <h2 className="text-center text-4xl font-semibold tracking-tight md:text-7xl">
-            Work on big ideas, <br className="hidden md:block" /> without the{' '}
+            We are connecting
+            <br className="hidden md:block" />
             <span className="relative inline-block leading-[0.7]">
               <span className="to-primary absolute inset-0 bottom-0 h-[45px] rotate-[3.5deg] rounded-2xl bg-linear-to-r from-green-600 md:h-[60px]"></span>
-              <span className="relative px-1 text-slate-200">busywork.</span>
-            </span>
+              <span className="relative px-1 text-slate-200">intelligence</span>
+            </span>{' '}
+            to Africa's data
           </h2>
-          <p className="mx-auto max-w-sm py-8 text-center text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, nobis?
+          <p className="mx-auto max-w-xl py-8 text-center text-lg leading-tight">
+            Empowering African businesses with cutting-edge analytics, insights, and data-driven solutions to unlock
+            unprecedented growth opportunities.
           </p>
         </div>
         <div className="relative grid-cols-[2fr_2fr_2fr] gap-4 space-y-8 md:grid md:space-y-0">
-          <div className="relative z-20 rounded-2xl bg-[#FF7091] px-6 py-8">
+          <div className="relative z-20 rounded-2xl bg-[#FF7091] px-10 py-8">
             <div className="absolute top-0 -right-8 h-full w-12 space-y-8 py-10">
               <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
               <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
@@ -32,7 +35,7 @@ const BigIdeas = () => {
               <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
             </div>
             <div className="space-y-6">
-              <p className="text-xl leading-[1.1] text-white">Ongoing project</p>
+              <p className="text-xl leading-[1.1] font-semibold text-white">Business Intelligence</p>
               <div className="grid grid-cols-4 items-center gap-2">
                 <img className="w-[60px]" src="/images/face-two.png" alt="face" />
                 <div className="col-span-3 space-y-2">
@@ -50,13 +53,13 @@ const BigIdeas = () => {
                   <div>
                     <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
                   </div>
-                  <p className="text-white">New brand</p>
+                  <p className="text-white">Structured data analysis</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <div>
                     <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
                   </div>
-                  <p className="text-white">Product road map</p>
+                  <p className="text-white">Unstructured data analysis</p>
                 </div>
               </div>
               <div className="space-y-2">
@@ -72,7 +75,7 @@ const BigIdeas = () => {
               </div>
             </div>
           </div>
-          <div className="relative z-10 rounded-2xl bg-[#FDBF12] px-6 py-8">
+          <div className="relative z-10 rounded-2xl bg-[#FDBF12] px-10 py-8">
             <div className="absolute top-0 -right-8 h-full w-12 space-y-8 py-10">
               <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
               <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
@@ -82,7 +85,7 @@ const BigIdeas = () => {
               <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
             </div>
             <div className="space-y-6">
-              <p className="text-xl leading-[1.1] text-white">Daily Activity</p>
+              <p className="text-xl leading-[1.1] font-semibold text-white">Financial markets</p>
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <div>
@@ -110,17 +113,24 @@ const BigIdeas = () => {
                   </div>
                   <div className="h-[10px] w-[40%] animate-pulse rounded-full bg-yellow-300" />
                 </div>
-                <div className="flex items-center gap-2">
-                  <div>
-                    <div className="h-[20px] w-[20px] animate-pulse rounded-full border-2 border-yellow-300" />
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
+                    </div>
+                    <p className="text-white">Local markets</p>
                   </div>
-                  <div className="h-[10px] w-[20%] animate-pulse rounded-full bg-yellow-300" />
-                  <div className="h-[10px] w-[60%] animate-pulse rounded-full bg-yellow-300" />
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
+                    </div>
+                    <p className="text-white">Global markets</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="relative rounded-2xl bg-[#6C56C3] p-4 px-6 py-8">
+          <div className="relative rounded-2xl bg-[#6C56C3] p-4 px-10 py-8">
             <div className="absolute top-0 -right-8 block h-full w-12 space-y-8 py-10 md:hidden">
               <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
               <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
@@ -130,7 +140,7 @@ const BigIdeas = () => {
               <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
             </div>
             <div className="space-y-6">
-              <p className="text-xl leading-[1.1] text-white">Live conversation</p>
+              <p className="text-xl leading-[1.1] font-semibold text-white">Gaming</p>
               <div className="grid grid-cols-4 items-center gap-2">
                 <img className="w-[40px]" src="/images/face-three.png" alt="face" />
                 <div className="col-span-3 space-y-2">
@@ -156,41 +166,6 @@ const BigIdeas = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-8 pt-8 md:grid-cols-4">
-          <div className="mx-auto md:text-center">
-            <div className="flex items-center text-[2.5rem] font-bold text-black md:justify-center">
-              <CountUpOnScroll start={0} duration={5} end={100} />K
-              <span>
-                <FaPlus size="30px" />
-              </span>
-            </div>
-            <p className="text-[18px] text-black">Templates</p>
-          </div>
-          <div className="mx-auto md:text-center">
-            <div className="flex items-center text-[2.5rem] font-bold text-black md:justify-center">
-              <CountUpOnScroll start={0} duration={5} end={100} />
-              <span>
-                <FaPlus size="30px" />
-              </span>
-            </div>
-            <p className="text-[18px] text-black">Data converted</p>
-          </div>
-          <div className="mx-auto md:text-center">
-            <div className="flex items-center text-[2.5rem] font-bold text-black md:justify-center">
-              <CountUpOnScroll start={0} duration={5} end={5} />
-            </div>
-            <p className="text-[18px] text-black">Ecosystems</p>
-          </div>
-          <div className="mx-auto md:text-center">
-            <div className="flex items-center text-[2.5rem] font-bold text-black md:justify-center">
-              <CountUpOnScroll start={0} duration={5} end={100} />K
-              <span>
-                <FaPlus size="30px" />
-              </span>
-            </div>
-            <p className="text-[18px] text-black">Applications</p>
           </div>
         </div>
       </div>

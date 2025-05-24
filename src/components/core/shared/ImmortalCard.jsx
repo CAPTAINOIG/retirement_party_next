@@ -22,11 +22,12 @@ const ImmortalCard = () => {
   return (
     <div className="items-center gap-4 space-y-4 px-0 md:flex md:space-y-0 md:px-4">
       <SideNav />
-      <div className="hidden w-full grid-cols-2 gap-4 md:grid md:grid-cols-4">
+      <div className="hidden w-full grid-cols-2 gap-4 md:grid md:grid-cols-3">
+        
         <div className="space-y-6 rounded p-4">
           <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#1C1D22]">
-              <FaRegFileExcel className="text-green-500" size="20px" />
+            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-purple-600 text-white">
+              <IoIosLink size="20px" />
             </div>
             <CiMenuKebab className="text-slate-200" size="20px" />
           </div>
@@ -37,8 +38,8 @@ const ImmortalCard = () => {
         </div>
         <div className="space-y-6 rounded p-4">
           <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#1C1D22]">
-              <FaRegFileWord className="text-blue-500" size="20px" />
+            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-pink-600 text-white">
+              <FaRegFilePdf size="20px" />
             </div>
             <CiMenuKebab className="text-slate-200" size="20px" />
           </div>
@@ -49,8 +50,8 @@ const ImmortalCard = () => {
         </div>
         <div className="space-y-6 rounded p-4">
           <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#1C1D22]">
-              <BsFiletypeCsv className="text-emerald-400" size="20px" />
+            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-orange-600 text-white">
+              <MdAddToDrive size="20px" />
             </div>
             <CiMenuKebab className="text-slate-200" size="20px" />
           </div>
@@ -61,8 +62,8 @@ const ImmortalCard = () => {
         </div>
         <div className="space-y-6 rounded p-4">
           <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#1C1D22]">
-              <BsFiletypeJson className="text-yellow-700" size="20px" />
+            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-blue-600 text-white">
+              <GrMysql size="20px" />
             </div>
             <CiMenuKebab className="text-slate-200" size="20px" />
           </div>
@@ -73,56 +74,8 @@ const ImmortalCard = () => {
         </div>
         <div className="space-y-6 rounded p-4">
           <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-purple-100">
-              <IoIosLink className="text-purple-950" size="20px" />
-            </div>
-            <CiMenuKebab className="text-slate-200" size="20px" />
-          </div>
-          <div className="space-y-2">
-            <div className="h-[10px] w-[40%] animate-pulse rounded-full bg-slate-400" />
-            <div className="h-[10px] w-[80%] animate-pulse rounded-full bg-slate-400" />
-          </div>
-        </div>
-        <div className="space-y-6 rounded p-4">
-          <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-pink-100">
-              <FaRegFilePdf className="text-pink-950" size="20px" />
-            </div>
-            <CiMenuKebab className="text-slate-200" size="20px" />
-          </div>
-          <div className="space-y-2">
-            <div className="h-[10px] w-[40%] animate-pulse rounded-full bg-slate-400" />
-            <div className="h-[10px] w-[80%] animate-pulse rounded-full bg-slate-400" />
-          </div>
-        </div>
-        <div className="space-y-6 rounded p-4">
-          <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-orange-100">
-              <MdAddToDrive className="text-orange-600" size="20px" />
-            </div>
-            <CiMenuKebab className="text-slate-200" size="20px" />
-          </div>
-          <div className="space-y-2">
-            <div className="h-[10px] w-[40%] animate-pulse rounded-full bg-slate-400" />
-            <div className="h-[10px] w-[80%] animate-pulse rounded-full bg-slate-400" />
-          </div>
-        </div>
-        <div className="space-y-6 rounded p-4">
-          <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-blue-100">
-              <GrMysql className="text-blue-950" size="20px" />
-            </div>
-            <CiMenuKebab className="text-slate-200" size="20px" />
-          </div>
-          <div className="space-y-2">
-            <div className="h-[10px] w-[40%] animate-pulse rounded-full bg-slate-400" />
-            <div className="h-[10px] w-[80%] animate-pulse rounded-full bg-slate-400" />
-          </div>
-        </div>
-        <div className="space-y-6 rounded p-4">
-          <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-teal-100">
-              <GrOracle className="text-teal-700" size="20px" />
+            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-teal-600 text-white">
+              <GrOracle size="20px" />
             </div>
             <CiMenuKebab className="text-slate-200" size="20px" />
           </div>
@@ -145,8 +98,8 @@ const ImmortalCard = () => {
         </div>
         <div className="space-y-6 rounded p-4">
           <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-emerald-100">
-              <CiDatabase className="text-emerald-500" size="20px" />
+            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-emerald-600 text-white">
+              <CiDatabase size="20px" />
             </div>
             <CiMenuKebab className="text-slate-200" size="20px" />
           </div>
@@ -157,8 +110,8 @@ const ImmortalCard = () => {
         </div>
         <div className="space-y-6 rounded p-4">
           <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-pink-100">
-              <SiMariadbfoundation className="text-pink-900" size="20px" />
+            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-pink-600 text-white">
+              <SiMariadbfoundation size="20px" />
             </div>
             <CiMenuKebab className="text-slate-200" size="20px" />
           </div>
@@ -169,8 +122,8 @@ const ImmortalCard = () => {
         </div>
         <div className="space-y-6 rounded p-4">
           <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-violet-100">
-              <CiGlobe className="text-violet-500" size="20px" />
+            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-violet-600 text-white">
+              <CiGlobe size="20px" />
             </div>
             <CiMenuKebab className="text-slate-200" size="20px" />
           </div>
@@ -181,8 +134,8 @@ const ImmortalCard = () => {
         </div>
         <div className="space-y-6 rounded p-4">
           <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-green-100">
-              <SiAmazondynamodb className="text-green-500" size="20px" />
+            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-green-600 text-white">
+              <SiAmazondynamodb size="20px" />
             </div>
             <CiMenuKebab className="text-slate-200" size="20px" />
           </div>
@@ -193,8 +146,8 @@ const ImmortalCard = () => {
         </div>
         <div className="space-y-6 rounded p-4">
           <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-blue-100">
-              <CiCloudOn className="text-blue-900" size="20px" />
+            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-blue-600 text-white">
+              <CiCloudOn size="20px" />
             </div>
             <CiMenuKebab className="text-slate-200" size="20px" />
           </div>
@@ -205,8 +158,8 @@ const ImmortalCard = () => {
         </div>
         <div className="space-y-6 rounded p-4">
           <div className="flex items-center justify-between">
-            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-yellow-100">
-              <TbBrandMongodb className="text-yellow-900" size="20px" />
+            <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-yellow-600 text-white">
+              <TbBrandMongodb size="20px" />
             </div>
             <CiMenuKebab className="text-slate-200" size="20px" />
           </div>
@@ -290,8 +243,8 @@ const ImmortalCard = () => {
               <SwiperSlide>
                 <div className="space-y-6 rounded bg-[#282A30] p-4">
                   <div className="flex items-center justify-between">
-                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-purple-100">
-                      <IoIosLink className="text-purple-950" size="20px" />
+                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-purple-600 text-white">
+                      <IoIosLink size="20px" />
                     </div>
                     <CiMenuKebab className="text-slate-200" size="20px" />
                   </div>
@@ -304,8 +257,8 @@ const ImmortalCard = () => {
               <SwiperSlide>
                 <div className="space-y-6 rounded bg-[#282A30] p-4">
                   <div className="flex items-center justify-between">
-                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-pink-100">
-                      <FaRegFilePdf className="text-pink-950" size="20px" />
+                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-pink-600 text-white">
+                      <FaRegFilePdf size="20px" />
                     </div>
                     <CiMenuKebab className="text-slate-200" size="20px" />
                   </div>
@@ -318,8 +271,8 @@ const ImmortalCard = () => {
               <SwiperSlide>
                 <div className="space-y-6 rounded bg-[#282A30] p-4">
                   <div className="flex items-center justify-between">
-                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-orange-100">
-                      <MdAddToDrive className="text-orange-600" size="20px" />
+                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-orange-600 text-white">
+                      <MdAddToDrive size="20px" />
                     </div>
                     <CiMenuKebab className="text-slate-200" size="20px" />
                   </div>
@@ -332,8 +285,8 @@ const ImmortalCard = () => {
               <SwiperSlide>
                 <div className="space-y-6 rounded bg-[#282A30] p-4">
                   <div className="flex items-center justify-between">
-                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-blue-100">
-                      <GrMysql className="text-blue-950" size="20px" />
+                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-blue-600 text-white">
+                      <GrMysql size="20px" />
                     </div>
                     <CiMenuKebab className="text-slate-200" size="20px" />
                   </div>
@@ -346,8 +299,8 @@ const ImmortalCard = () => {
               <SwiperSlide>
                 <div className="space-y-6 rounded bg-[#282A30] p-4">
                   <div className="flex items-center justify-between">
-                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-teal-100">
-                      <GrOracle className="text-teal-700" size="20px" />
+                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-teal-600 text-white">
+                      <GrOracle size="20px" />
                     </div>
                     <CiMenuKebab className="text-slate-200" size="20px" />
                   </div>
@@ -374,8 +327,8 @@ const ImmortalCard = () => {
               <SwiperSlide>
                 <div className="space-y-6 rounded bg-[#282A30] p-4">
                   <div className="flex items-center justify-between">
-                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-emerald-100">
-                      <CiDatabase className="text-emerald-500" size="20px" />
+                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-emerald-600 text-white">
+                      <CiDatabase size="20px" />
                     </div>
                     <CiMenuKebab className="text-slate-200" size="20px" />
                   </div>
@@ -388,8 +341,8 @@ const ImmortalCard = () => {
               <SwiperSlide>
                 <div className="space-y-6 rounded bg-[#282A30] p-4">
                   <div className="flex items-center justify-between">
-                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-pink-100">
-                      <SiMariadbfoundation className="text-pink-900" size="20px" />
+                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-pink-600 text-white">
+                      <SiMariadbfoundation size="20px" />
                     </div>
                     <CiMenuKebab className="text-slate-200" size="20px" />
                   </div>
@@ -402,8 +355,8 @@ const ImmortalCard = () => {
               <SwiperSlide>
                 <div className="space-y-6 rounded bg-[#282A30] p-4">
                   <div className="flex items-center justify-between">
-                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-violet-100">
-                      <CiGlobe className="text-violet-500" size="20px" />
+                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-violet-600 text-white">
+                      <CiGlobe size="20px" />
                     </div>
                     <CiMenuKebab className="text-slate-200" size="20px" />
                   </div>
@@ -416,8 +369,8 @@ const ImmortalCard = () => {
               <SwiperSlide>
                 <div className="space-y-6 rounded bg-[#282A30] p-4">
                   <div className="flex items-center justify-between">
-                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-green-100">
-                      <SiAmazondynamodb className="text-green-500" size="20px" />
+                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-green-600 text-white">
+                      <SiAmazondynamodb size="20px" />
                     </div>
                     <CiMenuKebab className="text-slate-200" size="20px" />
                   </div>
@@ -430,8 +383,8 @@ const ImmortalCard = () => {
               <SwiperSlide>
                 <div className="space-y-6 rounded bg-[#282A30] p-4">
                   <div className="flex items-center justify-between">
-                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-blue-100">
-                      <CiCloudOn className="text-blue-900" size="20px" />
+                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-blue-600 text-white">
+                      <CiCloudOn size="20px" />
                     </div>
                     <CiMenuKebab className="text-slate-200" size="20px" />
                   </div>
@@ -444,8 +397,8 @@ const ImmortalCard = () => {
               <SwiperSlide>
                 <div className="space-y-6 rounded bg-[#282A30] p-4">
                   <div className="flex items-center justify-between">
-                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-yellow-100">
-                      <TbBrandMongodb className="text-yellow-900" size="20px" />
+                    <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-yellow-600 text-white">
+                      <TbBrandMongodb size="20px" />
                     </div>
                     <CiMenuKebab className="text-slate-200" size="20px" />
                   </div>

@@ -66,7 +66,7 @@ const AttendPageContent = () => {
                 We are connecting intelligence to African's data, join us.
               </p>
               <ClientOnly>
-                <CountdownTimer />
+                <CountdownTimer date="6/10/2025" />
               </ClientOnly>
             </div>
           </div>

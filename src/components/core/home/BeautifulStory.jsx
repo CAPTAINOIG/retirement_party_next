@@ -3,17 +3,14 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { useWindowSize } from 'react-use';
 import BeautifulPulse from '@/components/core/shared/BeautifulPulse';
-import Button from '@/components/global/Button';
-import Link from 'next/link';
 import { IconChevronRight } from '@tabler/icons-react';
-import { AuroraBackground } from '@/components/ui/aurora-background';
-import { BackgroundBeams } from '@/components/ui/background-beams';
-import { Boxes } from '@/components/ui/background-boxes';
-
-const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
+import JoinImmortlWaitlistModal from './JoinImmortlWaitlistModal';
+import { Button, useDisclosure } from '@heroui/react';
+import TextLoop from '@/components/global/TextLoop';
 
 const BeautifulStory = () => {
   const { width } = useWindowSize();
+  const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
 
   let textVariant = {};
   if (width < 768) {
@@ -32,31 +29,43 @@ const BeautifulStory = () => {
   }
 
   return (
-    <div className="relative w-full overflow-hidden bg-black">
-      <BackgroundBeams />
-      <div className="pointer-events-none relative z-2 container mt-32 md:block">
+    <div className="relative w-full overflow-hidden">
+      <div className="relative z-2 container mt-32 md:block">
         <div className="relative grid items-center gap-20 py-12 md:grid-cols-[1fr_1fr] md:gap-0 md:pt-10 md:pb-32">
           <div className="items-center justify-center text-center md:items-start md:justify-start md:text-left">
             <motion.h1
               variants={textVariant}
               initial="hidden"
               whileInView="visible"
-              className="bg-linear-to-r from-green-600 to-blue-800 bg-clip-text text-[4rem] leading-none font-bold tracking-tighter text-transparent md:text-[6rem] md:leading-[0.9] xl:text-[7rem]"
+              className="bg-linear-to-r from-green-600 to-blue-800 bg-clip-text text-[4rem] leading-[1.1] font-bold tracking-tighter text-transparent md:text-[6rem] md:leading-[0.9] xl:text-[7.2rem]"
             >
-              Tell a beautiful story with data
+              Find <br />
+              <TextLoop interval={5}>
+                <span className="bg-linear-to-r from-green-600 to-blue-800 bg-clip-text">immortality</span>
+                <span className="bg-linear-to-r from-green-600 to-blue-800 bg-clip-text">5x growth</span>
+                <span className="bg-linear-to-r from-green-600 to-blue-800 bg-clip-text">immortality</span>
+                <span className="bg-linear-to-r from-green-600 to-blue-800 bg-clip-text">5x profit</span>
+              </TextLoop>
+              <br /> in your data
             </motion.h1>
-            <p className="mt-6 max-w-xl text-lg tracking-tight text-slate-400">
-              Immortal powers users make others see in their data in the most interesting way
+            <p className="mt-6 max-w-xl text-xl tracking-tight text-slate-400">
+              We help businesses aggregate and convert complex customer data into simple visual insights using AI{' '}
             </p>
-            <Link href={`${ACCOUNT_URL}/register`} className="mt-12 inline-flex">
-              <Button size="xl" rightIcon={<IconChevronRight size="20" />} color="white">
-                Start creating
-              </Button>
-            </Link>
+            <Button
+              size="lg"
+              className="mt-12 bg-white px-8 text-black hover:bg-white/90"
+              radius="full"
+              onPress={onWaitListOpen}
+              endContent={<IconChevronRight size="20" />}
+            >
+              Get started
+            </Button>
           </div>
           <BeautifulPulse />
         </div>
       </div>
+
+      <JoinImmortlWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
     </div>
   );
 };

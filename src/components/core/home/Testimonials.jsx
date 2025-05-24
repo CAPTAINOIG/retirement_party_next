@@ -50,9 +50,11 @@ const Testimonials = () => {
       <div className="container sm:px-6 lg:px-8">
         <div className="!xl:mt-0 mx-auto flex max-w-2xl flex-col md:items-center md:text-center">
           <h2 className="text-4xl font-semibold tracking-tighter md:text-7xl">
-            Over 500 <br className="block md:hidden" /> million social impressions
+            With over 3 billion <br className="block md:hidden" /> data impressions
           </h2>
-          <p className="mt-6 text-lg tracking-tight">Loved by businesses across Africa, our data insights travel far</p>
+          <p className="mt-6 text-lg tracking-tight">
+            We are loved by businesses, consumers and governments across Africa
+          </p>
         </div>
         <ul
           role="list"

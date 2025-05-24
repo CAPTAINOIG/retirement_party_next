@@ -1,7 +1,7 @@
-'use client'
+'use client';
 import React from 'react';
 
-const colors = ['#a3b3ff', '#eee', '#FFB86A', '#990099', '#DC3912', '#8290DC'];
+const colors = ['#fff', '#ccc', '#000000', '#990099', '#DC3912', '#8290DC'];
 
 const StraightChart = ({ title, data }) => {
   const total = data.reduce((acc, i) => acc + i, 0);

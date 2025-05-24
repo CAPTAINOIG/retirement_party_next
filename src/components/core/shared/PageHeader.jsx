@@ -4,9 +4,8 @@ import Button from '@/components/global/Button.jsx';
 
 const PageHeader = ({ title, subtitle, onBack, backText, isLoading = false, append }) => {
   return (
-    <div className="relative overflow-hidden bg-[#11100f] pb-6 pt-36 text-center md:pb-10 md:pt-44">
-      <div className="bg-tw-dark absolute inset-0 min-h-screen scale-125 bg-cover opacity-80"></div>
-      <div className="container relative z-20 flex flex-col items-center">
+    <div className="to-primary-950 from-primary-50/50 relative overflow-hidden bg-zinc-950 bg-linear-to-br pt-36 pb-6 text-center md:pt-44 md:pb-10">
+      <div className="relative z-20 container flex flex-col items-center">
         {!!onBack && (
           <Button
             onClick={onBack}
@@ -26,7 +25,7 @@ const PageHeader = ({ title, subtitle, onBack, backText, isLoading = false, appe
           </>
         ) : (
           <>
-            <h1 className="max-w-xl text-3xl font-medium leading-[1.2]! text-zinc-200 md:text-[2.8rem]">{title}</h1>
+            <h1 className="max-w-xl text-3xl leading-[1.2]! font-medium text-zinc-200 md:text-[2.8rem]">{title}</h1>
             {!!subtitle && <p className="mt-3 max-w-2xl leading-[1.2] text-zinc-400 md:text-lg">{subtitle}</p>}
           </>
         )}

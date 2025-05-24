@@ -2,25 +2,25 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { IconMenu } from '@tabler/icons-react';
 import { useIsomorphicLayoutEffect } from 'react-use';
-import Button from '@/components/global/Button.jsx';
 import { useAuth } from '@/hooks/use-auth.js';
 import Logo from '@/components/core/shared/Logo';
 import NavProductsDropdown from '@/components/core/NavProductsDropdown';
 import MobileNav from '@/components/core/MobileNav';
 import { cn } from '@/lib/utils';
 import UserDropdown from '@/components/core/shared/UserDropdown';
+import { Button } from '@heroui/react';
+import JoinImmortlWaitlistModal from '../core/home/JoinImmortlWaitlistModal';
+import { useDisclosure } from '@heroui/react';
 
 const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 const SNAPSHOTS_URL = process.env.NEXT_PUBLIC_SNAPSHOTS_URL;
 const MARKET_URL = process.env.NEXT_PUBLIC_MARKET_URL;
 
-// Temporary flag to control Snapshots visibility
-const SHOW_SNAPSHOTS = false;
-
 const Navbar = () => {
   const { resolved, authenticated } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+  const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
 
   useIsomorphicLayoutEffect(() => {
     const handleScroll = (e) => {
@@ -35,7 +35,7 @@ const Navbar = () => {
     <>
       <header
         className={cn(
-          'fixed inset-x-0 top-0 z-50 h-32 transition-all',
+          'absolute inset-x-0 top-0 z-50 h-32 transition-all',
           { 'h-24! bg-white/90 text-black shadow backdrop-blur-lg': scrolled },
           { 'text-slate-100': !scrolled }
         )}
@@ -47,18 +47,12 @@ const Navbar = () => {
                 <Logo light={!scrolled} />
               </Link>
               <div className="ml-auto hidden h-full md:space-x-3 lg:flex">
-                <div className="group relative flex h-full items-center">
-                  <div className="inline-flex cursor-default items-center rounded-full px-4 py-1">For businesses</div>
-                  <NavProductsDropdown />
-                </div>
-                <Link href={MARKET_URL} className="inline-flex items-center rounded-full px-4 py-1">
-                  Markets
+                <Link href={MARKET_URL} target="_blank" className="inline-flex items-center rounded-full px-4 py-1">
+                  Immortal AI
                 </Link>
-                {SHOW_SNAPSHOTS && (
-                  <Link href={SNAPSHOTS_URL} className="inline-flex items-center rounded-full px-4 py-1">
-                    Snapshots
-                  </Link>
-                )}
+                <Link href={SNAPSHOTS_URL} target="_blank" className="inline-flex items-center rounded-full px-4 py-1">
+                  Parrots
+                </Link>
               </div>
             </div>
             <div className="ml-6 flex items-center justify-end gap-x-5 md:gap-x-4">
@@ -73,14 +67,18 @@ const Navbar = () => {
                   <>
                     {!authenticated ? (
                       <>
-                        <Link href={`${ACCOUNT_URL}/login`}>
-                          <Button variant="subtle" color={scrolled ? 'black' : 'white'}>
-                            Sign in
-                          </Button>
-                        </Link>
-                        <Link href={`${ACCOUNT_URL}/register`}>
-                          <Button>Get started</Button>
-                        </Link>
+                        <Button variant="flat" radius="full" className="px-4 text-base" onPress={onWaitListOpen}>
+                          Sign in
+                        </Button>
+                        <Button
+                          variant="solid"
+                          color="primary"
+                          radius="full"
+                          className="px-4 text-base"
+                          onPress={onWaitListOpen}
+                        >
+                          Get started
+                        </Button>
                       </>
                     ) : (
                       <div className="flex items-center space-x-4">
@@ -107,8 +105,10 @@ const Navbar = () => {
       </header>
 
       <MobileNav isOpen={isMobileNavVisible} onClose={() => setIsMobileNavVisible(false)} />
+      <JoinImmortlWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
     </>
   );
 };
 
 export default Navbar;
+

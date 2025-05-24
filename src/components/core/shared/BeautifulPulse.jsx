@@ -18,6 +18,18 @@ import DonutChart from '@/components/core/shared/DonutChart';
 import { FiTrendingUp } from 'react-icons/fi';
 import ClientOnly from '@/components/global/ClientOnly';
 import TextLoop from '@/components/global/TextLoop';
+import {
+  FaCode,
+  FaHeadset,
+  FaMegaport,
+  FaMoneyBillWave,
+  FaPaintbrush,
+  FaUsers,
+  FaUserTie,
+  FaVideo,
+} from 'react-icons/fa6';
+import { FaShoppingCart } from 'react-icons/fa';
+import { RiStockLine } from 'react-icons/ri';
 
 const BeautifulPulse = () => {
   SwiperCore.use([Autoplay]);
@@ -29,13 +41,13 @@ const BeautifulPulse = () => {
   const text = ['Inflow', 'Outflow'];
   const filteredGraph = [
     {
-      name: 'Rent',
+      name: 'Legal',
       sold: 85,
       units: 200,
       available: 150,
     },
     {
-      name: 'Marketing',
+      name: 'Banking',
       sold: 200,
       units: 180,
       available: 50,
@@ -50,34 +62,83 @@ const BeautifulPulse = () => {
 
   return (
     <div className="mx-0 grid items-center gap-6 md:grid-cols-2 md:pb-0">
-      <div className="flex flex-col items-center space-y-8">
-        <div className="relative w-full space-y-4 rounded-3xl bg-[#282A30] px-8 py-5 text-white">
-          <div className="flex items-center gap-2">
-            <LuShapes className="text-slate-200" size="20px" />
-            <TextLoop interval={5}>
-              <span>Elements</span>
-              <span>Templates</span>
-              <span>Images</span>
-              <span>Layers</span>
-              <span>Projects</span>
-            </TextLoop>
-          </div>
-        </div>
+      <div className="flex flex-col items-center space-y-6">
         <div className="relative h-max w-full">
           <Swiper
             loop={true}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: true,
-            }}
+            autoplay={{ delay: 2000 }}
             speed={1000}
             modules={[EffectFlip]}
             effect="flip"
             slidesPerView={1}
             className="mySwiper"
           >
-            <SwiperSlide>
-              <div className="relative space-y-6 rounded-3xl bg-[#282A30] px-8 py-6">
+            <SwiperSlide className="h-auto">
+              <div className="relative h-full rounded-3xl bg-[#282A30] px-8 py-6">
+                <div className="mb-6 flex items-center gap-4 text-white">
+                  <IoSparkles size="20" />
+                  <p>Ecosystems</p>
+                </div>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="flex flex-col space-y-1">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500">
+                      <FaUserTie className="text-white" size={24} />
+                    </div>
+                    <p className="text-md text-slate-200">HR</p>
+                  </div>
+                  <div className="flex flex-col space-y-1">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500">
+                      <FaMoneyBillWave className="text-white" size={24} />
+                    </div>
+                    <p className="text-sm text-slate-200">Finance</p>
+                  </div>
+                  <div className="flex flex-col space-y-1">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-500">
+                      <FaUsers className="text-white" size={24} />
+                    </div>
+                    <p className="text-sm text-slate-200">CRM</p>
+                  </div>
+                  <div className="flex flex-col space-y-1">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-500">
+                      <FaMegaport className="text-white" size={24} />
+                    </div>
+                    <p className="text-sm text-slate-200">Markets</p>
+                  </div>
+                  <div className="flex flex-col space-y-1">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-pink-500">
+                      <FaPaintbrush className="text-white" size={24} />
+                    </div>
+                    <p className="text-sm text-slate-200">Design</p>
+                  </div>
+                  <div className="flex flex-col space-y-1">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-500">
+                      <FaCode className="text-white" size={24} />
+                    </div>
+                    <p className="text-sm text-slate-200">Devs</p>
+                  </div>
+                  <div className="flex flex-col space-y-1">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500">
+                      <FaShoppingCart className="text-white" size={24} />
+                    </div>
+                    <p className="text-sm text-slate-200">E-comms</p>
+                  </div>
+                  <div className="flex flex-col space-y-1">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-500">
+                      <FaHeadset className="text-white" size={24} />
+                    </div>
+                    <p className="text-sm text-slate-200">Support</p>
+                  </div>
+                  <div className="flex flex-col space-y-1">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500">
+                      <FaVideo className="text-white" size={24} />
+                    </div>
+                    <p className="text-sm text-slate-200">Meetings</p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="h-auto">
+              <div className="relative h-full space-y-6 rounded-3xl bg-[#282A30] px-8 py-6">
                 <div className="flex items-center gap-2">
                   <CiCircleList
                     className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2 text-slate-800"
@@ -125,8 +186,8 @@ const BeautifulPulse = () => {
                 </div>
               </div>
             </SwiperSlide>
-            <SwiperSlide>
-              <div className="space-y-4 rounded-3xl bg-[#282A30] px-8 py-6">
+            <SwiperSlide className="h-auto">
+              <div className="h-full space-y-4 rounded-3xl bg-[#282A30] px-8 py-6">
                 <div>
                   <div className="grid grid-cols-2 items-center gap-4">
                     <div className="flex w-full items-center gap-2">
@@ -188,158 +249,101 @@ const BeautifulPulse = () => {
                 </div>
               </div>
             </SwiperSlide>
-            <SwiperSlide>
-              <div className="relative space-y-4 rounded-3xl bg-[#282A30] px-8 py-6">
-                <div className="flex items-center gap-2">
-                  <CiCoins1 className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2.5 text-slate-800" size="20px" />
-                  <p className="text-slate-200">Coins</p>
+            <SwiperSlide className="h-auto">
+              <div className="relative h-full rounded-3xl bg-[#282A30] px-8 py-6">
+                <div className="mb-6 flex items-center gap-4 text-white">
+                  <RiStockLine size="20" />
+                  <p>Markets</p>
                 </div>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="space-y-2.5">
                   <div className="space-y-1">
-                    <img src="/images/bitcoin.png" />
-                    <p className="text-slate-200">Bitcoin</p>
-                  </div>
-                  <div className="space-y-1">
-                    <img src="/images/ethereum.png" />
-                    <p className="text-slate-200">Ethereum</p>
-                  </div>
-                  <div className="space-y-1">
-                    <img src="/images/tether.png" />
-                    <p className="text-slate-200">USDt</p>
-                  </div>
-                  <div className="space-y-1">
-                    <img src="/images/solana.png" />
-                    <p className="text-slate-200">Solana</p>
-                  </div>
-                  <div className="space-y-1">
-                    <img src="/images/tron.png" />
-                    <p className="text-slate-200">Tron</p>
-                  </div>
-                  <div className="space-y-1">
-                    <img src="/images/xrp.png" />
-                    <p className="text-slate-200">Xrp</p>
-                  </div>
-                  <div className="space-y-1">
-                    <img src="/images/usdc.png" />
-                    <p className="text-slate-200">USDC</p>
-                  </div>
-                  <div className="space-y-1">
-                    <img src="/images/bnb.png" />
-                    <p className="text-slate-200">BNB</p>
-                  </div>
-                  <div className="space-y-1">
-                    <img src="/images/dogecoin.png" />
-                    <p className="text-slate-200">Dogecoin</p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="relative space-y-4 rounded-3xl bg-[#282A30] px-8 py-6">
-                <div className="flex items-center gap-2">
-                  <AiOutlineStock
-                    className="h-[40px] w-[40px] rounded-full bg-slate-100 p-2.5 text-slate-800"
-                    size="20px"
-                  />
-                  <p className="text-slate-200">Stocks</p>
-                </div>
-                <div className="space-y-4">
-                  <div className="grid grid-cols-3 gap-2">
-                    <p className="text-slate-200">Index</p>
-                    <p className="text-slate-200">Last</p>
-                    <p className="text-slate-200">Change</p>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="grid grid-cols-3 gap-2">
-                      <p className="text-slate-200">Nasdaq</p>
-                      <p className="text-slate-200">16,098.19</p>
-                      <p className="text-green-300">+494.93</p>
+                    <div className="flex items-center justify-between gap-2 rounded-2xl bg-white/10 px-6 py-2.5">
+                      <p className="whitespace-nowrap text-white">NGX</p>
+                      <p className="text-green-500">+494.93</p>
                     </div>
-                    <hr className="border border-slate-500" />
                   </div>
                   <div className="space-y-1">
-                    <div className="grid grid-cols-3 gap-2">
-                      <p className="text-slate-200">NYSE</p>
-                      <p className="text-slate-200">17,797.27</p>
-                      <p className="text-green-300">+358.63</p>
+                    <div className="flex items-center justify-between gap-2 rounded-2xl bg-white/10 px-6 py-2.5">
+                      <p className="whitespace-nowrap text-white">Nasdaq</p>
+                      <p className="text-red-500">-494.93</p>
                     </div>
-                    <hr className="border border-slate-500" />
                   </div>
                   <div className="space-y-1">
-                    <div className="grid grid-cols-3 gap-2">
-                      <p className="text-slate-200">S&P 500</p>
-                      <p className="text-slate-200">5,197.83</p>
-                      <p className="text-green-300">+135.58</p>
+                    <div className="flex items-center justify-between gap-2 rounded-2xl bg-white/10 px-6 py-2.5">
+                      <p className="whitespace-nowrap text-white">NYSE</p>
+                      <p className="text-green-500">+358.63</p>
                     </div>
-                    <hr className="border border-slate-500" />
                   </div>
                   <div className="space-y-1">
-                    <div className="grid grid-cols-3 gap-2">
-                      <p className="text-slate-200">FTSE 100</p>
-                      <p className="text-slate-200">7,910.53</p>
-                      <p className="text-green-300">+208.45</p>
+                    <div className="flex items-center justify-between gap-2 rounded-2xl bg-white/10 px-6 py-2.5">
+                      <p className="whitespace-nowrap text-white">S&P 500</p>
+                      <p className="text-red-500">-135.58</p>
                     </div>
-                    <hr className="border border-slate-500" />
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between gap-2 rounded-2xl bg-white/10 px-6 py-2.5">
+                      <p className="whitespace-nowrap text-white">FTSE 100</p>
+                      <p className="text-green-500">+208.45</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </SwiperSlide>
           </Swiper>
         </div>
-        <div className="relative w-full space-y-4 rounded-3xl bg-[#282A30] px-8 py-6">
-          <div className="flex items-center gap-2">
-            <IoMenu className="text-slate-200" size="20px" />
-            <p className="text-slate-200">Overview</p>
+        <div className="relative w-full rounded-3xl bg-green-800 px-8 py-6">
+          <div className="mb-6 flex items-center gap-2 text-white">
+            <IoMenu size="20px" />
+            <p>Overview</p>
           </div>
-          <div className="grid min-h-[20px] grid-cols-3 gap-2 rounded bg-[#1C1D22] px-8 py-6">
+          <img
+            src="https://thumbs.dreamstime.com/b/bull-stock-market-chart-background-bull-stock-market-chart-background-closeup-selective-focus-neural-307859814.jpg"
+            alt="random image"
+            className="h-[200px] w-full rounded-3xl object-cover"
+          />
+          <div className="mt-4 grid grid-cols-3 gap-2 rounded">
             <div className="space-y-1">
-              <IoMdAdd className="mx-auto h-[40px] w-[40px] rounded-full bg-pink-100 p-2 text-pink-950" size="30px" />
-              <p className="text-small text-center text-slate-200">Design</p>
+              <IoMdAdd className="h-[40px] w-[40px] rounded-full bg-pink-100 p-2 text-pink-950" size="30px" />
+              <p className="text-md text-slate-200">Design</p>
             </div>
             <div className="space-y-1">
-              <IoAnalytics
-                className="mx-auto h-[40px] w-[40px] rounded-full bg-teal-100 p-2 text-teal-950"
-                size="30px"
-              />
-              <p className="text-small text-center text-slate-200">Analyse</p>
+              <IoAnalytics className="h-[40px] w-[40px] rounded-full bg-teal-100 p-2 text-teal-950" size="30px" />
+              <p className="text-md text-slate-200">Analyse</p>
             </div>
             <div className="space-y-1">
-              <IoMdApps
-                className="mx-auto h-[40px] w-[40px] rounded-full bg-fuchsia-100 p-2 text-fuchsia-950"
-                size="30px"
-              />
-              <p className="text-small text-center text-slate-200">Apps</p>
+              <IoMdApps className="h-[40px] w-[40px] rounded-full bg-fuchsia-100 p-2 text-fuchsia-950" size="30px" />
+              <p className="text-md text-slate-200">Apps</p>
             </div>
-          </div>
-          <div className="grid grid-cols-2 gap-2">
-            <div className="min-h-[20px] animate-pulse rounded bg-[#1C1D22]"></div>
-            <div className="min-h-[20px] animate-pulse rounded bg-[#1C1D22]"></div>
-            <div className="min-h-[20px] animate-pulse rounded bg-[#1C1D22]"></div>
-            <div className="min-h-[20px] animate-pulse rounded bg-[#1C1D22]"></div>
-            <div className="min-h-[20px] animate-pulse rounded bg-[#1C1D22]"></div>
-            <div className="min-h-[20px] animate-pulse rounded bg-[#1C1D22]"></div>
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col items-center space-y-8 md:items-end">
-        <div className="w-full space-y-4 rounded-3xl bg-[#282A30] px-8 py-6 text-white">
-          {filteredGraph?.slice(0, 4).map((property) => {
-            const values = [+property.sold, +property.units, +property.available];
-            return (
-              <div key={property.name} className="py-2">
-                <StraightChart data={values} title={property?.name} />
-              </div>
-            );
-          })}
+      <div className="flex flex-col items-center space-y-6 md:items-end">
+        <div className="w-full space-y-4 rounded-3xl bg-sky-800 px-8 py-6 text-white">
+          <img
+            src="https://images.pexels.com/photos/3206114/pexels-photo-3206114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="random image"
+            className="h-[160px] w-full rounded-3xl"
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'center 30%',
+            }}
+          />
+          <div className="mt-4">
+            {filteredGraph?.slice(0, 4).map((property) => {
+              const values = [+property.sold, +property.units, +property.available];
+              return (
+                <div key={property.name} className="py-1">
+                  <StraightChart data={values} title={property?.name} />
+                </div>
+              );
+            })}
+          </div>
         </div>
         <div className="relative h-max w-full">
           <Swiper
             loop={true}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-            }}
+            autoplay={{ delay: 5000 }}
             speed={1000}
             modules={[EffectFlip]}
             effect="flip"
@@ -425,7 +429,7 @@ const BeautifulPulse = () => {
                     <div className="h-[10px] w-[40%] rounded-3xl bg-slate-200" />
                   </div>
                 </div>
-                <div className="flex items-center gap-2 rounded bg-yellow-300 p-2">
+                <div className="flex items-center gap-2 rounded bg-green-700 p-2">
                   <div className="h-[20px] w-[20px] rounded bg-white"></div>
                   <div className="flex w-[80%] items-center gap-2">
                     <div className="h-[10px] w-[70%] rounded-3xl bg-white" />

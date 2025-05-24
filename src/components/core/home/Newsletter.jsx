@@ -24,27 +24,26 @@ const Newsletter = ({ sm = false }) => {
   return (
     <div
       className={cn(
-        'relative bg-[#11100f] px-10 text-zinc-100 md:px-20',
+        'to-primary-950 from-primary-50/50 relative bg-black bg-linear-to-br px-10 text-zinc-100 md:px-20',
         sm ? 'overflow-hidden py-24' : 'py-40'
       )}
     >
-      <div className="bg-tw-dark absolute inset-0 z-10 min-h-screen scale-125 bg-cover opacity-80"></div>
       <div className="relative z-20">
         {view === 'form' && (
           <div className="container flex flex-col items-center text-center">
-            <h2 className="max-w-2xl text-[2.5rem] font-medium leading-tight! tracking-tight md:text-6xl">
+            <h2 className="max-w-2xl text-[2.5rem] leading-tight! font-medium tracking-tight md:text-6xl">
               Get weekly statisense directly into your inbox
             </h2>
             <form
               onSubmit={handleSubmit(submit)}
-              className="mt-10 flex w-full max-w-2xl flex-col items-center space-y-4 sm:mt-16 sm:flex-row sm:space-x-4 sm:space-y-0"
+              className="mt-10 flex w-full max-w-2xl flex-col items-center space-y-4 sm:mt-16 sm:flex-row sm:space-y-0 sm:space-x-4"
             >
               <input
                 type="text"
                 name="query"
                 id="query"
                 placeholder="Full name"
-                className="w-full rounded-full bg-zinc-700/50 px-8 py-4 outline-none! ring-zinc-500/10 transition-all focus:ring-4 disabled:pointer-events-none disabled:opacity-75 sm:w-[200%]"
+                className="w-full rounded-full bg-zinc-700/50 px-8 py-4 ring-zinc-500/10 transition-all outline-none! focus:ring-4 disabled:pointer-events-none disabled:opacity-75 sm:w-[200%]"
                 {...register('name', { required: 'Name is required' })}
                 disabled={isLoading}
               />
@@ -53,7 +52,7 @@ const Newsletter = ({ sm = false }) => {
                 name="query"
                 id="query"
                 placeholder="Email address"
-                className="w-full rounded-full bg-zinc-700/50 px-8 py-4 outline-none! ring-zinc-500/10 transition-all focus:ring-4 disabled:pointer-events-none disabled:opacity-75 sm:w-[300%]"
+                className="w-full rounded-full bg-zinc-700/50 px-8 py-4 ring-zinc-500/10 transition-all outline-none! focus:ring-4 disabled:pointer-events-none disabled:opacity-75 sm:w-[300%]"
                 {...register('email', { required: 'Email is required' })}
                 disabled={isLoading}
               />

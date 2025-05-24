@@ -25,3 +25,11 @@ export const useVerifySubscriberEmail = () => {
     retry: 0,
   });
 };
+
+export const useAddLaunchSubscriber = () => {
+  return useMutation({
+    mutationFn: ({ name, email, product, company, industry }) => {
+      return http.post('/product/launch/subscribe', { name, email, product, company, industry });
+    },
+  });
+};

@@ -1,37 +1,22 @@
 import React from 'react';
-import Button from '@/components/global/Button';
-import { IconChevronRight } from '@tabler/icons-react';
-import Link from 'next/link';
-import TextLoop from '@/components/global/TextLoop';
-
-const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
+import { Button, useDisclosure } from '@heroui/react';
+import JoinImmortlWaitlistModal from './JoinImmortlWaitlistModal';
 
 const Hero = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <div className="to-primary-950 relative overflow-hidden bg-[#11100f] bg-linear-to-br from-primary-50 pb-32 pt-48 md:pb-32 md:pt-52 md:text-center">
-      <div className="absolute inset-0 min-h-screen animate-wide bg-hero bg-cover bg-right opacity-60"></div>
-      <div className="container relative z-10">
-        <h1 className="font-display mx-auto max-w-[860px] text-[3.4rem] font-bold leading-[1.1] tracking-tight text-slate-300 sm:text-7xl md:text-[6.8rem] md:leading-none!">
-          Connecting
-          <br />
-          <TextLoop interval={5} className="text-primary-500">
-            <span>Generative AI</span>
-            <span>Banking AI</span>
-            <span>Identity AI</span>
-            <span>Markets AI</span>
-          </TextLoop>
-          <br />
-          to Africa's Data
+    <div className="bg-zinc-950 bg-linear-to-br to-primary-950 from-primary-50/50 relative overflow-hidden pt-48 pb-32 md:pt-52 md:pb-32 md:text-center">
+      <div className="animate-wide bg-hero absolute inset-0 min-h-screen bg-cover bg-right opacity-60"></div>
+      <div className="relative z-10 container">
+        <h1 className="font-display mx-auto max-w-[1000px] text-[3.4rem] leading-[1.1] font-bold tracking-tight text-slate-300 sm:text-7xl md:text-[6.8rem] md:leading-none!">
+          We are building data rails for analytics across Africa
         </h1>
-        <p className="mx-auto mt-8 max-w-xl text-lg tracking-tight text-slate-400">
-          Our data models help simplify business datasets into conversation, reports and infographics.
-        </p>
-        <Link href={`${ACCOUNT_URL}/register`} className="mt-12 inline-flex">
-          <Button size="xl" rightIcon={<IconChevronRight size="20" />} color="white">
-            Get started
-          </Button>
-        </Link>
+        <Button size="lg" className="mt-12 bg-white text-black hover:bg-white/90" radius="full" onPress={onOpen}>
+          Join waitlist
+        </Button>
       </div>
+
+      <JoinImmortlWaitlistModal isOpen={isOpen} onClose={onClose} />
     </div>
   );
 };
