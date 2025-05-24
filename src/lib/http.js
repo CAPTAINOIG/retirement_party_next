@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { getCrossSubdomainCookie } from '@/lib/utils';
+import { API_URL } from '@/lib/constants';
 
 const http = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+  baseURL: API_URL,
 });
 
 http.interceptors.request.use((config) => {

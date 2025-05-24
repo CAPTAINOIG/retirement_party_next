@@ -1,13 +1,13 @@
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { S3_BUCKET_NAME } from './constants';
 
 export const delay = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
 export const getImageLink = (path) => {
-  const bucket = process.env.NEXT_PUBLIC_S3_BUCKET_NAME;
-  return `https://${bucket}.s3.amazonaws.com/${path}`;
+  return `https://${S3_BUCKET_NAME}.s3.amazonaws.com/${path}`;
 };
 
 export const cn = (...inputs) => twMerge(clsx(inputs));

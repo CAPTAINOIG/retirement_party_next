@@ -3,8 +3,7 @@ import { useAuth } from '@/hooks/use-auth';
 import { cn, getImageLink } from '@/lib/utils';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, User } from '@heroui/react';
 import { TbLogout, TbUser } from 'react-icons/tb';
-
-const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
+import { ACCOUNT_URL } from '@/lib/constants';
 
 const UserDropdown = () => {
   const { user, logout } = useAuth();

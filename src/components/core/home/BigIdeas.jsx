@@ -1,9 +1,4 @@
 import React from 'react';
-import CountUpOnScroll from '@/components/core/shared/CountUpOnScroll';
-import { FaPlus } from 'react-icons/fa';
-import Button from '@/components/global/Button';
-
-const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
 
 const BigIdeas = () => {
   return (
@@ -174,3 +169,4 @@ const BigIdeas = () => {
 };
 
 export default BigIdeas;
+

@@ -2,8 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { useGetProfile } from '@/api/auth.js';
 import { useMount } from 'react-use';
 import { getCrossSubdomainCookie, setCrossSubdomainCookie } from '@/lib/utils';
-
-const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
+import { ACCOUNT_URL } from '@/lib/constants';
 
 const authContext = createContext({
   user: null,

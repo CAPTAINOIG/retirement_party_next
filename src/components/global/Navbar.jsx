@@ -4,17 +4,13 @@ import { IconMenu } from '@tabler/icons-react';
 import { useIsomorphicLayoutEffect } from 'react-use';
 import { useAuth } from '@/hooks/use-auth.js';
 import Logo from '@/components/core/shared/Logo';
-import NavProductsDropdown from '@/components/core/NavProductsDropdown';
 import MobileNav from '@/components/core/MobileNav';
 import { cn } from '@/lib/utils';
 import UserDropdown from '@/components/core/shared/UserDropdown';
 import { Button } from '@heroui/react';
 import JoinImmortlWaitlistModal from '../core/home/JoinImmortlWaitlistModal';
 import { useDisclosure } from '@heroui/react';
-
-const ACCOUNT_URL = process.env.NEXT_PUBLIC_ACCOUNT_URL;
-const SNAPSHOTS_URL = process.env.NEXT_PUBLIC_SNAPSHOTS_URL;
-const MARKET_URL = process.env.NEXT_PUBLIC_MARKET_URL;
+import { IMMORTAL_URL, PARROTS_URL } from '@/lib/constants';
 
 const Navbar = () => {
   const { resolved, authenticated } = useAuth();
@@ -47,10 +43,10 @@ const Navbar = () => {
                 <Logo light={!scrolled} />
               </Link>
               <div className="ml-auto hidden h-full md:space-x-3 lg:flex">
-                <Link href={MARKET_URL} target="_blank" className="inline-flex items-center rounded-full px-4 py-1">
+                <Link href={IMMORTAL_URL} target="_blank" className="inline-flex items-center rounded-full px-4 py-1">
                   Immortal AI
                 </Link>
-                <Link href={SNAPSHOTS_URL} target="_blank" className="inline-flex items-center rounded-full px-4 py-1">
+                <Link href={PARROTS_URL} target="_blank" className="inline-flex items-center rounded-full px-4 py-1">
                   Parrots
                 </Link>
               </div>

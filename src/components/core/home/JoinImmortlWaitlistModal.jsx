@@ -59,7 +59,7 @@ const JoinImmortlWaitlistModal = ({ isOpen, onClose }) => {
 
   return (
     <CustomModal isOpen={isOpen} onClose={handleClose} width={1200}>
-      <Card className="grid grid-cols-[2fr_1.2fr] gap-10 rounded-3xl px-28 py-20">
+      <Card className="grid gap-10 rounded-3xl px-10 py-12 lg:grid-cols-[2fr_1.2fr] lg:px-28 lg:py-20">
         <div className="text-white">
           <h1 className="bg-linear-to-r from-green-600 to-blue-800 bg-clip-text text-[3.4rem] !leading-none font-bold tracking-tight text-transparent md:text-[6rem]">
             Unveiling Immortal AI

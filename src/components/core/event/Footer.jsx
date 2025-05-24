@@ -12,16 +12,13 @@ import {
 } from '@tabler/icons-react';
 import React from 'react';
 import Logo from '@/components/core/shared/Logo';
-import products from '@/lib/products';
-
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
 
 const Footer = () => {
   return (
     <>
       <footer className="bg-[#11100f] bg-linear-to-br from-gray-900 to-gray-950 py-20 text-zinc-200">
         <div className="container">
-          <div className="grid grid-cols-1 gap-20 pb-20 pt-10 md:grid-cols-3 lg:gap-10">
+          <div className="grid grid-cols-1 gap-20 pt-10 pb-20 md:grid-cols-3 lg:gap-10">
             <div>
               <h6 className="mb-6 font-medium">Details</h6>
               <div className="flex flex-col space-y-2">
@@ -87,7 +84,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
-            <div className="flex flex-col items-start space-y-4 sm:flex-row sm:items-center sm:space-x-8 sm:space-y-0">
+            <div className="flex flex-col items-start space-y-4 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-8">
               <div>Copyright &copy; {new Date().getFullYear()} Statisense</div>
             </div>
             <div className="mt-8 flex items-center space-x-6 md:mt-0">

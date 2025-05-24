@@ -32,7 +32,7 @@ const BeautifulStory = () => {
     <div className="relative w-full overflow-hidden">
       <div className="relative z-2 container mt-32 md:block">
         <div className="relative grid items-center gap-20 py-12 md:grid-cols-[1fr_1fr] md:gap-0 md:pt-10 md:pb-32">
-          <div className="items-center justify-center text-center md:items-start md:justify-start md:text-left">
+          <div>
             <motion.h1
               variants={textVariant}
               initial="hidden"
@@ -61,7 +61,9 @@ const BeautifulStory = () => {
               Get started
             </Button>
           </div>
-          <BeautifulPulse />
+          <div className="hidden lg:block">
+            <BeautifulPulse />
+          </div>
         </div>
       </div>
 
