@@ -4,16 +4,38 @@ const addLeadingZero = (number) => number.toString().padStart(2, '0');
 
 const useCountdown = (targetDate) => {
   const countDownDate = new Date(targetDate).getTime();
-
-  const [countDown, setCountDown] = useState(countDownDate - new Date().getTime());
+  const [mounted, setMounted] = useState(false);
+  const [countDown, setCountDown] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
+    const updateCountdown = () => {
       setCountDown(countDownDate - new Date().getTime());
-    }, 1000);
+    };
+
+    // Set initial countdown immediately
+    updateCountdown();
+
+    const interval = setInterval(updateCountdown, 1000);
 
     return () => clearInterval(interval);
-  }, [countDownDate]);
+  }, [countDownDate, mounted]);
+
+  // Return zeros if not mounted yet to match server rendering
+  if (!mounted) {
+    return {
+      days: '00',
+      hours: '00',
+      minutes: '00',
+      seconds: '00',
+      expired: false,
+    };
+  }
 
   return getReturnValues(countDown);
 };

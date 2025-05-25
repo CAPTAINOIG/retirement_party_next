@@ -1,5 +1,4 @@
 import CountdownTimer from '@/app/dica2024/CountdownTimer';
-import ClientOnly from '@/components/global/ClientOnly';
 import CustomModal from '@/components/global/CustomModal';
 import { Button, Card, Input, Select, SelectItem } from '@heroui/react';
 import PropTypes from 'prop-types';
@@ -67,9 +66,7 @@ const JoinImmortlWaitlistModal = ({ isOpen, onClose }) => {
           <p className="mt-4 text-lg opacity-70 md:max-w-[70%] md:text-xl">
             We will be fully accessible by pre-registered users on June 30, 2025.
           </p>
-          <ClientOnly>
-            <CountdownTimer date="6/27/2025" className="mt-10" />
-          </ClientOnly>
+          <CountdownTimer date="6/27/2025" className="mt-10" />
         </div>
         <div className="py-6">
           {view === 'form' && (

@@ -9,7 +9,6 @@ import { BorderBeam } from '@/components/global/BorderBeam';
 import Footer from '@/components/global/Footer';
 import { Button, Card, useDisclosure } from '@heroui/react';
 import CountdownTimer from '@/app/dica2024/CountdownTimer';
-import ClientOnly from '@/components/global/ClientOnly';
 import RegisterModal from '@/app/dica2024/RegisterModal';
 import { useTheme } from 'next-themes';
 
@@ -113,7 +112,7 @@ const DICA2024PageContent = () => {
   return (
     <>
       <div
-        className={cn('fixed left-0 top-0 z-10 w-full border-b border-transparent py-10 transition-all duration-300', {
+        className={cn('fixed top-0 left-0 z-10 w-full border-b border-transparent py-10 transition-all duration-300', {
           'border-default-100 bg-white py-5 shadow dark:bg-black': scrolled,
         })}
       >
@@ -156,19 +155,17 @@ const DICA2024PageContent = () => {
           />
           <div className="bg-tw-dark absolute inset-0 min-h-screen scale-[4] border bg-cover opacity-90"></div>
           <div className="absolute inset-0 bg-black bg-cover opacity-10"></div>
-          <div className="container relative pb-28 pt-52 md:pb-32 md:pt-60">
+          <div className="relative container pt-52 pb-28 md:pt-60 md:pb-32">
             <div className="text-white md:max-w-[90%]">
-              <h1 className="text-[3.4rem] font-bold leading-none tracking-tight md:text-[5.8rem]">
-                <span className="flex text-[3rem] uppercase text-sky-500 md:text-[5rem]">#DICA2024</span>
+              <h1 className="text-[3.4rem] leading-none font-bold tracking-tight md:text-[5.8rem]">
+                <span className="flex text-[3rem] text-sky-500 uppercase md:text-[5rem]">#DICA2024</span>
                 Data Driven Africa: <br /> Are we still pretending?
               </h1>
               <p className="mt-8 text-lg opacity-70 md:max-w-[70%] md:text-xl">
                 Join us as we discuss advancing Africa through data intelligence powered consumers, businesses and
                 governments
               </p>
-              <ClientOnly>
-                <CountdownTimer />
-              </ClientOnly>
+              <CountdownTimer />
             </div>
           </div>
         </div>
@@ -181,10 +178,10 @@ const DICA2024PageContent = () => {
               <Card className="relative flex flex-col px-8 py-12" shadow="sm">
                 <h1 className="text-2xl font-semibold">Prelude I</h1>
                 <div className="mt-6 flex items-center space-x-3">
-                  <div className="flex items-center space-x-2 rounded-2xl bg-default-200/50 px-4 py-2">
+                  <div className="bg-default-200/50 flex items-center space-x-2 rounded-2xl px-4 py-2">
                     <FaCalendarAlt size="14" /> <span>July 2024</span>
                   </div>
-                  <div className="flex items-center space-x-2 rounded-2xl bg-default-200/50 px-4 py-2">
+                  <div className="bg-default-200/50 flex items-center space-x-2 rounded-2xl px-4 py-2">
                     <FaLaptop size="14" /> <span>Virtual</span>
                   </div>
                 </div>
@@ -196,10 +193,10 @@ const DICA2024PageContent = () => {
               <Card className="relative flex flex-col px-8 py-12" shadow="sm">
                 <h1 className="text-2xl font-semibold">Prelude II</h1>
                 <div className="mt-6 flex items-center space-x-3">
-                  <div className="flex items-center space-x-2 rounded-2xl bg-default-200/50 px-4 py-2">
+                  <div className="bg-default-200/50 flex items-center space-x-2 rounded-2xl px-4 py-2">
                     <FaCalendarAlt size="14" /> <span>August 2024</span>
                   </div>
-                  <div className="flex items-center space-x-2 rounded-2xl bg-default-200/50 px-4 py-2">
+                  <div className="bg-default-200/50 flex items-center space-x-2 rounded-2xl px-4 py-2">
                     <FaLaptop size="14" /> <span>Virtual</span>
                   </div>
                 </div>
@@ -212,10 +209,10 @@ const DICA2024PageContent = () => {
                 <BorderBeam />
                 <h1 className="text-2xl font-semibold">Main Conference</h1>
                 <div className="mt-6 flex items-center space-x-3">
-                  <div className="flex items-center space-x-2 rounded-2xl bg-default-200/50 px-4 py-2">
+                  <div className="bg-default-200/50 flex items-center space-x-2 rounded-2xl px-4 py-2">
                     <FaCalendarAlt size="14" /> <span>September 2024</span>
                   </div>
-                  <div className="flex items-center space-x-2 rounded-2xl bg-default-200/50 px-4 py-2">
+                  <div className="bg-default-200/50 flex items-center space-x-2 rounded-2xl px-4 py-2">
                     <FaUsers size="14" /> <span>Physical</span>
                   </div>
                 </div>
@@ -256,17 +253,17 @@ const DICA2024PageContent = () => {
                     <span className="text-lg">June</span>
                   </div>
                   <div className="hidden px-20 text-center text-xl md:flex">8:00am - 9:00am</div>
-                  <div className="flex flex-1 flex-col items-start space-y-6 md:flex-row md:items-center md:space-x-4 md:space-y-0">
+                  <div className="flex flex-1 flex-col items-start space-y-6 md:flex-row md:items-center md:space-y-0 md:space-x-4">
                     <img src={speakers[0].image} alt="Speaker 1" className="w-16 rounded-3xl" />
                     <div>
-                      <h1 className="text-xl font-medium leading-none">John Emeka Doe</h1>
+                      <h1 className="text-xl leading-none font-medium">John Emeka Doe</h1>
                       <p className="mt-2 leading-tight opacity-90">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda atque fugit ipsum, magni
                         maxime recusandae sit? Minus quos, repellendus.
                       </p>
                     </div>
                   </div>
-                  <div className="mt-4 flex border-t border-default-100 pt-4 text-center text-base md:hidden">
+                  <div className="border-default-100 mt-4 flex border-t pt-4 text-center text-base md:hidden">
                     31st June, 8:00am - 9:00am
                   </div>
                 </Card>
@@ -276,7 +273,7 @@ const DICA2024PageContent = () => {
         </div>
         <div className="relative" id="about">
           <div className="container">
-            <div className="pattern-1 relative overflow-hidden rounded-3xl bg-primary-50 p-12 md:p-16">
+            <div className="pattern-1 bg-primary-50 relative overflow-hidden rounded-3xl p-12 md:p-16">
               <div className="relative z-2">
                 <h2 className="mb-10 max-w-4xl text-4xl font-bold md:mb-16 md:text-6xl">About us</h2>
                 <p className="text-xl">

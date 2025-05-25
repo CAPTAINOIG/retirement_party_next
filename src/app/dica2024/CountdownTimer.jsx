@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import useCountdown from '@/hooks/use-countdown';
 import { cn } from '@/lib/utils';

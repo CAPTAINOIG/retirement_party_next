@@ -7,7 +7,6 @@ import { Button, useDisclosure } from '@heroui/react';
 import RegisterModal from '@/app/dica2024/RegisterModal';
 import { useTheme } from 'next-themes';
 import CountdownTimer from '../dica2024/CountdownTimer';
-import ClientOnly from '@/components/global/ClientOnly';
 import Footer from '@/components/core/event/Footer';
 
 const AttendPageContent = () => {
@@ -61,9 +60,7 @@ const AttendPageContent = () => {
               <p className="mt-8 text-lg opacity-70 md:max-w-[70%] md:text-xl">
                 We are connecting intelligence to African's data, join us.
               </p>
-              <ClientOnly>
-                <CountdownTimer date="6/10/2025" className="mt-10" />
-              </ClientOnly>
+              <CountdownTimer date="6/10/2025" className="mt-10" />
             </div>
           </div>
         </div>

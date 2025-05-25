@@ -6,7 +6,6 @@ import Testimonials from '@/components/core/home/Testimonials';
 import BeautifulStory from '@/components/core/home/BeautifulStory';
 import Immortal from '@/components/core/home/Immortal';
 import CountdownTimer from '../dica2024/CountdownTimer';
-import ClientOnly from '@/components/global/ClientOnly';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import Hero from '@/components/core/home/Hero';
 
@@ -26,9 +25,7 @@ const HomePageContent = () => {
               <p className="mt-4 text-lg opacity-70 md:max-w-[70%] md:text-xl">
                 We are connecting intelligence to African's data, join us.
               </p>
-              <ClientOnly>
-                <CountdownTimer date="6/19/2025" className="mt-10" />
-              </ClientOnly>
+              <CountdownTimer date="6/19/2025" className="mt-10" />
             </div>
             <div className="relative hidden w-full flex-col items-center justify-center lg:flex">
               <div className="absolute top-24 left-0 h-[300px] w-full space-y-8">
