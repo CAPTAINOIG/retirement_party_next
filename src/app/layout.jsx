@@ -1,10 +1,7 @@
 import React from 'react';
 import { Providers } from '@/app/providers';
-import { Inter } from 'next/font/google';
 import './global.css';
 import './nprogress.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Statisense',
@@ -29,8 +26,9 @@ const RootLayout = ({ children }) => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
         <link rel="canonical" href="https://www.statisense.co/" />
+        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap" rel="stylesheet" />
       </head>
-      <body className={inter.className}>
+      <body>
         <Providers>{children}</Providers>
       </body>
     </html>

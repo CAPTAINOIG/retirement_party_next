@@ -13,7 +13,7 @@ import Hero from '@/components/core/home/Hero';
 const HomePageContent = () => {
   return (
     <div className="bg-slate-100 text-black">
-      <div className="to-primary-950 from-primary-50/50 bg-black bg-linear-to-br">
+      <div className="to-primary-950 from-primary-50/30 bg-black bg-linear-to-br">
         <BeautifulStory />
         <div className="relative overflow-hidden">
           <div className="relative z-3 container grid grid-cols-[1fr_1fr] items-center gap-10 pt-28 pb-28 md:pt-32 md:pb-32">
