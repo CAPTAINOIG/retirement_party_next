@@ -10,7 +10,7 @@ export const metadata = {
 
 const RootLayout = ({ children }) => {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
+    <html lang="en" suppressHydrationWarning className="bg-background text-foreground dark">
       <head>
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
