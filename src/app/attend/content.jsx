@@ -27,7 +27,7 @@ const AttendPageContent = () => {
   return (
     <>
       <div
-        className={cn('fixed left-0 top-0 z-10 w-full border-b border-transparent py-10 transition-all duration-300', {
+        className={cn('fixed top-0 left-0 z-10 w-full border-b border-transparent py-10 transition-all duration-300', {
           'border-default-100 bg-white py-5 shadow dark:bg-black': scrolled,
         })}
       >
@@ -49,15 +49,11 @@ const AttendPageContent = () => {
       </div>
       <div>
         <div className="relative overflow-hidden bg-[#11100f]">
-          <img
-            src="/images/hero.jpg"
-            alt="Hero image"
-            className="top absolute left-0 z-1 h-full w-full object-cover"
-          />
+          <img src="/images/hero.jpg" alt="Hero image" className="top absolute left-0 z-1 h-full w-full object-cover" />
           <div className="absolute inset-0 z-2 bg-linear-to-b from-transparent to-black" />
-          <div className="container relative z-3 pb-28 pt-52 md:pb-32 md:pt-60">
+          <div className="relative z-3 container pt-52 pb-28 md:pt-60 md:pb-32">
             <div className="text-white md:max-w-[90%]">
-              <h1 className="text-[3.4rem] font-bold leading-none tracking-tight md:text-[7rem]">
+              <h1 className="text-[3.4rem] leading-none font-bold tracking-tight md:text-[7rem]">
                 Unveiling
                 <br />
                 Immortality
@@ -66,14 +62,12 @@ const AttendPageContent = () => {
                 We are connecting intelligence to African's data, join us.
               </p>
               <ClientOnly>
-                <CountdownTimer date="6/10/2025" />
+                <CountdownTimer date="6/10/2025" className="mt-10" />
               </ClientOnly>
             </div>
           </div>
         </div>
-        <footer>
-          <Footer />
-        </footer>
+        <Footer />
       </div>
 
       <RegisterModal isOpen={isRegisterModalOpen} onOpenChange={onRegisterModalOpen} onClose={onRegisterModalClose} />

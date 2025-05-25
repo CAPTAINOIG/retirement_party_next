@@ -16,7 +16,7 @@ import Logo from '@/components/core/shared/Logo';
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#11100f] bg-linear-to-br from-gray-900 to-gray-950 py-20 text-zinc-200">
+      <footer className="to-primary-950 from-primary-50/30 bg-zinc-950 bg-linear-to-br py-20 text-zinc-200">
         <div className="container">
           <div className="grid grid-cols-1 gap-20 pt-10 pb-20 md:grid-cols-3 lg:gap-10">
             <div>
