@@ -12,7 +12,7 @@ export function middleware(request) {
     );
   }
 if (request.nextUrl.pathname === '/productinvestor') {
-return new URL('https://drive.google.com/file/d/18AIx44g9hG1LssX0QldppegIAWxtxGcQ/view?usp=drivesdk');
+return NextResponse.redirect(new URL('https://drive.google.com/file/d/18AIx44g9hG1LssX0QldppegIAWxtxGcQ/view?usp=drivesdk'));
 }
 
   return NextResponse.next();
