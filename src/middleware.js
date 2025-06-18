@@ -21,5 +21,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ['/investordeck', '/2pagerdeck', '/productinvestor'],
+  matcher: ['/investordeck', '/2pagerdeck', '/product(.*)'],
 };
