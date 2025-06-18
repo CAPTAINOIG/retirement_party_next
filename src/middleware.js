@@ -11,9 +11,11 @@ export function middleware(request) {
       new URL('https://drive.google.com/file/d/1vo9mlA-Bo1_vWXqj58VQBqy-mYr77bxI/view?usp=sharing')
     );
   }
-if (request.nextUrl.pathname === '/productinvestor') {
-return NextResponse.redirect(new URL('https://drive.google.com/file/d/18AIx44g9hG1LssX0QldppegIAWxtxGcQ/view?usp=drivesdk'));
-}
+  if (request.nextUrl.pathname.toLowerCase() === '/productinvestor') {
+    return NextResponse.redirect(
+      new URL('https://drive.google.com/file/d/1on7Dx35DtcDNkVDWy2s8i2E3AdaAI8UE/view?usp=sharing')
+    );
+  }
 
   return NextResponse.next();
 }
