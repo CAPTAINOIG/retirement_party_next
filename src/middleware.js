@@ -16,10 +16,20 @@ export function middleware(request) {
       new URL('https://drive.google.com/file/d/1on7Dx35DtcDNkVDWy2s8i2E3AdaAI8UE/view?usp=sharing')
     );
   }
+  if (request.nextUrl.pathname.toLowerCase() === '/ideck') {
+    return NextResponse.redirect(
+      new URL('https://drive.google.com/file/d/1OEOeldgTZrFNDNbxQ6ZIKpoCwRrH_Xf7/view?usp=sharing')
+    );
+  }
+  if (request.nextUrl.pathname.toLowerCase() === '/ideck_teaser') {
+    return NextResponse.redirect(
+      new URL('https://drive.google.com/file/d/1iRMp0cueG99ehRp7-RX3SbMce9y_dizw/view?usp=sharing')
+    );
+  }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/investordeck', '/2pagerdeck', '/product(.*)'],
+  matcher: ['/investordeck', '/2pagerdeck', '/ideck', '/ideck_teaser', '/product(.*)'],
 };
