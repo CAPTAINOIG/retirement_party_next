@@ -165,7 +165,7 @@ const DICA2024PageContent = () => {
                 Join us as we discuss advancing Africa through data intelligence powered consumers, businesses and
                 governments
               </p>
-              <CountdownTimer date="6/30/2025" className="mt-10" />
+              <CountdownTimer date="7/24/2025" className="mt-10" />
             </div>
           </div>
         </div>

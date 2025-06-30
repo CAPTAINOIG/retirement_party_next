@@ -66,7 +66,7 @@ const JoinImmortlWaitlistModal = ({ isOpen, onClose }) => {
           <p className="mt-4 text-lg opacity-70 md:max-w-[70%] md:text-xl">
             We will be fully accessible by pre-registered users on June 30, 2025.
           </p>
-          <CountdownTimer date="6/30/2025" className="mt-10" />
+          <CountdownTimer date="7/24/2025" className="mt-10" />
         </div>
         <div className="py-6">
           {view === 'form' && (

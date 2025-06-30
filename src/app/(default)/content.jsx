@@ -25,7 +25,7 @@ const HomePageContent = () => {
               <p className="mt-4 text-lg opacity-70 md:max-w-[70%] md:text-xl">
                 We are connecting intelligence to African's data, join us.
               </p>
-              <CountdownTimer date="6/30/2025" className="mt-10" />
+              <CountdownTimer date="7/24/2025" className="mt-10" />
             </div>
             <div className="relative hidden w-full flex-col items-center justify-center lg:flex">
               <div className="absolute top-24 left-0 h-[300px] w-full space-y-8">
