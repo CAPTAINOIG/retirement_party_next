@@ -6,13 +6,14 @@ const BigIdeas = () => {
       <div className="relative container mx-auto md:block">
         <div>
           <h2 className="text-center text-4xl font-semibold tracking-tight md:text-7xl">
-            We are connecting
+            Three Al Models,
             <br className="hidden md:block" />
+            Three{' '}
             <span className="relative inline-block leading-[0.7]">
               <span className="to-primary absolute inset-0 bottom-0 h-[45px] rotate-[3.5deg] rounded-2xl bg-linear-to-r from-green-600 md:h-[60px]"></span>
-              <span className="relative px-1 text-slate-200">intelligence</span>
+              <span className="relative px-1 text-slate-200">Ecosystems</span>
             </span>{' '}
-            to Africa's data
+            , One Africa
           </h2>
           <p className="mx-auto max-w-xl py-8 text-center text-lg leading-tight">
             Empowering African businesses with cutting-edge analytics, insights, and data-driven solutions to unlock
@@ -80,7 +81,7 @@ const BigIdeas = () => {
               <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
             </div>
             <div className="space-y-6">
-              <p className="text-xl leading-[1.1] font-semibold text-white">Financial markets</p>
+              <p className="text-xl leading-[1.1] font-semibold text-white">Market intelligence</p>
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <div>
@@ -135,7 +136,7 @@ const BigIdeas = () => {
               <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
             </div>
             <div className="space-y-6">
-              <p className="text-xl leading-[1.1] font-semibold text-white">Gaming</p>
+              <p className="text-xl leading-[1.1] font-semibold text-white">Predictive intelligence</p>
               <div className="grid grid-cols-4 items-center gap-2">
                 <img className="w-[40px]" src="/images/face-three.png" alt="face" />
                 <div className="col-span-3 space-y-2">
