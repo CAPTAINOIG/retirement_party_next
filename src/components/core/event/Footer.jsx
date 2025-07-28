@@ -56,8 +56,8 @@ const Footer = () => {
                   <div>
                     <IconMail size="20" />
                   </div>
-                  <a href="mailto:events@statisense.com.ng" target="_blank" className="flex font-medium">
-                    events@statisense.com.ng
+                  <a href="mailto:info@statisense.co" target="_blank" className="flex font-medium">
+                    info@statisense.co
                   </a>
                 </div>
               </div>

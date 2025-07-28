@@ -35,8 +35,8 @@ const Footer = () => {
                 <div>
                   <IconMail size="20" />
                 </div>
-                <a href="mailto:info@statisense.com.ng" target="_blank" className="flex font-medium">
-                  info@statisense.com.ng
+                <a href="mailto:info@statisense.co" target="_blank" className="flex font-medium">
+                  info@statisense.co
                 </a>
               </div>
               <div className="flex items-center space-x-3">

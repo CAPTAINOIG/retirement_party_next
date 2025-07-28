@@ -34,9 +34,9 @@ const OpenPositions = () => {
                 <p className="mt-2 opacity-80">{p.description}</p>
               </div>
               <a
-                href={`mailto:jobs@statisense.com.ng?subject=Application for ${p.title}`}
+                href={`mailto:jobs@statisense.co?subject=Application for ${p.title}`}
                 target="_blank"
-                className="mt-4 md:ml-4 md:mt-0"
+                className="mt-4 md:mt-0 md:ml-4"
               >
                 <Button variant="subtle">Apply</Button>
               </a>

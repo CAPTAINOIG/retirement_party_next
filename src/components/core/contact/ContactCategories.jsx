@@ -13,7 +13,7 @@ const ContactCategories = () => {
         <p className="mb-6 mt-6">
           Wondering if Statisense is the right tool for your business? Chat with our team to see if there’s a fit.
         </p>
-        <a href="mailto:sales@statisense.com.ng" className="mt-auto flex">
+        <a href="mailto:sales@statisense.co" className="mt-auto flex">
           <Button color="black" variant="outlined" className="w-full">
             Get in touch
           </Button>
@@ -27,7 +27,7 @@ const ContactCategories = () => {
         <p className="mb-6 mt-6">
           Need a hand using Statisense or managing your account? Send us an email and we will get in touch with you
         </p>
-        <a href="mailto:support@statisense.com.ng" className="mt-auto flex">
+        <a href="mailto:support@statisense.co" className="mt-auto flex">
           <Button color="black" variant="outlined" className="w-full">
             Get support
           </Button>
@@ -42,7 +42,7 @@ const ContactCategories = () => {
           We love working with journalists to share compelling stories. Send us a note and our PR and Communications
           Manager will be in touch.
         </p>
-        <a href="mailto:media@statisense.com.ng" className="mt-auto flex">
+        <a href="mailto:info@statisense.co" className="mt-auto flex">
           <Button color="black" variant="outlined" className="w-full">
             Get in touch
           </Button>
@@ -56,7 +56,7 @@ const ContactCategories = () => {
         <p className="mb-6 mt-6">
           We’re into co-marketing with awesome brands. Send us an email, and our Partnerships Manager will circle back.
         </p>
-        <a href="mailto:partnership@statisense.com.ng" className="mt-auto flex">
+        <a href="mailto:partnerships@statisense.co" className="mt-auto flex">
           <Button color="black" variant="outlined" className="w-full">
             Let's chat
           </Button>

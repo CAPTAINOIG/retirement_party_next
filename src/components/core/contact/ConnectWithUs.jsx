@@ -25,8 +25,8 @@ const ConnectWithUs = () => {
           </div>
           <div>
             <p>Email address</p>
-            <a href="mailto:info@statisense.com.ng" target="_blank" className="flex font-medium">
-              info@statisense.com.ng
+            <a href="mailto:info@statisense.co" target="_blank" className="flex font-medium">
+              info@statisense.co
             </a>
           </div>
         </div>
