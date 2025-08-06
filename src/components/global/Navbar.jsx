@@ -7,10 +7,9 @@ import Logo from '@/components/core/shared/Logo';
 import MobileNav from '@/components/core/MobileNav';
 import { cn } from '@/lib/utils';
 import UserDropdown from '@/components/core/shared/UserDropdown';
-import { Button } from '@heroui/react';
-import JoinImmortlWaitlistModal from '../core/home/JoinImmortlWaitlistModal';
-import { useDisclosure } from '@heroui/react';
+import { Button, useDisclosure } from '@heroui/react';
 import { IMMORTAL_URL, PARROTS_URL } from '@/lib/constants';
+import JoinWaitlistModal from '@/components/core/shared/JoinWaitlistModal';
 
 const Navbar = () => {
   const { resolved, authenticated } = useAuth();
@@ -101,10 +100,9 @@ const Navbar = () => {
       </header>
 
       <MobileNav isOpen={isMobileNavVisible} onClose={() => setIsMobileNavVisible(false)} />
-      <JoinImmortlWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
+      <JoinWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
     </>
   );
 };
 
 export default Navbar;
-

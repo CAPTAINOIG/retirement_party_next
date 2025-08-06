@@ -2,8 +2,8 @@ import React from 'react';
 import { useWindowSize } from 'react-use';
 import { motion } from 'motion/react';
 import ImmortalCard from '@/components/core/shared/ImmortalCard';
-import JoinImmortlWaitlistModal from './JoinImmortlWaitlistModal';
 import { Button, useDisclosure } from '@heroui/react';
+import JoinWaitlistModal from '@/components/core/shared/JoinWaitlistModal';
 
 const Immortal = () => {
   const { width } = useWindowSize();
@@ -53,7 +53,7 @@ const Immortal = () => {
         </div>
       </div>
 
-      <JoinImmortlWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
+      <JoinWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
     </div>
   );
 };

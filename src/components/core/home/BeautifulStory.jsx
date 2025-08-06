@@ -4,9 +4,9 @@ import { motion } from 'motion/react';
 import { useWindowSize } from 'react-use';
 import BeautifulPulse from '@/components/core/shared/BeautifulPulse';
 import { IconChevronRight } from '@tabler/icons-react';
-import JoinImmortlWaitlistModal from './JoinImmortlWaitlistModal';
 import { Button, useDisclosure } from '@heroui/react';
 import TextLoop from '@/components/global/TextLoop';
+import JoinWaitlistModal from '@/components/core/shared/JoinWaitlistModal';
 
 const BeautifulStory = () => {
   const { width } = useWindowSize();
@@ -67,7 +67,7 @@ const BeautifulStory = () => {
         </div>
       </div>
 
-      <JoinImmortlWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
+      <JoinWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
     </div>
   );
 };

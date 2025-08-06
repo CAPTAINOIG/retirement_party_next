@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, useDisclosure } from '@heroui/react';
-import JoinImmortlWaitlistModal from './JoinImmortlWaitlistModal';
+import JoinWaitlistModal from '@/components/core/shared/JoinWaitlistModal';
 
 const Hero = () => {
   const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
@@ -22,7 +22,7 @@ const Hero = () => {
         </Button>
       </div>
 
-      <JoinImmortlWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
+      <JoinWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
     </div>
   );
 };
