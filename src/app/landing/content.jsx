@@ -5,14 +5,17 @@ import CountryFlag from '@/components/global/CountryFlag';
 import { Card } from '@heroui/react';
 import JoinWaitlistForm from '@/components/core/shared/JoinWaitlistForm';
 import Logo from '@/components/core/shared/Logo';
+import { useTheme } from 'next-themes';
 
 const AdLandingContent = () => {
+  const { resolvedTheme: theme } = useTheme();
+
   return (
     <>
-      <div className="relative z-3 container grid items-center gap-20 pt-10 pb-24 lg:pt-32 lg:pb-32 lg:grid-cols-[1fr_1fr]">
-        <div className="text-white">
-          <Logo light width={160} className="mb-10 lg:mb-16" />
-          <h1 className="text-[3.4rem] leading-none font-bold tracking-tight lg:text-[6.5rem]">
+      <div className="relative z-3 container grid items-center gap-20 pt-10 pb-24 lg:grid-cols-[1fr_1fr] lg:pt-32 lg:pb-32">
+        <div>
+          <Logo light={theme === 'dark'} width={160} className="mb-10 lg:mb-16" />
+          <h1 className="border- text-[3.4rem] leading-none font-bold tracking-tight lg:text-[6.5rem]">
             Immortal AI is coming
           </h1>
           <Card className="mt-12 mb-6 rounded-2xl px-8 py-8 lg:hidden lg:px-12 lg:py-10">
