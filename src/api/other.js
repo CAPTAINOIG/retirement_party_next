@@ -28,8 +28,8 @@ export const useVerifySubscriberEmail = () => {
 
 export const useAddLaunchSubscriber = () => {
   return useMutation({
-    mutationFn: ({ name, email, product, company, industry }) => {
-      return http.post('/product/launch/subscribe', { name, email, product, company, industry });
+    mutationFn: ({ name, email, product, phone }) => {
+      return http.post('/product/launch/subscribe', { name, email, product, phone });
     },
   });
 };
