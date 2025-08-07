@@ -1,4 +1,5 @@
 import React from 'react';
+import Script from 'next/script';
 import { Providers } from '@/app/providers';
 import './global.css';
 import './nprogress.css';
@@ -12,6 +13,22 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning className="bg-background text-foreground dark">
       <head>
+        {/* Google Tag Manager */}
+        <Script
+          id="gtm-script"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-M8R38X7W');
+            `,
+          }}
+        />
+        {/* End Google Tag Manager */}
+
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
         <meta
@@ -69,6 +86,17 @@ const RootLayout = ({ children }) => {
         {/* End Facebook Pixel Code */}
       </head>
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M8R38X7W"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+
         <Providers>{children}</Providers>
       </body>
     </html>
