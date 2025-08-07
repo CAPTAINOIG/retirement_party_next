@@ -1,16 +1,11 @@
 import CustomModal from '@/components/global/CustomModal';
-import { Button, Card } from '@heroui/react';
-import { useState } from 'react';
-import { TbCheck } from 'react-icons/tb';
+import { Card } from '@heroui/react';
 import { motion } from 'motion/react';
 import JoinWaitlistForm from './JoinWaitlistForm';
 import CountryFlag from '@/components/global/CountryFlag';
 
 const JoinWaitlistModal = ({ isOpen, onClose }) => {
-  const [view, setView] = useState('form');
-
   const handleClose = () => {
-    setView('form');
     onClose();
   };
 
@@ -50,26 +45,7 @@ const JoinWaitlistModal = ({ isOpen, onClose }) => {
           </motion.div>
         </div>
         <div className="py-6">
-          {view === 'form' && <JoinWaitlistForm onDone={() => setView('success')} />}
-          {view === 'success' && (
-            <div className="flex flex-col items-center gap-4 py-10">
-              <TbCheck size="100" className="text-green-500" />
-              <p className="text-center text-lg">
-                You have been successfully added to the Immortal AI waitlist. We'll notify you when we launch!
-              </p>
-              <Button
-                type="button"
-                size="lg"
-                className="mt-8 px-6"
-                radius="full"
-                variant="solid"
-                color="primary"
-                onPress={handleClose}
-              >
-                Close
-              </Button>
-            </div>
-          )}
+          <JoinWaitlistForm onDone={onClose} />
         </div>
       </Card>
     </CustomModal>

@@ -19,7 +19,7 @@ const AdLandingContent = () => {
             Immortal AI is coming
           </h1>
           <Card className="mt-12 mb-6 rounded-2xl px-8 py-8 lg:hidden lg:px-12 lg:py-10">
-            <JoinWaitlistForm onDone={() => {}} />
+            <JoinWaitlistForm />
           </Card>
           <p className="mt-4 text-lg opacity-70 lg:max-w-[70%] lg:text-xl">
             We are connecting intelligence to African's data, join us.
@@ -49,7 +49,7 @@ const AdLandingContent = () => {
           </motion.div>
         </div>
         <Card className="hidden rounded-2xl px-10 py-8 lg:block lg:px-12 lg:py-10">
-          <JoinWaitlistForm onDone={() => {}} />
+          <JoinWaitlistForm />
         </Card>
       </div>
     </>
