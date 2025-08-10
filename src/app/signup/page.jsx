@@ -1,6 +1,9 @@
 import AdLandingContent from '../landing/content';
 
-export { metadata } from '../landing/page';
+export const metadata = {
+  title: 'Statisense',
+  description: 'Statisense - Pioneering AI Data Company for Informed Business Decisions',
+};
 
 const SignupPage = () => {
   return <AdLandingContent />;
