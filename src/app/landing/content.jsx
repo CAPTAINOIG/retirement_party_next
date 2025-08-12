@@ -5,6 +5,7 @@ import CountryFlag from '@/components/global/CountryFlag';
 import { Card } from '@heroui/react';
 import JoinWaitlistForm from '@/components/core/shared/JoinWaitlistForm';
 import Logo from '@/components/core/shared/Logo';
+import TextLoop from '@/components/global/TextLoop';
 import { useTheme } from 'next-themes';
 
 const AdLandingContent = () => {
@@ -16,20 +17,29 @@ const AdLandingContent = () => {
         <div>
           <Logo light={theme === 'dark'} width={160} className="mb-10 lg:mb-16" />
           <h1 className="border- text-[3.4rem] leading-none font-bold tracking-tight lg:text-[6.5rem]">
-            Immortal AI is coming
+            Be the first to{' '}
+            <TextLoop interval={3}>
+              <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">know</span>
+              <span className="bg-linear-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                analyze
+              </span>
+              <span className="bg-linear-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">predict</span>
+              <span className="bg-linear-to-r from-teal-600 to-green-600 bg-clip-text text-transparent">trade</span>
+            </TextLoop>
           </h1>
-          <Card className="mt-12 mb-6 rounded-2xl px-8 py-8 lg:hidden lg:px-12 lg:py-10">
+          <Card className="mt-8 mb-6 rounded-2xl px-8 py-8 lg:hidden lg:px-12 lg:py-10">
             <JoinWaitlistForm />
           </Card>
-          <p className="mt-4 text-lg opacity-70 lg:max-w-[70%] lg:text-xl">
-            We are connecting intelligence to African's data, join us.
+          <p className="mt-4 text-lg leading-snug opacity-70 lg:max-w-[70%] lg:text-xl">
+            Unlock Africa's market potential with real-time data intelligence. Get early access to insights that drive
+            smarter decisions.
           </p>
           <motion.div
             initial={{ opacity: 0, y: 120 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: 'spring', stiffness: 90 }}
             viewport={{ amount: 'some', margin: '10%' }}
-            className="mt-8 flex flex-wrap items-center gap-4"
+            className="mt-8 flex flex-wrap items-center gap-8"
           >
             {[
               { code: 'NG', name: 'Nigeria' },
@@ -37,11 +47,8 @@ const AdLandingContent = () => {
               { code: 'ZA', name: 'South Africa' },
             ].map((country) => {
               return (
-                <div
-                  key={country.code}
-                  className="dark:bg-default-50 dark:hover:bg-default-100 flex items-center space-x-3 rounded-full bg-slate-200 px-3 py-2 pr-6 transition-all duration-300 hover:bg-slate-300"
-                >
-                  <CountryFlag code={country.code} className="h-12 w-12" />
+                <div key={country.code} className="flex items-center space-x-2">
+                  <CountryFlag code={country.code} className="h-5 w-5" />
                   <p>{country.name}</p>
                 </div>
               );

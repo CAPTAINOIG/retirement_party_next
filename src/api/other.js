@@ -33,3 +33,11 @@ export const useAddLaunchSubscriber = () => {
     },
   });
 };
+
+export const useUpdateLaunchSubscriber = () => {
+  return useMutation({
+    mutationFn: ({ id, phone }) => {
+      return http.patch(`/product/launch/subscribers/${id}`, { phone });
+    },
+  });
+};

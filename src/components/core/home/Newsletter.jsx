@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import Button from '@/components/global/Button.jsx';
 import { IconArrowRight, IconMailQuestion } from '@tabler/icons-react';
 import { useNewsletterSubscribe } from '@/api/other';
-import { useToast } from '@/hooks/use-toast';
 import { useForm } from 'react-hook-form';
 import { cn } from '@/lib/utils';
+import { addToast } from '@heroui/react';
 
 const Newsletter = ({ sm = false }) => {
-  const toast = useToast();
   const [view, setView] = useState('form');
   const { register, handleSubmit } = useForm();
   const { mutateAsync: subscribe, isLoading } = useNewsletterSubscribe();
@@ -17,7 +16,11 @@ const Newsletter = ({ sm = false }) => {
       await subscribe(values);
       setView('success');
     } catch (e) {
-      toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
+      addToast({
+        title: 'Error joining the waitlist!',
+        description: error?.response?.data?.message || 'Something went wrong, please try again',
+        color: 'danger',
+      });
     }
   };
 

@@ -1,16 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Button,
-  Checkbox,
-  CheckboxGroup,
-  Drawer,
-  DrawerBody,
-  DrawerContent,
-  Input,
-  Select,
-  SelectItem,
-} from '@heroui/react';
-import { useToast } from '@/hooks/use-toast';
+import { addToast, Button, Drawer, DrawerBody, DrawerContent, Input, Select, SelectItem } from '@heroui/react';
 import { Controller, useForm } from 'react-hook-form';
 import { useCreateEventAttendee } from '@/api/other';
 import { TbCheck, TbX } from 'react-icons/tb';
@@ -45,7 +34,6 @@ const industries = [
 
 const RegisterModal = ({ isOpen, onClose }) => {
   const [view, setView] = useState('form');
-  const toast = useToast();
   const {
     register,
     handleSubmit,
@@ -66,7 +54,11 @@ const RegisterModal = ({ isOpen, onClose }) => {
       setView('success');
       reset();
     } catch (e) {
-      toast.error(e?.response?.data?.message ?? 'Something went wrong, please try again');
+      addToast({
+        title: 'Error joining the waitlist!',
+        description: error?.response?.data?.message || 'Something went wrong, please try again',
+        color: 'danger',
+      });
     }
   };
 
