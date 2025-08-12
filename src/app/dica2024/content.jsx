@@ -105,6 +105,8 @@ const DICA2024PageContent = () => {
       const scrollTop = e.target.scrollingElement.scrollTop;
       setScrolled(scrollTop > 50);
     };
+    // Set initial scroll state
+    setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
