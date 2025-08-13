@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useAddLaunchSubscriber } from '@/api/other';
 import { trackLead, trackCompleteRegistration } from '@/utils/facebook-pixel';
 import { trackLead as trackTwitterLead, trackSignup as trackTwitterSignup } from '@/utils/twitter-pixel';
+import { useReferralSource } from '@/hooks/useReferralSource';
 
 const WaitlistEmailRegistrationForm = ({ onRegistrationSuccess }) => {
   const {
@@ -11,6 +12,7 @@ const WaitlistEmailRegistrationForm = ({ onRegistrationSuccess }) => {
     formState: { errors },
   } = useForm();
   const { mutateAsync: addLaunchSubscriber, isPending } = useAddLaunchSubscriber();
+  const referralSource = useReferralSource();
 
   const handleEmailRegistration = async (formData) => {
     try {
@@ -18,6 +20,7 @@ const WaitlistEmailRegistrationForm = ({ onRegistrationSuccess }) => {
         name: formData.name,
         email: formData.email,
         product: 'immortal-ai',
+        from: referralSource,
       });
       // Track successful waitlist signup as a Lead event
       trackLead();
