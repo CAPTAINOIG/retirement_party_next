@@ -13,10 +13,10 @@ const AdLandingContent = () => {
 
   return (
     <>
-      <div className="relative z-3 container grid items-center gap-20 pt-10 pb-24 lg:grid-cols-[1fr_1fr] lg:pt-32 lg:pb-32">
+      <div className="relative z-3 container grid items-center gap-20 md:gap-32 pt-10 pb-24 lg:grid-cols-[1fr_1fr] lg:pt-32 lg:pb-32">
         <div>
           <Logo light={theme === 'dark'} width={160} className="mb-10 lg:mb-16" />
-          <h1 className="border- text-[3.4rem] leading-none font-bold tracking-tight lg:text-[6.5rem]">
+          <h1 className="text-[3.4rem] !leading-none font-bold tracking-tight lg:text-[6.5rem]">
             Be the first to{' '}
             <TextLoop interval={3}>
               <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">know</span>
@@ -30,7 +30,7 @@ const AdLandingContent = () => {
           <Card className="mt-8 mb-6 rounded-2xl px-8 py-8 lg:hidden lg:px-12 lg:py-10">
             <JoinWaitlistForm />
           </Card>
-          <p className="mt-4 text-lg leading-snug opacity-70 lg:max-w-[70%] lg:text-xl">
+          <p className="mt-4 md:mt-10 text-lg leading-snug opacity-70 lg:max-w-[70%] lg:text-xl">
             Unlock Africa's market potential with real-time data intelligence. Get early access to insights that drive
             smarter decisions.
           </p>
@@ -39,7 +39,7 @@ const AdLandingContent = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: 'spring', stiffness: 90 }}
             viewport={{ amount: 'some', margin: '10%' }}
-            className="mt-8 flex flex-wrap items-center gap-8"
+            className="mt-8 md:mt-12 flex flex-wrap items-center gap-8"
           >
             {[
               { code: 'NG', name: 'Nigeria' },
