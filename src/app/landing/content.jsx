@@ -21,25 +21,25 @@ const AdLandingContent = () => {
           <h1 className="text-[3rem] !leading-none font-bold tracking-tight lg:text-[6.5rem]">
             <TextLoop interval={5} className="inline break-words whitespace-normal">
               <span>
-                Be the first to{' '}
+                Be the first to <br className="md:hidden" />
                 <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">know</span>
               </span>
               {referralSource === 'fb' && (
                 <span>
-                  Get free $50{' '}
+                  Get{' '}
                   <span className="bg-linear-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                    Immortal
+                    free $50
                   </span>{' '}
-                  token
+                  Immortal token
                 </span>
               )}
               {referralSource === 'linkedin' && (
                 <span>
-                  Get free 6months{' '}
+                  Get{' '}
                   <span className="bg-linear-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                    premium
+                    free 6months
                   </span>{' '}
-                  access
+                  premium access
                 </span>
               )}
             </TextLoop>
