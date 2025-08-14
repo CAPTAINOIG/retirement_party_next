@@ -11,33 +11,15 @@ import {
 const ConnectWithUs = () => {
   return (
     <div>
-      <div>
-        <h5 className="mb-8 text-xl font-medium">Visit Statisense</h5>
-        <p>
-          Our office is located at No. 7, Samuel Adedoyin street, Victoria Island, Lagos. We are open Monday through
-          Friday from 9:00am to 5:00pm
-        </p>
-      </div>
       <div className="mt-8 grid grid-cols-1 gap-8">
         <div className="flex items-center space-x-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-full border">
-            <IconMail size="20" />
+            <IconMail size="32" />
           </div>
           <div>
             <p>Email address</p>
             <a href="mailto:info@statisense.co" target="_blank" className="flex font-medium">
               info@statisense.co
-            </a>
-          </div>
-        </div>
-        <div className="flex items-center space-x-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full border">
-            <IconBrandWhatsapp size="20" />
-          </div>
-          <div>
-            <p>Whatsapp</p>
-            <a href="https://wa.me/+2349055550090" target="_blank" className="flex font-medium">
-              +2349055550090
             </a>
           </div>
         </div>

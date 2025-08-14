@@ -25,7 +25,7 @@ const products = [
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-950 bg-linear-to-br to-primary-950 from-primary-50/30 py-20 text-zinc-200">
+    <footer className="to-primary-950 from-primary-50/30 bg-zinc-950 bg-linear-to-br py-20 text-zinc-200">
       <div className="container">
         <div className="grid gap-20 pt-10 pb-20 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
           <div className="md:col-span-2">
@@ -38,20 +38,6 @@ const Footer = () => {
                 <a href="mailto:info@statisense.co" target="_blank" className="flex font-medium">
                   info@statisense.co
                 </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div>
-                  <IconBrandWhatsapp size="20" />
-                </div>
-                <a href="https://wa.me/+2349055550090" target="_blank" className="flex font-medium">
-                  +2349055550090
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div>
-                  <IconClock size="20" />
-                </div>
-                <div className="flex font-medium">Mon-Fri 8:am-6:pm</div>
               </div>
             </div>
           </div>
