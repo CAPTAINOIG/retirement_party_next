@@ -6,20 +6,33 @@ const Hero = () => {
   const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
 
   return (
-    <div className="to-primary-950 from-primary-50/50 relative overflow-hidden bg-zinc-950 bg-linear-to-br pt-48 pb-32 md:pt-52 md:pb-32 md:text-center">
-      <div className="animate-wide bg-hero absolute inset-0 min-h-screen bg-cover bg-right opacity-60"></div>
-      <div className="relative z-10 container">
-        <h1 className="font-display mx-auto max-w-[1000px] text-[3.4rem] leading-[1.1] font-bold tracking-tight text-slate-300 sm:text-7xl md:text-[5.4rem] md:leading-none!">
-          We are building data rails for analytics across Africa
-        </h1>
-        <Button
-          size="lg"
-          className="mt-12 bg-white text-black hover:bg-white/90"
-          radius="full"
-          onPress={onWaitListOpen}
-        >
-          Join waitlist
-        </Button>
+    <div className="relative z-10 container">
+      {/* <div className="relative min-h-screen w-full bg-black"> */}
+      {/* Cosmic Noise */}
+      {/* Your Content/Components */}
+      {/* </div> */}
+      <div className="bg-primary-900 dark:bg-primary-50 relative overflow-hidden rounded-3xl pt-48 pb-32 md:pt-40 md:pb-32 md:text-center">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            background:
+              'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 0%, transparent 40%), radial-gradient(circle at 80% 30%, rgba(255,255,255,0.05) 0%, transparent 40%), linear-gradient(120deg, #0f0e17 0%, #1a1b26 100%)',
+          }}
+        />
+        <div className="z-2 relative">
+          {/* <div className="animate-wide bg-hero absolute inset-0 min-h-screen bg-cover bg-right opacity-60"></div> */}
+          <h1 className="font-display mx-auto max-w-[1000px] text-[3.4rem] leading-[1.1] font-bold tracking-tight text-white sm:text-7xl md:text-[5.4rem] md:leading-none!">
+            We are building data rails for analytics across Africa
+          </h1>
+          <Button
+            size="lg"
+            className="mt-12 bg-white text-black hover:bg-white/90"
+            radius="full"
+            onPress={onWaitListOpen}
+          >
+            Join waitlist
+          </Button>
+        </div>
       </div>
 
       <JoinWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />

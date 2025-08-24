@@ -1,5 +1,16 @@
+'use client';
 import React from 'react';
-import { IconBrandFacebook, IconBrandInstagram, IconBrandX } from '@tabler/icons-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandX,
+  IconChevronLeft,
+  IconChevronRight,
+} from '@tabler/icons-react';
 
 const items = [
   {
@@ -47,41 +58,57 @@ At the end Nigeria wins👌
 const Testimonials = () => {
   return (
     <section id="testimonials">
+      {/* Heading in a centered container */}
       <div className="container sm:px-6 lg:px-8">
-        <div className="!xl:mt-0 mx-auto flex max-w-2xl flex-col md:items-center md:text-center">
-          <h2 className="text-4xl font-semibold tracking-tighter md:text-7xl">
+        <div className="!xl:mt-0 mx-auto flex max-w-4xl flex-col md:items-center md:text-center">
+          <h2 className="text-4xl font-semibold tracking-tighter md:text-8xl">
             With over 3 billion <br className="block md:hidden" /> data impressions
           </h2>
           <p className="mt-6 text-lg tracking-tight">
             We are loved by businesses, consumers and governments across Africa
           </p>
         </div>
-        <ul
-          role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3"
-        >
-          <li>
-            <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
-              {items.slice(0, 2).map((item, i) => (
-                <TestimonialItem key={i} item={item} />
-              ))}
-            </ul>
-          </li>
-          <li>
-            <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
-              {items.slice(2, 4).map((item, i) => (
-                <TestimonialItem key={i} item={item} />
-              ))}
-            </ul>
-          </li>
-          <li>
-            <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
-              {items.slice(4, 6).map((item, i) => (
-                <TestimonialItem key={i} item={item} />
-              ))}
-            </ul>
-          </li>
-        </ul>
+      </div>
+
+      {/* Full-bleed carousel */}
+      <div className="relative mt-16 w-full">
+        <div className="relative pb-16">
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            navigation={{ prevEl: '.testimonials-prev', nextEl: '.testimonials-next' }}
+            loop
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            breakpoints={{
+              320: { slidesPerView: 1.1, spaceBetween: 16 },
+              640: { slidesPerView: 1.6, spaceBetween: 20 },
+              768: { slidesPerView: 2.2, spaceBetween: 22 },
+              1024: { slidesPerView: 3, spaceBetween: 24 },
+              1280: { slidesPerView: 4, spaceBetween: 28 },
+            }}
+            className="!px-4 sm:!px-6 lg:!px-8"
+          >
+            {items.map((item, i) => (
+              <SwiperSlide key={i} className="!h-auto">
+                <TestimonialItem item={item} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <div className="pointer-events-auto z-10 mt-10 flex items-center justify-center gap-4">
+            <button
+              aria-label="Previous testimonials"
+              className="testimonials-prev bg-default-100 text-default-500 hover:bg-default-200 focus:ring-default-300 inline-flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-colors focus:ring-2 focus:outline-none"
+            >
+              <IconChevronLeft size="22" />
+            </button>
+            <button
+              aria-label="Next testimonials"
+              className="testimonials-next bg-default-100 text-default-500 hover:bg-default-200 focus:ring-default-300 inline-flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-colors focus:ring-2 focus:outline-none"
+            >
+              <IconChevronRight size="22" />
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -91,26 +118,24 @@ export default Testimonials;
 
 const TestimonialItem = ({ item }) => {
   return (
-    <li>
-      <figure className="relative rounded-3xl bg-slate-200/50 px-10 py-14">
-        {item.platform === 'facebook' && (
-          <IconBrandFacebook size="100" className="absolute right-6 bottom-6 text-slate-300/20" />
-        )}
-        {item.platform === 'twitter' && (
-          <IconBrandX size="100" className="absolute right-6 bottom-6 text-slate-300/20" />
-        )}
-        {item.platform === 'instagram' && (
-          <IconBrandInstagram size="100" className="absolute right-6 bottom-6 text-slate-300/20" />
-        )}
-        <blockquote className="relative">
-          <p className="text-lg text-slate-900">{item.content}</p>
-        </blockquote>
-        <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
-          <div>
-            <div className="font-display text-base text-slate-900">{item.name}</div>
-          </div>
-        </figcaption>
-      </figure>
-    </li>
+    <figure className="bg-default-100 dark:bg-default-50/60 relative flex h-full min-h-0 flex-col justify-between overflow-hidden rounded-3xl px-8 py-10 md:px-9 md:py-8">
+      {item.platform === 'facebook' && (
+        <IconBrandFacebook size="60" className="absolute right-6 bottom-6 text-slate-300/20" />
+      )}
+      {item.platform === 'twitter' && <IconBrandX size="60" className="absolute right-6 bottom-6 text-slate-300/20" />}
+      {item.platform === 'instagram' && (
+        <IconBrandInstagram size="60" className="absolute right-6 bottom-6 text-slate-300/20" />
+      )}
+      <blockquote className="relative flex-1 overflow-hidden">
+        <p className="line-clamp-6 text-lg" title={item.content}>
+          {item.content}
+        </p>
+      </blockquote>
+      <figcaption className="border-default-100 relative mt-6 flex items-center justify-between border-t pt-6">
+        <div>
+          <div className="font-display text-base">{item.name}</div>
+        </div>
+      </figcaption>
+    </figure>
   );
 };

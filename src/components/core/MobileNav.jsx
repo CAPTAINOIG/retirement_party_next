@@ -26,24 +26,28 @@ const MobileNav = ({ isOpen, onClose }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed inset-x-0 top-24 z-50 mt-4 flex origin-top flex-col space-y-2 rounded-3xl bg-white px-4 py-6 text-lg tracking-tight shadow-xl dark:bg-gray-800"
+            className="bg-accent text-accent-foreground fixed inset-x-0 top-24 z-50 mt-4 flex origin-top flex-col space-y-2 rounded-3xl px-4 py-6 text-lg tracking-tight shadow-xl"
           >
-            <Link
-              onClick={onClose}
-              href={IMMORTAL_URL}
-              target="_blank"
-              className="block w-full rounded-xl px-4 py-3 hover:bg-zinc-200"
-            >
-              Immortal AI
-            </Link>
-            <Link
-              onClick={onClose}
-              href={PARROTS_URL}
-              target="_blank"
-              className="block w-full rounded-xl px-4 py-3 hover:bg-zinc-200"
-            >
-              Parrots
-            </Link>
+            {[
+              {
+                href: IMMORTAL_URL,
+                label: 'Immortal AI',
+              },
+              {
+                href: PARROTS_URL,
+                label: 'Parrots',
+              },
+            ].map((item, index) => (
+              <Link
+                key={index}
+                onClick={onClose}
+                href={item.href}
+                target="_blank"
+                className="hover:bg-default-900/5 block w-full rounded-xl px-4 py-3"
+              >
+                {item.label}
+              </Link>
+            ))}
           </motion.div>
         </>
       )}

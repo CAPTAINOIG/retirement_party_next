@@ -1,22 +1,22 @@
 'use client';
 import React from 'react';
-import BigIdeas from '@/components/core/home/BigIdeas';
-import Newsletter from '@/components/core/home/Newsletter';
 import Testimonials from '@/components/core/home/Testimonials';
 import BeautifulStory from '@/components/core/home/BeautifulStory';
-import Immortal from '@/components/core/home/Immortal';
-import CountdownTimer from '../dica2024/CountdownTimer';
-import { IoMdNotificationsOutline } from 'react-icons/io';
 import Hero from '@/components/core/home/Hero';
 import { motion } from 'motion/react';
-import CountryFlag from '@/components/global/CountryFlag';
+import BusinessIntelligence from '@/components/core/home/BusinessIntelligence';
 
 const HomePageContent = () => {
   return (
-    <div className="bg-slate-100 text-black">
-      <div className="to-primary-950 from-primary-50/30 bg-black bg-linear-to-br">
+    <div className="dark:bg-black">
+      {/* <div className="to-primary-950 from-primary-50/30 bg-black bg-linear-to-br"> */}
+      <div className="">
         <BeautifulStory />
-        <div className="relative overflow-hidden">
+        <div className="space-y-16">
+          <BusinessIntelligence />
+          {/* <PredictiveIntelligence /> */}
+        </div>
+        {/* <div className="relative overflow-hidden">
           <div className="relative z-3 container grid grid-cols-[1fr_1fr] items-center gap-10 pt-28 pb-28 md:pt-32 md:pb-32">
             <div className="text-white">
               <h1 className="text-[3.4rem] leading-none font-bold tracking-tight md:text-[7rem]">
@@ -130,19 +130,19 @@ const HomePageContent = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
-      <div className="relative space-y-48 overflow-hidden py-28 md:py-48">
-        <BigIdeas />
-        <Immortal />
-      </div>
+      {/* <div className="relative space-y-48 overflow-hidden py-28 md:py-48"> */}
+      {/* <BigIdeas /> */}
+      {/* <Immortal /> */}
+      {/* </div> */}
       <Hero />
-      <div className="relative from-[#F0FDF4] to-[#EFF6FF] py-28 md:py-48">
+      <div className="relative from-[#F0FDF4] to-[#EFF6FF] py-28 md:pt-48 md:pb-28">
         <Testimonials />
       </div>
-      <div className="relative overflow-hidden">
+      {/* <div className="relative overflow-hidden">
         <Newsletter />
-      </div>
+      </div> */}
     </div>
   );
 };

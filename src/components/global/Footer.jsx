@@ -1,14 +1,8 @@
 import Link from 'next/link';
-import {
-  IconBrandFacebook,
-  IconBrandInstagram,
-  IconBrandWhatsapp,
-  IconBrandX,
-  IconClock,
-  IconMail,
-} from '@tabler/icons-react';
+import { IconBrandFacebook, IconBrandInstagram, IconBrandX, IconMail } from '@tabler/icons-react';
 import React from 'react';
 import Logo from '@/components/core/shared/Logo';
+import { useTheme } from 'next-themes';
 
 const products = [
   {
@@ -24,12 +18,14 @@ const products = [
 ];
 
 const Footer = () => {
+  const { resolvedTheme: theme } = useTheme();
+
   return (
-    <footer className="to-primary-950 from-primary-50/30 bg-zinc-950 bg-linear-to-br py-20 text-zinc-200">
+    <footer className="py-20 dark:bg-black">
       <div className="container">
         <div className="grid gap-20 pt-10 pb-20 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
           <div className="md:col-span-2">
-            <Logo light />
+            <Logo light={theme === 'dark'} />
             <div className="mt-8 grid grid-cols-1 gap-3">
               <div className="flex items-center space-x-3">
                 <div>
@@ -68,7 +64,7 @@ const Footer = () => {
           <div>
             <h6 className="font-medium">Support</h6>
             <div className="mt-6 flex flex-col space-y-4">
-              <Link href={'/about#faq'} className="hover:text-primary-700">
+              <Link href="/about#faq" className="hover:text-primary-700" scroll>
                 FAQs
               </Link>
               <Link href={'/contact'} className="hover:text-primary-700">

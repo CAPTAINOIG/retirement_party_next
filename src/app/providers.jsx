@@ -18,7 +18,7 @@ export function Providers({ children }) {
       <AuthProvider>
         <HeroUIProvider>
           <ToastProvider />
-          <ThemeProvider attribute="class" defaultTheme="system">
+          <ThemeProvider attribute="class" defaultTheme="dark">
             {children}
           </ThemeProvider>
         </HeroUIProvider>
