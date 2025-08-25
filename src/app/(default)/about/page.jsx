@@ -1,15 +1,13 @@
 import React from 'react';
-import Head from 'next/head';
-import DefaultHeadTags from '@/components/others/DefaultHeadTags';
 import AboutPageContent from '@/app/(default)/about/content';
+
+export const metadata = {
+  title: 'About us',
+};
 
 const AboutPage = () => {
   return (
     <>
-      <Head>
-        <title>About us • Statisense</title>
-        <DefaultHeadTags />
-      </Head>
       <AboutPageContent />
     </>
   );

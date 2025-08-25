@@ -5,27 +5,61 @@ import './global.css';
 import './nprogress.css';
 
 export const metadata = {
-  title: 'Statisense',
-  description: 'Statisense - Pioneering AI Data Company for Informed Business Decisions',
+  metadataBase: new URL('https://www.statisense.co'),
+  title: {
+    default: 'Statisense',
+    template: '%s • Statisense',
+  },
+  description:
+    'Statisense is a leading AI data company specializing in financial report analysis, bank statement evaluation, and AI chatbot services. Empowering businesses with accurate insights for informed decisions.',
+  keywords: [
+    'Statisense',
+    'AI data company',
+    'financial report analysis',
+    'bank statement analysis',
+    'AI chatbot',
+    'business decisions',
+  ],
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/' },
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+  },
+  manifest: '/site.webmanifest',
+  openGraph: {
+    type: 'website',
+    url: 'https://www.statisense.co/',
+    siteName: 'Statisense',
+    locale: 'en_US',
+    images: [
+      {
+        url: 'https://www.statisense.co/images/logo-icon.png',
+        width: 1200,
+        height: 630,
+        alt: 'Statisense',
+      },
+    ],
+    description:
+      'Statisense is a leading AI data company specializing in financial report analysis, bank statement evaluation, and AI chatbot services. Empowering businesses with accurate insights for informed decisions.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://www.statisense.co/images/logo-icon.png'],
+  },
+};
+
+export const viewport = {
+  themeColor: '#ffffff',
 };
 
 const RootLayout = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning className="bg-background text-foreground dark">
       <head>
-        <meta charSet="UTF-8" />
-        <meta name="robots" content="index, follow" />
-        <meta
-          name="keywords"
-          content="Statisense, AI data company, financial report analysis, bank statement analysis, AI chatbot, business decisions"
-        />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
-        <link rel="canonical" href="https://www.statisense.co/" />
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -33,7 +67,6 @@ const RootLayout = ({ children }) => {
           href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
           rel="stylesheet"
         />
-        <title>Statisense</title>
 
         <noscript>
           <img

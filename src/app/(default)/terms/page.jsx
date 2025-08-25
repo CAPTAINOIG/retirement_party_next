@@ -1,15 +1,13 @@
 import React, { Suspense } from 'react';
-import DefaultHeadTags from '@/components/others/DefaultHeadTags';
-import Head from 'next/head';
 import TermsPageContent from '@/app/(default)/terms/content';
+
+export const metadata = {
+  title: 'Privacy & Terms',
+};
 
 const TermsPage = () => {
   return (
     <>
-      <Head>
-        <title>Privacy & Terms • Statisense</title>
-        <DefaultHeadTags />
-      </Head>
       <Suspense>
         <TermsPageContent />
       </Suspense>

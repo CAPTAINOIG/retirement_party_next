@@ -1,15 +1,13 @@
 import React from 'react';
-import Head from 'next/head';
-import DefaultHeadTags from '@/components/others/DefaultHeadTags';
 import CareersPageContent from '@/app/(default)/careers/content';
+
+export const metadata = {
+  title: 'Careers',
+};
 
 const CareersPage = () => {
   return (
     <>
-      <Head>
-        <title>Careers • Statisense</title>
-        <DefaultHeadTags />
-      </Head>
       <CareersPageContent />
     </>
   );
