@@ -81,7 +81,8 @@ const BeautifulStory = () => {
           }}
         />
       </div>
-      <div className="relative z-2 container pt-32 md:block">
+
+      <div className="relative z-2 container pt-44 md:block">
         <div className="relative py-12 md:pt-40 md:pb-10">
           <div>
             <motion.h1
