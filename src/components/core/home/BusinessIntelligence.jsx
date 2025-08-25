@@ -14,31 +14,30 @@ const BusinessIntelligence = () => {
   const sections = [
     {
       name: 'Business intelligence',
-      title: `Wherever hidden your data is, we will find it`,
-      body: `With Immortal AI, we are building the rails to aggregate Africa's data, wherever they are.`,
+      title: `Uncover insights from scattered data`,
+      body: `Our AI infrastructure seamlessly aggregates and analyzes data across Africa's diverse markets, transforming fragmented information into actionable business intelligence.`,
       image: '/images/bi.png',
     },
     {
       name: 'Predictive intelligence',
-      title: `Predicting the future of Africa`,
-      body: `We are connecting intelligence to African's data, join us.`,
+      title: `Forecast Africa's economic trends`,
+      body: `Harness advanced predictive models to anticipate market movements and economic shifts across the continent, empowering strategic decision-making.`,
       image: '/images/pi.png',
     },
     {
       name: 'Market intelligence',
-      title: `Providing AI context to Africa's markets`,
-      body: `We are connecting intelligence to African's data, join us.`,
+      title: `Navigate African markets with precision`,
+      body: `Access comprehensive market analysis powered by AI to identify opportunities, assess risks, and make informed investment decisions across emerging African economies.`,
       image: '/images/mi.png',
     },
     {
       name: 'Parrots',
-      title: `Empower your decisions with AI-Curated insights`,
-      body: `Discover a curated world of data-driven insights, AI-powered news summaries, and compelling infographics that help you stay informed and make better decisions.`,
+      title: `AI-curated insights at your fingertips`,
+      body: `Stay ahead with intelligent news summaries, data visualizations, and market reports that distill complex information into clear, actionable insights for better decision-making.`,
       image: '/images/parrots.png',
     },
   ];
 
-  // Standard behavior: progress 0 at container start, 1 at end; update when a section fully leaves
   const last = useRef(0);
   const n = sections.length;
   useMotionValueEvent(scrollYProgress, 'change', (v) => {
@@ -81,7 +80,6 @@ const BusinessIntelligence = () => {
 
 export default BusinessIntelligence;
 
-// Lightweight section component with local scroll-driven reveal and CTA
 const Section = ({ title, body }) => {
   const sectionRef = useRef(null);
   const { scrollYProgress: p } = useScroll({
