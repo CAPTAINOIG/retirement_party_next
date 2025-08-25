@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { TbChevronDown, TbArrowRight } from 'react-icons/tb';
+import { TbArrowRight, TbChevronDown } from 'react-icons/tb';
 import { cn } from '@/lib/utils';
-import { motion, AnimatePresence } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 
 const items = [
   {
@@ -98,7 +98,7 @@ const MegaDropdown = ({ label, align = 'center' }) => {
                   : 'left-0 origin-top-left'
             )}
           >
-            <div className="bg-default-50 rounded-3xl shadow">
+            <div className="dark:bg-default-50 border-default-100 rounded-3xl border bg-white shadow-md dark:border-0">
               <div className="grid grid-cols-2 items-start gap-6 p-6">
                 <div className="grid grid-cols-1 gap-3">
                   {items.map((item, idx) => (
