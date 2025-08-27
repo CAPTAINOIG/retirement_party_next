@@ -3,7 +3,7 @@ import { motion, useMotionValueEvent, useScroll, useTransform } from 'motion/rea
 import { useRef, useState } from 'react';
 import { TbChevronRight } from 'react-icons/tb';
 
-const BusinessIntelligence = () => {
+const ImmortalProducts = () => {
   const [active, setActive] = useState(0);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -31,10 +31,10 @@ const BusinessIntelligence = () => {
       image: '/images/mi.png',
     },
     {
-      name: 'Parrots',
+      name: 'Opinions',
       title: `AI-curated insights at your fingertips`,
       body: `Stay ahead with intelligent news summaries, data visualizations, and market reports that distill complex information into clear, actionable insights for better decision-making.`,
-      image: '/images/parrots.png',
+      image: '/images/opinions.png',
     },
   ];
 
@@ -78,7 +78,7 @@ const BusinessIntelligence = () => {
   );
 };
 
-export default BusinessIntelligence;
+export default ImmortalProducts;
 
 const Section = ({ title, body }) => {
   const sectionRef = useRef(null);

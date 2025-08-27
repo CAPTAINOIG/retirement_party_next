@@ -21,7 +21,7 @@ const Footer = () => {
   const { resolvedTheme: theme } = useTheme();
 
   return (
-    <footer className="py-20 dark:bg-black">
+    <footer className="py-20">
       <div className="container">
         <div className="grid gap-20 pt-10 pb-20 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
           <div className="md:col-span-2">

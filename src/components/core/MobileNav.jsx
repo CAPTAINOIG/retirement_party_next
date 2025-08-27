@@ -2,7 +2,7 @@ import React from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { useIsomorphicLayoutEffect } from 'react-use';
-import { IMMORTAL_URL, PARROTS_URL } from '@/lib/constants';
+import { IMMORTAL_URL, OPINIONS_URL } from '@/lib/constants';
 
 const MobileNav = ({ isOpen, onClose }) => {
   useIsomorphicLayoutEffect(() => {
@@ -34,8 +34,8 @@ const MobileNav = ({ isOpen, onClose }) => {
                 label: 'Immortal AI',
               },
               {
-                href: PARROTS_URL,
-                label: 'Parrots',
+                href: OPINIONS_URL,
+                label: 'Opinions',
               },
             ].map((item, index) => (
               <Link

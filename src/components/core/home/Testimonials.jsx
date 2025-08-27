@@ -57,7 +57,7 @@ At the end Nigeria wins👌
 
 const Testimonials = () => {
   return (
-    <section id="testimonials">
+    <section id="testimonials" className="relative py-28 md:pt-48 md:pb-28">
       {/* Heading in a centered container */}
       <div className="container sm:px-6 lg:px-8">
         <div className="!xl:mt-0 mx-auto flex max-w-4xl flex-col md:items-center md:text-center">
