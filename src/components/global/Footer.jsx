@@ -3,17 +3,18 @@ import { IconBrandFacebook, IconBrandInstagram, IconBrandX, IconMail } from '@ta
 import React from 'react';
 import Logo from '@/components/core/shared/Logo';
 import { useTheme } from 'next-themes';
+import { IMMORTAL_URL, OPINIONS_URL } from '@/lib/constants';
 
 const products = [
   {
     name: 'Immortal AI',
     slug: 'immortal-ai',
-    link: 'https://useimmortal.com',
+    link: IMMORTAL_URL,
   },
   {
-    name: 'Parrot',
-    slug: 'parrot',
-    link: 'https://snapshots.statisense.co',
+    name: 'Opinions',
+    slug: 'opinions',
+    link: OPINIONS_URL,
   },
 ];
 

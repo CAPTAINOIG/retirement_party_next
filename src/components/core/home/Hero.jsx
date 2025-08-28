@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { useWindowSize } from 'react-use';
 import { IconChevronRight } from '@tabler/icons-react';
 import { Button, useDisclosure } from '@heroui/react';
 import TextLoop from '@/components/global/TextLoop';
@@ -10,28 +9,11 @@ import ScrollReveal from '@/components/global/ScrollReveal';
 import { useTheme } from 'next-themes';
 
 const Hero = () => {
-  const { width } = useWindowSize();
   const { resolvedTheme: theme } = useTheme();
   const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
 
   const [mounted, setMounted] = React.useState(false);
   useEffect(() => setMounted(true), []);
-
-  let textVariant = {};
-  if (width < 768) {
-    textVariant = {
-      hidden: { opacity: 0, x: -20 },
-      visible: {
-        opacity: 1,
-        x: 0,
-        transition: {
-          type: 'spring',
-          stiffness: 50,
-          duration: 1.5,
-        },
-      },
-    };
-  }
 
   return (
     <div className="relative w-full">
@@ -54,65 +36,57 @@ const Hero = () => {
 
       {/* Floating Geometric Elements */}
       <div className="absolute inset-0 z-1">
-        <ScrollReveal direction="right" delay={1.0} duration={1.2}>
-          <motion.div
-            className="absolute h-6 w-6 rotate-45 border-2 border-teal-500/40 dark:border-teal-400/40"
-            style={{ top: '60%', right: '20%' }}
-            animate={{
-              rotate: [45, 225, 45],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-        </ScrollReveal>
-
-        <ScrollReveal direction="left" delay={1.2} duration={1.4}>
-          <motion.div
-            className="absolute h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500/20 to-green-500/20 dark:from-cyan-400/20 dark:to-green-400/20"
-            style={{ bottom: '40%', right: '10%' }}
-            animate={{
-              rotate: [0, 180, 360],
-              x: [0, 10, 0],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-        </ScrollReveal>
+        <motion.div
+          className="absolute h-6 w-6 rotate-45 border-2 border-teal-500/40 dark:border-teal-400/40"
+          style={{ top: '60%', right: '20%' }}
+          animate={{
+            rotate: [45, 225, 45],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+        />
+        <motion.div
+          className="absolute h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500/20 to-green-500/20 dark:from-cyan-400/20 dark:to-green-400/20"
+          style={{ bottom: '40%', right: '10%' }}
+          animate={{
+            rotate: [0, 180, 360],
+            x: [0, 10, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+        />
       </div>
 
       <div className="relative z-2 container pt-44 md:block">
         <div className="relative py-12 md:pt-40 md:pb-10">
           <div>
-            <motion.h1
-              variants={textVariant}
-              initial="hidden"
-              whileInView="visible"
-              className="w-full text-[4rem] leading-[1.1] font-bold tracking-tighter md:text-[6rem] md:leading-[0.9] xl:text-[9rem]"
-            >
-              Find{' '}
-              <TextLoop interval={5}>
-                <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
-                  immortality
-                </span>
-                <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
-                  5x growth
-                </span>
-                <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
-                  immortality
-                </span>
-                <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
-                  5x profit
-                </span>
-              </TextLoop>
-              <br /> in your data
-            </motion.h1>
+            <ScrollReveal direction="up" delay={0.2}>
+              <h1 className="w-full text-[4rem] leading-[1.1] font-bold tracking-tighter md:text-[6rem] md:leading-[0.9] xl:text-[9rem]">
+                Find{' '}
+                <TextLoop interval={5}>
+                  <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+                    immortality
+                  </span>
+                  <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+                    5x growth
+                  </span>
+                  <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+                    immortality
+                  </span>
+                  <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+                    5x profit
+                  </span>
+                </TextLoop>
+                <br /> in your data
+              </h1>
+            </ScrollReveal>
             <ScrollReveal direction="up" delay={0.2}>
               <p className="mt-8 max-w-xl text-xl tracking-tight opacity-90">
                 We help businesses aggregate and convert complex customer data into simple visual insights using AI{' '}
