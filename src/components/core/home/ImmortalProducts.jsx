@@ -2,6 +2,7 @@ import { Button } from '@heroui/react';
 import { motion, useMotionValueEvent, useScroll, useTransform } from 'motion/react';
 import { useRef, useState } from 'react';
 import { TbChevronRight } from 'react-icons/tb';
+import { IMMORTAL_URL, MARKET_URL, OPINIONS_URL, PREDICT_URL } from '@/lib/constants';
 
 const ImmortalProducts = () => {
   const [active, setActive] = useState(0);
@@ -17,24 +18,28 @@ const ImmortalProducts = () => {
       title: `Uncover insights from scattered data`,
       body: `Our AI infrastructure seamlessly aggregates and analyzes data across Africa's diverse markets, transforming fragmented information into actionable business intelligence.`,
       image: '/images/bi.png',
+      link: IMMORTAL_URL,
     },
     {
       name: 'Predictive intelligence',
       title: `Forecast Africa's economic trends`,
       body: `Harness advanced predictive models to anticipate market movements and economic shifts across the continent, empowering strategic decision-making.`,
       image: '/images/pi.png',
+      link: PREDICT_URL,
     },
     {
       name: 'Market intelligence',
       title: `Navigate African markets with precision`,
       body: `Access comprehensive market analysis powered by AI to identify opportunities, assess risks, and make informed investment decisions across emerging African economies.`,
       image: '/images/mi.png',
+      link: MARKET_URL,
     },
     {
       name: 'Opinions',
       title: `AI-curated insights at your fingertips`,
       body: `Stay ahead with intelligent news summaries, data visualizations, and market reports that distill complex information into clear, actionable insights for better decision-making.`,
       image: '/images/opinions.png',
+      link: OPINIONS_URL,
     },
   ];
 
@@ -56,7 +61,7 @@ const ImmortalProducts = () => {
       <div className="container grid h-full grid-cols-2 gap-20">
         <div ref={ref}>
           {sections.map((s, idx) => (
-            <Section key={idx} title={s.title} body={s.body} />
+            <Section key={idx} title={s.title} body={s.body} link={s.link} />
           ))}
         </div>
         <div className="relative">
@@ -80,7 +85,7 @@ const ImmortalProducts = () => {
 
 export default ImmortalProducts;
 
-const Section = ({ title, body }) => {
+const Section = ({ title, body, link }) => {
   const sectionRef = useRef(null);
   const { scrollYProgress: p } = useScroll({
     target: sectionRef,
@@ -101,6 +106,7 @@ const Section = ({ title, body }) => {
           color="primary"
           radius="full"
           className="mt-8"
+          href={link}
         >
           Get started
         </Button>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { TbArrowRight, TbChevronDown } from 'react-icons/tb';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
+import { IMMORTAL_URL, MARKET_URL, PREDICT_URL } from '@/lib/constants';
 
 const items = [
   {
@@ -11,7 +12,7 @@ const items = [
     subtitle: `Advanced AI infrastructure for seamless data aggregation across Africa`,
     body: `Leverage our advanced AI infrastructure to seamlessly aggregate and analyze data across Africa's diverse markets and ecosystems.`,
     image: '/images/bi.png',
-    href: 'https://app.immortal.statisense.co',
+    href: IMMORTAL_URL,
     slug: 'business-intelligence',
   },
   {
@@ -20,7 +21,7 @@ const items = [
     subtitle: `Transform data into actionable predictions for strategic decisions`,
     body: `Transform raw African data into actionable predictions that drive strategic decision-making and unlock market opportunities.`,
     image: '/images/pi.png',
-    href: 'https://predict.statisense.co',
+    href: PREDICT_URL,
     slug: 'predictive-intelligence',
   },
   {
@@ -29,7 +30,7 @@ const items = [
     subtitle: `Comprehensive market analysis for informed investment decisions`,
     body: `Access comprehensive market analysis and trends to make informed investment and business decisions across African markets.`,
     image: '/images/mi.png',
-    href: 'https://dev.market.statisense.co',
+    href: MARKET_URL,
     slug: 'market-intelligence',
   },
 ];
