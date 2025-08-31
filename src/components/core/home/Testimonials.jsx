@@ -11,6 +11,8 @@ import {
   IconChevronLeft,
   IconChevronRight,
 } from '@tabler/icons-react';
+import { motion, useInView } from 'motion/react';
+import { useRef } from 'react';
 
 const items = [
   {
@@ -56,22 +58,45 @@ At the end Nigeria wins👌
 ];
 
 const Testimonials = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+
   return (
-    <section id="testimonials" className="relative py-28 md:pt-48 md:pb-28">
+    <section ref={sectionRef} id="testimonials" className="relative py-28 md:pt-48 md:pb-28">
       {/* Heading in a centered container */}
       <div className="container sm:px-6 lg:px-8">
-        <div className="!xl:mt-0 mx-auto flex max-w-4xl flex-col md:items-center md:text-center">
-          <h2 className="text-4xl font-semibold tracking-tighter md:text-8xl">
+        <motion.div 
+          className="!xl:mt-0 mx-auto flex max-w-4xl flex-col md:items-center md:text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.h2 
+            className="text-4xl font-semibold tracking-tighter md:text-8xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
             With over 3 billion <br className="block md:hidden" /> data impressions
-          </h2>
-          <p className="mt-6 text-lg tracking-tight">
+          </motion.h2>
+          <motion.p 
+            className="mt-6 text-lg tracking-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          >
             We are loved by businesses, consumers and governments across Africa
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </div>
 
       {/* Full-bleed carousel */}
-      <div className="relative mt-16 w-full">
+      <motion.div 
+        className="relative mt-16 w-full"
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+      >
         <div className="relative pb-16">
           <Swiper
             modules={[Navigation, Autoplay]}
@@ -94,7 +119,12 @@ const Testimonials = () => {
             ))}
           </Swiper>
 
-          <div className="pointer-events-auto z-10 mt-10 flex items-center justify-center gap-4">
+          <motion.div 
+            className="pointer-events-auto z-10 mt-10 flex items-center justify-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+          >
             <button
               aria-label="Previous testimonials"
               className="testimonials-prev bg-default-100 text-default-500 hover:bg-default-200 focus:ring-default-300 inline-flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-colors focus:ring-2 focus:outline-none"
@@ -107,9 +137,9 @@ const Testimonials = () => {
             >
               <IconChevronRight size="22" />
             </button>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

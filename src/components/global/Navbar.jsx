@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { IconMenu } from '@tabler/icons-react';
-import { useIsomorphicLayoutEffect } from 'react-use';
 import { useAuth } from '@/hooks/use-auth.js';
 import Logo from '@/components/core/shared/Logo';
 import MobileNav from '@/components/core/MobileNav';
@@ -21,19 +20,19 @@ const Navbar = () => {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
   const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
 
-  useIsomorphicLayoutEffect(() => {
-    const handleScroll = (e) => {
-      const scrollTop = e.target.scrollingElement.scrollTop;
-      setScrolled(scrollTop > 50);
-    };
-    setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // useIsomorphicLayoutEffect(() => {
+  //   const handleScroll = (e) => {
+  //     const scrollTop = e.target.scrollingElement.scrollTop;
+  //     setScrolled(scrollTop > 50);
+  //   };
+  //   setScrolled(window.scrollY > 50);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   return (
     <>
-      <header className={cn('fixed inset-x-0 top-0 z-50 flex h-32 items-center')}>
+      <header className={cn('absolute inset-x-0 top-0 z-50 flex h-32 items-center')}>
         <div
           className={cn('container h-[72px] transition-all', {
             'bg-accent/70 rounded-full !px-8 backdrop-blur-2xl': scrolled,

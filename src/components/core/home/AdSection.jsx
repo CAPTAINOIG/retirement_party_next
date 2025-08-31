@@ -1,13 +1,22 @@
 import React from 'react';
 import { Button, useDisclosure } from '@heroui/react';
 import JoinWaitlistModal from '@/components/core/shared/JoinWaitlistModal';
+import { motion, useInView } from 'motion/react';
+import { useRef } from 'react';
 
 const AdSection = () => {
   const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <div className="relative z-10 container">
-      <div className="bg-primary-900 dark:bg-primary-50 relative overflow-hidden rounded-3xl pt-48 pb-32 md:pt-40 md:pb-32 md:text-center">
+    <div ref={sectionRef} className="relative z-10 container">
+      <motion.div 
+        className="bg-primary-900 dark:bg-primary-50 relative overflow-hidden rounded-3xl pt-48 pb-32 md:pt-40 md:pb-32 md:text-center"
+        initial={{ opacity: 0, y: 50, scale: 0.95 }}
+        animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.95 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -16,19 +25,30 @@ const AdSection = () => {
           }}
         />
         <div className="relative z-2">
-          <h1 className="font-display mx-auto max-w-[1000px] text-[3.4rem] leading-[1.1] font-bold tracking-tight text-white sm:text-7xl md:text-[5.4rem] md:leading-none!">
-            We are building data rails for analytics across Africa
-          </h1>
-          <Button
-            size="lg"
-            className="mt-12 bg-white text-black hover:bg-white/90"
-            radius="full"
-            onPress={onWaitListOpen}
+          <motion.h1 
+            className="font-display mx-auto max-w-[1000px] text-[3.4rem] leading-[1.1] font-bold tracking-tight text-white sm:text-7xl md:text-[5.4rem] md:leading-none!"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            Join waitlist
-          </Button>
+            We are building data rails for analytics across Africa
+          </motion.h1>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          >
+            <Button
+              size="lg"
+              className="mt-12 bg-white text-black hover:bg-white/90 transition-transform hover:scale-105"
+              radius="full"
+              onPress={onWaitListOpen}
+            >
+              Join waitlist
+            </Button>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       <JoinWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
     </div>
