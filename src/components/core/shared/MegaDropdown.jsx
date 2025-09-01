@@ -3,35 +3,64 @@ import Link from 'next/link';
 import { TbArrowRight, TbChevronDown } from 'react-icons/tb';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
-import { IMMORTAL_URL, MARKET_URL, PREDICT_URL } from '@/lib/constants';
+import { IMMORTAL_URL, MARKET_URL, OPINIONS_URL, PREDICT_URL } from '@/lib/constants';
 
 const items = [
   {
     name: 'Business intelligence',
-    title: `Uncover hidden insights from your data wherever it resides`,
+    title: `Uncover insights from business data`,
     subtitle: `Advanced AI infrastructure for seamless data aggregation across Africa`,
-    body: `Leverage our advanced AI infrastructure to seamlessly aggregate and analyze data across Africa's diverse markets and ecosystems.`,
-    image: '/images/bi.png',
+    body: `Our AI infrastructure seamlessly aggregates and analyzes data across Africa's diverse markets, transforming fragmented information into actionable business intelligence.`,
+    features: [
+      'Real-time data aggregation across multiple sources',
+      'Advanced analytics and pattern recognition',
+      'Automated reporting and dashboard creation',
+      'Cross-market data correlation and insights',
+    ],
     href: IMMORTAL_URL,
     slug: 'business-intelligence',
   },
   {
     name: 'Predictive intelligence',
-    title: `Forecast Africa's economic future with precision`,
+    title: `Predicting the future of Africa`,
     subtitle: `Transform data into actionable predictions for strategic decisions`,
-    body: `Transform raw African data into actionable predictions that drive strategic decision-making and unlock market opportunities.`,
-    image: '/images/pi.png',
+    body: `Harness advanced predictive models to anticipate market movements and economic shifts across the continent, empowering strategic decision-making.`,
+    features: [
+      'Advanced machine learning forecasting models',
+      'Economic trend prediction and analysis',
+      'Risk assessment and scenario planning',
+      'Market movement anticipation tools',
+    ],
     href: PREDICT_URL,
     slug: 'predictive-intelligence',
   },
   {
     name: 'Market intelligence',
-    title: `Navigate Africa's markets with AI-powered insights`,
+    title: `Navigate African markets with precision`,
     subtitle: `Comprehensive market analysis for informed investment decisions`,
-    body: `Access comprehensive market analysis and trends to make informed investment and business decisions across African markets.`,
-    image: '/images/mi.png',
+    body: `Access comprehensive market analysis powered by AI to identify opportunities, assess risks, and make informed investment decisions across emerging African economies.`,
+    features: [
+      'Comprehensive market analysis and trends',
+      'Investment opportunity identification',
+      'Risk assessment and mitigation strategies',
+      'Competitive landscape analysis',
+    ],
     href: MARKET_URL,
     slug: 'market-intelligence',
+  },
+  {
+    name: 'Opinions',
+    title: `AI-curated insights at your fingertips`,
+    subtitle: `Thought leadership and expert commentary on market trends`,
+    body: `Stay ahead with intelligent news summaries, data visualizations, and market reports that distill complex information into clear, actionable insights for better decision-making.`,
+    features: [
+      'AI-curated news summaries and analysis',
+      'Interactive data visualizations',
+      'Expert market commentary and insights',
+      'Personalized content recommendations',
+    ],
+    href: OPINIONS_URL,
+    slug: 'opinions',
   },
 ];
 
@@ -91,7 +120,7 @@ const MegaDropdown = ({ label, align = 'center' }) => {
             exit={{ opacity: 0, y: 6, scale: 0.98 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
             className={cn(
-              'absolute top-full z-[60] mt-3 w-[800px] max-w-[90vw] origin-top',
+              'absolute top-full z-[60] mt-3 w-[900px] max-w-[95vw] origin-top',
               align === 'center'
                 ? 'left-1/2 -translate-x-1/2'
                 : align === 'right'
@@ -99,13 +128,15 @@ const MegaDropdown = ({ label, align = 'center' }) => {
                   : 'left-0 origin-top-left'
             )}
           >
-            <div className="dark:bg-default-50 border-default-100 rounded-3xl border bg-white shadow-md dark:border-0">
+            <div className="dark:bg-default-50 border-default-100 bg-default-100 rounded-3xl border dark:border-0">
               <div className="grid grid-cols-2 items-start gap-6 p-6">
                 <div className="grid grid-cols-1 gap-3">
                   {items.map((item, idx) => (
                     <motion.div
                       key={idx}
-                      className={cn('relative min-w-0 cursor-pointer rounded-2xl px-5 py-4')}
+                      className={cn('relative min-w-0 cursor-pointer rounded-2xl px-5 py-4', {
+                        'text-white': idx === active,
+                      })}
                       onMouseEnter={() => setActive(idx)}
                       animate={{ scale: idx === active ? 1.02 : 1 }}
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
@@ -113,13 +144,13 @@ const MegaDropdown = ({ label, align = 'center' }) => {
                       {idx === active && (
                         <motion.span
                           layoutId="megaItemActiveBg"
-                          className="bg-default-100 absolute inset-0 rounded-2xl"
+                          className="bg-gray-800 absolute inset-0 rounded-2xl"
                           transition={{ type: 'spring', stiffness: 500, damping: 40, mass: 0.6 }}
                         />
                       )}
                       <div className="relative z-10">
-                        <p className="text-foreground text-base leading-none font-semibold">{item.name}</p>
-                        <p className="text-foreground/70 mt-2 text-sm leading-tight">{item.subtitle}</p>
+                        <p className="text-base leading-none font-semibold">{item.name}</p>
+                        <p className="mt-2 text-sm leading-tight">{item.subtitle}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -142,22 +173,36 @@ const HighlightCard = ({ item }) => {
   if (!item) return null;
   return (
     <motion.div
-      className="relative overflow-hidden rounded-2xl"
+      className="bg-default-200/40 dark:bg-default-100/40 relative overflow-hidden rounded-2xl px-6 py-4"
       initial={{ opacity: 0, y: 8, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 8, scale: 0.98 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
     >
-      {item.image && <img src={item.image} alt={item.name} className="h-full w-full rounded-2xl object-contain" />}
       <div className="relative z-10 h-full w-full">
         <div className="rounded-xl px-2 pt-4">
-          <h3 className="text-xl font-semibold">{item.name}</h3>
-          {item.body && <p className="mt-1 text-sm opacity-90">{item.body}</p>}
-          <div className="mt-4">
+          <h3 className="max-w-[300px] text-2xl font-semibold">{item.title}</h3>
+          {item.body && <p className="mt-2 text-base leading-tight opacity-90">{item.body}</p>}
+
+          {item.features && (
+            <div className="mt-4">
+              <h4 className="mb-2 text-base font-medium opacity-80">Key Features:</h4>
+              <ul className="space-y-1">
+                {item.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start text-base leading-tight opacity-75">
+                    <span className="mt-2 mr-2 inline-block h-1 w-1 flex-shrink-0 rounded-full bg-current" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div className="mt-6">
             <Link
               href={item.href || '#'}
               target={item.href?.startsWith('http') ? '_blank' : undefined}
-              className="bg-default-100/50 hover:bg-default-100 mt-1 inline-flex items-center gap-1 rounded-full px-4 py-1.5 text-sm font-medium"
+              className="bg-default-200 hover:bg-default-300 mt-1 inline-flex items-center gap-1 rounded-full px-4 py-1.5 font-medium transition-colors"
             >
               Learn more <TbArrowRight className="h-4 w-4" />
             </Link>

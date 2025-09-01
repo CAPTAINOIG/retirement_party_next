@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <h6 className="font-medium">Products</h6>
+            <h6 className="font-bold">Products</h6>
             <div className="mt-6 flex flex-col space-y-4">
               {products.map((p) => (
                 <Link key={p.slug} href={p.link} className="hover:text-primary-700">
@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <h6 className="font-medium">Company</h6>
+            <h6 className="font-bold">Company</h6>
             <div className="mt-6 flex flex-col space-y-4">
               <Link href={'/about'} className="hover:text-primary-700">
                 About us
@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <h6 className="font-medium">Support</h6>
+            <h6 className="font-bold">Support</h6>
             <div className="mt-6 flex flex-col space-y-4">
               <Link href="/about#faq" className="hover:text-primary-700" scroll>
                 FAQs

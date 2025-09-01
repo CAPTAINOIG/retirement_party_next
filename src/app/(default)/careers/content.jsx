@@ -1,17 +1,23 @@
 'use client';
 import React from 'react';
-import PageHeader from '@/components/core/shared/PageHeader';
 import JoinOurTeam from '@/components/core/careers/JoinOurTeam';
 import OpenPositions from '@/components/core/careers/OpenPositions';
+import AdSection from '@/components/core/home/AdSection';
+import PageHeader from '@/components/core/shared/PageHeader';
 
 const CareersPageContent = () => {
   return (
     <>
-      <div className="bg-slate-50 text-black">
-        <PageHeader title="Careers at Statisense" append={<div className="h-4"></div>} />
-        <div className="space-y-28 py-20 md:space-y-36 md:py-28">
-          <JoinOurTeam />
-          <OpenPositions />
+      <div className="relative w-full">
+        <PageHeader title="Careers" />
+        <div className="relative w-full">
+          <div className="pt-16 pb-24 md:pt-28 md:pb-32">
+            <JoinOurTeam />
+            <div className="mt-28 md:mt-40">
+              <OpenPositions />
+            </div>
+          </div>
+          <AdSection />
         </div>
       </div>
     </>

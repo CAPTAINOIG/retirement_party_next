@@ -1,35 +1,34 @@
-import React from 'react';
-import { IconChevronLeft } from '@tabler/icons-react';
-import Button from '@/components/global/Button.jsx';
+'use client';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 
-const PageHeader = ({ title, subtitle, onBack, backText, isLoading = false, append }) => {
+const PageHeader = ({ title, subtitle }) => {
+  const heroRef = useRef(null);
+  const isInView = useInView(heroRef, { once: true, margin: '-100px' });
+
   return (
-    <div className="to-primary-950 from-primary-50/50 relative overflow-hidden bg-zinc-950 bg-linear-to-br pt-36 pb-6 text-center md:pt-44 md:pb-10">
-      <div className="relative z-20 container flex flex-col items-center">
-        {!!onBack && (
-          <Button
-            onClick={onBack}
-            variant="subtle"
-            color="white"
-            size="sm"
-            leftIcon={<IconChevronLeft size="18" />}
-            className="mb-6"
+    <div ref={heroRef} className="relative z-2 container pt-32 md:block">
+      <div className="relative py-12">
+        <div className="overflow-hidden pt-12 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="bg-linear-to-r text-[4rem] !leading-none font-bold tracking-tighter md:text-[6rem] md:leading-[0.9] xl:text-[7rem]"
           >
-            {backText}
-          </Button>
-        )}
-        {isLoading ? (
-          <>
-            <div className="mt-2 h-8 w-72 rounded-full bg-zinc-200/10" />
-            <div className="mt-4 h-8 w-56 rounded-full bg-zinc-200/10" />
-          </>
-        ) : (
-          <>
-            <h1 className="max-w-xl text-3xl leading-[1.2]! font-medium text-zinc-200 md:text-[2.8rem]">{title}</h1>
-            {!!subtitle && <p className="mt-3 max-w-2xl leading-[1.2] text-zinc-400 md:text-lg">{subtitle}</p>}
-          </>
-        )}
-        {!!append && append}
+            {title}
+          </motion.h1>
+          {subtitle && (
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+              className="mx-auto mt-6 max-w-2xl text-lg text-default-500 md:text-xl"
+            >
+              {subtitle}
+            </motion.p>
+          )}
+        </div>
       </div>
     </div>
   );

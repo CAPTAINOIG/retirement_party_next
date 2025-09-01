@@ -4,14 +4,20 @@ import Testimonials from '@/components/core/home/Testimonials';
 import Hero from '@/components/core/home/Hero';
 import AdSection from '@/components/core/home/AdSection';
 import BigIdeas from '@/components/core/home/BigIdeas';
-import ImmortalProducts from '@/components/core/home/ImmortalProducts';
+import BusinessIntelligenceSection from '@/components/core/home/BusinessIntelligenceSection';
+import PredictiveIntelligenceSection from '@/components/core/home/PredictiveIntelligenceSection';
+import MarketIntelligenceSection from '@/components/core/home/MarketIntelligenceSection';
+import OpinionsSection from '@/components/core/home/OpinionsSection';
 
 const HomePageContent = () => {
   return (
     <div>
       <Hero />
       <BigIdeas />
-      <ImmortalProducts />
+      <BusinessIntelligenceSection />
+      <PredictiveIntelligenceSection />
+      <MarketIntelligenceSection />
+      <OpinionsSection />
       <AdSection />
       <Testimonials />
     </div>

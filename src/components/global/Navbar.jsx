@@ -7,7 +7,7 @@ import MobileNav from '@/components/core/MobileNav';
 import { cn } from '@/lib/utils';
 import UserDropdown from '@/components/core/shared/UserDropdown';
 import { Button, useDisclosure } from '@heroui/react';
-import { OPINIONS_URL } from '@/lib/constants';
+
 import JoinWaitlistModal from '@/components/core/shared/JoinWaitlistModal';
 import { useTheme } from 'next-themes';
 import ThemeToggle from '@/components/core/shared/ThemeToggle';
@@ -45,9 +45,6 @@ const Navbar = () => {
               </Link>
               <div className="ml-auto hidden h-full md:space-x-3 lg:flex">
                 <MegaDropdown label="Immortal" />
-                <Link href={OPINIONS_URL} target="_blank" className="inline-flex items-center rounded-full px-4 py-1">
-                  Opinions
-                </Link>
               </div>
             </div>
             <div className="ml-6 flex items-center justify-end gap-x-5 md:gap-x-4">

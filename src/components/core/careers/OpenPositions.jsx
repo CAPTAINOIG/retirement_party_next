@@ -1,5 +1,6 @@
-import Card from '@/components/global/Card';
-import Button from '@/components/global/Button';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'motion/react';
+import { Button, Card } from '@heroui/react';
 
 const positions = [
   {
@@ -17,30 +18,56 @@ const positions = [
 ];
 
 const OpenPositions = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+
   return (
-    <section aria-label="Our services" className="container">
-      <div className="grid gap-10 lg:grid-cols-12">
+    <section ref={sectionRef} aria-label="Open positions" className="container">
+      <div className="grid gap-6 md:gap-10 lg:grid-cols-12">
         <div className="relative lg:col-span-4">
           <div className="sticky top-36 text-center lg:text-left">
-            <h2 className="text-3xl font-medium tracking-tight md:text-4xl">Open positions</h2>
-            <p className="mt-4">Do you crave a challenge and love to innovate? Then we have a role for you.</p>
+            <motion.h2
+              className="text-3xl font-semibold tracking-tight md:text-5xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
+              Open positions
+            </motion.h2>
+            <motion.p
+              className="text-default-700 mt-4 text-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+            >
+              Do you crave a challenge and love to innovate? Then we have a role for you.
+            </motion.p>
           </div>
         </div>
         <div className="space-y-6 lg:col-span-8">
-          {positions.map((p) => (
-            <Card key={p.title} className="subtle-shadow flex flex-col px-12 py-10 md:flex-row md:items-center">
-              <div className="flex-1">
-                <h4 className="text-lg font-medium">{p.title}</h4>
-                <p className="mt-2 opacity-80">{p.description}</p>
-              </div>
-              <a
-                href={`mailto:jobs@statisense.co?subject=Application for ${p.title}`}
-                target="_blank"
-                className="mt-4 md:mt-0 md:ml-4"
-              >
-                <Button variant="subtle">Apply</Button>
-              </a>
-            </Card>
+          {positions.map((position, index) => (
+            <motion.div
+              key={position.title}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
+              transition={{ duration: 0.8, delay: 0.3 + index * 0.1, ease: 'easeOut' }}
+            >
+              <Card className="bg-default-100 flex flex-col px-12 py-10 md:flex-row md:items-center" shadow="none">
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold">{position.title}</h4>
+                  <p className="text-default-700 mt-2 leading-tight">{position.description}</p>
+                </div>
+                <a
+                  href={`mailto:jobs@statisense.co?subject=Application for ${position.title}`}
+                  target="_blank"
+                  className="mt-4 md:mt-0 md:ml-4"
+                >
+                  <Button variant="flat" radius="full" className="text-base">
+                    Apply
+                  </Button>
+                </a>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -44,7 +44,7 @@ const AdSection = () => {
               radius="full"
               onPress={onWaitListOpen}
             >
-              Join waitlist
+              Get started
             </Button>
           </motion.div>
         </div>

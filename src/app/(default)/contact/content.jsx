@@ -1,23 +1,22 @@
 'use client';
 import React from 'react';
-import PageHeader from '@/components/core/shared/PageHeader';
 import ContactCategories from '@/components/core/contact/ContactCategories';
 import ConnectWithUs from '@/components/core/contact/ConnectWithUs';
 import SendMessageForm from '@/components/core/contact/SendMessageForm';
+import AdSection from '@/components/core/home/AdSection';
+import PageHeader from '@/components/core/shared/PageHeader';
+import ScrollReveal from '@/components/global/ScrollReveal';
 
 const ContactPageContent = () => {
   return (
     <>
-      <div className="bg-slate-50 text-black">
-        <PageHeader
-          title="We'd love to hear from you"
-          subtitle="Have any questions or feedback? We'd love to hear from you"
-        >
-          <div className="h-4" slot="append"></div>
-        </PageHeader>
-        <div className="space-y-36 py-20 md:py-28">
-          <div className="container space-y-24">
-            <ContactCategories />
+      <PageHeader title="Contact us" subtitle="Have any questions or feedback? We'd love to hear from you" />
+      <div className="relative w-full">
+        <div className="pt-16 pb-24 md:pt-28 md:pb-32">
+          <div className="container space-y-28 md:space-y-40">
+            <ScrollReveal direction="up" delay={0.1}>
+              <ContactCategories />
+            </ScrollReveal>
             <div className="grid gap-16 md:grid-cols-2">
               <div>
                 <ConnectWithUs />
@@ -28,6 +27,9 @@ const ContactPageContent = () => {
             </div>
           </div>
         </div>
+        <ScrollReveal direction="up" delay={0.3}>
+          <AdSection />
+        </ScrollReveal>
       </div>
     </>
   );

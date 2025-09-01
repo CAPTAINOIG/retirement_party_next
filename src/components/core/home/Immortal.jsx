@@ -48,7 +48,7 @@ const Immortal = () => {
             radius="full"
             onPress={onWaitListOpen}
           >
-            Join waitlist
+            Get started
           </Button>
         </div>
       </div>

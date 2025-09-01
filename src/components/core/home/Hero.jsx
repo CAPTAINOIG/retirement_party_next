@@ -12,7 +12,7 @@ const Hero = () => {
   const { width } = useWindowSize();
   const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
   const heroRef = useRef(null);
-  const isInView = useInView(heroRef, { once: true, margin: "-100px" });
+  const isInView = useInView(heroRef, { once: true, margin: '-100px' });
 
   let textVariant = {};
   if (width < 768) {
@@ -39,7 +39,7 @@ const Hero = () => {
               variants={textVariant}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
               className="bg-linear-to-r text-[4rem] !leading-none font-bold tracking-tighter md:text-[6rem] md:leading-[0.9] xl:text-[7rem]"
             >
               Building{' '}
@@ -52,15 +52,15 @@ const Hero = () => {
               variants={textVariant}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
               className="text-default-500 mt-6 max-w-xl text-xl tracking-tight"
             >
-              We help businesses aggregate and convert complex customer data into simple visual insights using AI
+              We are building the rails that connects intelligence to Africa's data accross multiple ecosystems
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
             >
               <Button
                 size="lg"
@@ -70,15 +70,15 @@ const Hero = () => {
                 color="primary"
                 endContent={<TbChevronRight size="20" />}
               >
-                Join the waitlist
+                Get started
               </Button>
             </motion.div>
           </div>
-          <motion.div 
+          <motion.div
             className="relative"
-            initial={{ opacity: 0, x: 50, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: 50, scale: 0.9 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
           >
             <div className="bg-primary-500/10 dark:bg-primary-500/5 absolute top-0 left-0 hidden w-[113%] rounded-[2rem] p-8 lg:block">
               <HeroIllustration />

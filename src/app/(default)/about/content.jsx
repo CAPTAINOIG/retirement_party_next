@@ -1,18 +1,18 @@
 'use client';
 import React from 'react';
-import PageHeader from '@/components/core/shared/PageHeader';
 import WhoWeAre from '@/components/core/about/WhoWeAre';
 import WhatWeDo from '@/components/core/about/WhatWeDo';
 import WhyChooseUs from '@/components/core/about/WhyChooseUs';
-import Newsletter from '@/components/core/home/Newsletter';
 import FrequentlyAskedQuestions from '@/components/core/about/FrequentlyAskedQuestions';
+import AdSection from '@/components/core/home/AdSection';
+import PageHeader from '@/components/core/shared/PageHeader';
 
 const AboutPageContent = () => {
   return (
     <>
-      <div className="bg-slate-50 text-black">
-        <PageHeader title="About us" append={<div className="h-4"></div>} />
-        <div className="pb-24 pt-16 md:pb-32 md:pt-28">
+      <PageHeader title="About us" />
+      <div className="relative w-full">
+        <div className="pt-16 pb-24 md:pt-28 md:pb-32">
           <WhoWeAre />
           <div className="mt-28 md:mt-40">
             <WhatWeDo />
@@ -21,7 +21,7 @@ const AboutPageContent = () => {
             <WhyChooseUs />
           </div>
         </div>
-        <Newsletter sm />
+        <AdSection />
         <div className="py-24 md:py-32">
           <FrequentlyAskedQuestions />
         </div>
