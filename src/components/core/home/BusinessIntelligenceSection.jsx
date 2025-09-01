@@ -55,7 +55,7 @@ const BusinessIntelligenceSection = () => {
   return (
     <motion.div
       ref={sectionRef}
-      className="relative min-h-[300vh] overflow-clip"
+      className="relative min-h-[300vh] overflow-clip py-20"
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}

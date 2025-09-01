@@ -1,12 +1,14 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
+import { Button } from '@heroui/react';
+import { IMMORTAL_URL, MARKET_URL, PREDICT_URL } from '@/lib/constants';
 
 const BigIdeas = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   return (
-    <div ref={sectionRef} className="dark relative w-full overflow-hidden bg-black text-white md:py-40">
+    <div ref={sectionRef} className="dark relative w-full overflow-hidden bg-black text-white md:pt-32 md:pb-40">
       <div className="relative container mx-auto md:block">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -36,9 +38,9 @@ const BigIdeas = () => {
             to unlock unprecedented growth opportunities.
           </motion.p>
         </motion.div>
-        <div className="relative grid-cols-[2fr_2fr_2fr] gap-4 space-y-8 md:grid md:space-y-0">
+        <div className="relative mt-6 grid-cols-[2fr_2fr_2fr] gap-4 space-y-8 md:grid md:space-y-0">
           <motion.div
-            className="relative z-20 rounded-2xl bg-[#FF7091] px-10 py-8"
+            className="relative z-20 flex flex-col rounded-2xl bg-[#FF7091] px-10 py-8"
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
             transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
@@ -91,9 +93,14 @@ const BigIdeas = () => {
                 </div>
               </div>
             </div>
+            <a href={IMMORTAL_URL} target="_blank" className="mt-auto flex">
+              <Button variant="flat" radius="full" className="mt-6">
+                Learn more
+              </Button>
+            </a>
           </motion.div>
           <motion.div
-            className="relative z-10 rounded-2xl bg-[#FDBF12] px-10 py-8"
+            className="relative z-10 flex flex-col rounded-2xl bg-[#FDBF12] px-10 py-8"
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
             transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
@@ -151,9 +158,14 @@ const BigIdeas = () => {
                 </div>
               </div>
             </div>
+            <a href={MARKET_URL} target="_blank" className="mt-auto flex">
+              <Button variant="flat" radius="full" className="mt-6">
+                Learn more
+              </Button>
+            </a>
           </motion.div>
           <motion.div
-            className="relative rounded-2xl bg-[#6C56C3] p-4 px-10 py-8"
+            className="relative flex flex-col rounded-2xl bg-[#6C56C3] p-4 px-10 py-8"
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
             transition={{ duration: 0.8, delay: 1.0, ease: 'easeOut' }}
@@ -175,12 +187,19 @@ const BigIdeas = () => {
                   <div className="h-[10px] w-[35%] animate-pulse rounded-full bg-purple-300" />
                 </div>
               </div>
-              <div className="flex items-center">
-                <div className="flex w-4/5 flex-col items-end gap-2">
-                  <div className="h-[10px] w-3/4 animate-pulse rounded-full bg-purple-300"></div>
-                  <div className="h-[10px] w-1/2 animate-pulse rounded-full bg-purple-300"></div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <div>
+                    <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
+                  </div>
+                  <p className="text-white">AI powered prediction exchange</p>
                 </div>
-                <img src="/images/face-two.png" alt="emoji" className="ml-2 h-10 w-10 rounded-full" />
+                <div className="flex items-center gap-2">
+                  <div>
+                    <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
+                  </div>
+                  <p className="text-white">Create. Trade. Profit</p>
+                </div>
               </div>
               <div className="grid grid-cols-4 items-center gap-2">
                 <img className="w-[40px]" src="/images/face-three.png" alt="face" />
@@ -193,6 +212,11 @@ const BigIdeas = () => {
                 </div>
               </div>
             </div>
+            <a href={PREDICT_URL} target="_blank" className="mt-auto flex">
+              <Button variant="flat" radius="full" className="mt-6">
+                Learn more
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>
