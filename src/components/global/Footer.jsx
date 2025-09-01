@@ -3,13 +3,23 @@ import { IconBrandFacebook, IconBrandInstagram, IconBrandX, IconMail } from '@ta
 import React from 'react';
 import Logo from '@/components/core/shared/Logo';
 import { useTheme } from 'next-themes';
-import { IMMORTAL_URL, OPINIONS_URL } from '@/lib/constants';
+import { IMMORTAL_URL, MARKET_URL, OPINIONS_URL, PREDICT_URL } from '@/lib/constants';
 
 const products = [
   {
-    name: 'Immortal AI',
-    slug: 'immortal-ai',
+    name: 'Business intelligence',
+    slug: 'business-intelligence',
     link: IMMORTAL_URL,
+  },
+  {
+    name: 'Predictive intelligence',
+    slug: 'predictive-intelligence',
+    link: PREDICT_URL,
+  },
+  {
+    name: 'Market intelligence',
+    slug: 'market-intelligence',
+    link: MARKET_URL,
   },
   {
     name: 'Opinions',
@@ -24,8 +34,8 @@ const Footer = () => {
   return (
     <footer className="py-20">
       <div className="container">
-        <div className="grid gap-20 pt-10 pb-20 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
-          <div className="md:col-span-2">
+        <div className="grid gap-20 pt-10 pb-20 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-10">
+          <div>
             <Logo light={theme === 'dark'} />
             <div className="mt-8 grid grid-cols-1 gap-3">
               <div className="flex items-center space-x-3">
