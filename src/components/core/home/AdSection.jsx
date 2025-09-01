@@ -12,7 +12,7 @@ const AdSection = () => {
   return (
     <div ref={sectionRef} className="relative z-10 container">
       <motion.div 
-        className="bg-primary-900 dark:bg-primary-50 relative overflow-hidden rounded-3xl pt-48 pb-32 md:pt-40 md:pb-32 md:text-center"
+        className="bg-primary-900 dark:bg-primary-50 relative overflow-hidden rounded-3xl px-10 pt-48 pb-32 md:pt-40 md:pb-32 md:text-center"
         initial={{ opacity: 0, y: 50, scale: 0.95 }}
         animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.95 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
