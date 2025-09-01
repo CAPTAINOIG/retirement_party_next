@@ -6,11 +6,7 @@ export const metadata = {
 };
 
 const CareersPage = () => {
-  return (
-    <>
-      <CareersPageContent />
-    </>
-  );
+  return <CareersPageContent />;
 };
 
 export default CareersPage;

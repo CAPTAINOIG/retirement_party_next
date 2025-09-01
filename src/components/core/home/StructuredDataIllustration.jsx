@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
-import { TbBrandMongodb, TbBrandMysql, TbBrandOnedrive, TbCloud, TbCsv, TbDatabase } from 'react-icons/tb';
-import { FaFileExcel } from 'react-icons/fa6';
-import { SiGoogleforms, SiGooglesheets } from 'react-icons/si';
+import { TbBrandMongodb, TbBrandMysql, TbCloud, TbDatabase } from 'react-icons/tb';
+import { SiFacebook, SiHubspot, SiTiktok } from 'react-icons/si';
+import { MdEmail } from 'react-icons/md';
 
 const structuredSources = [
   {
@@ -33,39 +33,39 @@ const structuredSources = [
     color: 'from-cyan-500 to-cyan-600',
   },
   {
-    icon: <FaFileExcel size={32} />,
-    title: 'Excel',
-    category: 'File',
-    description: 'Import and analyze data from Excel spreadsheets with automatic schema detection.',
-    color: 'from-green-600 to-green-700',
+    icon: <SiFacebook size={32} />,
+    title: 'Facebook',
+    category: 'Social Media',
+    description: 'Connect to Facebook APIs for social media analytics and audience insights.',
+    color: 'from-blue-600 to-blue-700',
   },
   {
-    icon: <TbCsv size={32} />,
-    title: 'CSV',
-    category: 'File',
-    description: 'Import and process CSV files with automatic delimiter detection and data type inference.',
-    color: 'from-emerald-500 to-emerald-600',
+    icon: <SiTiktok size={32} />,
+    title: 'TikTok',
+    category: 'Social Media',
+    description: 'Access TikTok analytics and content performance data for social media intelligence.',
+    color: 'from-pink-500 to-red-500',
   },
   {
-    icon: <SiGooglesheets size={32} />,
-    title: 'Google Sheets',
-    category: 'Spreadsheet',
-    description: 'Access and analyze structured data from Google Sheets with real-time collaboration.',
-    color: 'from-green-500 to-blue-500',
+    icon: <SiHubspot size={32} />,
+    title: 'HubSpot',
+    category: 'CRM',
+    description: 'Integrate with HubSpot CRM for customer data, sales analytics, and marketing insights.',
+    color: 'from-orange-500 to-red-500',
   },
   {
-    icon: <SiGoogleforms size={32} />,
-    title: 'Google Forms',
-    category: 'Form',
-    description: 'Collect and analyze form responses with automatic data validation and insights.',
-    color: 'from-purple-500 to-purple-600',
+    icon: <TbDatabase size={32} />,
+    title: 'GTB',
+    category: 'Database',
+    description: 'Connect to GTB database systems for comprehensive data analysis and reporting.',
+    color: 'from-purple-600 to-indigo-600',
   },
   {
-    icon: <TbBrandOnedrive size={32} />,
-    title: 'OneDrive',
-    category: 'Cloud Storage',
-    description: 'Access and sync files from OneDrive with seamless integration and sharing.',
-    color: 'from-blue-600 to-indigo-600',
+    icon: <MdEmail size={32} />,
+    title: 'Gmail',
+    category: 'Email',
+    description: 'Access and analyze Gmail data for communication insights and email analytics.',
+    color: 'from-red-500 to-red-600',
   },
 ];
 
@@ -90,7 +90,7 @@ const StructuredDataIllustration = ({ isActive, isParentInView }) => {
               {source.icon}
             </div>
             <h4 className="mb-1 text-lg leading-tight font-bold">{source.title}</h4>
-            <p className="text-default-700 text-md line-clamp-2 leading-relaxed">{source.description}</p>
+            <p className="text-default-700 text-md line-clamp-2 leading-tight">{source.description}</p>
           </motion.div>
         ))}
       </div>

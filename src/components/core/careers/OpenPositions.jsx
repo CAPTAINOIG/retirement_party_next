@@ -22,7 +22,7 @@ const OpenPositions = () => {
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   return (
-    <section ref={sectionRef} aria-label="Open positions" className="container">
+    <section ref={sectionRef} aria-label="Open positions" className="container py-40">
       <div className="grid gap-6 md:gap-10 lg:grid-cols-12">
         <div className="relative lg:col-span-4">
           <div className="sticky top-36 text-center lg:text-left">
@@ -52,10 +52,13 @@ const OpenPositions = () => {
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
               transition={{ duration: 0.8, delay: 0.3 + index * 0.1, ease: 'easeOut' }}
             >
-              <Card className="bg-default-100 flex flex-col px-12 py-10 md:flex-row md:items-center" shadow="none">
+              <Card
+                className="bg-default-100 flex flex-col rounded-3xl px-12 py-10 md:flex-row md:items-center"
+                shadow="none"
+              >
                 <div className="flex-1">
-                  <h4 className="text-lg font-semibold">{position.title}</h4>
-                  <p className="text-default-700 mt-2 leading-tight">{position.description}</p>
+                  <h4 className="text-xl font-semibold">{position.title}</h4>
+                  <p className="text-default-700 mt-2 text-base leading-tight">{position.description}</p>
                 </div>
                 <a
                   href={`mailto:jobs@statisense.co?subject=Application for ${position.title}`}

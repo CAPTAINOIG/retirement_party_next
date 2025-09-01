@@ -68,7 +68,7 @@ const items = [
   },
 ];
 
-const MegaDropdown = ({ label, align = 'center' }) => {
+const MegaDropdown = ({ label, align = 'right' }) => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const wrapperRef = useRef(null);
@@ -124,7 +124,7 @@ const MegaDropdown = ({ label, align = 'center' }) => {
             exit={{ opacity: 0, y: 6, scale: 0.98 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
             className={cn(
-              'absolute top-full z-[60] mt-3 w-[800px] max-w-[95vw] origin-top',
+              'absolute top-full z-[60] w-[800px] max-w-[95vw] origin-top',
               align === 'center'
                 ? 'left-1/2 -translate-x-1/2'
                 : align === 'right'

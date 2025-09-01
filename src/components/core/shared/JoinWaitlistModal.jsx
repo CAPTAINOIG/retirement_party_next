@@ -3,7 +3,7 @@ import { Card } from '@heroui/react';
 import { motion } from 'motion/react';
 import CountryFlag from '@/components/global/CountryFlag';
 import { IMMORTAL_URL, MARKET_URL, OPINIONS_URL, PREDICT_URL } from '@/lib/constants';
-import { HiChartPie, HiArrowTrendingUp, HiGlobeAlt, HiNewspaper } from 'react-icons/hi2';
+import { HiArrowTrendingUp, HiChartPie, HiGlobeAlt, HiNewspaper } from 'react-icons/hi2';
 
 const products = [
   {
@@ -51,12 +51,15 @@ const JoinWaitlistModal = ({ isOpen, onClose }) => {
 
   return (
     <CustomModal isOpen={isOpen} onClose={handleClose} width={1200}>
-      <Card className="grid items-center gap-10 rounded-3xl px-10 py-12 lg:grid-cols-[2fr_1.5fr] lg:px-28 lg:py-20">
-        <div className="order-1 text-white lg:order-none">
-          <h1 className="bg-linear-to-r from-green-600 to-blue-800 bg-clip-text text-[3.4rem] !leading-none font-bold tracking-tight text-transparent md:text-[6rem]">
+      <Card
+        className="grid items-center gap-10 rounded-3xl px-10 py-12 lg:grid-cols-[2fr_1.8fr] lg:px-20 lg:py-20"
+        shadow="none"
+      >
+        <div className="order-1 lg:order-none">
+          <h1 className="bg-linear-to-r from-green-600 to-blue-800 bg-clip-text text-[3.4rem] !leading-none font-bold tracking-tight text-transparent md:text-[5rem]">
             Predicting Africa with AI
           </h1>
-          <p className="mt-4 text-lg opacity-70 md:max-w-[70%] md:text-xl">
+          <p className="mt-4 text-lg opacity-80 md:max-w-[70%] md:text-xl">
             Join thousands of forward-thinking individuals and organizations who are already preparing for the future of
             African data intelligence.
           </p>
@@ -93,27 +96,27 @@ const JoinWaitlistModal = ({ isOpen, onClose }) => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: products.indexOf(product) * 0.1 }}
-                whileHover={{ scale: 1.02 }}
                 className="cursor-pointer"
               >
                 <Card
-                  className="bg-default-100 hover:bg-default-200 group h-full border-0 p-6 transition-all duration-300"
-                  shadow="sm"
+                  className="bg-default-100 hover:bg-default-200/50 h-full rounded-3xl px-8 py-8 transition-all duration-300"
+                  shadow="none"
                 >
                   <div className="flex h-full flex-col">
                     <div
-                      className={`h-12 w-12 rounded-full bg-gradient-to-r ${product.gradient} mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}
+                      className={`h-12 w-12 rounded-full bg-gradient-to-r ${product.gradient} mb-4 flex items-center justify-center`}
                     >
                       <IconComponent size="30" className="text-white" />
                     </div>
-                    <h3 className="text-foreground mb-2 text-base font-semibold capitalize leading-tight">{product.name}</h3>
-                    <p className="text-foreground/70 flex-1 text-sm leading-tight">{product.title}</p>
+                    <h3 className="text-foreground mb-2 text-lg leading-tight font-semibold capitalize">
+                      {product.name}
+                    </h3>
+                    <p className="text-foreground/70 text-md flex-1 leading-tight">{product.title}</p>
                   </div>
                 </Card>
               </motion.div>
             );
           })}
-          {/*<JoinWaitlistForm onDone={onClose} />*/}
         </div>
       </Card>
     </CustomModal>

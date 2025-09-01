@@ -1,78 +1,81 @@
 import { motion } from 'motion/react';
 import {
-  TbBrandEvernote,
-  TbBrandGmail,
-  TbBrandInstagram,
   TbBrandSlack,
-  TbPhoto,
-  TbVideo,
-  TbWorld,
+  TbChartBar,
+  TbCoin,
+  TbCreditCard,
+  TbShoppingCart,
+  TbBuildingBank,
+  TbChecklist,
+  TbNotes,
+  TbTrendingUp,
 } from 'react-icons/tb';
-import { FaFilePdf, FaFileWord } from 'react-icons/fa6';
+import { FaChartLine } from 'react-icons/fa6';
 
 const unstructuredSources = [
   {
-    icon: <TbBrandGmail size={32} />,
-    title: 'Gmail',
-    category: 'Email',
-    description: 'Analyze email data, attachments, and communication patterns from your Gmail account.',
-    color: 'from-red-500 to-red-600',
+    icon: <TbChartBar size={32} />,
+    title: 'NBS',
+    category: 'Government Data',
+    description:
+      "Access comprehensive economic statistics and demographic data from Nigeria's National Bureau of Statistics.",
+    color: 'from-green-600 to-green-700',
   },
   {
-    icon: <FaFilePdf size={32} />,
-    title: 'PDF Documents',
-    category: 'Document',
-    description: 'Extract and analyze text, tables, and images from PDF documents automatically.',
-    color: 'from-red-600 to-red-700',
-  },
-  {
-    icon: <FaFileWord size={32} />,
-    title: 'Word Documents',
-    category: 'Document',
-    description: 'Process Microsoft Word documents and extract structured insights from text content.',
+    icon: <FaChartLine size={32} />,
+    title: 'NGX',
+    category: 'Stock Exchange',
+    description: 'Real-time market data, stock prices, and trading insights from the Nigerian Exchange Group.',
     color: 'from-blue-600 to-blue-700',
   },
   {
-    icon: <TbPhoto size={32} />,
-    title: 'Images',
-    category: 'Media',
-    description: 'Analyze images using computer vision to extract text, objects, and patterns.',
-    color: 'from-purple-500 to-purple-600',
+    icon: <TbShoppingCart size={32} />,
+    title: 'Jumia',
+    category: 'E-commerce',
+    description: "Analyze e-commerce trends, product data, and consumer behavior from Africa's leading marketplace.",
+    color: 'from-orange-500 to-orange-600',
   },
   {
-    icon: <TbVideo size={32} />,
-    title: 'Video Content',
-    category: 'Media',
-    description: 'Process video files to extract audio transcripts and visual content analysis.',
-    color: 'from-indigo-500 to-indigo-600',
-  },
-  {
-    icon: <TbWorld size={32} />,
-    title: 'Web Content',
-    category: 'Web',
-    description: 'Scrape and analyze web pages, social media, and online content sources.',
+    icon: <TbCreditCard size={32} />,
+    title: 'Paystack',
+    category: 'Fintech',
+    description: "Payment processing data and transaction insights from Nigeria's premier payment gateway.",
     color: 'from-teal-500 to-teal-600',
   },
   {
-    icon: <TbBrandEvernote size={32} />,
-    title: 'Evernote',
-    category: 'Note Taking',
-    description: 'Import and analyze notes, documents, and attachments from your Evernote account.',
-    color: 'from-green-500 to-green-600',
+    icon: <TbTrendingUp size={32} />,
+    title: 'Flutterwave',
+    category: 'Fintech',
+    description: 'Cross-border payment data and financial transaction analytics across African markets.',
+    color: 'from-yellow-500 to-orange-500',
+  },
+  {
+    icon: <TbBuildingBank size={32} />,
+    title: 'Moniepoint',
+    category: 'Banking',
+    description: "Digital banking insights and financial services data from Nigeria's fastest-growing fintech.",
+    color: 'from-purple-600 to-purple-700',
+  },
+  {
+    icon: <TbChecklist size={32} />,
+    title: 'Asana',
+    category: 'Project Management',
+    description: 'Team productivity metrics and project management data for business intelligence insights.',
+    color: 'from-red-500 to-red-600',
+  },
+  {
+    icon: <TbNotes size={32} />,
+    title: 'Notion',
+    category: 'Workspace',
+    description: 'Collaborative workspace data and knowledge management insights for organizational analysis.',
+    color: 'from-gray-600 to-gray-700',
   },
   {
     icon: <TbBrandSlack size={32} />,
     title: 'Slack',
     category: 'Communication',
-    description: 'Analyze team conversations, files, and communication patterns from Slack channels.',
-    color: 'from-purple-600 to-pink-600',
-  },
-  {
-    icon: <TbBrandInstagram size={32} />,
-    title: 'Instagram',
-    category: 'Social Media',
-    description: 'Extract insights from Instagram posts, stories, and engagement data for analysis.',
-    color: 'from-pink-500 to-orange-500',
+    description: 'Team communication patterns and collaboration insights from workplace messaging data.',
+    color: 'from-purple-500 to-pink-500',
   },
 ];
 
@@ -97,7 +100,7 @@ const UnstructuredDataIllustration = ({ isActive, isParentInView }) => {
               {source.icon}
             </div>
             <h4 className="mb-1 text-lg leading-tight font-bold">{source.title}</h4>
-            <p className="text-default-700 text-md line-clamp-2 leading-relaxed">{source.description}</p>
+            <p className="text-default-700 text-md line-clamp-2 leading-tight">{source.description}</p>
           </motion.div>
         ))}
       </div>

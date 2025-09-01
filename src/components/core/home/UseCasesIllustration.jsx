@@ -67,7 +67,7 @@ const UseCasesIllustration = ({ isActive, isParentInView }) => {
               {useCase.icon}
             </div>
             <h4 className="mb-1 text-lg leading-tight font-bold">{useCase.title}</h4>
-            <p className="text-default-700 text-md line-clamp-2 leading-relaxed">{useCase.description}</p>
+            <p className="text-default-700 text-md line-clamp-2 leading-tight">{useCase.description}</p>
           </motion.div>
         ))}
       </div>
