@@ -1,5 +1,5 @@
 import { Button } from '@heroui/react';
-import { motion, useScroll, useTransform, useInView } from 'motion/react';
+import { motion, useInView, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { TbChevronRight } from 'react-icons/tb';
 import { OPINIONS_URL } from '@/lib/constants';
@@ -19,12 +19,12 @@ const OpinionsSection = () => {
   return (
     <motion.div
       ref={sectionRef}
-      className="relative flex items-center overflow-clip min-h-screen"
+      className="dark relative flex min-h-screen items-center overflow-clip bg-black text-white"
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <div className="container grid h-full grid-cols-2 gap-20 items-center">
+      <div className="container grid h-full grid-cols-2 items-center gap-20">
         <motion.div
           style={{ opacity, y }}
           className="max-w-xl"
@@ -58,7 +58,8 @@ const OpinionsSection = () => {
               ease: 'easeOut',
             }}
           >
-            Stay ahead with intelligent news summaries, data visualizations, and market reports that distill complex information into clear, actionable insights for better decision-making.
+            Stay ahead with intelligent news summaries, data visualizations, and market reports that distill complex
+            information into clear, actionable insights for better decision-making.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

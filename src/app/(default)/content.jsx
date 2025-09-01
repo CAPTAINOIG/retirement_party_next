@@ -18,8 +18,8 @@ const HomePageContent = () => {
       <PredictiveIntelligenceSection />
       <MarketIntelligenceSection />
       <OpinionsSection />
-      <AdSection />
       <Testimonials />
+      <AdSection />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { TbCoin, TbTrendingUp, TbUsers, TbCreditCard, TbBuilding, TbChartBar } from 'react-icons/tb';
+import { TbBuilding, TbChartBar, TbCoin, TbCreditCard, TbTrendingUp, TbUsers } from 'react-icons/tb';
 
 const useCases = [
   {
@@ -66,8 +66,8 @@ const UseCasesIllustration = ({ isActive, isParentInView }) => {
             <div className={`inline-flex rounded-full bg-gradient-to-r p-2 ${useCase.color} mb-4 text-white`}>
               {useCase.icon}
             </div>
-            <h4 className="mb-1 text-xl font-bold">{useCase.title}</h4>
-            {/* <p className="text-default-700 line-clamp-2 text-sm leading-relaxed">{useCase.description}</p> */}
+            <h4 className="mb-1 text-lg leading-tight font-bold">{useCase.title}</h4>
+            <p className="text-default-700 text-md line-clamp-2 leading-relaxed">{useCase.description}</p>
           </motion.div>
         ))}
       </div>

@@ -1,9 +1,8 @@
 import { Button, Chip } from '@heroui/react';
-import { motion, useScroll, useTransform, useInView } from 'motion/react';
+import { motion, useInView, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { TbChevronRight } from 'react-icons/tb';
 import { PREDICT_URL } from '@/lib/constants';
-import PredictIllustration from '@/components/core/home/PredictIllustration';
 
 const PredictiveIntelligenceSection = () => {
   const sectionRef = useRef(null);
@@ -19,7 +18,7 @@ const PredictiveIntelligenceSection = () => {
   return (
     <motion.div
       ref={sectionRef}
-      className="relative flex min-h-screen items-center overflow-clip"
+      className="dark relative flex min-h-screen items-center overflow-clip bg-black text-white md:py-40"
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}

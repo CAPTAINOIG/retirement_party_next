@@ -1,8 +1,7 @@
 'use client';
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { useWindowSize } from 'react-use';
-import { useRef } from 'react';
 import HeroIllustration from '@/components/core/home/HeroIllustration';
 import { Button, useDisclosure } from '@heroui/react';
 import { TbChevronRight } from 'react-icons/tb';
@@ -31,9 +30,9 @@ const Hero = () => {
   }
 
   return (
-    <div ref={heroRef} className="relative w-full">
+    <div ref={heroRef} className="dark relative w-full bg-black text-white">
       <div className="relative z-2 container pt-32 md:block">
-        <div className="relative grid gap-12 py-12 md:grid-cols-[1fr_1fr] md:pt-10 md:pb-32">
+        <div className="relative grid gap-12 py-12 md:grid-cols-[1fr_1fr] md:pt-10 md:pb-0">
           <div className="overflow-hidden pt-12 md:py-24">
             <motion.h1
               variants={textVariant}

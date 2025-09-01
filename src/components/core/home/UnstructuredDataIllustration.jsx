@@ -1,12 +1,12 @@
 import { motion } from 'motion/react';
 import {
+  TbBrandEvernote,
   TbBrandGmail,
+  TbBrandInstagram,
+  TbBrandSlack,
   TbPhoto,
   TbVideo,
   TbWorld,
-  TbBrandEvernote,
-  TbBrandSlack,
-  TbBrandInstagram,
 } from 'react-icons/tb';
 import { FaFilePdf, FaFileWord } from 'react-icons/fa6';
 
@@ -96,8 +96,8 @@ const UnstructuredDataIllustration = ({ isActive, isParentInView }) => {
             <div className={`inline-flex rounded-full bg-gradient-to-r p-2 ${source.color} mb-4 text-white`}>
               {source.icon}
             </div>
-            <h4 className="mb-1 text-xl font-bold">{source.title}</h4>
-            {/* <p className="text-default-700 line-clamp-2 text-sm leading-relaxed">{source.description}</p> */}
+            <h4 className="mb-1 text-lg leading-tight font-bold">{source.title}</h4>
+            <p className="text-default-700 text-md line-clamp-2 leading-relaxed">{source.description}</p>
           </motion.div>
         ))}
       </div>

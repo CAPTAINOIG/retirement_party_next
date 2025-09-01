@@ -7,41 +7,23 @@ import MobileNav from '@/components/core/MobileNav';
 import { cn } from '@/lib/utils';
 import UserDropdown from '@/components/core/shared/UserDropdown';
 import { Button, useDisclosure } from '@heroui/react';
-
 import JoinWaitlistModal from '@/components/core/shared/JoinWaitlistModal';
-import { useTheme } from 'next-themes';
 import ThemeToggle from '@/components/core/shared/ThemeToggle';
 import MegaDropdown from '@/components/core/shared/MegaDropdown';
 
 const Navbar = () => {
-  const { resolvedTheme: theme } = useTheme();
   const { resolved, authenticated } = useAuth();
-  const [scrolled, setScrolled] = useState(false);
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
   const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
 
-  // useIsomorphicLayoutEffect(() => {
-  //   const handleScroll = (e) => {
-  //     const scrollTop = e.target.scrollingElement.scrollTop;
-  //     setScrolled(scrollTop > 50);
-  //   };
-  //   setScrolled(window.scrollY > 50);
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
-
   return (
     <>
-      <header className={cn('absolute inset-x-0 top-0 z-50 flex h-32 items-center')}>
-        <div
-          className={cn('container h-[72px] transition-all', {
-            'bg-accent/70 rounded-full !px-8 backdrop-blur-2xl': scrolled,
-          })}
-        >
+      <header className={cn('dark absolute inset-x-0 top-0 z-50 flex h-32 items-center text-white')}>
+        <div className={cn('container h-[72px] transition-all')}>
           <nav className="relative z-50 flex h-full justify-between">
             <div className="flex h-full flex-1 items-center md:gap-x-12">
               <Link href={'/'}>
-                <Logo light={theme === 'dark'} />
+                <Logo light />
               </Link>
               <div className="ml-auto hidden h-full md:space-x-3 lg:flex">
                 <MegaDropdown label="Immortal" />
@@ -50,11 +32,7 @@ const Navbar = () => {
             <div className="ml-6 flex items-center justify-end gap-x-5 md:gap-x-4">
               <div className="hidden items-center space-x-4 lg:flex">
                 {!resolved ? (
-                  <div
-                    className={cn('h-[32px] w-[100px] animate-pulse rounded-3xl bg-slate-100/10', {
-                      'bg-slate-900/10': scrolled,
-                    })}
-                  />
+                  <div className={cn('h-[32px] w-[100px] animate-pulse rounded-3xl bg-slate-100/10')} />
                 ) : (
                   <>
                     {!authenticated ? (

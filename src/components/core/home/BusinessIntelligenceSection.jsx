@@ -1,6 +1,6 @@
 import { Button, Chip } from '@heroui/react';
-import { motion, useScroll, useInView } from 'motion/react';
-import { useRef, useState, useEffect } from 'react';
+import { motion, useInView, useScroll } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
 import { TbChevronRight } from 'react-icons/tb';
 import { IMMORTAL_URL } from '@/lib/constants';
 import StructuredDataIllustration from '@/components/core/home/StructuredDataIllustration';
@@ -60,7 +60,7 @@ const BusinessIntelligenceSection = () => {
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <div className="container grid h-full grid-cols-2 gap-20">
+      <div className="container grid h-full grid-cols-2 gap-0">
         {/* Sticky Left Section */}
         <div className="sticky top-0 flex h-screen items-center">
           <motion.div

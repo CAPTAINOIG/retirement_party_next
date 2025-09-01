@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { useRef } from 'react';
 
 const BigIdeas = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   return (
-    <div ref={sectionRef} className="relative w-full overflow-hidden py-24">
+    <div ref={sectionRef} className="dark relative w-full overflow-hidden bg-black text-white md:py-40">
       <div className="relative container mx-auto md:block">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
