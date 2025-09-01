@@ -19,6 +19,7 @@ const items = [
     ],
     href: IMMORTAL_URL,
     slug: 'business-intelligence',
+    image: '/images/bi.png',
   },
   {
     name: 'Predictive intelligence',
@@ -33,6 +34,7 @@ const items = [
     ],
     href: PREDICT_URL,
     slug: 'predictive-intelligence',
+    image: '/images/pi.png',
   },
   {
     name: 'Market intelligence',
@@ -47,6 +49,7 @@ const items = [
     ],
     href: MARKET_URL,
     slug: 'market-intelligence',
+    image: '/images/mi.png',
   },
   {
     name: 'Opinions',
@@ -61,6 +64,7 @@ const items = [
     ],
     href: OPINIONS_URL,
     slug: 'opinions',
+    image: '/images/opinions.png',
   },
 ];
 
@@ -120,7 +124,7 @@ const MegaDropdown = ({ label, align = 'center' }) => {
             exit={{ opacity: 0, y: 6, scale: 0.98 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
             className={cn(
-              'absolute top-full z-[60] mt-3 w-[900px] max-w-[95vw] origin-top',
+              'absolute top-full z-[60] mt-3 w-[800px] max-w-[95vw] origin-top',
               align === 'center'
                 ? 'left-1/2 -translate-x-1/2'
                 : align === 'right'
@@ -144,7 +148,7 @@ const MegaDropdown = ({ label, align = 'center' }) => {
                       {idx === active && (
                         <motion.span
                           layoutId="megaItemActiveBg"
-                          className="bg-gray-800 absolute inset-0 rounded-2xl"
+                          className="absolute inset-0 rounded-2xl bg-gray-800"
                           transition={{ type: 'spring', stiffness: 500, damping: 40, mass: 0.6 }}
                         />
                       )}
@@ -179,26 +183,12 @@ const HighlightCard = ({ item }) => {
       exit={{ opacity: 0, y: 8, scale: 0.98 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
     >
+      {item.image && <img src={item.image} alt={item.name} className="h-full w-full rounded-2xl object-contain" />}
       <div className="relative z-10 h-full w-full">
         <div className="rounded-xl px-2 pt-4">
           <h3 className="max-w-[300px] text-2xl font-semibold">{item.title}</h3>
           {item.body && <p className="mt-2 text-base leading-tight opacity-90">{item.body}</p>}
-
-          {item.features && (
-            <div className="mt-4">
-              <h4 className="mb-2 text-base font-medium opacity-80">Key Features:</h4>
-              <ul className="space-y-1">
-                {item.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start text-base leading-tight opacity-75">
-                    <span className="mt-2 mr-2 inline-block h-1 w-1 flex-shrink-0 rounded-full bg-current" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          <div className="mt-6">
+          <div className="mt-4">
             <Link
               href={item.href || '#'}
               target={item.href?.startsWith('http') ? '_blank' : undefined}
