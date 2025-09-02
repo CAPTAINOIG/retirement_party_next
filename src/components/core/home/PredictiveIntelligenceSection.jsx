@@ -1,108 +1,145 @@
 import { Button, Chip } from '@heroui/react';
-import { motion, useInView, useScroll, useTransform } from 'motion/react';
-import { useRef } from 'react';
+import { motion, useInView, useScroll } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
 import { TbChevronRight } from 'react-icons/tb';
 import { PREDICT_URL } from '@/lib/constants';
 
+const sections = [
+  {
+    id: 'market-predictions',
+    title: 'Predicting the future of Africa',
+    description:
+      'Harness advanced predictive models to anticipate market movements and economic shifts across the continent, empowering strategic decision-making.',
+    image: '/images/predict-mockup.png',
+    alt: 'Predict mockup',
+  },
+  {
+    id: 'stock-trading',
+    title: 'AI-powered stock market trading',
+    description:
+      'Leverage machine learning algorithms to identify profitable trading opportunities, analyze market patterns, and execute data-driven investment strategies across African stock exchanges.',
+    image: '/images/predict-mockup-stock.png',
+    alt: 'Stock trading predictions mockup',
+  },
+];
+
 const PredictiveIntelligenceSection = () => {
   const sectionRef = useRef(null);
+  const rightSectionRef = useRef(null);
+  const [activeSection, setActiveSection] = useState(0);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start 80%', 'end 20%'],
+    target: rightSectionRef,
+    offset: ['start center', 'end center'],
   });
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.5, 1], [20, 0, -20]);
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on('change', (latest) => {
+      const sectionIndex = Math.floor(latest * sections.length);
+      const clampedIndex = Math.min(sectionIndex, sections.length - 1);
+      setActiveSection(clampedIndex);
+    });
+
+    return () => unsubscribe();
+  }, [scrollYProgress]);
 
   return (
-    <motion.div
-      ref={sectionRef}
-      className="dark relative flex min-h-screen items-center overflow-clip bg-black text-white md:py-40"
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
-    >
-      <div className="container grid h-full grid-cols-2 items-center gap-20">
-        <motion.div
-          style={{ opacity, y }}
-          className="max-w-xl"
-          initial={{ opacity: 0, y: 60 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.1,
-            ease: 'easeOut',
-          }}
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{
-              duration: 0.6,
-              delay: 0.1,
-              ease: 'easeOut',
-            }}
-          >
-            <Chip variant="flat" size="lg" className="mb-6">
-              Predictive Intelligence
-            </Chip>
-          </motion.div>
-          <motion.h2
-            className="text-8xl !leading-[0.9] font-semibold"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{
-              duration: 0.6,
-              delay: 0.3,
-              ease: 'easeOut',
-            }}
-          >
-            Predicting the future of Africa
-          </motion.h2>
-          <motion.p
-            className="mt-4 text-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{
-              duration: 0.6,
-              delay: 0.5,
-              ease: 'easeOut',
-            }}
-          >
-            Harness advanced predictive models to anticipate market movements and economic shifts across the continent,
-            empowering strategic decision-making.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{
-              duration: 0.6,
-              delay: 0.7,
-              ease: 'easeOut',
-            }}
-          >
-            <Button
-              endContent={<TbChevronRight size="20" />}
-              size="lg"
-              variant="solid"
-              color="primary"
-              radius="full"
-              className="mt-8 transition-transform hover:scale-105"
-              href={PREDICT_URL}
+    <div>
+      <motion.div
+        ref={sectionRef}
+        className="dark relative min-h-[200vh] overflow-clip bg-black py-20 text-white"
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
+        <div className="container grid h-full grid-cols-2 gap-0">
+          {/* Sticky Left Section */}
+          <div className="sticky top-0 flex h-screen items-center">
+            <motion.div
+              className="max-w-xl"
+              initial={{ opacity: 0, y: 60 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+              transition={{
+                duration: 0.8,
+                ease: 'easeOut',
+              }}
             >
-              Get started
-            </Button>
-          </motion.div>
-        </motion.div>
-        <div className="relative">
-          <div className="flex w-full justify-center">
-            {/* <PredictIllustration isActive={isInView} isParentInView={isInView} /> */}
-            <img src="/images/predict-mockup.png" alt="Predict mockup" className="w-[400px]" />
+              {/* Fixed Predictive Intelligence Chip */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.1,
+                  ease: 'easeOut',
+                }}
+              >
+                <Chip variant="flat" size="lg" className="mb-6">
+                  Predictive Intelligence
+                </Chip>
+              </motion.div>
+
+              {/* Dynamic h2 and paragraph based on active section */}
+              <motion.div
+                key={activeSection}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+              >
+                <h2 className="text-8xl !leading-[0.9] font-semibold">{sections[activeSection].title}</h2>
+                <p className="mt-4 text-xl">{sections[activeSection].description}</p>
+              </motion.div>
+
+              {/* Fixed Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.6,
+                  ease: 'easeOut',
+                }}
+              >
+                <Button
+                  endContent={<TbChevronRight size="20" />}
+                  size="lg"
+                  variant="solid"
+                  color="primary"
+                  radius="full"
+                  className="mt-8 transition-transform hover:scale-105"
+                  href={PREDICT_URL}
+                >
+                  Get started
+                </Button>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Scrolling Right Section */}
+          <div ref={rightSectionRef} className="flex flex-col">
+            {sections.map((section, index) => (
+              <div key={section.id} className="flex h-screen items-center">
+                <div className="relative w-full">
+                  <div className="flex w-full justify-center">
+                    <motion.img
+                      src={section.image}
+                      alt={section.alt}
+                      className="w-[400px]"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={
+                        activeSection === index && isInView ? { opacity: 1, scale: 1 } : { opacity: 0.3, scale: 0.9 }
+                      }
+                      transition={{ duration: 0.5, ease: 'easeOut' }}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 
