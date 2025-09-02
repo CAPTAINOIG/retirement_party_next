@@ -4,22 +4,20 @@ import { useRef, useState, useEffect } from 'react';
 import { TbChevronRight } from 'react-icons/tb';
 import { MARKET_URL } from '@/lib/constants';
 import MarketIndicesIllustration from '@/components/core/home/MarketIndicesIllustration';
-import PopularStocksIllustration from '@/components/core/home/PopularStocksIllustration';
+import ExpertAnalystsIllustration from '@/components/core/home/ExpertAnalystsIllustration';
 
 const sections = [
   {
     id: 'indices',
-    title: 'Track popular market indices',
-    description:
-      'Monitor key market indices across Africa and globally. Get real-time data on major exchanges including Nigeria Stock Exchange (NGX), JSE, and international markets.',
+    title: 'AI-powered analytics for 20+ global markets',
+    description: `Monitor key market indices across Africa and globally. Get real-time data on major exchanges including Nigeria Stock Exchange (NGX), JSE, and international markets.`,
     component: MarketIndicesIllustration,
   },
   {
-    id: 'stocks',
-    title: 'Analyze popular stocks',
-    description:
-      'Access comprehensive stock analysis for top-performing companies. Track price movements, market trends, and get AI-powered insights for informed investment decisions.',
-    component: PopularStocksIllustration,
+    id: 'analysts',
+    title: 'Agentic AI for market insight',
+    description: `We have created sector focused AI agents to provide insights on market on the go.`,
+    component: ExpertAnalystsIllustration,
   },
 ];
 

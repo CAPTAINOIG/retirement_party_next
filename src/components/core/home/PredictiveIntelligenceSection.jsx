@@ -7,17 +7,15 @@ import { PREDICT_URL } from '@/lib/constants';
 const sections = [
   {
     id: 'market-predictions',
-    title: 'Predicting the future of Africa',
-    description:
-      'Harness advanced predictive models to anticipate market movements and economic shifts across the continent, empowering strategic decision-making.',
+    title: 'AI-powered prediction marketplace',
+    description: `PI is a data expression that creates an extensive and diverse dataset to create predictive outcomes that users can trade on`,
     image: '/images/predict-mockup.png',
     alt: 'Predict mockup',
   },
   {
     id: 'stock-trading',
-    title: 'AI-powered stock market trading',
-    description:
-      'Leverage machine learning algorithms to identify profitable trading opportunities, analyze market patterns, and execute data-driven investment strategies across African stock exchanges.',
+    title: 'Stocks prediction trading simplified',
+    description: `PI transforms end-of-day stock trading outcomes into a prediction exchange`,
     image: '/images/predict-mockup-stock.png',
     alt: 'Stock trading predictions mockup',
   },
