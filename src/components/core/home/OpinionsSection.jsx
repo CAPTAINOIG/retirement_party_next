@@ -60,7 +60,7 @@ const OpinionsSection = () => {
               ease: 'easeOut',
             }}
           >
-            AI-curated insights at your fingertips
+            Providing data context to public opinions
           </motion.h2>
           <motion.p
             className="mt-4 text-xl"
@@ -72,8 +72,7 @@ const OpinionsSection = () => {
               ease: 'easeOut',
             }}
           >
-            Stay ahead with intelligent news summaries, data visualizations, and market reports that distill complex
-            information into clear, actionable insights for better decision-making.
+            Our opinions platform uses AI to provide data context to comments of public figures globally
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
