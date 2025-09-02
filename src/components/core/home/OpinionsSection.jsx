@@ -1,4 +1,4 @@
-import { Button } from '@heroui/react';
+import { Button, Chip } from '@heroui/react';
 import { motion, useInView, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { TbChevronRight } from 'react-icons/tb';
@@ -36,6 +36,20 @@ const OpinionsSection = () => {
             ease: 'easeOut',
           }}
         >
+          {/* Fixed Market Intelligence Chip */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.1,
+              ease: 'easeOut',
+            }}
+          >
+            <Chip variant="flat" size="lg" className="mb-6 h-auto px-4 py-2 text-2xl">
+              Opinions
+            </Chip>
+          </motion.div>
           <motion.h2
             className="text-8xl !leading-[0.9] font-semibold"
             initial={{ opacity: 0, y: 30 }}

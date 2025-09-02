@@ -73,8 +73,8 @@ const PredictiveIntelligenceSection = () => {
                   ease: 'easeOut',
                 }}
               >
-                <Chip variant="flat" size="lg" className="mb-6">
-                  Predictive Intelligence
+                <Chip variant="flat" size="lg" className="mb-6 h-auto px-4 py-2 text-2xl">
+                  Immortal PI
                 </Chip>
               </motion.div>
 

@@ -72,8 +72,8 @@ const MarketIntelligenceSection = () => {
                 ease: 'easeOut',
               }}
             >
-              <Chip variant="flat" size="lg" className="mb-6">
-                Market Intelligence
+              <Chip variant="flat" size="lg" className="mb-6 h-auto px-4 py-2 text-2xl">
+                Immortal MI
               </Chip>
             </motion.div>
 
