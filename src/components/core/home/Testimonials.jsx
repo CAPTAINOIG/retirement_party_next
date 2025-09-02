@@ -59,31 +59,31 @@ At the end Nigeria wins👌
 
 const Testimonials = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   return (
     <section ref={sectionRef} id="testimonials" className="relative py-28 md:pt-48 md:pb-28">
       {/* Heading in a centered container */}
       <div className="container sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="!xl:mt-0 mx-auto flex max-w-4xl flex-col md:items-center md:text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-4xl font-semibold tracking-tighter md:text-8xl"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
-            With over 3 billion <br className="block md:hidden" /> data impressions
+            With over 3 billion <br className="block md:hidden" /> opinion impressions
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="mt-6 text-lg tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
           >
             We are loved by businesses, consumers and governments across Africa
           </motion.p>
@@ -91,11 +91,11 @@ const Testimonials = () => {
       </div>
 
       {/* Full-bleed carousel */}
-      <motion.div 
+      <motion.div
         className="relative mt-16 w-full"
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
       >
         <div className="relative pb-16">
           <Swiper
@@ -119,11 +119,11 @@ const Testimonials = () => {
             ))}
           </Swiper>
 
-          <motion.div 
+          <motion.div
             className="pointer-events-auto z-10 mt-10 flex items-center justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
           >
             <button
               aria-label="Previous testimonials"
