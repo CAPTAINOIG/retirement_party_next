@@ -1,11 +1,13 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { Button } from '@heroui/react';
-import { IMMORTAL_URL, MARKET_URL, PREDICT_URL } from '@/lib/constants';
+import { Button, useDisclosure } from '@heroui/react';
+import { IMMORTAL_URL, PREDICT_URL } from '@/lib/constants';
+import MarketWaitlistModal from '@/components/core/shared/MarketWaitlistModal';
 
 const BigIdeas = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
 
   return (
     <div ref={sectionRef} className="dark relative w-full overflow-hidden bg-black text-white md:pt-32 md:pb-40">
@@ -158,11 +160,11 @@ const BigIdeas = () => {
                 </div>
               </div>
             </div>
-            <a href={MARKET_URL} target="_blank" className="mt-auto flex">
-              <Button variant="flat" radius="full" className="mt-6">
-                Learn more
+            <div className="mt-auto flex">
+              <Button variant="flat" radius="full" className="mt-6" onPress={onGetStartedOpen}>
+                Join waitlist
               </Button>
-            </a>
+            </div>
           </motion.div>
           <motion.div
             className="relative flex flex-col rounded-2xl bg-[#6C56C3] p-4 px-10 py-8"
@@ -220,6 +222,7 @@ const BigIdeas = () => {
           </motion.div>
         </div>
       </div>
+      <MarketWaitlistModal isOpen={isGetStartedOpen} onClose={onGetStartedClose} />
     </div>
   );
 };

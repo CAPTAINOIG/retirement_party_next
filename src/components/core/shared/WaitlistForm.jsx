@@ -3,7 +3,7 @@ import WaitlistEmailRegistrationForm from './WaitlistEmailRegistrationForm';
 import WaitlistWhatsAppOptInForm from './WaitlistWhatsAppOptInForm';
 import WaitlistRegistrationSuccessView from './WaitlistRegistrationSuccessView';
 
-const JoinWaitlistForm = ({ onDone }) => {
+const WaitlistForm = ({ onDone }) => {
   const [currentView, setCurrentView] = useState('email-registration');
   const [subscriberId, setSubscriberId] = useState(null);
 
@@ -37,4 +37,4 @@ const JoinWaitlistForm = ({ onDone }) => {
   );
 };
 
-export default JoinWaitlistForm;
+export default WaitlistForm;

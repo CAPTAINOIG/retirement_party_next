@@ -3,11 +3,11 @@ import { useWindowSize } from 'react-use';
 import { motion } from 'motion/react';
 import ImmortalCard from '@/components/core/shared/ImmortalCard';
 import { Button, useDisclosure } from '@heroui/react';
-import JoinWaitlistModal from '@/components/core/shared/JoinWaitlistModal';
+import GetStartedModal from '@/components/core/shared/GetStartedModal';
 
 const Immortal = () => {
   const { width } = useWindowSize();
-  const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
+  const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
 
   let textVariant = {};
   if (width < 768) {
@@ -46,14 +46,14 @@ const Immortal = () => {
             color="primary"
             className="mt-8 bg-blue-600 px-8 text-base text-white hover:bg-blue-700"
             radius="full"
-            onPress={onWaitListOpen}
+            onPress={onGetStartedOpen}
           >
             Get started
           </Button>
         </div>
       </div>
 
-      <JoinWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
+      <GetStartedModal isOpen={isGetStartedOpen} onClose={onGetStartedClose} />
     </div>
   );
 };

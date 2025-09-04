@@ -5,11 +5,11 @@ import { useWindowSize } from 'react-use';
 import HeroIllustration from '@/components/core/home/HeroIllustration';
 import { Button, useDisclosure } from '@heroui/react';
 import { TbChevronRight } from 'react-icons/tb';
-import JoinWaitlistModal from '@/components/core/shared/JoinWaitlistModal';
+import GetStartedModal from '@/components/core/shared/GetStartedModal';
 
 const Hero = () => {
   const { width } = useWindowSize();
-  const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
+  const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
   const heroRef = useRef(null);
   const isInView = useInView(heroRef, { once: true, margin: '-100px' });
 
@@ -65,7 +65,7 @@ const Hero = () => {
                 size="lg"
                 className="mt-12 px-8 transition-transform hover:scale-105"
                 radius="full"
-                onPress={onWaitListOpen}
+                onPress={onGetStartedOpen}
                 color="primary"
                 endContent={<TbChevronRight size="20" />}
               >
@@ -86,7 +86,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <JoinWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
+      <GetStartedModal isOpen={isGetStartedOpen} onClose={onGetStartedClose} />
     </div>
   );
 };

@@ -3,7 +3,9 @@ import { IconBrandFacebook, IconBrandInstagram, IconBrandX, IconMail } from '@ta
 import React from 'react';
 import Logo from '@/components/core/shared/Logo';
 import { useTheme } from 'next-themes';
-import { IMMORTAL_URL, MARKET_URL, OPINIONS_URL, PREDICT_URL } from '@/lib/constants';
+import { useDisclosure } from '@heroui/react';
+import { IMMORTAL_URL, OPINIONS_URL, PREDICT_URL } from '@/lib/constants';
+import MarketWaitlistModal from '@/components/core/shared/MarketWaitlistModal';
 
 const products = [
   {
@@ -19,7 +21,8 @@ const products = [
   {
     name: 'Market intelligence',
     slug: 'market-intelligence',
-    link: MARKET_URL,
+    link: null,
+    isModal: true,
   },
   {
     name: 'Opinions',
@@ -30,6 +33,7 @@ const products = [
 
 const Footer = () => {
   const { resolvedTheme: theme } = useTheme();
+  const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
 
   return (
     <footer className="py-20">
@@ -52,9 +56,19 @@ const Footer = () => {
             <h6 className="font-bold">Products</h6>
             <div className="mt-6 flex flex-col space-y-4">
               {products.map((p) => (
-                <Link key={p.slug} href={p.link} className="hover:text-primary-700">
-                  {p.name}
-                </Link>
+                p.isModal ? (
+                  <button
+                    key={p.slug}
+                    onClick={onGetStartedOpen}
+                    className="text-left hover:text-primary-700"
+                  >
+                    {p.name}
+                  </button>
+                ) : (
+                  <Link key={p.slug} href={p.link} className="hover:text-primary-700">
+                    {p.name}
+                  </Link>
+                )
               ))}
             </div>
           </div>
@@ -125,6 +139,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <MarketWaitlistModal isOpen={isGetStartedOpen} onClose={onGetStartedClose} />
     </footer>
   );
 };

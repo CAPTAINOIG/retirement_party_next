@@ -1,8 +1,8 @@
-import { Button, Chip } from '@heroui/react';
+import { Button, Chip, useDisclosure } from '@heroui/react';
 import { motion, useScroll, useInView } from 'motion/react';
 import { useRef, useState, useEffect } from 'react';
 import { TbChevronRight } from 'react-icons/tb';
-import { MARKET_URL } from '@/lib/constants';
+import MarketWaitlistModal from '@/components/core/shared/MarketWaitlistModal';
 import MarketIndicesIllustration from '@/components/core/home/MarketIndicesIllustration';
 import ExpertAnalystsIllustration from '@/components/core/home/ExpertAnalystsIllustration';
 
@@ -26,6 +26,7 @@ const MarketIntelligenceSection = () => {
   const rightSectionRef = useRef(null);
   const [activeSection, setActiveSection] = useState(0);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
 
   const { scrollYProgress } = useScroll({
     target: rightSectionRef,
@@ -105,9 +106,9 @@ const MarketIntelligenceSection = () => {
                 color="primary"
                 radius="full"
                 className="mt-8 transition-transform hover:scale-105"
-                href={MARKET_URL}
+                onPress={onGetStartedOpen}
               >
-                Get started
+                Join waitlist
               </Button>
             </motion.div>
           </motion.div>
@@ -129,6 +130,7 @@ const MarketIntelligenceSection = () => {
           })}
         </div>
       </div>
+      <MarketWaitlistModal isOpen={isGetStartedOpen} onClose={onGetStartedClose} />
     </motion.div>
   );
 };

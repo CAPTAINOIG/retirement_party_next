@@ -3,7 +3,9 @@ import Link from 'next/link';
 import { TbArrowRight, TbChevronDown } from 'react-icons/tb';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
-import { IMMORTAL_URL, MARKET_URL, OPINIONS_URL, PREDICT_URL } from '@/lib/constants';
+import { useDisclosure } from '@heroui/react';
+import { IMMORTAL_URL, OPINIONS_URL, PREDICT_URL } from '@/lib/constants';
+import MarketWaitlistModal from '@/components/core/shared/MarketWaitlistModal';
 
 const items = [
   {
@@ -47,9 +49,10 @@ const items = [
       'Risk assessment and mitigation strategies',
       'Competitive landscape analysis',
     ],
-    href: MARKET_URL,
+    href: null,
     slug: 'market-intelligence',
     image: '/images/mi.png',
+    isModal: true,
   },
   {
     name: 'Opinions',
@@ -72,6 +75,7 @@ const MegaDropdown = ({ label, align = 'right' }) => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const wrapperRef = useRef(null);
+  const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
 
   useEffect(() => {
     const onKey = (e) => {
@@ -161,7 +165,7 @@ const MegaDropdown = ({ label, align = 'right' }) => {
                 </div>
                 <div className="relative">
                   <AnimatePresence mode="wait">
-                    <HighlightCard key={items[active]?.name || active} item={items[active]} />
+                    <HighlightCard key={items[active]?.name || active} item={items[active]} onGetStartedOpen={onGetStartedOpen} />
                   </AnimatePresence>
                 </div>
               </div>
@@ -169,11 +173,12 @@ const MegaDropdown = ({ label, align = 'right' }) => {
           </motion.div>
         )}
       </AnimatePresence>
+      <MarketWaitlistModal isOpen={isGetStartedOpen} onClose={onGetStartedClose} />
     </div>
   );
 };
 
-const HighlightCard = ({ item }) => {
+const HighlightCard = ({ item, onGetStartedOpen }) => {
   if (!item) return null;
   return (
     <motion.div
@@ -189,13 +194,22 @@ const HighlightCard = ({ item }) => {
           <h3 className="max-w-[300px] text-2xl font-semibold">{item.title}</h3>
           {item.body && <p className="mt-2 text-base leading-tight opacity-90">{item.body}</p>}
           <div className="mt-4">
-            <Link
-              href={item.href || '#'}
-              target={item.href?.startsWith('http') ? '_blank' : undefined}
-              className="bg-default-200 hover:bg-default-300 mt-1 inline-flex items-center gap-1 rounded-full px-4 py-1.5 font-medium transition-colors"
-            >
-              Learn more <TbArrowRight className="h-4 w-4" />
-            </Link>
+            {item.isModal ? (
+              <button
+                onClick={onGetStartedOpen}
+                className="bg-default-200 hover:bg-default-300 mt-1 inline-flex items-center gap-1 rounded-full px-4 py-1.5 font-medium transition-colors"
+              >
+                Join waitlist <TbArrowRight className="h-4 w-4" />
+              </button>
+            ) : (
+              <Link
+                href={item.href || '#'}
+                target={item.href?.startsWith('http') ? '_blank' : undefined}
+                className="bg-default-200 hover:bg-default-300 mt-1 inline-flex items-center gap-1 rounded-full px-4 py-1.5 font-medium transition-colors"
+              >
+                Learn more <TbArrowRight className="h-4 w-4" />
+              </Link>
+            )}
           </div>
         </div>
       </div>

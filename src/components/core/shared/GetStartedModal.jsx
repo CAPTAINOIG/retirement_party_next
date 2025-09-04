@@ -26,10 +26,10 @@ const products = [
   },
   {
     name: 'Market intelligence',
-    title: `Navigate African markets with precision`,
-    body: `Access comprehensive market analysis powered by AI to identify opportunities, assess risks, and make informed investment decisions across emerging African economies.`,
+    title: `Coming soon - Join the waitlist`,
+    body: `Be the first to access comprehensive market analysis powered by AI. Join our waitlist to get early access to tools that identify opportunities, assess risks, and inform investment decisions across emerging African economies.`,
     image: '/images/mi.png',
-    link: MARKET_URL,
+    link: null,
     icon: HiGlobeAlt,
     gradient: 'from-purple-500 to-pink-500',
   },
@@ -44,7 +44,7 @@ const products = [
   },
 ];
 
-const JoinWaitlistModal = ({ isOpen, onClose }) => {
+const GetStartedModal = ({ isOpen, onClose }) => {
   const handleClose = () => {
     onClose();
   };
@@ -123,4 +123,4 @@ const JoinWaitlistModal = ({ isOpen, onClose }) => {
   );
 };
 
-export default JoinWaitlistModal;
+export default GetStartedModal;

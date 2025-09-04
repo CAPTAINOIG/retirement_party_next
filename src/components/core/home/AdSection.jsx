@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button, useDisclosure } from '@heroui/react';
-import JoinWaitlistModal from '@/components/core/shared/JoinWaitlistModal';
+import GetStartedModal from '@/components/core/shared/GetStartedModal';
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 
 const AdSection = () => {
-  const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
+  const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
@@ -42,7 +42,7 @@ const AdSection = () => {
               size="lg"
               className="mt-12 bg-white text-black hover:bg-white/90 transition-transform hover:scale-105"
               radius="full"
-              onPress={onWaitListOpen}
+              onPress={onGetStartedOpen}
             >
               Get started
             </Button>
@@ -50,7 +50,7 @@ const AdSection = () => {
         </div>
       </motion.div>
 
-      <JoinWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
+      <GetStartedModal isOpen={isGetStartedOpen} onClose={onGetStartedClose} />
     </div>
   );
 };

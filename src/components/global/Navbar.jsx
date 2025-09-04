@@ -7,14 +7,14 @@ import MobileNav from '@/components/core/MobileNav';
 import { cn } from '@/lib/utils';
 import UserDropdown from '@/components/core/shared/UserDropdown';
 import { Button, useDisclosure } from '@heroui/react';
-import JoinWaitlistModal from '@/components/core/shared/JoinWaitlistModal';
+import GetStartedModal from '@/components/core/shared/GetStartedModal';
 import ThemeToggle from '@/components/core/shared/ThemeToggle';
 import MegaDropdown from '@/components/core/shared/MegaDropdown';
 
 const Navbar = () => {
   const { resolved, authenticated } = useAuth();
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
-  const { isOpen: isWaitListOpen, onOpen: onWaitListOpen, onClose: onWaitListClose } = useDisclosure();
+  const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
 
   return (
     <>
@@ -37,7 +37,7 @@ const Navbar = () => {
                   <>
                     {!authenticated ? (
                       <>
-                        <Button variant="flat" radius="full" className="px-4 text-base" onPress={onWaitListOpen}>
+                        <Button variant="flat" radius="full" className="px-4 text-base" onPress={onGetStartedOpen}>
                           Sign in
                         </Button>
                         <Button
@@ -45,7 +45,7 @@ const Navbar = () => {
                           color="primary"
                           radius="full"
                           className="px-4 text-base"
-                          onPress={onWaitListOpen}
+                          onPress={onGetStartedOpen}
                         >
                           Get started
                         </Button>
@@ -77,7 +77,7 @@ const Navbar = () => {
       </header>
 
       <MobileNav isOpen={isMobileNavVisible} onClose={() => setIsMobileNavVisible(false)} />
-      <JoinWaitlistModal isOpen={isWaitListOpen} onClose={onWaitListClose} />
+      <GetStartedModal isOpen={isGetStartedOpen} onClose={onGetStartedClose} />
     </>
   );
 };
