@@ -2,7 +2,7 @@ import CustomModal from '@/components/global/CustomModal';
 import { Card } from '@heroui/react';
 import { motion } from 'motion/react';
 import CountryFlag from '@/components/global/CountryFlag';
-import { IMMORTAL_URL, MARKET_URL, OPINIONS_URL, PREDICT_URL } from '@/lib/constants';
+import { IMMORTAL_URL, OPINIONS_URL, PREDICT_URL } from '@/lib/constants';
 import { HiArrowTrendingUp, HiChartPie, HiGlobeAlt, HiNewspaper } from 'react-icons/hi2';
 
 const products = [
@@ -98,22 +98,43 @@ const GetStartedModal = ({ isOpen, onClose }) => {
                 transition={{ duration: 0.3, delay: products.indexOf(product) * 0.1 }}
                 className="cursor-pointer"
               >
-                <Card
-                  className="bg-default-100 hover:bg-default-200/50 h-full rounded-3xl px-8 py-8 transition-all duration-300"
-                  shadow="none"
-                >
-                  <div className="flex h-full flex-col">
-                    <div
-                      className={`h-12 w-12 rounded-full bg-gradient-to-r ${product.gradient} mb-4 flex items-center justify-center`}
+                {product.link ? (
+                  <a href={product.link} target="_blank" rel="noopener noreferrer">
+                    <Card
+                      className="bg-default-100 hover:bg-default-200/50 h-full rounded-3xl px-8 py-8 transition-all duration-300"
+                      shadow="none"
                     >
-                      <IconComponent size="30" className="text-white" />
+                      <div className="flex h-full flex-col">
+                        <div
+                          className={`h-12 w-12 rounded-full bg-gradient-to-r ${product.gradient} mb-4 flex items-center justify-center`}
+                        >
+                          <IconComponent size="30" className="text-white" />
+                        </div>
+                        <h3 className="text-foreground mb-2 text-lg leading-tight font-semibold capitalize">
+                          {product.name}
+                        </h3>
+                        <p className="text-foreground/70 text-md flex-1 leading-tight">{product.title}</p>
+                      </div>
+                    </Card>
+                  </a>
+                ) : (
+                  <Card
+                    className="bg-default-100 hover:bg-default-200/50 h-full rounded-3xl px-8 py-8 opacity-60 transition-all duration-300"
+                    shadow="none"
+                  >
+                    <div className="flex h-full flex-col">
+                      <div
+                        className={`h-12 w-12 rounded-full bg-gradient-to-r ${product.gradient} mb-4 flex items-center justify-center`}
+                      >
+                        <IconComponent size="30" className="text-white" />
+                      </div>
+                      <h3 className="text-foreground mb-2 text-lg leading-tight font-semibold capitalize">
+                        {product.name}
+                      </h3>
+                      <p className="text-foreground/70 text-md flex-1 leading-tight">{product.title}</p>
                     </div>
-                    <h3 className="text-foreground mb-2 text-lg leading-tight font-semibold capitalize">
-                      {product.name}
-                    </h3>
-                    <p className="text-foreground/70 text-md flex-1 leading-tight">{product.title}</p>
-                  </div>
-                </Card>
+                  </Card>
+                )}
               </motion.div>
             );
           })}

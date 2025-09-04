@@ -99,17 +99,18 @@ const PredictiveIntelligenceSection = () => {
                   ease: 'easeOut',
                 }}
               >
-                <Button
-                  endContent={<TbChevronRight size="20" />}
-                  size="lg"
-                  variant="solid"
-                  color="primary"
-                  radius="full"
-                  className="mt-8 transition-transform hover:scale-105"
-                  href={PREDICT_URL}
-                >
-                  Get started
-                </Button>
+                <a href={PREDICT_URL} target="_blank" rel="noopener noreferrer" className="inline-block">
+                  <Button
+                    endContent={<TbChevronRight size="20" />}
+                    size="lg"
+                    variant="solid"
+                    color="primary"
+                    radius="full"
+                    className="mt-8 transition-transform hover:scale-105"
+                  >
+                    Get started
+                  </Button>
+                </a>
               </motion.div>
             </motion.div>
           </div>
