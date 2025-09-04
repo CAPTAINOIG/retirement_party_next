@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import CountryFlag from '@/components/global/CountryFlag';
 import { Card } from '@heroui/react';
-import JoinWaitlistForm from '@/components/core/shared/JoinWaitlistForm';
+import WaitlistForm from '@/components/core/shared/WaitlistForm';
 import Logo from '@/components/core/shared/Logo';
 import TextLoop from '@/components/global/TextLoop';
 import { useTheme } from 'next-themes';
@@ -45,7 +45,7 @@ const AdLandingContent = () => {
             </TextLoop>
           </h1>
           <Card className="mt-8 mb-6 rounded-2xl px-8 py-8 lg:hidden lg:px-12 lg:py-10">
-            <JoinWaitlistForm />
+            <WaitlistForm />
           </Card>
           <p className="mt-4 text-lg leading-snug opacity-70 md:mt-10 lg:max-w-[70%] lg:text-xl">
             Unlock Africa's market potential with real-time data intelligence. Get early access to insights that drive
@@ -73,7 +73,7 @@ const AdLandingContent = () => {
           </motion.div>
         </div>
         <Card className="hidden rounded-2xl px-10 py-8 lg:block lg:px-12 lg:py-10">
-          <JoinWaitlistForm />
+          <WaitlistForm />
         </Card>
       </div>
     </>
