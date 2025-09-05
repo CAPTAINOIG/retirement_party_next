@@ -54,7 +54,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
               className="text-default-500 mt-6 max-w-xl text-xl tracking-tight"
             >
-              We are building the rails that connects intelligence to Africa's data accross multiple ecosystems
+              We are building the AI rails that connects intelligence to Africa's data
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
