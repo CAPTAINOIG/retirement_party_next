@@ -55,7 +55,7 @@ const UseCaseCard = ({ useCase, index, isActive, isParentInView }) => (
     initial={{ opacity: 0, y: 20 }}
     animate={isActive && isParentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
     transition={{ duration: 0.3, delay: index * 0.05 + 0.1, ease: 'easeOut' }}
-    className="p-4"
+    className="mb-5 p-4"
   >
     <div className={`inline-flex rounded-full bg-gradient-to-r p-2 ${useCase.color} mb-4 text-white`}>
       {useCase.icon}
@@ -71,7 +71,7 @@ const UseCasesIllustration = ({ isActive, isParentInView }) => {
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       animate={isActive && isParentInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="bg-default-100 dark:bg-default-50 rounded-3xl p-8 overflow-hidden"
+      className="bg-default-100 dark:bg-default-50 overflow-hidden rounded-3xl p-8"
     >
       {/* Desktop Grid */}
       <div className="hidden lg:block">
@@ -112,12 +112,7 @@ const UseCasesIllustration = ({ isActive, isParentInView }) => {
         >
           {useCases.map((useCase, index) => (
             <SwiperSlide key={useCase.title}>
-              <UseCaseCard
-                useCase={useCase}
-                index={index}
-                isActive={isActive}
-                isParentInView={isParentInView}
-              />
+              <UseCaseCard useCase={useCase} index={index} isActive={isActive} isParentInView={isParentInView} />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -88,7 +88,7 @@ const SourceCard = ({ source, index, isActive, isParentInView }) => (
     initial={{ opacity: 0, y: 20 }}
     animate={isActive && isParentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
     transition={{ duration: 0.3, delay: index * 0.05 + 0.1, ease: 'easeOut' }}
-    className="p-4"
+    className="mb-5 p-4"
   >
     <div className={`inline-flex rounded-full bg-gradient-to-r p-2 ${source.color} mb-4 text-white`}>{source.icon}</div>
     <h4 className="mb-1 text-lg leading-tight font-bold">{source.title}</h4>
