@@ -68,7 +68,7 @@ const BiIllustration = ({ isActive, isParentInView }) => {
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       animate={isActive && isParentInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
-      className="bg-default-100 dark:bg-default-50 rounded-3xl p-8"
+      className="bg-default-100 dark:bg-default-50 rounded-3xl p-8 overflow-hidden"
     >
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {sources.map((source, index) => (

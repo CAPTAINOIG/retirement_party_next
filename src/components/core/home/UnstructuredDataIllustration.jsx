@@ -11,6 +11,10 @@ import {
   TbTrendingUp,
 } from 'react-icons/tb';
 import { FaChartLine } from 'react-icons/fa6';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const unstructuredSources = [
   {
@@ -79,30 +83,70 @@ const unstructuredSources = [
   },
 ];
 
+const SourceCard = ({ source, index, isActive, isParentInView }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={isActive && isParentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+    transition={{ duration: 0.3, delay: index * 0.05 + 0.1, ease: 'easeOut' }}
+    className="p-4"
+  >
+    <div className={`inline-flex rounded-full bg-gradient-to-r p-2 ${source.color} mb-4 text-white`}>{source.icon}</div>
+    <h4 className="mb-1 text-lg leading-tight font-bold">{source.title}</h4>
+    <p className="text-default-700 text-md line-clamp-2 leading-tight">{source.description}</p>
+  </motion.div>
+);
+
 const UnstructuredDataIllustration = ({ isActive, isParentInView }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       animate={isActive && isParentInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="bg-default-100 dark:bg-default-50 rounded-3xl p-8"
+      className="bg-default-100 dark:bg-default-50 overflow-hidden rounded-3xl p-8"
     >
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        {unstructuredSources.map((source, index) => (
-          <motion.div
-            key={source.title}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isActive && isParentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.3, delay: index * 0.05 + 0.1, ease: 'easeOut' }}
-            className="p-4"
-          >
-            <div className={`inline-flex rounded-full bg-gradient-to-r p-2 ${source.color} mb-4 text-white`}>
-              {source.icon}
-            </div>
-            <h4 className="mb-1 text-lg leading-tight font-bold">{source.title}</h4>
-            <p className="text-default-700 text-md line-clamp-2 leading-tight">{source.description}</p>
-          </motion.div>
-        ))}
+      {/* Desktop Grid */}
+      <div className="hidden lg:block">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {unstructuredSources.map((source, index) => (
+            <SourceCard
+              key={source.title}
+              source={source}
+              index={index}
+              isActive={isActive}
+              isParentInView={isParentInView}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Carousel */}
+      <div className="block lg:hidden">
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          spaceBetween={20}
+          slidesPerView={1}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+          }}
+          className="pb-12"
+        >
+          {unstructuredSources.map((source, index) => (
+            <SwiperSlide key={source.title}>
+              <SourceCard source={source} index={index} isActive={isActive} isParentInView={isParentInView} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </motion.div>
   );

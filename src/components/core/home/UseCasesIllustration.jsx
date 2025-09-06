@@ -1,5 +1,9 @@
 import { motion } from 'motion/react';
 import { TbBuilding, TbChartBar, TbCoin, TbCreditCard, TbTrendingUp, TbUsers } from 'react-icons/tb';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const useCases = [
   {
@@ -46,30 +50,77 @@ const useCases = [
   },
 ];
 
+const UseCaseCard = ({ useCase, index, isActive, isParentInView }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={isActive && isParentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+    transition={{ duration: 0.3, delay: index * 0.05 + 0.1, ease: 'easeOut' }}
+    className="p-4"
+  >
+    <div className={`inline-flex rounded-full bg-gradient-to-r p-2 ${useCase.color} mb-4 text-white`}>
+      {useCase.icon}
+    </div>
+    <h4 className="mb-1 text-lg leading-tight font-bold">{useCase.title}</h4>
+    <p className="text-default-700 text-md line-clamp-2 leading-tight">{useCase.description}</p>
+  </motion.div>
+);
+
 const UseCasesIllustration = ({ isActive, isParentInView }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       animate={isActive && isParentInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="bg-default-100 dark:bg-default-50 rounded-3xl p-8"
+      className="bg-default-100 dark:bg-default-50 rounded-3xl p-8 overflow-hidden"
     >
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        {useCases.map((useCase, index) => (
-          <motion.div
-            key={useCase.title}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isActive && isParentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.3, delay: index * 0.05 + 0.1, ease: 'easeOut' }}
-            className="p-4"
-          >
-            <div className={`inline-flex rounded-full bg-gradient-to-r p-2 ${useCase.color} mb-4 text-white`}>
-              {useCase.icon}
-            </div>
-            <h4 className="mb-1 text-lg leading-tight font-bold">{useCase.title}</h4>
-            <p className="text-default-700 text-md line-clamp-2 leading-tight">{useCase.description}</p>
-          </motion.div>
-        ))}
+      {/* Desktop Grid */}
+      <div className="hidden lg:block">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {useCases.map((useCase, index) => (
+            <UseCaseCard
+              key={useCase.title}
+              useCase={useCase}
+              index={index}
+              isActive={isActive}
+              isParentInView={isParentInView}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Carousel */}
+      <div className="block lg:hidden">
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          spaceBetween={20}
+          slidesPerView={1}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+          }}
+          className="pb-12"
+        >
+          {useCases.map((useCase, index) => (
+            <SwiperSlide key={useCase.title}>
+              <UseCaseCard
+                useCase={useCase}
+                index={index}
+                isActive={isActive}
+                isParentInView={isParentInView}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </motion.div>
   );
