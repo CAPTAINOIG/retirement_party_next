@@ -57,11 +57,10 @@ const GetStartedModal = ({ isOpen, onClose }) => {
       >
         <div className="order-1 lg:order-none">
           <h1 className="bg-linear-to-r from-green-600 to-blue-800 bg-clip-text text-[3.4rem] !leading-none font-bold tracking-tight text-transparent md:text-[5rem]">
-            Predicting Africa with AI
+            AI Powered Data Platforms for 5x scale
           </h1>
           <p className="mt-4 text-lg opacity-80 md:max-w-[70%] md:text-xl">
-            Join thousands of forward-thinking individuals and organizations who are already preparing for the future of
-            African data intelligence.
+            Join thousands of forward-thinking individuals and organizations creating the future with data intelligence.
           </p>
           <motion.div
             initial={{ opacity: 0, y: 120 }}
