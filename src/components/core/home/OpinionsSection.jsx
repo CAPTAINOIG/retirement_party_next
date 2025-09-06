@@ -42,7 +42,7 @@ const DesktopOpinionsSection = () => {
   return (
     <motion.div
       ref={sectionRef}
-      className="dark relative overflow-clip bg-black text-white"
+      className="dark relative w-full overflow-hidden bg-black text-white"
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -140,7 +140,7 @@ const MobileOpinionsSection = () => {
   return (
     <motion.div
       ref={sectionRef}
-      className="py-20"
+      className="overflow-hidden py-20"
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
