@@ -42,7 +42,7 @@ const DesktopOpinionsSection = () => {
   return (
     <motion.div
       ref={sectionRef}
-      className="relative overflow-clip"
+      className="dark relative overflow-clip bg-black text-white"
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -106,7 +106,7 @@ const DesktopOpinionsSection = () => {
                 as={Link}
                 target="_blank"
               >
-                Join waitlist
+                Get started
               </Button>
             </motion.div>
           </motion.div>
@@ -136,7 +136,6 @@ const DesktopOpinionsSection = () => {
 const MobileOpinionsSection = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
-  const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
 
   return (
     <motion.div
@@ -166,7 +165,7 @@ const MobileOpinionsSection = () => {
               ease: 'easeOut',
             }}
           >
-            <Chip variant="flat" size="lg" className="mb-6 h-auto px-4 py-2 text-xl">
+            <Chip variant="flat" size="lg" className="h-auto px-3 py-1">
               Opinions
             </Chip>
           </motion.div>
@@ -187,6 +186,10 @@ const MobileOpinionsSection = () => {
                 ease: 'easeOut',
               }}
             >
+              {/* Section Illustration */}
+              <div className="flex items-center justify-center">
+                <Component isActive={true} isParentInView={isInView} />
+              </div>
               {/* Section Content */}
               <div className="space-y-4 text-center">
                 <h2 className="px-4 text-4xl !leading-[0.9] font-semibold sm:text-5xl">{section.title}</h2>
@@ -218,7 +221,7 @@ const MobileOpinionsSection = () => {
             as={Link}
             target="_blank"
           >
-            Join waitlist
+            Get started
           </Button>
         </motion.div>
       </div>

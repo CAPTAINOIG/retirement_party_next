@@ -74,7 +74,7 @@ const DesktopPredictiveIntelligenceSection = () => {
               }}
             >
               <Chip variant="flat" size="lg" className="mb-6 h-auto px-4 py-2 text-2xl">
-                Predictive Intelligence
+                Immortal PI
               </Chip>
             </motion.div>
 
@@ -174,8 +174,8 @@ const MobilePredictiveIntelligenceSection = () => {
               ease: 'easeOut',
             }}
           >
-            <Chip variant="flat" size="lg" className="mb-6 h-auto px-4 py-2 text-xl">
-              Predictive Intelligence
+            <Chip variant="flat" size="lg" className="h-auto px-4 py-2">
+              Immortal PI
             </Chip>
           </motion.div>
         </motion.div>

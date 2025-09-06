@@ -7,30 +7,30 @@ import { motion } from 'motion/react';
 
 const OpinionsIllustration = ({ isActive, isParentInView }) => {
   return (
-    <motion.div 
+    <motion.div
       className="relative mx-auto rounded-2xl lg:block"
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       animate={isActive && isParentInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <motion.div 
-        className="w-[500px] rounded-2xl"
+      <motion.div
+        className="w-[300px] rounded-2xl md:w-[500px]"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={isActive && isParentInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
       >
         <ArticlesSlider />
       </motion.div>
-      <motion.div 
-        className="top-[5rem] left-[-5rem] z-1 h-[200px] w-[300px] lg:absolute"
+      <motion.div
+        className="absolute top-10 left-52 z-1 h-[200px] w-[300px] md:top-[5rem] md:left-[-5rem]"
         initial={{ opacity: 0, x: -30 }}
         animate={isActive && isParentInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
         transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
       >
         <Categories />
       </motion.div>
-      <motion.div 
-        className="top-[-2rem] -right-[1rem] z-[1] lg:absolute"
+      <motion.div
+        className="absolute top-48 left-40 z-[1] w-[260px] md:top-[-2rem] md:-right-[1rem]"
         initial={{ opacity: 0, x: 30 }}
         animate={isActive && isParentInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
         transition={{ duration: 0.6, delay: 0.6, ease: 'easeOut' }}
@@ -106,7 +106,7 @@ function ArticlesSlider() {
             </div>
           </div>
           <img
-            className="h-[200px] w-full object-cover"
+            className="h-[80px] w-full object-cover md:h-[200px]"
             src="https://statisense-dev.s3.amazonaws.com/insights/exploring-apples-vision-pro-a-glimpse-into-the-future-of-spatial-computing-cb8dd032-e45e-4371-a6e4-bf924ef49507"
             alt="Illustration"
           />
@@ -114,7 +114,7 @@ function ArticlesSlider() {
             <p className="text-md text-left font-[600] text-white">
               Exploring Apple's Vision Pro: A Glimpse into the Future of Spatial Computing
             </p>
-            <p className="text-left text-sm text-gray-400">
+            <p className="line-clamp-4 text-left text-sm text-gray-400 md:line-clamp-none">
               Apple's Vision Pro redefines spatial computing with its advanced features and sleek design, paving the way
               for transformative applications across diverse industries and shaping the future of human-computer
               interaction.
@@ -136,7 +136,7 @@ function ArticlesSlider() {
             </div>
           </div>
           <img
-            className="h-[200px] w-full object-cover"
+            className="h-[80px] w-full object-cover md:h-[200px]"
             src="https://statisense-dev.s3.amazonaws.com/insights/fintech-frenzy-mobile-money-madness-in-nigeria-83012810-7702-4aee-a77e-b84f9260aecb"
             alt="Illustration"
           />
@@ -166,7 +166,7 @@ function ArticlesSlider() {
             </div>
           </div>
           <img
-            className="h-[200px] w-full object-cover"
+            className="h-[80px] w-full object-cover md:h-[200px]"
             src="https://statisense-dev.s3.amazonaws.com/insights/link-reits-acquisition-of-qibao-vanke-plaza-a-strategic-real-estate-move-6209f25e-1462-4d38-911f-bcb46e43924e"
             alt="Illustration"
           />

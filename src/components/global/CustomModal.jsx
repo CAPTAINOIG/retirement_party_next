@@ -25,13 +25,13 @@ const CustomModal = ({ isOpen, onClose, width = 680, children, padding = true, i
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             className={cn(
-              'fixed inset-0 z-50 flex h-screen flex-col overflow-y-auto bg-black/80 dark:bg-black/80 dark:backdrop-blur-md lg:flex-row lg:justify-center',
+              'fixed inset-0 z-50 flex h-screen w-screen flex-col overflow-y-auto bg-black/80 lg:flex-row lg:justify-center dark:bg-black/80 dark:backdrop-blur-md',
               { 'px-4 py-4 md:py-10': padding }
             )}
           >
             <motion.div
               layout
-              className="sticky right-0 top-0 z-50 self-end px-4 py-4 md:py-10 lg:order-2 lg:self-auto lg:pl-6"
+              className="sticky top-0 right-0 z-50 self-end px-4 py-4 md:py-10 lg:order-2 lg:self-auto lg:pl-6"
             >
               {isCloseable && (
                 <Button onPress={onClose} isIconOnly color="danger" radius="full">

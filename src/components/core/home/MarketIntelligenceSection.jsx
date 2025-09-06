@@ -75,7 +75,7 @@ const DesktopMarketIntelligenceSection = () => {
               }}
             >
               <Chip variant="flat" size="lg" className="mb-6 h-auto px-4 py-2 text-2xl">
-                Market Intelligence
+                Immortal MI
               </Chip>
             </motion.div>
 
@@ -170,8 +170,8 @@ const MobileMarketIntelligenceSection = () => {
               ease: 'easeOut',
             }}
           >
-            <Chip variant="flat" size="lg" className="mb-6 h-auto px-4 py-2 text-xl">
-              Market Intelligence
+            <Chip variant="flat" size="lg" className="h-auto px-4 py-2">
+              Immortal MI
             </Chip>
           </motion.div>
         </motion.div>
@@ -192,19 +192,15 @@ const MobileMarketIntelligenceSection = () => {
               }}
             >
               {/* Section Illustration */}
-               <div className="flex justify-center">
-                 <Component isActive={true} isParentInView={isInView} />
-               </div>
+              <div className="flex justify-center">
+                <Component isActive={true} isParentInView={isInView} />
+              </div>
 
-               {/* Section Content */}
-               <div className="text-center space-y-4">
-                 <h2 className="text-4xl sm:text-5xl !leading-[0.9] font-semibold px-4">
-                   {section.title}
-                 </h2>
-                 <p className="text-lg sm:text-xl px-4 max-w-2xl mx-auto">
-                   {section.description}
-                 </p>
-               </div>
+              {/* Section Content */}
+              <div className="space-y-4 text-center">
+                <h2 className="px-4 text-4xl !leading-[0.9] font-semibold sm:text-5xl">{section.title}</h2>
+                <p className="mx-auto max-w-2xl px-4 text-lg sm:text-xl">{section.description}</p>
+              </div>
             </motion.div>
           );
         })}
@@ -246,7 +242,7 @@ const MarketIntelligenceSection = () => {
       <div className="hidden lg:block">
         <DesktopMarketIntelligenceSection />
       </div>
-      
+
       {/* Mobile Component - hidden on desktop */}
       <div className="block lg:hidden">
         <MobileMarketIntelligenceSection />

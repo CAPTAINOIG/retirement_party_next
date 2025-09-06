@@ -177,7 +177,7 @@ const MobileBusinessIntelligenceSection = () => {
               ease: 'easeOut',
             }}
           >
-            <Chip variant="flat" size="lg" className="mb-6 h-auto px-4 py-2 text-xl">
+            <Chip variant="flat" size="lg" className="h-auto px-4 py-2">
               Immortal BI
             </Chip>
           </motion.div>

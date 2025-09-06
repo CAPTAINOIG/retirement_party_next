@@ -18,7 +18,7 @@ const BigIdeas = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <motion.h2
-            className="mx-auto text-center text-4xl !leading-none font-bold tracking-tight md:text-[7rem]"
+            className="mx-auto text-center text-5xl !leading-none font-bold tracking-tight md:text-[7rem]"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}

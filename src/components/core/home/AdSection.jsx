@@ -7,15 +7,15 @@ import { useRef } from 'react';
 const AdSection = () => {
   const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   return (
     <div ref={sectionRef} className="relative z-10 container">
-      <motion.div 
-        className="bg-primary-900 dark:bg-primary-50 relative overflow-hidden rounded-3xl px-10 pt-48 pb-32 md:pt-40 md:pb-32 md:text-center"
+      <motion.div
+        className="bg-primary-900 dark:bg-primary-50 relative overflow-hidden rounded-3xl px-10 pt-28 pb-20 md:pt-40 md:pb-32 md:text-center"
         initial={{ opacity: 0, y: 50, scale: 0.95 }}
         animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.95 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         <div
           className="absolute inset-0 z-0"
@@ -25,22 +25,22 @@ const AdSection = () => {
           }}
         />
         <div className="relative z-2">
-          <motion.h1 
-            className="font-display mx-auto max-w-[1000px] text-[3.4rem] leading-[1.1] font-bold tracking-tight text-white sm:text-7xl md:text-[5.4rem] md:leading-none!"
+          <motion.h1
+            className="font-display mx-auto max-w-[1000px] text-[2.8rem] leading-[1.1] font-bold tracking-tight text-white sm:text-7xl md:text-[5.4rem] md:leading-none!"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
           >
             We are building data rails for analytics across Africa
           </motion.h1>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
           >
             <Button
               size="lg"
-              className="mt-12 bg-white text-black hover:bg-white/90 transition-transform hover:scale-105"
+              className="mt-12 bg-white text-black transition-transform hover:scale-105 hover:bg-white/90"
               radius="full"
               onPress={onGetStartedOpen}
             >

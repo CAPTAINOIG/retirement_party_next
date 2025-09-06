@@ -126,7 +126,7 @@ const ExpertAnalystsIllustration = ({ isActive, isParentInView }) => {
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       animate={isActive && isParentInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="bg-default-100 dark:bg-default-50 w-[520px] rounded-3xl p-8"
+      className="bg-default-100 dark:bg-default-50 w-[520px] overflow-hidden rounded-3xl p-8"
     >
       {/* Desktop Grid Layout */}
       <div className="hidden md:block">
@@ -142,7 +142,7 @@ const ExpertAnalystsIllustration = ({ isActive, isParentInView }) => {
         <Swiper
           modules={[Autoplay, Pagination]}
           spaceBetween={16}
-          slidesPerView={1.2}
+          slidesPerView={2.3}
           centeredSlides={false}
           autoplay={{
             delay: 3500,
@@ -154,11 +154,11 @@ const ExpertAnalystsIllustration = ({ isActive, isParentInView }) => {
           }}
           breakpoints={{
             480: {
-              slidesPerView: 1.5,
+              slidesPerView: 2.5,
               spaceBetween: 20,
             },
             640: {
-              slidesPerView: 2,
+              slidesPerView: 2.5,
               spaceBetween: 24,
             },
           }}

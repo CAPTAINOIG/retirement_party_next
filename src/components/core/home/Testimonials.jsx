@@ -66,13 +66,13 @@ const Testimonials = () => {
       {/* Heading in a centered container */}
       <div className="container sm:px-6 lg:px-8">
         <motion.div
-          className="!xl:mt-0 mx-auto flex max-w-4xl flex-col md:items-center md:text-center"
+          className="!xl:mt-0 mx-auto flex max-w-4xl flex-col items-center text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <motion.h2
-            className="text-4xl font-semibold tracking-tighter md:text-8xl"
+            className="text-5xl font-semibold tracking-tighter md:text-8xl"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}

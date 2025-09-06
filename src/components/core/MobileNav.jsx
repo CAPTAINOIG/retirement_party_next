@@ -2,7 +2,7 @@ import React from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { useIsomorphicLayoutEffect } from 'react-use';
-import { IMMORTAL_URL } from '@/lib/constants';
+import { IMMORTAL_URL, OPINIONS_URL, PREDICT_URL } from '@/lib/constants';
 
 const MobileNav = ({ isOpen, onClose }) => {
   useIsomorphicLayoutEffect(() => {
@@ -31,17 +31,31 @@ const MobileNav = ({ isOpen, onClose }) => {
             {[
               {
                 href: IMMORTAL_URL,
-                label: 'Immortal AI',
+                label: 'Business Intelligence',
+              },
+              {
+                href: PREDICT_URL,
+                label: 'Predictive Intelligence',
+              },
+              {
+                href: '#',
+                label: 'Market Intelligence',
+                isWaitlist: true,
+              },
+              {
+                href: OPINIONS_URL,
+                label: 'Opinions',
               },
             ].map((item, index) => (
               <Link
                 key={index}
                 onClick={onClose}
                 href={item.href}
-                target="_blank"
+                target={item.isWaitlist ? undefined : "_blank"}
                 className="hover:bg-default-900/5 block w-full rounded-xl px-4 py-3"
               >
                 {item.label}
+                {item.isWaitlist && <span className="ml-2 text-sm opacity-60">(Coming Soon)</span>}
               </Link>
             ))}
           </motion.div>
