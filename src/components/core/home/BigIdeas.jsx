@@ -10,7 +10,10 @@ const BigIdeas = () => {
   const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
 
   return (
-    <div ref={sectionRef} className="dark relative w-full overflow-hidden bg-black text-white md:pt-32 md:pb-40">
+    <div
+      ref={sectionRef}
+      className="dark relative w-full overflow-hidden bg-black pt-10 pb-20 text-white md:pt-32 md:pb-40"
+    >
       <div className="relative container mx-auto md:block">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
