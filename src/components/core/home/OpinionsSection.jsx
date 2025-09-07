@@ -9,12 +9,19 @@ import Link from 'next/link';
 // Define sections data
 const sections = [
   {
-    id: 'context',
-    title: 'Providing data context to public opinions',
-    description: 'Our opinions platform uses AI to provide data context to comments of public figures globally',
+    id: 'opinions',
+    title: (
+      <>
+        Providing data context to{' '}
+        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+          public opinions
+        </span>
+      </>
+    ),
+    description:
+      'Immortal Opinions aggregates and analyzes public sentiment from social media, news, and forums to provide comprehensive opinion intelligence.',
     component: OpinionsIllustration,
   },
-  // Add more sections as needed
 ];
 
 // Desktop Component - maintains current layout

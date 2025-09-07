@@ -9,13 +9,27 @@ import ExpertAnalystsIllustration from '@/components/core/home/ExpertAnalystsIll
 const sections = [
   {
     id: 'indices',
-    title: 'AI-powered analytics for 20+ global markets',
+    title: (
+      <>
+        AI-powered analytics for 20+{' '}
+        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+          global markets
+        </span>
+      </>
+    ),
     description: `Monitor key market indices across Africa and globally. Get real-time data on major exchanges including Nigeria Stock Exchange (NGX), JSE, and international markets.`,
     component: MarketIndicesIllustration,
   },
   {
     id: 'analysts',
-    title: 'Agentic AI for market insight',
+    title: (
+      <>
+        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+          Agentic AI
+        </span>{' '}
+        for market insight
+      </>
+    ),
     description: `We have created sector focused AI agents to provide insights on market on the go.`,
     component: ExpertAnalystsIllustration,
   },

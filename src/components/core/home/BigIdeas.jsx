@@ -30,9 +30,8 @@ const BigIdeas = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
-            <span className="relative inline-block leading-[0.7]">
-              <span className="absolute inset-0 bottom-0 h-[45px] rotate-[3.5deg] rounded-2xl bg-linear-to-r from-green-600 to-transparent md:h-[60px]"></span>
-              <span className="relative font-bold">Immortal AI</span>
+            <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent font-bold">
+              Immortal AI
             </span>
             <br />
             <span className="text-default-600 italic">Africa's OS for data intelligence</span>

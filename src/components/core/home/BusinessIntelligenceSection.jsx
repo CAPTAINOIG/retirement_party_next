@@ -10,20 +10,42 @@ import UseCasesIllustration from '@/components/core/home/UseCasesIllustration';
 const sections = [
   {
     id: 'structured',
-    title: 'Bringing intelligence to business data',
+    title: (
+      <>
+        Bringing{' '}
+        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+          intelligence to business
+        </span>{' '}
+        data
+      </>
+    ),
     description:
       'Immortal BI aggregates and convert complex business data from any source nto simple visual insights using AI',
     component: StructuredDataIllustration,
   },
   {
     id: 'unstructured',
-    title: 'Generate insights from embedded sources',
+    title: (
+      <>
+        Generate insights from{' '}
+        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+          embedded sources
+        </span>
+      </>
+    ),
     description: 'We are connected to 500+ data sources, bringing insights from wherever your data is.',
     component: UnstructuredDataIllustration,
   },
   {
     id: 'usecases',
-    title: 'Apply across multiple use cases',
+    title: (
+      <>
+        Apply across{' '}
+        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+          multiple use cases
+        </span>
+      </>
+    ),
     description:
       'Deploy business intelligence across finance, markets, HR, payments, and operations. Comprehensive insights tailored to your specific industry needs.',
     component: UseCasesIllustration,

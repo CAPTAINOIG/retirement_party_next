@@ -7,14 +7,29 @@ import { PREDICT_URL } from '@/lib/constants';
 const sections = [
   {
     id: 'market-predictions',
-    title: 'AI-powered prediction marketplace',
+    title: (
+      <>
+        AI-powered{' '}
+        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+          prediction marketplace
+        </span>
+      </>
+    ),
     description: `PI is a data expression that creates an extensive and diverse dataset to create predictive outcomes that users can trade on`,
     image: '/images/predict-mockup.png',
     alt: 'Predict mockup',
   },
   {
     id: 'stock-trading',
-    title: 'Stocks prediction trading simplified',
+    title: (
+      <>
+        Stocks{' '}
+        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+          prediction trading
+        </span>{' '}
+        simplified
+      </>
+    ),
     description: `PI transforms end-of-day stock trading outcomes into a prediction exchange`,
     image: '/images/predict-mockup-stock.png',
     alt: 'Stock trading predictions mockup',

@@ -77,7 +77,13 @@ const Testimonials = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
-            With over 3 billion <br className="block md:hidden" /> opinion impressions
+            With{' '}
+            <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+               over 3 billion
+             </span>{' '}
+            opinion impressions{' '}
+            <br className="block md:hidden" />
+            and counting
           </motion.h2>
           <motion.p
             className="mt-6 text-lg tracking-tight"
