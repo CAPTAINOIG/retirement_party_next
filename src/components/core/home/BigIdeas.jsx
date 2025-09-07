@@ -1,13 +1,17 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { Button, useDisclosure } from '@heroui/react';
-import { IMMORTAL_URL, PREDICT_URL } from '@/lib/constants';
 import MarketWaitlistModal from '@/components/core/shared/MarketWaitlistModal';
+import { IMMORTAL_URL, OPINIONS_URL, PREDICT_URL } from '@/lib/constants';
 
 const BigIdeas = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
-  const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
+  const {
+    isOpen: isMarketWaitlistOpen,
+    onOpen: onMarketWaitlistOpen,
+    onClose: onMarketWaitlistClose,
+  } = useDisclosure();
 
   return (
     <div
@@ -21,17 +25,17 @@ const BigIdeas = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <motion.h2
-            className="mx-auto text-center text-5xl !leading-none font-bold tracking-tight md:text-[7rem]"
+            className="mx-auto max-w-5xl text-center text-5xl !leading-none font-semibold tracking-tight md:text-8xl"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
-            Unveiling
-            <br />
             <span className="relative inline-block leading-[0.7]">
               <span className="absolute inset-0 bottom-0 h-[45px] rotate-[3.5deg] rounded-2xl bg-linear-to-r from-green-600 to-transparent md:h-[60px]"></span>
-              <span className="relative">Immortal AI</span>
+              <span className="relative font-bold">Immortal AI</span>
             </span>
+            <br />
+            <span className="text-default-600 italic">Africa's OS for data intelligence</span>
           </motion.h2>
           <motion.p
             className="mx-auto max-w-xl py-8 text-center text-lg leading-tight"
@@ -43,23 +47,17 @@ const BigIdeas = () => {
             to unlock unprecedented growth opportunities.
           </motion.p>
         </motion.div>
-        <div className="relative mt-6 grid-cols-[2fr_2fr_2fr] gap-4 space-y-8 md:grid md:space-y-0">
+        <div className="relative mt-6 grid gap-6 md:grid-cols-3">
+          {/* First Row */}
           <motion.div
-            className="relative z-20 flex flex-col rounded-2xl bg-[#FF7091] px-10 py-8"
+            className="relative flex flex-col rounded-2xl bg-[#FF7091] px-8 py-6"
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
-            <div className="absolute top-0 -right-8 h-full w-12 space-y-8 py-10">
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-            </div>
-            <div className="space-y-6">
-              <p className="text-xl leading-[1.1] font-semibold text-white">Business Intelligence</p>
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-white">Business Intelligence (BI)</h3>
+              <p className="text-white/90">Creates insights business data</p>
               <div className="grid grid-cols-4 items-center gap-2">
                 <img className="w-[60px]" src="/images/face-two.png" alt="face" />
                 <div className="col-span-3 space-y-2">
@@ -86,17 +84,6 @@ const BigIdeas = () => {
                   <p className="text-white">Unstructured data analysis</p>
                 </div>
               </div>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <div className="h-[10px] w-[55%] animate-pulse rounded-full bg-pink-300" />
-                  <div className="h-[10px] w-[20%] animate-pulse rounded-full bg-pink-300" />
-                </div>
-                <div className="flex w-[90%] items-center gap-2">
-                  <div className="h-[10px] w-[40%] animate-pulse rounded-full bg-pink-300" />
-                  <div className="h-[10px] w-[30%] animate-pulse rounded-full bg-pink-300" />
-                  <div className="h-[10px] w-[20%] animate-pulse rounded-full bg-pink-300" />
-                </div>
-              </div>
             </div>
             <a href={IMMORTAL_URL} target="_blank" className="mt-auto flex">
               <Button variant="flat" radius="full" className="mt-6">
@@ -104,87 +91,16 @@ const BigIdeas = () => {
               </Button>
             </a>
           </motion.div>
+
           <motion.div
-            className="relative z-10 flex flex-col rounded-2xl bg-[#FDBF12] px-10 py-8"
+            className="relative flex flex-col rounded-2xl bg-[#6C56C3] px-8 py-6"
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
-            transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
           >
-            <div className="absolute top-0 -right-8 h-full w-12 space-y-8 py-10">
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-            </div>
-            <div className="space-y-6">
-              <p className="text-xl leading-[1.1] font-semibold text-white">Market intelligence</p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                  <div>
-                    <div className="h-[20px] w-[20px] animate-pulse rounded-full bg-yellow-300" />
-                  </div>
-                  <div className="h-[10px] w-[60%] animate-pulse rounded-full bg-yellow-300 opacity-50" />
-                </div>
-                <div className="flex items-center gap-2">
-                  <div>
-                    <div className="h-[20px] w-[20px] animate-pulse rounded-full bg-yellow-300" />
-                  </div>
-                  <div className="h-[10px] w-[30%] animate-pulse rounded-full bg-yellow-300" />
-                  <div className="h-[10px] w-[60%] animate-pulse rounded-full bg-yellow-300" />
-                </div>
-                <div className="flex items-center gap-2">
-                  <div>
-                    <div className="h-[20px] w-[20px] animate-pulse rounded-full bg-yellow-300" />
-                  </div>
-                  <div className="h-[10px] w-[20%] animate-pulse rounded-full bg-yellow-300" />
-                  <div className="h-[10px] w-[70%] animate-pulse rounded-full bg-yellow-300" />
-                </div>
-                <div className="flex items-center gap-2">
-                  <div>
-                    <div className="h-[20px] w-[20px] animate-pulse rounded-full border-2 border-yellow-300" />
-                  </div>
-                  <div className="h-[10px] w-[40%] animate-pulse rounded-full bg-yellow-300" />
-                </div>
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <div>
-                      <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
-                    </div>
-                    <p className="text-white">Local markets</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div>
-                      <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
-                    </div>
-                    <p className="text-white">Global markets</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mt-auto flex">
-              <Button variant="flat" radius="full" className="mt-6" onPress={onGetStartedOpen}>
-                Join waitlist
-              </Button>
-            </div>
-          </motion.div>
-          <motion.div
-            className="relative flex flex-col rounded-2xl bg-[#6C56C3] p-4 px-10 py-8"
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
-            transition={{ duration: 0.8, delay: 1.0, ease: 'easeOut' }}
-          >
-            <div className="absolute top-0 -right-8 block h-full w-12 space-y-8 py-10 md:hidden">
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-              <div className="h-[10px] w-full rounded-full bg-[#F1F5F9]" />
-            </div>
-            <div className="space-y-6">
-              <p className="text-xl leading-[1.1] font-semibold text-white">Predictive intelligence</p>
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-white">Predict (PI)</h3>
+              <p className="text-white/90">Models prediction analytics</p>
               <div className="grid grid-cols-4 items-center gap-2">
                 <img className="w-[40px]" src="/images/face-three.png" alt="face" />
                 <div className="col-span-3 space-y-2">
@@ -197,23 +113,13 @@ const BigIdeas = () => {
                   <div>
                     <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
                   </div>
-                  <p className="text-white">AI powered prediction exchange</p>
+                  <p className="text-base text-white">AI powered prediction exchange</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <div>
                     <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
                   </div>
-                  <p className="text-white">Create. Trade. Profit</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-4 items-center gap-2">
-                <img className="w-[40px]" src="/images/face-three.png" alt="face" />
-                <div className="col-span-3 space-y-2">
-                  <div className="flex items-center gap-2">
-                    <div className="h-[10px] w-[20%] animate-pulse rounded-full bg-purple-300" />
-                    <div className="h-[10px] w-[60%] animate-pulse rounded-full bg-purple-300" />
-                  </div>
-                  <div className="h-[10px] w-[65%] animate-pulse rounded-full bg-purple-300" />
+                  <p className="text-base text-white">Create. Trade. Profit</p>
                 </div>
               </div>
             </div>
@@ -223,9 +129,173 @@ const BigIdeas = () => {
               </Button>
             </a>
           </motion.div>
+
+          <motion.div
+            className="relative flex flex-col rounded-2xl bg-[#FDBF12] px-8 py-6"
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
+          >
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-white">Markets (MI)</h3>
+              <p className="text-white/90">Models market insights via AI agents</p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div>
+                    <div className="h-[20px] w-[20px] animate-pulse rounded-full bg-yellow-300" />
+                  </div>
+                  <div className="h-[10px] w-[60%] animate-pulse rounded-full bg-yellow-300 opacity-50" />
+                </div>
+                <div className="flex items-center gap-2">
+                  <div>
+                    <div className="h-[20px] w-[20px] animate-pulse rounded-full bg-yellow-300" />
+                  </div>
+                  <div className="h-[10px] w-[30%] animate-pulse rounded-full bg-yellow-300" />
+                  <div className="h-[10px] w-[40%] animate-pulse rounded-full bg-yellow-300" />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
+                    </div>
+                    <p className="text-base text-white">Local markets</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
+                    </div>
+                    <p className="text-base text-white">Global markets</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-auto flex">
+              <Button variant="flat" radius="full" className="mt-6" onPress={onMarketWaitlistOpen}>
+                Join waitlist
+              </Button>
+            </div>
+          </motion.div>
+
+          {/* Second Row */}
+          <motion.div
+            className="relative flex flex-col rounded-2xl bg-[#10B981] px-8 py-6"
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
+          >
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-white">Opinion</h3>
+              <p className="text-white/90">Validates global opinions using AI.</p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="h-[10px] w-[70%] animate-pulse rounded-full bg-green-300" />
+                  <div className="h-[10px] w-[20%] animate-pulse rounded-full bg-green-300" />
+                </div>
+                <div className="flex w-[90%] items-center gap-2">
+                  <div className="h-[10px] w-[40%] animate-pulse rounded-full bg-green-300" />
+                  <div className="h-[10px] w-[30%] animate-pulse rounded-full bg-green-300" />
+                  <div className="h-[10px] w-[20%] animate-pulse rounded-full bg-green-300" />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
+                    </div>
+                    <p className="text-base text-white">Global sentiment analysis</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
+                    </div>
+                    <p className="text-base text-white">Real-time validation</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href={OPINIONS_URL} target="_blank" className="mt-auto flex">
+              <Button variant="flat" radius="full" className="mt-6">
+                Learn more
+              </Button>
+            </a>
+          </motion.div>
+
+          <motion.div
+            className="relative flex flex-col rounded-2xl bg-[#F59E0B] px-8 py-6"
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
+            transition={{ duration: 0.8, delay: 1.0, ease: 'easeOut' }}
+          >
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-white">Identity</h3>
+              <p className="text-white/90">Data insights from ID imaging.</p>
+              <div className="grid grid-cols-4 items-center gap-2">
+                <img className="w-[50px]" src="/images/face-seven.png" alt="face" />
+                <div className="col-span-3 space-y-2">
+                  <div className="h-[10px] w-[75%] animate-pulse rounded-full bg-orange-300" />
+                  <div className="flex w-[85%] items-center gap-2">
+                    <div className="h-[10px] w-[25%] animate-pulse rounded-full bg-orange-300" />
+                    <div className="h-[10px] w-[35%] animate-pulse rounded-full bg-orange-300" />
+                    <div className="h-[10px] w-[25%] animate-pulse rounded-full bg-orange-300" />
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <div>
+                    <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
+                  </div>
+                  <p className="text-base text-white">Document verification</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div>
+                    <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
+                  </div>
+                  <p className="text-base text-white">Biometric analysis</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="relative flex flex-col rounded-2xl bg-[#8B5CF6] px-8 py-6"
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.9 }}
+            transition={{ duration: 0.8, delay: 1.2, ease: 'easeOut' }}
+          >
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-white">More.</h3>
+              <p className="text-white/90">We are building more rails for analytics</p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="h-[15px] w-[15px] animate-pulse rounded-full bg-violet-300" />
+                  <div className="h-[10px] w-[50%] animate-pulse rounded-full bg-violet-300" />
+                  <div className="h-[15px] w-[15px] animate-pulse rounded-full bg-violet-300" />
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-[10px] w-[60%] animate-pulse rounded-full bg-violet-300" />
+                  <div className="h-[10px] w-[25%] animate-pulse rounded-full bg-violet-300" />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
+                    </div>
+                    <p className="text-base text-white">Coming soon...</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <div className="h-[10px] w-[10px] rounded-full bg-white opacity-50" />
+                    </div>
+                    <p className="text-base text-white">Stay tuned</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
-      <MarketWaitlistModal isOpen={isGetStartedOpen} onClose={onGetStartedClose} />
+
+      <MarketWaitlistModal isOpen={isMarketWaitlistOpen} onClose={onMarketWaitlistClose} />
     </div>
   );
 };
