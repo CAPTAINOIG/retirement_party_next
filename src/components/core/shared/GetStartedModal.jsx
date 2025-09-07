@@ -55,7 +55,7 @@ const GetStartedModal = ({ isOpen, onClose }) => {
         className="grid items-center gap-10 rounded-3xl px-10 py-12 lg:grid-cols-[2fr_1.8fr] lg:px-20 lg:py-20"
         shadow="none"
       >
-        <div className="order-1 lg:order-none">
+        <div>
           <h1 className="bg-linear-to-r from-green-600 to-blue-800 bg-clip-text text-[3.4rem] !leading-none font-bold tracking-tight text-transparent md:text-[5rem]">
             AI Powered Data Platforms for 5x scale
           </h1>
@@ -86,7 +86,7 @@ const GetStartedModal = ({ isOpen, onClose }) => {
             })}
           </motion.div>
         </div>
-        <div className="grid grid-cols-2 gap-4 py-6">
+        <div className="grid md:grid-cols-2 gap-4 py-6">
           {products.map((product) => {
             const IconComponent = product.icon;
             return (
