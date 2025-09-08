@@ -31,11 +31,11 @@ const BigIdeas = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
-            <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text font-bold text-transparent">
+            <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text font-bold text-transparent md:text-[7rem]">
               Immortal AI
             </span>
             <br />
-            <span className="text-default-600 text-5xl italic md:text-[5.4rem]">Africa's OS for data intelligence</span>
+            <span className="text-default-600 text-5xl md:text-[6rem]">Africa's OS for data intelligence</span>
           </motion.h2>
         </motion.div>
         <div className="relative mt-6 grid gap-6 md:grid-cols-3">
