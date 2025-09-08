@@ -23,28 +23,20 @@ const BigIdeas = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="mb-16"
         >
           <motion.h2
-            className="mx-auto max-w-5xl text-center text-5xl !leading-none font-semibold tracking-tight md:text-8xl"
+            className="mx-auto max-w-5xl text-center text-5xl !leading-[0.9] font-semibold tracking-tight md:text-8xl"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
-            <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent font-bold">
+            <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text font-bold text-transparent">
               Immortal AI
             </span>
             <br />
-            <span className="text-default-600 italic">Africa's OS for data intelligence</span>
+            <span className="text-default-600 text-5xl italic md:text-[5.4rem]">Africa's OS for data intelligence</span>
           </motion.h2>
-          <motion.p
-            className="mx-auto max-w-xl py-8 text-center text-lg leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-          >
-            Empowering African businesses and consumers with cutting-edge analytics, insights, and data-driven platforms
-            to unlock unprecedented growth opportunities.
-          </motion.p>
         </motion.div>
         <div className="relative mt-6 grid gap-6 md:grid-cols-3">
           {/* First Row */}
