@@ -55,13 +55,9 @@ const Footer = () => {
           <div>
             <h6 className="font-bold">Products</h6>
             <div className="mt-6 flex flex-col space-y-4">
-              {products.map((p) => (
+              {products.map((p) =>
                 p.isModal ? (
-                  <button
-                    key={p.slug}
-                    onClick={onGetStartedOpen}
-                    className="text-left hover:text-primary-700"
-                  >
+                  <button key={p.slug} onClick={onGetStartedOpen} className="hover:text-primary-700 text-left">
                     {p.name}
                   </button>
                 ) : (
@@ -69,7 +65,7 @@ const Footer = () => {
                     {p.name}
                   </Link>
                 )
-              ))}
+              )}
             </div>
           </div>
           <div>
@@ -99,17 +95,18 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mb-10">
+        <div className="mb-10 md:w-11/12">
           <p>
-            Statisense is building Africa's most powerful AI for Data platform, revolutionizing how businesses,
-            consumers, and governments use data to drive growth and scale. Statisense is achieving this by breaking down
-            complex and overwhelming datasets into AI powered portable insights, simple enough for every African.
+            Immortal Statisense is building Africa's most powerful AI for Data platform, revolutionizing how businesses,
+            consumers, and governments use data to drive growth and scale. Immortal Statisense is achieving this by
+            breaking down complex and overwhelming datasets into AI powered portable insights, simple enough for every
+            African.
           </p>
         </div>
 
         <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
           <div className="flex flex-col items-start space-y-4 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-8">
-            <div>Copyright &copy; {new Date().getFullYear()} Statisense</div>
+            <div>Copyright &copy; {new Date().getFullYear()} Immortal Statisense</div>
           </div>
           <div className="mt-8 flex items-center space-x-6 md:mt-0">
             <a
