@@ -41,3 +41,10 @@ export const useUpdateLaunchSubscriber = () => {
     },
   });
 };
+export const useAddContactUs = () => {
+  return useMutation({
+    mutationFn: ({ fullname, email, message, category, phonenumber }) => {
+      return http.post('/misc/contact-us/email', { fullname, email, message, category, phonenumber });
+    },
+  });
+};
