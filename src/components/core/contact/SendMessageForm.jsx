@@ -130,7 +130,6 @@ const SendMessageForm = () => {
               />
             )}
           />
-
           <Controller
             name="email"
             control={control}
@@ -155,13 +154,12 @@ const SendMessageForm = () => {
               />
             )}
           />
-
           <Controller
             name="phone"
             control={control}
             rules={{
               pattern: {
-                value: /^[\+]?[\d\s\-\(\)]+$/,
+                value: /^[+]?[\d\s\-()]+$/,
                 message: 'Invalid phone number format',
               },
             }}
@@ -179,7 +177,6 @@ const SendMessageForm = () => {
               />
             )}
           />
-
           <div className="flex flex-col">
             <Controller
               name="category"
@@ -212,7 +209,6 @@ const SendMessageForm = () => {
               )}
             />
           </div>
-
           <Controller
             name="message"
             control={control}
@@ -240,7 +236,7 @@ const SendMessageForm = () => {
         </div>
         <div>
           <Button
-            onClick={handleSubmit(onSubmit)}
+            onPress={handleSubmit(onSubmit)}
             color="primary"
             endContent={<IconSend size="20" />}
             className="mt-10"
