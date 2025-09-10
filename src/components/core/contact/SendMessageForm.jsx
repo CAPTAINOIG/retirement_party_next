@@ -1,9 +1,8 @@
-import { IconSend, IconCheck, IconMail, IconArrowLeft } from '@tabler/icons-react';
-import { Button, Card, Input, Select, SelectItem, Textarea } from '@heroui/react';
+import { IconArrowLeft, IconCheck, IconSend } from '@tabler/icons-react';
+import { addToast, Button, Card, Input, Select, SelectItem, Textarea } from '@heroui/react';
 import ScrollReveal from '@/components/global/ScrollReveal';
-import { useForm, Controller } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { useAddContactUs } from '@/api/other';
-import { addToast } from '@heroui/react';
 
 const categories = [
   { key: 'support', label: 'Support' },
@@ -14,25 +13,22 @@ const categories = [
 const ContactSuccessComponent = ({ onSendAnother }) => {
   return (
     <ScrollReveal direction="up" delay={0.1}>
-      <Card className="bg-default-100 rounded-2xl px-8 py-10 md:px-12 text-center" shadow="none">
+      <Card className="bg-default-100 rounded-2xl px-8 py-10 text-center md:px-12" shadow="none">
         <div className="mb-8">
-          <div className="mx-auto w-20 h-20 bg-success-100 rounded-full flex items-center justify-center mb-6">
-            <div className="w-16 h-16 bg-success-500 rounded-full flex items-center justify-center animate-pulse">
+          <div className="bg-success-100 mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full">
+            <div className="bg-success-500 flex h-16 w-16 animate-pulse items-center justify-center rounded-full">
               <IconCheck size={32} className="text-white" stroke={3} />
             </div>
           </div>
         </div>
-
         <div className="mb-8">
-          <h2 className="text-2xl font-semibold text-foreground mb-4">
-            Message Sent Successfully! 🎉
-          </h2>
-          <p className="text-default-600 text-lg leading-relaxed max-w-md mx-auto">
-            Thank you for reaching out to us. We've received your message and our team will get back to you within 24 hours.
+          <h2 className="text-foreground mb-4 text-2xl font-semibold">Message Sent Successfully! 🎉</h2>
+          <p className="text-default-600 mx-auto max-w-md text-lg leading-relaxed">
+            Thank you for reaching out to us. We've received your message and our team will get back to you within 24
+            hours.
           </p>
         </div>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col justify-center gap-4 sm:flex-row">
           <Button
             color="primary"
             variant="solid"
@@ -44,7 +40,7 @@ const ContactSuccessComponent = ({ onSendAnother }) => {
           >
             Send Another Message
           </Button>
-          
+
           <Button
             color="default"
             variant="bordered"
@@ -70,9 +66,9 @@ const SendMessageForm = () => {
     reset,
   } = useForm({
     defaultValues: {
-      fullname: '',
+      name: '',
       email: '',
-      phonenumber: '',
+      phone: '',
       category: '',
       message: '',
     },
@@ -112,7 +108,7 @@ const SendMessageForm = () => {
         <h5 className="mb-10 text-xl font-medium">Let's start a conversation</h5>
         <div className="space-y-6">
           <Controller
-            name="fullname"
+            name="name"
             control={control}
             rules={{
               required: 'Full name is required',
@@ -129,8 +125,8 @@ const SendMessageForm = () => {
                 variant="bordered"
                 size="lg"
                 classNames={{ input: 'text-base' }}
-                isInvalid={!!errors.fullname}
-                errorMessage={errors.fullname?.message}
+                isInvalid={!!errors.name}
+                errorMessage={errors.name?.message}
               />
             )}
           />
@@ -161,7 +157,7 @@ const SendMessageForm = () => {
           />
 
           <Controller
-            name="phonenumber"
+            name="phone"
             control={control}
             rules={{
               pattern: {
@@ -178,8 +174,8 @@ const SendMessageForm = () => {
                 variant="bordered"
                 size="lg"
                 classNames={{ input: 'text-base' }}
-                isInvalid={!!errors.phonenumber}
-                errorMessage={errors.phonenumber?.message}
+                isInvalid={!!errors.phone}
+                errorMessage={errors.phone?.message}
               />
             )}
           />
