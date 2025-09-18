@@ -1,8 +1,8 @@
 import React from 'react';
-import CreatorsEventPageContent from './content';
+import CreatorsGalleryContent from './content';
 
-const CreatorsEventPage = () => {
-  return <CreatorsEventPageContent />;
+const CreatorsPage = () => {
+  return <CreatorsGalleryContent />;
 };
 
-export default CreatorsEventPage;
+export default CreatorsPage;
