@@ -31,7 +31,7 @@ const EventDetailsSection = () => {
             <div className="bg-default-50/60 rounded-2xl p-8 text-center backdrop-blur-sm">
               <div className="mb-4 text-4xl">📅</div>
               <h3 className="mb-4 text-xl font-semibold text-white">Date</h3>
-              <p className="text-2xl font-bold opacity-80">7/10/2025</p>
+              <p className="text-2xl font-bold opacity-80">7/11/2025</p>
             </div>
 
             {/* Time */}
