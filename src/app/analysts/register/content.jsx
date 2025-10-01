@@ -8,7 +8,7 @@ import WhoShouldAttendSection from './components/WhoShouldAttendSection';
 import EventDetailsSection from './components/EventDetailsSection';
 import AnalystsApplicationForm from './components/AnalystsApplicationForm';
 
-const AnalystsEventContent = () => {
+const AnalystsRegisterContent = () => {
   return (
     <div className="dark min-h-screen bg-black text-white">
       {/* Hero Section */}
@@ -44,5 +44,7 @@ const AnalystsEventContent = () => {
   );
 };
 
-export default AnalystsEventContent;
+export default AnalystsRegisterContent;
+
+
 

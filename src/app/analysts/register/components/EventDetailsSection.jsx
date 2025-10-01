@@ -56,3 +56,5 @@ const EventDetailsSection = () => {
 
 export default EventDetailsSection;
 
+
+

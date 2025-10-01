@@ -73,3 +73,5 @@ const WhyAttendSection = () => {
 
 export default WhyAttendSection;
 
+
+
