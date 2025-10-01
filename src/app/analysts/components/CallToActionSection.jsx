@@ -51,17 +51,6 @@ const CallToActionSection = () => {
             >
               Join the Program Today
             </Button>
-
-            <Button
-              as={Link}
-              href="/contact"
-              size="lg"
-              variant="bordered"
-              radius="full"
-              className="border-white/20 px-8 py-6 text-lg text-white transition-all hover:border-white/40 hover:bg-white/5"
-            >
-              Learn More
-            </Button>
           </motion.div>
         </div>
       </div>
