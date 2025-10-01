@@ -39,13 +39,13 @@ export const FacebookEvents = {
   ADD_TO_WISHLIST: 'AddToWishlist',
   INITIATE_CHECKOUT: 'InitiateCheckout',
   ADD_PAYMENT_INFO: 'AddPaymentInfo',
-  
+
   // Lead events
   LEAD: 'Lead',
   COMPLETE_REGISTRATION: 'CompleteRegistration',
   CONTACT: 'Contact',
   SUBMIT_APPLICATION: 'SubmitApplication',
-  
+
   // Engagement events
   VIEW_CONTENT: 'ViewContent',
   SEARCH: 'Search',
@@ -71,7 +71,7 @@ export const trackViewContent = (contentType?: string, contentId?: string) => {
   const parameters: Record<string, any> = {};
   if (contentType) parameters.content_type = contentType;
   if (contentId) parameters.content_ids = [contentId];
-  
+
   trackEvent(FacebookEvents.VIEW_CONTENT, Object.keys(parameters).length > 0 ? parameters : undefined);
 };
 

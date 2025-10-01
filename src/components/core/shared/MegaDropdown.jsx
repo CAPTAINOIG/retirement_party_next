@@ -165,7 +165,11 @@ const MegaDropdown = ({ label, align = 'right' }) => {
                 </div>
                 <div className="relative">
                   <AnimatePresence mode="wait">
-                    <HighlightCard key={items[active]?.name || active} item={items[active]} onGetStartedOpen={onGetStartedOpen} />
+                    <HighlightCard
+                      key={items[active]?.name || active}
+                      item={items[active]}
+                      onGetStartedOpen={onGetStartedOpen}
+                    />
                   </AnimatePresence>
                 </div>
               </div>

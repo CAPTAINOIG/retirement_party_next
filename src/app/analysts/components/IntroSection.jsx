@@ -17,7 +17,8 @@ const IntroSection = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="text-default-400 text-2xl leading-relaxed md:text-3xl"
           >
-            We believe in building not just skills, but careers and impact. By joining, you're taking a step into a community where growth and recognition go hand in hand.
+            We believe in building not just skills, but careers and impact. By joining, you're taking a step into a
+            community where growth and recognition go hand in hand.
           </motion.p>
         </div>
       </div>

@@ -37,10 +37,7 @@ const HeroSection = () => {
                 Tell Stories.
               </span>{' '}
               <br />
-              Shape the Future of{' '}
-              <span>
-                Data.
-              </span>
+              Shape the Future of <span>Data.</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -48,9 +45,10 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-              className="text-default-500 mx-auto mt-8 max-w-3xl text-xl md:text-2xl tracking-tight leading-relaxed"
+              className="text-default-500 mx-auto mt-8 max-w-3xl text-xl leading-relaxed tracking-tight md:text-2xl"
             >
-              Join the Statisense Creators Program and use your creativity to make data simple, engaging, and earn real good while at it.
+              Join the Statisense Creators Program and use your creativity to make data simple, engaging, and earn real
+              good while at it.
             </motion.p>
 
             {/* CTA Button */}
@@ -60,12 +58,12 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
               className="mt-12"
             >
-              <Button 
-                as={Link} 
-                href="#apply" 
-                size="lg" 
-                color="primary" 
-                radius="full" 
+              <Button
+                as={Link}
+                href="#apply"
+                size="lg"
+                color="primary"
+                radius="full"
                 className="px-8 py-6 text-lg"
                 endContent={<TbChevronRight size="20" />}
               >

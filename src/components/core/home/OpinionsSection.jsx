@@ -13,9 +13,7 @@ const sections = [
     title: (
       <>
         Providing data context to{' '}
-        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
-          public opinions
-        </span>
+        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">public opinions</span>
       </>
     ),
     description:

@@ -6,6 +6,3 @@ const AnalystsRegisterPage = () => {
 };
 
 export default AnalystsRegisterPage;
-
-
-

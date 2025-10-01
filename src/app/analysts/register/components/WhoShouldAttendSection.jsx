@@ -62,6 +62,3 @@ const WhoShouldAttendSection = () => {
 };
 
 export default WhoShouldAttendSection;
-
-
-

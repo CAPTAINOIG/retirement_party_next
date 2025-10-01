@@ -95,4 +95,3 @@ const WhyJoinSection = () => {
 };
 
 export default WhyJoinSection;
-

@@ -2,7 +2,7 @@
 import React from 'react';
 import { IconArrowLeft, IconMailCheck } from '@tabler/icons-react';
 import Link from 'next/link';
-import { Button, Card } from "@heroui/react";
+import { Button, Card } from '@heroui/react';
 
 const NewsletterVerificationPageContent = () => {
   return (

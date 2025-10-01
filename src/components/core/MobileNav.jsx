@@ -51,7 +51,7 @@ const MobileNav = ({ isOpen, onClose }) => {
                 key={index}
                 onClick={onClose}
                 href={item.href}
-                target={item.isWaitlist ? undefined : "_blank"}
+                target={item.isWaitlist ? undefined : '_blank'}
                 className="hover:bg-default-900/5 block w-full rounded-xl px-4 py-3"
               >
                 {item.label}

@@ -19,7 +19,7 @@ const MarketIllustration = ({ isActive, isParentInView }) => {
       className="relative mx-auto hidden w-min pr-10 pl-0 md:block"
     >
       <div className="relative flex w-min justify-center">
-        <motion.div 
+        <motion.div
           className="relative w-[320px] rotate-3"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isActive && isParentInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
@@ -42,7 +42,7 @@ export default MarketIllustration;
 
 const TopCards = ({ isActive, isParentInView }) => {
   return (
-    <motion.div 
+    <motion.div
       className="absolute top-16 -left-16 w-[400px] -rotate-1 justify-center"
       initial={{ opacity: 0, x: -30 }}
       animate={isActive && isParentInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
@@ -237,7 +237,7 @@ const BottomCard = ({ isActive, isParentInView }) => {
   }, []);
 
   return (
-    <motion.div 
+    <motion.div
       className="bg-primary-700 dark:bg-primary-100 absolute bottom-7 left-10 hidden min-h-[220px] w-[320px] rotate-1 rounded-2xl px-8 py-4 text-white md:block"
       initial={{ opacity: 0, y: 30 }}
       animate={isActive && isParentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}

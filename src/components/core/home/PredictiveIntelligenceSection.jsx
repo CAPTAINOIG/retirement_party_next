@@ -221,13 +221,9 @@ const MobilePredictiveIntelligenceSection = () => {
             </div>
 
             {/* Section Content */}
-            <div className="text-center space-y-4">
-              <h2 className="text-4xl sm:text-5xl !leading-[0.9] font-semibold px-4">
-                {section.title}
-              </h2>
-              <p className="text-lg sm:text-xl px-4 max-w-2xl mx-auto">
-                {section.description}
-              </p>
+            <div className="space-y-4 text-center">
+              <h2 className="px-4 text-4xl !leading-[0.9] font-semibold sm:text-5xl">{section.title}</h2>
+              <p className="mx-auto max-w-2xl px-4 text-lg sm:text-xl">{section.description}</p>
             </div>
           </motion.div>
         ))}
@@ -269,7 +265,7 @@ const PredictiveIntelligenceSection = () => {
       <div className="hidden lg:block">
         <DesktopPredictiveIntelligenceSection />
       </div>
-      
+
       {/* Mobile Component - hidden on desktop */}
       <div className="block lg:hidden">
         <MobilePredictiveIntelligenceSection />

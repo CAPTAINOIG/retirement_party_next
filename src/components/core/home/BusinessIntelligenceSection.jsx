@@ -28,9 +28,7 @@ const sections = [
     title: (
       <>
         Generate insights from{' '}
-        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
-          embedded sources
-        </span>
+        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">embedded sources</span>
       </>
     ),
     description: 'We are connected to 500+ data sources, bringing insights from wherever your data is.',

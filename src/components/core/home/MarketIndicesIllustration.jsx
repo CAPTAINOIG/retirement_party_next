@@ -92,9 +92,7 @@ const MarketIndicesIllustration = ({ isActive, isParentInView }) => {
       <p className="text-default-600 mb-2 text-sm">{index.country}</p>
       <div className="flex items-center justify-between">
         <span className="text-lg font-semibold">{index.value}</span>
-        <span
-          className={`text-sm font-medium ${index.change.startsWith('+') ? 'text-green-500' : 'text-red-500'}`}
-        >
+        <span className={`text-sm font-medium ${index.change.startsWith('+') ? 'text-green-500' : 'text-red-500'}`}>
           {index.change}
         </span>
       </div>
@@ -106,7 +104,7 @@ const MarketIndicesIllustration = ({ isActive, isParentInView }) => {
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       animate={isActive && isParentInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="bg-default-100 dark:bg-default-50 rounded-3xl p-8 overflow-hidden"
+      className="bg-default-100 dark:bg-default-50 overflow-hidden rounded-3xl p-8"
     >
       {/* Desktop Grid Layout */}
       <div className="hidden md:block">

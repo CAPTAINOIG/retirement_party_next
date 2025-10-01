@@ -19,7 +19,7 @@ const Collapsible = ({ header, content }) => {
         <div>
           <div
             className={cn('flex h-8 w-8 items-center justify-center rounded-full border', {
-              'border-0 bg-primary-700 text-white': expanded,
+              'bg-primary-700 border-0 text-white': expanded,
             })}
           >
             <IconChevronRight size="20" className={cn('transition-all duration-300', { 'rotate-90': expanded })} />

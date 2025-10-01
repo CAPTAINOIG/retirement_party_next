@@ -122,4 +122,3 @@ const CallToActionSection = () => {
 };
 
 export default CallToActionSection;
-

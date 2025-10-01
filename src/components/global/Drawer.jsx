@@ -48,13 +48,13 @@ const Drawer = ({ isOpen, title, padding = true, onClose, children, width = 550,
               exit="exit"
               style={{ maxWidth: `${width}px` }}
               className={cn(
-                'fixed bottom-0 right-0 top-0 z-900 flex h-full w-full flex-col justify-end overflow-hidden',
+                'fixed top-0 right-0 bottom-0 z-900 flex h-full w-full flex-col justify-end overflow-hidden',
                 'pointer-events-none'
               )}
             >
               <div
                 className={cn(
-                  'relative inset-x-0 bottom-0 h-min max-h-full overflow-y-auto overflow-x-hidden bg-white dark:bg-default-50 sm:h-full',
+                  'dark:bg-default-50 relative inset-x-0 bottom-0 h-min max-h-full overflow-x-hidden overflow-y-auto bg-white sm:h-full',
                   'pointer-events-auto flex min-h-[50vh] flex-col rounded-t-2xl md:rounded-l-2xl md:rounded-r-none',
                   { 'p-8 md:p-10': padding },
                   className

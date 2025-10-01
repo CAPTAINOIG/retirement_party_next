@@ -10,7 +10,7 @@ import ScrollReveal from '@/components/global/ScrollReveal';
 
 const ConnectWithUs = () => {
   return (
-    <div className='sticky top-20'>
+    <div className="sticky top-20">
       <ScrollReveal direction="left" delay={0.1}>
         <div className="mt-8 grid grid-cols-1 gap-8">
           <div className="flex items-center space-x-3">

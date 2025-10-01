@@ -3,7 +3,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { Button, useDisclosure } from '@heroui/react';
-import Link from 'next/link';
 import { TbChevronRight } from 'react-icons/tb';
 import AnalystsApplicationDrawer from './AnalystsApplicationDrawer';
 
@@ -79,4 +78,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-

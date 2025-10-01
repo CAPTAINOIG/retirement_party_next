@@ -11,7 +11,7 @@ const MarketWaitlistModal = ({ isOpen, onClose }) => {
 
   return (
     <CustomModal isOpen={isOpen} onClose={handleClose} width={1200}>
-      <Card className="grid items-center gap-10 rounded-3xl px-10 py-12 lg:grid-cols-[2fr_1.2fr] lg:px-28 lg:py-20 overflow-hidden">
+      <Card className="grid items-center gap-10 overflow-hidden rounded-3xl px-10 py-12 lg:grid-cols-[2fr_1.2fr] lg:px-28 lg:py-20">
         <div className="order-1 lg:order-none">
           <h1 className="bg-linear-to-r from-green-600 to-blue-800 bg-clip-text text-[3.4rem] !leading-none font-bold tracking-tight text-transparent md:text-[6rem]">
             Market Intelligence

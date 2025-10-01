@@ -7,7 +7,7 @@ const Input = forwardRef(({ label, rightIcon, id, error, disabled, bordered = fa
     <div className="flex flex-col">
       <label
         className={cn(
-          'relative w-full rounded-xl px-5 pt-5 ring-primary-800 ring-opacity-60 ring-offset-[3px] transition duration-300 focus-within:ring-2',
+          'ring-primary-800 ring-opacity-60 relative w-full rounded-xl px-5 pt-5 ring-offset-[3px] transition duration-300 focus-within:ring-2',
           { 'pointer-events-none opacity-60': disabled },
           { 'border border-zinc-300 bg-transparent': bordered },
           { 'bg-slate-200': !bordered }
@@ -17,14 +17,14 @@ const Input = forwardRef(({ label, rightIcon, id, error, disabled, bordered = fa
         {!!label && (
           <span
             className={cn(
-              'absolute left-0 top-1/2 inline-flex -translate-y-1/2 px-5 text-sm opacity-80 transition-all peer-focus:top-4 peer-not-placeholder-shown:top-4'
+              'absolute top-1/2 left-0 inline-flex -translate-y-1/2 px-5 text-sm opacity-80 transition-all peer-not-placeholder-shown:top-4 peer-focus:top-4'
             )}
           >
             {label} {props.value}
           </span>
         )}
         {!!rightIcon && (
-          <div className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md">
+          <div className="absolute top-1/2 right-2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md">
             {rightIcon}
           </div>
         )}

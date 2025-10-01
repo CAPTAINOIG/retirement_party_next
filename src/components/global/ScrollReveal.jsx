@@ -1,14 +1,14 @@
 'use client';
 import { motion } from 'motion/react';
 
-const ScrollReveal = ({ 
-  children, 
-  direction = 'up', 
-  delay = 0, 
+const ScrollReveal = ({
+  children,
+  direction = 'up',
+  delay = 0,
   duration = 0.6,
   distance = 30,
   className = '',
-  ...props 
+  ...props
 }) => {
   const directions = {
     up: { y: distance, x: 0 },
@@ -38,9 +38,9 @@ const ScrollReveal = ({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ 
-        once: true, 
-        margin: '-50px 0px -50px 0px' // Trigger animation slightly before element is fully visible
+      viewport={{
+        once: true,
+        margin: '-50px 0px -50px 0px', // Trigger animation slightly before element is fully visible
       }}
       variants={variants}
       className={className}

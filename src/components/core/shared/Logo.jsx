@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 
 const Logo = ({ light = false, ...props }) => {
   const [mounted, setMounted] = useState(false);
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);
-  
+
   // Use a safe default for SSR, then apply the actual light prop after hydration
   const safeLight = mounted ? light : false;
   const fill = safeLight ? 'white' : '#071952';

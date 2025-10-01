@@ -37,7 +37,6 @@ const PredictSection = () => {
             })}
           </motion.div>
         </div>
-
       </div>
     </div>
   );

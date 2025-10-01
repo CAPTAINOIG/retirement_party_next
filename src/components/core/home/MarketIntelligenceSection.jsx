@@ -12,9 +12,7 @@ const sections = [
     title: (
       <>
         AI-powered analytics for 20+{' '}
-        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
-          global markets
-        </span>
+        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">global markets</span>
       </>
     ),
     description: `Monitor key market indices across Africa and globally. Get real-time data on major exchanges including Nigeria Stock Exchange (NGX), JSE, and international markets.`,
@@ -24,10 +22,8 @@ const sections = [
     id: 'analysts',
     title: (
       <>
-        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
-          Agentic AI
-        </span>{' '}
-        for market insight
+        <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">Agentic AI</span> for
+        market insight
       </>
     ),
     description: `We have created sector focused AI agents to provide insights on market on the go.`,

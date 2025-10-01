@@ -79,10 +79,9 @@ const Testimonials = () => {
           >
             With{' '}
             <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
-               over 3 billion
-             </span>{' '}
-            opinion impressions{' '}
-            <br className="block md:hidden" />
+              over 3 billion
+            </span>{' '}
+            opinion impressions <br className="block md:hidden" />
             and counting
           </motion.h2>
           <motion.p

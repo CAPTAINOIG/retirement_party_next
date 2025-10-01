@@ -35,7 +35,7 @@ export const trackCustomEvent = (eventName: string, parameters?: Record<string, 
 export const TwitterEvents = {
   // Main conversion event ID
   CONVERSION: 'tw-qa5ef-qa5ef',
-  
+
   // You can add more specific event IDs here as needed
   // SIGNUP: 'tw-qa5ef-signup',
   // PURCHASE: 'tw-qa5ef-purchase',

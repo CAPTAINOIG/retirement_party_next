@@ -23,7 +23,6 @@ const ImmortalCard = () => {
     <div className="items-center gap-4 space-y-4 px-0 md:flex md:space-y-0 md:px-4">
       <SideNav />
       <div className="hidden w-full grid-cols-2 gap-4 md:grid md:grid-cols-3">
-        
         <div className="space-y-6 rounded p-4">
           <div className="flex items-center justify-between">
             <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-purple-600 text-white">

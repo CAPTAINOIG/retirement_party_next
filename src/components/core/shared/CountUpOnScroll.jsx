@@ -27,11 +27,7 @@ const CountUpOnScroll = ({ start, end, duration }) => {
     };
   }, []);
 
-  return (
-    <div ref={countUpRef}>
-      {hasStarted && <CountUp start={start} end={end} duration={duration} />}
-    </div>
-  );
+  return <div ref={countUpRef}>{hasStarted && <CountUp start={start} end={end} duration={duration} />}</div>;
 };
 
 export default CountUpOnScroll;

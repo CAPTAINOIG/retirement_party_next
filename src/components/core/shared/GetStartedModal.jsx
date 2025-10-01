@@ -86,7 +86,7 @@ const GetStartedModal = ({ isOpen, onClose }) => {
             })}
           </motion.div>
         </div>
-        <div className="grid md:grid-cols-2 gap-4 py-6">
+        <div className="grid gap-4 py-6 md:grid-cols-2">
           {products.map((product) => {
             const IconComponent = product.icon;
             return (

@@ -45,6 +45,3 @@ const AnalystsRegisterContent = () => {
 };
 
 export default AnalystsRegisterContent;
-
-
-

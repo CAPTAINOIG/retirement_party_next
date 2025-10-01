@@ -5,14 +5,14 @@ import { motion } from 'motion/react';
 
 const PredictIllustration = ({ isActive, isParentInView }) => {
   return (
-    <motion.div 
+    <motion.div
       className="relative mx-auto hidden w-[320px] flex-col items-center justify-center lg:flex"
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       animate={isActive && isParentInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       <div className="absolute top-20 left-0 h-[300px] w-full space-y-8">
-        <motion.div 
+        <motion.div
           className="mx-auto flex w-full gap-4 px-8"
           initial={{ opacity: 0, x: -20 }}
           animate={isActive && isParentInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -25,7 +25,7 @@ const PredictIllustration = ({ isActive, isParentInView }) => {
             </p>
           </div>
         </motion.div>
-        <motion.div 
+        <motion.div
           className="mx-auto flex w-full gap-4 px-8"
           initial={{ opacity: 0, x: 20 }}
           animate={isActive && isParentInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
@@ -38,7 +38,7 @@ const PredictIllustration = ({ isActive, isParentInView }) => {
           </div>
           <img className="h-[30px] w-[30px]" src="/images/face-seven.png" alt="User avatar" />
         </motion.div>
-        <motion.div 
+        <motion.div
           className="mx-auto hidden w-full gap-4 px-8 md:flex"
           initial={{ opacity: 0, x: -20 }}
           animate={isActive && isParentInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -52,15 +52,15 @@ const PredictIllustration = ({ isActive, isParentInView }) => {
           </div>
         </motion.div>
       </div>
-      <motion.img 
-        className="mx-auto w-full opacity-100 md:w-[320px]" 
-        src="/images/phone.svg" 
+      <motion.img
+        className="mx-auto w-full opacity-100 md:w-[320px]"
+        src="/images/phone.svg"
         alt="Mobile phone mockup"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={isActive && isParentInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
       />
-      <motion.div 
+      <motion.div
         className="z-10 mx-auto flex h-[320px] w-full flex-col rounded-3xl bg-white px-4 py-6 shadow md:w-[320px]"
         initial={{ opacity: 0, y: 20 }}
         animate={isActive && isParentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

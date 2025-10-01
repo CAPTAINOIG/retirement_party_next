@@ -78,7 +78,16 @@ const ImmortalProducts = () => {
       <div className="container grid h-full grid-cols-2 gap-20">
         <div ref={ref}>
           {sections.map((s, idx) => (
-            <Section key={idx} title={s.title} body={s.body} link={s.link} index={idx} isParentInView={isInView} isModal={s.isModal} onGetStartedOpen={onGetStartedOpen} />
+            <Section
+              key={idx}
+              title={s.title}
+              body={s.body}
+              link={s.link}
+              index={idx}
+              isParentInView={isInView}
+              isModal={s.isModal}
+              onGetStartedOpen={onGetStartedOpen}
+            />
           ))}
         </div>
         <div className="relative">

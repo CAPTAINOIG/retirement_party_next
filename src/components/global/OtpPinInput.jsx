@@ -4,19 +4,15 @@ import { cn } from '@/lib/utils';
 const OtpPinInput = ({ disabled, length = 6, onDone }, ref) => {
   const parent = useRef(null);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      const handleReset = () => {
-        [...parent.current.children].forEach((el) => {
-          el.value = '';
-        });
-        setTimeout(() => focusLast(), 500);
-      };
-      return { reset: handleReset };
-    },
-    []
-  );
+  useImperativeHandle(ref, () => {
+    const handleReset = () => {
+      [...parent.current.children].forEach((el) => {
+        el.value = '';
+      });
+      setTimeout(() => focusLast(), 500);
+    };
+    return { reset: handleReset };
+  }, []);
 
   const handleDone = () => {
     const value = [...parent.current.children].reduce((acc, child) => acc + child.value, '');
@@ -71,7 +67,7 @@ const OtpPinInput = ({ disabled, length = 6, onDone }, ref) => {
             onKeyDown={handleKeydown}
             onPaste={handlePaste}
             className={cn(
-              'inline-flex rounded-3xl border border-zinc-300 bg-transparent px-2 py-4 text-center text-xl focus:ring focus:ring-primary-100 sm:px-2 sm:py-5',
+              'focus:ring-primary-100 inline-flex rounded-3xl border border-zinc-300 bg-transparent px-2 py-4 text-center text-xl focus:ring sm:px-2 sm:py-5',
               { 'pointer-events-none opacity-60': disabled }
             )}
           />

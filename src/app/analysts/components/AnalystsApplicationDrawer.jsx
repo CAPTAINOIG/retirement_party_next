@@ -179,7 +179,7 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
           <div className="mb-6 flex items-center justify-between gap-4">
             <div>
               <h3 className="text-2xl font-bold">Join Analysts Program</h3>
-              <p className="opacity-80 mt-1 text-base">Fill the form below to register for our program</p>
+              <p className="mt-1 text-base opacity-80">Fill the form below to register for our program</p>
             </div>
             <Button isIconOnly variant="bordered" color="danger" radius="full" onPress={handleClose}>
               <TbX size="20" />

@@ -17,8 +17,7 @@ const EventDetailsSection = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="mb-16 text-center text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"
           >
-            📅 Event{' '}
-            <span>Details</span>
+            📅 Event <span>Details</span>
           </motion.h2>
 
           <motion.div
@@ -55,6 +54,3 @@ const EventDetailsSection = () => {
 };
 
 export default EventDetailsSection;
-
-
-
