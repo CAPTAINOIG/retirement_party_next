@@ -1,8 +1,8 @@
 import React from 'react';
-import AnalystsGalleryContent from './content';
+import AnalystsEventContent from './content';
 
 const AnalystsPage = () => {
-  return <AnalystsGalleryContent />;
+  return <AnalystsEventContent />;
 };
 
 export default AnalystsPage;

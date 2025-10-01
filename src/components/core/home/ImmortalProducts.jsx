@@ -162,7 +162,7 @@ const Section = ({ title, body, link, index, isParentInView, isModal, onGetStart
             variant="solid"
             color="primary"
             radius="full"
-            className="mt-8 transition-transform hover:scale-105"
+            className="mt-8"
             href={isModal ? undefined : link}
             onPress={isModal ? onGetStartedOpen : undefined}
           >

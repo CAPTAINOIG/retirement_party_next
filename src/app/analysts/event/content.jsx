@@ -3,12 +3,12 @@
 import React from 'react';
 import HeroSection from './components/HeroSection';
 import IntroSection from './components/IntroSection';
-import WhyJoinSection from './components/WhyJoinSection';
-import WhoCanJoinSection from './components/WhoCanJoinSection';
-import HowItWorksSection from './components/HowItWorksSection';
-import CallToActionSection from './components/CallToActionSection';
+import WhyAttendSection from './components/WhyAttendSection';
+import WhoShouldAttendSection from './components/WhoShouldAttendSection';
+import EventDetailsSection from './components/EventDetailsSection';
+import AnalystsApplicationForm from './components/AnalystsApplicationForm';
 
-const AnalystsGalleryContent = () => {
+const AnalystsEventContent = () => {
   return (
     <div className="dark min-h-screen bg-black text-white">
       {/* Hero Section */}
@@ -21,27 +21,28 @@ const AnalystsGalleryContent = () => {
         <IntroSection />
       </section>
 
-      {/* Why Join Section */}
+      {/* Why Attend Section */}
       <section className="relative">
-        <WhyJoinSection />
+        <WhyAttendSection />
       </section>
 
-      {/* Who Can Join Section */}
+      {/* Who Should Attend Section */}
       <section className="relative">
-        <WhoCanJoinSection />
+        <WhoShouldAttendSection />
       </section>
 
-      {/* How It Works Section */}
+      {/* Event Details Section */}
       <section className="relative">
-        <HowItWorksSection />
+        <EventDetailsSection />
       </section>
 
       {/* Call to Action Section */}
       <section className="relative">
-        <CallToActionSection />
+        <AnalystsApplicationForm />
       </section>
     </div>
   );
 };
 
-export default AnalystsGalleryContent;
+export default AnalystsEventContent;
+

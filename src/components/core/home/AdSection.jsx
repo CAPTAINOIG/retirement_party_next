@@ -40,7 +40,7 @@ const AdSection = () => {
           >
             <Button
               size="lg"
-              className="mt-12 bg-white text-black transition-transform hover:scale-105 hover:bg-white/90"
+              className="mt-12 bg-white text-black hover:bg-white/90"
               radius="full"
               onPress={onGetStartedOpen}
             >

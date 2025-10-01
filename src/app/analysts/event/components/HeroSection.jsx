@@ -2,15 +2,13 @@
 
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { Button, useDisclosure } from '@heroui/react';
+import { Button } from '@heroui/react';
 import Link from 'next/link';
 import { TbChevronRight } from 'react-icons/tb';
-import AnalystsApplicationDrawer from './AnalystsApplicationDrawer';
 
 const HeroSection = () => {
   const heroRef = useRef(null);
   const isInView = useInView(heroRef, { once: true, margin: '-100px' });
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <div ref={heroRef} className="dark relative w-full bg-black text-white">
@@ -34,10 +32,14 @@ const HeroSection = () => {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="text-[3.5rem] !leading-[0.9] font-bold tracking-tighter md:text-[5rem] lg:text-[6rem] xl:text-[7rem]"
             >
-              Welcome to the{' '}
-              <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">Statisense</span>{' '}
+              Data Analysts{' '}
+              <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
+                CONNECT
+              </span>{' '}
               <br />
-              Data Analyst <span>Program</span>
+              <span className="text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[5rem]">
+                2025
+              </span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -45,10 +47,9 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-              className="text-default-500 mx-auto mt-8 max-w-3xl text-xl leading-relaxed tracking-tight md:text-2xl"
+              className="text-default-500 mx-auto mt-8 max-w-3xl text-xl md:text-2xl tracking-tight leading-relaxed"
             >
-              A platform designed to help analysts gain real-world experience, grow their skills, and contribute to
-              Africa's fast-rising data ecosystem.
+              Unlocking Insights, Driving Impact
             </motion.p>
 
             {/* CTA Button */}
@@ -58,25 +59,23 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
               className="mt-12"
             >
-              <Button
-                onPress={onOpen}
-                size="lg"
-                color="primary"
-                radius="full"
+              <Button 
+                as={Link} 
+                href="#apply" 
+                size="lg" 
+                color="primary" 
+                radius="full" 
                 className="px-8 py-6 text-lg"
                 endContent={<TbChevronRight size="20" />}
               >
-                Join the Program Today
+                Register Now
               </Button>
             </motion.div>
           </div>
         </div>
       </div>
-
-      <AnalystsApplicationDrawer isOpen={isOpen} onClose={onClose} />
     </div>
   );
 };
 
 export default HeroSection;
-

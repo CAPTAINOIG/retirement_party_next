@@ -3,21 +3,9 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'motion/react';
 import { useForm } from 'react-hook-form';
-import { Button, Input, Select, SelectItem, Textarea } from '@heroui/react';
+import { addToast, Button, Input, Textarea } from '@heroui/react';
 import { useCreateEventAttendee } from '@/api/other';
-import {
-  TbSend,
-  TbUser,
-  TbMail,
-  TbPhone,
-  TbMapPin,
-  TbWorld,
-  TbCheck,
-  TbBriefcase,
-  TbSchool,
-  TbCode,
-  TbBrandLinkedin,
-} from 'react-icons/tb';
+import { TbSend, TbUser, TbMail, TbPhone, TbMapPin, TbCheck } from 'react-icons/tb';
 
 const AnalystsApplicationForm = () => {
   const formRef = useRef(null);
@@ -31,38 +19,6 @@ const AnalystsApplicationForm = () => {
   } = useForm();
   const { mutate: createAttendee, isPending } = useCreateEventAttendee();
 
-  const experienceLevels = [
-    { key: 'entry', label: 'Entry Level (0-2 years)' },
-    { key: 'mid', label: 'Mid Level (3-5 years)' },
-    { key: 'senior', label: 'Senior Level (6-10 years)' },
-    { key: 'expert', label: 'Expert Level (10+ years)' },
-    { key: 'student', label: 'Student/Recent Graduate' },
-  ];
-
-  const industries = [
-    { key: 'finance', label: 'Finance & Banking' },
-    { key: 'healthcare', label: 'Healthcare' },
-    { key: 'technology', label: 'Technology' },
-    { key: 'retail', label: 'Retail & E-commerce' },
-    { key: 'consulting', label: 'Consulting' },
-    { key: 'education', label: 'Education' },
-    { key: 'government', label: 'Government' },
-    { key: 'startup', label: 'Startup' },
-    { key: 'other', label: 'Other' },
-  ];
-
-  const tools = [
-    { key: 'python', label: 'Python' },
-    { key: 'r', label: 'R' },
-    { key: 'sql', label: 'SQL' },
-    { key: 'excel', label: 'Excel' },
-    { key: 'tableau', label: 'Tableau' },
-    { key: 'powerbi', label: 'Power BI' },
-    { key: 'sas', label: 'SAS' },
-    { key: 'spss', label: 'SPSS' },
-    { key: 'other', label: 'Other' },
-  ];
-
   const onSubmit = (data) => {
     createAttendee(
       {
@@ -72,13 +28,6 @@ const AnalystsApplicationForm = () => {
         event: 'analysts-program',
         meta: {
           location: data.location,
-          company: data.company,
-          jobTitle: data.jobTitle,
-          experienceLevel: data.experienceLevel,
-          industry: data.industry,
-          primaryTool: data.primaryTool,
-          linkedin: data.linkedin,
-          website: data.website,
           interests: data.interests,
         },
       },
@@ -87,8 +36,11 @@ const AnalystsApplicationForm = () => {
           setIsSuccess(true);
           reset();
         },
-        onError: () => {
-          // Handle error if needed
+        onError: (e) => {
+          addToast({
+            title: 'An error occurred',
+            description: e?.response?.data?.message ?? 'Something went wrong, please try again',
+          });
         },
       }
     );
@@ -280,155 +232,6 @@ const AnalystsApplicationForm = () => {
                   </div>
                 </div>
 
-                {/* Professional Information */}
-                <div className="space-y-6">
-                  <h3 className="mb-4 text-2xl font-semibold text-white">Professional Background</h3>
-                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                    <Input
-                      {...register('company', { required: 'Company is required' })}
-                      label="Company/Organization"
-                      labelPlacement="outside-top"
-                      placeholder="Enter your company name"
-                      variant="bordered"
-                      size="lg"
-                      startContent={<TbBriefcase className="text-default-400" size={20} />}
-                      isInvalid={!!errors.company}
-                      errorMessage={errors.company?.message}
-                      classNames={{
-                        input: 'text-base',
-                      }}
-                    />
-                    <Input
-                      {...register('jobTitle', { required: 'Job title is required' })}
-                      label="Job Title"
-                      labelPlacement="outside-top"
-                      placeholder="e.g., Data Analyst, Business Analyst"
-                      variant="bordered"
-                      size="lg"
-                      startContent={<TbSchool className="text-default-400" size={20} />}
-                      isInvalid={!!errors.jobTitle}
-                      errorMessage={errors.jobTitle?.message}
-                      classNames={{
-                        input: 'text-base',
-                      }}
-                    />
-                  </div>
-                </div>
-
-                {/* Experience & Industry */}
-                <div className="space-y-6">
-                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                    <div className="space-y-4">
-                      <Select
-                        {...register('experienceLevel', { required: 'Please select your experience level' })}
-                        label="Experience Level"
-                        labelPlacement="outside"
-                        placeholder="Select your experience level"
-                        variant="bordered"
-                        size="lg"
-                        isInvalid={!!errors.experienceLevel}
-                        errorMessage={errors.experienceLevel?.message}
-                        disallowEmptySelection
-                        classNames={{
-                          trigger:
-                            'border-default-300/30 bg-default-100/10 hover:border-default-400/50 data-[focus=true]:border-primary-500',
-                          value: 'text-white',
-                          label: 'text-default-300',
-                        }}
-                      >
-                        {experienceLevels.map((level) => (
-                          <SelectItem key={level.key} value={level.key}>
-                            {level.label}
-                          </SelectItem>
-                        ))}
-                      </Select>
-                    </div>
-                    <div className="space-y-4">
-                      <Select
-                        {...register('industry', { required: 'Please select your industry' })}
-                        label="Industry"
-                        labelPlacement="outside"
-                        placeholder="Select your industry"
-                        variant="bordered"
-                        size="lg"
-                        disallowEmptySelection
-                        isInvalid={!!errors.industry}
-                        errorMessage={errors.industry?.message}
-                        classNames={{
-                          trigger:
-                            'border-default-300/30 bg-default-100/10 hover:border-default-400/50 data-[focus=true]:border-primary-500',
-                          value: 'text-white',
-                          label: 'text-default-300',
-                        }}
-                      >
-                        {industries.map((industry) => (
-                          <SelectItem key={industry.key} value={industry.key}>
-                            {industry.label}
-                          </SelectItem>
-                        ))}
-                      </Select>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Primary Tool */}
-                <div className="flex space-y-4">
-                  <Select
-                    {...register('primaryTool', { required: 'Please select your primary tool' })}
-                    label="Primary Analytics Tool"
-                    labelPlacement="outside"
-                    placeholder="Select your main analytics tool"
-                    variant="bordered"
-                    size="lg"
-                    disallowEmptySelection
-                    isInvalid={!!errors.primaryTool}
-                    errorMessage={errors.primaryTool?.message}
-                    classNames={{
-                      trigger:
-                        'border-default-300/30 bg-default-100/10 hover:border-default-400/50 data-[focus=true]:border-primary-500',
-                      value: 'text-white',
-                      label: 'text-default-300',
-                    }}
-                  >
-                    {tools.map((tool) => (
-                      <SelectItem key={tool.key} value={tool.key}>
-                        {tool.label}
-                      </SelectItem>
-                    ))}
-                  </Select>
-                </div>
-
-                {/* Professional Links */}
-                <div className="space-y-6">
-                  <h3 className="mb-4 text-2xl font-semibold text-white">Professional Links</h3>
-                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                    <Input
-                      {...register('linkedin')}
-                      label="LinkedIn Profile"
-                      labelPlacement="outside-top"
-                      placeholder="LinkedIn profile URL"
-                      variant="bordered"
-                      size="lg"
-                      startContent={<TbBrandLinkedin className="text-blue-600" size={20} />}
-                      classNames={{
-                        input: 'text-base',
-                      }}
-                    />
-                    <Input
-                      {...register('website')}
-                      label="Website/Portfolio (Optional)"
-                      labelPlacement="outside-top"
-                      placeholder="https://yourwebsite.com"
-                      variant="bordered"
-                      size="lg"
-                      startContent={<TbWorld className="text-default-400" size={20} />}
-                      classNames={{
-                        input: 'text-base',
-                      }}
-                    />
-                  </div>
-                </div>
-
                 {/* Interests */}
                 <div className="space-y-4">
                   <Textarea
@@ -455,7 +258,7 @@ const AnalystsApplicationForm = () => {
                     color="primary"
                     radius="full"
                     isLoading={isPending}
-                    className="px-12 py-6 text-lg font-semibold transition-transform hover:scale-105"
+                    className="px-12 py-6 text-lg font-semibold"
                     endContent={!isPending && <TbSend size={20} />}
                   >
                     {isPending ? 'Registering...' : 'Register Now'}

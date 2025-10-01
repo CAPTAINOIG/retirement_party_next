@@ -66,7 +66,7 @@ const HeroSection = () => {
                 size="lg" 
                 color="primary" 
                 radius="full" 
-                className="px-8 py-6 text-lg transition-transform hover:scale-105"
+                className="px-8 py-6 text-lg"
                 endContent={<TbChevronRight size="20" />}
               >
                 Apply Now

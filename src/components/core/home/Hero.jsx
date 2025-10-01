@@ -63,7 +63,7 @@ const Hero = () => {
             >
               <Button
                 size="lg"
-                className="mt-12 px-8 transition-transform hover:scale-105"
+                className="mt-12 px-8"
                 radius="full"
                 onPress={onGetStartedOpen}
                 color="primary"

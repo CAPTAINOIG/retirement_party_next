@@ -2,77 +2,74 @@
 
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { Button } from '@heroui/react';
+import { Button, useDisclosure } from '@heroui/react';
 import Link from 'next/link';
 import { TbChevronRight } from 'react-icons/tb';
+import AnalystsApplicationDrawer from './AnalystsApplicationDrawer';
 
 const CallToActionSection = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <div ref={sectionRef} className="dark relative w-full bg-black text-white py-20" id="register">
+    <div ref={sectionRef} className="dark relative w-full bg-black py-20 text-white" id="join">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="mx-auto max-w-4xl text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-8"
+            className="mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            🎟️ Register{' '}
-            <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
-              Now
-            </span>
+            Be Part of Africa's Data Future
           </motion.h2>
-          
-          <motion.div
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="space-y-8"
+            className="text-default-400 mb-12 text-xl leading-relaxed md:text-2xl"
           >
-            <p className="text-lg md:text-xl text-default-400 leading-relaxed">
-              Seats are limited! Reserve your spot today and be part of a community that's shaping the future with data.
-            </p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-              className="mt-12"
-            >
-              <Button 
-                as={Link} 
-                href="#" 
-                size="lg" 
-                color="primary" 
-                radius="full" 
-                className="px-12 py-8 text-xl transition-transform hover:scale-105"
-                endContent={<TbChevronRight size="24" />}
-              >
-                Register Here
-              </Button>
-            </motion.div>
+            We believe in building not just skills, but careers and impact. By joining, you're taking a step into a
+            community where growth and recognition go hand in hand.
+          </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-              className="mt-16 p-8 rounded-2xl border border-default-200/20 bg-default-50/5 backdrop-blur-sm"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+            className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center"
+          >
+            <Button
+              onPress={onOpen}
+              size="lg"
+              color="primary"
+              radius="full"
+              className="px-8 py-6 text-lg"
+              endContent={<TbChevronRight size="20" />}
             >
-              <p className="text-xl md:text-2xl font-semibold text-white mb-4">
-                "Join a community shaping the future with data"
-              </p>
-              <p className="text-default-500">
-                Connect with like-minded professionals and discover new opportunities in the world of data analytics.
-              </p>
-            </motion.div>
+              Join the Program Today
+            </Button>
+
+            <Button
+              as={Link}
+              href="/contact"
+              size="lg"
+              variant="bordered"
+              radius="full"
+              className="border-white/20 px-8 py-6 text-lg text-white transition-all hover:border-white/40 hover:bg-white/5"
+            >
+              Learn More
+            </Button>
           </motion.div>
         </div>
       </div>
+
+      <AnalystsApplicationDrawer isOpen={isOpen} onClose={onClose} />
     </div>
   );
 };
 
 export default CallToActionSection;
+

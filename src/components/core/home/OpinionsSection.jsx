@@ -108,7 +108,7 @@ const DesktopOpinionsSection = () => {
                 variant="solid"
                 color="primary"
                 radius="full"
-                className="mt-8 transition-transform hover:scale-105"
+                className="mt-8"
                 href={OPINIONS_URL}
                 as={Link}
                 target="_blank"

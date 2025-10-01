@@ -399,7 +399,7 @@ const ApplicationForm = () => {
                     color="primary"
                     radius="full"
                     isLoading={isPending}
-                    className="px-12 py-6 text-lg font-semibold transition-transform hover:scale-105"
+                    className="px-12 py-6 text-lg font-semibold"
                     endContent={!isPending && <TbSend size={20} />}
                   >
                     {isPending ? 'Submitting...' : 'Submit Application'}
