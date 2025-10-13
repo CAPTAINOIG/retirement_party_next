@@ -5,7 +5,7 @@ import HeroSection from './components/HeroSection';
 import IntroSection from './components/IntroSection';
 import WhyAttendSection from './components/WhyAttendSection';
 import WhoShouldAttendSection from './components/WhoShouldAttendSection';
-import EventDetailsSection from './components/EventDetailsSection';
+// import EventDetailsSection from './components/EventDetailsSection';
 import AnalystsApplicationForm from './components/AnalystsApplicationForm';
 
 const AnalystsRegisterContent = () => {
@@ -32,9 +32,9 @@ const AnalystsRegisterContent = () => {
       </section>
 
       {/* Event Details Section */}
-      <section className="relative">
+      {/* <section className="relative">
         <EventDetailsSection />
-      </section>
+      </section> */}
 
       {/* Call to Action Section */}
       <section className="relative">
