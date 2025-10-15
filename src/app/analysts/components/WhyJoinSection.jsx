@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { TbBriefcase, TbCoin, TbUsers, TbTrendingUp } from 'react-icons/tb';
+import { TbBriefcase, TbUsers, TbTrendingUp, TbPresentation } from 'react-icons/tb';
 
 const WhyJoinSection = () => {
   const sectionRef = useRef(null);
@@ -10,27 +10,27 @@ const WhyJoinSection = () => {
 
   const benefits = [
     {
-      icon: TbBriefcase,
-      title: 'Hands-On Projects',
-      description: 'Work on real data challenges that make an impact.',
+      icon: TbUsers,
+      title: 'City Meetups',
+      description: 'Connect with fellow data analysts, enthusiasts, and innovators in your city.',
       color: 'from-pink-500 to-rose-500',
     },
     {
-      icon: TbCoin,
-      title: 'Earn While You Learn',
-      description: 'Every contribution is rewarded — your skills are valued.',
+      icon: TbPresentation,
+      title: 'Interactive Sessions',
+      description: 'Learn from industry leaders about the latest tools, trends, and techniques in data analysis and storytelling.',
       color: 'from-purple-500 to-violet-500',
     },
     {
-      icon: TbUsers,
-      title: 'Collaborative Network',
-      description: 'Connect with other analysts, share knowledge, and grow together.',
+      icon: TbBriefcase,
+      title: 'Hands-on Demos',
+      description: 'Experience how Statisense is building the future of data visualization and decision-making in Africa.',
       color: 'from-blue-500 to-cyan-500',
     },
     {
-      icon: TbTrendingUp,
-      title: 'Career Pathways',
-      description: 'Gain visibility and open doors to future opportunities in the data space.',
+      icon: TbUsers,
+      title: 'Networking & Collaboration',
+      description: 'Build relationships that go beyond the event — with communities, organizations, and opportunities.',
       color: 'from-teal-500 to-green-500',
     },
   ];
@@ -45,7 +45,7 @@ const WhyJoinSection = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Why Join?
+            What to Expect
           </motion.h2>
         </div>
 

@@ -3,21 +3,9 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
-import { Button, Input, Select, SelectItem, Textarea, Drawer, DrawerBody, DrawerContent } from '@heroui/react';
+import { Button, Input, Drawer, DrawerBody, DrawerContent } from '@heroui/react';
 import { useCreateEventAttendee } from '@/api/other';
-import {
-  TbSend,
-  TbUser,
-  TbMail,
-  TbPhone,
-  TbMapPin,
-  TbWorld,
-  TbCheck,
-  TbBriefcase,
-  TbSchool,
-  TbBrandLinkedin,
-  TbX,
-} from 'react-icons/tb';
+import { TbSend, TbUser, TbMail, TbPhone, TbMapPin, TbCheck, TbX } from 'react-icons/tb';
 
 const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -29,55 +17,15 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
   } = useForm();
   const { mutate: createAttendee, isPending } = useCreateEventAttendee();
 
-  const experienceLevels = [
-    { key: 'entry', label: 'Entry Level (0-2 years)' },
-    { key: 'mid', label: 'Mid Level (3-5 years)' },
-    { key: 'senior', label: 'Senior Level (6-10 years)' },
-    { key: 'expert', label: 'Expert Level (10+ years)' },
-    { key: 'student', label: 'Student/Recent Graduate' },
-  ];
-
-  const industries = [
-    { key: 'finance', label: 'Finance & Banking' },
-    { key: 'healthcare', label: 'Healthcare' },
-    { key: 'technology', label: 'Technology' },
-    { key: 'retail', label: 'Retail & E-commerce' },
-    { key: 'consulting', label: 'Consulting' },
-    { key: 'education', label: 'Education' },
-    { key: 'government', label: 'Government' },
-    { key: 'startup', label: 'Startup' },
-    { key: 'other', label: 'Other' },
-  ];
-
-  const tools = [
-    { key: 'python', label: 'Python' },
-    { key: 'r', label: 'R' },
-    { key: 'sql', label: 'SQL' },
-    { key: 'excel', label: 'Excel' },
-    { key: 'tableau', label: 'Tableau' },
-    { key: 'powerbi', label: 'Power BI' },
-    { key: 'sas', label: 'SAS' },
-    { key: 'spss', label: 'SPSS' },
-    { key: 'other', label: 'Other' },
-  ];
-
   const onSubmit = (data) => {
     createAttendee(
       {
         name: data.name,
         email: data.email,
         phone: data.phone,
-        event: 'analysts-program',
+        event: 'data-on-the-road-tour',
         meta: {
           location: data.location,
-          company: data.company,
-          jobTitle: data.jobTitle,
-          experienceLevel: data.experienceLevel,
-          industry: data.industry,
-          primaryTool: data.primaryTool,
-          linkedin: data.linkedin,
-          website: data.website,
-          interests: data.interests,
         },
       },
       {
@@ -124,8 +72,8 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="mb-8 text-base leading-relaxed opacity-80"
       >
-        Thank you for registering for our Analysts Program! We're excited to have you join our community of data
-        professionals.
+        Thank you for registering for the Data on the Road tour! We're excited to meet you and connect with fellow data
+        enthusiasts.
       </motion.p>
 
       <motion.div
@@ -140,15 +88,15 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
         <ul className="space-y-2 text-sm opacity-80">
           <li className="flex items-start">
             <span className="bg-primary-500 mt-1 mr-2 h-1.5 w-1.5 rounded-full"></span>
-            You'll receive a confirmation email with program details
+            You'll receive a confirmation email with event details
           </li>
           <li className="flex items-start">
             <span className="bg-primary-500 mt-1 mr-2 h-1.5 w-1.5 rounded-full"></span>
-            Program materials will be shared closer to the start date
+            Event location and timing will be shared before November 6th
           </li>
           <li className="flex items-start">
             <span className="bg-primary-500 mt-1 mr-2 h-1.5 w-1.5 rounded-full"></span>
-            Connect with fellow analysts in our community
+            Connect with fellow data professionals at the event
           </li>
         </ul>
       </motion.div>
@@ -178,8 +126,8 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
         <DrawerBody className="p-6 md:p-8">
           <div className="mb-6 flex items-center justify-between gap-4">
             <div>
-              <h3 className="text-2xl font-bold">Join Analysts Program</h3>
-              <p className="mt-1 text-base opacity-80">Fill the form below to register for our program</p>
+              <h3 className="text-2xl font-bold">Join Data on the Road Tour</h3>
+              <p className="mt-1 text-base opacity-80">Register for our tour event on November 6th</p>
             </div>
             <Button isIconOnly variant="bordered" color="danger" radius="full" onPress={handleClose}>
               <TbX size="20" />
@@ -188,8 +136,8 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
           {isSuccess ? (
             <SuccessView />
           ) : (
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-              {/* Personal Information */}
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              {/* Registration Information */}
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <Input
                   {...register('name', { required: 'Name is required' })}
@@ -256,164 +204,7 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
                   }}
                 />
               </div>
-              {/* Professional Information */}
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold">Professional Background</h4>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                  <Input
-                    {...register('company', { required: 'Company is required' })}
-                    label="Company/Organization"
-                    labelPlacement="outside"
-                    placeholder="Enter your company name"
-                    variant="bordered"
-                    size="md"
-                    startContent={<TbBriefcase className="text-default-400" size={18} />}
-                    isInvalid={!!errors.company}
-                    errorMessage={errors.company?.message}
-                    classNames={{
-                      input: 'text-sm px-2',
-                    }}
-                  />
-                  <Input
-                    {...register('jobTitle', { required: 'Job title is required' })}
-                    label="Job Title"
-                    labelPlacement="outside"
-                    placeholder="e.g., Data Analyst, Business Analyst"
-                    variant="bordered"
-                    size="md"
-                    startContent={<TbSchool className="text-default-400" size={18} />}
-                    isInvalid={!!errors.jobTitle}
-                    errorMessage={errors.jobTitle?.message}
-                    classNames={{
-                      input: 'text-sm px-2',
-                    }}
-                  />
-                </div>
-              </div>
-              {/* Experience & Industry */}
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <div className="flex">
-                  <Select
-                    {...register('experienceLevel', { required: 'Please select your experience level' })}
-                    label="Experience Level"
-                    labelPlacement="outside"
-                    placeholder="Select your experience level"
-                    variant="bordered"
-                    size="md"
-                    isInvalid={!!errors.experienceLevel}
-                    errorMessage={errors.experienceLevel?.message}
-                    disallowEmptySelection
-                    classNames={{
-                      trigger:
-                        'border-default-300/30 bg-default-100/10 hover:border-default-400/50 data-[focus=true]:border-primary-500',
-                      value: 'text-white text-sm',
-                      label: 'text-default-300',
-                    }}
-                  >
-                    {experienceLevels.map((level) => (
-                      <SelectItem key={level.key} value={level.key}>
-                        {level.label}
-                      </SelectItem>
-                    ))}
-                  </Select>
-                </div>
-                <div className="flex">
-                  <Select
-                    {...register('industry', { required: 'Please select your industry' })}
-                    label="Industry"
-                    labelPlacement="outside"
-                    placeholder="Select your industry"
-                    variant="bordered"
-                    size="md"
-                    disallowEmptySelection
-                    isInvalid={!!errors.industry}
-                    errorMessage={errors.industry?.message}
-                    classNames={{
-                      trigger:
-                        'border-default-300/30 bg-default-100/10 hover:border-default-400/50 data-[focus=true]:border-primary-500',
-                      value: 'text-white text-sm',
-                      label: 'text-default-300',
-                    }}
-                  >
-                    {industries.map((industry) => (
-                      <SelectItem key={industry.key} value={industry.key}>
-                        {industry.label}
-                      </SelectItem>
-                    ))}
-                  </Select>
-                </div>
-              </div>
-              {/* Primary Tool */}
-              <div className="flex">
-                <Select
-                  {...register('primaryTool', { required: 'Please select your primary tool' })}
-                  label="Primary Analytics Tool"
-                  labelPlacement="outside"
-                  placeholder="Select your main analytics tool"
-                  variant="bordered"
-                  size="md"
-                  disallowEmptySelection
-                  isInvalid={!!errors.primaryTool}
-                  errorMessage={errors.primaryTool?.message}
-                  classNames={{
-                    trigger:
-                      'border-default-300/30 bg-default-100/10 hover:border-default-400/50 data-[focus=true]:border-primary-500',
-                    value: 'text-white text-sm',
-                    label: 'text-default-300',
-                  }}
-                >
-                  {tools.map((tool) => (
-                    <SelectItem key={tool.key} value={tool.key}>
-                      {tool.label}
-                    </SelectItem>
-                  ))}
-                </Select>
-              </div>
-              {/* Professional Links */}
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold">Professional Links</h4>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                  <Input
-                    {...register('linkedin')}
-                    label="LinkedIn Profile (Optional)"
-                    labelPlacement="outside"
-                    placeholder="LinkedIn profile URL"
-                    variant="bordered"
-                    size="md"
-                    startContent={<TbBrandLinkedin className="text-blue-600" size={18} />}
-                    classNames={{
-                      input: 'text-sm px-2',
-                    }}
-                  />
-                  <Input
-                    {...register('website')}
-                    label="Website/Portfolio (Optional)"
-                    labelPlacement="outside"
-                    placeholder="https://yourwebsite.com"
-                    variant="bordered"
-                    size="md"
-                    startContent={<TbWorld className="text-default-400" size={18} />}
-                    classNames={{
-                      input: 'text-sm px-2',
-                    }}
-                  />
-                </div>
-              </div>
-              {/* Interests */}
-              <Textarea
-                {...register('interests', { required: 'Please describe your interests' })}
-                label="Areas of Interest & Goals"
-                labelPlacement="outside"
-                placeholder="Tell us about your specific interests in data analytics, what you hope to learn, and your professional goals..."
-                variant="bordered"
-                size="md"
-                minRows={3}
-                isInvalid={!!errors.interests}
-                errorMessage={errors.interests?.message}
-                classNames={{
-                  input: 'text-sm px-2 py-2',
-                }}
-              />
+
               {/* Submit Button */}
               <div className="flex pt-4">
                 <Button
@@ -425,7 +216,7 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
                   className="px-8 py-3 text-base font-semibold"
                   endContent={!isPending && <TbSend size={18} />}
                 >
-                  {isPending ? 'Registering...' : 'Register Now'}
+                  {isPending ? 'Registering...' : 'Register for Tour'}
                 </Button>
               </div>
             </form>

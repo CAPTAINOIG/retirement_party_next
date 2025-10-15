@@ -22,18 +22,22 @@ const CallToActionSection = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Be Part of Africa's Data Future
+            First Edition Happening Soon
           </motion.h2>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="text-default-400 mb-12 text-xl leading-relaxed md:text-2xl"
+            className="mb-12 space-y-4"
           >
-            We believe in building not just skills, but careers and impact. By joining, you're taking a step into a
-            community where growth and recognition go hand in hand.
-          </motion.p>
+            <p className="text-default-400 text-2xl font-semibold md:text-3xl">
+              November 6th
+            </p>
+            <p className="text-default-400 text-xl leading-relaxed md:text-2xl">
+              Location: Ebonylife Cinemas Victoria Island
+            </p>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -49,7 +53,7 @@ const CallToActionSection = () => {
               className="px-8 py-6 text-lg"
               endContent={<TbChevronRight size="20" />}
             >
-              Join the Program Today
+              Register here
             </Button>
           </motion.div>
         </div>

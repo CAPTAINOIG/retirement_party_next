@@ -33,10 +33,10 @@ const HeroSection = () => {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="text-[3.5rem] !leading-[0.9] font-bold tracking-tighter md:text-[5rem] lg:text-[6rem] xl:text-[7rem]"
             >
-              Welcome to the{' '}
-              <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">Statisense</span>{' '}
+              Data on the Road:{' '}
+              <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">Connecting Cities</span>,{' '}
               <br />
-              Data Analyst <span>Program</span>
+              One Dataset at a <span>Time</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -46,8 +46,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
               className="text-default-500 mx-auto mt-8 max-w-3xl text-xl leading-relaxed tracking-tight md:text-2xl"
             >
-              A platform designed to help analysts gain real-world experience, grow their skills, and contribute to
-              Africa's fast-rising data ecosystem.
+              Join the Statisense team as we hit the road to meet data analysts, storytellers, and innovators across Africa — bringing insights, conversations, and opportunities right to your city.
             </motion.p>
 
             {/* CTA Button */}
@@ -65,7 +64,7 @@ const HeroSection = () => {
                 className="px-8 py-6 text-lg"
                 endContent={<TbChevronRight size="20" />}
               >
-                Join the Program Today
+                🚗 Join our tour
               </Button>
             </motion.div>
           </div>

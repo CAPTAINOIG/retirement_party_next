@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { TbTarget, TbBriefcase, TbSchool, TbHeart } from 'react-icons/tb';
+import { TbTarget, TbBriefcase, TbSchool, TbTrendingUp } from 'react-icons/tb';
 
 const WhoCanJoinSection = () => {
   const sectionRef = useRef(null);
@@ -11,26 +11,26 @@ const WhoCanJoinSection = () => {
   const targetAudience = [
     {
       icon: TbTarget,
-      title: 'Aspiring Data Analysts',
-      description: 'Seeking practical experience',
+      title: 'Data Analysts',
+      description: 'Professional analysts ready to connect and share insights',
       color: 'from-orange-500 to-red-500',
     },
     {
       icon: TbBriefcase,
-      title: 'Professionals',
-      description: 'Looking to sharpen their skills',
+      title: 'Policymakers',
+      description: 'Leaders using data to drive policy decisions',
       color: 'from-blue-500 to-indigo-500',
+    },
+    {
+      icon: TbTrendingUp,
+      title: 'Entrepreneurs',
+      description: 'Building data-driven solutions for Africa',
+      color: 'from-green-500 to-emerald-500',
     },
     {
       icon: TbSchool,
       title: 'Students',
-      description: 'Eager to break into the data industry',
-      color: 'from-green-500 to-emerald-500',
-    },
-    {
-      icon: TbHeart,
-      title: 'Data Enthusiasts',
-      description: "Passionate about Africa's data future",
+      description: 'Learning and growing in the data space',
       color: 'from-purple-500 to-pink-500',
     },
   ];
@@ -45,8 +45,16 @@ const WhoCanJoinSection = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Who's This For?
+            Why You Should Join
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+            className="text-default-400 mx-auto max-w-3xl text-xl leading-relaxed md:text-2xl"
+          >
+            Because Africa's data story deserves to be told by Africans. Whether you're a data analyst, policymaker, entrepreneur, or student, this tour is your chance to be part of a movement that's shaping the future of data on the continent.
+          </motion.p>
         </div>
 
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">

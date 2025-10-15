@@ -5,7 +5,7 @@ import HeroSection from './components/HeroSection';
 import IntroSection from './components/IntroSection';
 import WhyJoinSection from './components/WhyJoinSection';
 import WhoCanJoinSection from './components/WhoCanJoinSection';
-import HowItWorksSection from './components/HowItWorksSection';
+// import HowItWorksSection from './components/HowItWorksSection';
 import CallToActionSection from './components/CallToActionSection';
 
 const AnalystsGalleryContent = () => {
@@ -32,9 +32,9 @@ const AnalystsGalleryContent = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="relative">
+      {/* <section className="relative">
         <HowItWorksSection />
-      </section>
+      </section> */}
 
       {/* Call to Action Section */}
       <section className="relative">
