@@ -24,7 +24,7 @@ const IntroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="text-left space-y-6"
+            className="text-center space-y-6"
           >
             <p className="text-default-400 text-xl leading-relaxed md:text-2xl">
               We're taking data beyond the screens — to the streets.
