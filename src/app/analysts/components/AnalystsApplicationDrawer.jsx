@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
-import { Button, Input, Drawer, DrawerBody, DrawerContent } from '@heroui/react';
+import { Button, Input, Textarea, Drawer, DrawerBody, DrawerContent } from '@heroui/react';
 import { useCreateEventAttendee } from '@/api/other';
-import { TbSend, TbUser, TbMail, TbPhone, TbMapPin, TbCheck, TbX } from 'react-icons/tb';
+import { TbSend, TbUser, TbMail, TbPhone, TbMapPin, TbCheck, TbX, TbBrandLinkedin } from 'react-icons/tb';
 
 const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -26,6 +26,8 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
         event: 'data-on-the-road-tour',
         meta: {
           location: data.location,
+          linkedin: data.linkedin,
+          interests: data.interests,
         },
       },
       {
@@ -92,7 +94,7 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
           </li>
           <li className="flex items-start">
             <span className="bg-primary-500 mt-1 mr-2 h-1.5 w-1.5 rounded-full"></span>
-            Event location and timing will be shared before November 6th
+            We'll contact you with event details for your city
           </li>
           <li className="flex items-start">
             <span className="bg-primary-500 mt-1 mr-2 h-1.5 w-1.5 rounded-full"></span>
@@ -126,8 +128,10 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
         <DrawerBody className="p-6 md:p-8">
           <div className="mb-6 flex items-center justify-between gap-4">
             <div>
-              <h3 className="text-2xl font-bold">Join Data on the Road Tour</h3>
-              <p className="mt-1 text-base opacity-80">Register for our tour event on November 6th</p>
+              <h3 className="text-2xl font-bold">Join Statisense on the Road</h3>
+              <p className="mt-1 text-base opacity-80">
+                We're coming to a city near you! Register for our exclusive upcoming events
+              </p>
             </div>
             <Button isIconOnly variant="bordered" color="danger" radius="full" onPress={handleClose}>
               <TbX size="20" />
@@ -193,7 +197,7 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
                   {...register('location', { required: 'Location is required' })}
                   label="Location (City)"
                   labelPlacement="outside"
-                  placeholder="Enter your city"
+                  placeholder="eg Ibadan, Gwarinpa, Shomolu, PH etc"
                   variant="bordered"
                   size="md"
                   startContent={<TbMapPin className="text-default-400" size={18} />}
@@ -204,7 +208,37 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
                   }}
                 />
               </div>
-
+              {/* Additional Information */}
+              <div className="space-y-4">
+                <div className="flex">
+                  <Input
+                    {...register('linkedin')}
+                    label="LinkedIn Profile (Optional)"
+                    labelPlacement="outside"
+                    placeholder="LinkedIn profile URL"
+                    variant="bordered"
+                    size="md"
+                    startContent={<TbBrandLinkedin className="text-blue-600" size={18} />}
+                    classNames={{
+                      input: 'text-sm px-2',
+                    }}
+                  />
+                </div>
+                <Textarea
+                  {...register('interests', { required: 'Please describe your areas of interest' })}
+                  label="Areas of Interest"
+                  labelPlacement="outside"
+                  placeholder="Tell us about your interests in data analytics, what you hope to learn from the tour, and what topics excite you most..."
+                  variant="bordered"
+                  size="md"
+                  minRows={3}
+                  isInvalid={!!errors.interests}
+                  errorMessage={errors.interests?.message}
+                  classNames={{
+                    input: 'text-sm px-2 py-2',
+                  }}
+                />
+              </div>
               {/* Submit Button */}
               <div className="flex pt-4">
                 <Button

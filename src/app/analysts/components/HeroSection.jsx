@@ -33,20 +33,20 @@ const HeroSection = () => {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="text-[3.5rem] !leading-[0.9] font-bold tracking-tighter md:text-[5rem] lg:text-[6rem] xl:text-[7rem]"
             >
-              Data on the Road:{' '}
-              <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">Connecting Cities</span>,{' '}
-              <br />
-              One Dataset at a <span>Time</span>
+              <span className="bg-linear-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">Statisense</span>{' '}
+              on the road <br />
+              <span>Data analyst tour</span>
             </motion.h1>
 
             {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: .8, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-              className="text-default-500 mx-auto mt-8 max-w-3xl text-xl leading-relaxed tracking-tight md:text-2xl"
+              className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed tracking-tight md:text-2xl"
             >
-              Join the Statisense team as we hit the road to meet data analysts, storytellers, and innovators across Africa — bringing insights, conversations, and opportunities right to your city.
+              Join the Statisense team as we hit the road to meet data analysts, storytellers, and innovators across
+              Africa — bringing insights, conversations, and opportunities right to your city.
             </motion.p>
 
             {/* CTA Button */}

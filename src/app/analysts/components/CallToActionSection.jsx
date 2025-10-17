@@ -3,8 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { Button, useDisclosure } from '@heroui/react';
-import Link from 'next/link';
-import { TbChevronRight } from 'react-icons/tb';
+import { TbChevronRight, TbCalendar, TbMapPin } from 'react-icons/tb';
 import AnalystsApplicationDrawer from './AnalystsApplicationDrawer';
 
 const CallToActionSection = () => {
@@ -22,20 +21,44 @@ const CallToActionSection = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            First Edition Happening Soon
+            Happening Soon, <br />
+            Data Analysts Connect
           </motion.h2>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="mb-12 space-y-4"
+            className="mb-12 space-y-6"
           >
-            <p className="text-default-400 text-2xl font-semibold md:text-3xl">
-              November 6th
-            </p>
-            <p className="text-default-400 text-xl leading-relaxed md:text-2xl">
-              Location: Ebonylife Cinemas Victoria Island
+            {/* Event Details Card */}
+            <div className="border-default-200/20 bg-default-50/5 mx-auto max-w-2xl rounded-2xl border p-6 backdrop-blur-sm md:p-8">
+              <div className="grid place-items-center gap-6 md:grid-cols-2 md:place-items-start">
+                <div className="flex flex-col items-center gap-3 md:flex-row">
+                  <div className="bg-primary/20 flex h-12 w-12 items-center justify-center rounded-full">
+                    <TbCalendar className="text-primary h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm opacity-80">Date</p>
+                    <p className="text-xl font-semibold text-white md:text-2xl">November 6th</p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center gap-3 md:flex-row">
+                  <div className="bg-primary/20 flex h-12 w-12 items-center justify-center rounded-full">
+                    <TbMapPin className="text-primary h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm opacity-80">Location</p>
+                    <p className="text-xl font-semibold text-white md:text-2xl">Ebonylife Cinemas</p>
+                    <p className="text-sm opacity-80">Victoria Island</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-lg leading-relaxed opacity-80 md:text-xl">
+              Exclusive event for registered Statisense on the Road - Data Analysts Tour members. To attend this
+              exclusive event, join our tour.
             </p>
           </motion.div>
 
@@ -53,7 +76,7 @@ const CallToActionSection = () => {
               className="px-8 py-6 text-lg"
               endContent={<TbChevronRight size="20" />}
             >
-              Register here
+              Join Our Tour
             </Button>
           </motion.div>
         </div>

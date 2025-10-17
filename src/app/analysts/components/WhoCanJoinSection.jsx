@@ -49,9 +49,9 @@ const WhoCanJoinSection = () => {
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: .8, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="text-default-400 mx-auto max-w-3xl text-xl leading-relaxed md:text-2xl"
+            className="mx-auto max-w-3xl text-xl leading-relaxed md:text-2xl"
           >
             Because Africa's data story deserves to be told by Africans. Whether you're a data analyst, policymaker, entrepreneur, or student, this tour is your chance to be part of a movement that's shaping the future of data on the continent.
           </motion.p>
@@ -77,7 +77,7 @@ const WhoCanJoinSection = () => {
                 <h3 className="mb-3 text-xl font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text group-hover:text-transparent">
                   {audience.title}
                 </h3>
-                <p className="text-default-400 text-base leading-relaxed">{audience.description}</p>
+                <p className="opacity-80 text-base leading-relaxed">{audience.description}</p>
 
                 {/* Hover effect overlay */}
                 <div

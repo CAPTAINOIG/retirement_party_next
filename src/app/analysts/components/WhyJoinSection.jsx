@@ -69,7 +69,7 @@ const WhyJoinSection = () => {
                 <h3 className="mb-4 text-2xl font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text group-hover:text-transparent">
                   {benefit.title}
                 </h3>
-                <p className="text-default-400 text-lg leading-relaxed">{benefit.description}</p>
+                <p className="opacity-80 text-lg leading-relaxed">{benefit.description}</p>
 
                 {/* Hover effect overlay */}
                 <div

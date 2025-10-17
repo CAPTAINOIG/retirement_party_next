@@ -79,7 +79,7 @@ const HowItWorksSection = () => {
 
                   {/* Content */}
                   <h3 className="mb-4 text-xl font-bold text-white">{step.title}</h3>
-                  <p className="text-default-400 text-base leading-relaxed">{step.description}</p>
+                  <p className="opacity-80 text-base leading-relaxed">{step.description}</p>
 
                   {/* Connecting Line (except for last item) */}
                   {index < steps.length - 1 && (
