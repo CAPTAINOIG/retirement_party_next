@@ -46,6 +46,10 @@ const MobileNav = ({ isOpen, onClose }) => {
                 href: OPINIONS_URL,
                 label: 'Opinions',
               },
+              {
+                href: '/analysts',
+                label: 'Analysts',
+              },
             ].map((item, index) => (
               <Link
                 key={index}

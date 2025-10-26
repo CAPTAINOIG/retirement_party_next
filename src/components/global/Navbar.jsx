@@ -27,6 +27,12 @@ const Navbar = () => {
               </Link>
               <div className="ml-auto hidden h-full md:space-x-3 lg:flex">
                 <MegaDropdown label="Immortal" />
+                <Link 
+                  href="/analysts" 
+                  className="flex items-center px-3 py-2 text-md font-medium text-white hover:text-gray-300 transition-colors"
+                >
+                  Analysts
+                </Link>
               </div>
             </div>
             <div className="ml-6 flex items-center justify-end gap-x-5 md:gap-x-4">
