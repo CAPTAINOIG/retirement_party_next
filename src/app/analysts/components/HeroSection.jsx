@@ -64,7 +64,7 @@ const HeroSection = () => {
                 className="px-8 py-6 text-lg"
                 endContent={<TbChevronRight size="20" />}
               >
-                🚗 Join our tour
+                Join our tour
               </Button>
             </motion.div>
           </div>
