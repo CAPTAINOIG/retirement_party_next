@@ -19,7 +19,6 @@ import {
   TbUser,
   TbMail,
   TbPhone,
-  TbBriefcase,
   TbAward,
   TbBuildingStore,
   TbCheck,
@@ -51,7 +50,6 @@ const JoinClubDrawer = ({ isOpen, onClose }) => {
         meta: {
           location: data.location,
           bio: data.bio,
-          projectType: data.projectType,
           experience: data.experience,
           industries: data.industries,
           otherIndustry: data.otherIndustry,
@@ -75,7 +73,6 @@ const JoinClubDrawer = ({ isOpen, onClose }) => {
   };
 
   const experienceLevels = ['<1 year', '1–3 years', '3–5 years', '5+ years'];
-  const projectTypes = ['Reports', 'Dashboards', 'Both'];
   const industries = ['FMCG', 'Finance', 'Education', 'Healthcare', 'Marketing', 'Retail', 'Other'];
   const areasOfExpertiseOptions = [
     'Data collection',
@@ -218,61 +215,33 @@ const JoinClubDrawer = ({ isOpen, onClose }) => {
                 errorMessage={errors.bio?.message}
                 maxLength={200}
               />
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <Controller
-                  name="projectType"
-                  control={control}
-                  rules={{ required: 'Preferred project type is required' }}
-                  render={({ field }) => (
-                    <div className="flex">
-                      <Select
-                        {...field}
-                        label="Preferred Project Type"
-                        labelPlacement="outside"
-                        placeholder="Select project type"
-                        variant="bordered"
-                        size="md"
-                        startContent={<TbBriefcase className="text-default-400" size={18} />}
-                        isInvalid={!!errors.projectType}
-                        errorMessage={errors.projectType?.message}
-                      >
-                        {projectTypes.map((type) => (
-                          <SelectItem key={type} value={type}>
-                            {type}
-                          </SelectItem>
-                        ))}
-                      </Select>
-                    </div>
-                  )}
-                />
-                <Controller
-                  name="experience"
-                  control={control}
-                  rules={{ required: 'Years of experience is required' }}
-                  render={({ field }) => (
-                    <div className="flex">
-                      <Select
-                        disallowEmptySelection
-                        {...field}
-                        label="Years of Experience"
-                        labelPlacement="outside"
-                        placeholder="Select your experience level"
-                        variant="bordered"
-                        size="md"
-                        startContent={<TbAward className="text-default-400" size={18} />}
-                        isInvalid={!!errors.experience}
-                        errorMessage={errors.experience?.message}
-                      >
-                        {experienceLevels.map((level) => (
-                          <SelectItem key={level} value={level}>
-                            {level}
-                          </SelectItem>
-                        ))}
-                      </Select>
-                    </div>
-                  )}
-                />
-              </div>
+              <Controller
+                name="experience"
+                control={control}
+                rules={{ required: 'Years of experience is required' }}
+                render={({ field }) => (
+                  <div className="flex">
+                    <Select
+                      disallowEmptySelection
+                      {...field}
+                      label="Years of Experience"
+                      labelPlacement="outside"
+                      placeholder="Select your experience level"
+                      variant="bordered"
+                      size="md"
+                      startContent={<TbAward className="text-default-400" size={18} />}
+                      isInvalid={!!errors.experience}
+                      errorMessage={errors.experience?.message}
+                    >
+                      {experienceLevels.map((level) => (
+                        <SelectItem key={level} value={level}>
+                          {level}
+                        </SelectItem>
+                      ))}
+                    </Select>
+                  </div>
+                )}
+              />
               <Controller
                 name="industries"
                 control={control}
@@ -301,16 +270,18 @@ const JoinClubDrawer = ({ isOpen, onClose }) => {
                 )}
               />
               {showOtherIndustry && (
-                <Input
-                  {...register('otherIndustry', { required: 'Please specify your industry' })}
-                  label="Other Industry"
-                  labelPlacement="outside"
-                  placeholder="Please specify your industry"
-                  variant="bordered"
-                  size="md"
-                  isInvalid={!!errors.otherIndustry}
-                  errorMessage={errors.otherIndustry?.message}
-                />
+                <div className="flex">
+                  <Input
+                    {...register('otherIndustry', { required: 'Please specify your industry' })}
+                    label="Other Industry"
+                    labelPlacement="outside"
+                    placeholder="Please specify your industry"
+                    variant="bordered"
+                    size="md"
+                    isInvalid={!!errors.otherIndustry}
+                    errorMessage={errors.otherIndustry?.message}
+                  />
+                </div>
               )}
               <Controller
                 name="areasOfExpertise"
