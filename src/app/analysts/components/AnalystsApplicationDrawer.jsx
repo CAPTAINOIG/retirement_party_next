@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
-import { Button, Input, Textarea, Drawer, DrawerBody, DrawerContent } from '@heroui/react';
+import { Button, Input, Textarea, Drawer, DrawerBody, DrawerContent, addToast } from '@heroui/react';
 import { useCreateEventAttendee } from '@/api/other';
 import { TbSend, TbUser, TbMail, TbPhone, TbMapPin, TbCheck, TbX, TbBrandLinkedin } from 'react-icons/tb';
 
@@ -15,11 +15,11 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
     formState: { errors },
     reset,
   } = useForm();
-  const { mutate: createAttendee, isPending } = useCreateEventAttendee();
+  const { mutateAsync: createAttendee, isPending } = useCreateEventAttendee();
 
-  const onSubmit = (data) => {
-    createAttendee(
-      {
+  const onSubmit = async (data) => {
+    try {
+      await createAttendee({
         name: data.name,
         email: data.email,
         phone: data.phone,
@@ -29,17 +29,16 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
           linkedin: data.linkedin,
           interests: data.interests,
         },
-      },
-      {
-        onSuccess: () => {
-          setIsSuccess(true);
-          reset();
-        },
-        onError: () => {
-          // Handle error if needed
-        },
-      }
-    );
+      });
+      setIsSuccess(true);
+      reset();
+    } catch (error) {
+      addToast({
+        title: 'Error registering for tour',
+        description: error?.response?.data?.message || 'Something went wrong, please try again',
+        color: 'danger',
+      });
+    }
   };
 
   const handleClose = () => {

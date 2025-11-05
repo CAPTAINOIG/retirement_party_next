@@ -1,15 +1,17 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { motion, useInView } from 'motion/react';
 import { Button, useDisclosure } from '@heroui/react';
+import { motion, useInView } from 'motion/react';
+import { useRef } from 'react';
 import { TbChevronRight } from 'react-icons/tb';
 import AnalystsApplicationDrawer from './AnalystsApplicationDrawer';
+import JoinClubDrawer from './JoinClubDrawer';
 
 const HeroSection = () => {
   const heroRef = useRef(null);
   const isInView = useInView(heroRef, { once: true, margin: '-100px' });
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen: isApplyOpen, onOpen: onApplyOpen, onClose: onApplyClose } = useDisclosure();
+  const { isOpen: isJoinClubOpen, onOpen: onJoinClubOpen, onClose: onJoinClubClose } = useDisclosure();
 
   return (
     <div ref={heroRef} className="dark relative w-full bg-black text-white">
@@ -41,7 +43,7 @@ const HeroSection = () => {
             {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: .8, y: 0 } : { opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 0.8, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
               className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed tracking-tight md:text-2xl"
             >
@@ -54,10 +56,10 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-              className="mt-12"
+              className="mt-12 space-x-2"
             >
               <Button
-                onPress={onOpen}
+                onPress={onApplyOpen}
                 size="lg"
                 color="primary"
                 radius="full"
@@ -66,12 +68,24 @@ const HeroSection = () => {
               >
                 Join our tour
               </Button>
+              <Button
+                onPress={onJoinClubOpen}
+                size="lg"
+                variant="bordered"
+                color="primary"
+                radius="full"
+                className="px-8 py-6 text-lg"
+                endContent={<TbChevronRight size="20" />}
+              >
+                Join 500x club
+              </Button>
             </motion.div>
           </div>
         </div>
       </div>
 
-      <AnalystsApplicationDrawer isOpen={isOpen} onClose={onClose} />
+      <AnalystsApplicationDrawer isOpen={isApplyOpen} onClose={onApplyClose} />
+      <JoinClubDrawer isOpen={isJoinClubOpen} onClose={onJoinClubClose} />
     </div>
   );
 };
