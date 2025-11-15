@@ -56,7 +56,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-              className="mt-12 space-x-2"
+              className="mt-12 grid place-items-center gap-2"
             >
               <Button
                 onPress={onApplyOpen}
