@@ -33,10 +33,25 @@ export function middleware(request) {
       )
     );
   }
+  if (/^\/analysts?$/i.test(request.nextUrl.pathname)) {
+    return NextResponse.redirect(new URL('/analysts', request.url));
+  }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/investordeck', '/2pagerdeck', '/ideck', '/ideck_teaser', '/product(.*)', '/dataroom'],
+  matcher: [
+    '/investordeck',
+    '/2pagerdeck',
+    '/ideck',
+    '/ideck_teaser',
+    '/product(.*)',
+    '/dataroom',
+    '/analyst',
+    '/Analyst',
+    '/ANALYST',
+    '/Analysts',
+    '/ANALYSTS',
+  ],
 };
