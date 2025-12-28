@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuth } from '@/hooks/use-auth';
 import { cn, getImageLink } from '@/lib/utils';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, User } from '@heroui/react';
-import { TbLogout, TbUser } from 'react-icons/tb';
+import { TbLayout2, TbLogout, TbUser, TbUserCog } from 'react-icons/tb';
 import { ACCOUNT_URL } from '@/lib/constants';
 
 const UserDropdown = () => {
@@ -27,13 +27,14 @@ const UserDropdown = () => {
         aria-label="User Actions"
         variant="flat"
         onAction={(key) => {
-          if (key === 'settings') window.open(`${ACCOUNT_URL}`, '_blank');
+          if (key === 'dashboard') window.open(`${ACCOUNT_URL}`, '_blank');
+          if (key === 'settings') window.open(`${ACCOUNT_URL}/settings`, '_blank');
           if (key === 'logout') logout();
         }}
       >
         <DropdownItem
           key="dashboard"
-          startContent={<TbUser size="20" />}
+          startContent={<TbLayout2 size="20" />}
           classNames={{
             title: 'text-base',
             description: 'text-sm',
@@ -41,6 +42,17 @@ const UserDropdown = () => {
           }}
         >
           Dashboard
+        </DropdownItem>
+        <DropdownItem
+          key="settings"
+          startContent={<TbUserCog size="20" />}
+          classNames={{
+            title: 'text-base',
+            description: 'text-sm',
+            base: 'rounded-xl px-4 py-2',
+          }}
+        >
+          Account settings
         </DropdownItem>
         <DropdownItem
           key="logout"
