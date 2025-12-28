@@ -21,8 +21,7 @@ const CallToActionSection = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Happening Soon, <br />
-            Data Analysts Connect
+            Happening Soon, <br /> Data Analysts Connect
           </motion.h2>
 
           <motion.div
