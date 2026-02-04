@@ -1,11 +1,15 @@
 'use client';
 
+import { Button, useDisclosure } from '@heroui/react';
 import { motion, useInView } from 'motion/react';
 import { useRef, useState, useEffect } from 'react';
+import { TbChevronRight } from 'react-icons/tb';
+import CampusRegistrationDrawer from './CampusRegistrationForm';
 
 const HeroSection = () => {
   const heroRef = useRef(null);
   const isInView = useInView(heroRef, { once: true, margin: '-100px' });
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const schools = ['YABATECH', 'UNILAG', 'LASU', 'UI', 'OAU', 'FUNAAB'];
   const [currentSchoolIndex, setCurrentSchoolIndex] = useState(0);
@@ -85,9 +89,30 @@ const HeroSection = () => {
               <br />
               <span className="opacity-70">This is where real data skills are forged.</span>
             </motion.p>
+
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
+              className="mt-12 grid place-items-center gap-2"
+            >
+              <Button
+                onPress={onOpen}
+                size="lg"
+                color="primary"
+                radius="full"
+                className="px-10 py-6 text-lg"
+                endContent={<TbChevronRight size="20" />}
+              >
+                Register Your Interest
+              </Button>
+            </motion.div>
           </div>
         </div>
       </div>
+
+      <CampusRegistrationDrawer isOpen={isOpen} onClose={onClose} />
     </div>
   );
 };

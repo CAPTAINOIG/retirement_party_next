@@ -2,11 +2,14 @@
 
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { TbRocket, TbTrendingUp, TbTarget } from 'react-icons/tb';
+import { Button, useDisclosure } from '@heroui/react';
+import { TbRocket, TbTrendingUp, TbTarget, TbChevronRight } from 'react-icons/tb';
+import CampusRegistrationDrawer from './CampusRegistrationForm';
 
 const CallToActionSection = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const opportunities = [
     {
@@ -90,7 +93,7 @@ const CallToActionSection = () => {
               })}
             </div>
 
-            {/* Stay Ready Section */}
+            {/* Registration CTA Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -98,25 +101,25 @@ const CallToActionSection = () => {
               className="text-center"
             >
               <h3 className="mb-4 text-3xl font-bold md:text-4xl">Stay Ready</h3>
-              <p className="text-lg leading-relaxed opacity-90 md:text-xl">
-                Registration details, dates, and next steps will be announced soon.
+              <p className="mb-8 text-lg leading-relaxed opacity-90 md:text-xl">
+                Register your interest and we'll contact you with program details
               </p>
+              <Button
+                onPress={onOpen}
+                size="lg"
+                color="primary"
+                radius="full"
+                className="px-12 py-6 text-lg font-semibold"
+                endContent={<TbChevronRight size="24" />}
+              >
+                Register Now
+              </Button>
             </motion.div>
           </div>
         </motion.div>
-
-        {/* Footer Note */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.8, delay: 0.9, ease: 'easeOut' }}
-          className="mt-16 text-center"
-        >
-          <p className="text-sm opacity-60 md:text-base">
-            Follow us on social media for updates and announcements
-          </p>
-        </motion.div>
       </div>
+
+      <CampusRegistrationDrawer isOpen={isOpen} onClose={onClose} />
     </div>
   );
 };
