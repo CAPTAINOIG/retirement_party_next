@@ -2,11 +2,14 @@
 
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { TbDatabase, TbBulb, TbBriefcase, TbTrendingUp } from 'react-icons/tb';
+import { Button, useDisclosure } from '@heroui/react';
+import { TbDatabase, TbBulb, TbBriefcase, TbTrendingUp, TbChevronRight } from 'react-icons/tb';
+import CampusRegistrationDrawer from './CampusRegistrationForm';
 
 const WhatYouGainSection = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const benefits = [
     {
@@ -77,7 +80,28 @@ const WhatYouGainSection = () => {
             );
           })}
         </div>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
+          className="mt-12 text-center"
+        >
+          <Button
+            onPress={onOpen}
+            size="lg"
+            color="primary"
+            radius="full"
+            className="px-10 py-6 text-lg"
+            endContent={<TbChevronRight size="20" />}
+          >
+            Register Your Interest
+          </Button>
+        </motion.div>
       </div>
+
+      <CampusRegistrationDrawer isOpen={isOpen} onClose={onClose} />
     </div>
   );
 };
