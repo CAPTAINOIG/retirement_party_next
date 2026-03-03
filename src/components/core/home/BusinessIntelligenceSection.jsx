@@ -20,7 +20,7 @@ const sections = [
       </>
     ),
     description:
-      'Immortal BI aggregates and convert complex business data from any source nto simple visual insights using AI',
+      'Immortal BI aggregates and convert complex business data from any source into simple visual insights using AI',
     component: StructuredDataIllustration,
   },
   {
