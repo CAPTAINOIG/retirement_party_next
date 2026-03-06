@@ -3,13 +3,38 @@ import React from 'react';
 const PrivacyPolicy = () => {
   return (
     <div className="space-y-6">
-      <p className="mb-4">
-        Statisense doing business as Statisense operates the website https://www.statisense.co (from now on the
-        website).
-        <br />
-        This privacy policy is intended to describe how Statisense collects, uses, and shares personal information from
-        consumer users of this website. This policy establishes how we will treat your personal information, so it is
-        necessary for you to familiarize yourself with it.
+      <h2 className="text-2xl font-semibold">Privacy Policy</h2>
+      <p>
+        <span className="font-semibold">Immortal Statisense Ltd </span>("Statisense", "we", "our", or "us") operates the
+        website{' '}
+        <a
+          href="https://www.statisense.co"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 underline"
+        >
+          https://www.statisense.co
+        </a>{' '}
+        (the "Website") and develops and manages a suite of data and analytics products including{' '}
+        <span className="font-semibold">Opinions, BI (Business Intelligence)</span> , and{' '}
+        <span className="font-semibold">PI Markets (Predictive Intelligence) </span>(collectively referred to as the
+        "Services").
+      </p>
+      <p>
+        Opinions, BI, and PI Markets are proprietary products of{' '}
+        <span className="font-semibold">Immortal Statisense Ltd </span> and are operated under the authority and
+        management of the Company. Accordingly, the collection, use, processing, and sharing of personal information
+        through the Website and all related products and services are governed by this{' '}
+        <span className="font-semibold">Privacy Policy</span>.
+      </p>
+      <p>
+        This Privacy Policy explains how <span className="font-semibold">Immortal Statisense Ltd </span> collects, uses,
+        stores, discloses, and protects personal information obtained from users who access or interact with the Website
+        or any of our Services. By accessing or using the Website or any of the Services, you acknowledge that you have
+        read, understood, and agreed to the practices described in this Privacy Policy.
+      </p>
+      <p>
+        We encourage you to carefully review this Privacy Policy to understand how your personal information is handled.
       </p>
       <ol className="list-inside list-decimal space-y-6">
         <li>
