@@ -49,3 +49,11 @@ export const useAddContactUs = () => {
     },
   });
 };
+
+export const useAmbassadorRegistration = () => {
+  return useMutation({
+    mutationFn: (body) => {
+      return http.post('/ambassadors', body);
+    },
+  });
+};

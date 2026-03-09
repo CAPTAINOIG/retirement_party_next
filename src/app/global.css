@@ -212,6 +212,17 @@ body {
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.02);
 }
 
+.ambassador-register-form input:-webkit-autofill,
+.ambassador-register-form input:-webkit-autofill:hover,
+.ambassador-register-form input:-webkit-autofill:focus,
+.ambassador-register-form textarea:-webkit-autofill,
+.ambassador-register-form textarea:-webkit-autofill:hover,
+.ambassador-register-form textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 @keyframes updown {
   0% {
     transform: translateY(-10px);
