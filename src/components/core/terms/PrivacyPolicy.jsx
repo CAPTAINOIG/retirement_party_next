@@ -17,11 +17,11 @@ const PrivacyPolicy = () => {
         </a>{' '}
         (the "Website") and develops and manages a suite of data and analytics products including{' '}
         <span className="font-semibold">Opinions, BI (Business Intelligence)</span> , and{' '}
-        <span className="font-semibold">PI Markets (Predictive Intelligence) </span>(collectively referred to as the
+        <span className="font-semibold">Patmus Markets </span>(collectively referred to as the
         "Services").
       </p>
       <p>
-        Opinions, BI, and PI Markets are proprietary products of{' '}
+        Opinions, BI, and Patmus Markets are proprietary products of{' '}
         <span className="font-semibold">Immortal Statisense Ltd </span> and are operated under the authority and
         management of the Company. Accordingly, the collection, use, processing, and sharing of personal information
         through the Website and all related products and services are governed by this{' '}
