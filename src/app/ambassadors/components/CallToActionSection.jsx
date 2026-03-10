@@ -56,7 +56,7 @@ const CallToActionSection = () => {
             className="mt-12 grid place-items-center gap-2"
           >
             <Button
-              onPress={() => router.push(`/ambassador/register?source=${source}`)}
+              onPress={() => router.push(`/ambassadors/register?source=${source}`)}
               size="lg"
               color="primary"
               radius="full"

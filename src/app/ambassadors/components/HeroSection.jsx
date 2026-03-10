@@ -13,9 +13,8 @@ const HeroSection = () => {
   const router = useRouter();
   const source = useReferralSource() || 'landing';
 
-
   return (
-    <div ref={heroRef} className="relative w-full bg-background text-foreground">
+    <div ref={heroRef} className="bg-background text-foreground relative w-full">
       <div className="relative z-2 container pt-32 md:block">
         <div className="relative py-12 md:pt-10 md:pb-20">
           <div className="overflow-hidden text-center">
@@ -37,10 +36,7 @@ const HeroSection = () => {
               className="text-[3rem] !leading-[1.1] font-bold tracking-tighter md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem]"
             >
               <span>Become an </span>
-              <motion.span
-                className="bg-gradient-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent"
-              >
-                
+              <motion.span className="bg-gradient-to-r from-teal-600 to-blue-800 bg-clip-text text-transparent">
                 Immortal Student Partner
               </motion.span>
             </motion.h1>
@@ -64,7 +60,7 @@ const HeroSection = () => {
               className="mt-12 grid place-items-center gap-2"
             >
               <Button
-                onPress={() => router.push(`/ambassador/register?source=${source}`)}
+                onPress={() => router.push(`/ambassadors/register?source=${source}`)}
                 size="lg"
                 color="primary"
                 radius="full"

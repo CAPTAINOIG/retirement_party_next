@@ -184,7 +184,7 @@ const AmbassadorAssessmentContent = () => {
             <h2 className="text-2xl font-semibold text-white">Registration verification</h2>
             <p className="mt-3 text-white/60">{statusMessage}</p>
             {verificationStatus === 'missing' ? (
-              <Button as={Link} href="/ambassador/register" color="primary" size="lg" className="mt-6">
+              <Button as={Link} href="/ambassadors/register" color="primary" size="lg" className="mt-6">
                 Go to registration
               </Button>
             ) : verificationStatus === 'error' ? (
@@ -224,7 +224,7 @@ const AmbassadorAssessmentContent = () => {
             </div>
 
             <div className="mt-8 grid gap-4 md:grid-cols-2">
-              <Button as={Link} href="/ambassador/register" variant="bordered" size="lg" color='primary' className='text-white'>
+              <Button as={Link} href="/ambassadors/register" variant="bordered" size="lg" color='primary' className='text-white'>
                 Back to registration
               </Button>
             </div>
