@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import AmbassadorRegisterContent from './content';
 
 export const metadata = {
@@ -6,7 +7,11 @@ export const metadata = {
 };
 
 const AmbassadorRegisterPage = () => {
-  return <AmbassadorRegisterContent />;
+  return (
+    <Suspense fallback={null}>
+      <AmbassadorRegisterContent />
+    </Suspense>
+  );
 };
 
 export default AmbassadorRegisterPage;
