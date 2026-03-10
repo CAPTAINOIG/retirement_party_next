@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import AmbassadorAssessmentContent from './content';
 
 export const metadata = {
@@ -6,7 +7,11 @@ export const metadata = {
 };
 
 const AmbassadorAssessmentPage = () => {
-  return <AmbassadorAssessmentContent />;
+  return (
+    <Suspense fallback={null}>
+      <AmbassadorAssessmentContent />
+    </Suspense>
+  );
 };
 
 export default AmbassadorAssessmentPage;
