@@ -10,6 +10,7 @@ import { HiOutlineArrowLeft } from 'react-icons/hi2';
 import { RiAlertLine } from 'react-icons/ri';
 import ExitModal from './ExitModal';
 import { useSubmitAssessment, useGetAssessmentQuestions } from '@/api/other';
+import { cn } from '@/lib/utils';
 
 const PageShell = ({ children }) => (
   <main className="min-h-screen bg-black text-white">
@@ -192,7 +193,7 @@ const AssessmentSession = ({ hash }) => {
                 {format(new Date(timeLeft * 1000), 'mm:ss')}
               </span>
             </p>
-            <Progress value={progress} maxValue={100} showValue aria-label="Progress" />
+            <Progress value={progress} maxValue={100} aria-label="Progress" />
           </div>
         </div>
         <div className="mt-12 rounded-2xl">
