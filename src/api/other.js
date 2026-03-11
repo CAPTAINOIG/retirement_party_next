@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import http from '@/lib/http';
 
 export const useNewsletterSubscribe = () => {
@@ -54,6 +54,37 @@ export const useAmbassadorRegistration = () => {
   return useMutation({
     mutationFn: (body) => {
       return http.post('/ambassadors', body);
+    },
+  });
+};
+
+export const useGetAssessmentQuestions = () => {
+  return useQuery({
+    queryKey: ['questions'],
+    queryFn: async () => {
+      const res = await http.get('/ambassadors/assessment/questions/random');
+      return res.data;
+    },
+    staleTime: Infinity,
+  });
+};
+
+export const useVerifyAmbassador = (hash, enabled = true) => {
+  return useQuery({
+    queryKey: ['ambassador-verify', hash],
+    queryFn: async () => {
+      const res = await http.get(`/ambassadors/${hash}/verify`);
+      return res.data;
+    },
+    enabled: enabled && Boolean(hash),
+    retry: false,
+  });
+};
+
+export const useSubmitAssessment = () => {
+  return useMutation({
+    mutationFn: ({ result, hash }) => {
+      return http.post('/ambassadors/assessment/mark', { result, hash });
     },
   });
 };
