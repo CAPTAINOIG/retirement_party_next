@@ -179,10 +179,10 @@ const AssessmentSession = ({ hash }) => {
 
   return (
     <PageShell>
-      <div className="mx-auto max-w-4xl text-center">
-        <h1 className="text-3xl !leading-tight font-bold md:text-4xl">Ambassador Assessment</h1>
-        <p className="mx-auto mt-3 max-w-3xl text-base opacity-80">
-          Progress through {questions.length} questions to complete the assessment.
+      <div className="mx-auto flex max-w-4xl flex-col items-center justify-center text-center">
+        <h1 className="text-4xl leading-none font-bold md:text-5xl">Ready to become an ambassador?</h1>
+        <p className="mt-3 max-w-3xl text-base md:text-lg">
+          Answer {questions.length} questions before the timer runs out. Read carefully and do your best.
         </p>
       </div>
       <Card className="bg-default-50 border-default-200 mx-auto mt-14 w-full max-w-3xl rounded-3xl border p-6 shadow md:p-10">
