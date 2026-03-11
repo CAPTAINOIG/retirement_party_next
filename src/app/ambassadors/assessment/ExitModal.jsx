@@ -6,7 +6,7 @@ const ExitModal = ({ isOpen, onOpenChange }) => {
 
   return (
     <Modal isOpen={isOpen} onOpenChange={onOpenChange} hideCloseButton>
-      <ModalContent className="border border-white/10 bg-[#06080d] text-white">
+      <ModalContent>
         <ModalHeader className="px-8 pt-6 pb-2">Leave assessment?</ModalHeader>
         <ModalBody className="px-8 pb-6 opacity-80">
           <p className="text-base">

@@ -9,6 +9,7 @@ import Logo from '@/components/core/shared/Logo';
 import { TbAt, TbBook2, TbPhone, TbSchool, TbUser } from 'react-icons/tb';
 import { useTheme } from 'next-themes';
 import { HiCheckCircle } from 'react-icons/hi2';
+import Link from 'next/link';
 
 const genderOptions = [
   { key: 'male', label: 'Male' },
@@ -82,17 +83,18 @@ const AmbassadorRegisterContent = () => {
       <main className="min-h-screen">
         <section className="container py-16 md:py-24">
           <div className="mb-10 flex justify-center md:mb-14">
-            <Logo light={theme === 'dark'} width={180} />
+            <Link href="/">
+              <Logo light={theme === 'dark'} width={180} />
+            </Link>
           </div>
-          <Card className="bg-default-50 border-default-200 mx-auto w-full max-w-3xl rounded-3xl border p-8 text-center md:p-12">
+          <Card className="bg-default-50 border-default-200 mx-auto w-full max-w-3xl rounded-3xl border p-8 text-center shadow md:p-12">
             <HiCheckCircle size={100} className="text-success-500 mx-auto mb-6" />
-            <p className="text-sm uppercase opacity-70">You're in</p>
-            <h1 className="mt-4 text-3xl font-semibold md:text-4xl">Application received successfully</h1>
-            <p className="mx-auto mt-4 max-w-lg text-base opacity-80 md:text-lg">
+            <h1 className="mt-4 text-2xl font-semibold md:text-3xl">Application received successfully</h1>
+            <p className="mx-auto mt-4 max-w-lg text-base opacity-80">
               Thanks for applying to become a Statisense Ambassador. Check your inbox now for an email with your next
               steps.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
                 variant="bordered"
                 color="primary"
@@ -113,7 +115,9 @@ const AmbassadorRegisterContent = () => {
     <main className="min-h-screen">
       <section className="container py-16 md:py-24">
         <div className="mb-10 flex justify-center md:mb-14">
-          <Logo light={theme === 'dark'} width={180} />
+          <Link href="/">
+            <Logo light={theme === 'dark'} width={180} />
+          </Link>
         </div>
         <div className="mx-auto flex max-w-4xl flex-col items-center justify-center text-center">
           <h1 className="text-4xl leading-none font-bold md:text-5xl">Apply to Become a Statisense Ambassador</h1>

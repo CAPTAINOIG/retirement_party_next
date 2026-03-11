@@ -11,17 +11,24 @@ import { RiAlertLine } from 'react-icons/ri';
 import ExitModal from './ExitModal';
 import { useSubmitAssessment, useGetAssessmentQuestions } from '@/api/other';
 import { cn } from '@/lib/utils';
+import { useTheme } from 'next-themes';
 
-const PageShell = ({ children }) => (
-  <main className="min-h-screen bg-black text-white">
-    <section className="container py-16 md:py-24">
-      <div className="mb-10 flex justify-center md:mb-14">
-        <Logo light width={180} />
-      </div>
-      {children}
-    </section>
-  </main>
-);
+const PageShell = ({ children }) => {
+  const { resolvedTheme: theme } = useTheme();
+
+  return (
+    <main className="min-h-screen">
+      <section className="container py-16 md:py-24">
+        <div className="mb-10 flex justify-center md:mb-14">
+          <Link href="/">
+            <Logo light={theme === 'dark'} width={180} />
+          </Link>
+        </div>
+        {children}
+      </section>
+    </main>
+  );
+};
 
 const AssessmentSession = ({ hash }) => {
   const { isOpen: isExitOpen, onOpen: onExitOpen, onOpenChange: onExitOpenChange } = useDisclosure();
@@ -126,31 +133,31 @@ const AssessmentSession = ({ hash }) => {
   if (isSubmitted) {
     return (
       <PageShell>
-        <Card className="border-default-100 bg-default-50/50 mx-auto mt-14 w-full max-w-2xl rounded-3xl border p-8 md:p-12">
+        <Card className="bg-default-50 border-default-200 mx-auto mt-14 w-full max-w-2xl rounded-3xl border p-8 shadow md:p-12">
           <div className="text-center">
             <p className="text-sm font-medium tracking-widest uppercase opacity-80">Assessment Submitted</p>
             <h1 className="mt-4 text-3xl !leading-tight font-bold md:text-4xl">Thank You!</h1>
-            <p className="mx-auto mt-5 max-w-lg text-base text-white/65 md:text-lg">
+            <p className="mx-auto mt-5 max-w-lg text-base opacity-80 md:text-lg">
               We appreciate you taking the time to complete the Statisense Ambassador assessment. Your responses have
               been received and our team will review them shortly.
             </p>
-            <div className="my-8 grid grid-cols-2 divide-x divide-white/10 rounded-2xl border border-white/10 bg-white/[0.03]">
+            <div className="divide-default-200 border-default-200 bg-default-50 my-8 grid grid-cols-2 divide-x rounded-2xl border">
               <div className="p-5">
-                <p className="text-xs tracking-widest text-white/40 uppercase">Questions Answered</p>
-                <p className="mt-2 text-3xl font-bold text-white">
+                <p className="text-xs tracking-widest uppercase opacity-80">Questions Answered</p>
+                <p className="mt-2 text-3xl font-bold">
                   {totalAnswered}
-                  <span className="ml-1 text-lg font-normal text-white/40">/ {questions.length}</span>
+                  <span className="ml-1 text-lg font-normal opacity-80">/ {questions.length}</span>
                 </p>
               </div>
               <div className="p-5">
-                <p className="text-xs tracking-widest text-white/40 uppercase">Time Taken</p>
-                <p className="mt-2 text-3xl font-bold text-white">
+                <p className="text-xs tracking-widest uppercase opacity-80">Time Taken</p>
+                <p className="mt-2 text-3xl font-bold">
                   {format(new Date(elapsedSeconds * 1000), 'm:ss')}
-                  <span className="ml-1 text-lg font-normal text-white/40">min</span>
+                  <span className="ml-1 text-lg font-normal opacity-80">min</span>
                 </p>
               </div>
             </div>
-            <p className="text-sm text-white/50">
+            <p className="text-sm opacity-80">
               Keep an eye on your inbox — we&apos;ll be in touch via email with next steps.
             </p>
             <Button
@@ -178,7 +185,7 @@ const AssessmentSession = ({ hash }) => {
           Progress through {questions.length} questions to complete the assessment.
         </p>
       </div>
-      <Card className="bg-default-50/50 mx-auto mt-14 w-full max-w-3xl rounded-3xl border border-white/10 p-6 md:p-10">
+      <Card className="bg-default-50 border-default-200 mx-auto mt-14 w-full max-w-3xl rounded-3xl border p-6 shadow md:p-10">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase">
@@ -206,9 +213,9 @@ const AssessmentSession = ({ hash }) => {
                 onClick={() => handleAnswerSelect(option.key)}
                 className={cn(
                   'cursor-pointer rounded-2xl border px-5 py-4 text-left text-base transition-all duration-200',
-                  'border-white/10 bg-white/[0.02] text-white/80',
-                  { 'border-success-300 bg-success-300/12 text-white': selectedAnswer === option.key },
-                  { 'hover:bg-default-50': selectedAnswer !== option.key }
+                  'border-default-200 bg-default-50',
+                  { 'border-success-300 bg-success-300/12': selectedAnswer === option.key },
+                  { 'hover:bg-default-100': selectedAnswer !== option.key }
                 )}
               >
                 <div className="flex items-start gap-3">
