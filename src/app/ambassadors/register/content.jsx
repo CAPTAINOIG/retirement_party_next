@@ -8,6 +8,7 @@ import { useAmbassadorRegistration } from '@/api/other';
 import Logo from '@/components/core/shared/Logo';
 import { TbAt, TbBook2, TbPhone, TbSchool, TbUser } from 'react-icons/tb';
 import { useTheme } from 'next-themes';
+import { HiCheckCircle } from 'react-icons/hi2';
 
 const genderOptions = [
   { key: 'male', label: 'Male' },
@@ -62,7 +63,7 @@ const AmbassadorRegisterContent = () => {
       await ambassadorRegistration(payload);
       addToast({
         title: 'Submitted',
-        description: 'Application received successfully.',
+        description: 'Your application has been received.',
         color: 'success',
       });
       reset();
@@ -70,7 +71,7 @@ const AmbassadorRegisterContent = () => {
     } catch (error) {
       addToast({
         title: 'Submission failed',
-        description: error?.response?.data?.message || 'Something went wrong, please try again.',
+        description: error?.response?.data?.message || 'Something went wrong. Please try again.',
         color: 'danger',
       });
     }
@@ -81,18 +82,25 @@ const AmbassadorRegisterContent = () => {
       <main className="min-h-screen">
         <section className="container py-16 md:py-24">
           <div className="mb-10 flex justify-center md:mb-14">
-            <Logo light={!theme === 'dark'} width={140} />
+            <Logo light={theme === 'dark'} width={180} />
           </div>
-          <Card className="border-default-200 mx-auto w-full max-w-3xl rounded-3xl border p-8 text-center md:p-12">
-            <p className="text-sm tracking-[0.3em] uppercase">Registration complete</p>
-            <h1 className="mt-4 text-3xl font-semibold md:text-5xl">You are all set.</h1>
-            <p className="mx-auto mt-4 max-w-2xl text-base text-white/70 md:text-lg">
-              Thanks for applying to be a Statisense Ambassador. We have received your application. Please check your
-              email for more updates.
+          <Card className="bg-default-50 border-default-200 mx-auto w-full max-w-3xl rounded-3xl border p-8 text-center md:p-12">
+            <HiCheckCircle size={100} className="text-success-500 mx-auto mb-6" />
+            <p className="text-sm uppercase opacity-70">You're in</p>
+            <h1 className="mt-4 text-3xl font-semibold md:text-4xl">Application received successfully</h1>
+            <p className="mx-auto mt-4 max-w-lg text-base opacity-80 md:text-lg">
+              Thanks for applying to become a Statisense Ambassador. Check your inbox now for an email with your next
+              steps.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button color="primary" size="lg" onPress={() => setIsSuccess(false)}>
-                Go back
+              <Button
+                variant="bordered"
+                color="primary"
+                radius="full"
+                onPress={() => window.location.reload()}
+                className="px-5 text-base"
+              >
+                Submit another response
               </Button>
             </div>
           </Card>
@@ -105,19 +113,18 @@ const AmbassadorRegisterContent = () => {
     <main className="min-h-screen">
       <section className="container py-16 md:py-24">
         <div className="mb-10 flex justify-center md:mb-14">
-          <Logo light={!theme === 'dark'} width={220} />
+          <Logo light={theme === 'dark'} width={180} />
         </div>
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl !leading-tight font-bold md:text-7xl">
-            Ready to{' '}
-            <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">Get Started?</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-lg md:text-xl">
-            Fill out the form below and complete your ambassador registration.
+        <div className="mx-auto flex max-w-4xl flex-col items-center justify-center text-center">
+          <h1 className="text-4xl leading-none font-bold md:text-5xl">Apply to Become a Statisense Ambassador</h1>
+          <p className="mt-3 max-w-3xl text-base md:text-lg">
+            Tell us a bit about yourself and submit your application in a few minutes.
           </p>
         </div>
-        <Card className="border-default-200 mx-auto mt-20 w-full max-w-3xl rounded-2xl border px-10 py-8 shadow">
-          <h2 className="text-2xl leading-tight font-semibold md:text-3xl">Registration Form</h2>
+        <Card className="bg-default-50 border-default-200 mx-auto mt-12 w-full max-w-3xl rounded-2xl border px-10 py-8 shadow">
+          <p className="w-10/12 text-base">
+            Complete the form below to apply. Our team will review your submission and follow up within 24 hours.
+          </p>
           <form onSubmit={handleSubmit(onSubmit)} className="ambassador-register-form mt-8">
             <div className="grid gap-5 md:grid-cols-2">
               <Input
@@ -250,11 +257,16 @@ const AmbassadorRegisterContent = () => {
                 className="md:col-span-2"
               />
             </div>
-            <Button type="submit" color="primary" size="lg" className="mt-6" isLoading={isSubmitting} radius="full">
-              Submit Application
+            <Button type="submit" color="primary" size="lg" className="mt-10" isLoading={isSubmitting} radius="full">
+              Submit your application
             </Button>
           </form>
         </Card>
+        <div className="mt-12 text-center">
+          <p className="text-base">
+            Questions? Reach us at <a href="mailto:info@statisense.co">info@statisense.co</a>
+          </p>
+        </div>
       </section>
     </main>
   );
