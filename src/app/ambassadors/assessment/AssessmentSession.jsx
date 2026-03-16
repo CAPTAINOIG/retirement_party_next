@@ -66,7 +66,7 @@ const AssessmentSession = ({ hash }) => {
     const result = questions.map((q) => ({ _id: q._id, selected: answers[q._id] }));
     try {
       await submitAssessment({ result, hash: hash });
-      setElapsedSeconds(20 * 60 - timeLeft);
+      setElapsedSeconds(40 * 60 - timeLeft);
       setIsSubmitted(true);
     } catch (error) {
       addToast({
@@ -78,7 +78,7 @@ const AssessmentSession = ({ hash }) => {
   };
 
   const timeLeft = useCountdownTimer({
-    timeLimit: 20 * 60,
+    timeLimit: 40 * 60,
     enabled: !isSubmitted && questions.length > 0,
     onExpire: () => {
       if (!isSubmitted) {
