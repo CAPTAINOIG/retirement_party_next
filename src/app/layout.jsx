@@ -68,16 +68,17 @@ const RootLayout = ({ children }) => {
           rel="stylesheet"
         />
 
+        {/* Meta Pixel Code (noscript) */}
         <noscript>
           <img
             height="1"
             width="1"
             style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=1470753217454028&ev=PageView&noscript=1"
+            src="https://www.facebook.com/tr?id=990169537206740&ev=PageView&noscript=1"
             alt=""
           />
         </noscript>
-        {/* End Facebook Pixel Code */}
+        {/* End Meta Pixel Code */}
       </head>
       <body>
         {/* Google Tag Manager (noscript) */}
@@ -110,7 +111,7 @@ const RootLayout = ({ children }) => {
           }}
         />
 
-        {/* Facebook Pixel */}
+        {/* Meta Pixel Code */}
         <Script
           id="fb-pixel"
           strategy="afterInteractive"
@@ -124,11 +125,12 @@ const RootLayout = ({ children }) => {
               t.src=v;s=b.getElementsByTagName(e)[0];
               s.parentNode.insertBefore(t,s)}(window,document,'script',
               'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '1470753217454028');
+              fbq('init', '990169537206740');
               fbq('track', 'PageView');
             `,
           }}
         />
+        {/* End Meta Pixel Code */}
 
         {/* Twitter Conversion Tracking */}
         <Script
