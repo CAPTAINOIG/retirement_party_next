@@ -3,8 +3,8 @@ import http from '@/lib/http';
 
 export const useNewsletterSubscribe = () => {
   return useMutation({
-    mutationFn: ({ name, email, category }) => {
-      return http.post('/newsletter/subscribe', { name, email, category });
+    mutationFn: ({ firstName, lastName, email, category }) => {
+      return http.post('/newsletter/subscribe', { firstName, lastName, email, category });
     },
   });
 };

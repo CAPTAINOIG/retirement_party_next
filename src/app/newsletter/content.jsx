@@ -79,7 +79,7 @@ const SignupForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      await subscribe({ name: data.name, email: data.email, category: data.category });
+      await subscribe({ firstName: data.firstName, lastName: data.lastName, email: data.email, category: data.category });
       setIsSuccess(true);
       reset();
     } catch (error) {
@@ -107,12 +107,13 @@ const SignupForm = () => {
         >
           <TbCheck className="h-10 w-10 text-emerald-600" />
         </motion.div>
-        <h3 className="mb-3 text-2xl font-bold text-stone-950 dark:text-stone-50">You're In.</h3>
+        <h3 className="mb-3 text-2xl font-bold text-stone-950 dark:text-stone-50">One Last Step!</h3>
         <p className="mb-2 text-base text-stone-600 dark:text-stone-300">
-          Welcome to the data revolution, the witty edition.
+          We sent a confirmation email to your inbox. Please click the link inside to verify your
+          subscription and complete your sign-up.
         </p>
         <p className="text-sm text-stone-500 dark:text-stone-400">
-          Check your inbox — Mr Insights will be showing up soon.
+          Can&apos;t find it? Check your spam or promotions folder.
         </p>
       </motion.div>
     );
@@ -123,15 +124,15 @@ const SignupForm = () => {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="flex">
           <Input
-            {...register('name', { required: 'Name is required' })}
-            label="Name"
+            {...register('firstName', { required: 'First name is required' })}
+            label="First Name"
             labelPlacement="outside"
-            placeholder="Your full name"
+            placeholder="Your first name"
             variant="bordered"
             size="md"
             startContent={<TbUser className="text-stone-400" size={17} />}
-            isInvalid={!!errors.name}
-            errorMessage={errors.name?.message}
+            isInvalid={!!errors.firstName}
+            errorMessage={errors.firstName?.message}
             classNames={{
               label: 'text-stone-600 text-sm dark:text-stone-300',
               input: 'text-stone-900 text-sm px-2 dark:text-stone-100',
@@ -142,19 +143,15 @@ const SignupForm = () => {
         </div>
         <div className="flex">
           <Input
-            {...register('email', {
-              required: 'Email is required',
-              pattern: { value: /^\S+@\S+$/i, message: 'Invalid email address' },
-            })}
-            label="Email"
+            {...register('lastName', { required: 'Last name is required' })}
+            label="Last Name"
             labelPlacement="outside"
-            placeholder="your@email.com"
-            type="email"
+            placeholder="Your last name"
             variant="bordered"
             size="md"
-            startContent={<TbMail className="text-stone-400" size={17} />}
-            isInvalid={!!errors.email}
-            errorMessage={errors.email?.message}
+            startContent={<TbUser className="text-stone-400" size={17} />}
+            isInvalid={!!errors.lastName}
+            errorMessage={errors.lastName?.message}
             classNames={{
               label: 'text-stone-600 text-sm dark:text-stone-300',
               input: 'text-stone-900 text-sm px-2 dark:text-stone-100',
@@ -163,6 +160,29 @@ const SignupForm = () => {
             }}
           />
         </div>
+      </div>
+      <div className="flex">
+        <Input
+          {...register('email', {
+            required: 'Email is required',
+            pattern: { value: /^\S+@\S+$/i, message: 'Invalid email address' },
+          })}
+          label="Email"
+          labelPlacement="outside"
+          placeholder="your@email.com"
+          type="email"
+          variant="bordered"
+          size="md"
+          startContent={<TbMail className="text-stone-400" size={17} />}
+          isInvalid={!!errors.email}
+          errorMessage={errors.email?.message}
+          classNames={{
+            label: 'text-stone-600 text-sm dark:text-stone-300',
+            input: 'text-stone-900 text-sm px-2 dark:text-stone-100',
+            inputWrapper:
+              'border-stone-300 bg-stone-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] hover:border-stone-400 dark:border-stone-700 dark:bg-stone-900 dark:shadow-none dark:hover:border-stone-500',
+          }}
+        />
       </div>
       <div className="flex">
         <Select
