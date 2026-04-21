@@ -1,10 +1,10 @@
 'use client';
 
-import { Button, Card, Input, Select, SelectItem, addToast } from '@heroui/react';
-import { useState } from 'react';
+import { Autocomplete, AutocompleteItem, Button, Card, Input, Select, SelectItem, addToast } from '@heroui/react';
+import { useMemo, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useSearchParams } from 'next/navigation';
-import { useAmbassadorRegistration } from '@/api/other';
+import { useAmbassadorRegistration, useGetCampuses } from '@/api/other';
 import Logo from '@/components/core/shared/Logo';
 import { TbAt, TbBook2, TbPhone, TbSchool, TbUser } from 'react-icons/tb';
 import { useTheme } from 'next-themes';
@@ -31,6 +31,7 @@ const AmbassadorRegisterContent = () => {
   const source = searchParams.get('source');
   const { resolvedTheme: theme } = useTheme();
   const { mutateAsync: ambassadorRegistration } = useAmbassadorRegistration();
+  const { data: campuses = [] } = useGetCampuses();
   const [isSuccess, setIsSuccess] = useState(false);
   const {
     register,
@@ -49,6 +50,12 @@ const AmbassadorRegisterContent = () => {
       course: '',
     },
   });
+
+  const campusItems = useMemo(
+    () => (Array.isArray(campuses) ? campuses : []).filter(Boolean).map((name) => ({ key: name, label: name })),
+    [campuses]
+  );
+
   const onSubmit = async (values) => {
     const payload = {
       name: values.name,
@@ -99,7 +106,7 @@ const AmbassadorRegisterContent = () => {
                 variant="bordered"
                 color="primary"
                 radius="full"
-                onPress={() => window.location.reload()}
+                onPress={() => setIsSuccess(false)}
                 className="px-5 text-base"
               >
                 Submit another response
@@ -205,19 +212,38 @@ const AmbassadorRegisterContent = () => {
                   </Select>
                 )}
               />
-              <Input
-                type="text"
-                label="School"
-                labelPlacement="outside"
-                size="lg"
-                placeholder="Enter your school name"
-                startContent={<TbSchool size={18} />}
-                variant="bordered"
-                classNames={{ input: 'px-2' }}
-                {...register('school', { required: 'School is required' })}
-                errorMessage={errors?.school?.message}
-                isInvalid={!!errors?.school?.message}
-                isDisabled={isSubmitting}
+              <Controller
+                name="school"
+                control={control}
+                rules={{
+                  validate: (value) => {
+                    return value?.trim()?.length ? true : 'School is required';
+                  },
+                }}
+                render={({ field }) => (
+                  <Autocomplete
+                    label="School"
+                    labelPlacement="outside"
+                    size="lg"
+                    placeholder="Select or type your school"
+                    startContent={<TbSchool size={18} />}
+                    variant="bordered"
+                    classNames={{ input: 'px-2' }}
+                    allowsCustomValue
+                    inputValue={field.value}
+                    onInputChange={(value) => field.onChange(value)}
+                    onSelectionChange={(key) => {
+                      if (typeof key === 'string') field.onChange(key);
+                    }}
+                    isInvalid={!!errors?.school?.message}
+                    errorMessage={errors?.school?.message}
+                    isDisabled={isSubmitting}
+                  >
+                    {campusItems.map((item) => (
+                      <AutocompleteItem key={item.key}>{item.label}</AutocompleteItem>
+                    ))}
+                  </Autocomplete>
+                )}
               />
               <Controller
                 name="level"

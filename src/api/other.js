@@ -88,3 +88,16 @@ export const useSubmitAssessment = () => {
     },
   });
 };
+
+export const useGetCampuses = () => {
+  return useQuery({
+    queryKey: ['campuses'],
+    queryFn: async () => {
+      const res = await fetch('https://api.predict.statisense.co/market-entity?limit=100&type=campus');
+      if (!res.ok) return [];
+      const json = await res.json();
+      return (json?.entities ?? []).map((e) => e.name).filter(Boolean);
+    },
+    staleTime: 1000 * 60 * 60,
+  });
+};
