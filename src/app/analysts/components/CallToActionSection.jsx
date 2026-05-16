@@ -21,7 +21,15 @@ const CallToActionSection = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Happening Soon, <br /> Data Analysts Connect
+            The next era of Data Intelligence begins in Lagos.
+          </motion.h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="mb-8 font-bold tracking-tight text-2xl"
+          >
+            One thousand seats. One night. Be in the room when the handover happens.
           </motion.h2>
 
           <motion.div
@@ -39,7 +47,7 @@ const CallToActionSection = () => {
                   </div>
                   <div>
                     <p className="text-sm opacity-80">Date</p>
-                    <p className="text-xl font-semibold text-white md:text-2xl">November 6th</p>
+                    <p className="text-xl font-semibold text-white md:text-2xl">17 July 2026</p>
                   </div>
                 </div>
                 <div className="flex flex-col items-center gap-3 md:flex-row">
@@ -48,16 +56,14 @@ const CallToActionSection = () => {
                   </div>
                   <div>
                     <p className="text-sm opacity-80">Location</p>
-                    <p className="text-xl font-semibold text-white md:text-2xl">Ebonylife Cinemas</p>
-                    <p className="text-sm opacity-80">Victoria Island</p>
+                    <p className="text-xl font-semibold text-white md:text-2xl">Lagos Island</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <p className="text-lg leading-relaxed opacity-80 md:text-xl">
-              Exclusive event for registered Statisense on the Road - Data Analysts Tour members. To attend this
-              exclusive event, join our tour.
+              Every guest is reviewed personally. RSVPs receive venue details, Event Invite and a small package before the event.
             </p>
           </motion.div>
 
@@ -75,7 +81,7 @@ const CallToActionSection = () => {
               className="px-8 py-6 text-lg"
               endContent={<TbChevronRight size="20" />}
             >
-              Join Our Tour
+              Reserve my seat
             </Button>
           </motion.div>
         </div>

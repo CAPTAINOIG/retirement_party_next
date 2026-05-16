@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { IconBrandFacebook, IconBrandInstagram, IconBrandX, IconMail } from '@tabler/icons-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from '@/components/core/shared/Logo';
 import { useTheme } from 'next-themes';
 import { useDisclosure } from '@heroui/react';
@@ -32,15 +32,22 @@ const products = [
 ];
 
 const Footer = () => {
-  const { resolvedTheme: theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const { isOpen: isGetStartedOpen, onOpen: onGetStartedOpen, onClose: onGetStartedClose } = useDisclosure();
+
+  // Avoid hydration mismatch — only read theme after mount
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <footer className="py-20">
       <div className="container">
         <div className="grid gap-20 pt-10 pb-20 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-10">
           <div>
-            <Logo light={theme === 'dark'} />
+            {/* Render logo only after mount so theme is known */}
+            <Logo light={mounted ? resolvedTheme === 'dark' : false} />
             <div className="mt-8 grid grid-cols-1 gap-3">
               <div className="flex items-center space-x-3">
                 <div>
@@ -71,13 +78,13 @@ const Footer = () => {
           <div>
             <h6 className="font-bold">Company</h6>
             <div className="mt-6 flex flex-col space-y-4">
-              <Link href={'/about'} className="hover:text-primary-700">
+              <Link href="/about" className="hover:text-primary-700">
                 About us
               </Link>
-              <Link href={'/careers'} className="hover:text-primary-700">
+              <Link href="/careers" className="hover:text-primary-700">
                 Careers
               </Link>
-              <Link href={'/terms'} className="hover:text-primary-700">
+              <Link href="/terms" className="hover:text-primary-700">
                 Privacy & Terms
               </Link>
             </div>
@@ -85,10 +92,10 @@ const Footer = () => {
           <div>
             <h6 className="font-bold">Support</h6>
             <div className="mt-6 flex flex-col space-y-4">
-              <Link href="/about#faq" className="hover:text-primary-700" scroll>
+              <Link href="/about#faq" className="hover:text-primary-700">
                 FAQs
               </Link>
-              <Link href={'/contact'} className="hover:text-primary-700">
+              <Link href="/contact" className="hover:text-primary-700">
                 Contact Us
               </Link>
             </div>
@@ -109,28 +116,13 @@ const Footer = () => {
             <div>Copyright &copy; {new Date().getFullYear()} Immortal Statisense</div>
           </div>
           <div className="mt-8 flex items-center space-x-6 md:mt-0">
-            <a
-              href="https://facebook.com/statisense"
-              target="_blank"
-              className="text-xl hover:text-blue-600"
-              rel="noreferrer"
-            >
+            <a href="https://facebook.com/statisense" target="_blank" className="text-xl hover:text-blue-600" rel="noreferrer">
               <IconBrandFacebook />
             </a>
-            <a
-              href="https://twitter.com/statisense"
-              target="_blank"
-              className="text-xl hover:text-blue-400"
-              rel="noreferrer"
-            >
+            <a href="https://twitter.com/statisense" target="_blank" className="text-xl hover:text-blue-400" rel="noreferrer">
               <IconBrandX />
             </a>
-            <a
-              href="https://www.instagram.com/statisense/"
-              target="_blank"
-              className="text-xl hover:text-red-600"
-              rel="noreferrer"
-            >
+            <a href="https://www.instagram.com/statisense/" target="_blank" className="text-xl hover:text-red-600" rel="noreferrer">
               <IconBrandInstagram />
             </a>
           </div>

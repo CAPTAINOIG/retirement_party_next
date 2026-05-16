@@ -6,6 +6,48 @@ import { useForm } from 'react-hook-form';
 import { Button, Input, Textarea, Drawer, DrawerBody, DrawerContent, addToast } from '@heroui/react';
 import { useCreateEventAttendee } from '@/api/other';
 import { TbSend, TbUser, TbMail, TbPhone, TbMapPin, TbCheck, TbX, TbBrandLinkedin } from 'react-icons/tb';
+import { Select, SelectItem } from "@heroui/react";
+import {
+  FaLinkedin,
+  FaEnvelope,
+  FaUsers,
+  FaGlobe,
+  FaInstagram,
+  FaQuestionCircle,
+} from "react-icons/fa";
+
+const socialPlatforms = [
+  {
+    key: "linkedin_dm",
+    label: "LinkedIn / DM",
+    icon: <FaLinkedin className="text-blue-600" />,
+  },
+  {
+    key: "email_invitation",
+    label: "Email invitation",
+    icon: <FaEnvelope className="text-green-500" />,
+  },
+  {
+    key: "friend_colleague",
+    label: "A friend or colleague",
+    icon: <FaUsers className="text-purple-500" />,
+  },
+  {
+    key: "techcabal_techpoint",
+    label: "TechCabal / Techpoint",
+    icon: <FaGlobe className="text-orange-500" />,
+  },
+  {
+    key: "instagram_twitter",
+    label: "Instagram / Twitter",
+    icon: <FaInstagram className="text-pink-500" />,
+  },
+  {
+    key: "other",
+    label: "Other",
+    icon: <FaQuestionCircle className="text-gray-500" />,
+  },
+];
 
 const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -25,9 +67,12 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
         phone: data.phone,
         event: 'data-on-the-road-tour',
         meta: {
+          company: data.company,
+          title: data.title,
           location: data.location,
-          linkedin: data.linkedin,
-          interests: data.interests,
+          // location: data.location,
+          // linkedin: data.linkedin,
+          // interests: data.interests,
         },
       });
       setIsSuccess(true);
@@ -73,8 +118,7 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="mb-8 text-base leading-relaxed opacity-80"
       >
-        Thank you for registering for the Data on the Road tour! We're excited to meet you and connect with fellow data
-        enthusiasts.
+        Thank you for
       </motion.p>
 
       <motion.div
@@ -127,9 +171,9 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
         <DrawerBody className="p-6 md:p-8">
           <div className="mb-6 flex items-center justify-between gap-4">
             <div>
-              <h3 className="text-2xl font-bold">Join Statisense on the Road</h3>
+              <h3 className="text-2xl font-bold">Reserve your seat.</h3>
               <p className="mt-1 text-base opacity-80">
-                We're coming to a city near you! Register for our exclusive upcoming events
+                Every guest is reviewed personally. RSVPs receive venue details, Event Invite and a small package before the event.
               </p>
             </div>
             <Button isIconOnly variant="bordered" color="danger" radius="full" onPress={handleClose}>
@@ -193,6 +237,22 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
                   }}
                 />
                 <Input
+                  {...register('company', {
+                    required: 'Company is required',
+                  })}
+                  label="Company"
+                  labelPlacement="outside"
+                  placeholder="Enter your company name"
+                  variant="bordered"
+                  size="md"
+                  startContent={<TbMail className="text-default-400" size={18} />}
+                  isInvalid={!!errors.company}
+                  errorMessage={errors.company?.message}
+                  classNames={{
+                    input: 'text-sm px-2',
+                  }}
+                />
+                <Input
                   {...register('location', { required: 'Location is required' })}
                   label="Location (City)"
                   labelPlacement="outside"
@@ -206,37 +266,46 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
                     input: 'text-sm px-2',
                   }}
                 />
+                <Input
+                  {...register('title', {
+                    required: 'Title/Role is required',
+                  })}
+                  label="Title/Role"
+                  labelPlacement="outside"
+                  placeholder="Enter your title or role"
+                  variant="bordered"
+                  size="md"
+                  startContent={<TbMail className="text-default-400" size={18} />}
+                  isInvalid={!!errors.title}
+                  errorMessage={errors.title?.message}
+                  classNames={{
+                    input: 'text-sm px-2',
+                  }}
+                />
               </div>
               {/* Additional Information */}
               <div className="space-y-4">
-                <div className="flex">
-                  <Input
-                    {...register('linkedin')}
-                    label="LinkedIn Profile (Optional)"
-                    labelPlacement="outside"
-                    placeholder="LinkedIn profile URL"
-                    variant="bordered"
-                    size="md"
-                    startContent={<TbBrandLinkedin className="text-blue-600" size={18} />}
-                    classNames={{
-                      input: 'text-sm px-2',
-                    }}
-                  />
+                <div className='w-full'>                
+                  <Select
+                    label="Select Social Platform"
+                    placeholder="Choose a platform"
+                    className="max-w-xs"
+                    startContent={
+                      <span className="text-default-400">
+                        <FaLinkedin />
+                      </span>
+                    }
+                  >
+                    {socialPlatforms.map((platform) => (
+                      <SelectItem
+                        key={platform.key}
+                        startContent={platform.icon}
+                      >
+                        {platform.label}
+                      </SelectItem>
+                    ))}
+                  </Select>
                 </div>
-                <Textarea
-                  {...register('interests', { required: 'Please describe your areas of interest' })}
-                  label="Areas of Interest"
-                  labelPlacement="outside"
-                  placeholder="Tell us about your interests in data analytics, what you hope to learn from the tour, and what topics excite you most..."
-                  variant="bordered"
-                  size="md"
-                  minRows={3}
-                  isInvalid={!!errors.interests}
-                  errorMessage={errors.interests?.message}
-                  classNames={{
-                    input: 'text-sm px-2 py-2',
-                  }}
-                />
               </div>
               {/* Submit Button */}
               <div className="flex pt-4">
@@ -249,7 +318,7 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
                   className="px-8 py-3 text-base font-semibold"
                   endContent={!isPending && <TbSend size={18} />}
                 >
-                  {isPending ? 'Registering...' : 'Register for Tour'}
+                  {isPending ? 'Loading...' : 'Reserve My Seat'}
                 </Button>
               </div>
             </form>

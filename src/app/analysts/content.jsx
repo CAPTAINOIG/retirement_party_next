@@ -2,14 +2,16 @@
 
 import React, { useEffect } from 'react';
 import Script from 'next/script';
+import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
-import IntroSection from './components/IntroSection';
-import WhyJoinSection from './components/WhyJoinSection';
 import WhoCanJoinSection from './components/WhoCanJoinSection';
-// import HowItWorksSection from './components/HowItWorksSection';
 import CallToActionSection from './components/CallToActionSection';
+import MarqueeSection from './components/MarqueeSection';
+import TributeSection from './components/TributeSection';
+import FAQSection from './FAQSection';
+import Footer from '@/components/global/Footer';
 
-const AnalystsGalleryContent = () => {
+const AnalystsContent = () => {
   useEffect(() => {
     // Track page view for analysts page specifically
     if (typeof window !== 'undefined' && window.twq) {
@@ -34,38 +36,43 @@ const AnalystsGalleryContent = () => {
       />
 
       <div className="dark min-h-screen bg-black text-white">
+        {/* Navigation */}
+        <Navigation />
+
         {/* Hero Section */}
-        <section className="relative">
+        <section id="hero" className="relative">
           <HeroSection />
         </section>
 
         {/* Intro Section */}
-        <section className="relative">
-          <IntroSection />
+        <section id="intro" className="relative">
+          <MarqueeSection />
         </section>
 
         {/* Why Join Section */}
-        <section className="relative">
-          <WhyJoinSection />
+        <section id="tribute" className="relative">
+          <TributeSection />
         </section>
 
         {/* Who Can Join Section */}
-        <section className="relative">
+        <section id="guests" className="relative">
           <WhoCanJoinSection />
         </section>
 
-        {/* How It Works Section */}
-        {/* <section className="relative">
-          <HowItWorksSection />
-        </section> */}
-
-        {/* Call to Action Section */}
-        <section className="relative">
+        <section id="cta" className="relative">
           <CallToActionSection />
+        </section>
+
+        <section id="faq" className="relative">
+          <FAQSection />
+        </section>
+
+        <section id="footer" className="relative">
+          <Footer />
         </section>
       </div>
     </>
   );
 };
 
-export default AnalystsGalleryContent;
+export default AnalystsContent;

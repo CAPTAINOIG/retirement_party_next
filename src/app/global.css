@@ -187,6 +187,33 @@ body {
   z-index: 1;
 }
 
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee-scroll 60s linear infinite;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.eyebrow {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
 .bg-gradient-1 > * {
   position: relative;
   z-index: 2;

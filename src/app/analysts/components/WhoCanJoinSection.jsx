@@ -9,31 +9,31 @@ const WhoCanJoinSection = () => {
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   const targetAudience = [
-    {
-      icon: TbTarget,
-      title: 'Data Analysts',
-      description: 'Professional analysts ready to connect and share insights',
+       {
+         icon: TbTarget,
+      title: "Heads of Data",
+      description: "CDOs, Heads of Analytics, Heads of Business Intelligence — the people who carry the dashboard and answer for the number.",
       color: 'from-orange-500 to-red-500',
     },
     {
+      title: "Finance Leaders", 
+      description: "CFOs, Finance Directors, Group Treasurers, FP&A leaders — the people who wait for the number and pay for the delay.",
       icon: TbBriefcase,
-      title: 'Policymakers',
-      description: 'Leaders using data to drive policy decisions',
       color: 'from-blue-500 to-indigo-500',
     },
     {
+      title: "Tech Leaders",
+      description: "CTOs, CIOs, VPs of Engineering, Heads of Digital Transformation — the people who own the stack and choose what stays in it.",
       icon: TbTrendingUp,
-      title: 'Entrepreneurs',
-      description: 'Building data-driven solutions for Africa',
       color: 'from-green-500 to-emerald-500',
     },
     {
+      title: "Professionals & Business Owners",
+      description: "Data Analysts, Founders, Entrepreneurs, Data Students, Community Members, AI Advocates. The people who love Data.",
       icon: TbSchool,
-      title: 'Students',
-      description: 'Learning and growing in the data space',
       color: 'from-purple-500 to-pink-500',
     },
-  ];
+  ]
 
   return (
     <div ref={sectionRef} className="dark relative w-full bg-black py-20 text-white">
@@ -45,7 +45,7 @@ const WhoCanJoinSection = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Why You Should Join
+            The Guest List
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ const WhoCanJoinSection = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             className="mx-auto max-w-3xl text-xl leading-relaxed md:text-2xl"
           >
-            Because Africa's data story deserves to be told by Africans. Whether you're a data analyst, policymaker, entrepreneur, or student, this tour is your chance to be part of a movement that's shaping the future of data on the continent.
+            If your title is on this list, this Event is for you.
           </motion.p>
         </div>
 
