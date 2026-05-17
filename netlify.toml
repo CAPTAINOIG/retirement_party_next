@@ -1,0 +1,21 @@
+[build]
+  publish = "out"
+  command = "npm run export"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NEXT_TELEMETRY_DISABLED = "1"
+  NETLIFY = "true"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  NODE_ENV = "production"
+  NETLIFY = "true"
+
+[context.deploy-preview.environment]
+  NODE_ENV = "production"
+  NETLIFY = "true"
