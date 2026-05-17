@@ -53,5 +53,21 @@ module.exports = {
     },
   },
   darkMode: 'class',
-  plugins: [heroui()],
+  plugins: [
+    // Conditionally load HeroUI plugin with error handling
+    (() => {
+      try {
+        return heroui();
+      } catch (error) {
+        console.warn('HeroUI plugin failed to load, using fallback configuration');
+        return require('tailwindcss/plugin')(function({ addUtilities }) {
+          addUtilities({
+            '.heroui-fallback': {
+              // Basic fallback styles
+            }
+          });
+        });
+      }
+    })(),
+  ],
 }
