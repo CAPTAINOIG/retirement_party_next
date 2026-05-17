@@ -60,6 +60,7 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
   const { mutateAsync: createAttendee, isPending } = useCreateEventAttendee();
 
   const onSubmit = async (data) => {
+    console.log(data)
     try {
       await createAttendee({
         name: data.name,
@@ -78,6 +79,7 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
       setIsSuccess(true);
       reset();
     } catch (error) {
+      console.log(error)
       addToast({
         title: 'Error registering for tour',
         description: error?.response?.data?.message || 'Something went wrong, please try again',
@@ -111,40 +113,6 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
       >
         Registration Successful! 🎉
       </motion.h3>
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="mb-8 text-base leading-relaxed opacity-80"
-      >
-        Thank you for
-      </motion.p>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-        className="bg-default-100 mx-auto max-w-md space-y-4 rounded-2xl px-8 py-6 text-start"
-      >
-        <p className="opacity-70">
-          <strong>What's next?</strong>
-        </p>
-        <ul className="space-y-2 text-sm opacity-80">
-          <li className="flex items-start">
-            <span className="bg-primary-500 mt-1 mr-2 h-1.5 w-1.5 rounded-full"></span>
-            You'll receive a confirmation email with event details
-          </li>
-          <li className="flex items-start">
-            <span className="bg-primary-500 mt-1 mr-2 h-1.5 w-1.5 rounded-full"></span>
-            We'll contact you with event details for your city
-          </li>
-          <li className="flex items-start">
-            <span className="bg-primary-500 mt-1 mr-2 h-1.5 w-1.5 rounded-full"></span>
-            Connect with fellow data professionals at the event
-          </li>
-        </ul>
-      </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
