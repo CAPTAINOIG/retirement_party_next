@@ -37,8 +37,6 @@ const HeroSection = () => {
       />
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center">
-        {/* Event meta */}
-        <img src="/images/logo-icon.png" alt="Statisense logo" className="mx-auto mb-6 h-12 md:h-16" />
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 0.75, y: 0 } : { opacity: 0, y: 16 }}
