@@ -111,9 +111,33 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="mb-4 text-2xl font-bold"
       >
-        Registration Successful! 🎉
+         Your seat is reserved! 🎉
       </motion.h3>
 
+       <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.6 }}
+      className="space-y-4 mb-8"
+    >
+      <p className="text-gray-300 text-base font-semibold font-sans">
+        What's next?
+      </p>
+      <ul className="text-gray-400 mx-auto max-w-md space-y-3 text-left text-sm font-sans">
+        <li className="flex items-start">
+          <span className="bg-cyan-400 mt-2 mr-3 h-1.5 w-1.5 rounded-full flex-shrink-0"></span>
+          You'll receive a confirmation email with venue details and event information
+        </li>
+        <li className="flex items-start">
+          <span className="bg-cyan-400 mt-2 mr-3 h-1.5 w-1.5 rounded-full flex-shrink-0"></span>
+          Event materials and exclusive content will be shared before July 10th
+        </li>
+        <li className="flex items-start">
+          <span className="bg-cyan-400 mt-2 mr-3 h-1.5 w-1.5 rounded-full flex-shrink-0"></span>
+          Connect with fellow data professionals at this exclusive gathering
+        </li>
+      </ul>
+    </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
