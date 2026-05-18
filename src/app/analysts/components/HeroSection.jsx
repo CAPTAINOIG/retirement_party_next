@@ -58,7 +58,7 @@ const HeroSection = () => {
           className="max-w-4xl font-bold leading-tight tracking-tight"
           style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.5rem)' }}
         >
-          <span className="font-normal text-white/90">
+          <span className=" text-white/90">
             Pawa BI gave us a decade of dashboards.
           </span>
           <br />
