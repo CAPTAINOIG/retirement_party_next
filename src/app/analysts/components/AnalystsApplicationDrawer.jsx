@@ -255,8 +255,8 @@ const AnalystsApplicationDrawer = ({ isOpen, onClose }) => {
               <div className="space-y-4">
                 <div className='w-full'>                
                   <Select
-                    label="Select Social Platform"
-                    placeholder="Choose a platform"
+                    label="How did you hear about this?"
+                    placeholder="platform"
                     className="max-w-xs"
                     startContent={
                       <span className="text-default-400">
