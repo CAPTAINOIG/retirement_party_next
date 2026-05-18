@@ -100,7 +100,7 @@ export const FAQS = [
   },
   {
     question: "Where exactly is the venue?",
-    answer: "Lagos Island. Confirmed RSVPs receive the precise location, parking instructions, and accessibility details seven days before the event."
+    answer: "Civic Centre, Victoria Island.. Confirmed RSVPs receive the precise location, parking instructions, and accessibility details seven days before the event."
   },
   {
     question: "Can I bring a colleague?",

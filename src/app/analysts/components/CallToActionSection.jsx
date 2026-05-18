@@ -56,7 +56,7 @@ const CallToActionSection = () => {
                   </div>
                   <div>
                     <p className="text-sm opacity-80">Location</p>
-                    <p className="text-xl font-semibold text-white md:text-2xl">Lagos Island</p>
+                    <p className="text-xl font-semibold text-white md:text-2xl">Civic Centre, Victoria Island.</p>
                   </div>
                 </div>
               </div>
