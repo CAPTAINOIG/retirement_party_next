@@ -36,12 +36,12 @@ const HeroSection = () => {
         }}
       />
 
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center">
+      <div className="relative z-10 flex flex-col text-white items-center justify-center min-h-screen px-4 text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 0.75, y: 0 } : { opacity: 0, y: 16 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="mb-8 text-sm tracking-widest uppercase text-white/75 font-light"
+          className="mb-8 text-sm tracking-widest uppercase text-white font-light"
           style={{ letterSpacing: '0.18em' }}
         >
           The Retirement Party &nbsp;·&nbsp; Lagos &nbsp;·&nbsp; 17 July 2026
@@ -81,7 +81,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 0.8, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.25, ease: 'easeOut' }}
-          className="mx-auto mt-7 max-w-xl text-base md:text-lg leading-relaxed text-white/75"
+          className="mx-auto mt-7 max-w-xl text-base text-white md:text-lg leading-relaxed"
         >
           This July in Lagos, we are honouring the tools that built modern business
           intelligence and welcoming the era that replaces them.
@@ -100,7 +100,7 @@ const HeroSection = () => {
             color="primary"
             radius="full"
             className="px-8 py-6 text-lg"
-            endContent={<TbChevronRight size="20" />}
+            // endContent={<TbChevronRight size="20" />}
           >
             Reserve My Seat &nbsp;→
           </Button>
@@ -111,7 +111,7 @@ const HeroSection = () => {
             color="primary"
             radius="full"
             className="px-8 py-6 text-lg"
-            endContent={<FaLevelDownAlt size="20" />}
+            // endContent={<FaLevelDownAlt size="20" />}
           >
             Learn More
           </Button>
@@ -122,7 +122,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 0.55, y: 0 } : { opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.58, ease: 'easeOut' }}
-          className="mt-10 text-xs tracking-widest uppercase text-white/55"
+          className="mt-10 text-xs tracking-widest uppercase text-white"
           style={{ letterSpacing: '0.2em' }}
         >
           ★ &nbsp;Curated Guest List &nbsp;·&nbsp; 1,000 Seats &nbsp;·&nbsp; No Walk-ins &nbsp;★

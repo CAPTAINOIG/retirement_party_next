@@ -12,7 +12,7 @@ export const NAVIGATION_ITEMS = [
   { id: "hero", label: "Home" },
   { id: "intro", label: "About" },
   { id: "guests", label: "Guests" },
-  { id: "cta", label: "Join Now" }
+  { id: "cta", label: "RSVP" }
 ];
 
 export const EVENT_INFO = {
