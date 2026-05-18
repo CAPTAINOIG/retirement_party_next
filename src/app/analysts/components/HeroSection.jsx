@@ -22,12 +22,15 @@ const HeroSection = () => {
       ref={heroRef}
       className="dark relative w-full min-h-screen bg-black text-white overflow-hidden"
     >
+       <div 
+        className="opacity-30">
        <img
         src="/images/location.jpeg"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none opacity-25"
+        className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
       />
+      </div>
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
