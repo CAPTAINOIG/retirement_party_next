@@ -21,7 +21,7 @@ const PredictIllustration = ({ isActive, isParentInView }) => {
           <img className="h-[30px] w-[30px]" src="/images/face-three.png" alt="User avatar" />
           <div className="min-h-[35px] w-full rounded-2xl bg-[#282A30] px-4 py-2">
             <p className="line-clamp-2 text-sm font-extralight text-slate-400">
-              Immortal AI is revolutionary! The way it processes African data is incredible
+              Immortal BI is revolutionary! The way it processes African data is incredible
             </p>
           </div>
         </motion.div>
@@ -47,7 +47,7 @@ const PredictIllustration = ({ isActive, isParentInView }) => {
           <img className="h-[30px] w-[30px]" src="/images/face-two.png" alt="User avatar" />
           <div className="min-h-[35px] w-full rounded-2xl bg-[#282A30] px-4 py-2">
             <p className="line-clamp-2 text-sm font-extralight text-slate-400">
-              Can't wait to see how Immortal AI transforms data analysis in Africa
+              Can't wait to see how Immortal BI transforms data analysis in Africa
             </p>
           </div>
         </motion.div>

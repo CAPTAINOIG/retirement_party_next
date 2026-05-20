@@ -39,7 +39,7 @@ const Immortal = () => {
             Wherever hidden your data is, we will find it
           </motion.h1>
           <p className="mt-6 max-w-lg text-lg tracking-tight">
-            With Immortal AI, we are building the rails to aggregate Africa's data, wherever they are.
+            With Immortal BI, we are building the rails to aggregate Africa's data, wherever they are.
           </p>
           <Button
             size="lg"

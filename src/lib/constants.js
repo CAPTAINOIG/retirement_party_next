@@ -22,8 +22,8 @@ export const EVENT_INFO = {
 };
 
 export const MARQUEE_ITEMS = [
-  { before: "PawaBI gave us dashboards.", after: "Immortal AI gives us decisions." },
-  { before: "Reports tell you what happened.", after: "Immortal AI tells you what to do next." },
+  { before: "PawaBI gave us dashboards.", after: "Immortal BI gives us decisions." },
+  { before: "Reports tell you what happened.", after: "Immortal BI tells you what to do next." },
   { before: "Data Analytics was the beginning.", after: "Data Intelligence is what comes now." },
   { before: "Happy Retirement.", after: "Your Work is Done, But Your Legacy Remains." },
 ];
@@ -32,7 +32,7 @@ export const PUNCHLINES = [
   {
     number: "01",
     old: "PawaBI gave us a decade of dashboards.",
-    new: "Immortal AI gives us smart decisions."
+    new: "Immortal BI gives us smart decisions."
   },
   {
     number: "02", 
@@ -42,7 +42,7 @@ export const PUNCHLINES = [
   {
     number: "03",
     old: "Dashboards show you what happened.",
-    new: "Immortal AI tells you what to do next."
+    new: "Immortal BI tells you what to do next."
   }
 ]
 
@@ -63,9 +63,9 @@ export const TIMELINE = [
     desc: "PawaBI ran the boardroom for nearly a decade. It taught us to measure the business — and answer for the number.",
   },
   {
-    tool: "Immortal AI",
+    tool: "Immortal BI",
     era: "The Decision Era",
-    desc: "Now Immortal AI teaches us to move the business. From describing yesterday to deciding tomorrow.",
+    desc: "Now Immortal BI teaches us to move the business. From describing yesterday to deciding tomorrow.",
     isNew: true,
   },
 ];

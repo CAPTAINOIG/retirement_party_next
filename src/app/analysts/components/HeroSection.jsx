@@ -63,7 +63,7 @@ const HeroSection = () => {
           </span>
           <br />
           <span className="text-white">
-            Immortal AI gives us{' '}
+            Immortal BI gives us{' '}
             <span
               style={{
                 color: '#2dcfb3',
